@@ -128,7 +128,7 @@ const Header = () => {
              >
                   {menuItem.submenu ? (
                     <>
-                      <button
+                    <Link href={menuItem.path || "#"} > <button
                         onClick={() => setDropdownToggler(!dropdownToggler)}
                         className="flex cursor-pointer items-center justify-between gap-3 hover:text-primary"
                       >
@@ -143,6 +143,7 @@ const Header = () => {
                           </svg>
                         </span>
                       </button>
+                      </Link>
 
                       <ul
                         className={`dropdown ${dropdownToggler ? "flex z-99999" : ""}`}
@@ -233,7 +234,7 @@ const Header = () => {
 
           :
  <button type="button" className="  m-[13px] text-[#000000] bg-[#A1CF5F]  focus:ring-4 focus:outline-none focus:ring-[#A1CF5F]/50 font-medium rounded-lg text-sm px-4 py-2 text-center ">
-            Donate Now
+           <a href='/donation'> Donate Now  </a>
           </button>
 }
 

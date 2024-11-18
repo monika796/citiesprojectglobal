@@ -18,7 +18,7 @@ export default function Programs() {
                     <div className="md:absolute bottom-[5%]"> <p className="text-[16px] text-[#000000] italic font-normal leading-[24px] text-center md:text-left">Leadership Circle gives life to the idea that ministry can be bourne out in a multitude of manners, helps individuals connect with their purpose and the heart behind that purpose, and provides a framework for challenging brokenness and bringing shalom. </p>
                         <h2 className="pt-[20px] text-[#000000] text-[20px] font-bold leading-[30.62px] text-center md:text-left">Jervis D.</h2>
                         <p className=" pt-[10px] md:w-[57%] text-[#000000] text-[20px] font-normal leading-[30.62px] text-center md:text-left">Executive VP, (Economics Sphere, United States)</p>
-                        <img src="/108.png" className=" pt-5 mx-auto" />
+                        <img src="/108.png" className=" pt-5 md:m-0 mx-auto" />
                         </div></div>
                     <div className="md:w-3/5 p-10">
                         <h2 className=" text-[#000000] md:text-[29px] text-[20px]  font-normal md:leading-[43px] text-center md:text-left">
@@ -41,7 +41,7 @@ export default function Programs() {
                 <div className="md:flex pt-9 gap-10">
                   <div className="md:w-4/12  ">
                     <h4 className="text-[17px] pb-10 md:w-[75%] text-center md:text-left text-white">Our programs empower leaders to make a meaningful impact on cities and communities through deep engagement with faith and purpose.</h4>
-                      <img src='106.png'  className='mx-auto md:p-0 p-5'  alt='' />
+                      <img src='106.png'  className=' md:m-0 mx-auto md:p-0 p-5'  alt='' />
                   </div>
                   <div className="md:w-8/12 md:flex gap-5">
                       <div className="bg-white rounded-[5px] w-[100%] mb-3 md:mb-0">
