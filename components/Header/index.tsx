@@ -60,8 +60,8 @@ const Header = () => {
                  isHomePage && isDesktop ? "/1 1.png" : "/logo.png"
               }
               alt="logo"
-              width={50.03}
-              height={30}
+              width={80}
+              height={46}
               className="md:m-0 m-1.5"
             />
             

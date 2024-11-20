@@ -5,9 +5,9 @@ import VideoCarousel from "@/components/videotestemonial";
 import Newsletter from "@/components/Newsletter";
 import PostSlider from "@/components/PostSlider";
 
-import {  Anton } from "next/font/google";
+import { Anton } from "next/font/google";
 
-const anton = Anton({ weight: '400', subsets: ["latin"] }); 
+const anton = Anton({ weight: '400', subsets: ["latin"] });
 
 
 export const metadata: Metadata = {
@@ -25,312 +25,330 @@ const sliderSettings = {
 };
 export default function Home() {
   return (
-                  <main>
-                  
-                  {/* body start */}
+    <main>
 
-              <section className="w-full">
-                    <div className="container-fluid mx-auto">
-                      <div className="relative w-full">
-                        <img src="/banner.jpg" alt="banner" className="w-full md:h-[auto] h-[350px]" />
-                        <div className="absolute top-1/2 left-8 transform -translate-y-1/2 text-white">
-                      <h3 className="text-[9px] bg-[#fff] text-black text-center w-[55%] rounded-[20px] mb-[20px] md:mb-0"> Transform your workplace and community</h3>
-                        <strong className={`${anton.className} uppercase md:text-[85px] leading-[34px] text-[37px] font-light xl:leading-[101px]  md:leading-none`}>
-                        Live Life<br className="hidden md:block" />
-                          With < br className="hidden md:block" />
-                          Purpose
-                          </strong>
-                          <p className="mt-2 font-light xl:leading-6 md:leading-none">
-                          Cities Project Global helps people discover and <br /> live out their God-given purpose to transform < br />communities.
-                          </p>
-                          <a
-                            href="#"
-                            className=" flex w-fit  items-center gap-2.5 inline-block md:mt-4 bg-[#A1CF5F] font-bold text-black  text-[13px] md:text-sm py-1 md:py-3 px-6 rounded-lg transition duration-300"
-                          >
-                          Join Our Community of Culturemakers<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
-                <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
-                  <path d="M1 13 13 1M4 1h9v9"></path>
-                </g>
-              </svg>
-                          </a>
-                        
-                        </div> <img src='/49.png' className="hidden md:block absolute right-[17px] md:right-[55px]  md:w-[20%]   bottom-[8px] md:bottom-[53px] w-[40%]"/>
-                      </div>
-                    </div>
-                  </section>
+      {/* body start */}
+
+      <section className="w-full">
+        <div className="container-fluid mx-auto">
+          <div className="relative w-full  bg-[url('/banner.jpg')] bg-cover bg-center  h-[909px]">
+            {/* <img src="/banner.jpg" alt="banner" className="w-full md:h-[auto] h-[350px]" /> */}
+            <div className="container max-w-[1480px] mx-auto relative  h-[909px]">
 
 
-                  <div className="container mx-auto">
-                  <div className="flex md:p-[105px] md:pb-[180px] flex-col md:flex-row h-full bg-cover bg-center bg-[url('/28.png')]">
-                    <div className=" w-full md:w-1/2 p-6 md:p-16 flex flex-col justify-center">
-                      <h2 className="font-bold text-gray-800 text-3xl md:text-5xl leading-tight mb-4">
-                      Discover Your Design<br /> 
-                      Live Out Your Purpose
-                      </h2>
-                      <p className="text-gray-500 text-lg md:text-xl leading-relaxed mb-6 md:pl-2">
-                      Cities Project Global is an international organization dedicated to awakening individuals to their God-given purpose. Become equipped to  live out your design and transform your community – no matter what your area of work is.</p>
-                      <div className="flex flex-col md:flex-row md:mx-0 mx-auto">
-                        <button className="w-full md:w-auto flex items-center gap-2.5 text-black     text-lg py-4 font-extrabold px-6 rounded mb-4 md:mb-0 md:mr-4">
-                        Learn More
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
-                <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
-                  <path d="M1 13 13 1M4 1h9v9"></path>
-                </g>
-              </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div
-                      className="w-full md:w-1/2  bg-cover bg-center " >
-                      <div className="inner_Sec_div relative">
-                            <div className='flex flex-col '>
-                            
-                              <img src='/Group 805.png' className='md:w-3/12 w-[37%] bottom-0  p-4 h-auto absolute md:absolute' />
-                              <img src='/26.png' className='w-8/12  p-4  self-end ' />
-                            </div>
+              <div className="absolute top-1/2 left-8 transform -translate-y-1/2 text-white">
+                <span className="uppercase mb-1	inline-block text-[14px] bg-[#fff] text-black leading-none	 text-center w-[auto]  mb-[20px]  font-bold	py-1 px-2"> Transform your workplace and community</span><br />
+                <strong className={`${anton.className} block uppercase md:text-[126px]  leading-[130px] text-[37px] font-light xl:leading-[130px]  md:leading-none`}>
+                  Live Life<br className="hidden md:block" />
+                  With < br className="hidden md:block" />
+                  Purpose
+                </strong>
+                <p className="mt-2 font-light xl:leading-6 md:leading-none">
+                  Cities Project Global helps people discover and <br /> live out their God-given purpose to transform < br />communities.
+                </p>
+                <a
+                  href="#"
+                  className=" flex w-fit  items-center gap-2.5 inline-block md:mt-4 bg-[#A1CF5F] font-bold text-black  text-[13px] md:text-sm py-1 md:py-3 px-6 rounded-lg transition duration-300"
+                >
+                  Join Our Community of Culturemakers<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+                    <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+                      <path d="M1 13 13 1M4 1h9v9"></path>
+                    </g>
+                  </svg>
+                </a>
 
-                      </div>
-
-                    </div>
-                  </div>
-                 
+              </div> <img src='/49.png' className="hidden md:block absolute right-[17px] md:right-[55px]  md:w-[20%]   bottom-[8px] md:bottom-[53px] w-[40%]" />
             </div>
-            <div className="container mx-auto">               <div className='w-[91%] md:mt-[-130px] mt-[50px] mx-auto flex flex-col md:flex-row border border-black border-solid'>
-                  <div className=' flex flex-col md:flex-row md:w-6/12 bg-white '>
-                        <div className='w-6/12  bg-[url("/30.png")] bg-no-repeat bg-cover w-auto bg-bottom h-[313px] md:w-[256px] md:h-[313px]   border-t border-transparent '>
+          </div>
+        </div>
+      </section>
 
-                            </div>
-                            <div className='md:w-6/12 md:pl-[14px] grid justify-center leading-44 p-[49px] text-center md:text-left'>
-                              <h1 className="text-[28px] text-black font-bold">Free workshop</h1>
-                              <h5 className="text-[12px] text-black font-bold">Please sign up using the link below:</h5>
-                              <hr className="w-[20px]" />
-                              <p className="text-[12px] text-black leading-normal">
-                              Workshops will occur every other month, so check our website for updates!
-                              </p>
-                              <p className="text-[14px] text-black leading-normal">
-                              <b> Date:</b> November 15, 2024 <br />
-                              <b>Time:</b> 10:00 AM - 12:00 PM
-                              </p>
-                          </div>
-                      </div>
+      <section className="w-full  bg-cover bg-center bg-[url('/28.png')]">
+        <div className="container mx-auto container max-w-[1480px]">
+          <div className="flex md:p-[105px] md:pb-[180px] flex-col md:flex-row h-full">
+            <div className=" w-full md:w-1/2 p-2 md:p-2 flex flex-col justify-center">
+              <h2 className="font-bold text-gray-800 text-3xl md:text-[56px] leading-tight mb-4">
+                Discover Your Design<br />
+                Live Out Your Purpose
+              </h2>
+              <p className="max-w-[376px] md:text-[15px] text-black	 leading-tight mb-6 mt-4">
+                Cities Project Global is an international organization dedicated to awakening individuals to their God-given purpose. Become equipped to  live out your design and transform your community – no matter what your area of work is.</p>
+              <div className="flex flex-col md:flex-row md:mx-0 mx-auto">
+                <button className="w-full md:w-auto flex items-center gap-2.5 text-black     text-lg  font-extrabold rounded mb-4 md:mb-0 md:mr-4">
+                  Learn More
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+                    <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+                      <path d="M1 13 13 1M4 1h9v9"></path>
+                    </g>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div
+              className="w-full md:w-1/2  bg-cover bg-center " >
+              <div className="inner_Sec_div relative">
+                <div className='flex flex-col '>
 
-                      <div className='md:w-6/12 flex flex-col md:flex-row ' >
-                      <div className='md:w-6/12 pl-[14px] grid justify-center md:text-left text-center p-[23px] bg-[#224334]'>
-                      <h3 className="text-[28px] text-white font-bold">Leadership Circle</h3>
-                      <h5 className="text-[12px] text-white font-bold">Flagship Program</h5>
-                      <hr className="w-[20px] md:mx-0 mx-auto" />
-                      <div className='flex flex-col md:flex-row md:gap-[10px] gap-[28px] items-center md:items-end'>
-                      
-                      <button className="md:w-1/2 float-left bg-[#A1CF5F] pl-[20px] pr-[20px] mt-[10px] h-[39px] rounded-[5px] text-black text-[13px]">Apply Now</button>
-                      <img src="/103.jpg" alt="" className='md:w-1/2 ' />
-                      </div>
-                      </div>
-                      <div className='md:w-6/12 pl-[14px] grid justify-center md:text-left text-center p-[23px] bg-[#a1cf5f]'>
-                      <h3 className="text-[28px] text-black font-bold">VantagePoint™</h3>
-                      <h5 className="text-[12px] text-black font-bold">A Small Group Discovery Series</h5>
-                      <hr className="w-[20px] md:mx-0 mx-auto" />
-                      <div className='flex flex-col md:flex-row md:gap-[10px] gap-[28px] items-center md:items-end'>
-                      
-                      <button className="md:w-1/2 md:float-left pl-[20px] pr-[20px] mt-[10px] bg-[#fff] h-[39px] rounded-[5px] text-black text-[13px]">Apply Now</button>
-                      <img src="/31.png" alt="" className='md:w-1/2 ' />
-                      </div>
-                      </div>
+                  <img src='/Group 805.png' className='md:w-4/12 w-[40%] bottom-0  p-4 h-auto absolute md:absolute' />
+                  <img src='/26.png' className='w-8/12  p-4  self-end ' />
                 </div>
-                </div></div>
 
-                <div className="container mx-auto">  <div className="container w-[89%] mx-auto pt-[30px] pt-[30px] md:pt-[100px] md:pb-[100px]">
-                          <h1 className="text-[30px] md:text-[36px] pb-15 text-black font-bold leading-[40.09px] text-center">
-                          Confused over your calling?<br className="hidden md:block" />
-                          Is ministry the only work that 'counts'?
-                          </h1>
-                    <div className=" pl-[14px] flex items-center p-[23px] ">
-                        <div className=" md:w-6/12 md:flex md:gap-3 md:items-center md:justify-center">
-                              <div className=" md:w-6/12 p-2" >
-                                  <img src="/32.png" alt="" className='md:h-auto mx-auto md:mx-0 h-[100%]' />
-                                </div>
+              </div>
 
-                          <div className=" md:w-6/12 ">
-                              <h3 className="text-[13px] bg-[#a1cf5f] text-black text-center mx-auto md:mx-0 w-[55%] rounded-[20px]">Be Awakened</h3>
-                              <h5 className="text-[15px] pt-3 text-black  text-center md:text-left font-bold">Gain a New Perspective</h5>
-                              <p className="text-[12px] text-black text-center md:text-left leading-normal">Our programs are built on a bedrock of scripture, 
-                                designed to help people look at the 
-                                relationship between faith, work, and their unique place in it all through a new lens.</p>
-                          </div>
+            </div>
+          </div>
 
-                      </div>
-                  </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto  max-w-[1480px]">               <div className='w-[91%] md:mt-[-130px] mt-[50px] mx-auto flex flex-col md:flex-row border border-black border-solid'>
+        <div className=' flex flex-col md:flex-row md:w-6/12 bg-white '>
+          <div className='w-6/12  bg-[url("/30.png")] bg-no-repeat bg-cover w-auto bg-bottom h-[313px] md:w-[256px] md:h-[313px]   border-t border-transparent '>
+
+          </div>
+          <div className='md:w-6/12 md:pl-[14px] py-4 gap-0  text-center md:text-left'>
+            <h1 className="text-[32px] text-black leading-none mt-3 ">Free workshop</h1>
+            <h5 className="text-[16px] text-black font-bold mt-2">Please sign up using the link below:</h5>
+            <hr className="w-[20px mt-2" />
+            <p className="text-[14px] text-black leading-normal my-5">
+              Workshops will occur every other month, so check our website for updates!
+            </p>
+            <p className="text-[14px] text-black leading-normal mb-4">
+              <b> Date:</b> November 15, 2024 <br />
+              <b>Time:</b> 10:00 AM - 12:00 PM
+            </p>
+            <button className="container max-w-[109px] flex items-center gap-2.5 justify-center  md:w-1/2 float-left bg-[#A1CF5F] mt-[10px] h-[40px] rounded-[5px] font-bold text-black text-[14px]">Sign up <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.40728 11.206L9.8764 3.73689L9.8764 10.2632C9.8764 10.7847 10.3044 11.2127 10.8259 11.2127C10.9498 11.2128 11.0724 11.1885 11.1869 11.1412C11.3013 11.0938 11.4053 11.0244 11.4929 10.9368C11.5805 10.8493 11.6499 10.7453 11.6972 10.6308C11.7446 10.5164 11.7689 10.3937 11.7688 10.2699L11.7688 1.4567C11.7689 1.33285 11.7446 1.21019 11.6972 1.09574C11.6499 0.981295 11.5805 0.877308 11.4929 0.789732C11.4053 0.702157 11.3013 0.632713 11.1869 0.585376C11.0724 0.538039 10.9498 0.513738 10.8259 0.513866L2.01276 0.513865C1.88894 0.513865 1.76634 0.538253 1.65195 0.585635C1.53756 0.633017 1.43362 0.702465 1.34607 0.790016C1.25852 0.877566 1.18907 0.981504 1.14169 1.09589C1.09431 1.21028 1.06992 1.33288 1.06992 1.4567C1.06992 1.58051 1.09431 1.70312 1.14169 1.81751C1.18907 1.9319 1.25852 2.03584 1.34607 2.12339C1.43362 2.21094 1.53756 2.28038 1.65195 2.32777C1.76634 2.37515 1.88894 2.39954 2.01276 2.39954L8.53905 2.39954L1.06992 9.86866C0.702152 10.2364 0.702151 10.8382 1.06992 11.206C1.4377 11.5738 2.03951 11.5738 2.40728 11.206Z" fill="black" />
+            </svg>
+            </button>
+
+          </div>
+        </div>
+
+        <div className='md:w-6/12 flex flex-col md:flex-row ' >
+          <div className='md:w-6/12  md:text-left text-center py-4 px-4 bg-[#224334]'>
+            <h3 className="text-[32px] text-white  leading-none mt-3">Leadership Circle</h3>
+            <h5 className="text-[16px] text-white font-bold  mt-2">Flagship Program</h5>
+            <hr className="w-[20px] md:mx-0 mx-auto" />
+            <div className='flex flex-col md:flex-row md:gap-[10px] gap-[28px] items-center justify-between md:items-end mt-22'>
+
+            <button className="container max-w-[109px] flex items-center gap-2.5 justify-center  md:w-1/2 float-left bg-[#A1CF5F] mt-[10px] h-[40px] rounded-[5px] font-bold text-black text-[14px]">Apply Now <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.40728 11.206L9.8764 3.73689L9.8764 10.2632C9.8764 10.7847 10.3044 11.2127 10.8259 11.2127C10.9498 11.2128 11.0724 11.1885 11.1869 11.1412C11.3013 11.0938 11.4053 11.0244 11.4929 10.9368C11.5805 10.8493 11.6499 10.7453 11.6972 10.6308C11.7446 10.5164 11.7689 10.3937 11.7688 10.2699L11.7688 1.4567C11.7689 1.33285 11.7446 1.21019 11.6972 1.09574C11.6499 0.981295 11.5805 0.877308 11.4929 0.789732C11.4053 0.702157 11.3013 0.632713 11.1869 0.585376C11.0724 0.538039 10.9498 0.513738 10.8259 0.513866L2.01276 0.513865C1.88894 0.513865 1.76634 0.538253 1.65195 0.585635C1.53756 0.633017 1.43362 0.702465 1.34607 0.790016C1.25852 0.877566 1.18907 0.981504 1.14169 1.09589C1.09431 1.21028 1.06992 1.33288 1.06992 1.4567C1.06992 1.58051 1.09431 1.70312 1.14169 1.81751C1.18907 1.9319 1.25852 2.03584 1.34607 2.12339C1.43362 2.21094 1.53756 2.28038 1.65195 2.32777C1.76634 2.37515 1.88894 2.39954 2.01276 2.39954L8.53905 2.39954L1.06992 9.86866C0.702152 10.2364 0.702151 10.8382 1.06992 11.206C1.4377 11.5738 2.03951 11.5738 2.40728 11.206Z" fill="black" />
+            </svg>
+            </button>
+              <img src="/103.jpg" alt="" className='object-cover w-[106px] h-[106px]' />
+            </div>
+          </div>
+          <div className='md:w-6/12 py-4 px-4  md:text-left  bg-[#a1cf5f]'>
+            <h3 className="text-[32px] text-black   leading-none mt-3">VantagePoint™</h3>
+            <h5 className="text-[16px] text-black font-bold  mt-2">A Small Group Discovery Series</h5>
+            <hr className="w-[20px] md:mx-0 mx-auto" />
+            <div className='flex flex-col md:flex-row md:gap-[10px] gap-[28px] items-center  justify-between md:items-end mt-22'>
+
+            <button className="container max-w-[109px] flex items-center gap-2.5 justify-center  md:w-1/2 float-left bg-[#FFFFFF] mt-[10px] h-[40px] rounded-[5px] font-bold text-black text-[14px]">Apply Now <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.40728 11.206L9.8764 3.73689L9.8764 10.2632C9.8764 10.7847 10.3044 11.2127 10.8259 11.2127C10.9498 11.2128 11.0724 11.1885 11.1869 11.1412C11.3013 11.0938 11.4053 11.0244 11.4929 10.9368C11.5805 10.8493 11.6499 10.7453 11.6972 10.6308C11.7446 10.5164 11.7689 10.3937 11.7688 10.2699L11.7688 1.4567C11.7689 1.33285 11.7446 1.21019 11.6972 1.09574C11.6499 0.981295 11.5805 0.877308 11.4929 0.789732C11.4053 0.702157 11.3013 0.632713 11.1869 0.585376C11.0724 0.538039 10.9498 0.513738 10.8259 0.513866L2.01276 0.513865C1.88894 0.513865 1.76634 0.538253 1.65195 0.585635C1.53756 0.633017 1.43362 0.702465 1.34607 0.790016C1.25852 0.877566 1.18907 0.981504 1.14169 1.09589C1.09431 1.21028 1.06992 1.33288 1.06992 1.4567C1.06992 1.58051 1.09431 1.70312 1.14169 1.81751C1.18907 1.9319 1.25852 2.03584 1.34607 2.12339C1.43362 2.21094 1.53756 2.28038 1.65195 2.32777C1.76634 2.37515 1.88894 2.39954 2.01276 2.39954L8.53905 2.39954L1.06992 9.86866C0.702152 10.2364 0.702151 10.8382 1.06992 11.206C1.4377 11.5738 2.03951 11.5738 2.40728 11.206Z" fill="black" />
+            </svg>
+            </button>              
+            <img src="/31.png" alt=""  className='object-cover w-[106px] h-[106px]' />
+            </div>
+          </div>
+        </div>
+      </div></div>
+
+      <div className="container max-w-[1480px] mx-auto">  <div className="container w-[89%] mx-auto pt-[30px] pt-[30px] md:pt-[100px] md:pb-[100px]">
+        <h1 className="text-[48px] md:text-[36px] pb-15 text-black font-bold leading-[40.09px] text-center">
+          Confused over your calling?<br className="hidden md:block" />
+          Is ministry the only work that 'counts'?
+        </h1>
+        <div className=" pl-[14px] flex items-center p-[23px] ">
+          <div className=" md:w-6/12 md:flex md:gap-3 md:items-center md:justify-center">
+            <div className=" md:w-6/12 p-2" >
+              <img src="/32.png" alt="" className='md:h-auto mx-auto md:mx-0 h-[100%]' />
+            </div>
+
+            <div className=" md:w-6/12 ">
+              <span className="text-[13px] bg-[#a1cf5f] text-black text-center mx-auto md:mx-0 w-[55%] rounded-[20px] px-3 py-1 font-bold">Be Awakened</span>
+              <h5 className="text-[20px] pt-3 text-black  text-center md:text-left font-bold">Gain a New Perspective</h5>
+              <p className="text-[16px] text-black text-center md:text-left leading-tight mt-3">Our programs are built on a bedrock of scripture,
+                designed to help people look at the
+                relationship between faith, work, and their unique place in it all through a new lens.</p>
+            </div>
+
+          </div>
+        </div>
 
 
-                      <div className=" pl-[14px] flex items-center p-[23px] justify-end md:mt-[-80px]">      
-                          <div className="md:w-6/12 grid md:flex  items-center justify-center">
-                                    <div className="md:w-6/12 float-right md:order-1 order-2">
-                                      <h3 className="text-[13px] bg-[#a1cf5f] mx-auto md:mx-0 text-black text-center w-[55%] rounded-[20px]">BE EQUIPPED</h3>
-                                      <h5 className="text-[15px] pt-3 text-center md:text-left  text-black font-bold">Live an Integrated Life</h5>
-                                      <p className="text-[12px] text-center md:text-left text-black leading-normal">Our methods are rich with practical tools for becoming a modern-day apprentice of Jesus, dissolving the false distinction between faith and work.</p>
-                                    </div>
-                                      <div className="md:w-6/12 p-2 md:order-2" >
-                                          <img src="/33.png" alt="" className='md:h-auto mx-auto md:mx-0 h-[100%]' />
-                                      </div>
-                          </div >
-                      </div>
+        <div className=" pl-[14px] flex items-center p-[23px] justify-end md:mt-[-80px]">
+          <div className="md:w-6/12 grid md:flex  items-center justify-center">
+            <div className="md:w-6/12 float-right md:order-1 order-2">
+              <span className="text-[13px] bg-[#a1cf5f] mx-auto md:mx-0 text-black text-center w-[55%] rounded-[20px] px-3 py-1 font-bold">BE EQUIPPED</span>
+              <h5 className="text-[20px] pt-3 text-center md:text-left  text-black font-bold">Live an Integrated Life</h5>
+              <p className="text-[16px] text-center md:text-left text-black leading-normal mt-3 pe-6">Our methods are rich with practical tools for becoming a modern-day apprentice of Jesus, dissolving the false distinction between faith and work.</p>
+            </div>
+            <div className="md:w-6/12 p-2 md:order-2" >
+              <img src="/33.png" alt="" className='md:h-auto mx-auto md:mx-0 h-[100%]' />
+            </div>
+          </div >
+        </div>
 
 
-                    <div className=" pl-[14px] flex items-center p-[23px]  md:mt-[-70px]">
-                        <div className="md:w-6/12 md:flex md:items-center md:justify-center grid"> 
-                          
-                          <div className="md:w-6/12 order-2 md:order-1">
-                            <h3 className="text-[13px] bg-[#a1cf5f] text-black text-center mx-auto md:mx-0  w-[55%] rounded-[20px]">BE UNLEASHED</h3>
-                            <h5 className="text-[15px] pt-3  text-black text-center md:text-left font-bold">Transform Your City</h5>
-                            <p className="text-[12px] text-black text-center md:text-left leading-normal">Our framework is designed to give you actionable steps toward assessing where your city is in need and how you can bring redemption to it.</p>
-                          </div>
-                          <div className="md:w-6/12 p-2 order-1 md:order-2" >
-                          <img src="/34.png" alt="" className='md:h-auto mx-auto md:mx-0 h-[100%]' />
-                          </div>
-                    </div>
-                  </div>
+        <div className=" pl-[120px] flex items-center p-[23px]  md:mt-[-70px]">
+          <div className="md:w-6/12 md:flex md:items-center md:justify-center grid">
+
+            <div className="md:w-6/12 order-2 md:order-1">
+              <span className="text-[13px] bg-[#a1cf5f] text-black text-center mx-auto md:mx-0  w-[55%] rounded-[20px] px-3 py-1 font-bold">BE UNLEASHED</span>
+              <h5 className="text-[20px] pt-3  text-black text-center md:text-left font-bold">Transform Your City</h5>
+              <p className="text-[16px] text-black text-center md:text-left leading-normal  mt-3 ">Our framework is designed to give you actionable steps toward assessing where your city is in need and how you can bring redemption to it.</p>
+            </div>
+            <div className="md:w-6/12 p-2 order-1 md:order-2" >
+              <img src="/34.png" alt="" className='md:h-auto mx-auto md:mx-0 h-[100%]' />
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+      <div className="container mx-auto max-w-[1480px]" >   
+          <div className="flex flex-col md:flex-row w-[89%] mx-auto items-center rounded-[5px]" style={{ backgroundColor: 'rgb(3, 4, 2)' }}>
+        <div className="md:w-5/12 p-[40px]">
+          <span className="text-[20px] bg-[#fff]   text-black font-bold mx-auto md:mx-0 text-center w-[45%] rounded-[20px] px-4 py-1 font-bold">About the Book</span>
+          <h5 className="md:text-[48px] text-[26px]  text-[#A1CF5F] md:text-left text-center  pb-[15px] font-bold pt-[20px] md:leading-10 ">THE INTERSECTION</h5>
+          <p className="md:text-[48px]  text-[22px] md:text-left text-center text-white md:leading-normal">
+            FAITH, WORK,<br className="hidden md:block" />
+            AND LIFE</p>
+          <img src='/35.png' className="md:h-[150px] mx-auto md:mx-0 h-[83px]" />
+
+          <h5 className="text-[30px] text-white md:text-left text-center font-bold pb-2 md:pb-5">Bob Varney</h5>
+          <h5 className="text-[12px] text-white md:text-left text-center font-bold">Cities Project Global CEO, President</h5>
+        </div>
+        <div className="md:w-7/12  pb-10 md:p-10">
+          <img src='/36.png' className="" />
+          <div className="md:float-right md:mt-[-50px] mt-5 z-99999 relative" >
+            <button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">Buy Now <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+              <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+                <path d="M1 13 13 1M4 1h9v9"></path>
+              </g>
+            </svg></button><br className="hidden md:block" />
+            <button className="mx-auto mt-[21px] md:mx-0 md:mt-0   flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]">Read a Sample Chapter <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+              <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+                <path d="M1 13 13 1M4 1h9v9"></path>
+              </g>
+            </svg></button>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div className="container mx-auto" >  <section className="md:pt-[150px] pt-[50px] border border-x-0 border-y-stroke bg-alabaster py-11 dark:border-y-strokedark dark:bg-black">
+        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+          <h5 className="md:text-[48px] text-[30px] text-black text-center md:pb-[30px] font-bold pb-2">Our Partners</h5>
+          <h5 className="text-[15px] text-black text-center">Be the first to know about Cities Project Global news, programs, and impact</h5>
+          <div className=" md:hidden grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 md:w-[63%] mx-auto pt-[29px]">
+            <img src="/37.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+            <img src="/38.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+            <img src="/39.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+            <img src="/40.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+            <img src="/41.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+
+            <img src="/43.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+            <img src="/38.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+            <img src="/37.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+
+            <div className=" relative bg-black text-white p-[27px] w-[150px] h-[150px] flex items-center justify-center mx-auto">
+              <div className="text-left absolute bottom-[15px] w-[89%]">
+                <h5 className="text-[12px] font-bold pb-2">Become a Partner</h5>
+                <h3 className="text-[10px] font-bold">Join Now!</h3>
               </div>
             </div>
 
+          </div>
 
-                 <div className="container mx-auto" >     <div className="flex flex-col md:flex-row w-[89%] mx-auto items-center rounded-[5px]" style={{ backgroundColor: 'rgb(3, 4, 2)' }}>
-                        <div className="md:w-4/12 p-[40px]">
-                        <h3 className="text-[13px] bg-[#fff]   text-black font-bold mx-auto md:mx-0 text-center w-[45%] rounded-[20px]">About the Book</h3>
-                          <h5 className="md:text-[35px] text-[26px]  text-[#A1CF5F] md:text-left text-center  pb-[15px] font-bold pt-[20px] md:leading-10 ">THE INTERSECTION</h5>
-                          <p className="md:text-[35px]  text-[22px] md:text-left text-center text-white md:leading-normal">
-                              FAITH, WORK,<br className="hidden md:block"/>
-                              AND LIFE</p>
-                        <img src='/35.png' className="md:h-[150px] mx-auto md:mx-0 h-[83px]" />
-                      
-                        <h5 className="text-[30px] text-white md:text-left text-center font-bold pb-2 md:pb-5">Bob Varney</h5>
-                        <h5 className="text-[12px] text-white md:text-left text-center font-bold">Cities Project Global CEO, President</h5>
-                        </div>
-                        <div className="md:w-8/12  pb-10 md:p-10">
-                        <img src='/36.png' className="" />
-                        <div className="md:float-right md:mt-[-50px] mt-5 z-99999 relative" >
-                          <button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">Buy Now <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
-                <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
-                  <path d="M1 13 13 1M4 1h9v9"></path>
-                </g>
-              </svg></button><br className="hidden md:block" />
-                        <button className="mx-auto mt-[21px] md:mx-0 md:mt-0   flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]">Read a Sample Chapter <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
-                <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
-                  <path d="M1 13 13 1M4 1h9v9"></path>
-                </g>
-              </svg></button>
-                        </div>
-                        </div>
-                      </div>
-                      </div>
+          {/* desktop div start */}
+          <div className="hidden md:block py-10 ">
+            <div className="flex justify-center mx-auto w-fit mb-3 gap-3">
+              <img src="/37.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
+              <img src="/38.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
+              <img src="/39.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
+              <img src="/40.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
+              <img src="/41.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
+            </div>
 
-                    <div className="container mx-auto" >  <section className="md:pt-[150px] pt-[50px] border border-x-0 border-y-stroke bg-alabaster py-11 dark:border-y-strokedark dark:bg-black">
-                      <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-                      <h5 className="md:text-[48px] text-[30px] text-black text-center md:pb-[30px] font-bold pb-2">Our Partners</h5>
-                      <h5 className="text-[15px] text-black text-center">Be the first to know about Cities Project Global news, programs, and impact</h5>
-                      <div className=" md:hidden grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 md:w-[63%] mx-auto pt-[29px]">
-  <img src="/37.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-  <img src="/38.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-  <img src="/39.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-  <img src="/40.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-  <img src="/41.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+            <div className="flex justify-center items-center mx-auto w-fit mb-3 gap-3 ">
+              <div className="flex justify-center gap-3">
+                <img src="/43.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
+                <img src="/38.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
+                <img src="/37.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
+              </div>
+              <div className="relative bg-black text-white p-[27px] w-[150px] h-[150px] flex items-center justify-center mx-auto ">
+                <div className="text-left absolute bottom-[15px] w-[89%]">
+                  <h5 className="text-[12px] font-bold pb-2">Become a Partner</h5>
+                  <h3 className="text-[10px] font-bold">Join Now!</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Desktop div end */}
+          {/* / */}
 
-  <img src="/43.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-  <img src="/38.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-  <img src="/37.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+          <section className=" md:flex w-[97%] mt-[54px] mx-auto  items-center justify-center gap-9 bg-[#000]">
+            <div className=" md:w-4/12 p-5">
+              <h2 className={`${anton.className} text-[#A1CF5F] text-[40px] uppercase leading-[50px]`}>God cares not <br />only about <br />redeeming souls<br /> but also about<br /> restoring his <br />creation . . .</h2>
+              <p className="text-white text-[10px] ">We are called to help sustain and  renew his creation, to uphold the created institutions of family and  society, to pursue science and scholarship, to create works of art and  beauty, and to heal and help those suffering from the results of the  Fall.</p>
+              <p className="text-white text-[13px] pt-[29px] ">--- Charles colson & nancy pearcey</p>
+              <p className="text-white text-[10px] ">How then shall we live?</p>
+            </div>
+            <div className=" md:w-8/12">
+              <img src="/44.jpg" className="object-contain" />
+            </div>
 
-  <div className=" relative bg-black text-white p-[27px] w-[150px] h-[150px] flex items-center justify-center mx-auto">
-    <div className="text-left absolute bottom-[15px] w-[89%]">
-      <h5 className="text-[12px] font-bold pb-2">Become a Partner</h5>
-      <h3 className="text-[10px] font-bold">Join Now!</h3>
-    </div>
-  </div>
+          </section>
 
-</div>
+        </div>
+      </section>
+      </div>
 
-{/* desktop div start */}
-<div className="hidden md:block py-10 ">
-<div className="flex justify-center mx-auto w-fit mb-3 gap-3">
-  <img src="/37.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
-  <img src="/38.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
-  <img src="/39.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
-  <img src="/40.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
-  <img src="/41.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
-</div>
+      <div className='container mx-auto hidden md:block'>      <div className="w-[100%] mx-auto">
+        <h2 className="font-inter text-4xl font-bold leading-[58.09px] p-8 text-black text-left text-center decoration-skip-ink-none">Stories of Transformation</h2>
+        <div className=" md:flex">
+          <div className=" md:w-3/12 relative grid place-items-center p-10">
+            <img src="/46.png" className="object-contain" />
+            <p className="absolute top-13 left-12 text-white z-max bg-black px-2 py-0 rounded-full text-sm">5 Sep 2024</p>
+            <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">Receiving and Reflecting God’s <br />Inherent Love for Us</h2>
+            <a href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+              <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+                <path d="M1 13 13 1M4 1h9v9"></path>
+              </g>
+            </svg></a>
+          </div>
+          <div className=" md:w-6/12 relative grid place-items-center p-10">
+            <img src="/45.png" className="object-contain" />
+            <p className="absolute top-13 left-12 text-white z-max bg-black px-2 py-0 rounded-full text-sm">5 Sep 2024</p>
+            <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">Healing the Trauma of Homelessness Through<br />
+              Affordable Housing</h2>
+            <a href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+              <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+                <path d="M1 13 13 1M4 1h9v9"></path>
+              </g>
+            </svg></a>
+          </div>
+          <div className=" md:w-3/12 relative grid place-items-center p-10">
+            <img src="/47.png" className="object-contain" />
+            <p className="absolute top-13 left-12 text-white z-max bg-black px-2 py-0 rounded-full text-sm">5 Sep 2024</p>
+            <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">In the Midst of War, Love Comes <br /> Through Action</h2>
+            <a href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+              <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+                <path d="M1 13 13 1M4 1h9v9"></path>
+              </g>
+            </svg></a>
+          </div>
+        </div>
+        <img src='/48.png' className="table p-[61px] items-center m-auto" />
+      </div>
 
-<div className="flex justify-center items-center mx-auto w-fit mb-3 gap-3 ">
-  <div className="flex justify-center gap-3">
-    <img src="/43.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
-    <img src="/38.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
-    <img src="/37.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
-  </div>
-  <div className="relative bg-black text-white p-[27px] w-[150px] h-[150px] flex items-center justify-center mx-auto ">
-    <div className="text-left absolute bottom-[15px] w-[89%]">
-      <h5 className="text-[12px] font-bold pb-2">Become a Partner</h5>
-      <h3 className="text-[10px] font-bold">Join Now!</h3>
-    </div>
-  </div>
-</div>
-</div>
-{/* Desktop div end */}
-              {/* / */}
-
-              <section className=" md:flex w-[97%] mt-[54px] mx-auto  items-center justify-center gap-9 bg-[#000]">
-                  <div className=" md:w-4/12 p-5">
-                    <h2 className={`${anton.className} text-[#A1CF5F] text-[40px] uppercase leading-[50px]`}>God cares not <br />only about <br />redeeming souls<br /> but also about<br /> restoring his <br />creation . . .</h2>
-                    <p className="text-white text-[10px] ">We are called to help sustain and  renew his creation, to uphold the created institutions of family and  society, to pursue science and scholarship, to create works of art and  beauty, and to heal and help those suffering from the results of the  Fall.</p>
-                    <p className="text-white text-[13px] pt-[29px] ">--- Charles colson & nancy pearcey</p>
-                    <p className="text-white text-[10px] ">How then shall we live?</p>
-                  </div>
-                  <div className=" md:w-8/12">
-                  <img src="/44.jpg" className="object-contain" />
-                  </div>
-
-              </section>
-
-                      </div>
-                    </section>
-                    </div>
-
-           <div className='container mx-auto hidden md:block'>      <div className="w-[100%] mx-auto">
-                  <h2 className="font-inter text-4xl font-bold leading-[58.09px] p-8 text-black text-left text-center decoration-skip-ink-none">Stories of Transformation</h2>
-                  <div className=" md:flex">
-                    <div className=" md:w-3/12 relative grid place-items-center p-10"> 
-                    <img src="/46.png" className="object-contain" /> 
-                    <p className="absolute top-13 left-12 text-white z-max bg-black px-2 py-0 rounded-full text-sm">5 Sep 2024</p>
-                      <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">Receiving and Reflecting God’s <br />Inherent Love for Us</h2>
-                      <a href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
-                <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
-                  <path d="M1 13 13 1M4 1h9v9"></path>
-                </g>
-              </svg></a>
-                    </div>
-                    <div className=" md:w-6/12 relative grid place-items-center p-10"> 
-                    <img src="/45.png" className="object-contain" />
-                    <p className="absolute top-13 left-12 text-white z-max bg-black px-2 py-0 rounded-full text-sm">5 Sep 2024</p>
-                    <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">Healing the Trauma of Homelessness Through<br />
-                    Affordable Housing</h2>
-                    <a href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
-                <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
-                  <path d="M1 13 13 1M4 1h9v9"></path>
-                </g>
-              </svg></a>
-                    </div>
-                    <div className=" md:w-3/12 relative grid place-items-center p-10">
-                    <img src="/47.png" className="object-contain" /> 
-                    <p className="absolute top-13 left-12 text-white z-max bg-black px-2 py-0 rounded-full text-sm">5 Sep 2024</p>
-                    <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">In the Midst of War, Love Comes <br /> Through Action</h2>
-                    <a href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
-                <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
-                  <path d="M1 13 13 1M4 1h9v9"></path>
-                </g>
-              </svg></a>
-                    </div>
-                  </div>
-                  <img src='/48.png' className="table p-[61px] items-center m-auto" />
-                  </div>
-
-                  </div> 
-                  <PostSlider />
-                  {/* <section className="bg-white dark:bg-gray-900 bg-[#F5F5F5] w-[90%] mx-auto">
+      </div>
+      <PostSlider />
+      {/* <section className="bg-white dark:bg-gray-900 bg-[#F5F5F5] w-[90%] mx-auto">
                 <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
                     <figure className="max-w-screen-md mx-auto">
                   <div className="flex mx-auto justify-center"> <svg width="49" height="68" viewBox="0 0 49 68" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -355,11 +373,11 @@ export default function Home() {
               </section> */}
 
 
-              <Testimonial />
-              <VideoCarousel />
+      <Testimonial />
+      <VideoCarousel />
 
-                    <Newsletter/>
-              {/* <div className=" md:flex w-[89%] mx-auto bg-[#000000] p-5">
+      <Newsletter />
+      {/* <div className=" md:flex w-[89%] mx-auto bg-[#000000] p-5">
                     <div className="md:w-6/12 md:p-30">
                     <strong className={`${anton.className} uppercase md:text-[55px] text-[41px] text-white font-light leading-[50px]`}>
                     Join Our<br /> Community of Culturemakers
@@ -378,8 +396,8 @@ export default function Home() {
                     </div>
 
                   </div> */}
-                    {/* body end */}
+      {/* body end */}
 
-                  </main>
+    </main>
   );
 }
