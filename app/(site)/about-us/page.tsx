@@ -8,15 +8,15 @@ const anton = Anton({ weight: '400', subsets: ["latin"] });
 export default function NewPage() {
     return (
         <main className="md:w-[91%] mx-auto"> 
-                    <h1 className="md:py-[42px] py-[30px] md:text-[40px] text-[25px] font-bold text-center text-black md:w-[52%] p-5 mx-auto md:leading-[49px] ">Integrate your faith at work
-                    Build flourishing cities</h1>
+                    <h1 className="md:py-[42px] mt-4 py-[30px] md:text-[64px] text-[64px] font-bold  leading-[77px] text-center text-black  p-5 mx-auto md:leading-[77px] ">Integrate your faith at work
+            <br />         Build flourishing cities</h1>
                   <section className="md:py-[42px]">
                   <img src="/55.png" className=" mx-auto" alt="" />
                   </section >
 
-              <div className="container mx-auto">  <section className="md:flex md:gap-20 md:py-[32px] ">
+              <div className="container mx-auto max-w-[1480px]">  <section className="md:flex md:gap-20 md:py-[32px] ">
                                 <div className="md:w-2/3 ">
-                                <h3 className="md:text-[20px] text-center md:text-left text-[23px] text-black leading-[36px] p-[22px]">
+                                <h3 className="md:text-[32px] text-center md:text-left text-[23px] text-black leading-[49px] p-[22px]">
                         According to Barna Research, only 1% of Christians
                         <div className="inline-flex  space-x-1">
                           <img src="/53.png" className="w-[30px] h-[30px]" />
@@ -34,10 +34,10 @@ export default function NewPage() {
                                     <img src="/566.png" alt="" />
                                     </div>
                                     <div className=" md:w-2/3 pt-3">
-                                      <h4 className="text-[14px] text-center md:text-left  text-black font-normal leading-[18px] text-left">
+                                      <h4 className="text-[16px] text-center md:text-left  text-black font-normal leading-[23px] text-left">
                                       That represents an enormous opportunity to create culturally widespread impact, but roughly 65% of believers are disengaged from their work and view it as separate from their faith. This reveals that most Christians don’t realize that work was designed by God as a partnered effort toward restoring the world to its original  goodness. But when people do realize that faith and work are designed by God to be integrated, work becomes an act of worship, and everything changes – lives, families, and entire.
                                       </h4>
-                                      <p className="text-[13px] text-center md:text-left  pt-[19px] md:w-[57%] text-black  font-bold leading-[18px] text-left pb-3 md:pb-0">
+                                      <p className="text-[16px] text-center md:text-left  pt-[19px] md:w-[57%] text-black  font-bold leading-[23px] text-left pb-3 md:pb-0">
                                       We’re here to help leaders identify their unique position in God’s story and fully integrate their faith and work lives, enabling them to impact their communities and cities on a systemic level.
                                       </p>
                                       <a href="#" className=" flex mx-auto md:mx-0 items-center gap-2.5 w-[fit-content] inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">Read a Sample Chapter<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
@@ -50,13 +50,13 @@ export default function NewPage() {
              </section>
              </div>
 
-             <div className="container mx-auto">
+             <div className="container mx-auto  max-w-[1480px]">
              <section className="md:py-[42px] p-5 md:p-0">
                   <img src="/64.png" alt="" className="mx-auto" />
              </section>
             </div>
 
-            <div className="container mx-auto">
+            <div className="container mx-auto  max-w-[1480px]">
                  <section className="md:flex md:py-[32px] ">  
                           <div className="md:w-1/2 relative">
                               <div className="md:absolute p-3 md:p-10 md:p-0    bottom-0  text-black font-bold">

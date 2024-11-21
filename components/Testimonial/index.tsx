@@ -15,7 +15,7 @@ import { testimonialData } from "./testimonialData";
 const Testimonial = () => {
   return (
     <>
-      <section>
+      <section className="max-w-[1480px] mx-auto bg-[#F5F5F5] h-[600px] flex items-center justify-center mb-20 hover:cursor-[url('https://example.com/cursor.png'),_auto]">
         <motion.div
           variants={{
             hidden: {

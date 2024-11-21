@@ -214,7 +214,7 @@ export default function Home() {
         <div className="md:w-5/12 p-[40px]">
           <span className="text-[20px] bg-[#fff]   text-black font-bold mx-auto md:mx-0 text-center w-[45%] rounded-[20px] px-4 py-1 font-bold">About the Book</span>
           <h5 className="md:text-[48px] text-[26px]  text-[#A1CF5F] md:text-left text-center  pb-[15px] font-bold pt-[20px] md:leading-10 ">THE INTERSECTION</h5>
-          <p className="md:text-[48px]  text-[22px] md:text-left text-center text-white md:leading-normal">
+          <p className="md:text-[48px]  text-[22px] md:text-left text-center text-white md:leading-normal font-bold">
             FAITH, WORK,<br className="hidden md:block" />
             AND LIFE</p>
           <img src='/35.png' className="md:h-[150px] mx-auto md:mx-0 h-[83px]" />
@@ -230,7 +230,7 @@ export default function Home() {
                 <path d="M1 13 13 1M4 1h9v9"></path>
               </g>
             </svg></button><br className="hidden md:block" />
-            <button className="mx-auto mt-[21px] md:mx-0 md:mt-0   flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]">Read a Sample Chapter <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+            <button className="mx-auto mt-[21px] md:mx-0 md:mt-4   flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]">Read a Sample Chapter <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
               <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                 <path d="M1 13 13 1M4 1h9v9"></path>
               </g>
@@ -240,9 +240,9 @@ export default function Home() {
       </div>
       </div>
 
-      <div className="container mx-auto" >  <section className="md:pt-[150px] pt-[50px] border border-x-0 border-y-stroke bg-alabaster py-11 dark:border-y-strokedark dark:bg-black">
+      <div className="container mx-auto max-w-[1480px]" >  <section className="md:pt-[150px] pt-[50px] border border-x-0 border-y-stroke py-11 dark:border-y-strokedark dark:bg-black">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <h5 className="md:text-[48px] text-[30px] text-black text-center md:pb-[30px] font-bold pb-2">Our Partners</h5>
+          <h5 className="md:text-[64px] text-[30px] text-black text-center md:pb-[30px] font-bold pb-2">Our Partners</h5>
           <h5 className="text-[15px] text-black text-center">Be the first to know about Cities Project Global news, programs, and impact</h5>
           <div className=" md:hidden grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 md:w-[63%] mx-auto pt-[29px]">
             <img src="/37.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
@@ -266,24 +266,39 @@ export default function Home() {
 
           {/* desktop div start */}
           <div className="hidden md:block py-10 ">
-            <div className="flex justify-center mx-auto w-fit mb-3 gap-3">
-              <img src="/37.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
-              <img src="/38.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
-              <img src="/39.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
-              <img src="/40.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
-              <img src="/41.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
+            <div className="flex justify-center mx-auto w-fit mb-3 gap-3 md:w-10/12">
+              <div className="max-w-[257px] w-[100%] h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+              <img src="/37.png" className="w-[80px]"  />
+              </div>
+              <div className="max-w-[257px] w-[100%] h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33]  ">
+              <img src="/38.png"  className="w-[80px]" />
+              </div>
+              <div className="max-w-[257px] w-[100%] h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+              <img src="/39.png"  className="w-[80px]" />
+              </div>
+              <div className="max-w-[257px] w-[100%]  h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+              <img src="/40.png"  className="w-[80px]"/>
+              </div>
+              <div className="max-w-[257px] w-[100%]  h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+              <img src="/41.png"  className="w-[80px]" />
+              </div>
             </div>
 
-            <div className="flex justify-center items-center mx-auto w-fit mb-3 gap-3 ">
-              <div className="flex justify-center gap-3">
-                <img src="/43.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
-                <img src="/38.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
-                <img src="/37.png" className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain" />
-              </div>
-              <div className="relative bg-black text-white p-[27px] w-[150px] h-[150px] flex items-center justify-center mx-auto ">
+            <div className="flex justify-center items-center mx-auto w-fit mb-3 gap-3 md:w-8/12">
+            <div className="max-w-[257px] w-[100%]  h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+                <img src="/43.png"  className="w-[80px]"  />
+                </div>
+                <div className="max-w-[257px] w-[100%]  h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+                <img src="/38.png"  className="w-[80px]"  />
+                </div>
+                <div className="max-w-[257px] w-[100%]  h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+                <img src="/37.png"  className="w-[80px]"   />
+                </div>
+             
+              <div className="relative bg-black text-white p-[27px] w-[100%] max-w-[257px] h-[240px] flex items-center justify-center hover:border-[#A1CF5F33]  ">
                 <div className="text-left absolute bottom-[15px] w-[89%]">
-                  <h5 className="text-[12px] font-bold pb-2">Become a Partner</h5>
-                  <h3 className="text-[10px] font-bold">Join Now!</h3>
+                  <h5 className="text-[20px] font-bold pb-2">Become a <br />Partner</h5>
+                  <a className="text-[16px] underline" href="#">Join Now!</a>
                 </div>
               </div>
             </div>
@@ -291,15 +306,15 @@ export default function Home() {
           {/* Desktop div end */}
           {/* / */}
 
-          <section className=" md:flex w-[97%] mt-[54px] mx-auto  items-center justify-center gap-9 bg-[#000]">
+          <section className=" md:flex w-[97%] mt-[54px] mx-auto  bg-[#000]">
             <div className=" md:w-4/12 p-5">
-              <h2 className={`${anton.className} text-[#A1CF5F] text-[40px] uppercase leading-[50px]`}>God cares not <br />only about <br />redeeming souls<br /> but also about<br /> restoring his <br />creation . . .</h2>
-              <p className="text-white text-[10px] ">We are called to help sustain and  renew his creation, to uphold the created institutions of family and  society, to pursue science and scholarship, to create works of art and  beauty, and to heal and help those suffering from the results of the  Fall.</p>
-              <p className="text-white text-[13px] pt-[29px] ">--- Charles colson & nancy pearcey</p>
-              <p className="text-white text-[10px] ">How then shall we live?</p>
+              <h2 className={`${anton.className} text-[#A1CF5F] text-[48px] uppercase leading-[72px]`}>God cares not <br />only about <br />redeeming souls<br /> but also about<br /> restoring his <br />creation . . .</h2>
+              <p className="text-white text-[16px] leading-tight pt-5">We are called to help sustain and  renew his creation, to uphold the created institutions of family and  society, to pursue science and scholarship, to create works of art and  beauty, and to heal and help those suffering from the results of the  Fall.</p>
+              <p className="text-white text-[20px] font-bold pt-[29px] ">--- Charles colson & nancy pearcey</p>
+              <p className="text-white text-[16px] pl-8 ">How then shall we live?</p>
             </div>
-            <div className=" md:w-8/12">
-              <img src="/44.jpg" className="object-contain" />
+            <div className=" md:w-8/12 bg-[url('/44.jpg')]   bg-cover bg-center">
+            
             </div>
 
           </section>
@@ -309,7 +324,7 @@ export default function Home() {
       </div>
 
       <div className='container mx-auto hidden md:block'>      <div className="w-[100%] mx-auto">
-        <h2 className="font-inter text-4xl font-bold leading-[58.09px] p-8 text-black text-left text-center decoration-skip-ink-none">Stories of Transformation</h2>
+        <h2 className="font-inter md:text-[48px] text-[30px] text font-bold leading-[58.09px] p-8 text-black text-left text-center decoration-skip-ink-none">Stories of Transformation</h2>
         <div className=" md:flex">
           <div className=" md:w-3/12 relative grid place-items-center p-10">
             <img src="/46.png" className="object-contain" />

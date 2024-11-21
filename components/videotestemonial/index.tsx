@@ -43,13 +43,13 @@ const VideoCarousel = () => {
     <div className="container mx-auto">
       <section className="md:flex w-[94%] mx-auto">
         <div className="md:w-4/12 md:p-[65px] p-5">
-          <h2 className="font-inter text-[30px] md:text-4xl text-black font-bold leading-[42.09px] md:leading-[58.09px] text-center md:text-left underline-from-font decoration-skip-ink-none">
+          <h2 className="font-inter text-[48px]  text-black font-bold leading-[58.09px] md:leading-[58.09px] text-center md:text-left underline-from-font decoration-skip-ink-none">
             See What’s Happening in Real Time
           </h2>
-          <p className="pr-3 text-gray-900 text-center md:text-left font-extrabold">
+          <p className="py-3 text-[16px] text-gray-900 text-center md:text-left ">
             Stay connected with us through Instagram Reels!
           </p>
-          <p className="flex gap-2 underline text-center md:text-left md:justify-start justify-center text-black font-extrabold">
+          <p className="flex gap-2 text-[16px]  underline text-center md:text-left md:justify-start justify-center text-black font-extrabold">
             Follow along and be part of the journey!
           </p>
         </div>
