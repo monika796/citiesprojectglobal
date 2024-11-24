@@ -66,16 +66,16 @@ export default function NewPage() {
                                 <a href="#" className=" mx-auto md:mx-0 flex  items-center gap-2.5 w-[fit-content] text-center inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">Apply Now<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
                                 </div>
                             </div>
-                            <div className="md:w-1/2 md:p-10 p-3 pb-0"> 
-                                    <h3 className="text-[25px] md:text-[30px] font-bold text-black text-center md:text-left md:leading-[38.09px]">We need Influential Leaders Across All Spheres of Society</h3>
-                                    <p className="text-[13px] text-black leading-[15px] pt-5 text-left">
+                            <div className="md:w-2/3 md:p-10 p-3 pb-0"> 
+                                    <h3 className="text-[25px] md:text-[48px] font-bold text-black text-center md:text-left md:leading-[58.09px]">We need Influential Leaders Across All Spheres of Society</h3>
+                                    <p className="text-[16px] text-black leading-[22px] pt-5 text-left">
                                     Righteous  leaders change their cities through justice, love, and working for the  common good of all – this is part of the foundation of what we teach at  Cities Project Global.
                                     </p>
-                                    <h4 className="text-[13px] text-black font-bold leading-[15px] pt-5  text-center md:text-left">Executives and managers can advocate  for workplace policies that benefit employees who are typically unseen  and underserved in corporate settings</h4>
+                                    <h4 className="text-[16px] text-black font-bold leading-[22px] pt-5  text-center md:text-left">Executives and managers can advocate  for workplace policies that benefit employees who are typically unseen  and underserved in corporate settings</h4>
 
-                                    <h4 className="text-[13px] text-black font-bold leading-[15px] pt-5  text-center md:text-left">Architects and engineers can design  buildings to be accessible all, meeting the maximum safety standards and  in a way that does not negatively impact the environment or pollute  local and global communities</h4>
+                                    <h4 className="text-[16px] text-black font-bold leading-[22px] pt-5  text-center md:text-left">Architects and engineers can design  buildings to be accessible all, meeting the maximum safety standards and  in a way that does not negatively impact the environment or pollute  local and global communities</h4>
 
-                                    <h4 className="text-[13px] text-black font-bold leading-[15px] pt-5  text-center md:text-left">Artists can create works of beauty in  public spaces to commemorate local heroes who worked for social justice  and lifted up the oppressed</h4>
+                                    <h4 className="text-[16px] text-black font-bold leading-[22px] pt-5  text-center md:text-left">Artists can create works of beauty in  public spaces to commemorate local heroes who worked for social justice  and lifted up the oppressed</h4>
                             </div>
 
 
@@ -84,32 +84,32 @@ export default function NewPage() {
                <div className="container mx-auto">
                   <section className=" md:pt-10 py-[32px]">
                                     <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-                                    <div className="grid grid-cols-2 gap-9 pt-[29px] md:grid-cols-7 md:justify-center">
-                                  <div className="grid items-center justify-center border w-[150px] h-[150px] border-[#e3e2e2] p-[18px]">
+                                    <div className="grid grid-cols-2  pt-[29px] md:grid-cols-7 md:justify-center">
+                                  <div className="grid items-center justify-center border w-[100%] h-[150px] border-[#e3e2e2] p-[18px]">
                                       <img src="/70.png" className="  pb-5  mx-auto object-contain" />
                                       <h3 className="font-bold text-[15px] text-black text-center">Place Holder </h3>
                                   </div>
-                                  <div className="grid items-center justify-center border w-[150px] h-[150px] border-[#e3e2e2] p-[18px]">
+                                  <div className="grid items-center justify-center border w-[100%] h-[150px] border-[#e3e2e2] p-[18px]">
                                       <img src="/67.png" className="  pb-5   object-contain" />
                                       <h3 className="font-bold text-[15px] text-black text-center">Economics </h3>
                                   </div>
-                                  <div className="grid items-center justify-center border w-[150px] h-[150px] border-[#e3e2e2] p-[18px]">
+                                  <div className="grid items-center justify-center border w-[100%] h-[150px] border-[#e3e2e2] p-[18px]">
                                       <img src="/68.png" className="  pb-5   object-contain" />
                                       <h3 className="font-bold text-[15px] text-black text-center">Religion</h3>
                                   </div>
-                                  <div className="grid items-center justify-center border w-[150px] h-[150px] border-[#e3e2e2] p-[18px]">
+                                  <div className="grid items-center justify-center border w-[100%] h-[150px] border-[#e3e2e2] p-[18px]">
                                       <img src="/69.png" className="  pb-5 grid  items-center justify-center object-contain" />
                                       <h3 className="font-bold text-[15px] text-black text-center">Celebration </h3>
                                   </div>
-                                  <div className="grid items-center justify-center border w-[150px] h-[150px] border-[#e3e2e2] p-[18px]">
+                                  <div className="grid items-center justify-center border w-[100%] h-[150px] border-[#e3e2e2] p-[18px]">
                                       <img src="/71.png" className="  pb-5   object-contain" />
                                       <h3 className="font-bold text-[15px] text-black text-center">Media </h3>
                                   </div>
-                                  <div className="grid items-center justify-center border w-[150px] h-[150px] border-[#e3e2e2] p-[18px]">
+                                  <div className="grid items-center justify-center border w-[100%] h-[150px] border-[#e3e2e2] p-[18px]">
                                       <img src="/66.png" className="  pb-5   object-contain" />
                                       <h3 className="font-bold text-[15px] text-black text-center">Place Holder </h3>
                                   </div>
-                                  <div className="grid items-center justify-center border w-[150px] h-[150px] border-[#e3e2e2] p-[18px]">
+                                  <div className="grid items-center justify-center border w-[100%] h-[150px] border-[#e3e2e2] p-[18px]">
                                       <img src="/65.png" className="  pb-5   object-contain" />
                                       <h3 className="font-bold text-[15px] text-black text-center">Education</h3>
                                   </div>
@@ -124,8 +124,8 @@ export default function NewPage() {
                         <div className="relative mx-auto table"> 
                             <img src="/72.png" className="md:p-0 p-5" alt="" />
                             <div className="md:absolute bottom-0 p-5 text-center md:text-left">
-                                <h2 className="md:text-[45px]  text-[30px] font-bold text-black md:text-white md:w-[32%] leading-[49px]">Join the Movement </h2>
-                                <p className="font-normal text-[15px]  text-black  md:text-white md:w-[72%]"> Become a part of the global effort to integrate faith and work, impacting cities and communities around the world. </p>
+                                <h2 className="md:text-[64px]  text-[30px] font-bold text-black md:text-white md:w-[32%] leading-[65px]">Join the Movement </h2>
+                                <p className="font-normal text-[16px] mt-4 text-black  md:text-white md:w-[72%]"> Become a part of the global effort to integrate faith and work, impacting cities and communities around the world. </p>
                                 
                             </div>
                             <div className="hidden md:block absolute bottom-5 right-[5%] p-5">
@@ -137,35 +137,35 @@ export default function NewPage() {
                   <div className="container mx-auto">
                 <section className="md:flex pt-[32px] grid">
                         <div className="md:w-1/2 bg-[#000000] p-2 md:order-1 order-2">
-                          <div className="border border-white border-solid p-8">  <h1 className="text-[40px] text-center md:text-left leading-[56px] font-bold  text-[#C7EF92] " >Bob Varney</h1>
-                            <p className="font-normal text-[15px] text-center md:text-left text-white ">
+                          <div className="border border-white border-solid p-15">  <h1 className="text-[48px] mb-5 text-center md:text-left leading-[56px] font-bold  text-[#C7EF92] " >Bob Varney</h1>
+                            <p className="mb-6 text-[16px] text-center md:text-left text-white ">
                             Bob was a serial entrepreneur for 25 years. Prior to that, he received  his Ph.D. in computer science from Penn State followed by research at  Bell Laboratories for three years.
                         </p>
-                        <p className="font-normal text-[15px] text-center md:text-left text-white ">During his business career he was Invited  to the White House under Pres. Clinton and testified on Capitol Hill for mid-sized companies in the USA. He appeared in The Wall Street Journal  Report on ABC television and also chaired Washington Chapter of the  Council of Growing Companies.
+                        <p className="mb-6 font-normal text-[16px] text-center md:text-left text-white ">During his business career he was Invited  to the White House under Pres. Clinton and testified on Capitol Hill for mid-sized companies in the USA. He appeared in The Wall Street Journal  Report on ABC television and also chaired Washington Chapter of the  Council of Growing Companies.
                             </p>
-                            <p className="font-normal text-[15px] text-center md:text-left  text-white ">For the last 20+ years he has done pro-bono work with Christian organizations. He was architect of Bill Bright’s  transition out of presidency of CCC and Senior Advisor for new  president, Steve Douglass and was Chairman of Table 71.
+                            <p className="mb-6 font-normal text-[16px] text-center md:text-left  text-white ">For the last 20+ years he has done pro-bono work with Christian organizations. He was architect of Bill Bright’s  transition out of presidency of CCC and Senior Advisor for new  president, Steve Douglass and was Chairman of Table 71.
                             </p>
-                            <p className="font-normal text-[15px] text-center md:text-left text-white ">Bob currently serves as CEO and President of Cities Project Global, Inc.
+                            <p className="font-bold text-[16px] text-center md:text-left text-white ">Bob currently serves as CEO and President of Cities Project Global, Inc.
 
                             </p>
                             </div>
                         </div>
-                        <div className="md:w-1/2 order-1 bg-[#d3d3d3] md:h-auto h-[350px] w-auto   bg-contain bg-no-repeat bg-center bg-[url('/74.png')]  ">
+                        <div className="md:w-1/2 order-1 bg-[#d3d3d3] md:h-auto h-[350px] w-auto   bg-contain bg-no-repeat bg-bottom bg-[url('/74.png')]  ">
                               <div className="border border-white m-[6px] w-[98%] h-[97%] relative "></div>
                         </div>  
                 </section>
                 </div>
                 <div className="container mx-auto">
                   <section className="md:flex pb-[32px]">
-                      <div className="md:w-1/2 bg-contain bg-[#d3d3d3] md:h-auto h-[350px] w-auto bg-no-repeat bg-center bg-[url('/75.png')]  ">
+                      <div className="md:w-1/2 bg-contain bg-[#d3d3d3] md:h-auto h-[350px] w-auto bg-no-repeat bg-bottom bg-[url('/75.png')]  ">
                       <div className="border border-white m-[6px] w-[98%] h-[97%] relative "></div>
                           </div>  
                       <div className="md:w-1/2 bg-[#000000] p-2 ">
-                        <div className="border border-white border-solid p-8">  <h1 className="text-[40px] text-center md:text-left font-bold leading-[56px] text-[#C7EF92] " >Hugh Brandt</h1>
-                          <p className="font-normal text-[15px] text-center md:text-left  text-white ">
+                        <div className="border border-white border-solid p-15">  <h1 className="text-[48px] mb-5 text-center md:text-left font-bold leading-[56px] text-[#C7EF92] " >Hugh Brandt</h1>
+                          <p className="font-normal text-[16px] mb-6 text-center md:text-left  text-white ">
                           Hugh has lived in 3 global cities for 40 years and has experienced  first-hand the major problems cities have. In his book “Why God Made  Cities”, Timothy Keller says, “If sin has twisted the city as it’s  twisted the family, and God invented the city, then we don’t abandon it – we build it.” He has experienced twisted problems of a city that can  feel overwhelming and beyond repair. He has also experienced city  leaders from different spheres of society successfully work together to  address these problems when their collaborative efforts reflect a  culture of love for one another. He believes in Isaiah 58:12: “You’ll be known as those who can fix anything, restore old ruins, rebuild and  renovate, make the community livable again.”
                       </p>
-                      <p className="font-normal text-[15px] text-white text-center md:text-left">In his role as Global City Consultant, he  has greatly enhanced our Flourishing Cities curriculum and has  facilitated this flagship product in over 40 cities around the world. He continues to lead our educational work and has recently begun to serve  as Chief Culture Officer.
+                      <p className="font-normal text-[16px] mb-6 text-white text-center md:text-left">In his role as Global City Consultant, he  has greatly enhanced our Flourishing Cities curriculum and has  facilitated this flagship product in over 40 cities around the world. He continues to lead our educational work and has recently begun to serve  as Chief Culture Officer.
                       </p>   </div>
                       </div>
         
@@ -173,8 +173,8 @@ export default function NewPage() {
           </div>
           <div className="container mx-auto">  <section className="mx-auto grid gap-[37px] pt-[100px] pb-[100px] ">
               <img src="76.png" className="mx-auto" />
-              <h1 className={`${anton.className} text-[30px] font-normal  text-center text-[#000000] leading-[40px] w-[90%] md:w-[57%] mx-auto`}>We see a world where leaders live out  their calling, transforming their cities into flourishing centers for  the common good of all people.</h1>
-              <h4 className={`${anton.className} text-[20px] font-normal  text-center text-[#aed575]`}>Just as God Intended</h4>
+              <h1 className={`${anton.className} text-[48px] font-normal  text-center text-[#000000] leading-[72px] w-[90%] md:w-[80%] mx-auto`}>We see a world where leaders live out  their calling, transforming their cities into flourishing centers for  the common good of all people.</h1>
+              <h4 className={`${anton.className} text-[32px] font-normal  text-center text-[#aed575]`}>Just as God Intended</h4>
             </section>
             </div>
 
@@ -183,7 +183,7 @@ export default function NewPage() {
                     <div className="md:flex">
                       
                               <div className="md:w-[40%]  grid justify-center items-center">
-                        <h1 className="text-black text-[30px] md:w-[63%] md:text-left text-center leading-[35px] font-bold">Our Mission Integrating Faith and Work for Community Impact</h1>
+                        <h1 className="text-black text-[48px] md:w-[90%] md:text-left text-center leading-[58px] font-bold">Our Mission Integrating Faith and Work for Community Impact</h1>
                     
                     </div>
                     <div className="md:w-[60%] md:pl-10 md:pr-10 md:pt-0 pt-20 relative">
@@ -205,7 +205,8 @@ export default function NewPage() {
                       </div><img src='/81.png' alt="" className="md:absolute hidden md:block left-[-6%] top-[13%]" />
                     </div>
                     </div>
-                    <div className=""><h3 className=" md:mt-[-10%] md:text-left text-center md:w-1/3 text-black font-normal">
+                    <div className="">
+                      <h3 className=" md:mt-[-10%] md:text-left text-center md:w-1/3 text-black font-normal">
                     Our mission is to guide leaders in combining their faith with their work to create meaningful change and restore communities at a systemic level.
                                 </h3>
                                 <a href="#" className=" flex text-[13px] mx-auto md:mx-0 gap-2.5 w-[fit-content] text-center inline-block mt-4 bg-[#A1CF5F] font-bold text-black md:text-sm p-3  rounded-lg transition duration-300">Join Our Community of Culturemakers <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
@@ -213,11 +214,11 @@ export default function NewPage() {
           </section></div>
 
           <div className="container mx-auto"><section className="mx-auto grid gap-[37px] md:p-0 p-8 md:pt-[100px] md:pb-[50px] ">
-                <h1 className={`text-black md:text-[35px] text-[28px] leading-[35px] mx-auto text-center md:text-left md:w-[40%] font-bold`}>We need to focus on cities as influential centers of Kingdom culture</h1>
-                <h4 className={` text-[15px] font-normal  mx-auto  md:w-[40%] text-[#000000]  text-center md:text-left`}>About half of the world’s population  lives in cities around the globe, and by 2050 that proportion will  increase to about 66%. From a quantitative perspective, in order to  reach the highest number of people, targeting cities is crucial.
-                </h4><h4 className="text-black text-[18px]  text-center md:text-left mx-auto  md:w-[40%] font-bold">
+                <h1 className={`text-black md:text-[48px] text-[28px] leading-[58px] mx-auto text-center md:text-left md:w-[40%] font-bold`}>We need to focus on cities as influential centers of Kingdom culture</h1>
+                <h4 className={` text-[16px] font-normal  mx-auto  md:w-[40%] text-[#000000]  text-center md:text-left`}>About half of the world’s population  lives in cities around the globe, and by 2050 that proportion will  increase to about 66%. From a quantitative perspective, in order to  reach the highest number of people, targeting cities is crucial.
+                </h4><h4 className="text-black text-[20px]  text-center md:text-left mx-auto  md:w-[40%] font-bold">
                 But that’s not all.
-                </h4 ><h4 className={` text-[15px] font-normal  text-center md:text-left  mx-auto  md:w-[40%] text-[#000000] `}>
+                </h4 ><h4 className={` text-[16px] font-normal  text-center md:text-left  mx-auto  md:w-[40%] text-[#000000] `}>
                 Cities are hubs of cultural influence; what begins in a city often  radiates to surrounding areas and even catches on in other cities.  Nearly every cultural, political, artistic or social movement has its  roots in the city.</h4>
            </section>
            </div>
