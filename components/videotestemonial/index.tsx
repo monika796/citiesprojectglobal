@@ -43,7 +43,7 @@ const VideoCarousel = () => {
     <div className="container mx-auto">
       <section className="md:flex w-[94%] mx-auto">
         <div className="md:w-4/12 md:p-[65px] p-5">
-          <h2 className="font-inter text-[48px]  text-black font-bold leading-[58.09px] md:leading-[58.09px] text-center md:text-left underline-from-font decoration-skip-ink-none">
+          <h2 className="font-inter text-[25px] md:text-[48px]  text-black font-bold leading-[35px] md:leading-[58.09px] text-center md:text-left underline-from-font decoration-skip-ink-none">
             See What’s Happening in Real Time
           </h2>
           <p className="py-3 text-[16px] text-gray-900 text-center md:text-left ">
