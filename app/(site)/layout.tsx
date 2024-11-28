@@ -12,6 +12,8 @@ const inter = Inter({ subsets: ["latin"] });
 const anton = Anton({ weight: '400', subsets: ["latin"] }); // Configure Anton with weight
 
 import ToasterContext from "../context/ToastContext";
+import { ApolloProvider } from "@apollo/client";
+import client from "apollo-client"; 
 
 export default function RootLayout({
   children,
@@ -21,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`overflow-x-hidden dark:bg-black ${inter.className} `}>
-        <ThemeProvider
+      <ApolloProvider client={client}> <ThemeProvider
           enableSystem={false}
           attribute="class"
           defaultTheme="light"
@@ -33,6 +35,7 @@ export default function RootLayout({
           <Footer />
           <ScrollToTop />
         </ThemeProvider>
+        </ApolloProvider>
       </body>
     </html>
   );

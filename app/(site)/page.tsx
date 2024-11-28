@@ -1,20 +1,22 @@
+"use client"; 
 import { Metadata } from "next";
 import Slider from "react-slick";
 import Testimonial from "@/components/Testimonial";
 import VideoCarousel from "@/components/videotestemonial";
 import Newsletter from "@/components/Newsletter";
 import PostSlider from "@/components/PostSlider";
-
+import { useContext } from 'react';
+import { gql, useQuery } from '@apollo/client';
 import { Anton } from "next/font/google";
 
 const anton = Anton({ weight: '400', subsets: ["latin"] });
 
 
-export const metadata: Metadata = {
-  title: "Next.js Starter Template for SaaS Startups - Solid SaaS Boilerplate",
-  description: "This is Home for Solid Pro",
-  // other metadata
-};
+// export const metadata: Metadata = {
+//   title: "Next.js Starter Template for SaaS Startups - Solid SaaS Boilerplate",
+//   description: "This is Home for Solid Pro",
+//   // other metadata
+// };
 
 const sliderSettings = {
   dots: true,
@@ -24,6 +26,35 @@ const sliderSettings = {
   slidesToScroll: 1,
 };
 export default function Home() {
+
+  const POSTS_QUERY = gql `
+  query    {
+   page(id: "cG9zdDoxNg==") {
+     title
+     link
+     bannerHome {
+       banner {
+         node {
+           link
+         }
+       }
+       textBanner
+       textBanner2
+       textBanner3
+       subtitleupper
+       buttonText
+       subtitleText
+     }
+   }
+ }
+ `;
+
+ const { loading, error, data } = useQuery(POSTS_QUERY);
+
+  console.log(data);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
   return (
     <main className="mt-[-96px]">
 
@@ -36,12 +67,12 @@ export default function Home() {
             <div className="container max-w-[1480px] mx-auto relative   h-[510px] md:h-[909px]">
 
 
-              <div className="relative w-[80%] md:w-full md:absolute md:top-1/2  top-0  md:pt-0 pt-[36rem] left-8 transform -translate-y-1/2 text-white">
-                <span className="uppercase mb-1	inline-block text-[10px] md:text-[14px] bg-[#fff] text-black leading-none	 text-center w-[auto]  mb-[20px]  font-bold	py-1 px-2"> Transform your workplace and community</span><br />
+              <div className="relative w-full md:absolute md:top-1/2  top-0  md:pt-0 pt-[36rem] left-8 transform -translate-y-1/2 text-white">
+                <span className="uppercase mb-1	inline-block text-[10px] md:text-[14px] bg-[#fff] text-black leading-none	 text-center w-[auto]  mb-[20px]  font-bold	py-1 px-2">{data.page.bannerHome.subtitleupper}</span><br />
                 <strong className={`${anton.className} block uppercase md:text-[126px]  leading-[50px] text-[37px] font-light xl:leading-[130px]  md:leading-none`}>
-                  Live Life<br className="hidden md:block" />
-                  With < br className="hidden md:block" />
-                  Purpose
+                 {data.page.bannerHome.textBanner}<br className="hidden md:block" />
+                 {data.page.bannerHome.textBanner2}< br className="hidden md:block" />
+                 {data.page.bannerHome.textBanner3}
                 </strong>
                 <p className="mt-2 md:mb-0 mb-10 font-light xl:leading-6 md:leading-none">
                   Cities Project Global helps people discover and <br /> live out their God-given purpose to transform < br />communities.
