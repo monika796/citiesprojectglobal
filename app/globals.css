@@ -125,3 +125,20 @@ pre {
 .active-tab {
   @apply bg-stroke text-black dark:bg-blackho dark:text-white;
 }
+
+@media screen and (max-width: 767px) {
+  .sticky {
+    background: #ffffffab;
+    margin: 0;
+    backdrop-filter: blur(3px);
+    border: 0 !important;
+  }
+}
+@media (min-width: 0) and (max-width: 567px) {
+  .sticky {
+    background: #ffffffab;
+    margin: 0;
+    backdrop-filter: blur(3px);
+    border: 0 !important;
+  }
+}

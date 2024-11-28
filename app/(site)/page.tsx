@@ -36,7 +36,7 @@ export default function Home() {
             <div className="container max-w-[1480px] mx-auto relative   h-[510px] md:h-[909px]">
 
 
-              <div className="relative w-full md:absolute md:top-1/2  top-0  md:pt-0 pt-[36rem] left-8 transform -translate-y-1/2 text-white">
+              <div className="relative w-[80%] md:w-full md:absolute md:top-1/2  top-0  md:pt-0 pt-[36rem] left-8 transform -translate-y-1/2 text-white">
                 <span className="uppercase mb-1	inline-block text-[10px] md:text-[14px] bg-[#fff] text-black leading-none	 text-center w-[auto]  mb-[20px]  font-bold	py-1 px-2"> Transform your workplace and community</span><br />
                 <strong className={`${anton.className} block uppercase md:text-[126px]  leading-[50px] text-[37px] font-light xl:leading-[130px]  md:leading-none`}>
                   Live Life<br className="hidden md:block" />
@@ -161,7 +161,7 @@ export default function Home() {
           Confused over your calling?<br className="hidden md:block" />
           Is ministry the only work that 'counts'?
         </h1>
-        <div className=" pl-[14px] flex items-center p-[23px] ">
+        <div className="pl-[23px] md:pl-[14px] flex items-center p-[23px] ">
           <div className=" md:w-6/12 md:flex md:gap-3 md:items-center md:justify-center">
             <div className=" md:w-6/12 p-2" >
               <img src="/32.png" alt="" className='md:h-auto mx-auto w-full md:w-auto md:mx-0 h-[100%]' />
@@ -179,7 +179,7 @@ export default function Home() {
         </div>
 
 
-        <div className=" pl-[14px] flex items-center p-[23px] justify-end md:mt-[-80px]">
+        <div className=" pl-[23px] md:pl-[14px] flex items-center p-[23px] justify-end md:mt-[-80px]">
           <div className="md:w-6/12 grid md:flex  items-center justify-center">
             <div className="md:w-6/12 float-right md:order-1 order-2  mt-4 md:mt-0 ">
               <span className="text-[13px] bg-[#a1cf5f] mx-auto md:mx-0 text-black text-left w-[55%] rounded-[20px] px-3 py-1 font-bold">BE EQUIPPED</span>
@@ -193,7 +193,7 @@ export default function Home() {
         </div>
 
 
-        <div className=" pl-[14px] md:pl-[120px] flex items-center p-[23px]  md:mt-[-70px]">
+        <div className="pl-[23px] md:pl-[14px] md:pl-[120px] flex items-center p-[23px]  md:mt-[-70px]">
           <div className="md:w-6/12 md:flex md:items-center md:justify-center grid">
 
             <div className="md:w-6/12 order-2 md:order-1  mt-4 md:mt-0 mb-10 md:mb-0">

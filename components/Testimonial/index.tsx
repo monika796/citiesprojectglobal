@@ -31,7 +31,7 @@ const Testimonial = () => {
           whileInView="visible"
           transition={{ duration: 1, delay: 0.1 }}
           viewport={{ once: true }}
-          className="animate_top mx-auto mt-15 max-w-c-1235 px-4 md:px-8 xl:mt-20 xl:px-0"
+          className="animate_top mx-auto mt-15 max-w-c-1235 w-full px-4 md:px-8 xl:mt-20 xl:px-0"
         >
           {/* Slider main container */}
           <div className="swiper testimonial-01 mb-20 pb-22.5">
