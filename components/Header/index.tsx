@@ -73,7 +73,7 @@ const Header = () => {
             onClick={() => setNavigationOpen(!navigationOpen)}
           >
             <span className="relative block h-5.5 w-5.5 cursor-pointer">
-              <span className="absolute right-0 block h-full w-full">
+              <span className="absolute right-0 block h-full w-full burger-menu">
                 <span
                   className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-[0] duration-200 ease-in-out dark:bg-white ${!navigationOpen ? "!w-full delay-300" : "w-0"
                     }`}

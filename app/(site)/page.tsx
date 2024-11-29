@@ -12,6 +12,9 @@ import { Anton } from "next/font/google";
 const anton = Anton({ weight: '400', subsets: ["latin"] });
 
 
+
+
+
 // export const metadata: Metadata = {
 //   title: "Next.js Starter Template for SaaS Startups - Solid SaaS Boilerplate",
 //   description: "This is Home for Solid Pro",
@@ -350,7 +353,7 @@ export default function Home() {
 {data.page.homefourtsection.mainheadingfourth}
 
         </h1>
-        <div className=" pl-[14px] flex items-center p-[23px] ">
+        <div className="pl-[23px] md:pl-[14px] flex items-center p-[23px] ">
           <div className=" md:w-6/12 md:flex md:gap-3 md:items-center md:justify-center">
             <div className=" md:w-6/12 p-2" >
               <img src={data.page.homefourtsection.firstimage?.node?.link} alt="" className='md:h-auto mx-auto w-full md:w-auto md:mx-0 h-[100%]' />
@@ -366,7 +369,7 @@ export default function Home() {
         </div>
 
 
-        <div className=" pl-[14px] flex items-center p-[23px] justify-end md:mt-[-80px]">
+        <div className=" pl-[23px] md:pl-[14px] flex items-center p-[23px] justify-end md:mt-[-80px]">
           <div className="md:w-6/12 grid md:flex  items-center justify-center">
             <div className="md:w-6/12 float-right md:order-1 order-2  mt-4 md:mt-0 ">
               <span className="text-[13px] bg-[#a1cf5f] mx-auto md:mx-0 text-black text-left w-[55%] rounded-[20px] px-3 py-1 font-bold">{data.page.homefourtsection.secondsubtitle}</span>
@@ -380,7 +383,7 @@ export default function Home() {
         </div>
 
 
-        <div className=" pl-[14px] md:pl-[120px] flex items-center p-[23px]  md:mt-[-70px]">
+        <div className="pl-[23px] md:pl-[14px] md:pl-[120px] flex items-center p-[23px]  md:mt-[-70px]">
           <div className="md:w-6/12 md:flex md:items-center md:justify-center grid">
 
             <div className="md:w-6/12 order-2 md:order-1  mt-4 md:mt-0 mb-10 md:mb-0">
