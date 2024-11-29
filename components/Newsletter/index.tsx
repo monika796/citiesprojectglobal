@@ -1,18 +1,40 @@
+"use client"; 
 import { useEffect, useState } from "react";
 import {  Anton } from "next/font/google";
 const anton = Anton({ weight: '400', subsets: ["latin"] }); 
+import { gql, useQuery } from '@apollo/client';
+const POSTS_QUERY = gql `
+query    {
+ page(id: "cG9zdDoxODQ=") {
+   
+      newsletter{
+        mainheading
+        mainsubheading
+        leftheading   
+        leftsubheading
+       
+    } 
+   }    
+}
+`;
+
+
 export default function Newsletter() {
-  
+  const {loading, error, data } = useQuery(POSTS_QUERY);
+  console.log(data);
+  if (loading) return ;
+  if (error) return <p>Error: {error.message}</p>;
+
   return (
     <div className="container mx-auto" ><div className=" md:flex w-[89%] mx-auto bg-[#000000] p-5">
                     <div className="md:w-6/12 md:p-30">
                     <h3 className={`${anton.className} uppercase  text-center md:text-left md:text-[55px] text-[41px] text-white font-light leading-[50px]`}>
-                    Join Our<br /> Community of Culturemakers
+                    {data.page.newsletter.mainheading}
                     </h3>
-                    <p className="text-white  text-center md:text-left">Be the first to know about Cities <br / > Project Global news, programs, <br /> and impact</p>
+                    <p className="text-white  text-center md:text-left">{data.page.newsletter.mainsubheading}</p>
                     </div>
                     <div className="md:w-6/12 md:p-15 p-5 md:border-l md:border-[#dbdbdb78]">
-                      <p className="text-white  pb-[20px]  text-center md:text-left font-extrabold text-[24px]">Become a Culturemaker <br /><span className=" text-center md:text-left font-normal text-[#A1CF5F]">Join Us Today!</span></p>
+                      <p className="text-white  pb-[20px]  text-center md:text-left font-extrabold text-[24px]">{data.page.newsletter.leftheading} <br /><span className=" text-center md:text-left font-normal text-[#A1CF5F]">{data.page.newsletter.leftsubheading}</span></p>
                       <form action="#" className="grid gap-[1px]">
                         <input type="text" placeholder="Name" className="bg-transparent border border-[#f6f6f626] p-[10px]" /><br/>
                         <input type="email" placeholder="Email" className="bg-transparent border border-[#f6f6f626] p-[10px]"  />
