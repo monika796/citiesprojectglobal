@@ -8,49 +8,75 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
-
-// Static video data for the carousel
-const videoData = [
-  {
-    id: "1",
-    title: "Video 1",
-    videoUrl: "video.mp4",
-    description: "/thumb.png",
-  },
-  {
-    id: "2",
-    title: "Video 2",
-    videoUrl: "video.mp4",
-    description: "/51.png",
-  },
-  {
-    id: "3",
-    title: "Video 3",
-    videoUrl: "/video.mp4",
-    description: "/52.png",
-  },
-  {
-    id: "4",
-    title: "Video 4",
-    videoUrl: "/video.mp4",
-    description: "/thumb.png",
-  },
-  // Add more videos as needed
-];
+import { gql, useQuery } from '@apollo/client';
+const POSTS_QUERY = gql `
+query    {
+ page(id: "cG9zdDoxNg==") {
+   
+      homevideobanner{
+        maintitle
+        videosubtitle
+        linktext
+      videoslider {
+        videolink
+        videothumbnail
+      }
+       
+    } 
+   }    
+}
+`;
+// // Static video data for the carousel
+// const videoData = [
+//   {
+//     id: "1",
+//     title: "Video 1",
+//     videoUrl: "video.mp4",
+//     description: "/thumb.png",
+//   },
+//   {
+//     id: "2",
+//     title: "Video 2",
+//     videoUrl: "video.mp4",
+//     description: "/51.png",
+//   },
+//   {
+//     id: "3",
+//     title: "Video 3",
+//     videoUrl: "/video.mp4",
+//     description: "/52.png",
+//   },
+//   {
+    
+//   },
+//   // Add more videos as needed
+// ];
 
 const VideoCarousel = () => {
+
+  const {loading, error, data } = useQuery(POSTS_QUERY);
+
+  if (loading) return ;
+  if (error) return <p>Error: {error.message}</p>;
+  const videoData = data.page.homevideobanner.videoslider.map((videoslider, index) => ({
+    id: index + 1,
+    videoUrl:  videoslider.videolink,
+    description: videoslider.videothumbnail,
+  })); 
+
+
   return (
     <div className="container mx-auto">
       <section className="md:flex w-[94%] mx-auto">
         <div className="md:w-4/12 md:p-[65px] p-5">
           <h2 className="font-inter text-[25px] md:text-[48px]  text-black font-bold leading-[35px] md:leading-[58.09px] text-center md:text-left underline-from-font decoration-skip-ink-none">
-            See What’s Happening in Real Time
+            {data.page.homevideobanner.maintitle}
           </h2>
           <p className="py-3 text-[16px] text-gray-900 text-center md:text-left ">
-            Stay connected with us through Instagram Reels!
+          {data.page.homevideobanner.videosubtitle}
           </p>
           <p className="flex gap-2 text-[16px]  underline text-center md:text-left md:justify-start justify-center text-black font-extrabold">
-            Follow along and be part of the journey!
+          {data.page.homevideobanner.linktext}
           </p>
         </div>
 

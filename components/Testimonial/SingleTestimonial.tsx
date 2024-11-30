@@ -1,8 +1,10 @@
 import { Testimonial } from "@/types/testimonial";
 import Image from "next/image";
+import { describe } from "node:test";
 
 const SingleTestimonial = ({ review }: { review: Testimonial }) => {
   const { name, designation, image, content } = review;
+
   return (
     <figure className="max-w-screen-md mx-auto">
     <div className="flex mx-auto justify-center"> <svg width="49" height="68" viewBox="0 0 49 68" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -13,12 +15,12 @@ const SingleTestimonial = ({ review }: { review: Testimonial }) => {
 </svg></div>
 
          <blockquote className="mt-10">
-             <p className="text-[20] md:text-[32px]   font-lighter leading-[30.09px] md:leading-[40.09px] text-gray-900 dark:text-white text-center p-[10px]">Leadership Circle has affected my understanding of my journey. It didn’t bring a dramatic change because I was already on the road, but it helped me understand the journey that I was on. </p>
+             <p className="text-[20] md:text-[32px]   font-lighter leading-[30.09px] md:leading-[40.09px] text-gray-900 dark:text-white text-center p-[10px]">{ content }</p>
          </blockquote>
          <figcaption className="flex items-center justify-center mt-6 space-x-3 ">
              <div className=" items-center text-center">
-                 <div className="md:pr-3 text-[20px]  text-gray-900 font-extrabold dark:text-white  text-center md:text-center"> Mona D.</div>
-                 <div className=" text-sm font-light text-[16px] text-gray-500 dark:text-gray-400  text-center md:text-center">(Education Sphere, Egypt)</div>
+                 <div className="md:pr-3 text-[20px]  text-gray-900 font-extrabold dark:text-white  text-center md:text-center">{name}</div>
+                 <div className=" text-sm font-light text-[16px] text-gray-500 dark:text-gray-400  text-center md:text-center">{designation}</div>
              </div>
          </figcaption>
      </figure>
