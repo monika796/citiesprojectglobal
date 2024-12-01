@@ -10,9 +10,34 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { motion } from "framer-motion";
 import SingleTestimonial from "./SingleTestimonial";
-import { testimonialData } from "./testimonialData";
+// import { testimonialData } from "./testimonialData";
+import { gql, useQuery } from '@apollo/client';
+const POSTS_QUERY = gql `
+query {
+  page(id: "cG9zdDoxOTI=") {
+    testimonialSlider {
+      slides {
+        message
+        authorname
+        authordescription
+      }
+    }
+  }
+}
+`;
 
 const Testimonial = () => {
+  const {loading, error, data } = useQuery(POSTS_QUERY);
+
+  if (loading) return ;
+  if (error) return <p>Error: {error.message}</p>;
+  const testimonialData = data.page.testimonialSlider.slides.map((slide, index) => ({
+    id: index + 1,
+    name: slide.authorname,
+    designation: slide.authordescription.replace(/[()]/g, ""), // Remove parentheses for clarity
+    image: `image${index + 1}`, // Placeholder for images
+    content: slide.message.trim(),
+  }));  
   return (
     <>
       <section className="max-w-[1480px] mx-auto bg-[#F5F5F5] h-[600px] flex items-center justify-center mb-20 hover:cursor-[url('https://example.com/cursor.png'),_auto]">
@@ -56,6 +81,7 @@ const Testimonial = () => {
               }}
             >
               {testimonialData.map((review) => (
+               
                 <SwiperSlide key={review?.id}>
                   <SingleTestimonial review={review} />
                 </SwiperSlide>

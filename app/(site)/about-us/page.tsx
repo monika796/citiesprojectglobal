@@ -1,58 +1,116 @@
 // app/new-page/page.js
-
+"use client";
 import Newsletter from "@/components/Newsletter";
 import {  Anton } from "next/font/google";
 
+import { gql, useQuery } from '@apollo/client';
 const anton = Anton({ weight: '400', subsets: ["latin"] }); 
+const POSTS_QUERY = gql `
+query    {
+ page(id: "cG9zdDoyNjY=") {
+   aboutuspage{
+   mainheadingabout
+   secondimage {
+       node {
+         link
+     }
+  }
+  secondsectionheading_1
+  secondsectionheading_2
 
+ secondsectionrightimage{
+       node {
+         link
+     }
+  }
+    secondsectionimagwithtext_image{
+       node {
+         link
+     }
+  }
+     secondsectionimagwithtextText
+     secondsectionimagwithtextSubtext
+     secondsectionimagwithtextButtontext
+     thirdsectionimage{
+            node {
+              link
+          }
+        }
+     forthsectionlefttext
+     fourthsectionleftbutton
+     fourthsectionrightheading
+     fourthsectionrightdescrition1
+     fourthsectionrightdescrition2
+     fourthsectionrightdescrition3
+     fourthsectionrightdescrition4
+}
+
+      aboutussections {
+      iconsections {
+        logoIcons {
+          node {
+            link
+          }
+        }
+        icontitle
+      }
+    }
+}
+}`;
 export default function NewPage() {
+
+  const {loading, error, data } = useQuery(POSTS_QUERY);
+
+
+  if (loading) return ;
+  if (error) return <p>Error: {error.message}</p>;
+
+console.log(data);
     return (
+      
         <main className="md:w-[91%] mx-auto"> 
-                    <h1 className="md:py-[42px] mt-4 py-[30px] md:text-[64px] text-[25px] leading-[38px]  font-bold  md:leading-[77px] text-center text-black  p-5 mx-auto md:leading-[77px] ">Integrate your faith at work
-            <br />         Build flourishing cities</h1>
+                    <h1 className="md:py-[42px] mt-4 py-[30px] md:text-[64px] text-[25px] leading-[38px]  font-bold  md:leading-[77px] text-center text-black  p-5 mx-auto md:leading-[77px] ">
+                    {data.page.aboutuspage.mainheadingabout}</h1>
                   <section className="md:py-[42px]">
-                  <img src="/55.png" className=" mx-auto" alt="" />
+                  <img src={data.page.aboutuspage.secondimage?.node?.link} className=" mx-auto" alt="" />
                   </section >
 
               <div className="container mx-auto max-w-[1480px]">  <section className="md:flex md:gap-20 md:py-[32px] ">
                                 <div className="md:w-2/3 ">
                                 <h3 className="md:text-[32px] text-center md:text-left text-[18px] text-black leading-[35px] md:leading-[49px] p-[22px]">
-                        According to Barna Research, only 1% of Christians
+                              
                         <div className="inline-flex  space-x-1 ">
                           <img src="/53.png" className="w-[30px] h-[30px]" />
                           <img src="/54.png" className="w-[30px] h-[30px]" />
                           <img src="/63.png" className="w-[30px] h-[30px]" />
                         </div>
-                        worldwide are directly working in the religion sphere (ministry, missions, etc.), leaving the vast majority of believers engaged in other spheres of society, from arts to technology to government.
-                      </h3>
+                        {data.page.aboutuspage.secondsectionheading_2}  </h3>
 
                       <hr />  
 
                                 
                                   <div className="p-7 md:flex gap-15 md:pt-20">
                                     <div className=" md:w-1/3">
-                                    <img src="/566.png" alt="" />
+                                    <img src={data.page.aboutuspage.secondsectionimagwithtext_image?.node?.link} alt="" />
                                     </div>
                                     <div className=" md:w-2/3 pt-3">
                                       <h4 className="text-[16px] text-left md:text-left  text-black font-normal leading-[23px] text-left">
-                                      That represents an enormous opportunity to create culturally widespread impact, but roughly 65% of believers are disengaged from their work and view it as separate from their faith. This reveals that most Christians don’t realize that work was designed by God as a partnered effort toward restoring the world to its original  goodness. But when people do realize that faith and work are designed by God to be integrated, work becomes an act of worship, and everything changes – lives, families, and entire.
-                                      </h4>
+                                      {data.page.aboutuspage.secondsectionimagwithtextText}   </h4>
                                       <p className="text-[16px] text-left md:text-left  pt-[19px] md:w-[57%] text-black  font-bold leading-[23px] text-left pb-3 md:pb-0">
-                                      We’re here to help leaders identify their unique position in God’s story and fully integrate their faith and work lives, enabling them to impact their communities and cities on a systemic level.
-                                      </p>
-                                      <a href="#" className=" flex  md:mx-auto mx-unset md:mx-0 items-center gap-2.5 w-[fit-content] inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">Read a Sample Chapter<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
+                                      {data.page.aboutuspage.secondsectionimagwithtextSubtext}  </p>
+                                      <a href="#" className=" flex  md:mx-auto mx-unset md:mx-0 items-center gap-2.5 w-[fit-content] inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">{data.page.aboutuspage.secondsectionimagwithtextButtontext} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
                                     </div>
                                   </div>
                                 </div>
                                 <div className="md:w-1/3 w-full grid justify-unset  md:justify-end p-5 md:p-10">
-                                <img src="/57.png" alt="" className="w-full md:w-auto" />
+                                <img src={data.page.aboutuspage.secondsectionrightimage?.node?.link} alt="" className="w-full md:w-auto" />
                                   </div>
              </section>
              </div>
 
              <div className="container mx-auto  max-w-[1480px]">
              <section className="md:py-[42px] p-5 md:p-0">
-                  <img src="/64.png" alt="" className="mx-auto" />
+                  <img src={data.page.aboutuspage.thirdsectionimage?.node?.link} alt="" className="mx-auto" />
              </section>
             </div>
 
@@ -61,21 +119,21 @@ export default function NewPage() {
                           <div className="md:w-1/2 relative">
                               <div className="md:absolute p-3 md:p-10 md:p-0    bottom-0  text-black font-bold">
                                  <h3 className="  md:w-[57%] text-black font-bold  text-left md:text-left">
-                                We need these leaders positioned across all areas of society.
+                                 {data.page.aboutuspage.forthsectionlefttext} 
                                 </h3>
-                                <a href="#" className=" mx-auto md:mx-0 flex  items-center gap-2.5 w-[fit-content] text-center inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">Apply Now<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
+                                <a href="#" className=" mx-auto md:mx-0 flex  items-center gap-2.5 w-[fit-content] text-center inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">  {data.page.aboutuspage.fourthsectionleftbutton} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
                                 </div>
                             </div>
                             <div className="md:w-2/3 md:p-10 p-3 pb-0"> 
-                                    <h3 className="text-[25px] md:text-[48px] font-bold text-black text-left md:text-left md:leading-[58.09px]">We need Influential Leaders Across All Spheres of Society</h3>
+                                    <h3 className="text-[25px] md:text-[48px] font-bold text-black text-left md:text-left md:leading-[58.09px]">{data.page.aboutuspage.fourthsectionrightheading} </h3>
                                     <p className="text-[16px] text-black leading-[22px] pt-5 text-left">
-                                    Righteous  leaders change their cities through justice, love, and working for the  common good of all – this is part of the foundation of what we teach at  Cities Project Global.
+                                    {data.page.aboutuspage.fourthsectionrightdescrition1}
                                     </p>
-                                    <h4 className="text-[16px] text-black font-bold leading-[22px] pt-5  text-left md:text-left">Executives and managers can advocate  for workplace policies that benefit employees who are typically unseen  and underserved in corporate settings</h4>
+                                    <h4 className="text-[16px] text-black font-bold leading-[22px] pt-5  text-left md:text-left"> {data.page.aboutuspage.fourthsectionrightdescrition1}</h4>
 
-                                    <h4 className="text-[16px] text-black font-bold leading-[22px] pt-5  text-left md:text-left">Architects and engineers can design  buildings to be accessible all, meeting the maximum safety standards and  in a way that does not negatively impact the environment or pollute  local and global communities</h4>
+                                    <h4 className="text-[16px] text-black font-bold leading-[22px] pt-5  text-left md:text-left"> {data.page.aboutuspage.fourthsectionrightdescrition2}</h4>
 
-                                    <h4 className="text-[16px] text-black font-bold leading-[22px] pt-5  text-left md:text-left">Artists can create works of beauty in  public spaces to commemorate local heroes who worked for social justice  and lifted up the oppressed</h4>
+                                    <h4 className="text-[16px] text-black font-bold leading-[22px] pt-5  text-left md:text-left"> {data.page.aboutuspage.fourthsectionrightdescrition3}</h4>
                             </div>
 
 
@@ -85,34 +143,23 @@ export default function NewPage() {
                   <section className=" md:pt-10 py-[32px]">
                                     <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
                                     <div className="grid grid-cols-2  pt-[29px] md:grid-cols-7 md:justify-center">
-                                  <div className="grid items-center justify-center border w-[100%] h-[150px] border-[#e3e2e2] p-[18px]">
-                                      <img src="/70.png" className="  pb-5  mx-auto object-contain" />
-                                      <h3 className="font-bold text-[15px] text-black text-center">Place Holder </h3>
-                                  </div>
-                                  <div className="grid items-center justify-center border w-[100%] h-[150px] border-[#e3e2e2] p-[18px]">
-                                      <img src="/67.png" className="  pb-5   object-contain" />
-                                      <h3 className="font-bold text-[15px] text-black text-center">Economics </h3>
-                                  </div>
-                                  <div className="grid items-center justify-center border w-[100%] h-[150px] border-[#e3e2e2] p-[18px]">
-                                      <img src="/68.png" className="  pb-5   object-contain" />
-                                      <h3 className="font-bold text-[15px] text-black text-center">Religion</h3>
-                                  </div>
-                                  <div className="grid items-center justify-center border w-[100%] h-[150px] border-[#e3e2e2] p-[18px]">
-                                      <img src="/69.png" className="  pb-5 grid  items-center justify-center object-contain" />
-                                      <h3 className="font-bold text-[15px] text-black text-center">Celebration </h3>
-                                  </div>
-                                  <div className="grid items-center justify-center border w-[100%] h-[150px] border-[#e3e2e2] p-[18px]">
-                                      <img src="/71.png" className="  pb-5   object-contain" />
-                                      <h3 className="font-bold text-[15px] text-black text-center">Media </h3>
-                                  </div>
-                                  <div className="grid items-center justify-center border w-[100%] h-[150px] border-[#e3e2e2] p-[18px]">
-                                      <img src="/66.png" className="  pb-5   object-contain" />
-                                      <h3 className="font-bold text-[15px] text-black text-center">Place Holder </h3>
-                                  </div>
-                                  <div className="grid items-center justify-center border w-[100%] h-[150px] border-[#e3e2e2] p-[18px]">
-                                      <img src="/65.png" className="  pb-5   object-contain" />
-                                      <h3 className="font-bold text-[15px] text-black text-center">Education</h3>
-                                  </div>
+                          {data.page.aboutussections.iconsections.map((dataposts, index) => (
+                              <div 
+                                key={index} // Add a unique key for each child
+                                className="grid items-center justify-center border w-[100%] h-[150px] border-[#e3e2e2] p-[18px]"
+                              >
+                                <img 
+                                  src={dataposts.logoIcons?.node?.link} // Access the image URL correctly
+                                  className="pb-5 mx-auto object-contain" 
+                                  alt={dataposts.icontitle || "Placeholder"} // Use icontitle as alt text
+                                />
+                                <h3 className="font-bold text-[15px] text-black text-center">
+                                  {dataposts.icontitle}
+                                </h3>
+                              </div>
+                            ))}
+
+
                             </div>
                             </div>
                        </section>
@@ -211,7 +258,7 @@ export default function NewPage() {
                       <h3 className=" md:mt-[-10%] md:text-left text-center md:w-1/3 text-black font-normal">
                     Our mission is to guide leaders in combining their faith with their work to create meaningful change and restore communities at a systemic level.
                                 </h3>
-                                <a href="#" className=" flex text-[13px] mx-auto md:mx-0 gap-2.5 w-[fit-content] text-center inline-block mt-4 bg-[#A1CF5F] font-bold text-black md:text-sm p-3  rounded-lg transition duration-300">Join Our Community of Culturemakers <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
+                                <a href="#" className=" flex text-[13px] mx-auto md:mx-0 gap-2.5 w-[fit-content] text-center inline-block mt-4 bg-[#A1CF5F] font-bold text-black md:text-sm p-3  rounded-lg transition duration-300">Join Our Community of Culturemakers <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
                                 </div>     
           </section></div>
 

@@ -196,6 +196,22 @@ query    {
    }    
 }
 `;
+
+
+const POSTS_QUERY_SEC = gql `
+query {
+  posts {
+    nodes {
+      featuredImage {
+        node {
+          link
+        }
+      }
+      title
+    }
+  }
+}
+`;
 const sliderSettings = {
   dots: true,
   infinite: true,
@@ -209,10 +225,10 @@ export default function Home() {
 
  const {loading, error, data } = useQuery(POSTS_QUERY);
 
-  console.log(data);
+
   if (loading) return ;
   if (error) return <p>Error: {error.message}</p>;
-
+  
   return (
     <main className="mt-[-96px]">
 
@@ -514,7 +530,8 @@ export default function Home() {
       </section>
       </div>
 
-      <div className='container mx-auto hidden md:block'>      <div className="w-[100%] mx-auto">
+      <div className='container mx-auto hidden md:block'>  
+            <div className="w-[100%] mx-auto">
         <h2 className="font-inter md:text-[48px] text-[30px] text font-bold leading-[58.09px] p-8 text-black text-left text-center decoration-skip-ink-none">Stories of Transformation</h2>
         <div className=" md:flex">
           <div className=" md:w-3/12 relative grid place-items-center p-10">

@@ -6,47 +6,127 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
 
-
-const sliderData = [
-  {
-    id: "1",
-    imgSrc: "/46.png",
-    date: "5 Sep 2024",
-    title: "Receiving and Reflecting God’s Inherent Love for Us",
-    linkText: "Learn More",
-  },
-  {
-    id: "2",
-    imgSrc: "/46.png",
-    date: "5 Sep 2024",
-    title: "Healing the Trauma of Homelessness Through Affordable Housing",
-    linkText: "Learn More",
-  },
-  {
-    id: "3",
-    imgSrc: "/47.png",
-    date: "5 Sep 2024",
-    title: "In the Midst of War, Love Comes Through Action",
-    linkText: "Learn More",
-  },
-  {
-    id: "5",
-    imgSrc: "/46.png",
-    date: "5 Sep 2024",
-    title: "Healing the Trauma of Homelessness Through Affordable Housing",
-    linkText: "Learn More",
-  },
-  {
-    id: "4",
-    imgSrc: "/47.png",
-    date: "5 Sep 2024",
-    title: "In the Midst of War, Love Comes Through Action",
-    linkText: "Learn More",
-  },
-];
+import { gql, useQuery } from '@apollo/client';
+const POSTS_QUERY = gql `
+query {
+  posts {
+    nodes {
+      featuredImage {
+        node {
+          link
+        }
+      }
+      title
+    }
+  }
+}
+`;
+// const sliderData = [
+//   {
+//     id: "1",
+//     imgSrc: "/46.png",
+//     date: "5 Sep 2024",
+//     title: "Receiving and Reflecting God’s Inherent Love for Us",
+//     linkText: "Learn More",
+//   },
+//   {
+//     id: "2",
+//     imgSrc: "/46.png",
+//     date: "5 Sep 2024",
+//     title: "Healing the Trauma of Homelessness Through Affordable Housing",
+//     linkText: "Learn More",
+//   },
+//   {
+//     id: "3",
+//     imgSrc: "/47.png",
+//     date: "5 Sep 2024",
+//     title: "In the Midst of War, Love Comes Through Action",
+//     linkText: "Learn More",
+//   },
+//   {
+//     id: "5",
+//     imgSrc: "/46.png",
+//     date: "5 Sep 2024",
+//     title: "Healing the Trauma of Homelessness Through Affordable Housing",
+//     linkText: "Learn More",
+//   },
+//   {
+//     id: "4",
+//     imgSrc: "/47.png",
+//     date: "5 Sep 2024",
+//     title: "In the Midst of War, Love Comes Through Action",
+//     linkText: "Learn More",
+//   },
+// ];
 
 const CustomSlider = () => {
+
+  const {loading, error, data } = useQuery(POSTS_QUERY);
+
+  if (loading) return ;
+  if (error) return <p>Error: {error.message}</p>;
+
+  const sliderData = data.posts?.nodes.map((dataposts, index) => ({
+    id: index + 1,
+    imgSrc: dataposts.featuredImage?.node?.link,
+    date: "5 Sep 20241",
+    title: dataposts.title,
+    linkText: "Learn More",
+  })); 
+  console.log(sliderData);
   return (
+    <main>
+
+<div className='container mx-auto hidden md:block'>  
+            <div className="w-[100%] mx-auto">
+        <h2 className="font-inter md:text-[48px] text-[30px] text font-bold leading-[58.09px] p-8 text-black text-left text-center decoration-skip-ink-none">Stories of Transformation</h2>
+      
+        <div className=" md:flex">
+        {sliderData.map((slide, index) => (
+  <div key={index}
+    className={`relative grid place-items-center p-10 ${index === 1 ? 'md:w-6/12' : 'md:w-3/12'}`}
+  >
+    {index === 1 ? (
+      <>
+        <img src="/45.png" className="object-contain" />
+        <p className="absolute top-13 left-12 text-white z-max bg-black px-2 py-0 rounded-full text-sm">5 Sep 2024</p>
+        <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">
+          Healing the Trauma of Homelessness Through<br />Affordable Housing
+        </h2>
+        <a href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">
+          Learn More 
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+            <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+              <path d="M1 13 13 1M4 1h9v9"></path>
+            </g>
+          </svg>
+        </a>
+      </>
+    ) : (
+      <>
+        <img src={slide.imgSrc} className="object-contain" />
+        <p className="absolute top-13 left-12 text-white z-max bg-black px-2 py-0 rounded-full text-sm">{slide.date}</p>
+        <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">{slide.title}</h2>
+        <a href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">
+          Learn More 
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+            <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+              <path d="M1 13 13 1M4 1h9v9"></path>
+            </g>
+          </svg>
+        </a>
+      </>
+    )}
+  </div>
+))}
+
+        </div>
+
+        <img src='/48.png' className="table p-[61px] items-center m-auto" />
+      </div>
+
+      </div>
+ 
     <div className="container mx-auto block md:hidden">
       <section className="w-[94%] mx-auto">
         <motion.div
@@ -145,7 +225,7 @@ const CustomSlider = () => {
         }
            
       `}</style>
-    </div>
+    </div>   </main>
   );
 };
 
