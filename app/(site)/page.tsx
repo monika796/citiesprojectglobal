@@ -1,4 +1,4 @@
-"use client"; 
+
 import { Metadata } from "next";
 import Slider from "react-slick";
 import Testimonial from "@/components/Testimonial";
@@ -8,7 +8,8 @@ import PostSlider from "@/components/PostSlider";
 import { useContext } from 'react';
 import { gql, useQuery } from '@apollo/client';
 import { Anton } from "next/font/google";
-
+import client from 'apollo-client';
+import  Partner from "@/components/partner";
 const anton = Anton({ weight: '400', subsets: ["latin"] });
 
 
@@ -212,6 +213,14 @@ query {
   }
 }
 `;
+
+async function fetchData() {
+  const { data } = await client.query({
+    query: POSTS_QUERY,
+  });
+  return data;
+}
+
 const sliderSettings = {
   dots: true,
   infinite: true,
@@ -219,15 +228,10 @@ const sliderSettings = {
   slidesToShow: 1,
   slidesToScroll: 1,
 };
-export default function Home() {
+export default async function Home() {
 
 
-
- const {loading, error, data } = useQuery(POSTS_QUERY);
-
-
-  if (loading) return ;
-  if (error) return <p>Error: {error.message}</p>;
+  const data = await fetchData();
   
   return (
     <main className="mt-[-96px]">
@@ -446,74 +450,8 @@ export default function Home() {
       </div>
       </div>
 
-      <div className="container mx-auto max-w-[1480px]" > 
-         <section className="md:pt-[150px] pt-[50px] border border-x-0 border-y-stroke py-11 dark:border-y-strokedark dark:bg-black">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <h5 className="md:text-[64px] text-[30px] text-black text-center md:pb-[30px] font-bold pb-2">{data.page.patnerssection.mainheading}</h5>
-          <h5 className="text-[15px] text-black text-center">{data.page.patnerssection.firstsubtitlepatner}</h5>
-          <div className=" md:hidden grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 md:w-[63%] mx-auto pt-[29px]">
-            <img src={data.page.patnerssection.imagefirst?.node?.link} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-            <img src={data.page.patnerssection.image2?.node?.link} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-            <img src={data.page.patnerssection.image3?.node?.link} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-            <img src={data.page.patnerssection.image4?.node?.link} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-            <img src={data.page.patnerssection.image5?.node?.link} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-
-            <img src={data.page.patnerssection.image6?.node?.link} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-            <img src={data.page.patnerssection.image7?.node?.link} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-            <img src={data.page.patnerssection.image8?.node?.link} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-
-            <div className=" relative bg-black text-white p-[27px] w-[150px] h-[150px] flex items-center justify-center mx-auto">
-              <div className="text-left absolute bottom-[15px] w-[89%]">
-                <h5 className="text-[12px] font-bold pb-2">{data.page.patnerssection.textninthbox}</h5>
-                <h3 className="text-[10px] font-bold">{data.page.patnerssection.linktextninthbox}</h3>
-              </div>
-            </div>
-
-          </div>
-
-          {/* desktop div start */}
-          <div className="hidden md:block py-10 ">
-            <div className="flex justify-center mx-auto w-fit mb-3 gap-3 md:w-10/12">
-              <div className="max-w-[257px] w-[100%] h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-              <img  src={data.page.patnerssection.imagefirst?.node?.link} className="w-[80px]"  />
-              </div>
-              <div className="max-w-[257px] w-[100%] h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33]  ">
-              <img  src={data.page.patnerssection.image2?.node?.link}  className="w-[80px]" />
-              </div>
-              <div className="max-w-[257px] w-[100%] h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-              <img  src={data.page.patnerssection.image3?.node?.link}  className="w-[80px]" />
-              </div>
-              <div className="max-w-[257px] w-[100%]  h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-              <img  src={data.page.patnerssection.image4?.node?.link} className="w-[80px]"/>
-              </div>
-              <div className="max-w-[257px] w-[100%]  h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-              <img src={data.page.patnerssection.image5?.node?.link}  className="w-[80px]" />
-              </div>
-            </div>
-
-            <div className="flex justify-center items-center mx-auto w-fit mb-3 gap-3 md:w-8/12">
-            <div className="max-w-[257px] w-[100%]  h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-                <img  src={data.page.patnerssection.image6?.node?.link}  className="w-[80px]"  />
-                </div>
-                <div className="max-w-[257px] w-[100%]  h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-                <img  src={data.page.patnerssection.image7?.node?.link}  className="w-[80px]"  />
-                </div>
-                <div className="max-w-[257px] w-[100%]  h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-                <img  src={data.page.patnerssection.image8?.node?.link}  className="w-[80px]"   />
-                </div>
-             
-              <div className="relative bg-black text-white p-[27px] w-[100%] max-w-[257px] h-[240px] flex items-center justify-center hover:border-[#A1CF5F33]  ">
-                <div className="text-left absolute bottom-[15px] w-[89%]">
-                  <h5 className="text-[20px] font-bold pb-2">{data.page.patnerssection.textninthbox}</h5>
-                  <a className="text-[16px] underline" href="#">{data.page.patnerssection.linktextninthbox}</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Desktop div end */}
-          {/* / */}
-
-          <section className=" md:flex w-[97%] mt-[54px] mx-auto  bg-[#000]">
+      <Partner />
+      <div className="container mx-auto max-w-[1280px]" >  <section className=" md:flex w-[97%] mt-[54px] mx-auto  bg-[#000]">
             <div className=" md:w-4/12 p-5">
               <h2 className={`${anton.className} text-[#A1CF5F] text-[30px] md:text-[48px] uppercase   leading-[50px] md:leading-[72px]`}>{data.page.homesixthsection.heading}</h2>
               <p className="text-white text-[16px] leading-tight pt-5">{data.page.homesixthsection.paragraph}</p>
@@ -525,12 +463,8 @@ export default function Home() {
             </div>
 
           </section>
-
-        </div>
-      </section>
-      </div>
-
-      <div className='container mx-auto hidden md:block'>  
+          </div>
+      {/* <div className='container mx-auto hidden md:block'>  
             <div className="w-[100%] mx-auto">
         <h2 className="font-inter md:text-[48px] text-[30px] text font-bold leading-[58.09px] p-8 text-black text-left text-center decoration-skip-ink-none">Stories of Transformation</h2>
         <div className=" md:flex">
@@ -569,7 +503,7 @@ export default function Home() {
         <img src='/48.png' className="table p-[61px] items-center m-auto" />
       </div>
 
-      </div>
+      </div> */}
       <PostSlider />
       {/* <section className="bg-white dark:bg-gray-900 bg-[#F5F5F5] w-[90%] mx-auto">
                 <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
