@@ -34,6 +34,7 @@ query    {
      secondsectionimagwithtextText
      secondsectionimagwithtextSubtext
      secondsectionimagwithtextButtontext
+     secondsectionimagwithtextButtonlink
      thirdsectionimage{
             node {
               link
@@ -41,6 +42,7 @@ query    {
         }
      forthsectionlefttext
      fourthsectionleftbutton
+     fourthsectionleftbuttonlink
      fourthsectionrightheading
      fourthsectionrightdescrition1
      fourthsectionrightdescrition2
@@ -102,6 +104,7 @@ query    {
         }
           tenthsectionleftsubheading
           tenthsectionleftbuttontext
+          tenthsectionleftbuttonlink
           eleventhsectionheading
           eleventhsectionsubheading
           eleventhsectiondescrition
@@ -155,7 +158,7 @@ console.log(data);
               <div className="container mx-auto max-w-[1480px]">  <section className="md:flex md:gap-20 md:py-[32px] ">
                                 <div className="md:w-2/3 ">
                                 <h3 className="md:text-[32px] text-center md:text-left text-[18px] text-black leading-[35px] md:leading-[49px] p-[22px]">
-                              
+                                {data.page.aboutuspage.secondsectionheading_1}
                         <div className="inline-flex  space-x-1 ">
                           <img src="/53.png" className="w-[30px] h-[30px]" />
                           <img src="/54.png" className="w-[30px] h-[30px]" />
@@ -175,7 +178,7 @@ console.log(data);
                                       {data.page.aboutuspage.secondsectionimagwithtextText}   </h4>
                                       <p className="text-[16px] text-left md:text-left  pt-[19px] md:w-[57%] text-black  font-bold leading-[23px] text-left pb-3 md:pb-0">
                                       {data.page.aboutuspage.secondsectionimagwithtextSubtext}  </p>
-                                      <a href="#" className=" flex  md:mx-auto mx-unset md:mx-0 items-center gap-2.5 w-[fit-content] inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">{data.page.aboutuspage.secondsectionimagwithtextButtontext} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
+                                      <a href={data.page.aboutuspage.secondsectionimagwithtextButtontext} className=" flex  md:mx-auto mx-unset md:mx-0 items-center gap-2.5 w-[fit-content] inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">{data.page.aboutuspage.secondsectionimagwithtextButtontext} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
                                     </div>
                                   </div>
                                 </div>
@@ -198,7 +201,7 @@ console.log(data);
                                  <h3 className="  md:w-[57%] text-black font-bold  text-left md:text-left">
                                  {data.page.aboutuspage.forthsectionlefttext} 
                                 </h3>
-                                <a href="#" className=" mx-auto md:mx-0 flex  items-center gap-2.5 w-[fit-content] text-center inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">  {data.page.aboutuspage.fourthsectionleftbutton} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
+                                <a href={data.page.aboutuspage.fourthsectionleftbuttonlink} className=" mx-auto md:mx-0 flex  items-center gap-2.5 w-[fit-content] text-center inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">  {data.page.aboutuspage.fourthsectionleftbutton} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
                                 </div>
                             </div>
                             <div className="md:w-2/3 md:p-10 p-3 pb-0"> 
@@ -282,7 +285,7 @@ console.log(data);
                 </div>
                 <div className="container mx-auto">
                   <section className="md:flex pb-[32px]">
-                      <div className="md:w-1/2 bg-contain bg-[#d3d3d3] md:h-auto h-[350px] w-auto bg-no-repeat bg-bottom  " style={{ backgroundImage: `url('${data.page.aboutussections.imagewithtextImage1?.node?.link}')` }}>
+                      <div className="md:w-1/2 bg-contain bg-[#d3d3d3] md:h-auto h-[350px] w-auto bg-no-repeat bg-bottom  " style={{ backgroundImage: `url('${data.page.aboutussections.imagewithtextImage2 ?.node?.link}')` }}>
                       <div className="border border-white m-[6px] w-[98%] h-[97%] relative "></div>
                           </div>  
                       <div className="md:w-1/2 bg-[#000000] p-2 ">
@@ -327,12 +330,12 @@ console.log(data);
                     <div className="">
                       <h3 className=" md:mt-[-10%] md:text-left text-center md:w-1/3 text-black font-normal">
                            { data.page.aboutussections.tenthsectionleftsubheading }   </h3>
-                                <a href="#" className=" flex text-[13px] mx-auto md:mx-0 gap-2.5 w-[fit-content] text-center inline-block mt-4 bg-[#A1CF5F] font-bold text-black md:text-sm p-3  rounded-lg transition duration-300"> { data.page.aboutussections.tenthsectionleftbuttontext }  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
+                                <a href={data.page.aboutussections.tenthsectionleftbuttonlink} className=" flex text-[13px] mx-auto md:mx-0 gap-2.5 w-[fit-content] text-center inline-block mt-4 bg-[#A1CF5F] font-bold text-black md:text-sm p-3  rounded-lg transition duration-300"> { data.page.aboutussections.tenthsectionleftbuttontext }  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
                                 </div>     
           </section></div>
 
           <div className="container mx-auto"><section className="mx-auto grid gap-[37px] md:p-0 p-8 md:pt-[100px] md:pb-[50px] ">
-                <h1 className={`text-black md:text-[25px] text-[28px] leading-[40px] md:leading-[58px] mx-auto text-center md:text-left md:w-[40%] font-bold`}>  { data.page.aboutussections.eleventhsectionheading }</h1>
+                <h1 className={`text-black md:text-[38px] text-[28px] leading-[40px] md:leading-[58px] mx-auto text-center md:text-left md:w-[40%] font-bold`}>  { data.page.aboutussections.eleventhsectionheading }</h1>
                 <h4 className={` text-[16px] font-normal  mx-auto  md:w-[40%] text-[#000000]  text-center md:text-left`}> { data.page.aboutussections.eleventhsectiondescrition }</h4>
                 <h4 className="text-black text-[20px]  text-center md:text-left mx-auto  md:w-[40%] font-bold">
                 { data.page.aboutussections.eleventhsection2heading }

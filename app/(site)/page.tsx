@@ -37,10 +37,16 @@ query    {
      textBanner3
      subtitleupper
      buttonText
+     buttonLinkBannerHome
      subtitle_bottom
    }
+
     bannerHomesecond{
+    rightsmallsectionlink
+    rightsmallsectiontext
+    rightsmallsectionlinktext
     heading_second_section
+    buttonLinkSecondSection
     subtitleText
     firstRightImage{
        node {
@@ -65,6 +71,9 @@ query    {
          link
        }
      }
+       buttonLink1ThirdSection
+       buttonLink2ThirdSection
+       buttonLink3ThirdSection
        firstcolumnheading 
        subtitletextfirst
        buttontxtfirst
@@ -120,6 +129,8 @@ query    {
       homefifthsection{
       mainheadingfifth
       fifthheadingsimple
+      buttonlinkone
+      buttonlinksecond
       fifthfirstimage{
        node {
          link
@@ -137,6 +148,7 @@ query    {
       authordesignation
       }
       patnerssection{
+      linknithbox
       mainheading
       firstsubtitlepatner
       imagefirst{
@@ -232,7 +244,7 @@ export default async function Home() {
 
 
   const data = await fetchData();
-  
+  console.log(data);
   return (
     <main className="mt-[-96px]">
 
@@ -255,7 +267,7 @@ export default async function Home() {
                 <p className="mt-2 md:mb-0 mb-10 md:w-[26%] font-light xl:leading-6 md:leading-none">
                 {data.page.bannerHome.subtitle_bottom} </p>
                 <a
-                  href="#"
+                  href={data.page.bannerHome.buttonLinkBannerHome}
                   className=" flex w-fit  items-center gap-2.5 inline-block md:mt-4 bg-[#A1CF5F] font-bold text-black  text-[13px] md:text-sm py-1 md:py-3 px-6 rounded-lg transition duration-300"
                 >
                  {data.page.bannerHome.buttonText}<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
@@ -283,23 +295,29 @@ export default async function Home() {
               </h2>
               <p className="max-w-[376px] md:text-[15px] text-black	 leading-tight mb-6 mt-4">
               {data.page.bannerHomesecond.subtitleText} </p>
-              <div className="flex flex-col md:flex-row md:mx-0 md:mx-auto">
-                <button className="w-full md:w-auto flex items-center gap-2.5 text-black     text-lg  font-extrabold rounded mb-4 md:mb-0 md:mr-4">
+              <div className="flex flex-col md:flex-row md:mx-0 ">
+              <a href={data.page.bannerHomesecond.buttonLinkSecondSection} >   <button className=" w-full md:w-auto flex items-center gap-2.5 text-black     text-lg  font-extrabold rounded mb-4 md:mb-0 md:mr-4">
                   Learn More
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                     <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                       <path d="M1 13 13 1M4 1h9v9"></path>
                     </g>
                   </svg>
-                </button>
+                </button> </a>
               </div>
             </div>
             <div
               className="w-full md:w-1/2  bg-cover bg-center " >
               <div className="inner_Sec_div relative">
                 <div className='flex flex-col '>
-
-                  <img src={data.page.bannerHomesecond.firstRightImage?.node?.link} className='md:w-4/12 w-[40%] bottom-0  p-4 h-auto absolute md:absolute' />
+                  <div className="flex gap-3 bg-white items-end md:w-4/12 w-[40%] h-[250px] bottom-0  px-3 py-1 h-auto absolute md:absolute border border-solid border-black">
+                           <div> <p className="font-bold text-black w-[70%] mb-3" > {data.page.bannerHomesecond.rightsmallsectiontext}</p>
+                                  <a href={data.page.bannerHomesecond.rightsmallsectionlink} ><p className="text-black underline" > {data.page.bannerHomesecond.rightsmallsectionlinktext}</p></a></div>  
+                                   <svg className="absolute top-[9px] right-[11px]" width="17" height="17" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.40728 11.206L9.8764 3.73689L9.8764 10.2632C9.8764 10.7847 10.3044 11.2127 10.8259 11.2127C10.9498 11.2128 11.0724 11.1885 11.1869 11.1412C11.3013 11.0938 11.4053 11.0244 11.4929 10.9368C11.5805 10.8493 11.6499 10.7453 11.6972 10.6308C11.7446 10.5164 11.7689 10.3937 11.7688 10.2699L11.7688 1.4567C11.7689 1.33285 11.7446 1.21019 11.6972 1.09574C11.6499 0.981295 11.5805 0.877308 11.4929 0.789732C11.4053 0.702157 11.3013 0.632713 11.1869 0.585376C11.0724 0.538039 10.9498 0.513738 10.8259 0.513866L2.01276 0.513865C1.88894 0.513865 1.76634 0.538253 1.65195 0.585635C1.53756 0.633017 1.43362 0.702465 1.34607 0.790016C1.25852 0.877566 1.18907 0.981504 1.14169 1.09589C1.09431 1.21028 1.06992 1.33288 1.06992 1.4567C1.06992 1.58051 1.09431 1.70312 1.14169 1.81751C1.18907 1.9319 1.25852 2.03584 1.34607 2.12339C1.43362 2.21094 1.53756 2.28038 1.65195 2.32777C1.76634 2.37515 1.88894 2.39954 2.01276 2.39954L8.53905 2.39954L1.06992 9.86866C0.702152 10.2364 0.702151 10.8382 1.06992 11.206C1.4377 11.5738 2.03951 11.5738 2.40728 11.206Z" fill="black" />
+            </svg>    
+                  </div>
+                  {/* <img src={data.page.bannerHomesecond.firstRightImage?.node?.link} className='md:w-4/12 w-[40%] bottom-0  p-4 h-auto absolute md:absolute' /> */}
                   <img src={data.page.bannerHomesecond.secondRightImage?.node?.link} className='w-8/12  p-4  self-end ' />
                 </div>
 
@@ -328,10 +346,10 @@ export default async function Home() {
               <b> Date:</b> November 15, 2024 <br />
               <b>Time:</b> 10:00 AM - 12:00 PM
             </p>
-            <button className="container mb-6 md:mb-0 max-w-[109px] flex items-center gap-2.5 justify-center  md:w-1/2 float-left bg-[#A1CF5F] mt-[10px] h-[40px] rounded-[5px] font-bold text-black text-[14px]">Sign up <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href={data.page.sectionHomethird.buttonLink1ThirdSection}>  <button className="container mb-6 md:mb-0 max-w-[109px] flex items-center gap-2.5 justify-center  md:w-1/2 float-left bg-[#A1CF5F] mt-[10px] h-[40px] rounded-[5px] font-bold text-black text-[14px]">Sign up <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.40728 11.206L9.8764 3.73689L9.8764 10.2632C9.8764 10.7847 10.3044 11.2127 10.8259 11.2127C10.9498 11.2128 11.0724 11.1885 11.1869 11.1412C11.3013 11.0938 11.4053 11.0244 11.4929 10.9368C11.5805 10.8493 11.6499 10.7453 11.6972 10.6308C11.7446 10.5164 11.7689 10.3937 11.7688 10.2699L11.7688 1.4567C11.7689 1.33285 11.7446 1.21019 11.6972 1.09574C11.6499 0.981295 11.5805 0.877308 11.4929 0.789732C11.4053 0.702157 11.3013 0.632713 11.1869 0.585376C11.0724 0.538039 10.9498 0.513738 10.8259 0.513866L2.01276 0.513865C1.88894 0.513865 1.76634 0.538253 1.65195 0.585635C1.53756 0.633017 1.43362 0.702465 1.34607 0.790016C1.25852 0.877566 1.18907 0.981504 1.14169 1.09589C1.09431 1.21028 1.06992 1.33288 1.06992 1.4567C1.06992 1.58051 1.09431 1.70312 1.14169 1.81751C1.18907 1.9319 1.25852 2.03584 1.34607 2.12339C1.43362 2.21094 1.53756 2.28038 1.65195 2.32777C1.76634 2.37515 1.88894 2.39954 2.01276 2.39954L8.53905 2.39954L1.06992 9.86866C0.702152 10.2364 0.702151 10.8382 1.06992 11.206C1.4377 11.5738 2.03951 11.5738 2.40728 11.206Z" fill="black" />
             </svg>
-            </button>
+            </button></a>
 
           </div>
         </div>
@@ -343,10 +361,10 @@ export default async function Home() {
             <hr className="w-[20px] md:mx-0 mx-auto" />
             <div className='flex flex-row md:flex-row md:gap-[10px] gap-[28px] items-center justify-between md:items-end mt-10 md:mt-22'>
 
-            <button className="container max-w-[109px] flex items-center gap-2.5 justify-center  md:w-1/2 float-left bg-[#A1CF5F] mt-[10px] h-[40px] rounded-[5px] font-bold text-black text-[14px]">{data.page.sectionHomethird.buttontxtsecond}<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href={data.page.sectionHomethird.buttonLink2ThirdSection}> <button className="container max-w-[109px] md:max-w-[100%] flex items-center gap-2.5 justify-center  md:w-[100%] md:px-3 float-left bg-[#A1CF5F] mt-[10px] h-[40px] rounded-[5px] font-bold text-black text-[14px]">{data.page.sectionHomethird.buttontxtsecond}<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.40728 11.206L9.8764 3.73689L9.8764 10.2632C9.8764 10.7847 10.3044 11.2127 10.8259 11.2127C10.9498 11.2128 11.0724 11.1885 11.1869 11.1412C11.3013 11.0938 11.4053 11.0244 11.4929 10.9368C11.5805 10.8493 11.6499 10.7453 11.6972 10.6308C11.7446 10.5164 11.7689 10.3937 11.7688 10.2699L11.7688 1.4567C11.7689 1.33285 11.7446 1.21019 11.6972 1.09574C11.6499 0.981295 11.5805 0.877308 11.4929 0.789732C11.4053 0.702157 11.3013 0.632713 11.1869 0.585376C11.0724 0.538039 10.9498 0.513738 10.8259 0.513866L2.01276 0.513865C1.88894 0.513865 1.76634 0.538253 1.65195 0.585635C1.53756 0.633017 1.43362 0.702465 1.34607 0.790016C1.25852 0.877566 1.18907 0.981504 1.14169 1.09589C1.09431 1.21028 1.06992 1.33288 1.06992 1.4567C1.06992 1.58051 1.09431 1.70312 1.14169 1.81751C1.18907 1.9319 1.25852 2.03584 1.34607 2.12339C1.43362 2.21094 1.53756 2.28038 1.65195 2.32777C1.76634 2.37515 1.88894 2.39954 2.01276 2.39954L8.53905 2.39954L1.06992 9.86866C0.702152 10.2364 0.702151 10.8382 1.06992 11.206C1.4377 11.5738 2.03951 11.5738 2.40728 11.206Z" fill="black" />
             </svg>
-            </button>
+            </button></a>
               <img src={data.page.sectionHomethird.secondcolumnimage?.node?.link} alt="" className='object-cover w-[106px] h-[106px]' />
             </div>
           </div>
@@ -356,10 +374,10 @@ export default async function Home() {
             <hr className="w-[20px] md:mx-0 mx-auto" />
             <div className='flex flex-row md:flex-row md:gap-[10px] gap-[28px] items-center  justify-between md:items-end  mt-10 md:mt-22'>
 
-            <button className="container max-w-[109px] flex items-center gap-2.5 justify-center  md:w-1/2 float-left bg-[#FFFFFF] mt-[10px] h-[40px] rounded-[5px] font-bold text-black text-[14px]">{data.page.sectionHomethird.buttontxtthird} <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href={data.page.sectionHomethird.buttonLink3ThirdSection}>    <button className="container max-w-[109px] md:max-w-[100%] flex items-center gap-2.5 justify-center  md:w-[100%] md:px-3 float-left bg-[#FFFFFF] mt-[10px] h-[40px] rounded-[5px] font-bold text-black text-[14px]">{data.page.sectionHomethird.buttontxtthird} <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.40728 11.206L9.8764 3.73689L9.8764 10.2632C9.8764 10.7847 10.3044 11.2127 10.8259 11.2127C10.9498 11.2128 11.0724 11.1885 11.1869 11.1412C11.3013 11.0938 11.4053 11.0244 11.4929 10.9368C11.5805 10.8493 11.6499 10.7453 11.6972 10.6308C11.7446 10.5164 11.7689 10.3937 11.7688 10.2699L11.7688 1.4567C11.7689 1.33285 11.7446 1.21019 11.6972 1.09574C11.6499 0.981295 11.5805 0.877308 11.4929 0.789732C11.4053 0.702157 11.3013 0.632713 11.1869 0.585376C11.0724 0.538039 10.9498 0.513738 10.8259 0.513866L2.01276 0.513865C1.88894 0.513865 1.76634 0.538253 1.65195 0.585635C1.53756 0.633017 1.43362 0.702465 1.34607 0.790016C1.25852 0.877566 1.18907 0.981504 1.14169 1.09589C1.09431 1.21028 1.06992 1.33288 1.06992 1.4567C1.06992 1.58051 1.09431 1.70312 1.14169 1.81751C1.18907 1.9319 1.25852 2.03584 1.34607 2.12339C1.43362 2.21094 1.53756 2.28038 1.65195 2.32777C1.76634 2.37515 1.88894 2.39954 2.01276 2.39954L8.53905 2.39954L1.06992 9.86866C0.702152 10.2364 0.702151 10.8382 1.06992 11.206C1.4377 11.5738 2.03951 11.5738 2.40728 11.206Z" fill="black" />
             </svg>
-            </button>              
+            </button>           </a>   
             <img src={data.page.sectionHomethird.thirdcolumnimage?.node?.link} alt=""  className='object-cover w-[106px] h-[106px]' />
             </div>
           </div>
@@ -435,16 +453,16 @@ export default async function Home() {
         <div className="md:w-7/12  pb-10 md:p-10">
           <img src={data.page.homefifthsection.fifthfirstimage?.node?.link} className="" />
           <div className="md:float-right md:mt-[-50px] mt-5 z-99999 relative" >
-            <button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">{data.page.homefifthsection.fifthbuttonone} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+           <a href={data.page.homefifthsection.buttonlinkone}> <button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">{data.page.homefifthsection.fifthbuttonone} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
               <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                 <path d="M1 13 13 1M4 1h9v9"></path>
               </g>
-            </svg></button><br className="hidden md:block" />
-            <button className="mx-auto mt-[21px] md:mx-0 md:mt-4   flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]">{data.page.homefifthsection.textbuttonsecond} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+            </svg></button></a><br className="hidden md:block" />
+            <a href={data.page.homefifthsection.buttonlinksecond}>   <button className="mx-auto mt-[21px] md:mx-0 md:mt-4   flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]">{data.page.homefifthsection.textbuttonsecond} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
               <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                 <path d="M1 13 13 1M4 1h9v9"></path>
               </g>
-            </svg></button>
+            </svg></button></a>
           </div>
         </div>
       </div>

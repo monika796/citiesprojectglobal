@@ -10,6 +10,7 @@ const POSTS_QUERY_SEC = gql`
   query {
     page(id: "cG9zdDoxNg==") {
       patnerssection {
+      linknithbox
         mainheading
         firstsubtitlepatner
         imagefirst {
@@ -98,7 +99,7 @@ export default function Partner() {
             <div className=" relative bg-black text-white p-[27px] w-[150px] h-[150px] flex items-center justify-center mx-auto">
               <div className="text-left absolute bottom-[15px] w-[89%]">
                 <h5 className="text-[12px] font-bold pb-2">{data.page.patnerssection.textninthbox}</h5>
-                <h3 className="text-[10px] font-bold">{data.page.patnerssection.linktextninthbox}</h3>
+                <a href={data.page.patnerssection.linknithbox}><h3 className="text-[10px] font-bold">{data.page.patnerssection.linktextninthbox}</h3></a>
               </div>
             </div>
 
@@ -107,38 +108,38 @@ export default function Partner() {
           {/* desktop div start */}
           <div className="hidden md:block py-10 ">
             <div className="flex justify-center mx-auto w-fit mb-3 gap-3 md:w-10/12">
-              <div className="max-w-[257px] w-[100%] h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+              <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
               <img  src={data.page.patnerssection.imagefirst?.node?.link} className="w-[80px]"  />
               </div>
-              <div className="max-w-[257px] w-[100%] h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33]  ">
+              <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33]  ">
               <img  src={data.page.patnerssection.image2?.node?.link}  className="w-[80px]" />
               </div>
-              <div className="max-w-[257px] w-[100%] h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+              <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
               <img  src={data.page.patnerssection.image3?.node?.link}  className="w-[80px]" />
               </div>
-              <div className="max-w-[257px] w-[100%]  h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+              <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
               <img  src={data.page.patnerssection.image4?.node?.link} className="w-[80px]"/>
               </div>
-              <div className="max-w-[257px] w-[100%]  h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+              <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
               <img src={data.page.patnerssection.image5?.node?.link}  className="w-[80px]" />
               </div>
             </div>
 
             <div className="flex justify-center items-center mx-auto w-fit mb-3 gap-3 md:w-8/12">
-            <div className="max-w-[257px] w-[100%]  h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+            <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
                 <img  src={data.page.patnerssection.image6?.node?.link}  className="w-[80px]"  />
                 </div>
-                <div className="max-w-[257px] w-[100%]  h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+                <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
                 <img  src={data.page.patnerssection.image7?.node?.link}  className="w-[80px]"  />
                 </div>
-                <div className="max-w-[257px] w-[100%]  h-[240px] p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+                <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
                 <img  src={data.page.patnerssection.image8?.node?.link}  className="w-[80px]"   />
                 </div>
              
-              <div className="relative bg-black text-white p-[27px] w-[100%] max-w-[257px] h-[240px] flex items-center justify-center hover:border-[#A1CF5F33]  ">
+              <div className="relative bg-black text-white p-[27px] w-full aspect-square max-w-[257px] flex items-center justify-center hover:border-[#A1CF5F33]  ">
                 <div className="text-left absolute bottom-[15px] w-[89%]">
                   <h5 className="text-[20px] font-bold pb-2">{data.page.patnerssection.textninthbox}</h5>
-                  <a className="text-[16px] underline" href="#">{data.page.patnerssection.linktextninthbox}</a>
+                  <a className="text-[16px] underline" href={data.page.patnerssection.linknithbox}>{data.page.patnerssection.linktextninthbox}</a>
                 </div>
               </div>
             </div>
