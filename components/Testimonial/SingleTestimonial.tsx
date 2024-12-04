@@ -20,7 +20,7 @@ const SingleTestimonial = ({ review }: { review: Testimonial }) => {
          <figcaption className="flex items-center justify-center mt-6 space-x-3 ">
              <div className=" items-center text-center">
                  <div className="md:pr-3 text-[20px]  text-gray-900 font-extrabold dark:text-white  text-center md:text-center">{name}</div>
-                 <div className=" text-sm font-light text-[16px] text-gray-500 dark:text-gray-400  text-center md:text-center">{designation}</div>
+                 <div className=" text-sm text-black font-medium text-[16px] text-gray-500 dark:text-gray-400  text-center md:text-center">{designation}</div>
              </div>
          </figcaption>
      </figure>

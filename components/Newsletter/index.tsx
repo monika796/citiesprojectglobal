@@ -82,7 +82,7 @@ export default   function  Newsletter() {
           >
             {data.page.newsletter.mainheading}
           </h3>
-          <p className="text-white text-center md:text-left">
+          <p className="text-white md:pt-[25px] md:text-[23px] text-center md:text-left">
             {data.page.newsletter.mainsubheading}
           </p>
         </div>

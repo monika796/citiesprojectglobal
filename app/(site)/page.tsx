@@ -10,6 +10,7 @@ import { gql, useQuery } from '@apollo/client';
 import { Anton } from "next/font/google";
 import client from 'apollo-client';
 import  Partner from "@/components/partner";
+import  SwiperSection from "@/components/postbannerslider";
 const anton = Anton({ weight: '400', subsets: ["latin"] });
 
 
@@ -47,6 +48,7 @@ query    {
     rightsmallsectionlinktext
     heading_second_section
     buttonLinkSecondSection
+    buttonText
     subtitleText
     firstRightImage{
        node {
@@ -252,12 +254,12 @@ export default async function Home() {
 
       <section className="w-full">
         <div className="container-fluid mx-auto">
-          <div className="relative w-full  bg-[url('/banner.jpg')] bg-cover bg-center  h-[510px] md:h-[909px]">
+          <div className="relative w-full  bg-[url('/banner.jpg')] bg-cover bg-center  h-[510px] md:h-[850px]">
             {/* <img src="/banner.jpg" alt="banner" className="w-full md:h-[auto] h-[350px]" /> */}
-            <div className="container max-w-[1480px] mx-auto relative   h-[510px] md:h-[909px]">
+            <div className="container relative max-w-[1480px] mx-auto relative   h-[510px] md:h-[780px]">
 
 
-              <div className="relative w-full md:absolute md:top-1/2  top-0  md:pt-0 pt-[36rem] left-8 transform -translate-y-1/2 text-white">
+              <div className="relative w-full md:absolute md:top-[61%]  top-0  md:pt-0 pt-[36rem] left-8 transform -translate-y-1/2 text-white">
                 <span className="uppercase mb-1	inline-block text-[10px] md:text-[14px] bg-[#fff] text-black leading-none	 text-center w-[auto]  mb-[20px]  font-bold	py-1 px-2">{data.page.bannerHome.subtitleupper}</span><br />
                 <strong className={`${anton.className} block uppercase md:text-[126px]  leading-[50px] text-[37px] font-light xl:leading-[130px]  md:leading-none`}>
                  {data.page.bannerHome.textBanner}<br className="hidden md:block" />
@@ -277,7 +279,10 @@ export default async function Home() {
                   </svg>
                 </a>
 
-              </div> <img src='/49.png' className="hidden md:block absolute right-[17px] md:right-[55px]  md:w-[20%]   bottom-[8px] md:bottom-[53px] w-[40%]" />
+              </div> <div className="hidden md:block absolute right-[17px] md:right-[55px]  md:w-[30%]   bottom-[8px]  w-[40%]" >
+                
+              <SwiperSection />
+                </div>
             </div>
           </div>
         </div>
@@ -297,7 +302,7 @@ export default async function Home() {
               {data.page.bannerHomesecond.subtitleText} </p>
               <div className="flex flex-col md:flex-row md:mx-0 ">
               <a href={data.page.bannerHomesecond.buttonLinkSecondSection} >   <button className=" w-full md:w-auto flex items-center gap-2.5 text-black     text-lg  font-extrabold rounded mb-4 md:mb-0 md:mr-4">
-                  Learn More
+              {data.page.bannerHomesecond.buttonText}
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                     <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                       <path d="M1 13 13 1M4 1h9v9"></path>
@@ -309,16 +314,16 @@ export default async function Home() {
             <div
               className="w-full md:w-1/2  bg-cover bg-center " >
               <div className="inner_Sec_div relative">
-                <div className='flex flex-col '>
-                  <div className="flex gap-3 bg-white items-end md:w-4/12 w-[40%] h-[250px] bottom-0  px-3 py-1 h-auto absolute md:absolute border border-solid border-black">
-                           <div> <p className="font-bold text-black w-[70%] mb-3" > {data.page.bannerHomesecond.rightsmallsectiontext}</p>
-                                  <a href={data.page.bannerHomesecond.rightsmallsectionlink} ><p className="text-black underline" > {data.page.bannerHomesecond.rightsmallsectionlinktext}</p></a></div>  
+                <div className='md:flex flex-col '>
+                  <div className="flex gap-3 bg-white items-end md:w-4/12 w-[40%] mx-auto !h-[250px] bottom-0 relative  px-3 py-1 h-auto md:absolute md:absolute border border-solid border-black rounded ">
+                           <div> <p className="font-bold text-black w-[70%] mb-3 text-[18px]" > {data.page.bannerHomesecond.rightsmallsectiontext}</p>
+                                  <a href={data.page.bannerHomesecond.rightsmallsectionlink} ><p className="text-black text-[15px] underline" > {data.page.bannerHomesecond.rightsmallsectionlinktext}</p></a></div>  
                                    <svg className="absolute top-[9px] right-[11px]" width="17" height="17" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.40728 11.206L9.8764 3.73689L9.8764 10.2632C9.8764 10.7847 10.3044 11.2127 10.8259 11.2127C10.9498 11.2128 11.0724 11.1885 11.1869 11.1412C11.3013 11.0938 11.4053 11.0244 11.4929 10.9368C11.5805 10.8493 11.6499 10.7453 11.6972 10.6308C11.7446 10.5164 11.7689 10.3937 11.7688 10.2699L11.7688 1.4567C11.7689 1.33285 11.7446 1.21019 11.6972 1.09574C11.6499 0.981295 11.5805 0.877308 11.4929 0.789732C11.4053 0.702157 11.3013 0.632713 11.1869 0.585376C11.0724 0.538039 10.9498 0.513738 10.8259 0.513866L2.01276 0.513865C1.88894 0.513865 1.76634 0.538253 1.65195 0.585635C1.53756 0.633017 1.43362 0.702465 1.34607 0.790016C1.25852 0.877566 1.18907 0.981504 1.14169 1.09589C1.09431 1.21028 1.06992 1.33288 1.06992 1.4567C1.06992 1.58051 1.09431 1.70312 1.14169 1.81751C1.18907 1.9319 1.25852 2.03584 1.34607 2.12339C1.43362 2.21094 1.53756 2.28038 1.65195 2.32777C1.76634 2.37515 1.88894 2.39954 2.01276 2.39954L8.53905 2.39954L1.06992 9.86866C0.702152 10.2364 0.702151 10.8382 1.06992 11.206C1.4377 11.5738 2.03951 11.5738 2.40728 11.206Z" fill="black" />
             </svg>    
                   </div>
                   {/* <img src={data.page.bannerHomesecond.firstRightImage?.node?.link} className='md:w-4/12 w-[40%] bottom-0  p-4 h-auto absolute md:absolute' /> */}
-                  <img src={data.page.bannerHomesecond.secondRightImage?.node?.link} className='w-8/12  p-4  self-end ' />
+                  <img src={data.page.bannerHomesecond.secondRightImage?.node?.link} className='w-8/12 md:mx-0 mx-auto p-4  self-end ' />
                 </div>
 
               </div>
@@ -346,7 +351,7 @@ export default async function Home() {
               <b> Date:</b> November 15, 2024 <br />
               <b>Time:</b> 10:00 AM - 12:00 PM
             </p>
-            <a href={data.page.sectionHomethird.buttonLink1ThirdSection}>  <button className="container mb-6 md:mb-0 max-w-[109px] flex items-center gap-2.5 justify-center  md:w-1/2 float-left bg-[#A1CF5F] mt-[10px] h-[40px] rounded-[5px] font-bold text-black text-[14px]">Sign up <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href={data.page.sectionHomethird.buttonLink1ThirdSection}>  <button className="container mb-6 md:mb-0 max-w-[109px] flex items-center gap-2.5 justify-center  md:w-1/2 float-left bg-[#A1CF5F] mt-[10px] h-[40px] rounded-[5px] font-bold text-black text-[13px]">Sign up <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.40728 11.206L9.8764 3.73689L9.8764 10.2632C9.8764 10.7847 10.3044 11.2127 10.8259 11.2127C10.9498 11.2128 11.0724 11.1885 11.1869 11.1412C11.3013 11.0938 11.4053 11.0244 11.4929 10.9368C11.5805 10.8493 11.6499 10.7453 11.6972 10.6308C11.7446 10.5164 11.7689 10.3937 11.7688 10.2699L11.7688 1.4567C11.7689 1.33285 11.7446 1.21019 11.6972 1.09574C11.6499 0.981295 11.5805 0.877308 11.4929 0.789732C11.4053 0.702157 11.3013 0.632713 11.1869 0.585376C11.0724 0.538039 10.9498 0.513738 10.8259 0.513866L2.01276 0.513865C1.88894 0.513865 1.76634 0.538253 1.65195 0.585635C1.53756 0.633017 1.43362 0.702465 1.34607 0.790016C1.25852 0.877566 1.18907 0.981504 1.14169 1.09589C1.09431 1.21028 1.06992 1.33288 1.06992 1.4567C1.06992 1.58051 1.09431 1.70312 1.14169 1.81751C1.18907 1.9319 1.25852 2.03584 1.34607 2.12339C1.43362 2.21094 1.53756 2.28038 1.65195 2.32777C1.76634 2.37515 1.88894 2.39954 2.01276 2.39954L8.53905 2.39954L1.06992 9.86866C0.702152 10.2364 0.702151 10.8382 1.06992 11.206C1.4377 11.5738 2.03951 11.5738 2.40728 11.206Z" fill="black" />
             </svg>
             </button></a>
@@ -415,7 +420,7 @@ export default async function Home() {
               <p className="text-[16px] text-left md:text-left text-black leading-normal mt-3 pe-6">{data.page.homefourtsection.secondparagraph}</p>
             </div>
             <div className="md:w-6/12 p-2 md:order-2" >
-              <img src={data.page.homefourtsection.secondimage?.node?.link} alt="" className='md:h-auto mx-auto md:mx-0 h-[100%] w-full' />
+              <img src={data.page.homefourtsection.secondimage?.node?.link} alt="" className='md:h-auto mx-auto md:w-1/2 md:mx-0 h-[100%] w-full' />
             </div>
           </div >
         </div>
@@ -430,7 +435,7 @@ export default async function Home() {
               <p className="text-[16px] text-black text-left md:text-left leading-normal  mt-3 ">{data.page.homefourtsection.thirdparagraph}</p>
             </div>
             <div className="md:w-6/12 p-2 order-1 md:order-2" >
-              <img src={data.page.homefourtsection.thirdimage?.node?.link} alt="" className='md:h-auto mx-auto md:mx-0 h-[100%] w-full' />
+              <img src={data.page.homefourtsection.thirdimage?.node?.link} alt="" className='  md:w-[60%] md:h-auto mx-auto md:mx-0 h-[100%] w-full' />
             </div>
           </div>
         </div>
@@ -438,27 +443,27 @@ export default async function Home() {
       </div>
 
 
-      <div className="container mx-auto max-w-[1480px]" >   
-          <div className="flex flex-col md:flex-row w-[100%%] mx-auto items-center rounded-[5px]" style={{ backgroundColor: 'rgb(3, 4, 2)' }}>
+      <div className="container mx-auto max-w-[1380px] " >   
+          <div className="flex flex-col md:flex-row w-[100%%] pb-[10px] mx-auto items-center rounded-[5px]" style={{ backgroundColor: 'rgb(3, 4, 2)' }}>
         <div className="md:w-5/12 w-full p-[40px] md:p-[40px] mt-10 md:mt-0">
-          <span className="text-[20px] bg-[#fff]   text-black font-bold mx-auto md:mx-0 text-center w-[45%] rounded-[20px] px-4 py-1 font-bold">{data.page.homefifthsection.fifthfirstsubtitle}</span>
-          <h5 className="md:text-[48px] text-[26px]  text-[#A1CF5F] md:text-left text-left  pb-[15px] font-bold pt-[20px] md:leading-10 ">{data.page.homefifthsection.mainheadingfifth}</h5>
-          <p className="md:text-[48px]  text-[22px] md:text-left text-left text-white md:leading-normal font-bold">
+          <span className="text-[18px] bg-[#fff]   text-black font-bold mx-auto md:mx-0 text-center w-[45%] rounded-[20px] px-4 py-1 font-bold">{data.page.homefifthsection.fifthfirstsubtitle}</span>
+          <h5 className="md:text-[45px] text-[26px]  text-[#A1CF5F] md:text-left text-left  pb-[15px] font-bold pt-[20px] md:leading-10 ">{data.page.homefifthsection.mainheadingfifth}</h5>
+          <p className="md:text-[45px] md:w-[87%]  text-[22px] md:text-left text-left text-white md:leading-normal font-bold">
           {data.page.homefifthsection.fifthheadingsimple}</p>
           <img src={data.page.homefifthsection.authorimage?.node?.link} className="md:h-[150px] mx-unset mt-10 md:mt-0 md:mx-0 h-[83px]" />
 
           <h5 className="text-[30px] text-white md:text-left text-left font-bold pb-2 md:pb-5">{data.page.homefifthsection.authortitle}</h5>
           <h5 className="text-[12px] text-white md:text-left text-left font-bold">{data.page.homefifthsection.authordesignation}</h5>
         </div>
-        <div className="md:w-7/12  pb-10 md:p-10">
+        <div className="md:w-8/12   md:py-[30px] ">
           <img src={data.page.homefifthsection.fifthfirstimage?.node?.link} className="" />
-          <div className="md:float-right md:mt-[-50px] mt-5 z-99999 relative" >
+          <div className="md:float-right md:mt-[-50px] md:mr-3 mt-5 z-99999 relative" >
            <a href={data.page.homefifthsection.buttonlinkone}> <button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">{data.page.homefifthsection.fifthbuttonone} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
               <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                 <path d="M1 13 13 1M4 1h9v9"></path>
               </g>
-            </svg></button></a><br className="hidden md:block" />
-            <a href={data.page.homefifthsection.buttonlinksecond}>   <button className="mx-auto mt-[21px] md:mx-0 md:mt-4   flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]">{data.page.homefifthsection.textbuttonsecond} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+            </svg></button></a>
+            <a href={data.page.homefifthsection.buttonlinksecond} >   <button className=" mx-auto mt-[21px] md:mx-0 md:mt-4   flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]">{data.page.homefifthsection.textbuttonsecond} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
               <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                 <path d="M1 13 13 1M4 1h9v9"></path>
               </g>
@@ -470,11 +475,12 @@ export default async function Home() {
 
       <Partner />
       <div className="container mx-auto max-w-[1280px]" >  <section className=" md:flex w-[97%] mt-[54px] mx-auto  bg-[#000]">
-            <div className=" md:w-4/12 p-5">
-              <h2 className={`${anton.className} text-[#A1CF5F] text-[30px] md:text-[48px] uppercase   leading-[50px] md:leading-[72px]`}>{data.page.homesixthsection.heading}</h2>
+            <div className=" md:w-4/12 p-5 relative">
+              <h2 className={`${anton.className} text-[#A1CF5F] text-[30px] md:w-[73%] md:text-[48px] uppercase   leading-[50px] md:leading-[72px]`}>{data.page.homesixthsection.heading}</h2>
               <p className="text-white text-[16px] leading-tight pt-5">{data.page.homesixthsection.paragraph}</p>
               <p className="text-white text-[17px] md:text-[20px] font-bold pt-[29px] ">{data.page.homesixthsection.author}</p>
               <p className="text-white text-[16px] pl-0 md:pl-8  ">{data.page.homesixthsection.designations}</p>
+              <img src='84.png' className="absolute top-[38%] right-3 md:top-3" />
             </div>
             <div className=" md:w-8/12   bg-cover bg-center" style={{ backgroundImage: `url('${data.page.homesixthsection.rightimage?.node?.link}')` }}>
             
