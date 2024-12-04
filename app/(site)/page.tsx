@@ -259,14 +259,14 @@ export default async function Home() {
             <div className="container relative max-w-[1480px] mx-auto relative   h-[510px] md:h-[780px]">
 
 
-              <div className="relative w-full md:absolute md:top-[61%]  top-0  md:pt-0 pt-[36rem] left-8 transform -translate-y-1/2 text-white">
+              <div className="relative w-full md:absolute md:top-[61%]  top-0  md:pt-0 pt-[36rem] left-0 transform -translate-y-1/2 text-white">
                 <span className="uppercase mb-1	inline-block text-[10px] md:text-[14px] bg-[#fff] text-black leading-none	 text-center w-[auto]  mb-[20px]  font-bold	py-1 px-2">{data.page.bannerHome.subtitleupper}</span><br />
                 <strong className={`${anton.className} block uppercase md:text-[126px]  leading-[50px] text-[37px] font-light xl:leading-[130px]  md:leading-none`}>
                  {data.page.bannerHome.textBanner}<br className="hidden md:block" />
                  {data.page.bannerHome.textBanner2}< br className="hidden md:block" />
                  {data.page.bannerHome.textBanner3}
                 </strong>
-                <p className="mt-2 md:mb-0 mb-10 md:w-[26%] font-light xl:leading-6 md:leading-none">
+                <p className="mt-2 md:mb-10 mb-10 md:w-[26%] font-light xl:leading-6 md:leading-none">
                 {data.page.bannerHome.subtitle_bottom} </p>
                 <a
                   href={data.page.bannerHome.buttonLinkBannerHome}
@@ -279,7 +279,8 @@ export default async function Home() {
                   </svg>
                 </a>
 
-              </div> <div className="hidden md:block absolute right-[17px] md:right-[55px]  md:w-[30%]   bottom-[8px]  w-[40%]" >
+              </div> 
+              <div className="hidden md:block absolute right-[17px] md:right-[55px]  md:max-w-[427px]   bottom-[8px]  w-[40%] swiper-slider" >
                 
               <SwiperSection />
                 </div>
@@ -293,7 +294,7 @@ export default async function Home() {
   style={{ backgroundImage: `url('${data.page.bannerHomesecond.bannersecondbackground?.node?.link}')` }}
 >
         <div className="container mx-auto container max-w-[1480px]">
-          <div className="flex md:p-[105px] md:pb-[180px] flex-col md:flex-row h-full">
+          <div className="flex md:p-[105px] md:pb-[280px] flex-col md:flex-row h-full">
             <div className=" w-full md:w-1/2 p-4 md:p-2 flex flex-col justify-center">
               <h2 className="font-bold text-gray-800 text-3xl md:text-[56px] leading-tight mb-4">
               {data.page.bannerHomesecond.heading_second_section}  
@@ -316,7 +317,7 @@ export default async function Home() {
               <div className="inner_Sec_div relative">
                 <div className='md:flex flex-col '>
                   <div className="flex gap-3 bg-white items-end md:w-4/12 w-[40%] mx-auto !h-[250px] bottom-0 relative  px-3 py-1 h-auto md:absolute md:absolute border border-solid border-black rounded ">
-                           <div> <p className="font-bold text-black w-[70%] mb-3 text-[18px]" > {data.page.bannerHomesecond.rightsmallsectiontext}</p>
+                           <div> <p className="font-bold text-black w-[100%] mb-3 text-[18px]" > {data.page.bannerHomesecond.rightsmallsectiontext}</p>
                                   <a href={data.page.bannerHomesecond.rightsmallsectionlink} ><p className="text-black text-[15px] underline" > {data.page.bannerHomesecond.rightsmallsectionlinktext}</p></a></div>  
                                    <svg className="absolute top-[9px] right-[11px]" width="17" height="17" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.40728 11.206L9.8764 3.73689L9.8764 10.2632C9.8764 10.7847 10.3044 11.2127 10.8259 11.2127C10.9498 11.2128 11.0724 11.1885 11.1869 11.1412C11.3013 11.0938 11.4053 11.0244 11.4929 10.9368C11.5805 10.8493 11.6499 10.7453 11.6972 10.6308C11.7446 10.5164 11.7689 10.3937 11.7688 10.2699L11.7688 1.4567C11.7689 1.33285 11.7446 1.21019 11.6972 1.09574C11.6499 0.981295 11.5805 0.877308 11.4929 0.789732C11.4053 0.702157 11.3013 0.632713 11.1869 0.585376C11.0724 0.538039 10.9498 0.513738 10.8259 0.513866L2.01276 0.513865C1.88894 0.513865 1.76634 0.538253 1.65195 0.585635C1.53756 0.633017 1.43362 0.702465 1.34607 0.790016C1.25852 0.877566 1.18907 0.981504 1.14169 1.09589C1.09431 1.21028 1.06992 1.33288 1.06992 1.4567C1.06992 1.58051 1.09431 1.70312 1.14169 1.81751C1.18907 1.9319 1.25852 2.03584 1.34607 2.12339C1.43362 2.21094 1.53756 2.28038 1.65195 2.32777C1.76634 2.37515 1.88894 2.39954 2.01276 2.39954L8.53905 2.39954L1.06992 9.86866C0.702152 10.2364 0.702151 10.8382 1.06992 11.206C1.4377 11.5738 2.03951 11.5738 2.40728 11.206Z" fill="black" />
@@ -335,7 +336,7 @@ export default async function Home() {
       </section>
 
       <div className="container mx-auto  max-w-[1480px] ">          
-             <div className='w-[91%] md:mt-[-130px] mt-[50px] mx-auto flex flex-col md:flex-row border border-black border-solid '>
+             <div className='w-[100%] md:mt-[-130px] mt-[50px] mx-auto flex flex-col md:flex-row border border-black border-solid '>
         <div className=' flex flex-col md:flex-row md:w-6/12 bg-white '>
           <div style={{ backgroundImage: `url('${data.page.sectionHomethird.firstcolumnimage?.node?.link}')` }} className='w-6/12  bg-no-repeat bg-cover w-auto bg-bottom h-[313px] md:w-[256px] md:h-[313px]   border-t border-transparent '>
 
@@ -389,8 +390,8 @@ export default async function Home() {
         </div>
       </div></div>
 
-      <div className="container max-w-[1480px] mx-auto">  <div className="container w-[100%] mx-auto pt-[30px] pt-[30px] md:pt-[100px] md:pb-[100px]">
-        <h1 className=" px-5 md:px-0 text-[25px] md:w-[47%] md:mx-auto  md:text-[48px] pb-5 mt-10 md:mt-0 md:pb-15 text-black font-bold leading-[30.09px] md:leading-[46.09px] text-center">
+      <div className="container max-w-[1480px] mx-auto">  <div className="container w-[100%] mx-auto pt-[30px]  md:pt-[150px] md:pb-[100px]">
+        <h1 className=" px-5 md:px-0 text-[25px] md:max-w-[1062px] md:mx-auto  md:text-[48px] pb-5 mt-10 md:mt-0 md:pb-15 text-black font-bold leading-[30.09px] md:leading-[46.09px] text-center">
           {/* Confused over your calling?<br className="hidden md:block" />
           Is ministry the only work that 'counts'? */}
 {data.page.homefourtsection.mainheadingfourth}
@@ -443,8 +444,8 @@ export default async function Home() {
       </div>
 
 
-      <div className="container mx-auto max-w-[1380px] " >   
-          <div className="flex flex-col md:flex-row w-[100%%] pb-[10px] mx-auto items-center rounded-[5px]" style={{ backgroundColor: 'rgb(3, 4, 2)' }}>
+      <div className="container mx-auto max-w-[1481px] " >   
+          <div className="flex flex-col md:flex-row w-[100%] pb-[10px] mx-auto items-center rounded-[5px]" style={{ backgroundColor: 'rgb(3, 4, 2)' }}>
         <div className="md:w-5/12 w-full p-[40px] md:p-[40px] mt-10 md:mt-0">
           <span className="text-[18px] bg-[#fff]   text-black font-bold mx-auto md:mx-0 text-center w-[45%] rounded-[20px] px-4 py-1 font-bold">{data.page.homefifthsection.fifthfirstsubtitle}</span>
           <h5 className="md:text-[45px] text-[26px]  text-[#A1CF5F] md:text-left text-left  pb-[15px] font-bold pt-[20px] md:leading-10 ">{data.page.homefifthsection.mainheadingfifth}</h5>
@@ -455,8 +456,9 @@ export default async function Home() {
           <h5 className="text-[30px] text-white md:text-left text-left font-bold pb-2 md:pb-5">{data.page.homefifthsection.authortitle}</h5>
           <h5 className="text-[12px] text-white md:text-left text-left font-bold">{data.page.homefifthsection.authordesignation}</h5>
         </div>
-        <div className="md:w-8/12   md:py-[30px] ">
+        <div className="md:w-8/12   md:py-[30px] relative ">
           <img src={data.page.homefifthsection.fifthfirstimage?.node?.link} className="" />
+          <img src='/video.gif' className="w-[224px] video-gif" />
           <div className="md:float-right md:mt-[-50px] md:mr-3 mt-5 z-99999 relative" >
            <a href={data.page.homefifthsection.buttonlinkone}> <button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">{data.page.homefifthsection.fifthbuttonone} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
               <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
@@ -474,8 +476,8 @@ export default async function Home() {
       </div>
 
       <Partner />
-      <div className="container mx-auto max-w-[1280px]" >  <section className=" md:flex w-[97%] mt-[54px] mx-auto  bg-[#000]">
-            <div className=" md:w-4/12 p-5 relative">
+      <div className="container mx-auto max-w-[1481px]" >  <section className=" md:flex w-[100%] mt-[54px] mx-auto  bg-[#000]">
+            <div className=" md:w-4/12 p-10 relative">
               <h2 className={`${anton.className} text-[#A1CF5F] text-[30px] md:w-[73%] md:text-[48px] uppercase   leading-[50px] md:leading-[72px]`}>{data.page.homesixthsection.heading}</h2>
               <p className="text-white text-[16px] leading-tight pt-5">{data.page.homesixthsection.paragraph}</p>
               <p className="text-white text-[17px] md:text-[20px] font-bold pt-[29px] ">{data.page.homesixthsection.author}</p>

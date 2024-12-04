@@ -41,10 +41,10 @@ const Header = () => {
   }, []);
   return (
     <header
-      className={`sticky  left-0 top-0 z-99999 md:pt-6 w-full ${stickyMenu
+      className={`sticky  left-0 top-0 z-99999 md:pt-0 w-full ${stickyMenu
           ? "bg-gray-900 text-white !py-4 shadow transition duration-100 dark:bg-black"
           : ""
-        } ${isHomePage ? "my-1" : "mt-2"}`}
+        } ${isHomePage ? "my-0" : "mt-2"}`}
     >
       {/* <div className="relative mx-auto max-w-[89%]  border-t border-b border-white border-solid items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0"> */}
       <div className={`relative mx-auto container max-w-[1480px]  border-t border-b  border-solid items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0 
@@ -166,7 +166,7 @@ const Header = () => {
 
         
         </div>
-        <div className=" hidden lg:flex flex md:gap-[10px] md:order-2  w-[40%] space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <div className=" hidden lg:flex flex md:gap-[10px] md:order-2 w-full max-w-[350px] space-x-3 md:space-x-0 rtl:space-x-reverse">
             <div className="px-4  md:flex md:items-center md:justify-between">
               <div className="md:flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse  hidden ">
                 <a href="#" className={` text-gray-400 hover:text-gray-900 dark:hover:text-white  border border-black rounded-[52px] px-[13px] py-[9px] ${isHomePage ? "border-white" : "border-black"} `} onClick={closeNavigation}>

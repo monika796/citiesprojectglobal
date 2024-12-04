@@ -74,7 +74,7 @@ export default   function  Newsletter() {
   }
 
   return (
-    <div className="container mx-auto max-w-[1280px]">
+    <div className="container mx-auto max-w-[1481px]">
       <div className="md:flex w-[100%] mx-auto bg-[#000000] p-5">
         <div className="md:w-6/12 md:p-30">
           <h3

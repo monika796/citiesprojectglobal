@@ -57,7 +57,7 @@ const SwiperSection = () => {
 
   return (
     <>
-      <section className="max-w-[1480px] mx-auto bg-gray-100 flex items-center justify-center">
+      <section className="max-w-[1480px] mx-auto  flex items-center justify-center">
         <div className="w-full h-auto">
           <Swiper
             modules={[Navigation, Pagination, Keyboard, Mousewheel, Autoplay]}
@@ -85,11 +85,11 @@ const SwiperSection = () => {
                   </div>
                   <div className="w-2/3 grid p-2">
                     <div>
-                      <p className="w-[38%] text-[11px] bg-[#000000] h-auto text-white font-bold text-center rounded-[20px] ">
+                      <p className="w-[40%] text-[11px] bg-[#000000] uppercase h-auto text-white font-bold text-center rounded-[20px] ">
                         Latest Stories
                       </p>
                     </div>
-                    <p className="text-[14px] font-bold uppercase text-black">{post.title || "Untitled"}</p>
+                    <p className="text-[16px] font-bold text-black leader-[19.36px] pl-1">{post.title || "Untitled"}</p>
                     <p className="text-[13px] underline uppercase text-black">Read more</p>
                   </div>
                 </div>

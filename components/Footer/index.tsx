@@ -8,8 +8,8 @@ const Footer = () => {
       {/* footer start */} 
 <br>
 </br>
-<footer>
-  <div className=" hidden md:flex w-[89%] mx-auto flex flex-wrap items-center justify-between mx-auto border-t border-b border-solid border-black">
+<footer className="max-w-[1481px] mx-auto">
+  <div className=" hidden md:flex w-[100%] mx-auto flex flex-wrap items-center justify-between mx-auto border-t border-b border-solid border-black">
         
         <div className="flex gap-[10px] md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <div className="px-4 py-6 md:flex md:items-center md:justify-between">
@@ -102,8 +102,8 @@ const Footer = () => {
 
       
     <div className="mx-auto w-full">
-      <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
-        <div className="grid justify-center items-center">
+      <div className="grid grid-cols-2 gap-8 px-0 py-6 lg:py-8 md:grid-cols-4">
+        <div className="grid justify-start items-center">
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Programs</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
@@ -115,7 +115,7 @@ const Footer = () => {
                 
             </ul>
         </div>
-        <div className=" flex justify-center items-center">
+        <div className=" flex justify-start items-center">
           <div className="grid justify-center items-center">  <h2 className="  mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">About the Book</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
@@ -129,7 +129,7 @@ const Footer = () => {
               <img src='/25.png'  className='w-[116px]'/>
             </div>
         </div>
-        <div className="grid justify-center items-center">
+        <div className="grid justify-start items-center">
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Stay Connected</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
@@ -143,7 +143,7 @@ const Footer = () => {
                 </li>
             </ul>
         </div>
-        <div className="grid justify-center items-start">
+        <div className="grid justify-start items-start">
           
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">

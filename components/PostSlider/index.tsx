@@ -84,9 +84,9 @@ const CustomSlider = () => {
     <main>
 
 
-    <div className="container mx-auto block md:hidden">
+    <div className="container mx-auto block md:hidden max-w-[1481px]">
     <h2 className="font-inter md:text-[48px] text-[30px] text font-bold leading-[58.09px] p-8 text-black text-left text-center decoration-skip-ink-none"> {data.page.homefourtsection.postsliderheading} </h2>
-      <section className="w-[94%] mx-auto">
+      <section className="w-[100%] mx-auto">
         <motion.div
           variants={{
             hidden: {
@@ -162,9 +162,9 @@ const CustomSlider = () => {
       </section>
       </div> 
       
-      <div className="container mx-auto md:block hidden">
+      <div className="container mx-auto max-w-[1481px] md:block hidden mt-[100px] story-slider">
       <h2 className="font-inter md:text-[48px] text-[30px] text font-bold leading-[58.09px] p-8 text-black text-left text-center decoration-skip-ink-none">{data.page.homefourtsection.postsliderheading}</h2>
-      <section className="w-[94%] mx-auto">
+      <section className="w-[100%] mx-auto">
         <motion.div
           variants={{
             hidden: {
@@ -208,7 +208,7 @@ const CustomSlider = () => {
             >
               {sliderData.map((slide) => (
                 <SwiperSlide key={slide.id} className="swiper-slide-custom">
-                  <div className="relative grid place-items-center p-9 rounded-lg shadow-solid-9">
+                  <div className="relative grid place-items-center">
                     <img
                       src={slide.imgSrc}
                       className="object-contain w-full rounded-lg"
