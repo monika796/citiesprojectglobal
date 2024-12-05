@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import ReactPlayer from "react-player";
 import { motion } from "framer-motion";
 import { gql, useQuery } from '@apollo/client';
 const POSTS_QUERY = gql `
@@ -124,14 +125,23 @@ const VideoCarousel = () => {
                   <SwiperSlide key={video?.id}>
                     <div className="video-slide bg-white rounded-lg shadow-solid-9 dark:border dark:border-strokedark dark:bg-blacksection dark:shadow-none">
                       <div className="video-container mb-6">
-                        <video
+                        {/* <video
                           className="w-full rounded-lg"
                           
                           poster={video.description} // Optional thumbnail image
                         >
                           <source src={video?.videoUrl} type="video/mp4" />
                           Your browser does not support the video tag.
-                        </video>
+                        </video> */}
+
+                          <ReactPlayer 
+                                  url={video?.videoUrl} 
+                                  controls // Enables player controls (play, pause, etc.)
+                                  playing={false} // Starts playback automatically
+                                  width="80%" 
+                                  height="450px" 
+                                  light={video.description}
+                                />
                       </div>
                     </div>
                   </SwiperSlide>

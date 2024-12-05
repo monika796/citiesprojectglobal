@@ -11,6 +11,7 @@ import { Anton } from "next/font/google";
 import client from 'apollo-client';
 import  Partner from "@/components/partner";
 import  SwiperSection from "@/components/postbannerslider";
+import ReactPlayer from "react-player";
 const anton = Anton({ weight: '400', subsets: ["latin"] });
 
 
@@ -458,6 +459,8 @@ export default async function Home() {
         </div>
         <div className="md:w-8/12   md:py-[30px] relative ">
           <img src={data.page.homefifthsection.fifthfirstimage?.node?.link} className="" />
+
+            
           <img src='/video.gif' className="w-[224px] video-gif" />
           <div className="md:float-right md:mt-[-50px] md:mr-3 mt-5 z-99999 relative" >
            <a href={data.page.homefifthsection.buttonlinkone}> <button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">{data.page.homefifthsection.fifthbuttonone} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
