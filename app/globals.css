@@ -209,7 +209,7 @@ pre {
 .aboutus_video_player video {
   height: auto !important;
 }
-.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+.video-carousel  .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
   position: relative;
   width: 1059px;
   margin: auto;
