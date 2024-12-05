@@ -127,7 +127,7 @@ const VideoCarousel = () => {
                       <div className="video-container mb-6">
                         {/* <video
                           className="w-full rounded-lg"
-                          
+                          controls
                           poster={video.description} // Optional thumbnail image
                         >
                           <source src={video?.videoUrl} type="video/mp4" />
