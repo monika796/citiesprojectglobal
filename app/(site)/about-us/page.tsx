@@ -249,12 +249,12 @@ console.log(data);
               <div className="container mx-auto">
                   <section className="md:py-[32px] ">
                         <h1 className="md:text-[40px]  text-[25px] font-bold text-center text-black md:w-[52%] md:p-5 mx-auto leading-[49px]">{ data.page.aboutussections.videosectionheading }</h1>
-                        <div className="relative mx-auto table"> 
+                        <div className="relative mx-auto table md:w-[80%]"> 
                         <VideoPlayer url="https://digitractive.com/cityprojectglobal/wp-content/uploads/2024/12/3249935-uhd_3840_2160_25fps.mp4"  dataVal={data.page.aboutussections.videosectionbackground?.node?.link} />
                          
                         
 
-                            <img src={data.page.aboutussections.videosectionbackground?.node?.link} className="z-999999 md:p-0 p-5" alt="" />
+                            {/* <img src={data.page.aboutussections.videosectionbackground?.node?.link} className="z-999999 md:p-0 p-5" alt="" /> */}
                             <div className="md:absolute bottom-0 p-5 text-center md:text-left">
                                 <h2 className="md:text-[64px]  text-[30px] font-bold text-black md:text-white md:w-[32%] leading-[65px]">{ data.page.aboutussections.videosectiontitle }</h2>
                                 <p className="font-normal text-[16px] mt-4 text-black  md:text-white md:w-[72%]">{ data.page.aboutussections.videosectiondescription } </p>
