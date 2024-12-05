@@ -124,7 +124,7 @@ export default   function  Newsletter() {
             </p>
             <button
               type="submit"
-              className="mx-auto mt-4 font-bold md:mx-0 md:w-[18%] w-[28%] bg-[#A1CF5F] md:p-[8px] p-[10px] text-black rounded-[7px] text-[16px]"
+              className="mx-auto mt-4 font-bold md:mx-0 md:w-[18%] max-w-[106.57px] bg-[#A1CF5F] md:p-[8px] p-[10px] text-black rounded-[7px] text-[16px]"
             >
               Submit
             </button>

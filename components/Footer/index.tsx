@@ -8,7 +8,7 @@ const Footer = () => {
       {/* footer start */} 
 <br>
 </br>
-<footer className="max-w-[1481px] mx-auto">
+<footer className="container max-w-[1481px] mx-auto md:mt-[60px]">
   <div className=" hidden md:flex w-[100%] mx-auto flex flex-wrap items-center justify-between mx-auto border-t border-b border-solid border-black">
         
         <div className="flex gap-[10px] md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
