@@ -1,9 +1,64 @@
 import Newsletter from "@/components/Newsletter";
 import {  Anton } from "next/font/google";
 
+import { gql } from '@apollo/client';
+import client from 'apollo-client';
+
+
 const anton = Anton({ weight: '400', subsets: ["latin"] }); 
+const POST_QUERY= gql `query MyQuery2 {
+  page(id: "") {
+    bookPageFeilds {
+      fifthReviewSectionDescription
+      fifthReviewSectionHeading
+      firstSectionMainHeading
+      fourthSectionFirstColumnText
+      seventhSectionButtonOneLink
+      seventhSectionButtonOneText
+      seventhSectionButtonTwoLink
+      seventhSectionButtonTwoText
+      seventhSectionDescription1
+      seventhSectionDescription2
+      seventhSectionDescription3
+      seventhSectionDescription4
+      seventhSectionMainHeading
+      sixthSectionVideoHeading
+      sixthSectionVideoLink
+      sixthSectionVideoMainHeading
+      thirdSectionRightButtonOne
+      thirdSectionRightButtonTwo
+      thirdSectionRightButtonTwoLink
+      thirdSectionRightHeading
+      thirdSectionRightButtonOneLink {
+        url
+      }
+      thirdSectionLeftImage {
+        node {
+          link
+        }
+      }
+      secondSectionImage {
+        node {
+          link
+        }
+      }
+      fourthSectionThirdColumnImage {
+        node {
+          link
+        }
+      }
+      fourthSectionFourthColumnImage {
+        node {
+          link
+        }
+      }
+    }
+  }
+}`;
 
 export default function Book() {
+
+   
     return (
         <main className="container mx-auto max-w-[1480px]">
             <h1 className="md:py-[42px] py-[30px] md:text-[64px] text-[25px] font-bold text-center text-black md:max-w-[1178px] p-5 mx-auto md:leading-[77.45px] ">Discover Our Book
@@ -23,14 +78,14 @@ export default function Book() {
                             <button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]" >
                                 Buy Now
                                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
-                                 <g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                 <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                                     <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
                                     </button>
                                     <br className="hidden md:block" />
                                     <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
                                         Read a Sample Chapter
                                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
-                                         <g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                         <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                                             <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
                                             </button>
                           </div>
@@ -96,14 +151,14 @@ export default function Book() {
                             <button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]" >
                                 Buy Now
                                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
-                                 <g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                 <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                                     <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
                                     </button>
                                     <br className="hidden md:block" />
                                     <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
                                         Read a Sample Chapter
                                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
-                                         <g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                         <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                                             <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
                                             </button>
                           </div>
@@ -166,7 +221,7 @@ The call to return to God’s design is desperately needed, a message  that can 
                                 <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
                                         Join Us
                                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
-                                         <g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                         <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                                             <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
                                             </button></div>
                                 </div>
