@@ -141,9 +141,7 @@ async function fetchData() {
   });
   return data;
 }
-const handleClick = () => {
- alert();
-};
+
 export default async function NewPage() {
 
   const data = await fetchData();

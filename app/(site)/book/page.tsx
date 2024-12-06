@@ -6,48 +6,60 @@ import client from 'apollo-client';
 
 
 const anton = Anton({ weight: '400', subsets: ["latin"] }); 
-const POST_QUERY= gql `query MyQuery2 {
-  page(id: "") {
-    bookPageFeilds {
-      fifthReviewSectionDescription
-      fifthReviewSectionHeading
-      firstSectionMainHeading
-      fourthSectionFirstColumnText
-      seventhSectionButtonOneLink
-      seventhSectionButtonOneText
-      seventhSectionButtonTwoLink
-      seventhSectionButtonTwoText
-      seventhSectionDescription1
-      seventhSectionDescription2
-      seventhSectionDescription3
-      seventhSectionDescription4
-      seventhSectionMainHeading
-      sixthSectionVideoHeading
-      sixthSectionVideoLink
-      sixthSectionVideoMainHeading
-      thirdSectionRightButtonOne
-      thirdSectionRightButtonTwo
-      thirdSectionRightButtonTwoLink
-      thirdSectionRightHeading
-      thirdSectionRightButtonOneLink {
+const POSTS_QUERY= gql `query MyQuery2 {
+  page(id: "cG9zdDo0MzM=") {
+     bookPageFeilds {
+      bookFifthReviewSectionDescription
+      bookFifthReviewSectionHeading
+      bookFirstSectionMainHeading
+      bookFourthSectionFirstColumnText
+      bookSeventhSectionButtonOneLink
+      bookSeventhSectionButtonTwoLink
+      bookSeventhSectionButtonOneText
+      bookSeventhSectionButtonTwoText
+      bookSeventhSectionDescription1
+      bookSeventhSectionDescription2
+      bookSeventhSectionDescription3
+      bookSeventhSectionDescription4
+      bookSeventhSectionMainHeading
+      bookSixthSectionVideoDescription
+      bookSixthSectionVideoHeading
+      bookSixthSectionVideoLink
+      bookSixthSectionVideoMainHeading
+      bookThirdSectionRightButtonOne
+      bookThirdSectionRightButtonTwo
+      bookThirdSectionRightButtonTwoLink
+      bookThirdSectionRightDescription
+      bookThirdSectionRightHeading
+      bookThirdSectionRightButtonOneLink {
         url
       }
-      thirdSectionLeftImage {
+      bookThirdSectionLeftImage {
         node {
           link
         }
       }
-      secondSectionImage {
+      bookSixthSectionVideoThumbnail {
         node {
           link
         }
       }
-      fourthSectionThirdColumnImage {
+      bookSecondSectionImage {
         node {
           link
         }
       }
-      fourthSectionFourthColumnImage {
+      bookFourthSectionThirdColumnImage {
+        node {
+          link
+        }
+      }
+      bookFourthSectionSecondColumnImage {
+        node {
+          link
+        }
+      }
+      bookFourthSectionFourthColumnImage {
         node {
           link
         }
@@ -55,35 +67,41 @@ const POST_QUERY= gql `query MyQuery2 {
     }
   }
 }`;
+async function fetchData() {
+  const { data } = await client.query({
+    query: POSTS_QUERY,
+  });
+  return data;
+}
 
-export default function Book() {
-
-   
+export default async function Book() {
+  const data = await fetchData();
+  console.log(data);
     return (
         <main className="container mx-auto max-w-[1480px]">
-            <h1 className="md:py-[42px] py-[30px] md:text-[64px] text-[25px] font-bold text-center text-black md:max-w-[1178px] p-5 mx-auto md:leading-[77.45px] ">Discover Our Book
-            A Guide to Integrating Faith, Work, and Community</h1>
+            <h1 className="md:py-[42px] py-[30px] md:text-[64px] text-[25px] font-bold text-center text-black md:max-w-[1178px] p-5 mx-auto md:leading-[77.45px] ">
+           {data.page.bookPageFeilds.bookFirstSectionMainHeading}</h1>
                   <section className="md:py-[42px] md:p-0 p-3">
-                  <img src="/86.png" className=" mx-auto" alt="" />
+                  <img src={data.page.bookPageFeilds.bookSecondSectionImage?.node?.link} className=" mx-auto" alt="" />
                   </section >
                   <div className="container mx-auto">
                     <div className="md:flex">
                         <div className="md:w-5/12 border-r">
-                            <img src='87.png' className="w-[50%] md:w-[70%] mx-auto" />
+                            <img src={data.page.bookPageFeilds.bookThirdSectionLeftImage?.node?.link} className="w-[50%] md:w-[70%] mx-auto" />
                         </div>
                         <div className="md:w-7/12 py-20 pl-10">
-                        <h2 className="font-bold text-gray-800 text-center md:text-left text-3xl md:text-[48px] text-[25px] leading-tight mb-4">Introducing a New Book</h2>
-                        <p className="text-gray-500 text-[18px] md:text-lg text-center  md:text-left md:text-xl leading-relaxed mb-6">For decades now, I have witnessed the near non-existence of the  practical intersection between faith and work. The sacred-secular divide  is pervasive, rendering work forever inferior. The result is confusion  and ineffectiveness as we try to straddle these two disconnected worlds.</p>
+                        <h2 className="font-bold text-gray-800 text-center md:text-left text-3xl md:text-[48px] text-[25px] leading-tight mb-4"> {data.page.bookPageFeilds.bookThirdSectionRightHeading}</h2>
+                        <p className="text-gray-500 text-[18px] md:text-lg text-center  md:text-left md:text-xl leading-relaxed mb-6">{data.page.bookPageFeilds.bookThirdSectionRightDescription}</p>
                         <div className="md:flex gap-5">
                             <button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]" >
-                                Buy Now
+                            {data.page.bookPageFeilds.bookThirdSectionRightButtonOne}
                                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                                  <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                                     <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
                                     </button>
                                     <br className="hidden md:block" />
                                     <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
-                                        Read a Sample Chapter
+                                    {data.page.bookPageFeilds.bookThirdSectionRightButtonTwo}
                                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                                          <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                                             <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
@@ -98,8 +116,7 @@ export default function Book() {
                   <div className="md:flex">
                     
                         <div className="md:w-2/5 bg-[#000000] p-20 grid justify-center items-center">
-                        <h2 className="font-bold text-white  md:w-[85%] text-center md:text-left md:text-[24px] text-[24px] leading-tight mb-4">Get Your Copy Today
-                        Available on Amazon and More...</h2>
+                        <h2 className="font-bold text-white  md:w-[85%] text-center md:text-left md:text-[24px] text-[24px] leading-tight mb-4"> {data.page.bookPageFeilds.bookFourthSectionFirstColumnText}</h2>
                         </div>
                         <div className="md:w-1/5 md:m-0 m-5 md:p-[46px] grid justify-center items-center border border-black md:h-[250px]">
                         <img src="/88.png" alt='' />

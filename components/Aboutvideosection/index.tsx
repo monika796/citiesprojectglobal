@@ -47,7 +47,7 @@ const VideoPlayer = () => {
     <section className="md:py-[32px]" 
     onClick={(e) => {
       // Ensure handleClick is triggered on section click as well
-      const videoElement = document.querySelector("video");;
+      const videoElement = document.querySelector("video");
       if (videoElement) {
         handleClick(videoElement, setIsPlaying); // Only trigger handleClick if video element is clicked
       }
@@ -76,11 +76,11 @@ const VideoPlayer = () => {
           </p>
         </div>
 
-        <div className="hidden md:block absolute bottom-5 right-[5%] p-5" >
+        <div className=" absolute md:bottom-5 bottom-[57%] right-0  md:right-[5%] md:p-5" >
           {isPlaying ? (
-            <img src="/117.png" className="w-[80%]" alt="Playing" /> // Image when video is playing
+            <img src="/117.png" className="md:w-[80%] w-[60%]" alt="Playing" /> // Image when video is playing
           ) : (
-            <img src="/73.png" className="w-[80%]" alt="Paused" /> // Default image
+            <img src="/73.png" className="md:w-[80%] w-[60%]" alt="Paused" /> // Default image
           )}
         </div>
       </div>
