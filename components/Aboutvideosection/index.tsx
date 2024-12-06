@@ -44,7 +44,14 @@ const VideoPlayer = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <section className="md:py-[32px]">
+    <section className="md:py-[32px]" 
+    onClick={(e) => {
+      // Ensure handleClick is triggered on section click as well
+      const videoElement = document.querySelector("video");;
+      if (videoElement) {
+        handleClick(videoElement, setIsPlaying); // Only trigger handleClick if video element is clicked
+      }
+    }}>
       <h1 className="md:text-[40px] text-[25px] font-bold text-center text-black md:w-[52%] md:p-5 mx-auto leading-[49px]">
         {data.page.aboutussections.videosectionheading}
       </h1>
@@ -69,7 +76,7 @@ const VideoPlayer = () => {
           </p>
         </div>
 
-        <div className="hidden md:block absolute bottom-5 right-[5%] p-5">
+        <div className="hidden md:block absolute bottom-5 right-[5%] p-5" >
           {isPlaying ? (
             <img src="/117.png" className="w-[80%]" alt="Playing" /> // Image when video is playing
           ) : (
