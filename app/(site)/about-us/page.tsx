@@ -151,8 +151,8 @@ export default async function NewPage() {
 console.log(data);
     return (
       
-        <main className="md:w-[91%] mx-auto"> 
-                    <h1 className="md:w-[65%] md:py-[42px] mt-4 py-[30px] md:text-[58px] text-[25px] leading-[38px]  font-bold  md:leading-[77px] text-center text-black  p-5 mx-auto md:leading-[77px] ">
+        <main className="md:w-[100%] mx-auto"> 
+                    <h1 className="md:max-w-[1178px] md:py-[42px] mt-4 py-[30px] md:text-[58px] text-[25px] leading-[38px]  font-bold  md:leading-[77px] text-center text-black  p-5 mx-auto md:leading-[77px] ">
                     {data.page.aboutuspage.mainheadingabout}</h1>
                   <section className="md:py-[42px]">
                   <img src={data.page.aboutuspage.secondimage?.node?.link} className=" mx-auto" alt="" />
@@ -181,7 +181,7 @@ console.log(data);
                                       {data.page.aboutuspage.secondsectionimagwithtextText}   </h4>
                                       <p className="text-[16px] text-left md:text-left  pt-[19px] md:w-[75%] text-black  font-bold leading-[23px] text-left pb-3 md:pb-0">
                                       {data.page.aboutuspage.secondsectionimagwithtextSubtext}  </p>
-                                      <a href={data.page.aboutuspage.secondsectionimagwithtextButtontext} className=" flex   mx-unset md:mx-0 items-center gap-2.5 w-[fit-content] inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">{data.page.aboutuspage.secondsectionimagwithtextButtontext} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
+                                      <a href={data.page.aboutuspage.secondsectionimagwithtextButtontext} className="md:mt-8 flex   mx-unset md:mx-0 items-center gap-2.5 w-[fit-content] inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">{data.page.aboutuspage.secondsectionimagwithtextButtontext} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
                                     </div>
                                   </div>
                                 </div>
@@ -350,8 +350,8 @@ console.log(data);
                 { data.page.aboutussections.eleventhsection2descrition }</h4>
            </section>
            </div>
-           <div className="container mx-auto">
-          <section className="md:flex w-[80%] mx-auto pb-[100px]">
+           <div className="container mx-auto md:mt-10 ">
+          <section className="md:flex w-[80%] mx-auto pb-[30px] md:pb-[170px]">
             <div className="md:w-1/2 ">
             <img src={data.page.aboutussections.twelthsectionleftimage?.node?.link}  alt="" />
             </div>
