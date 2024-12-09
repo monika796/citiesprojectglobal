@@ -220,7 +220,7 @@ console.log(data);
 
                </section>
                </div>
-               <div className="container mx-auto">
+               <div className="container mx-auto max-w-[1480px]">
                   <section className=" md:pt-10 py-[32px]">
                                     <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
                                     <div className="grid grid-cols-2  pt-[29px] md:grid-cols-7 md:justify-center">
@@ -246,7 +246,7 @@ console.log(data);
                        </section>
                        </div>
 
-              <div className="container mx-auto">
+              <div className="container mx-auto max-w-[1480px]">
                   {/* <section className="md:py-[32px] " onClick={handleClick}>
                         <h1 className="md:text-[40px]  text-[25px] font-bold text-center text-black md:w-[52%] md:p-5 mx-auto leading-[49px]">{ data.page.aboutussections.videosectionheading }</h1>
                         <div className="relative mx-auto table md:w-[80%]">  */}
@@ -266,7 +266,7 @@ console.log(data);
                         </div> */}
                   {/* </section> */}
                   </div>
-                  <div className="container mx-auto">
+                  <div className="container mx-auto max-w-[1480px]">
                 <section className="md:flex pt-[32px] grid">
                         <div className="md:w-1/2 bg-[#000000] p-2 md:order-1 order-2">
                           <div className="border border-white border-solid p-5 md:p-15"> 
@@ -288,7 +288,7 @@ console.log(data);
                         </div>  
                 </section>
                 </div>
-                <div className="container mx-auto">
+                <div className="container mx-auto max-w-[1480px]">
                   <section className="md:flex pb-[32px]">
                       <div className="md:w-1/2 bg-contain bg-[#d3d3d3] md:h-auto h-[350px] w-auto bg-no-repeat bg-bottom  " style={{ backgroundImage: `url('${data.page.aboutussections.imagewithtextImage2 ?.node?.link}')` }}>
                       <div className="border border-white m-[6px] w-[98%] h-[97%] relative "></div>
@@ -304,7 +304,7 @@ console.log(data);
         
               </section>
           </div>
-          <div className="container mx-auto">  <section className="mx-auto grid gap-[37px] pt-[100px] pb-[100px] ">
+          <div className="container mx-auto max-w-[1480px]">  <section className="mx-auto grid gap-[37px] pt-[100px] pb-[100px] ">
               <img src="76.png" className="mx-auto" />
               <h1 className={`${anton.className} text-[25px] md:text-[48px] font-normal  text-center text-[#000000] leading-[40px] md:leading-[72px] w-[90%] md:w-[80%] mx-auto`}>{ data.page.aboutussections.reviewsectiontitle1 }</h1>
               <h4 className={`${anton.className} text-[18px] md:text-[32px] font-normal  text-center text-[#aed575]`}>{ data.page.aboutussections.reviewsectiondescription1 }</h4>
@@ -312,7 +312,7 @@ console.log(data);
             </div>
 
 
-            <div className="container mx-auto"> <section className="bg-[#F5F5F5] p-[34px]  md:pt-[0px]">
+            <div className="container mx-auto max-w-[1480px]" > <section className="bg-[#F5F5F5] p-[34px]  md:pt-[0px]">
                     <div className="md:flex">
                       
                               <div className="md:w-[40%]  grid justify-center items-center">
@@ -339,7 +339,7 @@ console.log(data);
                                 </div>     
           </section></div>
 
-          <div className="container mx-auto"><section className="mx-auto grid gap-[37px] md:p-0 p-8 md:pt-[100px] md:pb-[50px] ">
+          <div className="container mx-auto max-w-[1480px]"><section className="mx-auto grid gap-[37px] md:p-0 p-8 md:pt-[100px] md:pb-[50px] ">
                 <h1 className={`text-black md:text-[43px] text-[28px] leading-[40px] md:leading-[58px] mx-auto text-center md:text-left md:w-[40%] font-bold`}>  { data.page.aboutussections.eleventhsectionheading }</h1>
                 <h4 className={` text-[16px] font-normal  mx-auto  md:w-[40%] text-[#000000]  text-center md:text-left`}> { data.page.aboutussections.eleventhsectiondescrition }</h4>
                 <h4 className="text-black text-[20px]  text-center md:text-left mx-auto  md:w-[40%] font-bold">
@@ -348,7 +348,7 @@ console.log(data);
                 { data.page.aboutussections.eleventhsection2descrition }</h4>
            </section>
            </div>
-           <div className="container mx-auto md:mt-10 ">
+           <div className="container mx-auto md:mt-10 max-w-[1480px]">
           <section className="md:flex w-[80%] mx-auto pb-[30px] md:pb-[170px]">
             <div className="md:w-1/2 ">
             <img src={data.page.aboutussections.twelthsectionleftimage?.node?.link}  alt="" />

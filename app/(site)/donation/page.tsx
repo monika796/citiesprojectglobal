@@ -70,12 +70,12 @@ export default async function Book() {
       const data = await fetchData();
       console.log(data.page.donatePageFeilds.donate_fourth_section_scrolltext);
     return (
-        <main className="md:w-[91%] pt-10  mx-auto">
+        <main className="md:w-[100%] pt-10  mx-auto">
             <h1 className="md:py-[15px] pt-10 py-[10px] md:text-[40px] text-[25px] font-bold text-center text-black md:w-[52%]     mx-auto md:leading-[49px] "> {data.page.donatePageFeilds.donateFirstSectionMainHeading}</h1>
             <h5 className="text-[18px]  text-black md:w-[52%] mx-auto text-center"> {data.page.donatePageFeilds.donateFirstSectionMainDescription}</h5>
             <DonationFaq />
 
-            <section className="container mx-auto">
+            <section className="container mx-auto max-w-[1480px]">
                     <div className="w-[70%] mx-auto">
                         
                     <div className="grid items-end justify-end ">
@@ -94,7 +94,7 @@ export default async function Book() {
                     </div>
                 
             </section>
-            <section className="container mx-auto">
+            <section className="container mx-auto max-w-[1480px]">
                 <div className="flex p-10">
                     <div className="w-2/3">
                         <img src={data.page.donatePageFeilds.donateFourthSection?.node?.link} className="w-[80%]" />
@@ -112,7 +112,7 @@ export default async function Book() {
             <Marquee className="absolute z-99999 text-white">
             {data.page.donatePageFeilds.donate_fourth_section_scrolltext}    </Marquee>
             </section>
-            <section className="container mx-auto py-5">
+            <section className="container mx-auto py-5 max-w-[1480px]">
             <div className="mx-auto text-[30px] pb-8 text-black  w-[32%] leading-[33px] italic font-bold text-left ">
                 
             {data.page.donatePageFeilds.donateFifthSectionHeading}
