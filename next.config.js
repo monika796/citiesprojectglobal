@@ -1,18 +1,20 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  images: {
-    domains: ["localhost"],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "digitractive.com",
-        port: "",
-      },
-    ],
-  },
+    reactStrictMode: true,
+    images: {
+        domains: ['localhost'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'digitractive.com',
+                port: '',
+            },
+        ],
+    },
+    experimental: {
+        swcMinify: true,
+    },
 };
 
 module.exports = nextConfig;
