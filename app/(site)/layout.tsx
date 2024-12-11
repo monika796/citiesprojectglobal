@@ -28,6 +28,7 @@ export default function RootLayout({
             enableSystem={false}
             attribute="class"
             defaultTheme="light"
+            forcedTheme={'light'}
           >
             {/* <Lines /> */}
             <Header />

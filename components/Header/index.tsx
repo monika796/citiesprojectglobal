@@ -39,15 +39,17 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full ${
-        stickyMenu ? 'backdrop-blur-xl text-white shadow bg-black/50 ' : ''
-      } ${isHomePage ? 'mt-6' : 'mt-0'}`}
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ease-in-out ${
+        stickyMenu
+          ? 'backdrop-blur-xl text-white shadow bg-black/50 '
+          : 'bg-black/30'
+      } ${isHomePage ? 'mt-0' : 'mt-0'}`}
     >
       <div
         className={`relative container mx-auto flex items-center justify-between ${
           isHomePage || (stickyMenu && isDesktop)
-            ? 'border-white border-t border-b'
-            : 'border-black border-t border-b'
+            ? 'border-white '
+            : 'border-black'
         } px-4 md:px-0`}
       >
         {/* Logo Section */}

@@ -1,15 +1,21 @@
-"use client";
-import { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Keyboard, Mousewheel, Autoplay } from "swiper/modules";
-
+'use client';
+import { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import {
+  Navigation,
+  Pagination,
+  Keyboard,
+  Mousewheel,
+  Autoplay,
+} from 'swiper/modules';
+import Image from 'next/image';
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-import { gql } from "@apollo/client";
-import client from "apollo-client";
+import { gql } from '@apollo/client';
+import client from 'apollo-client';
 
 const POSTS_QUERY = gql`
   query {
@@ -37,7 +43,6 @@ interface Post {
 
 const SwiperSection = () => {
   const [posts, setPosts] = useState<Post[]>([]);
-
   // Fetch data with Apollo client
   useEffect(() => {
     async function fetchData() {
@@ -48,7 +53,7 @@ const SwiperSection = () => {
         // Limit posts to the first 4
         setPosts(data?.posts?.nodes?.slice(0, 4) || []);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     }
 
@@ -61,15 +66,19 @@ const SwiperSection = () => {
         <div className="w-full h-auto">
           <Swiper
             modules={[Navigation, Pagination, Keyboard, Mousewheel, Autoplay]}
-         
             pagination={{
               clickable: true,
             }}
+            grabCursor={true}
             keyboard={{ enabled: true }}
             mousewheel={{ forceToAxis: true }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
             loop={true}
             cssMode
-            className="w-full h-auto"
+            className="w-full h-auto relative"
           >
             {posts.map((post, index) => (
               <SwiperSlide
@@ -78,19 +87,26 @@ const SwiperSection = () => {
               >
                 <div className="flex">
                   <div className="w-1/3">
-                    <img
-                      src={post.featuredImage?.node?.link || "placeholder.png"}
+                    <Image
+                      src={post.featuredImage?.node?.link || 'placeholder.png'}
                       alt={post.title}
+                      width={300}
+                      height={200}
+                      className="w-full"
                     />
                   </div>
-                  <div className="w-2/3 grid p-2">
+                  <div className="w-2/3 grid p-2 ml-2">
                     <div>
-                      <p className="w-[40%] text-[11px] bg-[#000000] uppercase h-auto text-white font-bold text-center rounded-[20px] ">
+                      <p className="w-2/5 text-[11px] bg-[#000000] uppercase h-auto text-white font-bold text-center rounded-[20px] ">
                         Latest Stories
                       </p>
                     </div>
-                    <p className="text-[16px] font-bold text-black leader-[19.36px] pl-1">{post.title || "Untitled"}</p>
-                    <p className="text-[13px] underline uppercase text-black">Read more</p>
+                    <h2 className="text-[15px] font-bold text-black leader-[15px] pl-1">
+                      {post.title || 'Untitled'}
+                    </h2>
+                    <p className="text-[13px] underline uppercase text-black">
+                      Read more
+                    </p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -104,16 +120,17 @@ const SwiperSection = () => {
         {`
          
           .swiper-pagination {
-            bottom: -20px; 
+            bottom: -20px;
           }
 
           .swiper-pagination-bullet {
-            background: #000; 
-            opacity: 0.6;
+            background: #fff !important; 
+            opacity: 1;
+            margin: 0 1px !important;
           }
 
           .swiper-pagination-bullet-active {
-            background: #ff5722;
+            background: #a1cf5f !important;
             opacity: 1;
           }
         `}

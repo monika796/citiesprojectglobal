@@ -13,6 +13,7 @@ import SwiperSection from '@/components/postbannerslider';
 import ReactPlayer from 'react-player';
 import { POSTS_QUERY_SEC, POSTS_QUERY } from '@/queries/home';
 import Image from 'next/image';
+import Link from 'next/link';
 const anton = Anton({ weight: '400', subsets: ['latin'] });
 
 // export const metadata: Metadata = {
@@ -100,66 +101,61 @@ export default async function Home() {
 
       <section
         className="w-full bg-cover bg-center"
-        style={{
-          backgroundImage: `url('${data.page.bannerHomesecond.bannersecondbackground?.node?.link}')`,
-        }}
+        // style={{
+        //   backgroundImage: `url('${data.page.bannerHomesecond.bannersecondbackground?.node?.link}')`,
+        // }}
       >
-        <div className="container mx-auto container max-w-[1480px]">
-          <div className="flex md:p-[105px] md:pb-[280px] flex-col md:flex-row h-full">
-            <div className=" w-full md:w-1/2 p-4 md:p-2 flex flex-col justify-center">
-              <h2 className="font-bold text-gray-800 text-3xl md:text-[56px] leading-tight mb-4">
+        <div className="container mx-auto max-w-[1480px]">
+          <div className="flex md:p-[105px] md:pb-[280px] flex-col md:flex-row h-full justify-between">
+            <div className="w-full md:w-1/3 p-4 md:p-2 flex flex-col justify-center">
+              <h2 className="font-bold text-gray-800 text-3xl md:text-[56px] leading-tight mb-4 w-max">
                 {data.page.bannerHomesecond.heading_second_section}
               </h2>
-              <p className="max-w-[376px] md:text-[15px] text-black	 leading-tight mb-6 mt-4">
+              <p className="max-w-[376px] md:text-[15px] text-black	 leading-normal mb-6 mt-4">
                 {data.page.bannerHomesecond.subtitleText}{' '}
               </p>
               <div className="flex flex-col md:flex-row md:mx-0 ">
-                <a href={data.page.bannerHomesecond.buttonLinkSecondSection}>
+                <Link href={data.page.bannerHomesecond.buttonLinkSecondSection}>
                   {' '}
-                  <button className=" w-full md:w-auto flex items-center gap-2.5 text-black     text-lg  font-extrabold rounded mb-4 md:mb-0 md:mr-4">
+                  <button className=" w-full md:w-auto flex items-center gap-2.5 text-black font-bold rounded mb-4 md:mb-0 md:mr-4">
                     {data.page.bannerHomesecond.buttonText}
                     <svg
+                      width="17"
+                      height="16"
+                      viewBox="0 0 17 16"
+                      fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      width="14"
-                      height="14"
-                      id="arrow"
                     >
-                      <g
-                        fill="none"
-                        fillRule="evenodd"
-                        stroke="#000"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                      >
-                        <path d="M1 13 13 1M4 1h9v9"></path>
-                      </g>
+                      <path
+                        d="M2.94238 15.4655L13.6522 4.75571V14.1136C13.6522 14.8614 14.2658 15.4751 15.0137 15.4751C15.1912 15.4753 15.3671 15.4404 15.5312 15.3725C15.6953 15.3047 15.8444 15.2051 15.97 15.0795C16.0956 14.9539 16.1952 14.8048 16.263 14.6407C16.3309 14.4766 16.3658 14.3008 16.3656 14.1232L16.3656 1.4862C16.3658 1.30862 16.3309 1.13274 16.263 0.968636C16.1952 0.804533 16.0956 0.655428 15.97 0.529856C15.8444 0.404283 15.6953 0.30471 15.5312 0.236834C15.3671 0.168959 15.1912 0.134115 15.0137 0.134297L2.37669 0.134296C2.19916 0.134296 2.02336 0.169266 1.85934 0.237205C1.69532 0.305145 1.54629 0.404726 1.42075 0.530262C1.29522 0.655799 1.19563 0.804831 1.1277 0.968852C1.05976 1.13287 1.02479 1.30867 1.02479 1.4862C1.02479 1.66374 1.05976 1.83953 1.1277 2.00356C1.19564 2.16758 1.29522 2.31661 1.42075 2.44215C1.54629 2.56768 1.69532 2.66726 1.85934 2.7352C2.02336 2.80314 2.19916 2.83811 2.3767 2.83811L11.7346 2.83811L1.02479 13.5479C0.497448 14.0752 0.497448 14.9382 1.02479 15.4655C1.55213 15.9928 2.41505 15.9928 2.94238 15.4655Z"
+                        fill="black"
+                      />
                     </svg>
                   </button>{' '}
-                </a>
+                </Link>
               </div>
             </div>
             <div className="w-full md:w-1/2  bg-cover bg-center ">
               <div className="inner_Sec_div relative">
                 <div className="md:flex flex-col ">
-                  <div className="flex gap-3 bg-white items-end md:w-4/12 w-full md:max-w-[237px] mx-auto !h-[250px] bottom-0 relative  px-3 py-1 h-auto md:absolute md:absolute border border-solid border-black rounded ">
+                  <div className="flex bg-white items-end md:w-5/12 w-full md:max-w-[300px] mx-auto !h-[280px] -bottom-[10px] relative px-3 py-3  md:absolute border border-solid border-black rounded -left-10">
                     <div>
                       {' '}
                       <p className="font-bold text-black w-[100%] mb-3 text-[18px]">
                         {' '}
                         {data.page.bannerHomesecond.rightsmallsectiontext}
                       </p>
-                      <a
+                      <Link
                         href={data.page.bannerHomesecond.rightsmallsectionlink}
                       >
                         <p className="text-black text-[15px] underline">
                           {' '}
                           {data.page.bannerHomesecond.rightsmallsectionlinktext}
                         </p>
-                      </a>
+                      </Link>
                     </div>
                     <svg
-                      className="absolute top-[9px] right-[11px]"
+                      className="absolute top-[20px] right-[20px]"
                       width="17"
                       height="17"
                       viewBox="0 0 12 12"
@@ -177,7 +173,8 @@ export default async function Home() {
                     src={
                       data.page.bannerHomesecond.secondRightImage?.node?.link
                     }
-                    className="w-full md:w-8/12 md:mx-0 mx-auto p-4  self-end "
+                    className="w-full md:w-8/12 md:mx-0 md:relative left-6 bottom-6 mx-auto m-4 self-end rounded"
+                    quality={100}
                     alt=""
                     width="200"
                     height="200"
@@ -196,7 +193,7 @@ export default async function Home() {
               style={{
                 backgroundImage: `url('${data.page.sectionHomethird.firstcolumnimage?.node?.link}')`,
               }}
-              className="w-6/12  bg-no-repeat bg-cover w-auto bg-bottom h-[313px] md:w-[256px] md:h-[313px]   border-t border-transparent "
+              className="w-6/12  bg-no-repeat bg-cover bg-bottom h-[313px] md:w-[256px] md:h-[313px]   border-t border-transparent "
             ></div>
             <div className="md:w-6/12 md:pl-[14px] py-4 gap-0  text-left md:text-left px-4 md:px-0">
               <h1 className="text-[32px] text-black leading-none mt-3 ">

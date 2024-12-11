@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 export const POSTS_QUERY = gql`
-  query {
+  query PostsQuery {
     page(id: "cG9zdDoxNg==") {
       title
       link
