@@ -159,7 +159,7 @@ export default async function Book() {
 
                     <div className="container mx-auto "> 
                        <section className="mx-auto grid gap-[37px] pt-[50px] md:pt-[100px] md:pb-[100px] ">
-              <Image  src="76.png" className="mx-auto" / width="200" height="200" />
+              <Image  src="/76.png" className="mx-auto" / width="200" height="200" />
               <h1 className={`${anton.className} text-[48px] font-normal  text-center text-[#000000] leading-[72.26px] w-[90%] md:max-w-[1,108px] mx-auto`}>
               {data.page.bookPageFeilds.bookFifthReviewSectionHeading}</h1>
               <h4 className={`${anton.className} text-[20px] font-normal  text-center text-[#aed575]`}>
