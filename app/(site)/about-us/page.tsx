@@ -6,7 +6,7 @@ import {  Anton } from "next/font/google";
 import { gql } from '@apollo/client';
 import client from 'apollo-client';
 import VideoPlayer from "@/components/Aboutvideosection";
-
+import Image from "next/image";
 const anton = Anton({ weight: '400', subsets: ["latin"] });
 
 const POSTS_QUERY = gql `
@@ -153,7 +153,7 @@ console.log(data);
                     <h1 className="md:max-w-[1178px] md:py-[42px] mt-4 py-[30px] md:text-[58px] text-[25px] leading-[38px]  font-bold  md:leading-[77px] text-center text-black  p-5 mx-auto md:leading-[77px] ">
                     {data.page.aboutuspage.mainheadingabout}</h1>
                   <section className="md:py-[42px]">
-                  <img src={data.page.aboutuspage.secondimage?.node?.link} className=" mx-auto" alt="" />
+                  <Image  src={data.page.aboutuspage.secondimage?.node?.link} className=" mx-auto" alt="" / width="200" height="200" />
                   </section >
 
               <div className="container mx-auto max-w-[1480px]">  <section className="md:flex md:gap-20 md:py-[32px] ">
@@ -161,9 +161,9 @@ console.log(data);
                                 <h3 className="md:text-[28px] text-center md:text-left text-[18px] text-black leading-[35px] md:leading-[49px] p-[18px]">
                                 {data.page.aboutuspage.secondsectionheading_1}
                         <div className="inline-flex  space-x-1 ">
-                          <img src="/53.png" className="w-[30px] h-[30px]" />
-                          <img src="/54.png" className="w-[30px] h-[30px]" />
-                          <img src="/63.png" className="w-[30px] h-[30px]" />
+                          <Image  src="/53.png" className="w-[30px] h-[30px]" / width="200" height="200" />
+                          <Image  src="/54.png" className="w-[30px] h-[30px]" / width="200" height="200" />
+                          <Image  src="/63.png" className="w-[30px] h-[30px]" / width="200" height="200" />
                         </div>
                         {data.page.aboutuspage.secondsectionheading_2}  </h3>
 
@@ -172,7 +172,7 @@ console.log(data);
                                 
                                   <div className="p-7 md:flex gap-15 md:pt-20">
                                     <div className=" md:w-2/5">
-                                    <img src={data.page.aboutuspage.secondsectionimagwithtext_image?.node?.link} alt="" />
+                                    <Image  src={data.page.aboutuspage.secondsectionimagwithtext_image?.node?.link} alt="" / width="200" height="200" />
                                     </div>
                                     <div className=" md:w-3/5 pt-3">
                                       <h4 className="text-[16px] text-left md:text-left  text-black font-normal leading-[23px] text-left">
@@ -184,14 +184,14 @@ console.log(data);
                                   </div>
                                 </div>
                                 <div className="md:w-1/3 w-full grid justify-unset  md:justify-end p-5 md:p-10">
-                                <img src={data.page.aboutuspage.secondsectionrightimage?.node?.link} alt="" className="w-full md:w-auto" />
+                                <Image  src={data.page.aboutuspage.secondsectionrightimage?.node?.link} alt="" className="w-full md:w-auto" / width="200" height="200" />
                                   </div>
              </section>
              </div>
 
              <div className="container mx-auto  max-w-[1480px]">
              <section className="md:py-[42px] p-5 md:p-0">
-                  <img src={data.page.aboutuspage.thirdsectionimage?.node?.link} alt="" className="mx-auto" />
+                  <Image  src={data.page.aboutuspage.thirdsectionimage?.node?.link} alt="" className="mx-auto" / width="200" height="200" />
              </section>
             </div>
 
@@ -253,14 +253,14 @@ console.log(data);
                         <VideoPlayer />
                         
 
-                            {/* <img src={data.page.aboutussections.videosectionbackground?.node?.link} className="z-999999 md:p-0 p-5" alt="" /> */}
+                            {/* <Image  src={data.page.aboutussections.videosectionbackground?.node?.link} className="z-999999 md:p-0 p-5" alt="" / width="200" height="200" /> */}
                             {/* <div className="md:absolute bottom-0 p-5 text-center md:text-left">
                                 <h2 className="md:text-[64px]  text-[30px] font-bold text-black md:text-white md:w-[32%] leading-[65px]">{ data.page.aboutussections.videosectiontitle }</h2>
                                 <p className="font-normal text-[16px] mt-4 text-black  md:text-white md:w-[72%]">{ data.page.aboutussections.videosectiondescription } </p>
                                 
                             </div>
                             <div className="hidden md:block absolute bottom-5 right-[5%] p-5">
-                            <img src='/73.png' className="w-[80%]" />
+                            <Image  src='/73.png' className="w-[80%]" / width="200" height="200" />
 
                             </div>
                         </div> */}
@@ -305,7 +305,7 @@ console.log(data);
               </section>
           </div>
           <div className="container mx-auto max-w-[1480px]">  <section className="mx-auto grid gap-[37px] pt-[100px] pb-[100px] ">
-              <img src="76.png" className="mx-auto" />
+              <Image  src="76.png" className="mx-auto" / width="200" height="200" />
               <h1 className={`${anton.className} text-[25px] md:text-[48px] font-normal  text-center text-[#000000] leading-[40px] md:leading-[72px] w-[90%] md:w-[80%] mx-auto`}>{ data.page.aboutussections.reviewsectiontitle1 }</h1>
               <h4 className={`${anton.className} text-[18px] md:text-[32px] font-normal  text-center text-[#aed575]`}>{ data.page.aboutussections.reviewsectiondescription1 }</h4>
             </section>
@@ -320,16 +320,16 @@ console.log(data);
                     
                     </div>
                     <div className="md:w-[60%] md:pl-10 md:pr-10 md:pt-0 pt-20 relative">
-                      <img src={data.page.aboutussections.tenthsectionrightimage?.node?.link} className="mx-auto"  />
+                      <Image  src={data.page.aboutussections.tenthsectionrightimage?.node?.link} className="mx-auto"  / width="200" height="200" />
                       <div className="md:flex ">
                       {data.page.aboutussections.tenthsectionrightcolumns.map((slide, index) => (
                         <div  className="md:w-1/3 p-10 grid gap-10 " key={index}>
-                        <img src={slide.columnsimage?.node?.link} className="mx-auto md:mx-0"  />
+                        <Image  src={slide.columnsimage?.node?.link} className="mx-auto md:mx-0"  / width="200" height="200" />
                         <h5 className="text-black text-[18px] md:text-left text-center">{slide.columnstext}</h5>
                         </div>
                         ))}
                         
-                      </div><img src='/81.png' alt="" className="md:absolute hidden md:block left-[-6%] top-[13%]" />
+                      </div><Image  src='/81.png' alt="" className="md:absolute hidden md:block left-[-6%] top-[13%]" / width="200" height="200" />
                     </div>
                     </div>
                     <div className="">
@@ -351,10 +351,10 @@ console.log(data);
            <div className="container mx-auto md:mt-10 max-w-[1480px]">
           <section className="md:flex w-[80%] mx-auto pb-[30px] md:pb-[170px]">
             <div className="md:w-1/2 ">
-            <img src={data.page.aboutussections.twelthsectionleftimage?.node?.link}  alt="" />
+            <Image  src={data.page.aboutussections.twelthsectionleftimage?.node?.link}  alt="" / width="200" height="200" />
             </div>
             <div className="md:w-1/2 grid gap-5">
-            <img src={data.page.aboutussections.twelthsectionrightimage?.node?.link} alt=""  className="order-2 md:order-1"/>
+            <Image  src={data.page.aboutussections.twelthsectionrightimage?.node?.link} alt=""  className="order-2 md:order-1"/ width="200" height="200" />
             <h4 className={` text-[15px] font-normal  text-center md:text-left  text-[#000000] pt-3 md:pt-0 md:order-2`}>  { data.page.aboutussections.twelthsectionrightdescription }
             </h4>
             <h4 className={` text-[15px] font-normal  text-center md:text-left text-[#000000] md:order-3`}> { data.page.aboutussections.twelthsectionrightdescription2 }

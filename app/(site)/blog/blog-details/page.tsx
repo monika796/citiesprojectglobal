@@ -55,7 +55,7 @@ return (
       </div>
    </div>
    <div className="blog-image">
-      <img src="/blod-banner.png" />
+      <Image src="/blod-banner.png" alt="Blog banner" / width="200" height="200" />
    </div>
    <div className="blog-content max-w-[684px] mx-auto py-15">
       <p  className="text-[16px] leader-[21px] mb-9">Since last year, some of us have been trying to guess at Putin’s  intentions as he has amassed forces on the border. Since last week, many  of us have been checking the news each day as the Russian army advances  on Ukrainian cities, looking for predictions on how it will all end.  The fear of a widespread European or World War has taken up residence in  many of our minds as we question what we should do and how we should  respond.</p>
@@ -66,8 +66,8 @@ return (
          At the time of writing, over  one million refugees have fled Ukraine, pouring into Poland, Slovakia,  Hungary, Romania, Moldova, and Russia. UNICEF has reported that this may  be Europe’s largest refugee crisis since WWII, and in the near future,  Ukrainian families around the world will likely look to receive their  relatives.
       </p>
       <div className="flex gap-10 items-center py-15">
-         <img src="/34.png" />
-         <img src="/47.png" className="w-full" />
+         <Image src="/34.png" alt="Blog content image 1" / width="200" height="200" />
+         <Image src="/47.png" className="w-full" alt="Blog content image 2" / width="200" height="200" />
       </div>
       <p  className="text-[16px] leader-[21px] mb-9">Many news outlets are reporting accounts of neighboring countries rising  to the occasion. In Poland — and elsewhere — citizens are arriving at  the border, offering rides and provisions to those seeking refuge.  Humanitarian organizations are rallying, and Germany and Austria are  offering free train travel to those seeking to reach their countries.</p>
       <h2 className="italic text-[32px] leader-[60px] text-black">The European response has been, by and large, unified, and the actions  of those meeting Ukrainians at the border have embodied a core part of  God’s nature: hesed.</h2>
@@ -77,7 +77,7 @@ return (
          <h2 className="font-inter md:text-[48px] text-[30px] text font-bold leading-[58.09px] p-8 text-black text-left text-center decoration-skip-ink-none">Related Blogs</h2>
          <div className=" md:flex">
             <div className=" md:w-3/12 relative grid place-items-center p-10">
-               <img src="/46.png" className="object-contain" />
+               <Image src="/46.png" className="object-contain" alt="Related post 1" / width="200" height="200" />
                <p className="absolute top-13 left-12 text-white z-max bg-black px-2 py-0 rounded-full text-sm">5 Sep 2024</p>
                <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">Receiving and Reflecting God’s <br />Inherent Love for Us</h2>
                <a href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">
@@ -90,7 +90,7 @@ return (
                </a>
             </div>
             <div className=" md:w-6/12 relative grid place-items-center p-10">
-               <img src="/45.png" className="object-contain" />
+               <Image src="/45.png" className="object-contain" alt="Related post 2" / width="200" height="200" />
                <p className="absolute top-13 left-12 text-white z-max bg-black px-2 py-0 rounded-full text-sm">5 Sep 2024</p>
                <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">Healing the Trauma of Homelessness Through<br />
                   Affordable Housing
@@ -105,7 +105,7 @@ return (
                </a>
             </div>
             <div className=" md:w-3/12 relative grid place-items-center p-10">
-               <img src="/47.png" className="object-contain" />
+               <Image src="/47.png" className="object-contain" alt="Related post 3" / width="200" height="200" />
                <p className="absolute top-13 left-12 text-white z-max bg-black px-2 py-0 rounded-full text-sm">5 Sep 2024</p>
                <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">In the Midst of War, Love Comes <br /> Through Action</h2>
                <a href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">
@@ -118,7 +118,7 @@ return (
                </a>
             </div>
          </div>
-         <img src='/48.png' className="table p-[61px] items-center m-auto" />
+         <Image src='/48.png' className="table p-[61px] items-center m-auto" alt="Footer image" / width="200" height="200" />
       </div>
    </div>
    {/* 

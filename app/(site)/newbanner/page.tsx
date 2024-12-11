@@ -117,7 +117,7 @@ export default function Contact() {
                       </a>
                      
                     </div>
-                    <img src={banner.homeBannerLatestPostImages?.node?.link} className='container md:absolute right-[29px] bottom-[0%] w-3/12 md:mx-0 mx-auto p-4  self-end ' />
+                    <Image  src={banner.homeBannerLatestPostImages?.node?.link} className='container md:absolute right-[29px] bottom-[0%] w-3/12 md:mx-0 mx-auto p-4  self-end ' / width="200" height="200" />
               
                   </div>
                 </div>

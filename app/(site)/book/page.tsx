@@ -109,12 +109,12 @@ export default async function Book() {
             <h1 className="md:py-[42px] py-[30px] md:text-[64px] text-[25px] font-bold text-center text-black md:max-w-[1178px] p-5 mx-auto md:leading-[77.45px] ">
            {data.page.bookPageFeilds.bookFirstSectionMainHeading}</h1>
                   <section className="md:py-[42px] md:p-0 p-3">
-                  <img src={data.page.bookPageFeilds.bookSecondSectionImage?.node?.link} className=" mx-auto" alt="" />
+                  <Image  src={data.page.bookPageFeilds.bookSecondSectionImage?.node?.link} className=" mx-auto" alt="" / width="200" height="200" />
                   </section >
                   <div className="container mx-auto">
                     <div className="md:flex">
                         <div className="md:w-5/12 border-r">
-                            <img src={data.page.bookPageFeilds.bookThirdSectionLeftImage?.node?.link} className="w-[50%] md:w-[70%] mx-auto" />
+                            <Image  src={data.page.bookPageFeilds.bookThirdSectionLeftImage?.node?.link} className="w-[50%] md:w-[70%] mx-auto" / width="200" height="200" />
                         </div>
                         <div className="md:w-7/12 py-20 pl-10">
                         <h2 className="font-bold text-gray-800 text-center md:text-left text-3xl md:text-[48px] text-[25px] leading-tight mb-4"> {data.page.bookPageFeilds.bookThirdSectionRightHeading}</h2>
@@ -146,20 +146,20 @@ export default async function Book() {
                         <h2 className="font-bold text-white  md:w-[85%] text-center md:text-left md:text-[24px] text-[24px] leading-tight mb-4"> {data.page.bookPageFeilds.bookFourthSectionFirstColumnText}</h2>
                         </div>
                         <div className="md:w-1/5 md:m-0 m-5 md:p-[46px] grid justify-center items-center border border-black md:h-[250px]">
-                        <img src={data.page.bookPageFeilds.bookFourthSectionSecondColumnImage?.node?.link} alt='' />
+                        <Image  src={data.page.bookPageFeilds.bookFourthSectionSecondColumnImage?.node?.link} alt='' / width="200" height="200" />
                         </div>
                         <div className="md:w-1/5  md:m-0 m-5 md:p-[46px] grid justify-center items-center border border-black md:h-[250px]">
-                        <img src={data.page.bookPageFeilds.bookFourthSectionThirdColumnImage?.node?.link} alt='' />
+                        <Image  src={data.page.bookPageFeilds.bookFourthSectionThirdColumnImage?.node?.link} alt='' / width="200" height="200" />
                         </div>
                         <div className="md:w-1/5  md:m-0 m-5 md:p-[46px] grid justify-center items-center border border-black md:h-[250px]">
-                        <img src={data.page.bookPageFeilds.bookFourthSectionFourthColumnImage?.node?.link} alt='' />
+                        <Image  src={data.page.bookPageFeilds.bookFourthSectionFourthColumnImage?.node?.link} alt='' / width="200" height="200" />
                         </div>
                     </div>
                     </div>
 
                     <div className="container mx-auto "> 
                        <section className="mx-auto grid gap-[37px] pt-[50px] md:pt-[100px] md:pb-[100px] ">
-              <img src="76.png" className="mx-auto" />
+              <Image  src="76.png" className="mx-auto" / width="200" height="200" />
               <h1 className={`${anton.className} text-[48px] font-normal  text-center text-[#000000] leading-[72.26px] w-[90%] md:max-w-[1,108px] mx-auto`}>
               {data.page.bookPageFeilds.bookFifthReviewSectionHeading}</h1>
               <h4 className={`${anton.className} text-[20px] font-normal  text-center text-[#aed575]`}>
@@ -172,17 +172,17 @@ export default async function Book() {
                   <section className="md:py-[32px] ">
                         <h1 className="md:text-[38px]  text-[25px] font-bold text-center text-black md:w-[52%] p-5 mx-auto md:leading-[49px]">What is cities project global</h1>
                         <div className="relative mx-auto table"> 
-                            <img src="/92.png" alt="" />
+                            <Image  src="/92.png" alt="" / width="200" height="200" />
                             <div className="md:absolute bottom-3 p-10 text-center md:text-left">
                                 <h2 className="md:text-[64px]  text-[30px] font-bold text-black md:text-white md:w-[40%] leading-[70px] mb-5">About <br /> the Book </h2>
                                 <p className="font-normal text-[15px]  text-black  md:text-white md:w-[72%]"> For decades now, I have witnessed the near non-existence of the practical intersection between faith and work. </p>
                                 
                             </div>
                             <div className="hidden md:block absolute bottom-5 right-[12%] p-5">
-                            <img src='/73.png' className="w-[80%]" />
+                            <Image  src='/73.png' className="w-[80%]" / width="200" height="200" />
                             </div>
                             <div className=" absolute w-[95px] top-0 right-0 md:w-auto  md:top-5 md:right-[3%] p-5">
-                            <img src='/91.png' className="w-[80%]" />
+                            <Image  src='/91.png' className="w-[80%]" / width="200" height="200" />
                             </div>
                         </div>
                   </section>
@@ -227,10 +227,10 @@ export default async function Book() {
                         <div className="md:w-1/2 p-2 relative">
                         <h2 className="font-bold text-black text-center md:text-left   text-[48px] leading-tight mb-4"> {data.page.bookPageFeilds.bookEigthSectionMainHeading}</h2>
                         <p className="font-normal  text-center md:text-left text-[16px]  text-black pb-3"> {data.page.bookPageFeilds.bookEigthSectionMainLeftDescription}</p>
-                        <img src={data.page.bookPageFeilds.bookEigthSectionMainLeftImage?.node?.link} className="md:absolute md:mx-0 mx-auto bottom-[29%] right-3 " alt='' />
+                        <Image  src={data.page.bookPageFeilds.bookEigthSectionMainLeftImage?.node?.link} className="md:absolute md:mx-0 mx-auto bottom-[29%] right-3 " alt='' / width="200" height="200" />
                         </div>
                         <div className="md:w-1/2 p-2">
-                        <img src={data.page.bookPageFeilds.bookEigthSectionMainRightImage?.node?.link} className="md:p-0 p-9" alt='' />
+                        <Image  src={data.page.bookPageFeilds.bookEigthSectionMainRightImage?.node?.link} className="md:p-0 p-9" alt='' / width="200" height="200" />
                         <p className="font-normal  text-center md:text-left text-[14px] pt-3 text-black pb-3">
                         {data.page.bookPageFeilds.bookEigthSectionMainLeftDescription}</p><p className="font-normal  text-center md:text-left text-[14px]  text-black pb-3">        
                         {data.page.bookPageFeilds.bookEigthSectionMainLeftDescription}</p>
@@ -255,7 +255,7 @@ export default async function Book() {
                     </div>
                     <div className="md:flex md:mt-[90px] gap-6">
                         <div className="">
-                        <img src={data.page.bookPageFeilds.bookNinthSectionLeftImage?.node?.link} alt=""/>
+                        <Image  src={data.page.bookPageFeilds.bookNinthSectionLeftImage?.node?.link} alt=""/ width="200" height="200" />
                         </div>
                         <div className=" relative">
                             <div className="md:flex md:absolute top-[-20%] md:w-[95%] right-0">
@@ -274,7 +274,7 @@ export default async function Book() {
                                             </div>
                                 </div>
                             </div>
-                        <img src={data.page.bookPageFeilds.bookNinthSectionRightImage?.node?.link} alt=""/>
+                        <Image  src={data.page.bookPageFeilds.bookNinthSectionRightImage?.node?.link} alt=""/ width="200" height="200" />
                         </div>
                     </div>
                  </div>

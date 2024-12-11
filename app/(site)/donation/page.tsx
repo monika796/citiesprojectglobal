@@ -79,11 +79,11 @@ export default async function Book() {
                     <div className="w-[70%] mx-auto">
                         
                     <div className="grid items-end justify-end ">
-                        <img src={data.page.donatePageFeilds.donateThirdSectionImage?.node?.link} />
+                        <Image  src={data.page.donatePageFeilds.donateThirdSectionImage?.node?.link} / width="200" height="200" />
                     
                     </div>
                         <div className="grid gap-3">
-                        <img src="/76.png" />
+                        <Image  src="/76.png" / width="200" height="200" />
                         <h3 className={`${anton.className} w-[65%]  text-center md:text-left md:text-[40px] text-[30px] text-black font-light leading-[50px]`}>
                         {data.page.donatePageFeilds.donateThirdSectionHeading}
                             </h3>
@@ -97,15 +97,15 @@ export default async function Book() {
             <section className="container mx-auto max-w-[1480px]">
                 <div className="flex p-10">
                     <div className="w-2/3">
-                        <img src={data.page.donatePageFeilds.donateFourthSection?.node?.link} className="w-[80%]" />
+                        <Image  src={data.page.donatePageFeilds.donateFourthSection?.node?.link} className="w-[80%]" / width="200" height="200" />
                     </div>
                     <div className="relative w-1/3">
-                    <img src={data.page.donatePageFeilds.donateFourthSectionSecondImage?.node?.link} className="absolute bottom-0 right-0" />
-                    <img src="/116.png" className="absolute bottom-[30%] left-[-23%]" />
+                    <Image  src={data.page.donatePageFeilds.donateFourthSectionSecondImage?.node?.link} className="absolute bottom-0 right-0" / width="200" height="200" />
+                    <Image  src="/116.png" className="absolute bottom-[30%] left-[-23%]" / width="200" height="200" />
                     </div>
                 </div>
                 <div className="">
-                    <img src={data.page.donatePageFeilds.donateFourthSectionThirdImage?.node?.link} className="w-[15%] mx-auto" />
+                    <Image  src={data.page.donatePageFeilds.donateFourthSectionThirdImage?.node?.link} className="w-[15%] mx-auto" / width="200" height="200" />
                 </div>
             </section>
             <section className="relative  bg-[#A1CF5F] my-20">

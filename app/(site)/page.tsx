@@ -12,11 +12,8 @@ import client from 'apollo-client';
 import  Partner from "@/components/partner";
 import  SwiperSection from "@/components/postbannerslider";
 import ReactPlayer from "react-player";
+import Image from "next/image";
 const anton = Anton({ weight: '400', subsets: ["latin"] });
-
-
-
-
 
 // export const metadata: Metadata = {
 //   title: "Next.js Starter Template for SaaS Startups - Solid SaaS Boilerplate",
@@ -250,13 +247,11 @@ export default async function Home() {
   console.log(data);
   return (
     <main className="mt-[-96px]">
-
       {/* body start */}
-
       <section className="w-full">
         <div className="container-fluid mx-auto">
           <div className="relative w-full  bg-[url('/banner.jpg')] bg-cover bg-center  h-[510px] md:h-[850px]">
-            {/* <img src="/banner.jpg" alt="banner" className="w-full md:h-[auto] h-[350px]" /> */}
+            {/* <Image  src="/banner.jpg" alt="banner" className="w-full md:h-[auto] h-[350px]" alt="" width="200" height="200" /> */}
             <div className="container relative max-w-[1480px] mx-auto relative   h-[510px] md:h-[780px]">
 
 
@@ -324,8 +319,8 @@ export default async function Home() {
               <path d="M2.40728 11.206L9.8764 3.73689L9.8764 10.2632C9.8764 10.7847 10.3044 11.2127 10.8259 11.2127C10.9498 11.2128 11.0724 11.1885 11.1869 11.1412C11.3013 11.0938 11.4053 11.0244 11.4929 10.9368C11.5805 10.8493 11.6499 10.7453 11.6972 10.6308C11.7446 10.5164 11.7689 10.3937 11.7688 10.2699L11.7688 1.4567C11.7689 1.33285 11.7446 1.21019 11.6972 1.09574C11.6499 0.981295 11.5805 0.877308 11.4929 0.789732C11.4053 0.702157 11.3013 0.632713 11.1869 0.585376C11.0724 0.538039 10.9498 0.513738 10.8259 0.513866L2.01276 0.513865C1.88894 0.513865 1.76634 0.538253 1.65195 0.585635C1.53756 0.633017 1.43362 0.702465 1.34607 0.790016C1.25852 0.877566 1.18907 0.981504 1.14169 1.09589C1.09431 1.21028 1.06992 1.33288 1.06992 1.4567C1.06992 1.58051 1.09431 1.70312 1.14169 1.81751C1.18907 1.9319 1.25852 2.03584 1.34607 2.12339C1.43362 2.21094 1.53756 2.28038 1.65195 2.32777C1.76634 2.37515 1.88894 2.39954 2.01276 2.39954L8.53905 2.39954L1.06992 9.86866C0.702152 10.2364 0.702151 10.8382 1.06992 11.206C1.4377 11.5738 2.03951 11.5738 2.40728 11.206Z" fill="black" />
             </svg>    
                   </div>
-                  {/* <img src={data.page.bannerHomesecond.firstRightImage?.node?.link} className='md:w-4/12 w-[40%] bottom-0  p-4 h-auto absolute md:absolute' /> */}
-                  <img src={data.page.bannerHomesecond.secondRightImage?.node?.link} className='w-full md:w-8/12 md:mx-0 mx-auto p-4  self-end ' />
+                  {/* <Image  src={data.page.bannerHomesecond.firstRightImage?.node?.link} className='md:w-4/12 w-[40%] bottom-0  p-4 h-auto absolute md:absolute' alt="" width="200" height="200" /> */}
+                  <Image  src={data.page.bannerHomesecond.secondRightImage?.node?.link} className='w-full md:w-8/12 md:mx-0 mx-auto p-4  self-end ' alt="" width="200" height="200" />
                 </div>
 
               </div>
@@ -372,7 +367,7 @@ export default async function Home() {
               <path d="M2.40728 11.206L9.8764 3.73689L9.8764 10.2632C9.8764 10.7847 10.3044 11.2127 10.8259 11.2127C10.9498 11.2128 11.0724 11.1885 11.1869 11.1412C11.3013 11.0938 11.4053 11.0244 11.4929 10.9368C11.5805 10.8493 11.6499 10.7453 11.6972 10.6308C11.7446 10.5164 11.7689 10.3937 11.7688 10.2699L11.7688 1.4567C11.7689 1.33285 11.7446 1.21019 11.6972 1.09574C11.6499 0.981295 11.5805 0.877308 11.4929 0.789732C11.4053 0.702157 11.3013 0.632713 11.1869 0.585376C11.0724 0.538039 10.9498 0.513738 10.8259 0.513866L2.01276 0.513865C1.88894 0.513865 1.76634 0.538253 1.65195 0.585635C1.53756 0.633017 1.43362 0.702465 1.34607 0.790016C1.25852 0.877566 1.18907 0.981504 1.14169 1.09589C1.09431 1.21028 1.06992 1.33288 1.06992 1.4567C1.06992 1.58051 1.09431 1.70312 1.14169 1.81751C1.18907 1.9319 1.25852 2.03584 1.34607 2.12339C1.43362 2.21094 1.53756 2.28038 1.65195 2.32777C1.76634 2.37515 1.88894 2.39954 2.01276 2.39954L8.53905 2.39954L1.06992 9.86866C0.702152 10.2364 0.702151 10.8382 1.06992 11.206C1.4377 11.5738 2.03951 11.5738 2.40728 11.206Z" fill="black" />
             </svg>
             </button></a>
-              <img src={data.page.sectionHomethird.secondcolumnimage?.node?.link} alt="" className='object-cover w-[106px] h-[106px]' />
+              <Image  src={data.page.sectionHomethird.secondcolumnimage?.node?.link} alt="" className='object-cover w-[106px] h-[106px]' alt="" width="200" height="200" />
             </div>
           </div>
           <div className='md:w-6/12 py-4 px-4  md:text-left  bg-[#a1cf5f]'>
@@ -385,7 +380,7 @@ export default async function Home() {
               <path d="M2.40728 11.206L9.8764 3.73689L9.8764 10.2632C9.8764 10.7847 10.3044 11.2127 10.8259 11.2127C10.9498 11.2128 11.0724 11.1885 11.1869 11.1412C11.3013 11.0938 11.4053 11.0244 11.4929 10.9368C11.5805 10.8493 11.6499 10.7453 11.6972 10.6308C11.7446 10.5164 11.7689 10.3937 11.7688 10.2699L11.7688 1.4567C11.7689 1.33285 11.7446 1.21019 11.6972 1.09574C11.6499 0.981295 11.5805 0.877308 11.4929 0.789732C11.4053 0.702157 11.3013 0.632713 11.1869 0.585376C11.0724 0.538039 10.9498 0.513738 10.8259 0.513866L2.01276 0.513865C1.88894 0.513865 1.76634 0.538253 1.65195 0.585635C1.53756 0.633017 1.43362 0.702465 1.34607 0.790016C1.25852 0.877566 1.18907 0.981504 1.14169 1.09589C1.09431 1.21028 1.06992 1.33288 1.06992 1.4567C1.06992 1.58051 1.09431 1.70312 1.14169 1.81751C1.18907 1.9319 1.25852 2.03584 1.34607 2.12339C1.43362 2.21094 1.53756 2.28038 1.65195 2.32777C1.76634 2.37515 1.88894 2.39954 2.01276 2.39954L8.53905 2.39954L1.06992 9.86866C0.702152 10.2364 0.702151 10.8382 1.06992 11.206C1.4377 11.5738 2.03951 11.5738 2.40728 11.206Z" fill="black" />
             </svg>
             </button>           </a>   
-            <img src={data.page.sectionHomethird.thirdcolumnimage?.node?.link} alt=""  className='object-cover w-[106px] h-[106px]' />
+            <Image  src={data.page.sectionHomethird.thirdcolumnimage?.node?.link} alt=""  className='object-cover w-[106px] h-[106px]' alt="" width="200" height="200" />
             </div>
           </div>
         </div>
@@ -401,7 +396,7 @@ export default async function Home() {
         <div className="pl-[23px] md:pl-[14px] flex items-center p-[23px] ">
           <div className=" md:w-6/12 md:flex md:gap-3 md:items-center md:justify-center">
             <div className=" md:w-6/12 p-2" >
-              <img src={data.page.homefourtsection.firstimage?.node?.link} alt="" className='md:h-auto mx-auto w-full md:w-auto md:mx-0 h-[100%]' />
+              <Image  src={data.page.homefourtsection.firstimage?.node?.link} alt="" className='md:h-auto mx-auto w-full md:w-auto md:mx-0 h-[100%]' alt="" width="200" height="200" />
             </div>
 
             <div className=" md:w-6/12 mt-4 md:mt-0 ">
@@ -422,7 +417,7 @@ export default async function Home() {
               <p className="text-[16px] text-left md:text-left text-black leading-normal mt-3 pe-6">{data.page.homefourtsection.secondparagraph}</p>
             </div>
             <div className="md:w-6/12 p-2 md:order-2" >
-              <img src={data.page.homefourtsection.secondimage?.node?.link} alt="" className='md:h-auto mx-auto md:w-1/2 md:mx-0 h-[100%] w-full' />
+              <Image  src={data.page.homefourtsection.secondimage?.node?.link} alt="" className='md:h-auto mx-auto md:w-1/2 md:mx-0 h-[100%] w-full' alt="" width="200" height="200" />
             </div>
           </div >
         </div>
@@ -437,7 +432,7 @@ export default async function Home() {
               <p className="text-[16px] text-black text-left md:text-left leading-normal  mt-3 ">{data.page.homefourtsection.thirdparagraph}</p>
             </div>
             <div className="md:w-6/12 p-2 order-1 md:order-2" >
-              <img src={data.page.homefourtsection.thirdimage?.node?.link} alt="" className='  md:w-[60%] md:h-auto mx-auto md:mx-0 h-[100%] w-full' />
+              <Image  src={data.page.homefourtsection.thirdimage?.node?.link} alt="" className='  md:w-[60%] md:h-auto mx-auto md:mx-0 h-[100%] w-full' alt="" width="200" height="200" />
             </div>
           </div>
         </div>
@@ -452,16 +447,16 @@ export default async function Home() {
           <h5 className="md:text-[45px] text-[26px]  text-[#A1CF5F] md:text-left text-left  pb-[15px] font-bold pt-[20px] md:leading-10 ">{data.page.homefifthsection.mainheadingfifth}</h5>
           <p className="md:text-[45px] md:w-[87%]  text-[22px] md:text-left text-left text-white md:leading-normal font-bold">
           {data.page.homefifthsection.fifthheadingsimple}</p>
-          <img src={data.page.homefifthsection.authorimage?.node?.link} className="md:h-[150px] mx-unset mt-10 md:mt-0 md:mx-0 h-[83px]" />
+          <Image  src={data.page.homefifthsection.authorimage?.node?.link} className="md:h-[150px] mx-unset mt-10 md:mt-0 md:mx-0 h-[83px]" alt="" width="200" height="200" />
 
           <h5 className="text-[30px] text-white md:text-left text-left font-bold pb-2 md:pb-5">{data.page.homefifthsection.authortitle}</h5>
           <h5 className="text-[12px] text-white md:text-left text-left font-bold">{data.page.homefifthsection.authordesignation}</h5>
         </div>
         <div className="md:w-8/12   md:py-[30px] relative ">
-          <img src={data.page.homefifthsection.fifthfirstimage?.node?.link} className="" />
+          <Image  src={data.page.homefifthsection.fifthfirstimage?.node?.link} className="" alt="" width="200" height="200" />
 
             
-          <img src='/video.gif' className="w-[224px] video-gif" />
+          <Image  src='/video.gif' className="w-[224px] video-gif" alt="" width="200" height="200" />
           <div className="md:float-right md:mt-[-50px] md:mr-3 mt-5 z-99999 relative" >
            <a href={data.page.homefifthsection.buttonlinkone}> <button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">{data.page.homefifthsection.fifthbuttonone} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
               <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
@@ -485,7 +480,7 @@ export default async function Home() {
               <p className="text-white text-[16px] leading-tight pt-5">{data.page.homesixthsection.paragraph}</p>
               <p className="text-white text-[17px] md:text-[20px] font-bold pt-[29px] ">{data.page.homesixthsection.author}</p>
               <p className="text-white text-[16px] pl-0 md:pl-8  ">{data.page.homesixthsection.designations}</p>
-              <img src='84.png' className="absolute top-[38%] right-3 md:top-3" />
+              <Image  src='/84.png' className="absolute top-[38%] right-3 md:top-3" alt="" width="200" height="200" />
             </div>
             <div className=" md:w-8/12   bg-cover bg-center" style={{ backgroundImage: `url('${data.page.homesixthsection.rightimage?.node?.link}')` }}>
             
@@ -498,7 +493,7 @@ export default async function Home() {
         <h2 className="font-inter md:text-[48px] text-[30px] text font-bold leading-[58.09px] p-8 text-black text-left text-center decoration-skip-ink-none">Stories of Transformation</h2>
         <div className=" md:flex">
           <div className=" md:w-3/12 relative grid place-items-center p-10">
-            <img src="/46.png" className="object-contain" />
+            <Image  src="/46.png" className="object-contain" alt="" width="200" height="200" />
             <p className="absolute top-13 left-12 text-white z-max bg-black px-2 py-0 rounded-full text-sm">5 Sep 2024</p>
             <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">Receiving and Reflecting God’s <br />Inherent Love for Us</h2>
             <a href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
@@ -508,7 +503,7 @@ export default async function Home() {
             </svg></a>
           </div>
           <div className=" md:w-6/12 relative grid place-items-center p-10">
-            <img src="/45.png" className="object-contain" />
+            <Image  src="/45.png" className="object-contain" alt="" width="200" height="200" />
             <p className="absolute top-13 left-12 text-white z-max bg-black px-2 py-0 rounded-full text-sm">5 Sep 2024</p>
             <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">Healing the Trauma of Homelessness Through<br />
               Affordable Housing</h2>
@@ -519,7 +514,7 @@ export default async function Home() {
             </svg></a>
           </div>
           <div className=" md:w-3/12 relative grid place-items-center p-10">
-            <img src="/47.png" className="object-contain" />
+            <Image  src="/47.png" className="object-contain" alt="" width="200" height="200" />
             <p className="absolute top-13 left-12 text-white z-max bg-black px-2 py-0 rounded-full text-sm">5 Sep 2024</p>
             <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">In the Midst of War, Love Comes <br /> Through Action</h2>
             <a href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">Learn More <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
@@ -529,7 +524,7 @@ export default async function Home() {
             </svg></a>
           </div>
         </div>
-        <img src='/48.png' className="table p-[61px] items-center m-auto" />
+        <Image  src='/48.png' className="table p-[61px] items-center m-auto" alt="" width="200" height="200" />
       </div>
 
       </div> */}
@@ -568,7 +563,7 @@ export default async function Home() {
                     <strong className={`${anton.className} uppercase md:text-[55px] text-[41px] text-white font-light leading-[50px]`}>
                     Join Our<br /> Community of Culturemakers
                     </strong>
-                    <p className="text-white">Be the first to know about Cities <br / > Project Global news, programs, <br /> and impact</p>
+                    <p className="text-white">Be the first to know about Cities <br alt="" > Project Global news, programs, <br /> and impact</p>
                     </div>
                     <div className="md:w-6/12 md:p-15 p-5 md:border-l md:border-[#dbdbdb78]">
                       <p className="text-white  pb-[20px] font-extrabold text-[18px]">Become a Culturemaker <br /><span className="font-normal text-[#A1CF5F]">Join Us Today!</span></p>

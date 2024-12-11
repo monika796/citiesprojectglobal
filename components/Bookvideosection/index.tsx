@@ -76,12 +76,12 @@ const VideoPlayer = () => {
           {data.page.bookPageFeilds.bookSixthSectionVideoDescription}
           </p>
         </div>
-        <div className=" absolute w-[95px] top-0 right-0 md:w-auto  md:top-5 md:right-[3%] p-5"><img src="/91.png" className="w-[80%]" /></div>
+        <div className=" absolute w-[95px] top-0 right-0 md:w-auto  md:top-5 md:right-[3%] p-5"><Image  src="/91.png" className="w-[80%]" / width="200" height="200" /></div>
         <div className=" absolute md:bottom-5 bottom-[57%] right-0  md:right-[5%] md:p-5" >
           {isPlaying ? (
-            <img src="/117.png" className="md:w-[80%] w-[60%]" alt="Playing" /> // Image when video is playing
+            <Image  src="/117.png" className="md:w-[80%] w-[60%]" alt="Playing" / width="200" height="200" /> // Image when video is playing
           ) : (
-            <img src="/73.png" className="md:w-[80%] w-[60%]" alt="Paused" /> // Default image
+            <Image  src="/73.png" className="md:w-[80%] w-[60%]" alt="Paused" / width="200" height="200" /> // Default image
           )}
         </div>
       </div>
