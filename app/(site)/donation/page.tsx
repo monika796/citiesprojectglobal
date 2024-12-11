@@ -71,12 +71,13 @@ export default async function Book() {
       // console.log(data.page.donatePageFeilds.donate_fourth_section_scrolltext);
     return (
         <main className="md:w-[100%] pt-10  mx-auto">
-            <h1 className="md:py-[15px] pt-10 py-[10px] md:text-[40px] text-[25px] font-bold text-center text-black md:w-[52%]     mx-auto md:leading-[49px] "> {data.page.donatePageFeilds.donateFirstSectionMainHeading}</h1>
-            <h5 className="text-[18px]  text-black md:w-[52%] mx-auto text-center"> {data.page.donatePageFeilds.donateFirstSectionMainDescription}</h5>
+             <section className=" mx-auto max-w-[869px]">
+            <h1 className="md:py-[15px] mb-5 pt-10 py-[10px] md:text-[64px] text-[25px] font-bold text-center text-black md:w-[52%]     mx-auto md:leading-[49px] "> {data.page.donatePageFeilds.donateFirstSectionMainHeading}</h1>
+            <h5 className="text-[24px] md:text-[18px]  text-black  mx-auto text-center"> {data.page.donatePageFeilds.donateFirstSectionMainDescription}</h5>
+            </section>
             <DonationFaq />
-
             <section className="container mx-auto max-w-[1480px]">
-                    <div className="w-[70%] mx-auto">
+                    <div className="w-full md:w-[70%] mx-auto">
                         
                     <div className="grid items-end justify-end ">
                         <Image  src={data.page.donatePageFeilds.donateThirdSectionImage?.node?.link} / width="200" height="200" />
@@ -113,19 +114,19 @@ export default async function Book() {
             {data.page.donatePageFeilds.donate_fourth_section_scrolltext}    </Marquee>
             </section>
             <section className="container mx-auto py-5 max-w-[1480px]">
-            <div className="mx-auto text-[30px] pb-8 text-black  w-[32%] leading-[33px] italic font-bold text-left ">
+            <div className="mx-auto text-[30px] pb-8 text-black w-full md:w-[32%] leading-[33px] italic font-bold text-left ">
                 
             {data.page.donatePageFeilds.donateFifthSectionHeading}
                 </div>
-                <div className="flex">
-                    <div className="w-1/3">
+                <div className="flex flex-wrap">
+                    <div className="md:w-1/3 w-full">
 
                     </div>
-                    <div className="w-2/3">
+                    <div className="md:w-2/3 w-full">
                     <h5 className="text-[18px] text-black md:w-[58%] italic mx-auto text-left">
                     {data.page.donatePageFeilds.donateFifthSectionDescription}
                 
-               <a href={data.page.donatePageFeilds.donateFifthSectionLink   }> <button className="flex w-fit mb-5 items-center gap-2.5 inline-block md:mt-4 bg-[#A1CF5F] font-bold text-black  text-[15px] md:text-sm py-1 md:py-3 px-6 rounded-lg transition duration-300">
+               <a href={data.page.donatePageFeilds.donateFifthSectionLink   }> <button className="flex w-fit mt-10 md:mt-0 mb-5 items-center gap-2.5 inline-block md:mt-4 bg-[#A1CF5F] font-bold text-black  text-[15px] md:text-sm py-1 md:py-3 px-6 rounded-lg transition duration-300">
                {data.page.donatePageFeilds.donateFifthSectionButtonText}
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                 <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">

@@ -18,8 +18,8 @@ return (
       <div className="flex">
          <Image  src="/ventage-1.png" className="w-[30%]" alt="Vantage Image 1" / width="200" height="200" />
          <div className="middle-content bg-[#263519] w-[40%] p-10">
-            <h2 className="font-anton text-[#A1CF5F] text-[70px] font-medium leading-[97.3px]">$25.00</h2>
-            <h3 className="font-anton text-[64px] font-medium text-white leading-[88.96px]">VantagePoint™</h3>
+            <h2 className="font-anton text-[#A1CF5F] text-[70px] font-bold leading-[97.3px]">$25.00</h2>
+            <h3 className="font-anton text-[50px] font-bold text-white leading-[88.96px]">VantagePoint™</h3>
             <p className="text-white text-[16px] mt-3">This keeps it concise and action-driven.</p>
             <div className="flex justify-end mt-10">
                <a className="d-inline" href="#">

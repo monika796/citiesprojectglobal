@@ -44,13 +44,13 @@ const DonationFaq = () => {
   // console.log(data);
 
   return (
-    <section className="container mx-auto py-18">
-      <div className="flex">
-        <div className="w-1/2 p-[48px] rounded-[30px] border border-[#dcdcdc] m-[40px]">
+    <section className="container mx-auto py-18 max-w-[1480px]">
+      <div className="flex flex-wrap md:flex-nowrap gap-10">
+        <div className="md:w-1/2 w-full md:p-[48px] p-[20px] rounded-[30px] border border-[#dcdcdc] md:m-[0] m-[0]">
           <h1 className="text-[76px] text-[#000000] font-normal text-center leading-[51px]">
             $<span className="!text-[#cccccc]"> {data.page.donatePageFeilds.donateSecondSectionLeftHeading}</span>
           </h1>
-          <h4 className="text-[20px] w-[50%] font-bold leading-[24.2px] text-center m-auto py-5">
+          <h4 className="text-[24px] text-black mt-5 w-full md:max-w-[369px] font-bold leading-[24.2px] text-center m-auto py-5">
             {data.page.donatePageFeilds.donateSecondSectionLeftDescription}
           </h4>
           <div className="w-full max-w-md mx-auto mt-10">
@@ -100,7 +100,9 @@ const DonationFaq = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/2 bg-[url('/109.png')] bg-contain bg-no-repeat bg-center"></div>
+        <div className="md:w-1/2 ">
+        <img src="/109.png" />
+        </div>
       </div>
     </section>
   );
