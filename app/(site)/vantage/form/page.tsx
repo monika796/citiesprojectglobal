@@ -11,23 +11,23 @@ return (
    <div className="main-heading py-10">
       <div className="flex items-center justify-between flex-wrap">
          <h2 className="m-0 text-[64px] text-black font-bold">VantagePoint™</h2>
-         <Image  src="/vantage-logo.png" alt="Vantage Logo" / width="200" height="200" />
+         <img src="/vantage-logo.png" alt="Vantage Logo" />
       </div>
    </div>
    <section>
       <div className="flex">
-         <Image  src="/ventage-1.png" className="w-[30%]" alt="Vantage Image 1" / width="200" height="200" />
+         <img src="/ventage-1.png" className="w-[30%]" alt="Vantage Image 1" />
          <div className="middle-content bg-[#263519] w-[40%] p-10">
-            <h2 className="font-anton text-[#A1CF5F] text-[70px] font-bold leading-[97.3px]">$25.00</h2>
-            <h3 className="font-anton text-[50px] font-bold text-white leading-[88.96px]">VantagePoint™</h3>
+            <h2 className="font-anton text-[#A1CF5F] text-[70px] font-medium leading-[97.3px]">$25.00</h2>
+            <h3 className="font-anton text-[64px] font-medium text-white leading-[88.96px]">VantagePoint™</h3>
             <p className="text-white text-[16px] mt-3">This keeps it concise and action-driven.</p>
             <div className="flex justify-end mt-10">
                <a className="d-inline" href="#">
-               <Image  src="/down-btn.png" alt="Down Button" / width="200" height="200" />
+               <img src="/down-btn.png" alt="Down Button" />
                </a>
             </div>
          </div>
-         <Image  src="/ventage-2.png" className="w-[30%]" alt="Vantage Image 2" / width="200" height="200" />
+         <img src="/ventage-2.png" className="w-[30%]" alt="Vantage Image 2" />
       </div>
    </section>
    <section>

@@ -1,12 +1,15 @@
 "use client";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div>
+    <>
+      {/* footer start */} 
+<br>
+</br>
 <footer className="container max-w-[1481px] mx-auto md:mt-[60px]">
-  <div className=" hidden md:flex w-[100%] flex flex-wrap items-center justify-between mx-auto border-t border-b border-solid border-black">
+  <div className=" hidden md:flex w-[100%] mx-auto flex flex-wrap items-center justify-between mx-auto border-t border-b border-solid border-black">
         
         <div className="flex gap-[10px] md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <div className="px-4 py-6 md:flex md:items-center md:justify-between">
@@ -123,7 +126,7 @@ const Footer = () => {
                 </li>
             </ul></div>
             <div className="items-end  hidden md:flex">
-              <Image  src='/25.png'  className='w-[116px]' width="200" height="200" alt="Footer Image" />
+              <img src='/25.png'  className='w-[116px]'/>
             </div>
         </div>
         <div className="grid justify-start items-center">
@@ -160,7 +163,7 @@ const Footer = () => {
 
 
 </footer>
-    </div>
+    </>
   );
 };
 
