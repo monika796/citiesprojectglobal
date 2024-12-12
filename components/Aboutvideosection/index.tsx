@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { gql, useQuery } from '@apollo/client';
 import client from 'apollo-client';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
@@ -78,9 +79,9 @@ const VideoPlayer = () => {
 
         <div className=" absolute md:bottom-5 bottom-[57%] right-0  md:right-[5%] md:p-5" >
           {isPlaying ? (
-            <img src="/117.png" className="md:w-[80%] w-[60%]" alt="Playing" /> // Image when video is playing
+            <Image width={800} height={500} src="/117.png" className="md:w-[80%] w-[60%]" alt="Playing" /> // Image when video is playing
           ) : (
-            <img src="/73.png" className="md:w-[80%] w-[60%]" alt="Paused" /> // Default image
+            <Image  width={800} height={500} src="/73.png" className="md:w-[80%] w-[60%]" alt="Paused" /> // Default image
           )}
         </div>
       </div>

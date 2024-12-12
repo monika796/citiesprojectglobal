@@ -168,25 +168,7 @@ export default async function Book() {
             </section>
             </div>
 
-            {/* <div className="container mx-auto">
-                  <section className="md:py-[32px] ">
-                        <h1 className="md:text-[38px]  text-[25px] font-bold text-center text-black md:w-[52%] p-5 mx-auto md:leading-[49px]">What is cities project global</h1>
-                        <div className="relative mx-auto table"> 
-                            <img src="/92.png" alt="" />
-                            <div className="md:absolute bottom-3 p-10 text-center md:text-left">
-                                <h2 className="md:text-[64px]  text-[30px] font-bold text-black md:text-white md:w-[40%] leading-[70px] mb-5">About <br /> the Book </h2>
-                                <p className="font-normal text-[15px]  text-black  md:text-white md:w-[72%]"> For decades now, I have witnessed the near non-existence of the practical intersection between faith and work. </p>
-                                
-                            </div>
-                            <div className="hidden md:block absolute bottom-5 right-[12%] p-5">
-                            <img src='/73.png' className="w-[80%]" />
-                            </div>
-                            <div className=" absolute w-[95px] top-0 right-0 md:w-auto  md:top-5 md:right-[3%] p-5">
-                            <img src='/91.png' className="w-[80%]" />
-                            </div>
-                        </div>
-                  </section>
-                  </div> */}
+            
                   < VideoPlayer />
 
                   <div className="container mx-auto md:py-15">

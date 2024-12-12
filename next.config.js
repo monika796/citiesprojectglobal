@@ -4,7 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["localhost"],
+    domains: ["localhost", "digitractive.com"], // Add digitractive.com here
     remotePatterns: [
       {
         protocol: "https",

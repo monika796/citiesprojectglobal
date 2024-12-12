@@ -53,6 +53,7 @@ const POSTS_QUERY_sec=gql `query MyQuery2 {
       title
       content(format: RENDERED)
       contentTypeName
+      id
     }
   }
 }`;
@@ -155,11 +156,11 @@ return (
 
 {/* //////////////// */}
 <div className="container mx-auto  max-w-[1480px] py-8">
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" key=''>
                   {postData.posts.nodes.map((post, index) => {
                               var dat_time=post.date
                           
-                              const dates = new Date(dat_time);
+                          const dates = new Date(dat_time);
                               var formatDate = dates.toLocaleDateString("en-US", {
                               year: "numeric",
                               month: "short",
@@ -175,7 +176,7 @@ return (
                         title={post.title}
                         description={post.content}
                         linkText="Read More"
-                        linkHref="#"
+                        linkHref={post.id}
                      />
                   ) : index === 2 || index === 3 ? (
                      <BlogCard
@@ -185,7 +186,7 @@ return (
                         title={post.title}
                         description={post.content}
                         linkText="Read More"
-                        linkHref="#"
+                        linkHref={post.id}
                      />
                   ) : null; // For indices not 0, 1, 2, or 3, render nothing or another component
                   })}

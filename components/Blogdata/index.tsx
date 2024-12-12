@@ -17,7 +17,7 @@ const BlogCard = ({ image, index, date, title, description, linkText, linkHref }
               <h3 className="text-xl font-semibold text-gray-900 mt-2">{title}</h3>
               <p className="text-gray-700 mt-2">{description}</p>
               <a
-                href={linkHref}
+                href={`blog/blog-details?id=${linkHref} `}
                 className="flex items-center gap-2.5 w-fit mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300"
               >
                 {linkText}

@@ -1,12 +1,12 @@
-"use client";
+
 
 import { Anton } from "next/font/google";
-import { gql, useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
 import React from "react";
-
+import Image from 'next/image';
 const anton = Anton({ weight: "400", subsets: ["latin"] });
-
-const POSTS_QUERY_SEC = gql`
+import client from 'apollo-client';
+const POSTS_QUERY = gql`
   query {
     page(id: "cG9zdDoxNg==") {
       patnerssection {
@@ -70,12 +70,14 @@ const POSTS_QUERY_SEC = gql`
     }
   }
 `;
-
-export default function Partner() {
-  const { data, loading, error } = useQuery(POSTS_QUERY_SEC);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error loading data: {error.message}</p>;
+async function fetchData() {
+  const { data } = await client.query({
+    query: POSTS_QUERY,
+  });
+  return data;
+}
+export default async function Partner() {
+  const data = await fetchData();
 
   const { patnerssection, homesixthsection } = data.page;
 
@@ -86,15 +88,15 @@ export default function Partner() {
           <h5 className="md:text-[64px] text-[30px] text-black text-center md:pb-[30px] font-bold pb-2">{data.page.patnerssection.mainheading}</h5>
           <h5 className="text-[15px] text-black text-center">{data.page.patnerssection.firstsubtitlepatner}</h5>
           <div className=" md:hidden grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 md:w-[63%] mx-auto pt-[29px]">
-            <img src={data.page.patnerssection.imagefirst?.node?.link} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-            <img src={data.page.patnerssection.image2?.node?.link} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-            <img src={data.page.patnerssection.image3?.node?.link} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-            <img src={data.page.patnerssection.image4?.node?.link} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-            <img src={data.page.patnerssection.image5?.node?.link} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+            <Image src={data.page.patnerssection.imagefirst?.node?.link} alt='' width={800} height={500} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+            <Image src={data.page.patnerssection.image2?.node?.link} alt='' width={800} height={500} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+            <Image src={data.page.patnerssection.image3?.node?.link} alt='' width={800} height={500} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+            <Image src={data.page.patnerssection.image4?.node?.link} alt='' width={800} height={500} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+            <Image src={data.page.patnerssection.image5?.node?.link} alt='' width={800} height={500} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
 
-            <img src={data.page.patnerssection.image6?.node?.link} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-            <img src={data.page.patnerssection.image7?.node?.link} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
-            <img src={data.page.patnerssection.image8?.node?.link} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+            <Image src={data.page.patnerssection.image6?.node?.link} alt='' width={800} height={500} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+            <Image src={data.page.patnerssection.image7?.node?.link} alt='' width={800} height={500} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
+            <Image src={data.page.patnerssection.image8?.node?.link} alt='' width={800} height={500} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" />
 
             <div className=" relative bg-black text-white p-[27px] w-[150px] h-[150px] flex items-center justify-center mx-auto">
               <div className="text-left absolute bottom-[15px] w-[89%]">
@@ -109,31 +111,31 @@ export default function Partner() {
           <div className="hidden md:block py-10 ">
             <div className="flex justify-center mx-auto w-fit mb-3 gap-3 md:w-10/12">
               <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-              <img  src={data.page.patnerssection.imagefirst?.node?.link} className="w-[80px]"  />
+              <Image  src={data.page.patnerssection.imagefirst?.node?.link} className="w-[80px]" alt='' width={800} height={500}  />
               </div>
               <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33]  ">
-              <img  src={data.page.patnerssection.image2?.node?.link}  className="w-[80px]" />
+              <Image  src={data.page.patnerssection.image2?.node?.link}  className="w-[80px]" alt='' width={800} height={500} />
               </div>
               <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-              <img  src={data.page.patnerssection.image3?.node?.link}  className="w-[80px]" />
+              <Image  src={data.page.patnerssection.image3?.node?.link}  className="w-[80px]" alt='' width={800} height={500} />
               </div>
               <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-              <img  src={data.page.patnerssection.image4?.node?.link} className="w-[80px]"/>
+              <Image  src={data.page.patnerssection.image4?.node?.link} className="w-[80px]" alt='' width={800} height={500}/>
               </div>
               <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-              <img src={data.page.patnerssection.image5?.node?.link}  className="w-[80px]" />
+              <Image src={data.page.patnerssection.image5?.node?.link}  className="w-[80px]" alt='' width={800} height={500} />
               </div>
             </div>
 
             <div className="flex justify-center items-center mx-auto w-fit mb-3 gap-3 md:w-8/12">
             <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-                <img  src={data.page.patnerssection.image6?.node?.link}  className="w-[80px]"  />
+                <Image src={data.page.patnerssection.image6?.node?.link}  className="w-[80px]" alt='' width={800} height={500} />
                 </div>
                 <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-                <img  src={data.page.patnerssection.image7?.node?.link}  className="w-[80px]"  />
+                <Image  src={data.page.patnerssection.image7?.node?.link}  className="w-[80px]" alt='' width={800} height={500}  />
                 </div>
                 <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-                <img  src={data.page.patnerssection.image8?.node?.link}  className="w-[80px]"   />
+                <Image  src={data.page.patnerssection.image8?.node?.link}  className="w-[80px]" alt='' width={800} height={500}  />
                 </div>
              
               <div className="relative bg-black text-white p-[27px] w-full aspect-square max-w-[257px] flex items-center justify-center hover:border-[#A1CF5F33]  ">

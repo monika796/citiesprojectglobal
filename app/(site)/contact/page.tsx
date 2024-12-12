@@ -1,12 +1,12 @@
-'use client';
 
-import { useState, useEffect } from "react";
 import { Anton } from "next/font/google";
+
 import Partner from "@/components/partner";
 import Newsletter from "@/components/Newsletter";
 import { gql } from '@apollo/client';
 import client from 'apollo-client';
-
+import Image from 'next/image';
+import { Form, Input, Label, Button } from 'reactstrap';
 // Define the Anton font
 const anton = Anton({ weight: '400', subsets: ["latin"] });
 
@@ -34,8 +34,6 @@ query MyQuery2 {
     }
   }
 }`;
-
-// Define TypeScript types
 interface ContactPageFields {
   firstMainHeadingPart1: string;
   firstRightImage?: { node?: { link?: string } };
@@ -51,59 +49,15 @@ interface Page {
   contactpagefeilds: ContactPageFields;
 }
 
-interface QueryData {
-  page: Page;
+interface ContactProps {
+  data: Page;
 }
 
-export default function Contact() {
-  const [data, setData] = useState<Page | null>(null); // State for holding fetched data
-  const [formData, setFormData] = useState({ name: '', email: '' });
-  const [submitted, setSubmitted] = useState(false);
-
-  // Fetch data from Apollo Client on component mount
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await client.query<{ page: Page }>({
-          query: POSTS_QUERY,
-        });
-        setData(response.data.page); // Extract the `page` directly
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    }
-    fetchData();
-  }, []);
-
-  // Handle form input changes
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  // Handle form submission
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      const response = await fetch("https://digitractive.com/cityprojectglobal/wp-json/newsletter/v1/subscribe", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      if (response.ok) {
-        setSubmitted(true);
-      }
-    } catch (err) {
-      console.error("Error submitting form:", err);
-    }
-  };
-
-  // Display a loading message while data is being fetched
-  if (!data) return ;
-
-  const fields = data.contactpagefeilds;
+const Contact = async (): Promise<JSX.Element> => {
+  const response = await client.query<{ page: Page }>({
+    query: POSTS_QUERY,
+  });
+  const fields = response.data.page.contactpagefeilds;
 
   return (
     <main className="md:w-[80%] mx-auto">
@@ -120,10 +74,12 @@ export default function Contact() {
             </p>
           </div>
           <div className="md:w-1/3 pb-3 md:pb-0">
-            <img
+            <Image
               src={fields.firstRightImage?.node?.link || ""}
               className="w-[81%] mx-auto md:mx-0 p-2 md:p-0"
               alt="First Section"
+              width={800} 
+              height={500}
             />
           </div>
         </section>
@@ -133,10 +89,13 @@ export default function Contact() {
           <div className="md:w-8/12">
             <div className="md:flex items-center">
               <div className="md:w-1/2 table mx-auto md:block md:mx-0">
-                <img
-                  src={fields.secondContactSectionImage?.node?.link || ""}
-                  alt="Second Section"
-                />
+              <Image
+        src={fields.secondContactSectionImage?.node?.link || ""}
+        alt="Second Section" // For responsive images
+        width={800} // Set a default width
+        height={500}
+        className="md:pr-20"
+      />
               </div>
               <div className="md:w-1/2">
                 <h3 className={`${anton.className} uppercase text-center md:text-left md:text-[55px] text-[30px] text-[#000000] font-light leading-[50px]`}>
@@ -152,43 +111,35 @@ export default function Contact() {
             <p className="text-[#000000] pb-[20px] text-center md:text-left font-extrabold text-[18px]">
               {fields.secondContactSectionFormHeading}
             </p>
-            {!submitted ? (
-              <form onSubmit={handleSubmit} className="grid gap-[1px]">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="bg-transparent border border-[#3d3c3c26] p-[10px]"
-                  required
-                />
-                <br />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="bg-transparent border border-[#3d3c3c26] p-[10px]"
-                  required
-                />
-                <label className="text-[20] text-black pt-8 pb-5 font-normal text-left decoration-slice">
-                  Please Confirm*
-                </label>
-                <p className="text-[15px] p-2 font-normal text-left decoration-slice">
-                  <input type="checkbox" /> I want to subscribe to all CPG emails
-                </p>
-                <button
-                  type="submit"
-                  className="mx-auto md:mx-0 font-bold md:w-[23%] w-[28%] bg-[#A1CF5F] md:p-[8px] p-[10px] text-black rounded-[7px] text-[15px]"
-                >
-                  Submit
-                </button>
-              </form>
-            ) : (
-              <p className="text-black text-center md:text-left">Thanks For Subscribing</p>
-            )}
+            <form action="https://digitractive.com/cityprojectglobal/wp-json/newsletter/v1/subscribe" method="POST" className="grid gap-[1px]">
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                className="bg-transparent border border-[#3d3c3c26] p-[10px]"
+                required
+              />
+              <br />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                className="bg-transparent border border-[#3d3c3c26] p-[10px]"
+                required
+              />
+              <label className="text-[20] text-black pt-8 pb-5 font-normal text-left decoration-slice">
+                Please Confirm*
+              </label>
+              <p className="text-[15px] p-2 font-normal text-left decoration-slice">
+                <input type="checkbox" /> I want to subscribe to all CPG emails
+              </p>
+              <button
+                type="submit"
+                className="mx-auto md:mx-0 font-bold md:w-[23%] w-[28%] bg-[#A1CF5F] md:p-[8px] p-[10px] text-black rounded-[7px] text-[15px]"
+              >
+                Submit
+              </button>
+            </form>
           </div>
         </div>
 
@@ -197,4 +148,6 @@ export default function Contact() {
       </div>
     </main>
   );
-}
+};
+
+export default Contact;
