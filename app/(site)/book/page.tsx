@@ -4,7 +4,8 @@ import VideoPlayer from "@/components/Bookvideosection";
 import  Partner from "@/components/partner";
 import { gql } from '@apollo/client';
 import client from 'apollo-client';
-
+import Image from "next/image";
+import Link from "next/link";
 
 const anton = Anton({ weight: '400', subsets: ["latin"] }); 
 const POSTS_QUERY= gql `query MyQuery2 {
@@ -109,12 +110,14 @@ export default async function Book() {
             <h1 className="md:py-[42px] py-[30px] md:text-[64px] text-[25px] font-bold text-center text-black md:max-w-[1178px] p-5 mx-auto md:leading-[77.45px] ">
            {data.page.bookPageFeilds.bookFirstSectionMainHeading}</h1>
                   <section className="md:py-[42px] md:p-0 p-3">
-                  <img src={data.page.bookPageFeilds.bookSecondSectionImage?.node?.link} className=" mx-auto" alt="" />
+                    <Image src={data.page.bookPageFeilds.bookSecondSectionImage?.node?.link} className=" mx-auto" alt="" layout="responsive" width={16} height={9}></Image>
+                    
                   </section >
                   <div className="container mx-auto">
                     <div className="md:flex">
                         <div className="md:w-5/12 border-r">
-                            <img src={data.page.bookPageFeilds.bookThirdSectionLeftImage?.node?.link} className="w-[50%] md:w-[70%] mx-auto" />
+                        <Image src={data.page.bookPageFeilds.bookThirdSectionLeftImage?.node?.link} className="w-[50%] md:w-[70%] mx-auto"  alt='' layout="responsive" width={16} height={9}></Image>
+                          
                         </div>
                         <div className="md:w-7/12 py-20 pl-10">
                         <h2 className="font-bold text-gray-800 text-center md:text-left text-3xl md:text-[48px] text-[25px] leading-tight mb-4"> {data.page.bookPageFeilds.bookThirdSectionRightHeading}</h2>
@@ -146,13 +149,19 @@ export default async function Book() {
                         <h2 className="font-bold text-white  md:w-[85%] text-center md:text-left md:text-[24px] text-[24px] leading-tight mb-4"> {data.page.bookPageFeilds.bookFourthSectionFirstColumnText}</h2>
                         </div>
                         <div className="md:w-1/5 md:m-0 m-5 md:p-[46px] grid justify-center items-center border border-black md:h-[250px]">
-                        <img src={data.page.bookPageFeilds.bookFourthSectionSecondColumnImage?.node?.link} alt='' />
+                        <Image src={data.page.bookPageFeilds.bookFourthSectionSecondColumnImage?.node?.link}  alt='' layout="responsive" width={16} height={9}></Image>
+
+                      
                         </div>
                         <div className="md:w-1/5  md:m-0 m-5 md:p-[46px] grid justify-center items-center border border-black md:h-[250px]">
-                        <img src={data.page.bookPageFeilds.bookFourthSectionThirdColumnImage?.node?.link} alt='' />
+                        <Image src={data.page.bookPageFeilds.bookFourthSectionThirdColumnImage?.node?.link} alt='' layout="responsive" width={16} height={9}></Image>
+
+                        
                         </div>
                         <div className="md:w-1/5  md:m-0 m-5 md:p-[46px] grid justify-center items-center border border-black md:h-[250px]">
-                        <img src={data.page.bookPageFeilds.bookFourthSectionFourthColumnImage?.node?.link} alt='' />
+                        <Image src={data.page.bookPageFeilds.bookFourthSectionFourthColumnImage?.node?.link} alt='' layout="responsive" width={16} height={9}></Image>
+
+                       
                         </div>
                     </div>
                     </div>
@@ -176,19 +185,19 @@ export default async function Book() {
                    <div className="md:flex">
                     <div className="md:w-1/2  ">
                     <div className="md:flex gap-5 ">
-                            <a href={data.page.bookPageFeilds.bookSeventhSectionButtonOneLink}><button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]" >
+                            <Link href={data.page.bookPageFeilds.bookSeventhSectionButtonOneLink}><button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]" >
                             {data.page.bookPageFeilds.bookSeventhSectionButtonOneText}
                                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                                  <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                                     <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
-                                    </button></a>
+                                    </button></Link>
                                     <br className="hidden md:block" />
-                                    <a href={data.page.bookPageFeilds.bookSeventhSectionButtonTwoLink}>  <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
+                                    <Link href={data.page.bookPageFeilds.bookSeventhSectionButtonTwoLink}>  <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
                                     {data.page.bookPageFeilds.bookSeventhSectionButtonTwoText}
                                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                                          <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                                             <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
-                                            </button></a>
+                                            </button></Link>
                           </div>
                     </div>
                     <div className="md:w-1/2 p-3 md:pr-[140px]">
@@ -209,10 +218,14 @@ export default async function Book() {
                         <div className="md:w-1/2 p-2 relative">
                         <h2 className="font-bold text-black text-center md:text-left   text-[48px] leading-tight mb-4"> {data.page.bookPageFeilds.bookEigthSectionMainHeading}</h2>
                         <p className="font-normal  text-center md:text-left text-[16px]  text-black pb-3"> {data.page.bookPageFeilds.bookEigthSectionMainLeftDescription}</p>
-                        <img src={data.page.bookPageFeilds.bookEigthSectionMainLeftImage?.node?.link} className="md:absolute md:mx-0 mx-auto bottom-[29%] right-3 " alt='' />
+                        <Image src={data.page.bookPageFeilds.bookEigthSectionMainLeftImage?.node?.link} className="md:absolute md:mx-0 mx-auto bottom-[29%] right-3 " alt=''  width={287} height={225}></Image>
+
+                        
                         </div>
                         <div className="md:w-1/2 p-2">
-                        <img src={data.page.bookPageFeilds.bookEigthSectionMainRightImage?.node?.link} className="md:p-0 p-9" alt='' />
+                        <Image src={data.page.bookPageFeilds.bookEigthSectionMainRightImage?.node?.link} className="md:p-0 p-9"  alt='' layout="responsive" width={16} height={9}></Image>
+
+                        
                         <p className="font-normal  text-center md:text-left text-[14px] pt-3 text-black pb-3">
                         {data.page.bookPageFeilds.bookEigthSectionMainLeftDescription}</p><p className="font-normal  text-center md:text-left text-[14px]  text-black pb-3">        
                         {data.page.bookPageFeilds.bookEigthSectionMainLeftDescription}</p>
@@ -237,7 +250,9 @@ export default async function Book() {
                     </div>
                     <div className="md:flex md:mt-[90px] gap-6">
                         <div className="">
-                        <img src={data.page.bookPageFeilds.bookNinthSectionLeftImage?.node?.link} alt=""/>
+                        <Image src={data.page.bookPageFeilds.bookNinthSectionLeftImage?.node?.link} alt='' width={436} height={436}></Image>
+
+                     
                         </div>
                         <div className=" relative">
                             <div className="md:flex md:absolute top-[-20%] md:w-[95%] right-0">
@@ -246,17 +261,19 @@ export default async function Book() {
                                 </div>
                                 <div className="md:w-1/2 h-[232px] grid items-center  p-6 bg-[#000000]">
                                <div> <p className="text-white  text-center md:text-left text-[14px]">{data.page.bookPageFeilds.bookNinthSectionRightSecondColumnText}</p>
-                               <a href={data.page.bookPageFeilds.bookNinthSectionRightSecondColumnButtonLink}> <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
+                               <Link href={data.page.bookPageFeilds.bookNinthSectionRightSecondColumnButtonLink}> <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
                                 {data.page.bookPageFeilds.bookNinthSectionRightSecondColumnButtonText}
                                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                                          <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                                             <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
                                             </button>
-                                            </a>
+                                            </Link>
                                             </div>
                                 </div>
                             </div>
-                        <img src={data.page.bookPageFeilds.bookNinthSectionRightImage?.node?.link} alt=""/>
+                            <Image  src={data.page.bookPageFeilds.bookNinthSectionRightImage?.node?.link} alt=''  width={1018} height={436}></Image>
+
+                  
                         </div>
                     </div>
                  </div>

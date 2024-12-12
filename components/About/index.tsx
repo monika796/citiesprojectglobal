@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
+import Link from "next/link";
 const About = () => {
   return (
     <>
@@ -144,7 +144,7 @@ const About = () => {
                 ultricies lacus non fermentum ultrices. Fusce consectetur le.
               </p>
               <div>
-                <a
+                <Link
                   href="#"
                   className="group mt-7.5 inline-flex items-center gap-2.5 text-black hover:text-primary dark:text-white dark:hover:text-primary"
                 >
@@ -159,7 +159,7 @@ const About = () => {
                   >
                     <path d="M10.4767 6.16701L6.00668 1.69701L7.18501 0.518677L13.6667 7.00034L7.18501 13.482L6.00668 12.3037L10.4767 7.83368H0.333344V6.16701H10.4767Z" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </motion.div>
             <motion.div

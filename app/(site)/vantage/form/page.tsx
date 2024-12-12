@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Anton } from "next/font/google";
+import Link from "next/link";
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 const Form = () => {
 const [isOpen, setIsOpen] = useState(true);
@@ -22,9 +23,9 @@ return (
             <h3 className="font-anton text-[64px] font-medium text-white leading-[88.96px]">VantagePoint™</h3>
             <p className="text-white text-[16px] mt-3">This keeps it concise and action-driven.</p>
             <div className="flex justify-end mt-10">
-               <a className="d-inline" href="#">
+               <Link className="d-inline" href="#">
                <img src="/down-btn.png" alt="Down Button" />
-               </a>
+               </Link>
             </div>
          </div>
          <img src="/ventage-2.png" className="w-[30%]" alt="Vantage Image 2" />
@@ -118,7 +119,7 @@ return (
     </div>
         <div className="term-condition mt-10">
             <h2 className="text-[20px] text-black leading-[24px] font-medium">Terms and Services</h2>
-            <p className="text-[14px] mt-4 text-black leading-[24px]">Please review our  <a className="text-[#A1CF5F] text-underline" href="#">Services and Data Agreement</a>  carefully. By clicking 'Check', you agree to comply with all the policies and guidelines outlined in the document.</p>
+            <p className="text-[14px] mt-4 text-black leading-[24px]">Please review our  <Link className="text-[#A1CF5F] text-underline" href="#">Services and Data Agreement</Link>  carefully. By clicking 'Check', you agree to comply with all the policies and guidelines outlined in the document.</p>
             <p className="text-[15px] p-2 font-normal text-left decoration-slice"><input className="me-3"  type="checkbox" /> I have read and agree to CPG's Services and Data Agreement</p>
         </div>
       </div>
@@ -201,7 +202,7 @@ return (
       />
     </div>
   </div>
-  <a href="https://cityprojectglobal.vercel.app/" className=" flex w-fit  items-center gap-2.5 inline-block md:mt-4 bg-[#A1CF5F] font-bold text-black  text-[13px] md:text-sm py-1 md:py-3 px-6 rounded-lg transition duration-300">Submit & Pay $24.99<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></a>
+  <Link href="https://cityprojectglobal.vercel.app/" className=" flex w-fit  items-center gap-2.5 inline-block md:mt-4 bg-[#A1CF5F] font-bold text-black  text-[13px] md:text-sm py-1 md:py-3 px-6 rounded-lg transition duration-300">Submit & Pay $24.99<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></Link>
 </div>
 
       </div>

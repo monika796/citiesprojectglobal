@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard, Mousewheel, Autoplay } from "swiper/modules";
+import Image from "next/image";
 
 // Import Swiper styles
 import "swiper/css";
@@ -78,10 +79,9 @@ const SwiperSection = () => {
               >
                 <div className="flex">
                   <div className="w-1/3">
-                    <img
-                      src={post.featuredImage?.node?.link || "placeholder.png"}
-                      alt={post.title}
-                    />
+                  <Image src={post.featuredImage?.node?.link || "placeholder.png"}
+                      alt={post.title} layout="responsive" width={16} height={9} ></Image>
+                    
                   </div>
                   <div className="w-2/3 grid p-2">
                     <div>

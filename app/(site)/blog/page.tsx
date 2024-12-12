@@ -4,6 +4,8 @@ import { Metadata } from "next";
 import { gql } from '@apollo/client';
 import client from 'apollo-client';
 import BlogCard from "@/components/Blogdata";
+import Image from "next/image";
+import Link from "next/link";
 export const metadata: Metadata = {
 title: "Blog Page - Solid SaaS Boilerplate",
 description: "This is Blog page for Solid Pro",
@@ -82,11 +84,10 @@ return (
    <section className="container mx-auto max-w-[1480px] bg-[#F8F8F8] border rounded-lg mt-10">
       <div className="flex flex-col lg:flex-row    overflow-hidden">
          <div className="flex-shrink-0">
-            <img
-               src={data.page.blogPageFeilds.blogSecondSection.blogPageLeft?.node?.link} // Replace with your image path
+            <Image src={data.page.blogPageFeilds.blogSecondSection.blogPageLeft?.node?.link} // Replace with your image path
                alt="Group of people"
-               className="w-full h-64 lg:h-full object-cover"
-               />
+               className="w-full h-64 lg:h-full object-cover" layout="responsive" width={16} height={9}></Image>
+           
          </div>
          <div className="p-12 flex flex-col justify-between lg:w-2/3">
             <div className="mb-4 max-w-[543px]">
@@ -99,22 +100,21 @@ return (
                <p className="mt-2 text-[20px] text-gray-600 leading-[29px] color-[#414141] mb-10">
                {data.page.blogPageFeilds.blogSecondSection.blogPageRightDescription} 
                </p>
-               <a href={data.page.blogPageFeilds.blogSecondSection.blogPageRightButtonLink.url}  className=" flex  mx-unset md:mx-0 items-center gap-2.5 w-[fit-content] inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">
+               <Link href={data.page.blogPageFeilds.blogSecondSection.blogPageRightButtonLink.url}  className=" flex  mx-unset md:mx-0 items-center gap-2.5 w-[fit-content] inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">
                {data.page.blogPageFeilds.blogSecondSection.blogPageRightButtonText} 
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                      <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                         <path d="M1 13 13 1M4 1h9v9"></path>
                      </g>
                   </svg>
-               </a>
+               </Link>
             </div>
             <div className="flex justify-end items-center">
                <div className="flex items-end space-x-2">
-                  <img
-                     src={data.page.blogPageFeilds.blogSecondSection.blogPageRightImage?.node?.link} // Replace with your small image path
+                  <Image  src={data.page.blogPageFeilds.blogSecondSection.blogPageRightImage?.node?.link} // Replace with your small image path
                      alt="Nature"
-                     className=" object-cover rounded"
-                     />
+                     className=" object-cover rounded" layout="responsive" width={16} height={9}></Image>
+                 
                   <div className="w-[175px] h-[241px] bg-white border rounded-lg flex flex-col justify-end p-5">
                      <p className="text-[64px] font-semibold text-gray-700 mb-5">  {data.page.blogPageFeilds.blogSecondSection.blogPageRightDate} </p>
                      <p className="text-[15px] text-gray-500">  {data.page.blogPageFeilds.blogSecondSection.blogPageRightMonthAndYear} </p>

@@ -1,6 +1,7 @@
 import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
 import { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 export const metadata: Metadata = {
 title: "Blog Details Page - Solid SaaS Boilerplate",
@@ -39,18 +40,18 @@ return (
          </div>
          {/* Social Media Links */}
          <div className="flex space-x-4 mt-4">
-            <a href="#" className="text-gray-500 hover:text-gray-900">
+            <Link href="#" className="text-gray-500 hover:text-gray-900">
             <span className="sr-only">Facebook</span>
             <i className="fab fa-facebook-f"></i> {/* Replace with an SVG or icon component */}
-            </a>
-            <a href="#" className="text-gray-500 hover:text-gray-900">
+            </Link>
+            <Link href="#" className="text-gray-500 hover:text-gray-900">
             <span className="sr-only">LinkedIn</span>
             <i className="fab fa-linkedin-in"></i> {/* Replace with an SVG or icon component */}
-            </a>
-            <a href="#" className="text-gray-500 hover:text-gray-900">
+            </Link>
+            <Link href="#" className="text-gray-500 hover:text-gray-900">
             <span className="sr-only">Instagram</span>
             <i className="fab fa-instagram"></i> {/* Replace with an SVG or icon component */}
-            </a>
+            </Link>
          </div>
       </div>
    </div>
@@ -80,14 +81,14 @@ return (
                <img src="/46.png" className="object-contain" />
                <p className="absolute top-13 left-12 text-white z-max bg-black px-2 py-0 rounded-full text-sm">5 Sep 2024</p>
                <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">Receiving and Reflecting God’s <br />Inherent Love for Us</h2>
-               <a href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">
+               <Link href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">
                   Learn More 
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                      <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                         <path d="M1 13 13 1M4 1h9v9"></path>
                      </g>
                   </svg>
-               </a>
+               </Link>
             </div>
             <div className=" md:w-6/12 relative grid place-items-center p-10">
                <img src="/45.png" className="object-contain" />
@@ -95,27 +96,27 @@ return (
                <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">Healing the Trauma of Homelessness Through<br />
                   Affordable Housing
                </h2>
-               <a href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">
+               <Link href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">
                   Learn More 
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                      <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                         <path d="M1 13 13 1M4 1h9v9"></path>
                      </g>
                   </svg>
-               </a>
+               </Link>
             </div>
             <div className=" md:w-3/12 relative grid place-items-center p-10">
                <img src="/47.png" className="object-contain" />
                <p className="absolute top-13 left-12 text-white z-max bg-black px-2 py-0 rounded-full text-sm">5 Sep 2024</p>
                <h2 className="text-center px-3 py-[11px] text-black font-semibold text-base">In the Midst of War, Love Comes <br /> Through Action</h2>
-               <a href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">
+               <Link href="#" className="flex gap-2 items-center text-black font-extrabold text-center justify-center">
                   Learn More 
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                      <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                         <path d="M1 13 13 1M4 1h9v9"></path>
                      </g>
                   </svg>
-               </a>
+               </Link>
             </div>
          </div>
          <img src='/48.png' className="table p-[61px] items-center m-auto" />

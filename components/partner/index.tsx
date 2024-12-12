@@ -6,6 +6,7 @@ import React from "react";
 import Image from 'next/image';
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 import client from 'apollo-client';
+import Link from "next/link";
 const POSTS_QUERY = gql`
   query {
     page(id: "cG9zdDoxNg==") {
@@ -101,7 +102,7 @@ export default async function Partner() {
             <div className=" relative bg-black text-white p-[27px] w-[150px] h-[150px] flex items-center justify-center mx-auto">
               <div className="text-left absolute bottom-[15px] w-[89%]">
                 <h5 className="text-[12px] font-bold pb-2">{data.page.patnerssection.textninthbox}</h5>
-                <a href={data.page.patnerssection.linknithbox}><h3 className="text-[10px] font-bold">{data.page.patnerssection.linktextninthbox}</h3></a>
+                <Link href={data.page.patnerssection.linknithbox}><h3 className="text-[10px] font-bold">{data.page.patnerssection.linktextninthbox}</h3></Link>
               </div>
             </div>
 
@@ -141,7 +142,7 @@ export default async function Partner() {
               <div className="relative bg-black text-white p-[27px] w-full aspect-square max-w-[257px] flex items-center justify-center hover:border-[#A1CF5F33]  ">
                 <div className="text-left absolute bottom-[15px] w-[89%]">
                   <h5 className="text-[20px] font-bold pb-2">{data.page.patnerssection.textninthbox}</h5>
-                  <a className="text-[16px] underline" href={data.page.patnerssection.linknithbox}>{data.page.patnerssection.linktextninthbox}</a>
+                  <Link className="text-[16px] underline" href={data.page.patnerssection.linknithbox}>{data.page.patnerssection.linktextninthbox}</Link>
                 </div>
               </div>
             </div>

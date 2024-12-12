@@ -5,6 +5,7 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 import { gql, useQuery } from '@apollo/client';
 const POSTS_QUERY = gql `
@@ -142,7 +143,7 @@ const CustomSlider = () => {
                     <h2 className="text-center px-3 py-3 text-black font-semibold text-base">
                       {slide.title}
                     </h2>
-                    <a
+                    <Link
                       href="#"
                       className="flex gap-2 items-center text-black font-extrabold text-center justify-center"
                     >
@@ -152,7 +153,7 @@ const CustomSlider = () => {
                           <path d="M1 13L13 1M4 1h9v9"></path>
                         </g>
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                 </SwiperSlide>
               ))}
@@ -220,7 +221,7 @@ const CustomSlider = () => {
                     <h2 className="text-center px-3 py-3 text-black font-semibold text-base">
                       {slide.title}
                     </h2>
-                    <a
+                    <Link
                       href="#"
                       className="flex gap-2 items-center text-black font-extrabold text-center justify-center"
                     >
@@ -230,7 +231,7 @@ const CustomSlider = () => {
                           <path d="M1 13L13 1M4 1h9v9"></path>
                         </g>
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                 </SwiperSlide>
               ))}

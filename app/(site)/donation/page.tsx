@@ -6,6 +6,8 @@ import Marquee from "react-fast-marquee";
 import { gql } from '@apollo/client';
 import client from 'apollo-client';
 import DonationFaq from "@/components/DonationFaqSecition";
+import Image from "next/image";
+import Link from "next/link";
 
 const anton = Anton({ weight: '400', subsets: ["latin"] }); 
 const POSTS_QUERY= gql `query MyQuery2 {
@@ -79,7 +81,9 @@ export default async function Book() {
                     <div className="w-[70%] mx-auto">
                         
                     <div className="grid items-end justify-end ">
-                        <img src={data.page.donatePageFeilds.donateThirdSectionImage?.node?.link} />
+                    <Image src={data.page.donatePageFeilds.donateThirdSectionImage?.node?.link} alt='' layout="responsive" width={16} height={9}></Image>
+
+                     
                     
                     </div>
                         <div className="grid gap-3">
@@ -97,15 +101,21 @@ export default async function Book() {
             <section className="container mx-auto max-w-[1480px]">
                 <div className="flex p-10">
                     <div className="w-2/3">
-                        <img src={data.page.donatePageFeilds.donateFourthSection?.node?.link} className="w-[80%]" />
+                    <Image src={data.page.donatePageFeilds.donateFourthSection?.node?.link} className="w-[80%]" alt=''  width={740} height={439}></Image>
+
+                       
                     </div>
                     <div className="relative w-1/3">
-                    <img src={data.page.donatePageFeilds.donateFourthSectionSecondImage?.node?.link} className="absolute bottom-0 right-0" />
+                    <Image src={data.page.donatePageFeilds.donateFourthSectionSecondImage?.node?.link} className="absolute bottom-0 right-0" alt='' layout="responsive" width={16} height={9}></Image>
+
+                  
                     <img src="/116.png" className="absolute bottom-[30%] left-[-23%]" />
                     </div>
                 </div>
                 <div className="">
-                    <img src={data.page.donatePageFeilds.donateFourthSectionThirdImage?.node?.link} className="w-[15%] mx-auto" />
+                <Image src={data.page.donatePageFeilds.donateFourthSectionThirdImage?.node?.link} className="w-[15%] mx-auto" alt=''  width={740} height={439}></Image>
+
+                    
                 </div>
             </section>
             <section className="relative  bg-[#A1CF5F] my-20">
@@ -125,14 +135,14 @@ export default async function Book() {
                     <h5 className="text-[18px] text-black md:w-[58%] italic mx-auto text-left">
                     {data.page.donatePageFeilds.donateFifthSectionDescription}
                 
-               <a href={data.page.donatePageFeilds.donateFifthSectionLink   }> <button className="flex w-fit mb-5 items-center gap-2.5 inline-block md:mt-4 bg-[#A1CF5F] font-bold text-black  text-[15px] md:text-sm py-1 md:py-3 px-6 rounded-lg transition duration-300">
+               <Link href={data.page.donatePageFeilds.donateFifthSectionLink   }> <button className="flex w-fit mb-5 items-center gap-2.5 inline-block md:mt-4 bg-[#A1CF5F] font-bold text-black  text-[15px] md:text-sm py-1 md:py-3 px-6 rounded-lg transition duration-300">
                {data.page.donatePageFeilds.donateFifthSectionButtonText}
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                 <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                   <path d="M1 13 13 1M4 1h9v9"></path>
                 </g>
               </svg>
-                        </button></a>
+                        </button></Link>
                         </h5>
                 
                     </div>

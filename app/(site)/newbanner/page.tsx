@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import Link from "next/link";
 
 // Define the Anton font
 const anton = Anton({ weight: "400", subsets: ["latin"] });
@@ -97,7 +98,7 @@ export default function Contact() {
                       <p className="mt-2 md:mb-0 mb-10 md:w-[26%] font-light xl:leading-6 md:leading-none">
                         {banner.homeBannerDescription}
                       </p>
-                      <a
+                      <Link
                         href={banner.homeBannerButtonLink}
                         className="flex w-fit items-center gap-2.5 inline-block md:mt-4 bg-[#A1CF5F] font-bold text-black text-[13px] md:text-sm py-1 md:py-3 px-6 rounded-lg transition duration-300"
                       >
@@ -114,7 +115,7 @@ export default function Contact() {
                             <path d="M1 13 13 1M4 1h9v9"></path>
                           </g>
                         </svg>
-                      </a>
+                      </Link>
                      
                     </div>
                     <img src={banner.homeBannerLatestPostImages?.node?.link} className='container md:absolute right-[29px] bottom-[0%] w-3/12 md:mx-0 mx-auto p-4  self-end ' />

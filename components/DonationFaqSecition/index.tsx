@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
+import Link from "next/link";
 
 const POSTS_QUERY = gql`
   query MyQuery2 {
@@ -75,7 +76,7 @@ const DonationFaq = () => {
                   </div>
                 </div>
               ))}
-              <a href={data.page.donatePageFeilds.donateSecondSectionLeftButtonLink}>
+              <Link href={data.page.donatePageFeilds.donateSecondSectionLeftButtonLink}>
                 <button className="mx-auto flex w-[90%] m-5 text-center justify-center mb-5 items-center gap-2.5 inline-block md:mt-4 bg-[#A1CF5F] font-bold text-black text-[13px] md:text-sm py-1 md:py-3 px-6 rounded-lg transition duration-300">
                   {data.page.donatePageFeilds.donateSecondSectionLeftButtonText}
                   <svg
@@ -96,7 +97,7 @@ const DonationFaq = () => {
                     </g>
                   </svg>
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

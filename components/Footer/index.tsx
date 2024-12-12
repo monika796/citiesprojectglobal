@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -38,19 +39,19 @@ const Footer = () => {
         <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
           <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
-              <a href="#" className="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500" aria-current="page">
+              <Link href="#" className="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500" aria-current="page">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+              <Link href="#" className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+              <Link href="#" className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
               Program
-              </a>
+              </Link>
             </li>
             {/* <li>
               <button onClick={toggleDropdown} id="doubleDropdownButton" type="button" className="flex items-center justify-between w-full px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
@@ -87,14 +88,14 @@ const Footer = () => {
               )}
             </li> */}
             <li>
-              <a href="#" className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+              <Link href="#" className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                 Blogs
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+              <Link href="#" className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -107,10 +108,10 @@ const Footer = () => {
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Programs</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline">Global Leadership <br className="md:hidden block" /> Circle</a>
+                    <Link href="#" className=" hover:underline">Global Leadership <br className="md:hidden block" /> Circle</Link>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">VantagePoint™</a>
+                    <Link href="#" className="hover:underline">VantagePoint™</Link>
                 </li>
                 
             </ul>
@@ -119,10 +120,10 @@ const Footer = () => {
           <div className="grid justify-center items-center">  <h2 className="  mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">About the Book</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">Read a Sample  <br className="md:hidden block" />  Chapter</a>
+                    <Link href="#" className="hover:underline">Read a Sample  <br className="md:hidden block" />  Chapter</Link>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">Buy Book</a>
+                    <Link href="#" className="hover:underline">Buy Book</Link>
                 </li>
             </ul></div>
             <div className="items-end  hidden md:flex">
@@ -133,13 +134,13 @@ const Footer = () => {
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Stay Connected</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">Facebook</a>
+                    <Link href="#" className="hover:underline">Facebook</Link>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">Linkedin</a>
+                    <Link href="#" className="hover:underline">Linkedin</Link>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">Instagram</a>
+                    <Link href="#" className="hover:underline">Instagram</Link>
                 </li>
             </ul>
         </div>
@@ -147,13 +148,13 @@ const Footer = () => {
           
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">Terms of Use</a>
+                    <Link href="#" className="hover:underline">Terms of Use</Link>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">Privacy Statement</a>
+                    <Link href="#" className="hover:underline">Privacy Statement</Link>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">© Copyright 2024</a>
+                    <Link href="#" className="hover:underline">© Copyright 2024</Link>
                 </li>
             </ul>
         </div>

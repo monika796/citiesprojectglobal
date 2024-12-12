@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 const Contact = () => {
   /**
@@ -189,7 +190,7 @@ const Contact = () => {
                   Email Address
                 </h3>
                 <p>
-                  <a href="#">yourmail@domainname.com</a>
+                  <Link href="#">yourmail@domainname.com</Link>
                 </p>
               </div>
               <div>
@@ -197,7 +198,7 @@ const Contact = () => {
                   Phone Number
                 </h4>
                 <p>
-                  <a href="#">+009 42334 6343 843</a>
+                  <Link href="#">+009 42334 6343 843</Link>
                 </p>
               </div>
             </motion.div>
