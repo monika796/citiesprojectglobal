@@ -11,38 +11,18 @@ const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [dropdownToggler, setDropdownToggler] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
-  const [scrollingbehavour, setscrollingbehavour] = useState(false);
 
   const pathUrl = usePathname();
   console.log(pathUrl);
   const isHomePage = pathUrl === "/";
-  let previousScrollY = window.scrollY;
-
-window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
-    
-    if (currentScrollY < previousScrollY) {
-      setscrollingbehavour(false);
-        // Example: $(selector).fadeIn();
-    } else if(currentScrollY > previousScrollY) { setscrollingbehavour(true);
-      
-    }
-    else{
-      setStickyMenu(false);
-    }
-    console.log(currentScrollY);
-    // Update the previous scroll position
-    previousScrollY = currentScrollY;
-});
   // Sticky menu
   const handleStickyMenu = () => {
     if (window.scrollY >= 80) {
-      // setStickyMenu(true);
+      setStickyMenu(true);
     } else {
-      // setStickyMenu(false);
+      setStickyMenu(false);
     }
   };
-
   const closeNavigation = () => {
     setNavigationOpen(false);
   };
@@ -65,7 +45,7 @@ window.addEventListener('scroll', () => {
       className={`sticky  left-0 top-0 z-99999 md:pt-0 w-full ${stickyMenu
           ? "bg-gray-900 !text-white !py-4 shadow transition duration-100 dark:bg-black"
           : ""
-        } ${isHomePage ? "my-0" : "mt-0"} ${scrollingbehavour ? "hidden" : "block"}`}
+        } ${isHomePage ? "my-0" : "mt-0"}`}
     >
       {/* <div className="relative mx-auto max-w-[89%]  border-t border-b border-white border-solid items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0"> */}
       <div className={`relative mx-auto container max-w-[1480px]  border-t border-b  border-solid items-center justify-between px-4 md:px-0 xl:flex 2xl:px-0 
