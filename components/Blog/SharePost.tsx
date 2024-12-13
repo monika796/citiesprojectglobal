@@ -115,7 +115,7 @@ const SharePost = () => {
 
             <Link href="#" className="duration-300 ease-in-out hover:text-primary">
               #saas
-            </Linka>
+            </Link>
           </li>
         </ul>
       </div>
