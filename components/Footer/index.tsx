@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-
 const Footer = () => {
   return (
     <>
@@ -53,40 +52,7 @@ const Footer = () => {
               Program
               </Link>
             </li>
-            {/* <li>
-              <button onClick={toggleDropdown} id="doubleDropdownButton" type="button" className="flex items-center justify-between w-full px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-              Program
-                <svg className="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
-                </svg>
-              </button>
-              {isDropdownOpen && (
-                <div id="doubleDropdown" className="absolute z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                  <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                        Overview
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                        My downloads
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                        Billing
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                        Rewards
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </li> */}
+          
             <li>
               <Link href="#" className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                 Blogs
@@ -127,7 +93,7 @@ const Footer = () => {
                 </li>
             </ul></div>
             <div className="items-end  hidden md:flex">
-              <img src='/25.png'  className='w-[116px]'/>
+              <Image alt="" width={700} height={700}  src='/25.png'  className='w-[116px]'/>
             </div>
         </div>
         <div className="grid justify-start items-center">

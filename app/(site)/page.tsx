@@ -261,7 +261,6 @@ export default async function Home() {
         <div className="container-fluid mx-auto">
           <div className="relative w-full   bg-cover bg-center  h-[510px] md:h-[850px]"
           style={{ backgroundImage: `url('${data.page.bannerHome.banner?.node?.link}')` }}>
-            {/* <img src="/banner.jpg" alt="banner" className="w-full md:h-[auto] h-[350px]" /> */}
             <div className="container relative max-w-[1480px] mx-auto relative   h-[510px] md:h-[780px]">
 
 
@@ -328,9 +327,7 @@ export default async function Home() {
                                    <svg className="absolute top-[9px] right-[11px]" width="17" height="17" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.40728 11.206L9.8764 3.73689L9.8764 10.2632C9.8764 10.7847 10.3044 11.2127 10.8259 11.2127C10.9498 11.2128 11.0724 11.1885 11.1869 11.1412C11.3013 11.0938 11.4053 11.0244 11.4929 10.9368C11.5805 10.8493 11.6499 10.7453 11.6972 10.6308C11.7446 10.5164 11.7689 10.3937 11.7688 10.2699L11.7688 1.4567C11.7689 1.33285 11.7446 1.21019 11.6972 1.09574C11.6499 0.981295 11.5805 0.877308 11.4929 0.789732C11.4053 0.702157 11.3013 0.632713 11.1869 0.585376C11.0724 0.538039 10.9498 0.513738 10.8259 0.513866L2.01276 0.513865C1.88894 0.513865 1.76634 0.538253 1.65195 0.585635C1.53756 0.633017 1.43362 0.702465 1.34607 0.790016C1.25852 0.877566 1.18907 0.981504 1.14169 1.09589C1.09431 1.21028 1.06992 1.33288 1.06992 1.4567C1.06992 1.58051 1.09431 1.70312 1.14169 1.81751C1.18907 1.9319 1.25852 2.03584 1.34607 2.12339C1.43362 2.21094 1.53756 2.28038 1.65195 2.32777C1.76634 2.37515 1.88894 2.39954 2.01276 2.39954L8.53905 2.39954L1.06992 9.86866C0.702152 10.2364 0.702151 10.8382 1.06992 11.206C1.4377 11.5738 2.03951 11.5738 2.40728 11.206Z" fill="black" />
             </svg>    
-                  </div>
-                  {/* <img src={data.page.bannerHomesecond.firstRightImage?.node?.link} className='md:w-4/12 w-[40%] bottom-0  p-4 h-auto absolute md:absolute' /> */}
-                 <Image src={data.page.bannerHomesecond.secondRightImage?.node?.link} className='w-full md:w-8/12 md:mx-0 mx-auto p-4  self-end '  width={100} height={100} alt=""></Image>
+                  </div> <Image src={data.page.bannerHomesecond.secondRightImage?.node?.link} className='w-full md:w-8/12 md:mx-0 mx-auto p-4  self-end '  width={100} height={100} alt="" />
                   
                 </div>
 
@@ -392,7 +389,7 @@ export default async function Home() {
               <path d="M2.40728 11.206L9.8764 3.73689L9.8764 10.2632C9.8764 10.7847 10.3044 11.2127 10.8259 11.2127C10.9498 11.2128 11.0724 11.1885 11.1869 11.1412C11.3013 11.0938 11.4053 11.0244 11.4929 10.9368C11.5805 10.8493 11.6499 10.7453 11.6972 10.6308C11.7446 10.5164 11.7689 10.3937 11.7688 10.2699L11.7688 1.4567C11.7689 1.33285 11.7446 1.21019 11.6972 1.09574C11.6499 0.981295 11.5805 0.877308 11.4929 0.789732C11.4053 0.702157 11.3013 0.632713 11.1869 0.585376C11.0724 0.538039 10.9498 0.513738 10.8259 0.513866L2.01276 0.513865C1.88894 0.513865 1.76634 0.538253 1.65195 0.585635C1.53756 0.633017 1.43362 0.702465 1.34607 0.790016C1.25852 0.877566 1.18907 0.981504 1.14169 1.09589C1.09431 1.21028 1.06992 1.33288 1.06992 1.4567C1.06992 1.58051 1.09431 1.70312 1.14169 1.81751C1.18907 1.9319 1.25852 2.03584 1.34607 2.12339C1.43362 2.21094 1.53756 2.28038 1.65195 2.32777C1.76634 2.37515 1.88894 2.39954 2.01276 2.39954L8.53905 2.39954L1.06992 9.86866C0.702152 10.2364 0.702151 10.8382 1.06992 11.206C1.4377 11.5738 2.03951 11.5738 2.40728 11.206Z" fill="black" />
             </svg>
             </button>           </Link>  
-            <Image src={data.page.sectionHomethird.thirdcolumnimage?.node?.link} alt="" width={100} height={100}  className='object-cover w-[106px] h-[106px]'></Image> 
+            <Image src={data.page.sectionHomethird.thirdcolumnimage?.node?.link} alt="" width={100} height={100}  className='object-cover w-[106px] h-[106px]' /> 
             
             </div>
           </div>
@@ -401,15 +398,14 @@ export default async function Home() {
 
       <div className="container max-w-[1480px] mx-auto">  <div className="container w-[100%] mx-auto pt-[30px]  md:pt-[150px] md:pb-[100px]">
         <h1 className=" px-5 md:px-0 text-[25px] md:max-w-[1062px] md:mx-auto  md:text-[48px] pb-5 mt-10 md:mt-0 md:pb-15 text-black font-bold leading-[30.09px] md:leading-[46.09px] text-center">
-          {/* Confused over your calling?<br className="hidden md:block" />
-          Is ministry the only work that 'counts'? */}
+         
 {data.page.homefourtsection.mainheadingfourth}
 
         </h1>
         <div className="pl-[23px] md:pl-[14px] flex items-center p-[23px] ">
           <div className=" md:w-6/12 md:flex md:gap-3 md:items-center md:justify-center">
             <div className=" md:w-6/12 p-2" >
-            <Image src={data.page.homefourtsection.firstimage?.node?.link} alt="" className='md:h-auto mx-auto w-full md:w-auto md:mx-0 h-[100%]' width={100} height={100}></Image>
+            <Image src={data.page.homefourtsection.firstimage?.node?.link} alt="" className='md:h-auto mx-auto w-full md:w-auto md:mx-0 h-[100%]' width={800 } height={500} />
 
             </div>
 
@@ -431,7 +427,7 @@ export default async function Home() {
               <p className="text-[16px] text-left md:text-left text-black leading-normal mt-3 pe-6">{data.page.homefourtsection.secondparagraph}</p>
             </div>
             <div className="md:w-6/12 p-2 md:order-2" >
-            <Image src={data.page.homefourtsection.secondimage?.node?.link} alt="" className='md:h-auto mx-auto md:w-1/2 md:mx-0 h-[100%] w-full' width={100} height={100}></Image>
+            <Image src={data.page.homefourtsection.secondimage?.node?.link} alt="" className='md:h-auto mx-auto md:w-1/2 md:mx-0 h-[100%] w-full' width={800} height={500} />
              
             </div>
           </div >
@@ -447,7 +443,7 @@ export default async function Home() {
               <p className="text-[16px] text-black text-left md:text-left leading-normal  mt-3 ">{data.page.homefourtsection.thirdparagraph}</p>
             </div>
             <div className="md:w-6/12 p-2 order-1 md:order-2" >
-            <Image src={data.page.homefourtsection.thirdimage?.node?.link} alt="" className='  md:w-[60%] md:h-auto mx-auto md:mx-0 h-[100%] w-full' width={100} height={100}></Image>
+            <Image src={data.page.homefourtsection.thirdimage?.node?.link} alt="" className='  md:w-[60%] md:h-auto mx-auto md:mx-0 h-[100%] w-full'  width={800} height={500} />
               
             </div>
           </div>
@@ -463,14 +459,14 @@ export default async function Home() {
           <h5 className="md:text-[45px] text-[26px]  text-[#A1CF5F] md:text-left text-left  pb-[15px] font-bold pt-[20px] md:leading-10 ">{data.page.homefifthsection.mainheadingfifth}</h5>
           <p className="md:text-[45px] md:w-[87%]  text-[22px] md:text-left text-left text-white md:leading-normal font-bold">
           {data.page.homefifthsection.fifthheadingsimple}</p>
-          <Image src={data.page.homefifthsection.authorimage?.node?.link} className="md:h-[150px] mx-unset mt-10 md:mt-0 md:mx-0 h-[83px]" alt="image" width={100} height={100}></Image>
+          <Image src={data.page.homefifthsection.authorimage?.node?.link} className="md:h-[150px] mx-unset mt-10 md:mt-0 md:mx-0 h-[83px]" alt="image"  width={800} height={500} />
           
 
           <h5 className="text-[30px] text-white md:text-left text-left font-bold pb-2 md:pb-5">{data.page.homefifthsection.authortitle}</h5>
           <h5 className="text-[12px] text-white md:text-left text-left font-bold">{data.page.homefifthsection.authordesignation}</h5>
         </div>
         <div className="md:w-8/12   md:py-[30px] relative ">
-        <Image src={data.page.homefifthsection.fifthfirstimage?.node?.link} className="" layout="responsive" width={16} height={9} alt=""></Image>
+        <Image src={data.page.homefifthsection.fifthfirstimage?.node?.link} className="" layout="responsive" width={16} height={9} alt="" />
           
 
         <Image
@@ -504,7 +500,7 @@ export default async function Home() {
               <p className="text-white text-[16px] leading-tight pt-5">{data.page.homesixthsection.paragraph}</p>
               <p className="text-white text-[17px] md:text-[20px] font-bold pt-[29px] ">{data.page.homesixthsection.author}</p>
               <p className="text-white text-[16px] pl-0 md:pl-8  ">{data.page.homesixthsection.designations}</p>
-              <Image src={Demo} className="absolute top-[38%] right-3 md:top-3" alt="" width={100} height={100}></Image>
+              <Image src={Demo} className="absolute top-[38%] right-3 md:top-3" alt="" width={100} height={100} />
               
             </div>
             <div className=" md:w-8/12   bg-cover bg-center" style={{ backgroundImage: `url('${data.page.homesixthsection.rightimage?.node?.link}')` }}>
@@ -515,7 +511,7 @@ export default async function Home() {
           </div>
      
 
-
+      <PostSlider />
       <Testimonial />
       <VideoCarousel />
 

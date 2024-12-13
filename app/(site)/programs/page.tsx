@@ -5,7 +5,7 @@ import Newsletter from "@/components/Newsletter";
 import Link from "next/link";
 import { gql } from '@apollo/client';
 import client from 'apollo-client';
-
+import Image from "next/image";
 const POSTS_QUERY = gql `
   query {
   page(id: "cG9zdDozMjY=") {
@@ -58,13 +58,13 @@ export default async function Programs() {
         <main className="md:w-[100%] mx-auto"> 
                     <h1 className="md:py-[42px] pt-4 py-[30px] md:text-[64px] text-[25px] font-bold text-center text-black md:max-w-[1178px] p-5 mx-auto md:leading-[77px] ">{data.page.programpagefeild.firstSectionMainHeading}</h1>
                   <section className="md:py-[42px] relative container  max-w-[1480px] mx-auto">
-                  <img src="/85.png" className=" mx-auto p-2 md:p-0" alt="" />
+                  <Image  width={1500} height={1000}  src="/85.png" className=" mx-auto p-2 md:p-0" alt="" />
                   <div className="md:flex pt-5 ">
                     <div className="md:w-2/5 relative md:p-10 p-3">
                     <div className="md:absolute bottom-[5%]"> <p className="text-[16px] text-[#000000] italic font-normal leading-[24px] text-center md:text-left">{data.page.programpagefeild.secondSectionLeftColumn} </p>
                         <h2 className="pt-[20px] text-[#000000] text-[20px] font-bold leading-[30.62px] text-center md:text-left">{data.page.programpagefeild.secondSectionLeftAuthorName}</h2>
                         <p className=" pt-[10px] md:w-[57%] text-[#000000] text-[20px] font-normal leading-[30.62px] text-center md:text-left">{data.page.programpagefeild.authorDesignation}</p>
-                        <img src="/108.png" className=" pt-5 md:m-0 mx-auto" />
+                        <Image alt="" width={200} height={200}  src="/108.png" className=" pt-5 md:m-0 mx-auto" />
                         </div></div>
                     <div className="md:w-3/5 p-10">
                         <h2 className=" text-[#000000] md:text-[32px] text-[20px]  font-normal md:leading-[47px] text-center md:text-left">
@@ -75,7 +75,7 @@ export default async function Programs() {
                           </div>
                   </div>
                   <div className="md:absolute hidden md:block top-[45%] left-5  pt-50 p-2 bg-[#A1CF5F]">
-                    <img src='/84.png' alt="" />
+                    <Image  width={70} height={70}  className="mx-auto" src='/84.png' alt="" />
                     <h2 className=" text-center  text-white">Testimonials</h2>
                   </div>
                   </section >
@@ -86,7 +86,7 @@ export default async function Programs() {
                 <div className="md:flex pt-9 gap-10">
                   <div className="md:w-4/12  ">
                     <h4 className="text-[20px] pb-10 md:w-[75%] text-center md:text-left text-white md:leading-[29.09px] "> {data.page.programpagefeild.thirdSectionLeftText}</h4>
-                      <img src='106.png'  className=' md:m-0 mx-auto md:p-0 p-5'  alt='' />
+                      <Image  width={70} height={70}  src='/106.png'  className=' md:m-0 mx-auto md:p-0 p-5'  alt='' />
                   </div>
                   <div className="md:w-8/12 md:flex gap-5">
 
@@ -96,10 +96,10 @@ export default async function Programs() {
                                
                               <div className="flex px-5 py-5 gap-15">
                               <div className="w-1/4">
-                                <img src='/104.png'    alt="" />
+                                <Image alt="" width={50} height={50}  src='/104.png'  />
                               </div>
                               <div className="w-3/4">
-                              <img src={dataposts.columnimages_program?.node?.link} className="mx-auto" alt="" />
+                              <Image  width={1400} height={1000}  src={dataposts.columnimages_program?.node?.link} className="mx-auto" alt="" />
                               </div>
                               
                               </div>

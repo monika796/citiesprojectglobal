@@ -74,7 +74,8 @@ const POSTS_QUERY_sec=gql `query MyQuery2 {
 const BlogPage = async () => {
    const postData=await fetchDataSecond();
    const data = await fetchData();
-   console.log(postData);
+
+   console.log(data);
 return (
 <>
 <main>
@@ -86,7 +87,7 @@ return (
          <div className="flex-shrink-0">
             <Image src={data.page.blogPageFeilds.blogSecondSection.blogPageLeft?.node?.link} // Replace with your image path
                alt="Group of people"
-               className="w-full h-64 lg:h-full object-cover" layout="responsive" width={16} height={9}></Image>
+               className="w-full h-64 lg:h-full " layout="responsive" width={800} height={700} />
            
          </div>
          <div className="p-12 flex flex-col justify-between lg:w-2/3">
@@ -113,7 +114,7 @@ return (
                <div className="flex items-end space-x-2">
                   <Image  src={data.page.blogPageFeilds.blogSecondSection.blogPageRightImage?.node?.link} // Replace with your small image path
                      alt="Nature"
-                     className=" object-cover rounded" layout="responsive" width={16} height={9}></Image>
+                     className=" object-cover rounded" layout="responsive" width={16} height={9} />
                  
                   <div className="w-[175px] h-[241px] bg-white border rounded-lg flex flex-col justify-end p-5">
                      <p className="text-[64px] font-semibold text-gray-700 mb-5">  {data.page.blogPageFeilds.blogSecondSection.blogPageRightDate} </p>

@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
+import Image from "next/image";
 import { gql, useQuery } from '@apollo/client';
 const POSTS_QUERY = gql `
 query {
@@ -132,7 +132,7 @@ const CustomSlider = () => {
               {sliderData.map((slide) => (
                 <SwiperSlide key={slide.id} className="swiper-slide-custom">
                   <div className="relative grid place-items-center p-9 rounded-lg shadow-solid-9">
-                    <img
+                    <Image  width={1000} height={1000}
                       src={slide.imgSrc}
                       className="object-contain w-full rounded-lg"
                       alt={slide.title}

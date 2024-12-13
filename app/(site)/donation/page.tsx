@@ -87,7 +87,7 @@ export default async function Book() {
                     
                     </div>
                         <div className="grid gap-3">
-                        <img src="/76.png" />
+                        <Image alt="" width={70} height={70}  src="/76.png" />
                         <h3 className={`${anton.className} w-[65%]  text-center md:text-left md:text-[40px] text-[30px] text-black font-light leading-[50px]`}>
                         {data.page.donatePageFeilds.donateThirdSectionHeading}
                             </h3>
@@ -109,7 +109,7 @@ export default async function Book() {
                     <Image src={data.page.donatePageFeilds.donateFourthSectionSecondImage?.node?.link} className="absolute bottom-0 right-0" alt='' layout="responsive" width={16} height={9}></Image>
 
                   
-                    <img src="/116.png" className="absolute bottom-[30%] left-[-23%]" />
+                    <Image alt="" width={220} height={220}  src="/116.png" className="absolute bottom-[30%] left-[-23%]" />
                     </div>
                 </div>
                 <div className="">

@@ -2,6 +2,9 @@
 import React, { useState } from "react";
 import { Anton } from "next/font/google";
 import Link from "next/link";
+import Image from "next/image";
+
+
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 const Form = () => {
 const [isOpen, setIsOpen] = useState(true);
@@ -12,23 +15,23 @@ return (
    <div className="main-heading py-10">
       <div className="flex items-center justify-between flex-wrap">
          <h2 className="m-0 text-[64px] text-black font-bold">VantagePoint™</h2>
-         <img src="/vantage-logo.png" alt="Vantage Logo" />
+         <Image  width={200} height={200}  src="/vantage-logo.png" alt="Vantage Logo" />
       </div>
    </div>
    <section>
       <div className="flex">
-         <img src="/ventage-1.png" className="w-[30%]" alt="Vantage Image 1" />
+         <Image  width={700} height={700} src="/ventage-1.png" className="w-[30%]" alt="Vantage Image 1" />
          <div className="middle-content bg-[#263519] w-[40%] p-10">
             <h2 className="font-anton text-[#A1CF5F] text-[70px] font-medium leading-[97.3px]">$25.00</h2>
             <h3 className="font-anton text-[64px] font-medium text-white leading-[88.96px]">VantagePoint™</h3>
             <p className="text-white text-[16px] mt-3">This keeps it concise and action-driven.</p>
             <div className="flex justify-end mt-10">
                <Link className="d-inline" href="#">
-               <img src="/down-btn.png" alt="Down Button" />
+               <Image  width={70} height={70} src="/down-btn.png" alt="Down Button" />
                </Link>
             </div>
          </div>
-         <img src="/ventage-2.png" className="w-[30%]" alt="Vantage Image 2" />
+         <Image  width={700} height={700} src="/ventage-2.png" className="w-[30%]" alt="Vantage Image 2" />
       </div>
    </section>
    <section>
@@ -211,31 +214,31 @@ return (
 <section>
 <div className="flex justify-center mx-auto w-fit mb-3 gap-3  mt-20">
   <div className=" ">
-    <img
+    <Image  width={700} height={700} alt=""
       className=""
       src="/image.png"
     />
   </div>
   <div className=" ">
-    <img
+    <Image  width={700} height={700} alt=""
       className=""
       src="/image-3.png"
     />
   </div>
   <div className=" ">
-  <img
+  <Image  width={700} height={700} alt=""
       className=""
       src="/image-1.png"
     />
   </div>
   <div className="] ">
-  <img
+  <Image  width={700} height={700} alt=""
       className=""
       src="/image-4.png"
     />
   </div>
   <div className="  ">
-  <img
+  <Image  width={700} height={700} alt=""
       className=""
       src="/image-2.png"
     />

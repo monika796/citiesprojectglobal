@@ -1,5 +1,5 @@
 'use client'; // Add this at the top of the file
-
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Anton } from "next/font/google";
 import { gql } from "@apollo/client";
@@ -40,25 +40,14 @@ const POSTS_QUERY = gql`
     }
   }
 `;
-
-export default function Contact() {
-  const [data, setData] = useState<any | null>(null);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const { data } = await client.query({ query: POSTS_QUERY });
-        setData(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    }
-    fetchData();
-  }, []);
-
-  // Display loading until data is fetched
-  if (!data) return <div>Loading...</div>;
-
+async function fetchData() {
+  const { data } = await client.query({
+    query: POSTS_QUERY,
+  });
+  return data;
+}
+export default async function Contact() {
+  const data = await fetchData();
   
     console.log(data);
   // Check if homeBannerLatestPostImages is defined and is an array
@@ -118,7 +107,7 @@ export default function Contact() {
                       </Link>
                      
                     </div>
-                    <img src={banner.homeBannerLatestPostImages?.node?.link} className='container md:absolute right-[29px] bottom-[0%] w-3/12 md:mx-0 mx-auto p-4  self-end ' />
+                    <Image alt="" width={800} height={500}  src={banner.homeBannerLatestPostImages?.node?.link} className='container md:absolute right-[29px] bottom-[0%] w-3/12 md:mx-0 mx-auto p-4  self-end ' />
               
                   </div>
                 </div>
