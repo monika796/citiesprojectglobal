@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 import client from "apollo-client";
-import BlogContent from "@/components/SingleBlogPost"; // A Client Component
+import BlogContent from "@/components/SingleBlogPost";
 
 // Fetch post data from GraphQL
 const fetchPostById = async (id: string) => {
@@ -27,13 +27,13 @@ const fetchPostById = async (id: string) => {
   return data.post;
 };
 
-// Server Component
+// Server Component for the blog details page
 const SingleBlogPage = async ({
   searchParams,
 }: {
-  searchParams: { id?: string };
+  searchParams: Record<string, string | string[] | undefined>;
 }) => {
-  const id = searchParams.id;
+  const id = searchParams.id as string | undefined;
 
   if (!id) {
     return <p className="text-center text-red-500">Invalid Post ID</p>;
