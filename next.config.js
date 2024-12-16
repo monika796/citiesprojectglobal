@@ -2,14 +2,13 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
-    domains: ["localhost", "digitractive.com"], // Add digitractive.com here
+    domains: ["localhost", "digitractive.com"], // Trusted domains for images
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cdn.sanity.io",
-        port: "",
+        hostname: "cdn.sanity.io", // Allow images from Sanity CDN
+        port: "", // Optional, leave empty for default port
       },
     ],
   },

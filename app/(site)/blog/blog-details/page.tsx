@@ -1,4 +1,4 @@
-
+// page.tsx
 import { gql } from "@apollo/client";
 import client from "apollo-client";
 import BlogContent from "@/components/SingleBlogPost"; // Client Component
@@ -28,8 +28,12 @@ const fetchPostById = async (id: string) => {
 };
 
 // Server Component
-const SingleBlogPage = async ({ searchParams }: { searchParams: { id?: string } }) => {
-  const id = searchParams.id;
+const SingleBlogPage = async ({
+  searchParams,
+}: {
+  searchParams: Record<string, string | string[] | undefined>;
+}) => {
+  const id = searchParams.id as string | undefined;
 
   if (!id) {
     return <p className="text-center text-red-500">Invalid Post ID</p>;
