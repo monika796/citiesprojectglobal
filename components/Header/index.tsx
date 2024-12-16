@@ -15,20 +15,53 @@ const Header = () => {
   const pathUrl = usePathname();
   console.log(pathUrl);
   const isHomePage = pathUrl === "/";
-  // Sticky menu
-  const handleStickyMenu = () => {
-    if (window.scrollY >= 80) {
-      setStickyMenu(true);
-    } else {
-      setStickyMenu(false);
-    }
-  };
+  // // Sticky menu
+  // const handleStickyMenu = () => {
+  //   if (window.scrollY >= 80) {
+  //     setStickyMenu(true);
+  //   } else {
+  //     setStickyMenu(false);
+  //   }
+  // };
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [scrollDirection, setScrollDirection] = useState('');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      
+      const st = window.pageYOffset || document.documentElement.scrollTop;
+        console.log(lastScrollTop);
+      if (st > lastScrollTop) {
+        // downscroll
+        setStickyMenu(false);
+        setScrollDirection("hidden");
+      } else if (st < lastScrollTop && lastScrollTop > 251) {
+        // upscroll
+        setScrollDirection("");
+        setStickyMenu(true);
+      }else if ( lastScrollTop < 201) {
+        
+        setScrollDirection("");
+        setStickyMenu(false);
+      }
+
+      setLastScrollTop(st <= 0 ? 0 : st); // To handle negative scrolling (e.g., mobile)
+    };
+
+    // Adding scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollTop]);
   const closeNavigation = () => {
     setNavigationOpen(false);
   };
-  useEffect(() => {
-    window.addEventListener("scroll", handleStickyMenu);
-  });
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleStickyMenu);
+  // });
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -45,7 +78,7 @@ const Header = () => {
       className={`sticky  left-0 top-0 z-99999 md:pt-0 w-full ${stickyMenu
           ? "bg-gray-900 !text-white !py-4 shadow transition duration-100 dark:bg-black"
           : ""
-        } ${isHomePage ? "my-0" : "mt-0"}`}
+        } ${isHomePage ? "my-0" : "mt-0"} ${scrollDirection=='hidden' ? "!hidden" : "!block" }` }
     >
       {/* <div className="relative mx-auto max-w-[89%]  border-t border-b border-white border-solid items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0"> */}
       <div className={`relative mx-auto container max-w-[1480px]  border-t border-b  border-solid items-center justify-between px-4 md:px-0 xl:flex 2xl:px-0 
@@ -233,7 +266,7 @@ const Header = () => {
             }
 
             {pathUrl === '/book' ? <button type="button" className=" md:text-black text-black bg-[white] m-[13px] border border-solid border-black  focus:ring-4  font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-[#A1CF5F]/70">
-              Donate Now
+              <Link href='/donation'> Donate Now  </Link>
             </button>
 
               :
