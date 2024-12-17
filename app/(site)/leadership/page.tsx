@@ -83,6 +83,7 @@ const page = () => {
             src={Divider}
             alt="Faith Icon"
             width={300}
+
             height={50}
           />
         </div>
@@ -107,9 +108,7 @@ const page = () => {
           src={Leaderbg}
           alt="Speaker Image"
           layout="fill"
-          objectFit="cover"
-          width={800}
-          height={500}
+          objectFit="cover" 
           className="absolute inset-0"
         />
 

@@ -236,7 +236,7 @@ const Header = () => {
             <div className="px-4  md:flex md:items-center md:justify-between">
               <div className="md:flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse  hidden ">
               <Link 
-  href="#" 
+  href="https://www.facebook.com/CitiesProjectGlobal/" 
   className={`text-gray-400 hover:text-gray-900 dark:hover:text-white border border-black rounded-[52px] px-[13px] py-[9px] 
  ${isHomePage || stickyMenu ? "border-white" : "border-black"} 
   `}
@@ -250,7 +250,7 @@ const Header = () => {
 
 {/* LinkedIn Icon */}
 <Link 
-  href="#" 
+  href="https://www.linkedin.com/company/citiesprojectglobal" 
   className={`text-blue-700 hover:text-blue-900 border !ml-[5px] rounded-[52px] px-[10px] py-[9px] 
    ${isHomePage || stickyMenu ? "border-white" : "border-black"} 
   `}
@@ -263,7 +263,7 @@ const Header = () => {
 
 {/* Instagram Icon */}
 <Link 
-  href="#" 
+  href="https://www.instagram.com/citiesprojectglobal/" 
   className={`text-pink-500 hover:text-pink-700 border !ml-[5px] rounded-[52px] px-[10px] py-[9px] 
     ${isHomePage || stickyMenu ? "border-white" : "border-black"} 
     

@@ -7,6 +7,7 @@ import { gql } from '@apollo/client';
 import client from 'apollo-client';
 import Image from 'next/image';
 import { Form, Input, Label, Button } from 'reactstrap';
+import SubscriptionForm from "@/components/ContactSubscribeForm"
 // Define the Anton font
 const anton = Anton({ weight: '400', subsets: ["latin"] });
 
@@ -111,7 +112,7 @@ const Contact = async (): Promise<JSX.Element> => {
             <p className="text-[#000000] pb-[20px] text-center md:text-left font-extrabold text-[18px]">
               {fields.secondContactSectionFormHeading}
             </p>
-            <form action="https://digitractive.com/cityprojectglobal/wp-json/newsletter/v1/subscribe" method="POST" className="grid gap-[1px]">
+            {/* <form action="https://digitractive.com/cityprojectglobal/wp-json/newsletter/v1/subscribe" method="POST" className="grid gap-[1px]">
               <input
                 type="text"
                 name="name"
@@ -139,7 +140,8 @@ const Contact = async (): Promise<JSX.Element> => {
               >
                 Submit
               </button>
-            </form>
+            </form> */}
+            <SubscriptionForm />
           </div>
         </div>
 

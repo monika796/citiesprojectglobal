@@ -18,7 +18,7 @@ import Demo from '/public/84.png';
 import Image from "next/image";
 import Link from "next/link";
 import FifthSection from '@/components/HomeAboutthebook'
-
+import NewBannerSlider from "@/components/HeroBanner"; // Import client component
 
 
 
@@ -31,6 +31,26 @@ import FifthSection from '@/components/HomeAboutthebook'
 const POSTS_QUERY = gql `
 query    {
  page(id: "cG9zdDoxNg==") {
+ homeExtraBanner {
+        homeBannerSecond {
+          homeBannerBackgroundImage {
+            node {
+              link
+            }
+          }
+          homeBannerButtonLink
+          homeBannerButtonText
+          homeBannerDescription
+          homeBannerHeadings
+          homeBannerLatestPostImages {
+            node {
+              link
+            }
+          }
+          homeBannerSubtitle
+        }
+      }
+
    title
    link
    bannerHome {
@@ -257,43 +277,8 @@ export default async function Home() {
     <main className="mt-[-96px]">
 
       {/* body start */}
-
-      <section className="w-full">
-        <div className="container-fluid mx-auto">
-          <div className="relative w-full   bg-cover bg-center  h-[510px] md:h-[850px]"
-          style={{ backgroundImage: `url('${data.page.bannerHome.banner?.node?.link}')` }}>
-            <div className="container relative max-w-[1480px] mx-auto relative   h-[510px] md:h-[780px]">
-
-
-              <div className="relative w-full md:absolute md:top-[61%]  top-0  md:pt-0 pt-[36rem] left-0 transform -translate-y-1/2 text-white">
-                <span className="uppercase mb-1	inline-block text-[10px] md:text-[14px] bg-[#fff] text-black leading-none	 text-center w-[auto]  mb-[20px]  font-bold	py-1 px-2">{data.page.bannerHome.subtitleupper}</span><br />
-                <strong className={`${anton.className} block uppercase md:text-[126px]  leading-[50px] text-[37px] font-light xl:leading-[130px]  md:leading-none`}>
-                 {data.page.bannerHome.textBanner}<br className="hidden md:block" />
-                 {data.page.bannerHome.textBanner2}< br className="hidden md:block" />
-                 {data.page.bannerHome.textBanner3}
-                </strong>
-                <p className="mt-2 md:mb-10 mb-10 md:w-[26%] font-light xl:leading-6 md:leading-none">
-                {data.page.bannerHome.subtitle_bottom} </p>
-                <Link
-                  href={data.page.bannerHome.buttonLinkBannerHome}
-                  className=" flex w-fit  items-center gap-2.5 inline-block md:mt-4 bg-[#A1CF5F] font-bold text-black  text-[13px] md:text-sm py-1 md:py-3 px-6 rounded-lg transition duration-300"
-                >
-                 {data.page.bannerHome.buttonText}<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
-                    <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
-                      <path d="M1 13 13 1M4 1h9v9"></path>
-                    </g>
-                  </svg>
-                </Link>
-
-              </div> 
-              <div className="hidden md:block absolute right-[17px] md:right-[55px]  md:max-w-[427px]   bottom-[8px]  w-[40%] swiper-slider" >
-                
-              <SwiperSection />
-                </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <NewBannerSlider banners={data.page.homeExtraBanner.homeBannerSecond} />
+     
 
       <section
   className="w-full bg-cover bg-center"
