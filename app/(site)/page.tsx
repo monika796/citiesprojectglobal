@@ -17,6 +17,7 @@ import Video_gif from '/public/video.gif';
 import Demo from '/public/84.png';
 import Image from "next/image";
 import Link from "next/link";
+import FifthSection from '@/components/HomeAboutthebook'
 
 
 
@@ -452,7 +453,7 @@ export default async function Home() {
       </div>
 
 
-      <div className="container mx-auto max-w-[1481px] " >   
+      {/* <div className="container mx-auto max-w-[1481px] " >   
           <div className="flex flex-col md:flex-row w-[100%] pb-[10px] mx-auto items-center rounded-[5px]" style={{ backgroundColor: 'rgb(3, 4, 2)' }}>
         <div className="md:w-5/12 w-full p-[40px] md:p-[40px] mt-10 md:mt-0">
           <span className="text-[18px] bg-[#fff]   text-black font-bold mx-auto md:mx-0 text-center w-[45%] rounded-[20px] px-4 py-1 font-bold">{data.page.homefifthsection.fifthfirstsubtitle}</span>
@@ -491,8 +492,8 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      </div>
-
+      </div> */}
+      <FifthSection data={data} Video_gif={Video_gif}  />
       <Partner />
       <div className="container mx-auto max-w-[1481px]" >  <section className=" md:flex w-[100%] mt-[54px] mx-auto  bg-[#000]">
             <div className=" md:w-4/12 p-10 relative">

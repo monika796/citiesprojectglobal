@@ -108,6 +108,8 @@ const page = () => {
           alt="Speaker Image"
           layout="fill"
           objectFit="cover"
+          width={800}
+          height={500}
           className="absolute inset-0"
         />
 

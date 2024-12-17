@@ -62,7 +62,10 @@ const SwiperSection = () => {
         <div className="w-full h-auto">
           <Swiper
             modules={[Navigation, Pagination, Keyboard, Mousewheel, Autoplay]}
-         
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
             pagination={{
               clickable: true,
             }}
@@ -80,7 +83,7 @@ const SwiperSection = () => {
                 <div className="flex">
                   <div className="w-1/3">
                   <Image src={post.featuredImage?.node?.link || "placeholder.png"}
-                      alt={post.title} layout="responsive" width={16} height={9} ></Image>
+                      alt={post.title} layout="responsive" width={16} height={9} />
                     
                   </div>
                   <div className="w-2/3 grid p-2">
