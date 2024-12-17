@@ -443,22 +443,22 @@ export default async function Home() {
 
 
         <div className=" pl-[23px] md:pl-[14px] flex items-center p-[23px] justify-end md:mt-[-80px]">
-          <div className="md:w-6/12 grid md:flex  items-center justify-center">
-            <div className="md:w-6/12 float-right md:order-1 order-2  mt-4 md:mt-0 ">
+          <div className="md:w-5/12 grid md:flex  items-center justify-end">
+            <div className="md:w-[60%] float-right md:order-1 order-2  mt-4 md:mt-0 ">
               <span className="text-[13px] bg-[#a1cf5f] mx-auto md:mx-0 text-black text-left w-[55%] rounded-[20px] px-3 py-1 font-bold">{data.page.homefourtsection.secondsubtitle}</span>
               <h5 className="text-[20px] pt-3 text-left md:text-left  text-black font-bold">{data.page.homefourtsection.secondheading}</h5>
               <p className="text-[16px] text-left md:text-left text-black leading-normal mt-3 pe-6">{data.page.homefourtsection.secondparagraph}</p>
             </div>
-            <div className="md:w-6/12 p-2 md:order-2" >
-            <Image src={data.page.homefourtsection.secondimage?.node?.link} alt="" className='md:h-auto mx-auto md:w-1/2 md:mx-0 h-[100%] w-full' width={800} height={500} />
+            <div className="md:w-[40%] p-2 md:order-2" >
+            <Image src={data.page.homefourtsection.secondimage?.node?.link} alt="" className='' width={220} height={314} />
              
             </div>
           </div >
         </div>
 
 
-        <div className="pl-[23px] md:pl-[14px] md:pl-[120px] flex items-center p-[23px]  md:mt-[-70px]">
-          <div className="md:w-6/12 md:flex md:items-center md:justify-center grid">
+        <div className="pl-[23px] md:pl-[250px] md:pl-[120px] flex items-center p-[23px]  md:mt-[-70px]">
+          <div className="md:w-6/12 md:flex md:items-center md:justify-center grid gap-4">
 
             <div className="md:w-6/12 order-2 md:order-1  mt-4 md:mt-0 mb-10 md:mb-0">
               <span className="text-[13px] bg-[#a1cf5f] text-black text-left mx-auto md:mx-0  w-[55%] rounded-[20px] px-3 py-1 font-bold">{data.page.homefourtsection.thirdsubtitle}</span>
@@ -466,13 +466,13 @@ export default async function Home() {
               <p className="text-[16px] text-black text-left md:text-left leading-normal  mt-3 ">{data.page.homefourtsection.thirdparagraph}</p>
             </div>
             <div className="md:w-6/12 p-2 order-1 md:order-2" >
-            <Image src={data.page.homefourtsection.thirdimage?.node?.link} alt="" className='  md:w-[60%] md:h-auto mx-auto md:mx-0 h-[100%] w-full'  width={800} height={500} />
+            <Image src={data.page.homefourtsection.thirdimage?.node?.link} alt="" className=''  width={220} height={245} />
               
             </div>
           </div>
         </div>
       </div>
-      </div>
+     </div>
 
 
       {/* <div className="container mx-auto max-w-[1481px] " >   
