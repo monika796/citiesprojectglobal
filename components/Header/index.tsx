@@ -168,7 +168,7 @@ const Header = () => {
 
         {/* Nav Menu Start   */}
         <div
-          className={`${scrollDirection=='hidden' ? "" : "xl:visible" }invisible h-0 w-full  items-center justify-center  xl:flex xl:h-auto xl:w-full ${navigationOpen &&
+          className={`${scrollDirection=='hidden' ? "" : "xl:visible" } invisible h-0 w-full  items-center justify-center  xl:flex xl:h-auto xl:w-full ${navigationOpen &&
             "navbar !visible mt-4 h-auto max-h-[400px] rounded-md bg-white p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent"
             } ${isDesktop ? "" : "absolute left-0 z-[999]"}`}
         >
