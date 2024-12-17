@@ -13,7 +13,7 @@ const Header = () => {
   const [stickyMenu, setStickyMenu] = useState(false);
 
   const pathUrl = usePathname();
-  console.log(pathUrl);
+  // console.log(pathUrl);
   const isHomePage = pathUrl === "/";
   // // Sticky menu
   // const handleStickyMenu = () => {
@@ -27,35 +27,62 @@ const Header = () => {
   const [scrollDirection, setScrollDirection] = useState('');
 
   useEffect(() => {
+    let scrolled = 0;
+
     const handleScroll = () => {
-      
-      const st = window.pageYOffset || document.documentElement.scrollTop;
-        console.log(lastScrollTop);
-      if (st > lastScrollTop) {
-        // downscroll
-        setStickyMenu(false);
-        setScrollDirection("hidden");
-      } else if (st < lastScrollTop && lastScrollTop > 251) {
-        // upscroll
+      const scroll = window.scrollY;
+
+      if (scrolled > scroll) {
         setScrollDirection("");
-        setStickyMenu(true);
-      }else if ( lastScrollTop < 201) {
-        
-        setScrollDirection("");
+              setStickyMenu(true);
+      }
+      if(scrolled < scroll){
+        setScrollDirection('hidden');
+      }
+       if(scroll == 0){
         setStickyMenu(false);
       }
-
-      setLastScrollTop(st <= 0 ? 0 : st); // To handle negative scrolling (e.g., mobile)
+      console.log(scroll);
+      scrolled = scroll; // Update the previous scroll position
     };
 
-    // Adding scroll event listener
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-    // Cleanup event listener on unmount
+    // Cleanup event listener on component unmount
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollTop]);
+  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+      
+  //     const st = window.pageYOffset || document.documentElement.scrollTop;
+  //       console.log(lastScrollTop);
+  //     if (st > lastScrollTop) {
+  //       // downscroll
+  //       setStickyMenu(false);
+  //       setScrollDirection("hidden");
+  //     } else if (st < lastScrollTop && lastScrollTop > 251) {
+  //       // upscroll
+  //       setScrollDirection("");
+  //       setStickyMenu(true);
+  //     }else if ( lastScrollTop < 201) {
+        
+  //       setScrollDirection("");
+  //       setStickyMenu(false);
+  //     }
+
+  //     setLastScrollTop(st <= 0 ? 0 : st); // To handle negative scrolling (e.g., mobile)
+  //   };
+
+  //   // Adding scroll event listener
+  //   window.addEventListener('scroll', handleScroll);
+
+  //   // Cleanup event listener on unmount
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [lastScrollTop]);
   const closeNavigation = () => {
     setNavigationOpen(false);
   };
@@ -78,7 +105,7 @@ const Header = () => {
       className={`sticky  left-0 top-0 z-99999 md:pt-0 w-full ${stickyMenu
           ? "bg-gray-900 !text-white !py-4 shadow transition duration-100 dark:bg-black"
           : ""
-        } ${isHomePage ? "my-0" : "mt-0"} ${scrollDirection=='hidden' ? "!hidden" : "!block" }` }
+        } ${isHomePage ? "my-0" : "mt-0"} ${scrollDirection=='hidden' ? "invisible" : "visible" }` }
     >
       {/* <div className="relative mx-auto max-w-[89%]  border-t border-b border-white border-solid items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0"> */}
       <div className={`relative mx-auto container max-w-[1480px]  border-t border-b  border-solid items-center justify-between px-4 md:px-0 xl:flex 2xl:px-0 
@@ -141,7 +168,7 @@ const Header = () => {
 
         {/* Nav Menu Start   */}
         <div
-          className={`invisible h-0 w-full  items-center justify-center xl:visible xl:flex xl:h-auto xl:w-full ${navigationOpen &&
+          className={`${scrollDirection=='hidden' ? "" : "xl:visible" }invisible h-0 w-full  items-center justify-center  xl:flex xl:h-auto xl:w-full ${navigationOpen &&
             "navbar !visible mt-4 h-auto max-h-[400px] rounded-md bg-white p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent"
             } ${isDesktop ? "" : "absolute left-0 z-[999]"}`}
         >
