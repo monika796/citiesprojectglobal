@@ -210,11 +210,10 @@ const CustomSlider = () => {
               {sliderData.map((slide) => (
                 <SwiperSlide key={slide.id} className="swiper-slide-custom">
                   <div className="relative grid place-items-center">
-                    <img
-                      src={slide.imgSrc}
+                  <Image src={slide.imgSrc}
                       className="object-contain w-full rounded-lg"
-                      alt={slide.title}
-                    />
+                      alt={slide.title}></Image>
+                   
                     <p className="absolute top-11  left-10 text-white bg-black px-2 py-0 rounded-full text-sm">
                       {slide.date}
                     </p>
