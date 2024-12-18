@@ -18,6 +18,7 @@ query {
         }
       }
       title
+      id
     }
   }
     page(id: "cG9zdDoxNg=="){
@@ -75,6 +76,7 @@ const CustomSlider = () => {
 
   const sliderData = data.posts?.nodes.map((dataposts, index) => ({
     id: index + 1,
+    post_id : dataposts.id,
     imgSrc: dataposts.featuredImage?.node?.link,
     date: "5 Sep 20241",
     title: dataposts.title,
@@ -144,7 +146,7 @@ const CustomSlider = () => {
                       {slide.title}
                     </h2>
                     <Link
-                      href="#"
+                      href={ `/blog/blog-details?id=${slide.post_id}`}
                       className="flex gap-2 items-center text-black font-extrabold text-center justify-center"
                     >
                       {slide.linkText}
@@ -222,7 +224,7 @@ const CustomSlider = () => {
                       {slide.title}
                     </h2>
                     <Link
-                      href="#"
+                      href={ ` /blog/blog-details?id=${slide.post_id}`}
                       className="flex gap-2 items-center text-black font-extrabold text-center justify-center"
                     >
                       {slide.linkText}

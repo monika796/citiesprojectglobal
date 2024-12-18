@@ -10,7 +10,9 @@ import Pcover from '/public/57.png';
 import Integrated from '/public/Integrated.png';
 import Calling from '/public/calling.png';
 import Avatar from '/public/avatar.png';
-
+import VideoPlayer from '@/components/Leadershipvideosection'
+import Link from 'next/link';
+import Newsletter from '@/components/Newsletter';
 
 
 const page = () => {
@@ -407,9 +409,230 @@ const page = () => {
       </div>
     </div>
         </section>
-      
+          {/* Gurpreet Start */}
+          <section className='pt-10 pb-10'>
+          <h2 className='mx-auto text-center text-[48px] text-black font-bold text-center' >Our City Renewed</h2>
+          <p  className='text-[16px] mt-10 text-center text-black mx-auto text-center pb-10 '>At the heart of the Leadership Circle lies the transformative journey of its participants.</p>
+          <div className='flex '>
+            <div className='w-4/12 py-24 px-[10px]'>
+               <h2 className='mx-auto text-left text-[24px] text-black font-bold leading-[23px] mb-6' >Collective Stewardship</h2>
+               <p  className='mx-auto  text-black text-left'>Embracing God’s call to care for creation, our unity can reveal Jesus as the one sent by God to those observing our collective efforts.</p>
+          </div>
+            <div   style={{ backgroundImage: `url('114.png')` }} className='w-4/12  bg-no-repeat bg-cover w-auto bg-bottom   md:h-[300px]  border-t border-transparent '> </div>
+            <div className='w-4/12 py-24 px-[10px]'>  
+               <h2 className='mx-auto text-left text-[24px] text-black font-bold leading-[23px] mb-6' >Societal Impact</h2>
+               <p  className='mx-auto text-black text-left'>
+               God positions each person in their city to shape its future. By influencing institutions, we help people experience God's kingdom, leading to flourishing and joy.
+
+               </p>
+          </div>
+          </div>
+          <div className='flex  justify-center'>
+            <div style={{ backgroundImage: `url('117.jpg')` }} className='w-4/12  bg-no-repeat bg-cover w-auto bg-bottom  md:h-[300px]  border-t border-transparent '></div>
+            <div className='w-4/12 py-24 px-[10px]'>  
+               <h2 className='mx-auto text-left text-[24px] text-black font-bold leading-[23px] mb-6' >Public Square</h2>
+               <p  className='mx-auto text-black text-left'>God seeks shalom in our city, calling us to work with diverse people for the common good, guided by discernment, compassion, and godly wisdom.</p>
+          </div>
+            <div style={{ backgroundImage: `url('118.png')` }} className='w-4/12  bg-no-repeat bg-cover w-auto bg-bottom  md:h-[300px]  border-t border-transparent '></div>
+          </div>
+          </section>
+
+          <VideoPlayer />
+
+          <section>
+          <h2 className='md:text-[40px] text-[25px] font-bold text-left text-black md:w-[30%] md:p-5 leading-[49px]'>Tangible outcomes on completion?</h2>
+          <div className='flex'>
+            <div className='flex md:w-8/12'>
+              <div className='md:w-2/6 p-10 pt-0'>
+              <Image className='' src='/121.png' alt='' width={1000} height={1000} />
+              </div>  
+              <div className='md:w-4/6 p-10  pt-0'>
+                  <ul className='list-disc leading-[35px]'>
+                  <li>Have the tools to practice living an integrated life</li>
+                  <li>Have clarity about your role in God’s kingdom</li>
+                  <li>Be more greatly attuned to the stakeholders in your place of influence (work, community, city, etc.)</li>
+                  <li>Be able to describe those stakeholders’ needs and motivate or work with people toward measurable change in those areas of need</li>
+                  <li>Have access to a centralized resource as a result of your cohort’s work</li>
+                </ul><br />
+              <i>Graduates will also be certified to recruit, facilitate, and train future  Leadership Circle cohorts thereby creating exponential impact in other  lives and cities, and many have already been led to do so.</i>
+              </div>
+            </div>
+            <div className='md:w-4/12'>
+            <Image className='' src='/122.png' alt='' width={1000} height={1000} />
+            </div>
+          </div>
+
+          </section>
+            <section className='bg-[#000000]'>
+            <div className='flex w-[90%] mx-auto md:py-20'>
+              <div className='w-6/12 border-b border-[#252525]'>
+              <h2 className='md:text-[15px] text-[10px] font-bold text-left text-white md:w-[50%] md:p-5 '>
+              Empowering Leaders to Create Meaningful Change through City Renewal Projects
+              </h2>
+              
+              </div>
+              <div className='w-6/12 '>
+              <h1 className="text-5xl font-semibold leading-tight text-white  mb-6">
+              City Renewal Projects Creating Lasting Impact for Communities and Workplaces
+                </h1>
+                <p className="text-white leading-relaxed mb-4">
+                 Before graduating, participants create a City Renewal Project to address a key need in their city or workplace. With skills gained in the Leadership Circle, graduates can partner with others, regardless of faith, to create lasting, meaningful change.
+                </p>
+                <p  className="text-white leading-relaxed mb-4">
+                We offer a framework to plan and execute City Renewal Projects, which participants present at graduation. Past projects include efforts toward cultural and systemic restoration such as combatting poverty through 
+               <span className="text-[#A1CF5F] underline cursor-pointer">
+                serving the underbanked, providing affordable housing
+                  </span> and more.
+                </p>
+                <p className="text-white leading-relaxed">
+                A Renewal Project seeks to bring about positive change. It focuses on what breaks God's heart, aligning with what moves us deeply, as we share in God's joy when things work as they should.
+                  </p> <br />
+              </div>
+            </div>
+            <div className=''>
+            <h2 className="md:text-[47px] text-[25px] font-bold text-left text-white md:w-[40%] md:p-5 leading-[49px]">
+            There are three areas where Renewal Projects can focus
+            </h2>
+            <div className='flex'>
+              
+                    <div className="md:w-[30%]  md:pl-10 md:pr-10 md:pt-0 pt-20 relative">
+                                      
+                                       
+                                       <div className='m-5 pb-3'>
+                                          <Image width={50} height={50} alt="" src='/78.png' className="mx-auto md:mx-0"  />
+                                          <h5 className="text-white text-[18px] w-[60%] md:text-left text-center">in the community or city around us</h5>
+                                          </div>
+                                          <div className='m-5  pb-3'>
+                                          <Image width={50} height={50} alt="" src='/79.png' className="mx-auto md:mx-0"  />
+                                          <h5 className="text-white text-[18px] w-[60%] md:text-left text-center">within our personal workplaces</h5>
+                                          </div>
+                                          <div className='m-5  pb-3'>
+                                          <Image width={50} height={50} alt="" src='/80.png' className="mx-auto md:mx-0"  />
+                                          <h5 className="text-white text-[18px] w-[60%] md:text-left text-center">for others to benefit from the Leadership Circle itself.</h5>
+                                          </div>
+                                      </div>
+               
+                  <div className='w-9/12 pb-20'>
+                      <Image className='' alt='' width={1000} height={1000} src='/123.png' />
+
+                      <p className=" w-[45%] text-gray-300 leading-relaxed my-8">
+                      When these projects get implemented, we call the resultant entity an Impact Group.
+              </p>
+              <Link
+                href="#"
+                className="bg-[#A1CF5F] mb-10  text-black font-semibold py-2 px-4 rounded "
+              >
+                Apply Now
+                <span className="ml-2">↗</span>
+              </Link>
+              
+                    </div>              
+            </div>
+            </div>
+            </section>
+
+
+            <section className='container w-[85%] mx-auto py-20'>
+            <h1 className="text-5xl w-[40%] font-bold leading-tight text-[#000000] mb-6">
+            Who is This Program Right For?
+                </h1>
+             <div className='flex'>
+               <div className='w-1/2'>
+                
+                 <p className="text-[#000000] leading-relaxed mb-4">
+                 The  Leadership Circle is often best fit for mid to late career leaders who  can commit the time to participate. But don’t let the term “leader”  deter you if you’re not sure that describes you.
+                </p>
+                <p className="text-[#000000] leading-relaxed">
+                While the term “leader” may describe  someone who holds an executive title or senior level position, we also  define a leader as someone who is well positioned for potential impact.  We talk about workplace impact often, but your potential for impact in a non-work-related community (such as your church, school, association,  etc.) is equally valid.
+                </p>
+                <p className="text-[#000000] leading-relaxed">
+                We have had entrepreneurs, artists,  coaches, public servants, and people from many different backgrounds  come through the Leadership Circle and find it very enriching.
+                </p>
+                </div>
+                <div className='w-1/2'>
+                <p className="text-[#000000] leading-relaxed mb-4">
+                We look for a balance of men and women  from a broad range of professions and diverse cultural backgrounds with  varying levels of leadership and responsibility.
+                </p>
+                <p className="text-[#000000] leading-relaxed">
+                If you’re not sure, please apply anyway – you will have the opportunity to speak to one of our facilitators to  explore your questions further.
+                </p>
+
+                </div>
+              </div>
+
+              <div className='flex'>
+                      <div className='w-1/2 grid p-[60px] items-center'>
+                      <h2 className='text-[#000000] font-bold'>See What’s Happening in Real Time</h2>
+                      <hr className='w-[50%] '/>
+                      <p className="text-[#000000] leading-relaxed"> Stay connected with us through Instagram Reels! 
+                      </p>
+                      </div>
+                      <div className='w-1/2 relative'>
+                        <Image src='/124.png' className='' alt='' width={1000} height={1000} />
+                        <Image src='/125.png' className='absolute top-[10px] left-[-70px]' alt='' width={200} height={200} />
+                     </div>
+              </div>
+            </section>
+            <section>
+          <h1 className="md:py-[42px] mt-4 py-[30px] max-w-[850px] md:text-[40px] text-[20px]  font-bold text-center text-black  p-5 mx-auto md:leading-[48px] ">
+          If you’re not sure, please apply anyway  you will have the opportunity to speak to one of our facilitators to explore your questions further.
+          </h1>
+          <Link
+                  href='#'
+                  className="mx-auto flex w-fit  items-center gap-2.5 inline-block  bg-[#A1CF5F] font-bold text-black  text-[13px] md:text-sm py-1 md:py-3 px-6 rounded-lg transition duration-300"
+                >
+                 Learn More<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+                    <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+                      <path d="M1 13 13 1M4 1h9v9"></path>
+                    </g>
+                  </svg>
+                </Link>
+        </section>
+        <section>
+<div className="flex justify-center mx-auto w-fit mb-3 gap-3  mt-20">
+  <div className=" ">
+    <img
+      className=""
+      src="/image.png"
+    />
+  </div>
+  <div className=" ">
+    <img
+      className=""
+      src="/image-3.png"
+    />
+  </div>
+  <div className=" ">
+  <img
+      className=""
+      src="/image-1.png"
+    />
+  </div>
+  <div className="] ">
+  <img
+      className=""
+      src="/image-4.png"
+    />
+  </div>
+  <div className="  ">
+  <img
+      className=""
+      src="/image-2.png"
+    />
+  </div>
+</div>
+
+</section>
+
+<Newsletter />
+          {/* Gurpreet end */}
       </div>
     </div>
+
+
+
+
+
   )
 }
 

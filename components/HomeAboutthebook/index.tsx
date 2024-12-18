@@ -4,14 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const FifthSection = ({ data, Video_gif }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handleVideoClick = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
+    setIsPlaying(true);
   };
 
   return (
@@ -20,6 +16,7 @@ const FifthSection = ({ data, Video_gif }) => {
         className="flex flex-col md:flex-row w-[100%] pb-[10px] mx-auto items-center rounded-[5px]"
         style={{ backgroundColor: "rgb(3, 4, 2)" }}
       >
+        {/* Left Content */}
         <div className="md:w-5/12 w-full p-[40px] md:p-[40px] mt-10 md:mt-0">
           <span className="text-[18px] bg-[#fff] text-black font-bold mx-auto md:mx-0 text-center w-[45%] rounded-[20px] px-4 py-1 font-bold">
             {data.page.homefifthsection.fifthfirstsubtitle}
@@ -44,23 +41,32 @@ const FifthSection = ({ data, Video_gif }) => {
             {data.page.homefifthsection.authordesignation}
           </h5>
         </div>
+
+        {/* Right Content */}
         <div className="md:w-8/12 md:py-[30px] relative">
-          <Image
-            src={data.page.homefifthsection.fifthfirstimage?.node?.link}
-            className=""
-            layout="responsive"
-            width={16}
-            height={9}
-            alt=""
-          />
-          <Image
-            src={Video_gif}
-            className="w-[224px] video-gif cursor-pointer"
-            alt="Video gif"
-            width={100}
-            height={100}
-            onClick={handleVideoClick}
-          />
+          {/* Black Box for Video */}
+          <div className="bg-[rgb(3, 4, 2)] pr-5 rounded-lg">
+            
+              <Image
+              src={Video_gif}
+              className="w-[224px] video-gif cursor-pointer"
+              alt="Video gif"
+              width={100}
+              height={100}
+              onClick={handleVideoClick}
+            />
+              <video
+                className="w-full "
+                autoPlay
+                src="videos.mp4"
+                onClick={(e) => e.currentTarget.play()}
+                poster={data.page.homefifthsection.fifthfirstimage?.node?.link}
+              ></video>
+
+           
+          </div>
+
+          {/* Buttons */}
           <div className="md:float-right md:mt-[-50px] md:mr-3 mt-5 z-999 relative">
             <Link href={data.page.homefifthsection.buttonlinkone}>
               <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">
@@ -109,26 +115,6 @@ const FifthSection = ({ data, Video_gif }) => {
           </div>
         </div>
       </div>
-
-      {/* Modal for Video */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
-          <div className="relative bg-white rounded-lg w-[90%] md:w-[70%]">
-            <button
-              className="absolute top-2  z-99999 right-2 text-black font-bold"
-              onClick={handleCloseModal}
-            >
-              X
-            </button>
-            <video
-              className="w-full rounded-lg"
-              controls
-              autoPlay
-              src='videos.mp4'
-            ></video>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
