@@ -5,11 +5,13 @@ import Imagetwo from '/public/leader-image2.png';
 import Divider from '/public/design-divider.png';
 import Leaderbg from '/public/leader-bg.png';
 import Threeimg from '/public/32.png';
-import fourimg from '/public/leader-image3.png';
-import Pcover from '/public/57.png';
+import fourimg from '/public/cover.png';
+import Pcover from '/public/city.png';
 import Integrated from '/public/Integrated.png';
 import Calling from '/public/calling.png';
 import Avatar from '/public/avatar.png';
+import Union from '/public/union-icon.png';
+import Collective from '/public/collective.png';
 import VideoPlayer from '@/components/Leadershipvideosection'
 import Link from 'next/link';
 import Newsletter from '@/components/Newsletter';
@@ -26,7 +28,7 @@ const page = () => {
         </section>
         <section>
           <div className=" font-sans bg-white">
-            <div className="flex md:flex-nowrap justify-between gap-5 flex-wrap gap-12 py-16 px-12">
+            <div className="flex md:flex-nowrap justify-between gap-5 flex-wrap gap-12 mt-5">
               <div className="relative max-w-[30%]">
                 <Image
                   src={Imageone}
@@ -38,7 +40,7 @@ const page = () => {
               </div>
 
               <div className="text-left max-w-[40%]">
-                <h1 className="text-3xl font-semibold leading-tight text-gray-900 mb-6">
+                <h1 className="text-[32px] font-light leading-tight text-gray-900 mb-6">
                   Are you a Christian professional working in business or ministry
                   (non-profit or church)?
                 </h1>
@@ -56,14 +58,11 @@ const page = () => {
                   spheres of influence (economics, education, government, family,
                   media, celebration, and religion), and initiate impact projects
                   through their communities in fellowship with other leaders. Watch
-                  this{" "}
-                  <span className="text-blue-600 underline cursor-pointer">
-                    video of testimonials
-                  </span>
+                  this
                   .
                 </p>
               </div>
-              <div className=" px-12 pb-12 flex justify-end items-end max-w-[20%]">
+              <div className=" px-12 pb-0 flex justify-end items-end max-w-[20%]">
                 <Image
                   src={Imagetwo}
                   alt="Woman in church"
@@ -79,14 +78,14 @@ const page = () => {
           </div>
         </section>
 
-        <section>
+        <section className='my-20'>
           <div className="font-sans bg-white grid grid-cols-3 gap-3 py-20">
             {/* Left Section */}
-            <div className="bg-[#121212]  text-white flex flex-col items-center justify-center px-15 py-25">
+            <div className="bg-[#121212]  text-white flex flex-col items-center justify-center px-15 py-25 h-[751px]">
               <h1 className="text-3xl font-bold mb-6 text-center">
                 Embark on a Transformative Journey Integrating Faith and Work
               </h1>
-              <div className="flex justify-center my-6">
+              <div className="flex justify-center mb-10 mt-5">
                 <Image
                   src={Divider}
                   alt="Faith Icon"
@@ -121,34 +120,47 @@ const page = () => {
               />
 
               {/* Cards */}
-              <div className="absolute bottom-8 right-8 space-y-6">
+              <div className="absolute bottom-8 right-8 space-y-6 w-[310px]">
                 {/* Global Leadership Circle */}
-                <div className="bg-[#B8EA81] p-6 rounded-lg shadow-md w-[320px]">
-                  <h2 className="text-black font-semibold text-lg mb-2">
-                    Global Leadership Circle
+                <div className="bg-[#B8EA81] p-6 rounded-[5px] shadow-md w-[310px]">
+                <Image
+                  src={Union}
+                  alt="Faith Icon"
+                  width={25}
+                  height={29} className='ml-auto'
+                />
+                  <h2 className="text-black font-bold text-[23px] mb-2">
+                    Global <br /> Leadership Circle
                   </h2>
-                  <p className="text-gray-600 mb-4">
+                  <p className=" text-black mt-3 mb-8">
                     To learn more about the upcoming Global Leadership Circle.
                   </p>
-                  <a
+                  <Link
                     href="#"
-                    className="bg-white text-black font-medium py-2 px-4 rounded border border-gray-200 flex items-center hover:bg-gray-100"
+                    className="bg-white text-black font-medium py-2 px-4 rounded border border-gray-200  hover:bg-gray-100"
                   >
                     View Now <span className="ml-2">↗</span>
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Denver Leadership Circle */}
-                <div className="bg-white p-6 rounded-lg shadow-md w-[320px]">
-                  <h2 className="text-black font-semibold text-lg mb-2">
-                    Denver Leadership Circle
+                <div className="bg-white p-6  rounded-[5px]  shadow-md w-[310px]">
+                <Image
+                  src={Union}
+                  alt="Faith Icon"
+                  width={25}
+className='ml-auto'
+                  height={29}
+                />
+                  <h2 className="text-black font-bold text-[23px] mb-2">
+                    Denver <br /> Leadership Circle
                   </h2>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 mt-3 mb-8">
                     To learn more about the upcoming Denver Leadership Circle.
                   </p>
                   <a
                     href="#"
-                    className="bg-green-500 hover:bg-green-600 text-black font-medium py-2 px-4 rounded flex items-center justify-center"
+                    className="bg-[#A1CF5F] hover:bg-green-600 text-black font-medium py-2 px-4 rounded "
                   >
                     View Now <span className="ml-2">↗</span>
                   </a>
@@ -158,16 +170,16 @@ const page = () => {
           </div>
         </section>
         <section>
-          <h1 className="md:py-[42px] mt-4 py-[30px] max-w-[900px] md:text-[48px] text-[25px] leading-[38px]  font-bold text-center text-black  p-5 mx-auto md:leading-[77px] ">
+          <h1 className=" mt-0  max-w-[900px] md:text-[48px] text-[25px] leading-[38px]  font-bold text-center text-black  mx-auto md:leading-[77px] ">
             Empowering Leaders with Tailored Solutions and Global Impact
           </h1>
         </section>
         <section>
-          <div className="max-w-[1155px] mx-auto bg-white py-16 px-8">
+          <div className="max-w-[1155px] mx-auto bg-white py-16 ">
             {/* Card Container */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Card 1 */}
-              <div className="bg-[#F5F5F5] p-6 ">
+              <div className="bg-[#F5F5F5] p-6 max-w-[355px]">
                 {/* Icon and Image */}
                 <div className="flex mb-4">
                   <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
@@ -182,7 +194,7 @@ const page = () => {
                   />
                 </div>
                 {/* Content */}
-                <h2 className="font-bold text-black text-lg mb-2 mt-20">Highly Tailored Experience</h2>
+                <h2 className="font-bold text-black text-lg mb-2 mt-20 w-[219px]">Highly Tailored Experience</h2>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   Each cohort is unique, with discussions shaped by participants'
                   backgrounds, leading to rich conversations and deep insights.
@@ -190,7 +202,7 @@ const page = () => {
               </div>
 
               {/* Card 2 */}
-              <div className="bg-[#F5F5F5] p-6 ">
+              <div className="bg-[#F5F5F5] p-6 max-w-[355px]">
                 {/* Icon and Image */}
                 <div className="flex mb-4">
                   <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center ">
@@ -205,7 +217,7 @@ const page = () => {
                   />
                 </div>
                 {/* Content */}
-                <h2 className="font-bold text-black text-lg mb-2 mt-20">
+                <h2 className="font-bold text-black text-lg mb-2 mt-20 w-[219px]">
                   Network of Local and Global Collaborators
                 </h2>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -215,7 +227,7 @@ const page = () => {
               </div>
 
               {/* Card 3 */}
-              <div className="bg-[#F5F5F5] p-6 ">
+              <div className="bg-[#F5F5F5] p-6 max-w-[355px]">
                 {/* Icon and Image */}
                 <div className="flex mb-4">
                   <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center ">
@@ -230,7 +242,7 @@ const page = () => {
                   />
                 </div>
                 {/* Content */}
-                <h2 className="font-bold text-black text-lg mb-2 mt-20">
+                <h2 className="font-bold text-black text-lg mb-2 mt-20 w-[270px]">
                   Practical Tools for Transformation and Impact
                 </h2>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -248,7 +260,7 @@ const page = () => {
           </h1>
         </section>
         <section>
-          <div className="grid grid-cols-3 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-3 md:grid-cols-3 gap-10 ">
             <div>
               <Image
                 src={fourimg}
@@ -259,18 +271,18 @@ const page = () => {
               />
 
             </div>
-            <div>
-              <p>
+            <div className='pt-3 px-5'>
+            <p className='text-black'>
                 Most university, professional development, and further education programs are modeled on Greek teaching methods—that is, they treat the mind as a container to be filled with knowledge and trained to rationally engage the world using that information.
               </p>
-              <p className='mt-5'>
+              <p className='mt-5 text-black'>
                 We adopt a more Hebraic model. Each person is full of a wealth of experiences and holds a unique perspective, and by deepening their understanding of certain core biblical principles, the abilities they already possess are multiplied. Think about the parable of the talents in Matthew 15: we’re not here  to replace your talents or give you more; we’re here to help you do the  most with what you already have, because we
               </p>
             </div>
-            <div>
-              <p>believe God’s purpose for  you comes at the unique intersection of your experience, abilities, and  opportunities.
+            <div className='pt-3 px-5'>
+              <p className='text-black'>believe God’s purpose for  you comes at the unique intersection of your experience, abilities, and  opportunities.
               </p>
-              <p className='mt-5'>
+              <p className='mt-5 text-black'>
                 We engage the mind with theological lessons, but we also engage the  heart by developing a rich everyday apprenticeship of Jesus. Our program model also emphasizes relationships with other cohort members,  mirroring the way Jesus and his disciples would have engaged with one  another. This all results in a practical and remarkable transformation,  enabling participants to orient themselves to their communities in new  ways and impact their cities on a higher level.</p>
             </div>
           </div>
@@ -290,7 +302,7 @@ const page = () => {
               />
 
             </div>
-            <div className='col-span-2' >
+            <div className='col-span-2 md:pl-[50px]' >
               <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
                 <div className='col-span-2 px-10'>
                   <h3 className='font-bold text-[24px] leading-[20px] text-black mb-6'>Our city today</h3>
@@ -330,7 +342,7 @@ const page = () => {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-6'>
 
-            <div className='flex justify-between items-center '>
+            <div className='flex justify-between items-center gap-5 '>
               <div className='md:w-[50%]'>
                 <Image src={Calling} alt="" width={319} height={375}></Image>
               </div>
@@ -363,30 +375,35 @@ const page = () => {
           </div>
         </section>
 
-        <section>
+        <section className='my-[100px]'>
            <div className="mx-auto">
-      <div className=" mx-auto bg-[#F5F5F5] relative   max-w-5xl w-full">
+      <div className=" mx-auto bg-[#F5F5F5] relative   max-w-[986px] w-full">
         {/* Left Content */}
-        <div className="lg:w-[100%] text-left  flex flex-col justify-center items-start lg:items-start p-15 relative h-[510px]">
-          <div className="flex items-center space-x-2">
+        <div className="lg:w-[100%] text-left  flex flex-col gap-3 justify-center items-start lg:items-start p-15 relative h-[510px]" style={{
+    backgroundImage: "url('/bg.png')",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+  }}>
+          <div className="flex items-center ">
             {/* Icon or Circle */}
-            <div className="w-6 h-6 bg-green-400 rounded-full"></div>
-            <div className="w-6 h-6 bg-gray-200 rounded-full"></div>
+            <div className="w-[52px] h-[52px] bg-[#A1CF5F] rounded-full"></div>
+            <div className="ml-[-20px] w-[52px] h-[52px] bg-white rounded-full"></div>
           </div>
-          <h3 className="text-sm font-semibold text-gray-700 uppercase">
+          <h3 className="text-[16px] font-bold text-bold text-black uppercase mt-5">
             Flagship Program
           </h3>
-          <h1 className="text-4xl font-bold text-gray-900">
+          <h1 className="text-[32px] font-bold text-black mt-0">
             Global Leadership Circle
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-black text-[16px] w-[400px]">
             Are you a Christian professional working in business or ministry
             (non-profit or church)?
           </p>
           {/* Button */}
           <a
             href="#"
-            className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-green-500 hover:bg-green-600 rounded-md transition duration-200"
+            className="inline-flex items-center mt-20 justify-center w-[132px] h-[40px] text-sm font-bold text-black bg-[#A1CF5F] hover:bg-green-600 rounded-md transition duration-200"
           >
             Apply Now
             <span className="ml-2 text-lg">↗</span>
@@ -412,49 +429,64 @@ const page = () => {
           {/* Gurpreet Start */}
           <section className='pt-10 pb-10'>
           <h2 className='mx-auto text-center text-[48px] text-black font-bold text-center' >Our City Renewed</h2>
-          <p  className='text-[16px] mt-10 text-center text-black mx-auto text-center pb-10 '>At the heart of the Leadership Circle lies the transformative journey of its participants.</p>
-          <div className='flex '>
-            <div className='w-4/12 py-24 px-[10px]'>
-               <h2 className='mx-auto text-left text-[24px] text-black font-bold leading-[23px] mb-6' >Collective Stewardship</h2>
-               <p  className='mx-auto  text-black text-left'>Embracing God’s call to care for creation, our unity can reveal Jesus as the one sent by God to those observing our collective efforts.</p>
+          <p  className='text-[16px] mt-6 text-center text-black mx-auto text-center pb-10 '>At the heart of the Leadership Circle lies the transformative journey of its participants.</p>
+          <div className='grid grid-cols-1 md:grid-cols-3 '>
+            <div className=' py-24 px-[10px]'>
+              <div className="h-[280px] grid items-center">
+                <div>
+
+               <h2 className=' text-left text-[20px] text-black font-bold leading-[23px] mb-3 w-[377px]' >Collective Stewardship</h2>
+               <p  className='  text-black text-[16px] leading-[23px] text-left mb-15 w-[377px]'>Embracing God’s call to care for creation, our unity can reveal Jesus as the one sent by God to those observing our collective efforts.</p>
+                </div>
+              </div>
+              <Image src={Collective} alt="" width={453} height={280}></Image>
           </div>
-            <div   style={{ backgroundImage: `url('114.png')` }} className='w-4/12  bg-no-repeat bg-cover w-auto bg-bottom   md:h-[300px]  border-t border-transparent '> </div>
-            <div className='w-4/12 py-24 px-[10px]'>  
-               <h2 className='mx-auto text-left text-[24px] text-black font-bold leading-[23px] mb-6' >Societal Impact</h2>
-               <p  className='mx-auto text-black text-left'>
+            <div className=' py-24 px-[10px]'>  
+            <Image src={Collective} alt="" width={453} height={280}></Image>
+            <div className="h-[280px] grid items-center">
+              <div>
+
+               <h2 className='text-left text-[20px] text-black font-bold leading-[23px] mb-3 w-[377px] mt-15' >Societal Impact</h2>
+               <p  className='text-black text-[16px] leading-[23px] text-left  w-[377px]'>
                God positions each person in their city to shape its future. By influencing institutions, we help people experience God's kingdom, leading to flourishing and joy.
 
                </p>
+              </div>
+            </div>
           </div>
-          </div>
-          <div className='flex  justify-center'>
-            <div style={{ backgroundImage: `url('117.jpg')` }} className='w-4/12  bg-no-repeat bg-cover w-auto bg-bottom  md:h-[300px]  border-t border-transparent '></div>
-            <div className='w-4/12 py-24 px-[10px]'>  
+          <div className=''>
+            <div className='py-24 px-[10px]'>
+            <div className="h-[280px] grid items-center">
+            <div>
                <h2 className='mx-auto text-left text-[24px] text-black font-bold leading-[23px] mb-6' >Public Square</h2>
                <p  className='mx-auto text-black text-left'>God seeks shalom in our city, calling us to work with diverse people for the common good, guided by discernment, compassion, and godly wisdom.</p>
+              </div>
+              </div>  
+               <Image src={Collective} alt="" width={453} height={280}></Image>
           </div>
-            <div style={{ backgroundImage: `url('118.png')` }} className='w-4/12  bg-no-repeat bg-cover w-auto bg-bottom  md:h-[300px]  border-t border-transparent '></div>
           </div>
+          </div>
+          
           </section>
 
           <VideoPlayer />
 
-          <section>
-          <h2 className='md:text-[40px] text-[25px] font-bold text-left text-black md:w-[30%] md:p-5 leading-[49px]'>Tangible outcomes on completion?</h2>
-          <div className='flex'>
+          <section className='mt-[6rem]'>
+          <h2 className='md:text-[48px] text-[25px] font-bold text-left text-black md:w-[450px]  leading-[49px]'>Tangible outcomes on completion?</h2>
+          <div className='flex mt-15'>
             <div className='flex md:w-8/12'>
-              <div className='md:w-2/6 p-10 pt-0'>
-              <Image className='' src='/121.png' alt='' width={1000} height={1000} />
+              <div className='md:w-2/6 pt-0'>
+              <Image className='' src='/121.png' alt='' width={251} height={251} />
               </div>  
               <div className='md:w-4/6 p-10  pt-0'>
-                  <ul className='list-disc leading-[35px]'>
+                  <ul className='list-disc leading-[35px] text-[16px] text-black'>
                   <li>Have the tools to practice living an integrated life</li>
                   <li>Have clarity about your role in God’s kingdom</li>
                   <li>Be more greatly attuned to the stakeholders in your place of influence (work, community, city, etc.)</li>
                   <li>Be able to describe those stakeholders’ needs and motivate or work with people toward measurable change in those areas of need</li>
                   <li>Have access to a centralized resource as a result of your cohort’s work</li>
                 </ul><br />
-              <i>Graduates will also be certified to recruit, facilitate, and train future  Leadership Circle cohorts thereby creating exponential impact in other  lives and cities, and many have already been led to do so.</i>
+              <i className='text-black'>Graduates will also be certified to recruit, facilitate, and train future  Leadership Circle cohorts thereby creating exponential impact in other  lives and cities, and many have already been led to do so.</i>
               </div>
             </div>
             <div className='md:w-4/12'>
