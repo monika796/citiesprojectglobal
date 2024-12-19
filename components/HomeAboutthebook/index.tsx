@@ -1,13 +1,21 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const FifthSection = ({ data, Video_gif }) => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const handleVideoClick = () => {
-    setIsPlaying(true);
+    if (videoRef.current) { // Perform a null check
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
   };
 
   return (
@@ -46,24 +54,35 @@ const FifthSection = ({ data, Video_gif }) => {
         <div className="md:w-8/12 md:py-[30px] relative">
           {/* Black Box for Video */}
           <div className="bg-[rgb(3, 4, 2)] pr-5 rounded-lg">
-            
-              <Image
-              src={Video_gif}
-              className="w-[224px] video-gif cursor-pointer"
-              alt="Video gif"
-              width={100}
-              height={100}
+          {isPlaying ? (
+                     
+                     <Image
+                     src={Video_gif}
+                     className="hidden"
+                     alt="Video gif"
+                     width={100}
+                     height={100}
+                     onClick={handleVideoClick}
+                   />
+                      ) : (
+                        <Image
+                        src={Video_gif}
+                        className="w-[224px] video-gif cursor-pointer"
+                        alt="Video gif"
+                        width={100}
+                        height={100}
+                        onClick={handleVideoClick}
+                      /> 
+                      
+                      )}
+                      
+            <video
+              ref={videoRef}
+              className="w-full"
+              src="videos.mp4"
               onClick={handleVideoClick}
-            />
-              <video
-                className="w-full "
-                autoPlay
-                src="videos.mp4"
-                onClick={(e) => e.currentTarget.play()}
-                poster={data.page.homefifthsection.fifthfirstimage?.node?.link}
-              ></video>
-
-           
+              poster={data.page.homefifthsection.fifthfirstimage?.node?.link}
+            ></video>
           </div>
 
           {/* Buttons */}

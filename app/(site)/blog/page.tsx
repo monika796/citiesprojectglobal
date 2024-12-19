@@ -157,7 +157,7 @@ return (
 
 {/* //////////////// */}
 <div className="container mx-auto  max-w-[1480px] py-8">
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" key=''>
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" >
                   {postData.posts.nodes.map((post, index) => {
                               var dat_time=post.date
                           
