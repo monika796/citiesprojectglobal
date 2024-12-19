@@ -88,10 +88,10 @@ const Footer = () => {
           <div className="grid justify-center items-center">  <h2 className="  mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">About the Book</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <Link href="#" className="hover:underline">Read a Sample  <br className="md:hidden block" />  Chapter</Link>
+                    <Link href="/book" className="hover:underline">Read a Sample  <br className="md:hidden block" />  Chapter</Link>
                 </li>
                 <li className="mb-4">
-                    <Link href="#" className="hover:underline">Buy Book</Link>
+                    <Link href="/book" className="hover:underline">Buy Book</Link>
                 </li>
             </ul></div>
             <div className="items-end  hidden md:flex">

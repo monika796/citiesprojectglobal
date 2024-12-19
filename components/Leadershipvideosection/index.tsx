@@ -9,18 +9,24 @@ const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 const POSTS_QUERY = gql`
   query MyQuery2 {
-    page(id: "cG9zdDo0MzM=") {
-     bookPageFeilds {
-        bookSixthSectionVideoDescription
-            bookSixthSectionVideoHeading
-            bookSixthSectionVideoLink
-            bookSixthSectionVideoMainHeading
-         bookSixthSectionVideoThumbnail {
-        node {
-          link
+    page(id: "cG9zdDo2MDg=") {
+      leadershipPageFeilds {
+       leadershipVideoSection {
+      leadershipVideoSectionMainHeading
+        leadershipVideoSectionBackgroundImage {
+          node {
+            link
+          }
+        }
+        leadershipVideoSectionDescripiton
+        leadershipVideoSectionHeading
+        leadershipVideoSectionTopImage {
+          node {
+            link
+          }
         }
       }
-      }
+}
     }
   }
 `;
@@ -43,7 +49,7 @@ const VideoPlayer = () => {
 
   if (loading) return null;
   if (error) return <p>Error: {error.message}</p>;
-
+  console.log(data);
   return (
     <section className="md:py-[32px]" 
     onClick={(e) => {
@@ -54,12 +60,12 @@ const VideoPlayer = () => {
       }
     }}>
       <h1 className="md:text-[40px] text-[25px] font-bold text-center text-black md:w-[60%] md:p-5 mx-auto leading-[49px]">
-        {data.page.bookPageFeilds.bookSixthSectionVideoMainHeading}
+      {data.page.leadershipPageFeilds.leadershipVideoSection.leadershipVideoSectionMainHeading}
       </h1>
       <div className="relative mx-auto table md:w-[80%]">
         <video
           className="w-full rounded-lg"
-          poster='/119.png'
+          poster={data.page.leadershipPageFeilds.leadershipVideoSection.leadershipVideoSectionBackgroundImage?.node?.link}
           loop
           onClick={(e) => handleClick(e.currentTarget, setIsPlaying)} // Pass the clicked video element and setIsPlaying
         >
@@ -70,14 +76,13 @@ const VideoPlayer = () => {
         {/* Conditionally render images */}
         <div className="md:absolute bottom-0 p-10 text-center md:text-left">
         <h2 className="md:text-[64px]  text-[30px] font-bold text-black md:text-white md:w-[40%] leading-[70px] mb-5">
-        CPG Outcomes
+        {data.page.leadershipPageFeilds.leadershipVideoSection.leadershipVideoSectionHeading}
           </h2>
           <p className="font-normal text-[16px] mt-4 text-black md:text-white md:w-[72%]">
-          For decades now, I have witnessed the near non-existence of the practical intersection between faith and work.
-          </p>
+          {data.page.leadershipPageFeilds.leadershipVideoSection.leadershipVideoSectionDescripiton} </p>
         </div>
         <div className=" absolute w-[95px] top-0 right-0 md:w-auto  md:top-5 md:right-[3%] p-5">
-          <Image alt="" width={700} height={700} src="/120.png" className="w-[80%]" /></div>
+          <Image alt="" width={700} height={700} src={data.page.leadershipPageFeilds.leadershipVideoSection.leadershipVideoSectionTopImage?.node?.link} className="w-[80%]" /></div>
         <div className=" absolute md:bottom-5 bottom-[57%] right-0  md:right-[5%] md:p-5" >
           {isPlaying ? (
             <Image  width={700} height={700}  src="/117.png" className="md:w-[80%] w-[60%]" alt="Playing" /> // Image when video is playing

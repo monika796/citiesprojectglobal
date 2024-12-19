@@ -15,15 +15,283 @@ import Collective from '/public/collective.png';
 import VideoPlayer from '@/components/Leadershipvideosection'
 import Link from 'next/link';
 import Newsletter from '@/components/Newsletter';
+import { gql } from '@apollo/client';
+import client from 'apollo-client';
 
+const POSTS_QUERY = gql 
+`query MyQuery2 {
+  page(id: "cG9zdDo2MDg=") {
+    leadershipPageFeilds {
+      leadershipEightSectionFields {
+        leadershipEightSectionFirstRowFirstColumnDescription
+        leadershipEightSectionFirstRowFirstColumnHeading
+        leadershipEightSectionFirstRowSecondColumnImage {
+          node {
+            link
+          }
+        }
+        leadershipEightSectionFirstRowThirdDescription
+        leadershipEightSectionFirstRowThirdHeading
+        leadershipEightSectionMainDescription
+        leadershipEightSectionMainHeading
+        leadershipEightSectionSecondRowFirstImage {
+          node {
+            link
+          }
+        }
+        leadershipEightSectionSecondRowSecondDescription
+        leadershipEightSectionSecondRowSecondHeading
+        leadershipEightSectionSecondRowThirdImage {
+          node {
+            link
+          }
+        }
+      }
+      leadershipEleventhSection {
+        leadershipEleventhSectionFirstSection {
+          leadershipEleventhFirstText
+          leadershipEleventhFirstImage {
+            node {
+              link
+            }
+          }
+        }
+        leadershipEleventhSectionMainHeading
+        leadershipEleventhSectionSecondButtonLink
+        leadershipEleventhSectionSecondButtonText
+        leadershipEleventhSectionSecondDescription
+        leadershipEleventhSectionSecondImage {
+          node {
+            link
+          }
+        }
+      }
+      leadershipFifthSectionFields {
+        leadershipFifthSectionFirstColumnDescription
+        leadershipFifthSectionFirstColumnHeading
+        leadershipFifthSectionFirstColumnImages {
+          node {
+            link
+          }
+        }
+        leadershipFifthSectionSecondColumnDescription1
+        leadershipFifthSectionSecondColumnDescription2
+        leadershipFifthSectionSecondColumnDescription3
+        leadershipFifthSectionSecondColumnDescriptionHeading1
+        leadershipFifthSectionSecondColumnDescriptionHeading2
+        leadershipFifthSectionSecondColumnDescriptionHeading3
+        leadershipFifthSectionSecondColumnMainHeading
+        leadershipFifthSectionThirdColumnImage {
+          node {
+            link
+          }
+        }
+      }
+      leadershipFirstSectionFeilds {
+        leadershipFirstSectionSecondColumnDescription1
+        leadershipFirstSectionSecondColumnDescription2
+        leadershipFirstSectionSecondColumnHeading
+        leadershipFirstSectionFirstColumnImage {
+          node {
+            link
+          }
+        }
+        leadershipFirstSectionThirdColumnImage {
+          node {
+            link
+          }
+        }
+      }
+      leadershipFourthSectionFields {
+        leadershipFourthSectionFirstColumnImage {
+          node {
+            link
+          }
+        }
+        leadershipFourthSectionMainHeading
+        leadershipFourthSectionSecondColumnDescription1
+        leadershipFourthSectionSecondColumnDescription2
+        leadershipFourthSectionThirdColumnDescription1
+        leadershipFourthSectionThirdColumnDescription2
+      }
+      leadershipMainHeading
+      leadershipNinthSection {
+        leadershipNinthSectionFirstColumnImage {
+          node {
+            link
+          }
+        }
+        leadershipNinthSectionMainHeading
+        leadershipNinthSectionSecondColumnText
+        leadershipNinthSectionThirdColumnImage {
+          node {
+            link
+          }
+        }
+      }
+      leadershipSecondSectionFields {
+        leadershipSecondSectionFirstColumnButtonLink
+        leadershipSecondSectionFirstColumnButtonText
+        leadershipSecondSectionFirstColumnDescription
+        leadershipSecondSectionFirstColumnHeading
+        leadershipSecondSectionSecondColumnBackgroundImage {
+          node {
+            link
+          }
+        }
+        leadershipSecondSectionSecondColumnBox {
+          leadershipSecondSectionSecondColumnBoxButtonLink
+          leadershipSecondSectionSecondColumnBoxButtonText
+          leadershipSecondSectionSecondColumnBoxDescription
+          leadershipSecondSectionSecondColumnBoxHeading
+        }
+      }
+      leadershipSeventhSectionFields {
+        leadershipSeventhSectionButtonLink
+        leadershipSeventhSectionButtonText
+        leadershipSeventhSectionDescription
+        leadershipSeventhSectionMainHeading
+        leadershipSeventhSectionMainImage {
+          node {
+            link
+          }
+        }
+        leadershipSeventhSectionSubheading
+      }
+      leadershipSixthSectionFields {
+        leadershipSixthSectionFirstRowFirstColumnImage {
+          node {
+            link
+          }
+        }
+        leadershipSixthSectionFirstRowSecondColumnDescription
+        leadershipSixthSectionFirstRowSecondColumnHeading
+        leadershipSixthSectionMainDescription
+        leadershipSixthSectionMainHeading
+        leadershipSixthSectionSecondRowSecondColumnDescription
+        leadershipSixthSectionSecondRowFirstColumnImage {
+          node {
+            link
+          }
+        }
+        leadershipSixthSectionSecondRowSecondColumnHeading
+        leadershipSixthSectionSecondRowThirdColumnImages {
+          node {
+            link
+          }
+        }
+        leadershipSixthSectionThirdRowFirstColumnImages {
+          node {
+            link
+          }
+        }
+        leadershipSixthSectionThirdRowSecondsColumnDescription
+        leadershipSixthSectionThirdRowSecondsColumnHeading
+      }
+      leadershipTenthSection {
+        leadershipTenthSectionFirstColumnText
+        leadershipTenthSectionSecondColumnDescription1
+        leadershipTenthSectionSecondColumnDescription2
+        leadershipTenthSectionSecondColumnDescription3
+        leadershipTenthSectionSecondColumnDescriptionGreenColor
+        leadershipTenthSectionSecondColumnHeading
+      }
+      leadershipThirdSectionFields {
+        leadershipThirdSectionBox {
+          leadershipThirdSectionBoxDescription
+          leadershipThirdSectionBoxHeading
+          leadershipThirdSectionBoxImages {
+          node {
+            link
+          }
+        }
+        }
+        leadershipThirdSectionMainHeading
+      }
+      leadershipThirteenSection {
+        leadershipThirteenSectionButtonLink
+        leadershipThirteenSectionButtonText
+        leadershipThirteenSectionHeading
+      }
+      leadershipTwelfthSection {
+        leadershipTwelfthSectionFirstRowFirstColumn
+        leadershipTwelfthSectionFirstRowSecondColumnDescription
+        leadershipTwelfthSectionMainHeading
+        leadershipTwelfthSectionSecondRowFirstColumnDescription
+        leadershipTwelfthSectionSecondRowFirstColumnHeading
+        leadershipTwelfthSectionSecondRowSecondColumnImage1 {
+          node {
+            link
+          }
+        }
+        leadershipTwelfthSectionSecondRowSecondColumnImage2 {
+          node {
+            link
+          }
+        }
+      }
+      leadershipVideoSection {
+      leadershipVideoSectionMainHeading
+        leadershipVideoSectionBackgroundImage {
+          node {
+            link
+          }
+        }
+        leadershipVideoSectionDescripiton
+        leadershipVideoSectionHeading
+        leadershipVideoSectionTopImage {
+          node {
+            link
+          }
+        }
+      }
+      vantageFormThirdSection {
+        vantageFormThirdSectionImage1 {
+          node {
+            link
+          }
+        }
+        vantageFormThirdSectionImage2 {
+          node {
+            link
+          }
+        }
+        vantageFormThirdSectionImage3 {
+          node {
+            link
+          }
+        }
+        vantageFormThirdSectionImage4 {
+          node {
+            link
+          }
+        }
+        vantageFormThirdSectionImage5 {
+          node {
+            link
+          }
+        }
+      }
+    }
+  }
+}`;
 
-const page = () => {
+async function fetchData() {
+  const { data } = await client.query({
+    query: POSTS_QUERY,
+  });
+  return data;
+}
+
+const page = async () => {
+  const data = await fetchData();
+  console.log(data);
   return (
     <div>
       <div className="container mx-auto max-w-[1480px]">
         <section>
           <h1 className="md:py-[42px] mt-4 py-[30px] max-w-[1178px] md:text-[64px] text-[25px] leading-[38px]  font-bold text-center text-black  p-5 mx-auto md:leading-[77px] ">
-            Empowering Change Through Leadership
+            {data.page.leadershipPageFeilds.leadershipMainHeading}
           </h1>
         </section>
         <section>
@@ -31,7 +299,7 @@ const page = () => {
             <div className="flex md:flex-nowrap justify-between gap-5 flex-wrap gap-12 mt-5">
               <div className="relative max-w-[30%]">
                 <Image
-                  src={Imageone}
+                  src={data.page.leadershipPageFeilds.leadershipFirstSectionFeilds.leadershipFirstSectionFirstColumnImage?.node?.link}
                   alt="Group Discussion"
                   width={337}
                   height={247}
@@ -41,30 +309,19 @@ const page = () => {
 
               <div className="text-left max-w-[40%]">
                 <h1 className="text-[32px] font-light leading-tight text-gray-900 mb-6">
-                  Are you a Christian professional working in business or ministry
-                  (non-profit or church)?
+                {data.page.leadershipPageFeilds.leadershipFirstSectionFeilds.leadershipFirstSectionSecondColumnHeading} 
                 </h1>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Perhaps you seek to learn more about what work as worship or
-                  business as mission could look like in your life. Or you're ready to
-                  go beyond the theological foundations and make an impact in your
-                  city. Leadership Circle offers you an opportunity to take the next
-                  step on your disciple-making journey.
+                {data.page.leadershipPageFeilds.leadershipFirstSectionFeilds.leadershipFirstSectionSecondColumnDescription1}
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  Leadership Circles have already equipped nearly 400 alumni from all
-                  denominational and demographic backgrounds around the world to
-                  integrate their faith throughout their life, engage across societal
-                  spheres of influence (economics, education, government, family,
-                  media, celebration, and religion), and initiate impact projects
-                  through their communities in fellowship with other leaders. Watch
-                  this
-                  .
+                {data.page.leadershipPageFeilds.leadershipFirstSectionFeilds.leadershipFirstSectionSecondColumnDescription2}
+                
                 </p>
               </div>
               <div className=" px-12 pb-0 flex justify-end items-end max-w-[20%]">
                 <Image
-                  src={Imagetwo}
+                  src={data.page.leadershipPageFeilds.leadershipFirstSectionFeilds.leadershipFirstSectionThirdColumnImage?.node?.link}
                   alt="Woman in church"
                   width={240}
                   height={149}
@@ -83,7 +340,7 @@ const page = () => {
             {/* Left Section */}
             <div className="bg-[#121212]  text-white flex flex-col items-center justify-center px-15 py-25 h-[751px]">
               <h1 className="text-3xl font-bold mb-6 text-center">
-                Embark on a Transformative Journey Integrating Faith and Work
+              {data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionFirstColumnHeading} 
               </h1>
               <div className="flex justify-center mb-10 mt-5">
                 <Image
@@ -95,15 +352,13 @@ const page = () => {
                 />
               </div>
               <p className="text-gray-300 text-center leading-relaxed mb-8">
-                Righteous leaders change their cities through justice, love, and
-                working for the common good of all – this is part of the foundation of
-                what we teach at Cities Project Global.
+              {data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionFirstColumnDescription}
               </p>
               <a
-                href="#"
+                href={data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionFirstColumnButtonLink}
                 className="bg-[#A1CF5F] hover:bg-green-600 text-black font-semibold py-2 px-4 rounded flex items-center justify-center"
               >
-                Apply Now
+               {data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionFirstColumnButtonText}
                 <span className="ml-2">↗</span>
               </a>
             </div>
@@ -112,7 +367,7 @@ const page = () => {
             <div className="relative col-span-2">
               {/* Background Image */}
               <Image
-                src={Leaderbg}
+                src={data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBackgroundImage?.node?.link}
                 alt="Speaker Image"
                 layout="fill"
                 objectFit="cover"
@@ -130,16 +385,18 @@ const page = () => {
                   height={29} className='ml-auto'
                 />
                   <h2 className="text-black font-bold text-[23px] mb-2">
-                    Global <br /> Leadership Circle
+                  {data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBox[0].leadershipSecondSectionSecondColumnBoxHeading}
+
                   </h2>
                   <p className=" text-black mt-3 mb-8">
-                    To learn more about the upcoming Global Leadership Circle.
+                  {data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBox[0].leadershipSecondSectionSecondColumnBoxDescription}
+
                   </p>
                   <Link
-                    href="#"
+                    href={data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBox[0].leadershipSecondSectionSecondColumnBoxButtonLink}
                     className="bg-white text-black font-medium py-2 px-4 rounded border border-gray-200  hover:bg-gray-100"
                   >
-                    View Now <span className="ml-2">↗</span>
+                    {data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBox[0].leadershipSecondSectionSecondColumnBoxButtonText} <span className="ml-2">↗</span>
                   </Link>
                 </div>
 
@@ -153,16 +410,19 @@ className='ml-auto'
                   height={29}
                 />
                   <h2 className="text-black font-bold text-[23px] mb-2">
-                    Denver <br /> Leadership Circle
+                  {data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBox[1].leadershipSecondSectionSecondColumnBoxHeading}
+
                   </h2>
                   <p className="text-gray-600 mt-3 mb-8">
-                    To learn more about the upcoming Denver Leadership Circle.
+                  {data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBox[1].leadershipSecondSectionSecondColumnBoxHeading}
+
                   </p>
                   <a
-                    href="#"
+                    href={data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBox[1].leadershipSecondSectionSecondColumnBoxButtonLink}
                     className="bg-[#A1CF5F] hover:bg-green-600 text-black font-medium py-2 px-4 rounded "
                   >
-                    View Now <span className="ml-2">↗</span>
+                   {data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBox[1].leadershipSecondSectionSecondColumnBoxButtonText}
+                   <span className="ml-2">↗</span>
                   </a>
                 </div>
               </div>
@@ -171,7 +431,7 @@ className='ml-auto'
         </section>
         <section>
           <h1 className=" mt-0  max-w-[900px] md:text-[48px] text-[25px] leading-[38px]  font-bold text-center text-black  mx-auto md:leading-[77px] ">
-            Empowering Leaders with Tailored Solutions and Global Impact
+          {data.page.leadershipPageFeilds.leadershipThirdSectionFields.leadershipThirdSectionMainHeading}  
           </h1>
         </section>
         <section>
@@ -186,7 +446,7 @@ className='ml-auto'
                     <div className="w-3 h-3 bg-white rounded-full"></div>
                   </div>
                   <Image
-                    src={Threeimg}
+                    src={data.page.leadershipPageFeilds.leadershipThirdSectionFields.leadershipThirdSectionBox[0].leadershipThirdSectionBoxImages?.node?.link}
                     alt="Discussion Image"
                     width={120}
                     height={80}
@@ -194,10 +454,9 @@ className='ml-auto'
                   />
                 </div>
                 {/* Content */}
-                <h2 className="font-bold text-black text-lg mb-2 mt-20 w-[219px]">Highly Tailored Experience</h2>
+                <h2 className="font-bold text-black text-lg mb-2 mt-20 w-[219px]"> {data.page.leadershipPageFeilds.leadershipThirdSectionFields.leadershipThirdSectionBox[0].leadershipThirdSectionBoxHeading}  </h2>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Each cohort is unique, with discussions shaped by participants'
-                  backgrounds, leading to rich conversations and deep insights.
+                {data.page.leadershipPageFeilds.leadershipThirdSectionFields.leadershipThirdSectionBox[0].leadershipThirdSectionBoxDescription}
                 </p>
               </div>
 
@@ -209,7 +468,7 @@ className='ml-auto'
                     <div className="w-3 h-3 bg-white rounded-full"></div>
                   </div>
                   <Image
-                    src={Threeimg}
+                    src={data.page.leadershipPageFeilds.leadershipThirdSectionFields.leadershipThirdSectionBox[1].leadershipThirdSectionBoxImages?.node?.link}
                     alt="Collaboration Image"
                     width={120}
                     height={80}
@@ -218,11 +477,10 @@ className='ml-auto'
                 </div>
                 {/* Content */}
                 <h2 className="font-bold text-black text-lg mb-2 mt-20 w-[219px]">
-                  Network of Local and Global Collaborators
+                {data.page.leadershipPageFeilds.leadershipThirdSectionFields.leadershipThirdSectionBox[1].leadershipThirdSectionBoxHeading} 
                 </h2>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Leadership Circle's global reach fosters powerful collaboration,
-                  creating a growing network that drives change worldwide.
+                {data.page.leadershipPageFeilds.leadershipThirdSectionFields.leadershipThirdSectionBox[1].leadershipThirdSectionBoxDescription} 
                 </p>
               </div>
 
@@ -234,7 +492,7 @@ className='ml-auto'
                     <div className="w-3 h-3 bg-white rounded-full"></div>
                   </div>
                   <Image
-                    src={Threeimg}
+                    src={data.page.leadershipPageFeilds.leadershipThirdSectionFields.leadershipThirdSectionBox[2].leadershipThirdSectionBoxImages?.node?.link}
                     alt="Transformation Tools"
                     width={120}
                     height={80}
@@ -243,12 +501,10 @@ className='ml-auto'
                 </div>
                 {/* Content */}
                 <h2 className="font-bold text-black text-lg mb-2 mt-20 w-[270px]">
-                  Practical Tools for Transformation and Impact
+                {data.page.leadershipPageFeilds.leadershipThirdSectionFields.leadershipThirdSectionBox[2].leadershipThirdSectionBoxHeading} 
                 </h2>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Change combines knowledge and heart transformation. We guide you to
-                  engage with your community practically, offering a framework for
-                  action.
+                {data.page.leadershipPageFeilds.leadershipThirdSectionFields.leadershipThirdSectionBox[2].leadershipThirdSectionBoxDescription} 
                 </p>
               </div>
             </div>
@@ -256,14 +512,14 @@ className='ml-auto'
         </section>
         <section>
           <h1 className="md:py-[42px] mt-4 py-[30px] max-w-[800px] md:text-[48px] text-[25px] leading-[38px]  font-bold  text-black  md:leading-[58px] ">
-            The Leadership Circle Difference A Hebraic Model of Teaching
+          {data.page.leadershipPageFeilds.leadershipFourthSectionFields.leadershipFourthSectionMainHeading}
           </h1>
         </section>
         <section>
           <div className="grid grid-cols-3 md:grid-cols-3 gap-10 ">
             <div>
               <Image
-                src={fourimg}
+                src={data.page.leadershipPageFeilds.leadershipFourthSectionFields.leadershipFourthSectionFirstColumnImage?.node?.link}
                 alt="Transformation Tools"
                 width={539}
                 height={418}
@@ -273,17 +529,15 @@ className='ml-auto'
             </div>
             <div className='pt-3 px-5'>
             <p className='text-black'>
-                Most university, professional development, and further education programs are modeled on Greek teaching methods—that is, they treat the mind as a container to be filled with knowledge and trained to rationally engage the world using that information.
-              </p>
+            {data.page.leadershipPageFeilds.leadershipFourthSectionFields.leadershipFourthSectionSecondColumnDescription1}  </p>
               <p className='mt-5 text-black'>
-                We adopt a more Hebraic model. Each person is full of a wealth of experiences and holds a unique perspective, and by deepening their understanding of certain core biblical principles, the abilities they already possess are multiplied. Think about the parable of the talents in Matthew 15: we’re not here  to replace your talents or give you more; we’re here to help you do the  most with what you already have, because we
-              </p>
+              {data.page.leadershipPageFeilds.leadershipFourthSectionFields.leadershipFourthSectionSecondColumnDescription2}  </p>
             </div>
             <div className='pt-3 px-5'>
-              <p className='text-black'>believe God’s purpose for  you comes at the unique intersection of your experience, abilities, and  opportunities.
-              </p>
+              <p className='text-black'> {data.page.leadershipPageFeilds.leadershipFourthSectionFields.leadershipFourthSectionThirdColumnDescription1}  </p>
               <p className='mt-5 text-black'>
-                We engage the mind with theological lessons, but we also engage the  heart by developing a rich everyday apprenticeship of Jesus. Our program model also emphasizes relationships with other cohort members,  mirroring the way Jesus and his disciples would have engaged with one  another. This all results in a practical and remarkable transformation,  enabling participants to orient themselves to their communities in new  ways and impact their cities on a higher level.</p>
+              {data.page.leadershipPageFeilds.leadershipFourthSectionFields.leadershipFourthSectionThirdColumnDescription2}
+             </p>
             </div>
           </div>
         </section>
@@ -291,10 +545,10 @@ className='ml-auto'
         <section className='my-40'>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className='w-[479px]'>
-              <h2 className='text-[48px] leading-[58.09px] font-bold text-black'>What topics does the program cover?</h2>
-              <p className='text-[16px] leading-[22px] max-w-[382px] mb-13 mt-5'>The Leadership Circle is a journey that integrates your faith and work life through nine topics divided into three phases:</p>
+              <h2 className='text-[48px] leading-[58.09px] font-bold text-black'>{data.page.leadershipPageFeilds.leadershipFifthSectionFields.leadershipFifthSectionFirstColumnHeading}</h2>
+              <p className='text-[16px] leading-[22px] max-w-[382px] mb-13 mt-5'>{data.page.leadershipPageFeilds.leadershipFifthSectionFields.leadershipFifthSectionFirstColumnDescription}</p>
               <Image
-                src={fourimg}
+                src={data.page.leadershipPageFeilds.leadershipFifthSectionFields.leadershipFifthSectionFirstColumnImages?.node?.link}
                 alt="Transformation Tools"
                 width={387}
                 height={258}
@@ -307,17 +561,18 @@ className='ml-auto'
                 <div className='col-span-2 px-10'>
                   <h3 className='font-bold text-[24px] leading-[20px] text-black mb-6'>Our city today</h3>
                   <p className='font-[16px] leading-[23px] text-black mt-6'>
-                    <b>The Kingdom of God:</b> God’s kingdom is here and now, and yet we long for it to come in its  fullness. How does God’s full story—Creation, Fall, Redemption, and  Restoration—give us a larger context for our city and our lives? And if  God cares about all things and people, what does that mean for each  person’s distinct part in God’s story?
-                  </p>
+                    <b>{data.page.leadershipPageFeilds.leadershipFifthSectionFields.leadershipFifthSectionSecondColumnDescriptionHeading1}</b> 
+                    {data.page.leadershipPageFeilds.leadershipFifthSectionFields.leadershipFifthSectionSecondColumnDescription1} </p>
                   <p className='font-[16px] leading-[23px] text-black mt-6'>
-                    <b>Living in Exile:</b> Over  the years our cities have changed to the point where the Church has lost cultural influence and Christians feel like outsiders. But what is  God’s larger story? And how can we reweave God’s Kingdom throughout our city in ways that promote kingdom culture and flourishing?
-                  </p>
+                    <b>{data.page.leadershipPageFeilds.leadershipFifthSectionFields.leadershipFifthSectionSecondColumnDescriptionHeading2}</b> 
+                    {data.page.leadershipPageFeilds.leadershipFifthSectionFields.leadershipFifthSectionSecondColumnDescription2}  </p>
                   <p className='font-[16px] leading-[23px] text-black mt-6'>
-                    <b>The City:</b> The city is a diverse community; in it we see a higher concentration of people  displaying a greater breadth of God’s image—and we also see a greater  degree of brokenness. But if the city is where we live our our unique  roles, and if God has a plan for each city, what does that mean for how  we should engage with our workplaces? Where are our unidentified  opportunities to introduce God’s shalom right where we are, and how big  could our impact be?
-                  </p>
+                    <b>{data.page.leadershipPageFeilds.leadershipFifthSectionFields.leadershipFifthSectionSecondColumnDescriptionHeading3}</b> 
+                    {data.page.leadershipPageFeilds.leadershipFifthSectionFields.leadershipFifthSectionSecondColumnDescription3}  </p>
                 </div>
                 <div>
-                  <Image src={Pcover} alt="" width={356} height={550} ></Image>
+                  <Image src={data.page.leadershipPageFeilds.leadershipFifthSectionFields.leadershipFifthSectionThirdColumnImage?.node?.link}
+                   alt="" width={356} height={550} ></Image>
                 </div>
               </div>
 
@@ -326,17 +581,17 @@ className='ml-auto'
           </div>
         </section>
         <section className='my-20'>
-                <h2 className='text-[48px] text-black font-bold text-center'>Our lives transformed</h2>
-                <p className='text-[16px] mt-10 text-center text-black'>At the heart of the Leadership Circle lies the transformative journey of its participants.</p>
+                <h2 className='text-[48px] text-black font-bold text-center'>{data.page.leadershipPageFeilds.leadershipSixthSectionFields.leadershipSixthSectionMainHeading}</h2>
+                <p className='text-[16px] mt-10 text-center text-black'>{data.page.leadershipPageFeilds.leadershipSixthSectionFields.leadershipSixthSectionMainDescription}</p>
      
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-20'>
             <div >              
-              <Image src={Integrated} alt="" width={714} height={385} ></Image>            
+              <Image src={data.page.leadershipPageFeilds.leadershipSixthSectionFields.leadershipSixthSectionFirstRowFirstColumnImage?.node?.link} alt="" width={714} height={385} ></Image>            
             </div>
             <div className='flex justify-center items-start flex-col'>
               <div className='max-w-[545px]'>
-                    <h2 className='text-[24px] text-black font-bold leading-[23px] mb-6'>Integrated Lives</h2>
-                    <p className='text-black'>Many Christians, consciously or unconsciously, divide life into separate  compartments: “faith life,” “work life,” “family life.” But God designed us to live singular, integrated lives. What does that look like, and  how do we move towards it? And, if our lives are interconnected with  others as we all share in God’s common grace, how should we contribute  to everyone’s common good?</p>
+                    <h2 className='text-[24px] text-black font-bold leading-[23px] mb-6'>{data.page.leadershipPageFeilds.leadershipSixthSectionFields.leadershipSixthSectionFirstRowSecondColumnHeading}</h2>
+                    <p className='text-black'>{data.page.leadershipPageFeilds.leadershipSixthSectionFields.leadershipSixthSectionFirstRowSecondColumnDescription}</p>
               </div>
             </div>
         </div>
@@ -344,15 +599,15 @@ className='ml-auto'
 
             <div className='flex justify-between items-center gap-5 '>
               <div className='md:w-[50%]'>
-                <Image src={Calling} alt="" width={319} height={375}></Image>
+                <Image src={data.page.leadershipPageFeilds.leadershipSixthSectionFields.leadershipSixthSectionSecondRowFirstColumnImage?.node?.link} alt="" width={319} height={375}></Image>
               </div>
               <div className='md:w-[50%]'>
-                    <h2 className='text-[24px] text-black font-bold leading-[23px] mb-6'>Vocational Calling</h2>
-                    <p className='text-black'>Each person has a unique role in God’s larger story, and, like a Divine  Conductor, God orchestrates the collection of these roles to accomplish  His purposes.  So how can we better understand God’s purpose for our  individual lives? And how can we appreciate the unique roles of others?</p>
+                    <h2 className='text-[24px] text-black font-bold leading-[23px] mb-6'>{data.page.leadershipPageFeilds.leadershipSixthSectionFields.leadershipSixthSectionSecondRowSecondColumnHeading}</h2>
+                    <p className='text-black'>{data.page.leadershipPageFeilds.leadershipSixthSectionFields.leadershipSixthSectionSecondRowSecondColumnDescription}</p>
               </div>
             </div>
             <div >              
-              <Image src={Integrated} alt="" width={714} height={385} ></Image>            
+              <Image src={data.page.leadershipPageFeilds.leadershipSixthSectionFields.leadershipSixthSectionSecondRowThirdColumnImages?.node?.link} alt="" width={714} height={385} ></Image>            
             </div>
         </div>
 
@@ -362,14 +617,14 @@ className='ml-auto'
             <div className='md:w-[50%]'>
             </div>
             <div className='md:w-[50%]'>
-              <Image src={Calling} alt="" width={319} height={375}></Image>
+              <Image src={data.page.leadershipPageFeilds.leadershipSixthSectionFields.leadershipSixthSectionThirdRowFirstColumnImages?.node?.link} alt="" width={319} height={375}></Image>
                  
             </div>
           </div>
           <div className='flex justify-center items-start flex-col' >  
             <div className='max-w-[454px]'>
-          <h2 className='text-[24px] text-black font-bold leading-[23px] mb-6'>Vocational Calling</h2>
-          <p className='text-black'>Each person has a unique role in God’s larger story, and, like a Divine  Conductor, God orchestrates the collection of these roles to accomplish  His purposes.  So how can we better understand God’s purpose for our  individual lives? And how can we appreciate the unique roles of others?</p>
+          <h2 className='text-[24px] text-black font-bold leading-[23px] mb-6'>{data.page.leadershipPageFeilds.leadershipSixthSectionFields.leadershipSixthSectionThirdRowSecondsColumnHeading}</h2>
+          <p className='text-black'>{data.page.leadershipPageFeilds.leadershipSixthSectionFields.leadershipSixthSectionThirdRowSecondsColumnDescription}</p>
               </div>            
           </div>
           </div>
@@ -391,24 +646,23 @@ className='ml-auto'
             <div className="ml-[-20px] w-[52px] h-[52px] bg-white rounded-full"></div>
           </div>
           <h3 className="text-[16px] font-bold text-bold text-black uppercase mt-5">
-            Flagship Program
+          {data.page.leadershipPageFeilds.leadershipSeventhSectionFields.leadershipSeventhSectionSubheading}
           </h3>
           <h1 className="text-[32px] font-bold text-black mt-0">
-            Global Leadership Circle
+          {data.page.leadershipPageFeilds.leadershipSeventhSectionFields.leadershipSeventhSectionMainHeading}
           </h1>
           <p className="text-black text-[16px] w-[400px]">
-            Are you a Christian professional working in business or ministry
-            (non-profit or church)?
+          {data.page.leadershipPageFeilds.leadershipSeventhSectionFields.leadershipSeventhSectionDescription}
           </p>
           {/* Button */}
           <a
-            href="#"
+            href={data.page.leadershipPageFeilds.leadershipSeventhSectionFields.leadershipSeventhSectionButtonLink}
             className="inline-flex items-center mt-20 justify-center w-[132px] h-[40px] text-sm font-bold text-black bg-[#A1CF5F] hover:bg-green-600 rounded-md transition duration-200"
           >
-            Apply Now
+            {data.page.leadershipPageFeilds.leadershipSeventhSectionFields.leadershipSeventhSectionButtonText}
             <span className="ml-2 text-lg">↗</span>
           </a>
-          <Image src={Avatar} width={603} height={510} alt='' className='absolute right-0 top-0 m-0 p-0'></Image>
+          <Image src={data.page.leadershipPageFeilds.leadershipSeventhSectionFields.leadershipSeventhSectionMainImage?.node?.link}  width={603} height={510} alt='' className='absolute right-0 top-0 m-0 p-0'></Image>
         </div>
 
         {/* <div className="relative mt-8 lg:mt-0 lg:w-[60%]">
@@ -428,28 +682,28 @@ className='ml-auto'
         </section>
           {/* Gurpreet Start */}
           <section className='pt-10 pb-10'>
-          <h2 className='mx-auto text-center text-[48px] text-black font-bold text-center' >Our City Renewed</h2>
-          <p  className='text-[16px] mt-6 text-center text-black mx-auto text-center pb-10 '>At the heart of the Leadership Circle lies the transformative journey of its participants.</p>
+          <h2 className='mx-auto text-center text-[48px] text-black font-bold text-center' >{data.page.leadershipPageFeilds.leadershipEightSectionFields.leadershipEightSectionMainHeading}</h2>
+          <p  className='text-[16px] mt-6 text-center text-black mx-auto text-center pb-10 '>{data.page.leadershipPageFeilds.leadershipEightSectionFields.leadershipEightSectionMainDescription}</p>
           <div className='grid grid-cols-1 md:grid-cols-3 '>
             <div className=' py-24 px-[10px]'>
               <div className="h-[280px] grid items-center">
                 <div>
 
-               <h2 className=' text-left text-[20px] text-black font-bold leading-[23px] mb-3 w-[377px]' >Collective Stewardship</h2>
-               <p  className='  text-black text-[16px] leading-[23px] text-left mb-15 w-[377px]'>Embracing God’s call to care for creation, our unity can reveal Jesus as the one sent by God to those observing our collective efforts.</p>
+               <h2 className=' text-left text-[20px] text-black font-bold leading-[23px] mb-3 w-[377px]' >{data.page.leadershipPageFeilds.leadershipEightSectionFields.leadershipEightSectionFirstRowFirstColumnHeading}</h2>
+               <p  className='  text-black text-[16px] leading-[23px] text-left mb-15 w-[377px]'>{data.page.leadershipPageFeilds.leadershipEightSectionFields.leadershipEightSectionFirstRowFirstColumnDescription}</p>
                 </div>
               </div>
-              <Image src={Collective} alt="" width={453} height={280}></Image>
+              <Image src={data.page.leadershipPageFeilds.leadershipEightSectionFields.leadershipEightSectionSecondRowFirstImage?.node?.link} alt="" width={453} height={280}></Image>
           </div>
             <div className=' py-24 px-[10px]'>  
-            <Image src={Collective} alt="" width={453} height={280}></Image>
+            <Image src={data.page.leadershipPageFeilds.leadershipEightSectionFields.leadershipEightSectionFirstRowSecondColumnImage?.node?.link} alt="" width={453} height={280}></Image>
             <div className="h-[280px] grid items-center">
               <div>
 
-               <h2 className='text-left text-[20px] text-black font-bold leading-[23px] mb-3 w-[377px] mt-15' >Societal Impact</h2>
+               <h2 className='text-left text-[20px] text-black font-bold leading-[23px] mb-3 w-[377px] mt-15' >{data.page.leadershipPageFeilds.leadershipEightSectionFields.leadershipEightSectionFirstRowThirdHeading}</h2>
                <p  className='text-black text-[16px] leading-[23px] text-left  w-[377px]'>
-               God positions each person in their city to shape its future. By influencing institutions, we help people experience God's kingdom, leading to flourishing and joy.
-
+               
+               {data.page.leadershipPageFeilds.leadershipEightSectionFields.leadershipEightSectionFirstRowThirdDescription}
                </p>
               </div>
             </div>
@@ -458,11 +712,11 @@ className='ml-auto'
             <div className='py-24 px-[10px]'>
             <div className="h-[280px] grid items-center">
             <div>
-               <h2 className='mx-auto text-left text-[24px] text-black font-bold leading-[23px] mb-6' >Public Square</h2>
-               <p  className='mx-auto text-black text-left'>God seeks shalom in our city, calling us to work with diverse people for the common good, guided by discernment, compassion, and godly wisdom.</p>
+               <h2 className='mx-auto text-left text-[24px] text-black font-bold leading-[23px] mb-6' >{data.page.leadershipPageFeilds.leadershipEightSectionFields.leadershipEightSectionSecondRowSecondHeading}</h2>
+               <p  className='mx-auto text-black text-left'>{data.page.leadershipPageFeilds.leadershipEightSectionFields.leadershipEightSectionSecondRowSecondDescription}</p>
               </div>
               </div>  
-               <Image src={Collective} alt="" width={453} height={280}></Image>
+               <Image src={data.page.leadershipPageFeilds.leadershipEightSectionFields.leadershipEightSectionSecondRowThirdImage?.node?.link} alt="" width={453} height={280}></Image>
           </div>
           </div>
           </div>
@@ -472,25 +726,19 @@ className='ml-auto'
           <VideoPlayer />
 
           <section className='mt-[6rem]'>
-          <h2 className='md:text-[48px] text-[25px] font-bold text-left text-black md:w-[450px]  leading-[49px]'>Tangible outcomes on completion?</h2>
+          <h2 className='md:text-[48px] text-[25px] font-bold text-left text-black md:w-[450px]  leading-[49px]'>
+          {data.page.leadershipPageFeilds.leadershipNinthSection.leadershipNinthSectionMainHeading}
+          </h2>
           <div className='flex mt-15'>
             <div className='flex md:w-8/12'>
               <div className='md:w-2/6 pt-0'>
-              <Image className='' src='/121.png' alt='' width={251} height={251} />
+              <Image className='' src={data.page.leadershipPageFeilds.leadershipNinthSection.leadershipNinthSectionFirstColumnImage?.node?.link} alt='' width={251} height={251} />
               </div>  
-              <div className='md:w-4/6 p-10  pt-0'>
-                  <ul className='list-disc leading-[35px] text-[16px] text-black'>
-                  <li>Have the tools to practice living an integrated life</li>
-                  <li>Have clarity about your role in God’s kingdom</li>
-                  <li>Be more greatly attuned to the stakeholders in your place of influence (work, community, city, etc.)</li>
-                  <li>Be able to describe those stakeholders’ needs and motivate or work with people toward measurable change in those areas of need</li>
-                  <li>Have access to a centralized resource as a result of your cohort’s work</li>
-                </ul><br />
-              <i className='text-black'>Graduates will also be certified to recruit, facilitate, and train future  Leadership Circle cohorts thereby creating exponential impact in other  lives and cities, and many have already been led to do so.</i>
-              </div>
+              <div className='md:w-4/6 p-10  pt-0' >{data.page.leadershipPageFeilds.leadershipNinthSection.leadershipNinthSectionSecondColumnText}
+             </div>
             </div>
             <div className='md:w-4/12'>
-            <Image className='' src='/122.png' alt='' width={1000} height={1000} />
+            <Image className='' src={data.page.leadershipPageFeilds.leadershipNinthSection.leadershipNinthSectionThirdColumnImage?.node?.link} alt='' width={1000} height={1000} />
             </div>
           </div>
 
@@ -499,31 +747,28 @@ className='ml-auto'
             <div className='flex w-[90%] mx-auto md:py-20'>
               <div className='w-6/12 border-b border-[#252525]'>
               <h2 className='md:text-[15px] text-[10px] font-bold text-left text-white md:w-[50%] md:p-5 '>
-              Empowering Leaders to Create Meaningful Change through City Renewal Projects
+             {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionFirstColumnText}
               </h2>
               
               </div>
               <div className='w-6/12 '>
               <h1 className="text-5xl font-semibold leading-tight text-white  mb-6">
-              City Renewal Projects Creating Lasting Impact for Communities and Workplaces
+              {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnHeading}
                 </h1>
                 <p className="text-white leading-relaxed mb-4">
-                 Before graduating, participants create a City Renewal Project to address a key need in their city or workplace. With skills gained in the Leadership Circle, graduates can partner with others, regardless of faith, to create lasting, meaningful change.
-                </p>
+                {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnDescription1} </p>
                 <p  className="text-white leading-relaxed mb-4">
-                We offer a framework to plan and execute City Renewal Projects, which participants present at graduation. Past projects include efforts toward cultural and systemic restoration such as combatting poverty through 
-               <span className="text-[#A1CF5F] underline cursor-pointer">
-                serving the underbanked, providing affordable housing
+                {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnDescription2}<span className="text-[#A1CF5F] underline cursor-pointer">
+                {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnDescriptionGreenColor}
                   </span> and more.
                 </p>
                 <p className="text-white leading-relaxed">
-                A Renewal Project seeks to bring about positive change. It focuses on what breaks God's heart, aligning with what moves us deeply, as we share in God's joy when things work as they should.
-                  </p> <br />
+                {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnDescription3}  </p> <br />
               </div>
             </div>
             <div className=''>
             <h2 className="md:text-[47px] text-[25px] font-bold text-left text-white md:w-[40%] md:p-5 leading-[49px]">
-            There are three areas where Renewal Projects can focus
+             {data.page.leadershipPageFeilds.leadershipEleventhSection.leadershipEleventhSectionMainHeading}
             </h2>
             <div className='flex'>
               
@@ -531,30 +776,36 @@ className='ml-auto'
                                       
                                        
                                        <div className='m-5 pb-3'>
-                                          <Image width={50} height={50} alt="" src='/78.png' className="mx-auto md:mx-0"  />
-                                          <h5 className="text-white text-[18px] w-[60%] md:text-left text-center">in the community or city around us</h5>
+                                          <Image width={50} height={50} alt="" src={data.page.leadershipPageFeilds.leadershipEleventhSection.leadershipEleventhSectionFirstSection[0].leadershipEleventhFirstImage?.node?.link} className="mx-auto md:mx-0"  />
+                                          <h5 className="text-white text-[18px] w-[60%] md:text-left text-center">
+                                          {data.page.leadershipPageFeilds.leadershipEleventhSection.leadershipEleventhSectionFirstSection[0].leadershipEleventhFirstText}
+                                          </h5>
                                           </div>
                                           <div className='m-5  pb-3'>
-                                          <Image width={50} height={50} alt="" src='/79.png' className="mx-auto md:mx-0"  />
-                                          <h5 className="text-white text-[18px] w-[60%] md:text-left text-center">within our personal workplaces</h5>
+                                          <Image width={50} height={50} alt="" src={data.page.leadershipPageFeilds.leadershipEleventhSection.leadershipEleventhSectionFirstSection[1].leadershipEleventhFirstImage?.node?.link} className="mx-auto md:mx-0"  />
+                                          <h5 className="text-white text-[18px] w-[60%] md:text-left text-center">
+                                          {data.page.leadershipPageFeilds.leadershipEleventhSection.leadershipEleventhSectionFirstSection[1].leadershipEleventhFirstText}
+                                          </h5>
                                           </div>
                                           <div className='m-5  pb-3'>
-                                          <Image width={50} height={50} alt="" src='/80.png' className="mx-auto md:mx-0"  />
-                                          <h5 className="text-white text-[18px] w-[60%] md:text-left text-center">for others to benefit from the Leadership Circle itself.</h5>
+                                          <Image width={50} height={50} alt="" src={data.page.leadershipPageFeilds.leadershipEleventhSection.leadershipEleventhSectionFirstSection[2].leadershipEleventhFirstImage?.node?.link} className="mx-auto md:mx-0"  />
+                                          <h5 className="text-white text-[18px] w-[60%] md:text-left text-center">
+                                          {data.page.leadershipPageFeilds.leadershipEleventhSection.leadershipEleventhSectionFirstSection[2].leadershipEleventhFirstText}
+                                          </h5>
                                           </div>
                                       </div>
                
                   <div className='w-9/12 pb-20'>
-                      <Image className='' alt='' width={1000} height={1000} src='/123.png' />
+                      <Image className='' alt='' width={1000} height={1000} src={data.page.leadershipPageFeilds.leadershipEleventhSection.leadershipEleventhSectionSecondImage?.node?.link} />
 
                       <p className=" w-[45%] text-gray-300 leading-relaxed my-8">
-                      When these projects get implemented, we call the resultant entity an Impact Group.
+                      {data.page.leadershipPageFeilds.leadershipEleventhSection.leadershipEleventhSectionSecondDescription}
               </p>
               <Link
-                href="#"
+                href= {data.page.leadershipPageFeilds.leadershipEleventhSection.leadershipEleventhSectionSecondButtonLink}
                 className="bg-[#A1CF5F] mb-10  text-black font-semibold py-2 px-4 rounded "
               >
-                Apply Now
+                {data.page.leadershipPageFeilds.leadershipEleventhSection.leadershipEleventhSectionSecondButtonText}
                 <span className="ml-2">↗</span>
               </Link>
               
@@ -566,54 +817,52 @@ className='ml-auto'
 
             <section className='container w-[85%] mx-auto py-20'>
             <h1 className="text-5xl w-[40%] font-bold leading-tight text-[#000000] mb-6">
-            Who is This Program Right For?
+            {data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionMainHeading}
                 </h1>
              <div className='flex'>
                <div className='w-1/2'>
                 
-                 <p className="text-[#000000] leading-relaxed mb-4">
-                 The  Leadership Circle is often best fit for mid to late career leaders who  can commit the time to participate. But don’t let the term “leader”  deter you if you’re not sure that describes you.
-                </p>
+                 <p className="text-[#000000] leading-relaxed mb-4"
+                 
+                >{data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionFirstRowFirstColumn}
+                 </p>
+                {/* <p className="text-[#000000] leading-relaxed">
+                {data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionMainHeading}  </p>
                 <p className="text-[#000000] leading-relaxed">
-                While the term “leader” may describe  someone who holds an executive title or senior level position, we also  define a leader as someone who is well positioned for potential impact.  We talk about workplace impact often, but your potential for impact in a non-work-related community (such as your church, school, association,  etc.) is equally valid.
-                </p>
-                <p className="text-[#000000] leading-relaxed">
-                We have had entrepreneurs, artists,  coaches, public servants, and people from many different backgrounds  come through the Leadership Circle and find it very enriching.
-                </p>
-                </div>
+                {data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionMainHeading} </p>*/}
+                </div> 
                 <div className='w-1/2'>
-                <p className="text-[#000000] leading-relaxed mb-4">
-                We look for a balance of men and women  from a broad range of professions and diverse cultural backgrounds with  varying levels of leadership and responsibility.
-                </p>
-                <p className="text-[#000000] leading-relaxed">
-                If you’re not sure, please apply anyway – you will have the opportunity to speak to one of our facilitators to  explore your questions further.
-                </p>
+                <p className="text-[#000000] leading-relaxed mb-4"
+                 
+                >{data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionFirstRowSecondColumnDescription}
+                  </p>
+                {/* <p className="text-[#000000] leading-relaxed">
+                {data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionMainHeading}  </p> */}
 
                 </div>
               </div>
 
               <div className='flex'>
                       <div className='w-1/2 grid p-[60px] items-center'>
-                      <h2 className='text-[#000000] font-bold'>See What’s Happening in Real Time</h2>
+                      <h2 className='text-[#000000] font-bold'>{data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionSecondRowFirstColumnHeading}</h2>
                       <hr className='w-[50%] '/>
-                      <p className="text-[#000000] leading-relaxed"> Stay connected with us through Instagram Reels! 
+                      <p className="text-[#000000] leading-relaxed">{data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionSecondRowFirstColumnDescription}
                       </p>
                       </div>
                       <div className='w-1/2 relative'>
-                        <Image src='/124.png' className='' alt='' width={1000} height={1000} />
-                        <Image src='/125.png' className='absolute top-[10px] left-[-70px]' alt='' width={200} height={200} />
+                        <Image src={data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionSecondRowSecondColumnImage2?.node?.link} className='' alt='' width={1000} height={1000} />
+                        <Image src={data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionSecondRowSecondColumnImage1?.node?.link} className='absolute top-[10px] left-[-70px]' alt='' width={200} height={200} />
                      </div>
               </div>
             </section>
             <section>
           <h1 className="md:py-[42px] mt-4 py-[30px] max-w-[850px] md:text-[40px] text-[20px]  font-bold text-center text-black  p-5 mx-auto md:leading-[48px] ">
-          If you’re not sure, please apply anyway  you will have the opportunity to speak to one of our facilitators to explore your questions further.
-          </h1>
+          {data.page.leadershipPageFeilds.leadershipThirteenSection.leadershipThirteenSectionHeading}</h1>
           <Link
-                  href='#'
+                  href={data.page.leadershipPageFeilds.leadershipThirteenSection.leadershipThirteenSectionButtonLink}
                   className="mx-auto flex w-fit  items-center gap-2.5 inline-block  bg-[#A1CF5F] font-bold text-black  text-[13px] md:text-sm py-1 md:py-3 px-6 rounded-lg transition duration-300"
                 >
-                 Learn More<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+                {data.page.leadershipPageFeilds.leadershipThirteenSection.leadershipThirteenSectionButtonText}<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                     <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                       <path d="M1 13 13 1M4 1h9v9"></path>
                     </g>
@@ -625,31 +874,31 @@ className='ml-auto'
   <div className=" ">
     <img
       className=""
-      src="/image.png"
+      src={data.page.leadershipPageFeilds.vantageFormThirdSection.vantageFormThirdSectionImage1?.node?.link}
     />
   </div>
   <div className=" ">
     <img
       className=""
-      src="/image-3.png"
+      src={data.page.leadershipPageFeilds.vantageFormThirdSection.vantageFormThirdSectionImage2?.node?.link}
     />
   </div>
   <div className=" ">
   <img
       className=""
-      src="/image-1.png"
+      src={data.page.leadershipPageFeilds.vantageFormThirdSection.vantageFormThirdSectionImage3?.node?.link}
     />
   </div>
   <div className="] ">
   <img
       className=""
-      src="/image-4.png"
+      src={data.page.leadershipPageFeilds.vantageFormThirdSection.vantageFormThirdSectionImage4?.node?.link}
     />
   </div>
   <div className="  ">
   <img
       className=""
-      src="/image-2.png"
+      src={data.page.leadershipPageFeilds.vantageFormThirdSection.vantageFormThirdSectionImage5?.node?.link}
     />
   </div>
 </div>

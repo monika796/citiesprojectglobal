@@ -55,15 +55,17 @@ const FifthSection = ({ data, Video_gif }) => {
           {/* Black Box for Video */}
           <div className="bg-[rgb(3, 4, 2)] pr-5 rounded-lg">
           {isPlaying ? (
-                     
-                     <Image
-                     src={Video_gif}
-                     className="hidden"
-                     alt="Video gif"
-                     width={100}
-                     height={100}
-                     onClick={handleVideoClick}
-                   />
+                    <button
+                    className="absolute inset-0 flex items-center justify-center  text-white text-3xl rounded-full"
+                    
+                  >
+                    <svg fill="#fff" height="50px" width="50px" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <g>
+                        <path d="M224,435.8V76.1c0-6.7-5.4-12.1-12.2-12.1h-71.6c-6.8,0-12.2,5.4-12.2,12.1v359.7c0,6.7,5.4,12.2,12.2,12.2h71.6C218.6,448,224,442.6,224,435.8z"/>
+                        <path d="M371.8,64h-71.6c-6.7,0-12.2,5.4-12.2,12.1v359.7c0,6.7,5.4,12.2,12.2,12.2h71.6c6.7,0,12.2-5.4,12.2-12.2V76.1C384,69.4,378.6,64,371.8,64z"/>
+                      </g>
+                    </svg>
+                  </button>
                       ) : (
                         <Image
                         src={Video_gif}
@@ -83,6 +85,7 @@ const FifthSection = ({ data, Video_gif }) => {
               onClick={handleVideoClick}
               poster={data.page.homefifthsection.fifthfirstimage?.node?.link}
             ></video>
+            
           </div>
 
           {/* Buttons */}

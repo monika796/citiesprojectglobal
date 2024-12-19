@@ -63,7 +63,7 @@ const SubscriptionForm = () => {
           </p>
           <button
             type="submit"
-            className="mx-auto md:mx-0 font-bold md:w-[23%] w-[28%] bg-[#A1CF5F] md:p-[8px] p-[10px] text-black rounded-[7px] text-[15px]"
+            className="mx-auto md:mx-0 font-bold md:w-[31%] w-[28%] bg-[#A1CF5F] md:p-[8px] p-[10px] text-black rounded-[7px] text-[15px]"
           >
             Submit
           </button>
