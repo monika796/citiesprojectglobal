@@ -115,10 +115,10 @@ const CustomSlider = () => {
               centeredSlides={true}
               spaceBetween={30}
               slidesPerView={3}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
+              // autoplay={{
+              //   delay: 2500,
+              //   disableOnInteraction: false,
+              // }}
               pagination={{
                 clickable: true,
               }}
@@ -193,10 +193,10 @@ const CustomSlider = () => {
               centeredSlides={true}
               spaceBetween={30}
               slidesPerView={3}
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-              }}
+              // autoplay={{
+              //   delay: 3000,
+              //   disableOnInteraction: false,
+              // }}
               pagination={{
                 clickable: true,
               }}
@@ -212,11 +212,12 @@ const CustomSlider = () => {
               {sliderData.map((slide) => (
                 <SwiperSlide key={slide.id} className="swiper-slide-custom">
                   <div className="relative grid place-items-center">
-                  <Image src={slide.imgSrc}
+                  {/* <Image src={slide.imgSrc}
                       className="object-contain w-full rounded-lg"
                       alt={slide.title} width={800} height={800}
-                     / >
-                   
+                     / > */}
+                    <div  className="relative w-full   bg-cover bg-center rounded h-[300px] "
+          style={{ backgroundImage: `url('${slide.imgSrc}')` }}></div>
                     <p className="absolute top-11  left-10 text-white bg-black px-2 py-0 rounded-full text-sm">
                       {slide.date}
                     </p>

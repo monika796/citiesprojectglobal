@@ -78,7 +78,7 @@ export default   function  Newsletter() {
       <div className="md:flex w-[100%] mx-auto bg-[#000000] p-5">
         <div className="md:w-6/12 md:p-30">
           <h3
-            className={`${anton.className} uppercase text-center md:text-left md:text-[55px] text-[41px] text-white font-light leading-[50px]`}
+            className={`${anton.className} uppercase text-center md:text-left md:text-[55px] text-[41px] text-white font-light leading-[60px]`}
           >
             {data.page.newsletter.mainheading}
           </h3>

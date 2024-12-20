@@ -13,8 +13,8 @@ const BlogCard = ({ image, index, date, title, description, linkText, linkHref }
           <div className="border rounded-lg shadow-sm p-6 flex flex-col justify-between h-[483px]">
             <p className="text-sm text-gray-500">{date}</p>
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 mt-2">{title}</h3>
-              <div className="text-gray-700 mt-2">{parse(description || '')}</div>
+              <h3 className="text-xl font-semibold text-gray-900 mt-2 truncate">{title}</h3>
+              <div className="text-gray-700 mt-2 line-clamp-5">{parse(description || '')}</div>
               <Link
                 href={`blog/blog-details?id=${linkHref} `}
                 className="flex items-center gap-2.5 w-fit mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300"
@@ -42,8 +42,8 @@ const BlogCard = ({ image, index, date, title, description, linkText, linkHref }
           <div className="border rounded-lg shadow-sm p-6 flex flex-col justify-between h-[483px]">
             <p className="text-sm text-gray-500">{date}</p>
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 mt-2">{title}</h3>
-              <div className="text-gray-700 mt-2">{parse(description || '')}</div>
+              <h3 className="text-xl font-semibold text-gray-900 mt-2 ">{title}</h3>
+              <div className="text-gray-700 mt-2 line-clamp-5 ">{parse(description || '')}</div>
               <Link
                 href={`blog/blog-details?id=${linkHref} `}
                 className="flex items-center gap-2.5 w-fit mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300"
