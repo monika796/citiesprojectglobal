@@ -17,6 +17,8 @@ import Link from 'next/link';
 import Newsletter from '@/components/Newsletter';
 import { gql } from '@apollo/client';
 import client from 'apollo-client';
+import parse from "html-react-parser";
+
 
 const POSTS_QUERY = gql 
 `query MyQuery2 {
@@ -768,7 +770,7 @@ className='ml-auto'
               <div className='md:w-2/6 pt-0 w-full'>
               <Image className='w-full' src={data.page.leadershipPageFeilds.leadershipNinthSection.leadershipNinthSectionFirstColumnImage?.node?.link} alt='' width={251} height={251} />
               </div>  
-              <div className='md:w-4/6 p-0 md:p-10  py-10 md:py-0' >{data.page.leadershipPageFeilds.leadershipNinthSection.leadershipNinthSectionSecondColumnText}
+              <div className='md:w-4/6 p-0 md:p-10  py-10 md:py-0' >{parse(data.page.leadershipPageFeilds.leadershipNinthSection.leadershipNinthSectionSecondColumnText || '')}
              </div>
             </div>
             <div className='md:w-4/12'>
@@ -856,20 +858,21 @@ className='ml-auto'
              <div className='flex flex-wrap md:flex-nowrap mt-15 gap-10 mb-15'>
                <div className='w-full md:w-1/2'>
                 
-                 <p className="text-[#000000] leading-relaxed mb-4"
+                 <div className="text-[#000000] leading-relaxed mb-4"
                  
-                >{data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionFirstRowFirstColumn}
-                 </p>
+                >
+                {parse(data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionFirstRowFirstColumn || '')}
+                 </div>
                 {/* <p className="text-[#000000] leading-relaxed">
                 {data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionMainHeading}  </p>
                 <p className="text-[#000000] leading-relaxed">
                 {data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionMainHeading} </p>*/}
                 </div> 
                 <div className='w-full md:w-1/2'>
-                <p className="text-[#000000] leading-relaxed mb-4"
+                <div className="text-[#000000] leading-relaxed mb-4"
                  
-                >{data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionFirstRowSecondColumnDescription}
-                  </p>
+                >{parse(data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionFirstRowSecondColumnDescription || '')}
+                  </div>
                 {/* <p className="text-[#000000] leading-relaxed">
                 {data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionMainHeading}  </p> */}
 

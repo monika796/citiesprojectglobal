@@ -123,19 +123,19 @@ export default async function Book() {
                         <h2 className="font-bold text-gray-800 text-center md:text-left text-3xl md:text-[48px] text-[25px] leading-tight mb-4"> {data.page.bookPageFeilds.bookThirdSectionRightHeading}</h2>
                         <p className="text-gray-500 text-[18px] md:text-lg text-center  md:text-left md:text-xl leading-relaxed mb-6">{data.page.bookPageFeilds.bookThirdSectionRightDescription}</p>
                         <div className="md:flex gap-5">
-                            <button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]" >
+                           <Link href={data.page.bookPageFeilds.bookThirdSectionRightButtonOneLink.url}> <button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]" >
                             {data.page.bookPageFeilds.bookThirdSectionRightButtonOne}
                                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                                  <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                                     <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
-                                    </button>
+                                    </button></Link>
                                     <br className="hidden md:block" />
-                                    <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
+                                    <Link href={data.page.bookPageFeilds.bookThirdSectionRightButtonTwoLink}> <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
                                     {data.page.bookPageFeilds.bookThirdSectionRightButtonTwo}
                                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                                          <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                                             <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
-                                            </button>
+                                            </button></Link>
                           </div>
                         </div>
                     </div>

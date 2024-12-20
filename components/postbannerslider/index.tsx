@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard, Mousewheel, Autoplay } from "swiper/modules";
 import Image from "next/image";
-
+import Link from "next/link";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -22,6 +22,7 @@ const POSTS_QUERY = gql`
           }
         }
         title
+        id
       }
     }
   }
@@ -34,6 +35,7 @@ interface Post {
     };
   };
   title: string;
+  id:string;
 }
 
 const SwiperSection = () => {
@@ -62,10 +64,10 @@ const SwiperSection = () => {
         <div className="w-full h-auto">
           <Swiper
             modules={[Navigation, Pagination, Keyboard, Mousewheel, Autoplay]}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
+            // autoplay={{
+            //   delay: 4000,
+            //   disableOnInteraction: false,
+            // }}
             pagination={{
               clickable: true,
             }}
@@ -81,9 +83,11 @@ const SwiperSection = () => {
                 className="flex justify-center items-center text-lg bg-white"
               >
                 <div className="flex">
-                  <div className="w-1/3">
-                  <Image src={post.featuredImage?.node?.link || "placeholder.png"}
-                      alt={post.title} layout="responsive" width={16} height={9} />
+                  <div className="w-1/3   bg-cover bg-center"
+                   style={{ backgroundImage: `url('${post.featuredImage?.node?.link}')` }}>
+
+                  {/* <Image src=
+                      alt={post.title} width={1000} height={1000} /> */}
                     
                   </div>
                   <div className="w-2/3 grid p-2">
@@ -92,8 +96,8 @@ const SwiperSection = () => {
                         Latest Stories
                       </p>
                     </div>
-                    <p className="text-[16px] font-bold text-black leader-[19.36px] pl-1">{post.title || "Untitled"}</p>
-                    <p className="text-[13px] underline uppercase text-black">Read more</p>
+                    <p className="text-[16px] h-[84px] font-bold text-black leader-[19.36px] pl-1">{post.title || "Untitled"}</p>
+                    <Link href={`/blog/blog-details?id=?${post.id}`}><p className="text-[13px] underline uppercase text-black">Read more</p></Link>
                   </div>
                 </div>
               </SwiperSlide>

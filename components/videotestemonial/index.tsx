@@ -10,7 +10,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import ReactPlayer from "react-player";
 import { motion } from "framer-motion";
 import { gql, useQuery } from '@apollo/client';
-
+import Link from "next/link";
 const POSTS_QUERY = gql`
 query {
   page(id: "cG9zdDoxNg==") {
@@ -31,7 +31,7 @@ const VideoCarousel = () => {
   const { loading, error, data } = useQuery(POSTS_QUERY);
   const [playingVideos, setPlayingVideos] = useState<{ [key: number]: boolean }>({}); // State to track playing state for each video
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return ;
   if (error) return <p>Error: {error.message}</p>;
 
   const videoData = data.page.homevideobanner.videoslider.map((videoslider, index) => ({
@@ -63,7 +63,7 @@ const VideoCarousel = () => {
           <p className="py-3 text-[16px] text-gray-900 text-center md:text-left ">
             {data.page.homevideobanner.videosubtitle}
           </p>
-          <p className="flex gap-2 text-[16px] underline text-center md:text-left md:justify-start justify-center text-black font-extrabold">
+          <Link href='https://www.instagram.com/citiesprojectglobal/' ><p className="flex gap-2 text-[16px] underline text-center md:text-left md:justify-start justify-center text-black font-extrabold">
             {data.page.homevideobanner.linktext} 
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 56.7 56.7" fill="#000000">
     <g>
@@ -72,7 +72,7 @@ const VideoCarousel = () => {
       <path d="M49,8.9c-2.6-2.7-6.3-4.1-10.5-4.1H17.9c-8.7,0-14.5,5.8-14.5,14.5v20.5c0,4.3,1.4,8,4.2,10.7c2.7,2.6,6.3,3.9,10.4,3.9 h20.4c4.3,0,7.9-1.4,10.5-3.9c2.7-2.6,4.1-6.3,4.1-10.6V19.3C53,15.1,51.6,11.5,49,8.9z M48.6,39.9c0,3.1-1.1,5.6-2.9,7.3 s-4.3,2.6-7.3,2.6H18c-3,0-5.5-0.9-7.3-2.6C8.9,45.4,8,42.9,8,39.8V19.3c0-3,0.9-5.5,2.7-7.3c1.7-1.7,4.3-2.6,7.3-2.6h20.6 c3,0,5.5,0.9,7.3,2.7c1.7,1.8,2.7,4.3,2.7,7.2V39.9L48.6,39.9z"/>
     </g>
   </svg>
-          </p>
+          </p></Link>
         </div>
 
         <div className="md:w-8/12 p-5">
