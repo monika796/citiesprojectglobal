@@ -78,7 +78,7 @@ const BlogPage = async () => {
    console.log(data);
 return (
 <>
-<main>
+<main className="md:w-[90%] mx-auto"> 
    <h1 className="md:py-[42px] md:w-[45%] mt-4 py-[30px] md:text-[64px] text-[25px] leading-[38px]  font-bold  md:leading-[77px] text-center text-black  p-5 mx-auto md:leading-[77px] ">
      {data.page.blogPageFeilds.blogPageMainHeading} 
    </h1>

@@ -33,6 +33,23 @@ query MyQuery2 {
         }
       }
       secondContactSectionHeading
+      thirdSectionCenterFirstButton
+      thirdSectionCenterHeading
+      thirdSectionCenterSecondButton
+      thirdSectionCenterSubHeading
+      thirdSectionCenterUppertext
+      thirdSectionCenterFirstButtonLink
+      thirdSectionCenterSecondButtonLink
+      thirdSectionLeftImage {
+        node {
+          link
+        }
+      }
+      thirdSectionRightImage {
+        node {
+          link
+        }
+      }
     }
   }
 }`;
@@ -45,6 +62,15 @@ interface ContactPageFields {
   secondContactSectionFormHeading: string;
   secondContactSectionImage?: { node?: { link?: string } };
   secondContactSectionHeading: string;
+  thirdSectionCenterFirstButtonLink: string;
+  thirdSectionCenterSecondButtonLink: string;
+  thirdSectionCenterFirstButton: string;
+      thirdSectionCenterHeading: string;
+      thirdSectionCenterSecondButton: string;
+      thirdSectionCenterSubHeading: string;
+      thirdSectionCenterUppertext: string;
+      thirdSectionLeftImage?: { node?: { link?: string } };
+      thirdSectionRightImage?: { node?: { link?: string } };
 }
 
 interface Page {
@@ -60,7 +86,7 @@ const Contact = async (): Promise<JSX.Element> => {
     query: POSTS_QUERY,
   });
   const fields = response.data.page.contactpagefeilds;
-
+ console.log(fields);
   return (
     <main className="md:w-[80%] mx-auto">
       <div className="container mx-auto pt-10 md:pt-20 max-w-[1480px]">
@@ -100,51 +126,45 @@ const Contact = async (): Promise<JSX.Element> => {
       />
               </div>
               <div className="md:w-1/2">
-                <h3 className={`${anton.className} uppercase text-center md:text-left md:text-[55px] text-[30px] text-[#000000] font-light leading-[50px]`}>
+                <h3 className={`${anton.className} uppercase text-center md:text-left md:text-[55px] text-[30px] text-[#000000] font-light leading-[68px]`}>
                   {fields.secondContactSectionHeading}
                 </h3>
-                <p className="text-[#000000] text-center md:text-left">
+                <p className="md:w-[65%] text-[#000000] text-center md:text-left">
                   {fields.secondContactSectionDescription}
                 </p>
               </div>
             </div>
           </div>
           <div className="md:w-4/12 md:p-15 p-5 md:border-l md:border-[#dbdbdb78]">
-            <p className="text-[#000000] pb-[20px] text-center md:text-left font-extrabold text-[18px]">
+            <p className="md:w-[75%] text-[#000000] pb-[20px] text-center md:text-left font-extrabold text-[18px]">
               {fields.secondContactSectionFormHeading}
             </p>
-            {/* <form action="https://digitractive.com/cityprojectglobal/wp-json/newsletter/v1/subscribe" method="POST" className="grid gap-[1px]">
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                className="bg-transparent border border-[#3d3c3c26] p-[10px]"
-                required
-              />
-              <br />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                className="bg-transparent border border-[#3d3c3c26] p-[10px]"
-                required
-              />
-              <label className="text-[20] text-black pt-8 pb-5 font-normal text-left decoration-slice">
-                Please Confirm*
-              </label>
-              <p className="text-[15px] p-2 font-normal text-left decoration-slice">
-                <input type="checkbox" /> I want to subscribe to all CPG emails
-              </p>
-              <button
-                type="submit"
-                className="mx-auto md:mx-0 font-bold md:w-[23%] w-[28%] bg-[#A1CF5F] md:p-[8px] p-[10px] text-black rounded-[7px] text-[15px]"
-              >
-                Submit
-              </button>
-            </form> */}
+
             <SubscriptionForm />
           </div>
         </div>
+
+        <section className="container mx-auto md:pb-15">
+                    <div className="md:flex">
+                        <div className="md:w-3/12 relative grid justify-center items-center p-10">
+                        <Image  width={1000} height={1000} className="md:absolute bottom-0" alt='' src={fields.thirdSectionLeftImage?.node?.link || '/default-image.png'} />
+                        </div>
+                        <div className="md:w-6/12 text-center mx-auto p-5 md:p-20">
+                        <h3 className="text-[15px] bg-[#fff] text-black font-bold mx-auto text-center border w-fit px-[14px]  rounded-[20px]">{fields.thirdSectionCenterUppertext}</h3>
+                        <h2 className="font-bold text-black  mx-auto text-center    md:text-[38px] text-[25px] leading-tight mb-4">{fields.thirdSectionCenterHeading}</h2> 
+                          <p className="text-[#000000]  md:w-[80%] md:text-[18px] mx-auto text-center ">{fields.thirdSectionCenterSubHeading}</p> 
+                          <div className="md:flex gap-5 md:pt-10 justify-center items-center ">
+                          <Link href={fields.thirdSectionCenterFirstButtonLink} >  <button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]" >{fields.thirdSectionCenterFirstButton}<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></button></Link> <br className="hidden md:block" />
+                          
+                          <Link href={fields.thirdSectionCenterSecondButtonLink} > <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >{fields.thirdSectionCenterSecondButton}<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></button>
+                          </Link> </div> 
+                     </div>
+                         
+                            <div className="md:w-3/12 grid justify-center relative items-center  p-10">
+                            <img src={fields.thirdSectionRightImage?.node?.link || '/default-image.png'} className="md:absolute top-0 right-0" alt='' />
+                            </div>
+                    </div>
+                </section>
 
         <Partner />
         <Newsletter />

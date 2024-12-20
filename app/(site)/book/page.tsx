@@ -107,13 +107,13 @@ export default async function Book() {
   console.log(data);
     return (
         <main className="container mx-auto max-w-[1480px]">
-            <h1 className="md:py-[42px] py-[30px] md:text-[64px] text-[25px] font-bold text-center text-black md:max-w-[1178px] p-5 mx-auto md:leading-[77.45px] ">
+            <h1 className="md:py-[42px] py-[30px] md:text-[60px] text-[25px] font-bold text-center text-black md:max-w-[1178px] p-5 mx-auto md:leading-[77.45px] ">
            {data.page.bookPageFeilds.bookFirstSectionMainHeading}</h1>
                   <section className="md:py-[42px] md:p-0 p-3">
                     <Image src={data.page.bookPageFeilds.bookSecondSectionImage?.node?.link} className=" mx-auto" alt="" layout="responsive" width={16} height={9} />
                     
                   </section >
-                  <div className="container mx-auto">
+                  <div className="container mx-auto  md:max-w-[1280px]">
                     <div className="md:flex">
                         <div className="md:w-5/12 border-r">
                         <Image src={data.page.bookPageFeilds.bookThirdSectionLeftImage?.node?.link} className="w-[50%] md:w-[70%] mx-auto"  alt='' layout="responsive" width={16} height={9} />
@@ -142,7 +142,7 @@ export default async function Book() {
                   </div>
 
 
-                  <div className="container mx-auto md:py-15">
+                  <div className="container mx-auto  md:py-15">
                   <div className="md:flex">
                     
                         <div className="md:w-2/5 bg-[#000000] p-20 grid justify-center items-center">
@@ -169,7 +169,7 @@ export default async function Book() {
                     <div className="container mx-auto "> 
                        <section className="mx-auto grid gap-[37px] pt-[50px] md:pt-[100px] md:pb-[100px] ">
               <Image alt="" width={80} height={80}  src="/76.png" className="mx-auto" />
-              <h1 className={`${anton.className} text-[48px] font-normal  text-center text-[#000000] leading-[72.26px] w-[90%] md:max-w-[1,108px] mx-auto`}>
+              <h1 className={`${anton.className} text-[48px] font-normal  text-center text-[#000000] leading-[72.26px] md:w-[75%] md:max-w-[1,108px] mx-auto`}>
               {data.page.bookPageFeilds.bookFifthReviewSectionHeading}</h1>
               <h4 className={`${anton.className} text-[20px] font-normal  text-center text-[#aed575]`}>
               {data.page.bookPageFeilds.bookFifthReviewSectionDescription}
@@ -216,7 +216,7 @@ export default async function Book() {
                 <div className="container mx-auto md:py-15">
                     <div className="md:flex">
                         <div className="md:w-1/2 p-2 relative">
-                        <h2 className="font-bold text-black text-center md:text-left   text-[48px] leading-tight mb-4"> {data.page.bookPageFeilds.bookEigthSectionMainHeading}</h2>
+                        <h2 className="font-bold text-black text-center md:text-left  w-[75%] text-[48px] leading-tight mb-4"> {data.page.bookPageFeilds.bookEigthSectionMainHeading}</h2>
                         <p className="font-normal  text-center md:text-left text-[16px]  text-black pb-3"> {data.page.bookPageFeilds.bookEigthSectionMainLeftDescription}</p>
                         <Image src={data.page.bookPageFeilds.bookEigthSectionMainLeftImage?.node?.link} className="md:absolute md:mx-0 mx-auto bottom-[29%] right-3 " alt=''  width={287} height={225}></Image>
 
@@ -243,7 +243,7 @@ export default async function Book() {
                         
                         </div>
                         <div className="md:w-1/2 p-2">
-                          <p className="font-normal text-[14px] text-center md:text-left  md:w-[48%] float-left  text-black pb-3">        
+                          <p className="font-normal text-[14px] text-center md:text-left  md:w-[48%] float-right  text-black pb-3">        
                           {data.page.bookPageFeilds.bookNinthSectionMainRightDescription}
                           </p>
                         </div>

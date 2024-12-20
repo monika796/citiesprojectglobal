@@ -79,7 +79,7 @@ const Footer = () => {
                     <Link href="/leadership" className=" hover:underline">Global Leadership <br className="md:hidden block" /> Circle</Link>
                 </li>
                 <li className="mb-4">
-                    <Link href="#" className="hover:underline">VantagePoint™</Link>
+                    <Link href="/vantage/form" className="hover:underline">VantagePoint™</Link>
                 </li>
                 
             </ul>

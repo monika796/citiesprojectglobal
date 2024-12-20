@@ -72,7 +72,7 @@ export default async function Book() {
       const data = await fetchData();
       // console.log(data.page.donatePageFeilds.donate_fourth_section_scrolltext);
     return (
-        <main className="md:w-[100%] pt-10  mx-auto">
+        <main className="md:w-[90%] pt-10  mx-auto">
             <h1 className="md:py-[15px] pt-10 py-[10px] md:text-[40px] text-[25px] font-bold text-center text-black md:w-[52%]     mx-auto md:leading-[49px] "> {data.page.donatePageFeilds.donateFirstSectionMainHeading}</h1>
             <h5 className="text-[18px]  text-black md:w-[52%] mx-auto text-center"> {data.page.donatePageFeilds.donateFirstSectionMainDescription}</h5>
             <DonationFaq />
