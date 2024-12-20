@@ -8,7 +8,7 @@ import Image from "next/image";
 import { gql } from "@apollo/client";
 import client from "apollo-client";
 import { useSearchParams } from "next/navigation";
-import PostSlider from "@/components/PostSlider";
+import BlogCustomSlider from "@/components/BlogPostSlider";
 
 // Define types for the post data
 interface FeaturedImage {
@@ -146,7 +146,7 @@ const SingleBlogPage = () => {
           dangerouslySetInnerHTML={{ __html: post?.content || "" }}
         />
       </div>
-      <PostSlider />
+      <BlogCustomSlider />
     </section>
   );
 };

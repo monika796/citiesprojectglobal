@@ -53,7 +53,7 @@ const FifthSection = ({ data, Video_gif }) => {
         {/* Right Content */}
         <div className="md:w-8/12 md:py-[30px] relative">
           {/* Black Box for Video */}
-          <div className="bg-[rgb(3, 4, 2)] pr-5 rounded-lg">
+          <div className="bg-[rgb(3, 4, 2)] md:pr-5 rounded-lg">
           {isPlaying ? (
                     <button
                     className="absolute inset-0 flex items-center justify-center  text-white text-3xl rounded-full"
@@ -69,7 +69,7 @@ const FifthSection = ({ data, Video_gif }) => {
                       ) : (
                         <Image
                         src={Video_gif}
-                        className="w-[224px] video-gif cursor-pointer"
+                        className="w-[224px]  video-gif cursor-pointer"
                         alt="Video gif"
                         width={100}
                         height={100}

@@ -794,9 +794,10 @@ className='ml-auto'
                 <p className="text-white leading-relaxed mb-4 max-w-[573px]">
                 {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnDescription1} </p>
                 <p  className="text-white leading-relaxed mb-4 max-w-[573px]">
-                {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnDescription2}<span className="text-[#A1CF5F] underline cursor-pointer">
+                {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnDescription2}
+                <Link href='/blog/blog-details?id=cG9zdDo4MjI='><span className="text-[#A1CF5F] underline cursor-pointer">
                 {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnDescriptionGreenColor}
-                  </span> and more.
+                  </span> </Link> and more.
                 </p>
                 <p className="text-white leading-relaxed max-w-[573px]">
                 {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnDescription3}  </p> <br />

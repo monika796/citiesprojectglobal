@@ -133,6 +133,10 @@ pre {
     backdrop-filter: blur(3px);
     border: 0 !important;
   }
+  .video-gif {
+    top: 0% !important;
+    left: 16%  !important;
+  }
 }
 @media (min-width: 0) and (max-width: 379px) {
   .sticky {
