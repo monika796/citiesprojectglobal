@@ -20,7 +20,7 @@ const Footer = () => {
           </button>
          
           <button type="button" className="  m-[13px] text-black ">  < Link href="/donation">
-            Donate Now
+            Donate Now !
           
           </Link></button>
           <button
@@ -116,13 +116,13 @@ const Footer = () => {
           
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <Link href="#" className="hover:underline">Terms of Use</Link>
+                    <Link href="/terms-of-use" className="hover:underline">Terms of Use</Link>
                 </li>
                 <li className="mb-4">
-                    <Link href="#" className="hover:underline">Privacy Statement</Link>
+                    <Link href="/privacy-statement" className="hover:underline">Privacy Statement</Link>
                 </li>
                 <li className="mb-4">
-                    <Link href="#" className="hover:underline">© Copyright 2024</Link>
+                    <Link href="#" className="hover:underline">© CitiesProjectGlobal 2024</Link>
                 </li>
             </ul>
         </div>

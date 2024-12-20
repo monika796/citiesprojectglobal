@@ -27,22 +27,16 @@ const menuData: Menu[] = [
     path: "/programs",
     submenu: [
       {
-        id: 31,
-        title: "Blog Grid",
-        newTab: false,
-        path: "/blog",
-      },
-      {
         id: 34,
         title: "Sign In",
         newTab: false,
-        path: "/auth/signin",
+        path: "#newsletter",
       }
     ],
   },
   {
     id: 2.1,
-    title: "Blog",
+    title: "Blogs",
     newTab: false,
     path: "/blog",
   },

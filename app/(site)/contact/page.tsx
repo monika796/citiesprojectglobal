@@ -8,6 +8,7 @@ import client from 'apollo-client';
 import Image from 'next/image';
 import { Form, Input, Label, Button } from 'reactstrap';
 import SubscriptionForm from "@/components/ContactSubscribeForm"
+import Link from "next/link";
 // Define the Anton font
 const anton = Anton({ weight: '400', subsets: ["latin"] });
 
@@ -75,13 +76,13 @@ const Contact = async (): Promise<JSX.Element> => {
             </p>
           </div>
           <div className="md:w-1/3 pb-3 md:pb-0">
-            <Image
+          <Link href='#newsletter'> <Image
               src={fields.firstRightImage?.node?.link || ""}
               className="w-[81%] mx-auto md:mx-0 p-2 md:p-0"
               alt="First Section"
               width={800} 
               height={500}
-            />
+            /></Link> 
           </div>
         </section>
 
