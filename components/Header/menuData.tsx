@@ -28,9 +28,15 @@ const menuData: Menu[] = [
     submenu: [
       {
         id: 34,
-        title: "Sign In",
+        title: "Leadership Circle",
         newTab: false,
-        path: "#newsletter",
+        path: "/leadership",
+      },
+      {
+        id: 34,
+        title: "VantagePoint™",
+        newTab: false,
+        path: "/vantage/form",
       }
     ],
   },

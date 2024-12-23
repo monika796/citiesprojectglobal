@@ -359,8 +359,14 @@ export default async function Home() {
       <div className="container mx-auto  max-w-[1480px] ">          
              <div className='w-[100%] md:mt-[-130px] mt-[50px] mx-auto flex flex-col md:flex-row border border-black border-solid '>
         <div className=' flex flex-col md:flex-row md:w-6/12 bg-white '>
-          <div style={{ backgroundImage: `url('${data.page.sectionHomethird.firstcolumnimage?.node?.link}')` }} className='w-6/12  bg-no-repeat bg-cover w-auto bg-bottom h-[313px] md:w-[256px] md:h-[313px]   border-t border-transparent '>
-
+          <div  className='w-6/12 relative bg-no-repeat bg-cover w-auto bg-bottom  md:w-[256px] md:h-[313px]   border-t border-transparent '>
+           <Image
+                                      src={`${data.page.sectionHomethird.firstcolumnimage?.node?.link}`}
+                                      alt="Background Image"
+                                      layout="fill"  // This will make the image cover the div area
+                                      objectFit="cover"  // Ensure the image is scaled to cover the div
+                                      className=""  // Optional: Add styles like border radius
+                                    />
           </div>
           <div className='md:w-6/12 md:pl-[14px] py-4 gap-0  text-left md:text-left px-4 md:px-0'>
             <h1 className="text-[32px] text-black leading-none mt-3 ">{data.page.sectionHomethird.firstcolumnheading}</h1>
@@ -520,8 +526,9 @@ export default async function Home() {
               <Image src={Demo} className="absolute top-[38%] right-3 md:top-3" alt="" width={100} height={100} />
               
             </div>
-            <div className=" md:w-8/12   bg-cover bg-center" style={{ backgroundImage: `url('${data.page.homesixthsection.rightimage?.node?.link}')` }}>
-            
+            <div className=" md:w-8/12  relative bg-cover bg-center" >
+            <Image src={data.page.homesixthsection.rightimage?.node?.link} className='absolute' layout="fill"  // This will make the image cover the div area
+                                      objectFit="cover" alt="" />
             </div>
 
           </section>

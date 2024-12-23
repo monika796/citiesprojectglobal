@@ -275,15 +275,31 @@ console.log(data);
                             </p>
                             </div>
                         </div>
-                        <div className="md:w-1/2 order-1 bg-[#d3d3d3] md:h-auto h-[350px] w-auto   bg-contain bg-no-repeat bg-bottom   " style={{ backgroundImage: `url('${data.page.aboutussections.imagewithtextImage1?.node?.link}')` }}>
-                              <div className="border border-white m-[6px] w-[98%] h-[97%] relative "></div>
+                        <div className="md:w-1/2 order-1 bg-[#d3d3d3] md:h-auto h-[350px] w-auto   bg-contain bg-no-repeat bg-bottom   " >
+                              <div className="border border-white m-[6px] w-[98%] h-[97%] relative ">
+                              <Image
+                                      src={data.page.aboutussections.imagewithtextImage1?.node?.link}
+                                      alt="Background Image"
+                                      layout="fill"  // This will make the image cover the div area
+                                      objectFit="cover"  // Ensure the image is scaled to cover the div
+                                      className="rounded-[10px]"  // Optional: Add styles like border radius
+                                    />
+                              </div>
                         </div>  
                 </section>
                 </div>
                 <div className="container mx-auto max-w-[1480px]">
                   <section className="md:flex pb-[32px]">
-                      <div className="md:w-1/2 bg-contain bg-[#d3d3d3] md:h-auto h-[350px] w-auto bg-no-repeat bg-bottom  " style={{ backgroundImage: `url('${data.page.aboutussections.imagewithtextImage2 ?.node?.link}')` }}>
-                      <div className="border border-white m-[6px] w-[98%] h-[97%] relative "></div>
+                      <div className="md:w-1/2 bg-contain bg-[#d3d3d3] md:h-auto h-[350px] w-auto bg-no-repeat bg-bottom  " >
+                      <div className="border border-white m-[6px] w-[98%] h-[97%] relative ">
+                      <Image
+                            src={`${data.page.aboutussections.imagewithtextImage2?.node?.link}`}
+                            alt="Background Image"
+                            layout="fill"  // This will make the image cover the div area
+                            objectFit="cover"  // Ensure the image is scaled to cover the div
+                            className="rounded-[10px]"  // Optional: Add styles like border radius
+                          />
+                      </div>
                           </div>  
                       <div className="md:w-1/2 bg-[#000000] p-2 ">
                         <div className="border border-white border-solid p-5 md:p-15"> 

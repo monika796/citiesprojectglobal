@@ -1,11 +1,45 @@
 "use client";
+import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+// import PdfViewer from '@/components/PdfViewer';
 const Footer = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Open the modal
+  const openModal = () => setIsModalOpen(true);
+
+  // Close the modal
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <>
-      {/* footer start */} 
+    {isModalOpen && (
+        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-99999">
+          <div className="bg-white rounded-lg w-full max-w-4xl p-5">
+            {/* Close Button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 px-4 py-2 text-white bg-red-600 rounded-full hover:bg-red-700"
+            >
+              X
+            </button>
+
+            {/* PDF Embed */}
+            <div className="w-full">
+              <iframe
+               src="https://digitractive.com/cityprojectglobal/wp-content/uploads/2024/12/Sample-Chapter.pdf#scrollbar=0"
+              
+                width="100%"
+                height="600px"
+                title="PDF Viewer"
+                className="border-0 rounded-lg"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}   {/* footer start */} 
 <br>
 </br>
 <footer className="container max-w-[1481px] mx-auto md:mt-[60px]">
@@ -88,7 +122,14 @@ const Footer = () => {
           <div className="grid justify-center items-center">  <h2 className="  mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">About the Book</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <Link href="https://drive.google.com/file/d/1-P0sWAfjtc8s3sl_R5yyGfCA2cuoWV6T/view?usp=sharing" className="hover:underline">Read a Sample  <br className="md:hidden block" />  Chapter</Link>
+                    {/* <Link href="https://drive.google.com/file/d/1-P0sWAfjtc8s3sl_R5yyGfCA2cuoWV6T/view?usp=sharing" className="hover:underline"  onClick={openModal}>Read a Sample  <br className="md:hidden block" />  Chapter</Link> */}
+                    <button onClick={openModal}>Read Sample Chapter</button>
+                    {/* <iframe 
+                      src="https://digitractive.com/cityprojectglobal/wp-content/uploads/2024/12/Sample-Chapter.pdf" 
+                      width="100%" 
+                      height="600px" 
+                      title="PDF Viewer"
+                    ></iframe> */}
                 </li>
                 <li className="mb-4">
                     <Link href="https://www.amazon.com/Intersection-Introduction-Design-Integrated-Living/dp/166575057X/ref=sr_1_1?crid=1QMBZ133ERX0U&dib=eyJ2IjoiMSJ9.WwghbEqcneXNsLO0OzP5f5_NQgq_zyPN9oyDmb3pKbCKvKi0SyfjefTG7vrrsm3SLLVyzyxqPXc8_UmfPYRT-CubxoHi1yDKNFj0_3V_FJOPhozNAoPG9O_mml6qOneJSQ4rOVfut5fUS-cRoJrsM5K5j-86xUEPCXbyh9YMyAiDfZZHU08vEpKeryJI6gZaI57KM9vRRSrGF4AQ-QYCtvLoatN4jOxVVJAA9oQHtCA.2eOJgAdWz1BJxbLYG4sbEQYD1mcgV9CvuG27G5JAl-A&dib_tag=se&keywords=the+intersection+faith%2C+work%2C+and+life&qid=1723663542&sprefix=The+intersection%3A+Faith%2C+Work%2Caps%2C166&sr=8-1" className="hover:underline">Buy Book</Link>

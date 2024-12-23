@@ -25,22 +25,23 @@ const POSTS_QUERY = gql`
   }
 `;
 
-const handleClick = (videoElement: HTMLVideoElement, setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>) => {
-  if (videoElement) {
-    if (videoElement.paused) {
-      videoElement.play(); // Play the video if it is paused
-      setIsPlaying(true); // Set state to true if the video is playing
-    } else {
-      videoElement.pause(); // Pause the video if it is playing
-      setIsPlaying(false); // Set state to false if the video is paused
-    }
-  }
-};
+
 
 const VideoPlayer = () => {
   const { loading, error, data } = useQuery(POSTS_QUERY);
   const [isPlaying, setIsPlaying] = useState(false); // Track video play state
-
+  const [isPlayed, setPlayed] = useState(false);
+  const handleClick = (videoElement: HTMLVideoElement, setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>) => {
+    if (videoElement) {
+      if (videoElement.paused) {
+        videoElement.play(); // Play the video if it is paused
+        setIsPlaying(true); // Set state to true if the video is playing
+      } else {
+        videoElement.pause(); // Pause the video if it is playing
+        setIsPlaying(false); // Set state to false if the video is paused
+      }
+    } setPlayed(true);
+  };
   if (loading) return null;
   if (error) return <p>Error: {error.message}</p>;
 
@@ -57,9 +58,26 @@ const VideoPlayer = () => {
         {data.page.bookPageFeilds.bookSixthSectionVideoMainHeading}
       </h1>
       <div className="relative mx-auto table md:w-[80%]">
+
+         {!isPlayed && (
+                  <Image
+                    src={data.page.bookPageFeilds.bookSixthSectionVideoThumbnail?.node?.link}
+                    alt="Video Poster"
+                    width={1000}
+                    height={563}
+                    className="w-full rounded-lg relative"
+                    onClick={(e) => {
+                      // Ensure handleClick is triggered on section click as well
+                      const videoElement = document.querySelector("video");
+                      if (videoElement) {
+                        handleClick(videoElement, setIsPlaying); // Only trigger handleClick if video element is clicked
+                      }
+                    }} // Pass the clicked video element and setIsPlaying
+                  />
+                )}
         <video
-          className="w-full rounded-lg"
-          poster={data.page.bookPageFeilds.bookSixthSectionVideoThumbnail?.node?.link}
+          className={`w-full rounded-lg ${isPlayed ? '' : 'hidden'}`}
+         
           loop
           onClick={(e) => handleClick(e.currentTarget, setIsPlaying)} // Pass the clicked video element and setIsPlaying
         >
