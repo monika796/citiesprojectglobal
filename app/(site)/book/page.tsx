@@ -6,6 +6,7 @@ import { gql } from '@apollo/client';
 import client from 'apollo-client';
 import Image from "next/image";
 import Link from "next/link";
+import MainComponent from '@/components/LightboxPdf'
 
 const anton = Anton({ weight: '400', subsets: ["latin"] }); 
 const POSTS_QUERY= gql `query MyQuery2 {
@@ -130,12 +131,16 @@ export default async function Book() {
                                     <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
                                     </button></Link>
                                     <br className="hidden md:block" />
-                                    <Link href={data.page.bookPageFeilds.bookThirdSectionRightButtonTwoLink}> <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
-                                    {data.page.bookPageFeilds.bookThirdSectionRightButtonTwo}
+                                    <div  className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
+                                    
+                            <MainComponent 
+                                  buttonText={data.page.bookPageFeilds.bookThirdSectionRightButtonTwo}  // Pass dynamic text as prop
+                                  pdfUrl="/SampleChapter.pdf#scrollbar=0"  // Pass the dynamic PDF URL
+                                />
                                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                                          <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                                             <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
-                                            </button></Link>
+                                            </div>
                           </div>
                         </div>
                     </div>
@@ -192,12 +197,15 @@ export default async function Book() {
                                     <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
                                     </button></Link>
                                     <br className="hidden md:block" />
-                                    <Link href={data.page.bookPageFeilds.bookSeventhSectionButtonTwoLink}>  <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
-                                    {data.page.bookPageFeilds.bookSeventhSectionButtonTwoText}
-                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+                                    <div className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
+                                    
+                                    <MainComponent 
+                                  buttonText={data.page.bookPageFeilds.bookSeventhSectionButtonTwoText}  // Pass dynamic text as prop
+                                  pdfUrl="/SampleChapter.pdf#scrollbar=0"  // Pass the dynamic PDF URL
+                                /> <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                                          <g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
                                             <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
-                                            </button></Link>
+                                          </div>
                           </div>
                     </div>
                     <div className="md:w-1/2 p-3 md:pr-[140px]">

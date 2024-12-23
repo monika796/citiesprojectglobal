@@ -8,6 +8,8 @@ import client from 'apollo-client';
 import VideoPlayer from "@/components/Aboutvideosection";
 import Link from "next/link";
 
+import MainComponent from '@/components/LightboxPdf'
+
 const anton = Anton({ weight: '400', subsets: ["latin"] });
 
 const POSTS_QUERY = gql `
@@ -186,7 +188,12 @@ console.log(data);
                                       {data.page.aboutuspage.secondsectionimagwithtextText}   </h4>
                                       <p className="text-[16px] text-left md:text-left  pt-[19px] md:w-[75%] text-black  font-bold leading-[23px] text-left pb-3 md:pb-0">
                                       {data.page.aboutuspage.secondsectionimagwithtextSubtext}  </p>
-                                      <Link href={data.page.aboutuspage.secondsectionimagwithtextButtonlink} className="md:mt-8 flex   mx-unset md:mx-0 items-center gap-2.5 w-[fit-content] inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">{data.page.aboutuspage.secondsectionimagwithtextButtontext} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></Link>
+                                      <div  className="md:mt-8 flex   mx-unset md:mx-0 items-center gap-2.5 w-[fit-content] inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">
+                                      <MainComponent 
+                                        buttonText= {data.page.aboutuspage.secondsectionimagwithtextButtontext}   // Pass dynamic text as prop
+                                        pdfUrl="/SampleChapter.pdf#scrollbar=0"  // Pass the dynamic PDF URL
+                                      />
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></div>
                                     </div>
                                   </div>
                                 </div>
