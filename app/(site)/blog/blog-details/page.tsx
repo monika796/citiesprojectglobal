@@ -155,12 +155,12 @@ const SingleBlogPage = () => {
 };
 
 // Wrapping the component with Suspense
-// const PageWrapper = () => {
-//   return (
-//     <Suspense >
-//       <SingleBlogPage />
-//     </Suspense>
-//   );
-// };
+const PageWrapper = () => {
+  return (
+    <Suspense >
+      <SingleBlogPage />
+    </Suspense>
+  );
+};
 
-export default SingleBlogPage;
+export default PageWrapper;
