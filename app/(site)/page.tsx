@@ -20,7 +20,7 @@ import Link from "next/link";
 import FifthSection from '@/components/HomeAboutthebook'
 import NewBannerSlider from "@/components/HeroBanner"; // Import client component
 import VideoPopup from '@/components/SecondHomeVideoButton'
-
+import Head from 'next/head';
 
 
 // export const metadata: Metadata = {
@@ -275,7 +275,10 @@ export default async function Home() {
   console.log(data);
   return (
     <main className="mt-[-96px]">
-
+ <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Home Page</title>
+      </Head>
       {/* body start */}
         {/* <NewBannerSlider banners={data.page.homeExtraBanner.homeBannerSecond} /> */}
      
