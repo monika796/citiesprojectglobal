@@ -140,7 +140,7 @@ const FifthSection = ({ data, Video_gif }) => {
             </Link>
             {/* <Link href={data.page.homefifthsection.buttonlinksecond}> */}
               <div onClick={openModal} className=" mx-auto mt-[21px] md:mx-0 md:mt-4 flex items-center gap-3 text-black bg-white font-bold p-2 rounded-[5px]">
-                <MainComponent 
+                <MainComponent  extraclass=''
                 buttonText={data.page.homefifthsection.textbuttonsecond}  // Pass dynamic text as prop
                 pdfUrl="/SampleChapter.pdf#scrollbar=0"  // Pass the dynamic PDF URL
               />

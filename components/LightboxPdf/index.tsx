@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from "react";
 
-const MainComponent = ({ buttonText, pdfUrl }) => {
+const MainComponent = ({ buttonText, pdfUrl,extraclass }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Function to open the modal
@@ -15,11 +15,11 @@ const MainComponent = ({ buttonText, pdfUrl }) => {
   };
 
   return (
-    <div>
+    <div className="relative ">
       {/* Button to trigger the modal */}
       <button
         onClick={openModal}
-        className=""
+        className={extraclass}
       >
         {buttonText}  {/* Render dynamic button text */}
       </button>
@@ -27,11 +27,11 @@ const MainComponent = ({ buttonText, pdfUrl }) => {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed z-99999 h inset-0 bg-gray-500  bg-opacity-75 flex justify-center items-center ">
-          <div className="bg-white  rounded-lg w-full max-w-4xl  relative">
+          <div className="bg-white  rounded-lg w-full max-w-[80%]  relative">
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-2 right-2 px-4 py-2 text-white bg-red-600 rounded-full hover:bg-red-700"
+              className="absolute z-9999999999 top-2 right-2 px-4 py-2 text-white bg-red-600 rounded-full hover:bg-red-700"
             >
               X
             </button>
@@ -41,7 +41,7 @@ const MainComponent = ({ buttonText, pdfUrl }) => {
               <iframe
                 src={pdfUrl} // Use the dynamic PDF URL passed as a prop
                 width="100%"
-                height="500px"
+                height="600px"
                 title="PDF Viewer"
                 className="border-0 rounded-lg"
               ></iframe>

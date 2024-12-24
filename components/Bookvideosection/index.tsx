@@ -81,7 +81,7 @@ const VideoPlayer = () => {
           loop
           onClick={(e) => handleClick(e.currentTarget, setIsPlaying)} // Pass the clicked video element and setIsPlaying
         >
-          <source src="https://digitractive.com/cityprojectglobal/wp-content/uploads/2024/12/3249935-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+          <source src="videos.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 

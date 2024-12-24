@@ -2,6 +2,7 @@
 import { Anton } from "next/font/google";
 import { gql, useQuery } from "@apollo/client";
 import { useState } from "react";
+import axios from 'axios';
 
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 
@@ -17,11 +18,13 @@ const POSTS_QUERY = gql`
     }
   }
 `;
-export default   function  Newsletter() {
+
+export default function Newsletter() {
   const { loading, error, data } = useQuery(POSTS_QUERY);
-  const [formData, setFormData] = useState({ name: "", email: "" });
-  const [message, setMessage] = useState(null);
-  const [submitted, setSubmitted] = useState(false); 
+  const [formData, setFormData] = useState({ input_2: "", input_3: "" });
+  const [message, setMessage] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState(false);
+
   // Handler to manage form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,28 +34,41 @@ export default   function  Newsletter() {
   // Handler for form submission
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the default form submission behavior
-  
+
+    // Basic validation to ensure fields are not empty
+    if (!formData.input_2 || !formData.input_3) {
+      setMessage('Name and email are required.');
+      return;
+    }
+
     try {
-      const response = await fetch(
-        "https://digitractive.com/cityprojectglobal/wp-json/newsletter/v1/subscribe",
+      const response = await axios.post(
+        'https://digitractive.com/cityprojectglobal/wp-json/gf/v2/forms/1/submissions',
+        formData,
         {
-          method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
+            'Authorization': `Basic ${btoa('ck_3b900686e6b6f05a64b49ff09163b1ae35017710:cs_a366847ab722d30837123aac4605cc07c1eeaac1')}`, // Basic Auth with API Key and Secret
           },
-          body: JSON.stringify(formData),
         }
       );
-      
-      const result = await response.json();
-      if (!response.ok) {
-        throw new Error(result.message || "Something went wrong");
+
+      const responseData = response.data;
+
+      if (!responseData.is_valid) {
+        // If the form submission is not valid, show the validation messages
+        const validationMessages = Object.values(responseData.validation_messages).join(', ');
+        setMessage(validationMessages || 'There was an error submitting the form.');
+      } else {
+        // If the submission is valid, show a success message
+        setMessage('Form submitted successfully!');
       }
-      setMessage(result.message);
-      setSubmitted(true);
-      console.log("Form submitted successfully:", result);
-    } catch (err) {
-      console.error("Error submitting form:", err);
+
+      setSubmitted(true); // Set the form as submitted
+      console.log(response);
+    } catch (error) {
+      setMessage('There was an error submitting the form.');
+      console.error(error);
     }
   };
 
@@ -94,46 +110,52 @@ export default   function  Newsletter() {
               {data.page.newsletter.leftsubheading}
             </span>
           </p>
-          {!submitted ? ( // Conditionally render form or message
-          <form onSubmit={handleSubmit} className="cst_form grid gap-[1px]">
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={formData.name}
-              onChange={handleChange}
-              className="bg-transparent border border-[#f6f6f626] p-[10px]"
-              required
-            />
-            <br />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
-              className="bg-transparent border border-[#f6f6f626] p-[10px]"
-              required
-            />
-            <label className="text-[16px] text-white pt-10 font-normal text-left decoration-slice">
-              Please Confirm *
-            </label>
-            <p className="text-[15px] p-2 font-normal text-left decoration-slice">
-              <input type="checkbox" className="me-3" required /> I want to
-              subscribe to all CPG emails
-            </p>
-            <button
-              type="submit"
-              className="mx-auto mt-4 font-bold md:mx-0 md:w-[18%] max-w-[106.57px] bg-[#A1CF5F] md:p-[8px] p-[10px] text-black rounded-[7px] text-[16px]"
-            >
-              Submit
-            </button>
-          </form>
-            ) : (
-          <p className="cst_message_submition text-white text-center md:text-left">
-              {message || "Thank you for subscribing!"}
-            </p>
-            )}
+          {!submitted ? (
+            // Conditionally render form or message
+            <form onSubmit={handleSubmit} className="cst_form grid gap-[1px]">
+              <input
+                type="text"
+                name="input_3"
+                placeholder="Name"
+                value={formData.input_3}
+                onChange={handleChange}
+                className="bg-transparent border border-[#f6f6f626] p-[10px]"
+                required
+              />
+              <br />
+              <input
+                type="email"
+                name="input_2"
+                placeholder="Email"
+                value={formData.input_2}
+                onChange={handleChange}
+                className="bg-transparent border border-[#f6f6f626] p-[10px]"
+                required
+              />
+              <label className="text-[16px] text-white pt-10 font-normal text-left decoration-slice">
+                Please Confirm *
+              </label>
+              <p className="text-[15px] p-2 font-normal text-left decoration-slice">
+                <input type="checkbox" className="me-3" required /> I want to
+                subscribe to all CPG emails
+              </p>
+              <button
+                type="submit"
+                className="mx-auto mt-4 font-bold md:mx-0 md:w-[18%] max-w-[106.57px] bg-[#A1CF5F] md:p-[8px] p-[10px] text-black rounded-[7px] text-[16px]"
+              >
+                Submit
+              </button>
+            </form>
+          ) : (
+            <div className=" py-10">
+          <h3 className="font-bold text-[24px] text-white">
+            Thanks for subscribing!
+          </h3>
+          <p className="text-white text-[16px]">
+            We appreciate your interest and will keep you updated.
+          </p>
+        </div>
+          )}
         </div>
       </div>
     </div>

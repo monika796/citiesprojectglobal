@@ -80,18 +80,18 @@ return (
    </div>
    <section>
       <div className="flex">
-         <Image  width={700} height={700} src={data.page.vantageForm.vantageFormSecondSectionFirstColumnImage?.node?.link} className="w-[30%]" alt="Vantage Image 1" />
+         <Image  width={2000} height={2000} src={data.page.vantageForm.vantageFormSecondSectionFirstColumnImage?.node?.link} className="object-cover object-right w-[30%]" alt="Vantage Image 1" />
          <div className="middle-content bg-[#263519] w-[40%] p-10">
-            <h2 className="font-anton text-[#A1CF5F] text-[70px] font-medium leading-[97.3px]"> {data.page.vantageForm.vantageFormSecondSectionSecondColumnPrice} </h2>
-            <h3 className="font-anton text-[64px] font-medium text-white leading-[88.96px]"> {data.page.vantageForm.vantageFormSecondSectionSecondColumnHeading}</h3>
+            <h2 className="font-anton text-[#A1CF5F] text-[60px] font-medium leading-[97.3px]"> {data.page.vantageForm.vantageFormSecondSectionSecondColumnPrice} </h2>
+            <h3 className="font-anton text-[55px] font-medium text-white leading-[88.96px]"> {data.page.vantageForm.vantageFormSecondSectionSecondColumnHeading}</h3>
             <p className="text-white text-[16px] mt-3"> {data.page.vantageForm.vantageFormSecondSectionSecondColumnDescription}</p>
-            <div className="flex justify-end mt-10">
+            <div className="flex justify-end mt-5">
                <Link className="d-inline" href="#">
-               <Image  width={70} height={70} src="/down-btn.png" alt="Down Button" />
+               <Image  width={55} height={55} src="/down-btn.png" alt="Down Button" />
                </Link>
             </div>
          </div>
-         <Image  width={700} height={700} src={data.page.vantageForm.vantageFormSecondSectionThirdColumnImage?.node?.link} className="w-[30%]" alt="Vantage Image 2" />
+         <Image  width={2000} height={2000} src={data.page.vantageForm.vantageFormSecondSectionThirdColumnImage?.node?.link} className="object-cover object-center w-[30%]" alt="Vantage Image 2" />
       </div>
    </section>
     <SecondSection />

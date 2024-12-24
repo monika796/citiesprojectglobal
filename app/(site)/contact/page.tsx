@@ -159,9 +159,10 @@ const Contact = async (): Promise<JSX.Element> => {
                           
                           <div className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
                           
-                            <MainComponent 
+                            <MainComponent  extraclass=''
                                   buttonText={fields.thirdSectionCenterSecondButton}  // Pass dynamic text as prop
-                                  pdfUrl="/SampleChapter.pdf#scrollbar=0"  // Pass the dynamic PDF URL
+                                  pdfUrl="/SampleChapter.pdf#scrollbar=0"
+                                  // Pass the dynamic PDF URL
                                 />
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg>
                           </div> </div> 

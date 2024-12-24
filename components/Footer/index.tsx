@@ -21,7 +21,7 @@ const Footer = () => {
           </button>
          
           <button type="button" className="  m-[13px] text-black ">  < Link href="/donation">
-            Donate Now !
+            Donate Now
           
           </Link></button>
           <button
@@ -88,11 +88,12 @@ const Footer = () => {
         <div className=" flex justify-start items-center">
           <div className="grid justify-center items-center">  <h2 className="  mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">About the Book</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                <li className="mb-4">
+                <li className="mb-4 !text-center">
                     {/* <Link href="https://drive.google.com/file/d/1-P0sWAfjtc8s3sl_R5yyGfCA2cuoWV6T/view?usp=sharing" className="hover:underline">Read a Sample  <br className="md:hidden block" />  Chapter</Link> */}
-                    <MainComponent 
+                    <MainComponent  
         buttonText="Read a Sample Chapter"  // Pass dynamic text as prop
-        pdfUrl="/SampleChapter.pdf#scrollbar=0"  // Pass the dynamic PDF URL
+        pdfUrl="/SampleChapter.pdf#scrollbar=0" 
+        extraclass='text-left' // Pass the dynamic PDF URL
       />
                 </li>
                 <li className="mb-4">

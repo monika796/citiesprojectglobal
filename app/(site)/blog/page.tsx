@@ -75,7 +75,6 @@ const BlogPage = async () => {
    const postData=await fetchDataSecond();
    const data = await fetchData();
 
-   console.log(data);
 return (
 <>
 <main className="md:w-[90%] mx-auto"> 
