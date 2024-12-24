@@ -1,15 +1,14 @@
-"use client";
 
-import { Suspense, useState, useEffect } from "react";
+
+import { Suspense } from "react";
 import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
 import Link from "next/link";
 import Image from "next/image";
 import { gql } from "@apollo/client";
 import client from "apollo-client";
-import { useSearchParams } from "next/navigation";
 import BlogCustomSlider from "@/components/BlogPostSlider";
-
+import { useRouter } from "next/router";
 // Define types for the post data
 interface FeaturedImage {
   node: {
@@ -47,33 +46,17 @@ const fetchPostById = async (id: string) => {
   return data.post;
 };
 
-const SingleBlogPage = () => {
+const SingleBlogPage = async () => {
+  // Retrieve the 'id' query param
+  const id = <getblogid />
 
-  const searchParams = useSearchParams();
-  const id = searchParams.get("id"); // Retrieve the 'id' query param
- 
-  const [post, setPost] = useState<Post | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  var post = '';
 
-    const fetchData = async () => {
-      try {
         if (id) {
-          const fetchedPost = await fetchPostById(id);
-          setPost(fetchedPost);
+           post = await fetchPostById(id);
+       
         }
-      } catch (err) {
-        setError((err as Error).message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (id) {
-      fetchData();
-    }
-
-
+        console.log(post);
 
   return (
     <section className="container mx-auto max-w-[1480px]">
@@ -88,7 +71,7 @@ const SingleBlogPage = () => {
           </div>
           <div>
             <h1 className="text-3xl md:text-[64px] font-bold text-gray-900 leading-[77.45px]">
-              {post?.title }
+              {post?.title || "Loading..."}
             </h1>
             <p className="text-gray-700 mt-4 text-[24px] max-w-[543px]">
               You don’t have to search the Bible for very long to find passages
@@ -140,7 +123,7 @@ const SingleBlogPage = () => {
           width={1400}
           height={1000}
           className="mx-auto"
-          src={post?.featuredImage?.node?.link || "/"} // Fallback if the image is missing
+          src={post?.featuredImage?.node?.link || "/blod-banner.png"} // Fallback if the image is missing
         />
       </div>
       <div className="blog-content max-w-[684px] mx-auto py-15">
@@ -155,12 +138,12 @@ const SingleBlogPage = () => {
 };
 
 // Wrapping the component with Suspense
-// const PageWrapper = () => {
-//   return (
-//     <Suspense >
-//       <SingleBlogPage />
-//     </Suspense>
-//   );
-// };
+const PageWrapper = () => {
+  return (
+    <Suspense >
+      <SingleBlogPage />
+    </Suspense>
+  );
+};
 
-export default SingleBlogPage;
+export default PageWrapper;
