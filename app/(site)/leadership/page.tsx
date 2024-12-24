@@ -18,7 +18,7 @@ import Newsletter from '@/components/Newsletter';
 import { gql } from '@apollo/client';
 import client from 'apollo-client';
 import parse from "html-react-parser";
-
+import MainComponent from '@/components/LightboxPdf'
 
 const POSTS_QUERY = gql 
 `query MyQuery2 {
@@ -394,12 +394,16 @@ const page = async () => {
                   {data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBox[0].leadershipSecondSectionSecondColumnBoxDescription}
 
                   </p>
-                  <Link
+                  {/* <Link
                     href={data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBox[0].leadershipSecondSectionSecondColumnBoxButtonLink}
                     className="bg-white text-black text-[16px] font-bold py-2 px-4 rounded border border-gray-200  hover:bg-gray-100"
                   >
                     {data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBox[0].leadershipSecondSectionSecondColumnBoxButtonText} <span className="ml-2">↗</span>
-                  </Link>
+                  </Link> */}
+              <MainComponent  extraclass='bg-white text-black text-[16px] font-bold py-2 px-4 rounded border border-gray-200  hover:bg-gray-100'
+                buttonText={data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBox[0].leadershipSecondSectionSecondColumnBoxButtonText}  // Pass dynamic text as prop
+                pdfUrl='Global LC 2024.pdf'  // Pass the dynamic PDF URL
+              />
                 </div>
 
                 {/* Denver Leadership Circle */}
@@ -408,7 +412,7 @@ const page = async () => {
                   src={Union}
                   alt="Faith Icon"
                   width={25}
-className='ml-auto'
+                  className='ml-auto'
                   height={29}
                 />
                   <h2 className="text-black font-bold text-[23px] mb-2 md:pr-[60px]">
@@ -419,13 +423,17 @@ className='ml-auto'
                   {data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBox[1].leadershipSecondSectionSecondColumnBoxHeading}
 
                   </p>
-                  <a
+                  {/* <a
                     href={data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBox[1].leadershipSecondSectionSecondColumnBoxButtonLink}
                     className="bg-[#A1CF5F] hover:bg-green-600 text-black text-[16px] font-bold py-2 px-4 rounded "
                   >
                    {data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBox[1].leadershipSecondSectionSecondColumnBoxButtonText}
                    <span className="ml-2">↗</span>
-                  </a>
+                  </a> */}
+                  <MainComponent  extraclass='bg-[#A1CF5F] hover:bg-green-600 text-black text-[16px] font-bold py-2 px-4 rounded'
+                buttonText={data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBox[1].leadershipSecondSectionSecondColumnBoxButtonText}  // Pass dynamic text as prop
+                pdfUrl='DLC 2024.pdf'  // Pass the dynamic PDF URL
+              />
                 </div>
               </div>
             </div>

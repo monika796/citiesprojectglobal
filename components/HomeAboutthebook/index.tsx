@@ -25,8 +25,9 @@ const FifthSection = ({ data, Video_gif }) => {
       } else {
         videoRef.current.play();
       }
-      setIsPlaying(!isPlaying);
+    
     }
+    setIsPlaying(!isPlaying);
     setPlayed(true);
   };
 
