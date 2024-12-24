@@ -116,8 +116,8 @@ return (
                      className=" object-cover rounded" layout="responsive" width={16} height={9} />
                  
                   <div className="w-[175px] h-[241px] bg-white border rounded-lg flex flex-col justify-end p-5">
-                     <p className="text-[64px] font-semibold text-gray-700 mb-5">  {data.page.blogPageFeilds.blogSecondSection.blogPageRightDate} </p>
-                     <p className="text-[15px] text-gray-500">  {data.page.blogPageFeilds.blogSecondSection.blogPageRightMonthAndYear} </p>
+                     <p className="text-[64px] font-semibold text-gray-700 mb-5">{data.page.blogPageFeilds.blogSecondSection.blogPageRightDate} </p>
+                     <p className="text-[15px] text-gray-500">{data.page.blogPageFeilds.blogSecondSection.blogPageRightMonthAndYear} </p>
                   </div>
                </div>
             </div>
