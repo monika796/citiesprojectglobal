@@ -77,9 +77,9 @@ const SingleBlogPage = () => {
 
   return (
     <section className="container mx-auto max-w-[1480px]">
-      <div className="mx-auto px-4 py-20 flex flex-col md:flex-row justify-between items-center border-b">
+      <div className="mx-auto px-4 py-10 md:py-20 flex flex-col md:flex-row justify-between items-center border-b">
         {/* Left Section */}
-        <div className="md:w-3/4 flex gap-10 flex-col md:flex-row align-start">
+        <div className="md:w-3/4 flex gap-3 md:gap-10 flex-col md:flex-row align-start">
           {/* Featured Badge */}
           <div className="mb-2">
             <span className="inline-block bg-black text-white text-xs uppercase py-1 px-3 rounded-xl">
@@ -87,19 +87,19 @@ const SingleBlogPage = () => {
             </span>
           </div>
           <div>
-            <h1 className="text-3xl md:text-[64px] font-bold text-gray-900 leading-[77.45px]">
+            <h1 className="text-30px md:text-[64px] font-bold text-gray-900 leading-[30px] md:leading-[77.45px]">
               {post?.title }
             </h1>
-            <p className="text-gray-700 mt-4 text-[24px] max-w-[543px]">
+            <p className="text-gray-700 mt-4 text-[16px] md:text-[24px] max-w-[543px]">
               You don’t have to search the Bible for very long to find passages
               highlighting the value and importance of community.
             </p>
           </div>
         </div>
         {/* Right Section */}
-        <div className="md:w-1/4 flex flex-col items-end md:items-start mt-6 md:mt-0 pl-20 border-l h-[230px]">
+        <div className=" md:w-1/4 w-full flex flex-col items-start md:items-start mt-6 md:mt-0 pl-0 md:pl-20 border-unset md:border-l h-auto  md:h-[230px]">
           {/* Date */}
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left mt-10 md:mt-0">
             <p className="text-[64px] font-bold text-gray-900">
               {post ? new Date(post.date).getDate() : ""}
             </p>

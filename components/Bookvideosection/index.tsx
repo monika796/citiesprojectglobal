@@ -54,7 +54,7 @@ const VideoPlayer = () => {
         handleClick(videoElement, setIsPlaying); // Only trigger handleClick if video element is clicked
       }
     }}>
-      <h1 className="md:text-[40px] text-[25px] font-bold text-center text-black md:w-[60%] md:p-5 mx-auto leading-[49px]">
+      <h1 className="md:text-[40px] mb-10 text-[25px] font-bold text-center text-black md:w-[60%] md:p-5 mx-auto leading-[30px] md:leading-[49px]">
         {data.page.bookPageFeilds.bookSixthSectionVideoMainHeading}
       </h1>
       <div className="relative mx-auto table md:w-[80%]">

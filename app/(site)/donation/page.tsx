@@ -72,23 +72,23 @@ export default async function Book() {
       const data = await fetchData();
       // console.log(data.page.donatePageFeilds.donate_fourth_section_scrolltext);
     return (
-        <main className="md:w-[90%] pt-10  mx-auto">
+        <main className="md:w-[90%] pt-10  mx-auto max-w-[1480px]">
             <h1 className="md:py-[15px] pt-10 py-[10px] md:text-[40px] text-[25px] font-bold text-center text-black md:w-[52%]     mx-auto md:leading-[49px] "> {data.page.donatePageFeilds.donateFirstSectionMainHeading}</h1>
             <h5 className="text-[18px]  text-black md:w-[52%] mx-auto text-center"> {data.page.donatePageFeilds.donateFirstSectionMainDescription}</h5>
             <DonationFaq />
 
             <section className="container mx-auto max-w-[1480px]">
-                    <div className="w-[70%] mx-auto">
+                    <div className="w-full md:w-[70%] mx-auto">
                         
                     <div className="grid items-end justify-end ">
-                    <Image src={data.page.donatePageFeilds.donateThirdSectionImage?.node?.link} alt='' layout="responsive" width={16} height={9}></Image>
+                    <Image src={data.page.donatePageFeilds.donateThirdSectionImage?.node?.link} alt='' layout="responsive" width={16} height={9} className=""></Image>
 
                      
                     
                     </div>
                         <div className="grid gap-3">
                         <Image alt="" width={70} height={70}  src="/76.png" />
-                        <h3 className={`${anton.className} w-[65%]  text-center md:text-left md:text-[40px] text-[30px] text-black font-light leading-[50px]`}>
+                        <h3 className={`${anton.className} w-full md:w-[65%]  text-center md:text-left md:text-[40px] text-[30px] text-black font-light leading-[50px]`}>
                         {data.page.donatePageFeilds.donateThirdSectionHeading}
                             </h3>
                             <p className={`${anton.className} text-[27px] text-[#A1CF5F] font-normal leading-[48.99px] text-left `}> {data.page.donatePageFeilds.donateThirdSectionSubheading}</p>
@@ -99,7 +99,7 @@ export default async function Book() {
                 
             </section>
             <section className="container mx-auto max-w-[1480px]">
-                <div className="flex p-10">
+                <div className="flex p-0 md:p-10">
                     <div className="w-2/3">
                     <Image src={data.page.donatePageFeilds.donateFourthSection?.node?.link} className="w-[80%]" alt=''  width={740} height={439}></Image>
 
@@ -123,15 +123,15 @@ export default async function Book() {
             {data.page.donatePageFeilds.donate_fourth_section_scrolltext}    </Marquee>
             </section>
             <section className="container mx-auto py-5 max-w-[1480px]">
-            <div className="mx-auto text-[30px] pb-8 text-black  w-[32%] leading-[33px] italic font-bold text-left ">
+            <div className="mx-auto text-[30px] pb-8 text-black w-full  md:w-[32%] leading-[33px] italic font-bold text-left ">
                 
             {data.page.donatePageFeilds.donateFifthSectionHeading}
                 </div>
-                <div className="flex">
-                    <div className="w-1/3">
+                <div className="flex flex-wrap md:flex-no-wrap">
+                    <div className="md:w-1/3 w-full">
 
                     </div>
-                    <div className="w-2/3">
+                    <div className="md:w-2/3  w-full">
                     <h5 className="text-[18px] text-black md:w-[58%] italic mx-auto text-left">
                     {data.page.donatePageFeilds.donateFifthSectionDescription}
                 

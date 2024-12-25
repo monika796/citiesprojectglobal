@@ -11,7 +11,7 @@ const SecondSection = () => {
     <>
     
    <section>
-      <div className="flex  gap-3 justify-between">
+      <div className="flex flex-wrap md:flex-nowrap  gap-3 justify-between">
          <div className="md:w-8/12">
          <div className="w-full mt-10">
       {/* Panel 1 */}

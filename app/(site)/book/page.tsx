@@ -120,9 +120,9 @@ export default async function Book() {
                         <Image src={data.page.bookPageFeilds.bookThirdSectionLeftImage?.node?.link} className="w-[50%] md:w-[70%] mx-auto"  alt='' layout="responsive" width={16} height={9} />
                           
                         </div>
-                        <div className="md:w-7/12 py-20 pl-10">
+                        <div className="md:w-7/12 py-20 md:pl-10 pl-0 ">
                         <h2 className="font-bold text-gray-800 text-center md:text-left text-3xl md:text-[48px] text-[25px] leading-tight mb-4"> {data.page.bookPageFeilds.bookThirdSectionRightHeading}</h2>
-                        <p className="text-gray-500 text-[18px] md:text-lg text-center  md:text-left md:text-xl leading-relaxed mb-6">{data.page.bookPageFeilds.bookThirdSectionRightDescription}</p>
+                        <p className="text-gray-500 text-[16px] md:text-[18px] md:text-lg text-center  md:text-left md:text-xl leading-relaxed mb-6">{data.page.bookPageFeilds.bookThirdSectionRightDescription}</p>
                         <div className="md:flex gap-5">
                            <Link href={data.page.bookPageFeilds.bookThirdSectionRightButtonOneLink.url}> <button className=" mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]" >
                             {data.page.bookPageFeilds.bookThirdSectionRightButtonOne}
@@ -153,17 +153,17 @@ export default async function Book() {
                         <div className="md:w-2/5 bg-[#000000] p-20 grid justify-center items-center">
                         <h2 className="font-bold text-white  md:w-[85%] text-center md:text-left md:text-[24px] text-[24px] leading-tight mb-4"> {data.page.bookPageFeilds.bookFourthSectionFirstColumnText}</h2>
                         </div>
-                        <div className="md:w-1/5 md:m-0 m-5 md:p-[46px] grid justify-center items-center border border-black md:h-[250px]">
+                        <div className="md:w-1/5 md:m-0 m-5 md:mx-5 mx-0 md:p-[46px] grid justify-center items-center border border-black md:h-[250px]">
                         <Image src={data.page.bookPageFeilds.bookFourthSectionSecondColumnImage?.node?.link}  alt='' layout="responsive" width={16} height={9}></Image>
 
                       
                         </div>
-                        <div className="md:w-1/5  md:m-0 m-5 md:p-[46px] grid justify-center items-center border border-black md:h-[250px]">
+                        <div className="md:w-1/5  md:m-0 m-5 md:mx-5 mx-0 md:p-[46px] grid justify-center items-center border border-black md:h-[250px]">
                         <Image src={data.page.bookPageFeilds.bookFourthSectionThirdColumnImage?.node?.link} alt='' layout="responsive" width={16} height={9}></Image>
 
                         
                         </div>
-                        <div className="md:w-1/5  md:m-0 m-5 md:p-[46px] grid justify-center items-center border border-black md:h-[250px]">
+                        <div className="md:w-1/5  md:m-0 m-5 md:mx-5 mx-0 md:p-[46px] grid justify-center items-center border border-black md:h-[250px]">
                         <Image src={data.page.bookPageFeilds.bookFourthSectionFourthColumnImage?.node?.link} alt='' layout="responsive" width={16} height={9}></Image>
 
                        
@@ -171,10 +171,10 @@ export default async function Book() {
                     </div>
                     </div>
 
-                    <div className="container mx-auto "> 
+                    <div className="container mx-auto mb-10 md:mb-0"> 
                        <section className="mx-auto grid gap-[37px] pt-[50px] md:pt-[100px] md:pb-[100px] ">
               <Image alt="" width={80} height={80}  src="/76.png" className="mx-auto" />
-              <h1 className={`${anton.className} text-[48px] font-normal  text-center text-[#000000] leading-[72.26px] md:w-[75%] md:max-w-[1,108px] mx-auto`}>
+              <h1 className={`${anton.className} md:text-[48px] text-[20px] font-normal  text-center text-[#000000] leading-[32.26px] md:leading-[72.26px] md:w-[75%] md:max-w-[1,108px] mx-auto`}>
               {data.page.bookPageFeilds.bookFifthReviewSectionHeading}</h1>
               <h4 className={`${anton.className} text-[20px] font-normal  text-center text-[#aed575]`}>
               {data.page.bookPageFeilds.bookFifthReviewSectionDescription}
@@ -224,14 +224,14 @@ export default async function Book() {
                 <div className="container mx-auto md:py-15">
                     <div className="md:flex">
                         <div className="md:w-1/2 p-2 relative">
-                        <h2 className="font-bold text-black text-center md:text-left  w-[75%] text-[48px] leading-tight mb-4"> {data.page.bookPageFeilds.bookEigthSectionMainHeading}</h2>
+                        <h2 className="font-bold text-black text-center md:text-left w-full  md:w-[75%] text-[25px] md:text-[48px] leading-tight mb-4"> {data.page.bookPageFeilds.bookEigthSectionMainHeading}</h2>
                         <p className="font-normal  text-center md:text-left text-[16px]  text-black pb-3"> {data.page.bookPageFeilds.bookEigthSectionMainLeftDescription}</p>
-                        <Image src={data.page.bookPageFeilds.bookEigthSectionMainLeftImage?.node?.link} className="md:absolute md:mx-0 mx-auto bottom-[29%] right-3 " alt=''  width={287} height={225}></Image>
+                        <Image src={data.page.bookPageFeilds.bookEigthSectionMainLeftImage?.node?.link} className="md:absolute md:mx-0 mx-0 bottom-[29%] right-3 " alt=''  width={287} height={225}></Image>
 
                         
                         </div>
                         <div className="md:w-1/2 p-2">
-                        <Image src={data.page.bookPageFeilds.bookEigthSectionMainRightImage?.node?.link} className="md:p-0 p-9"  alt='' layout="responsive" width={16} height={9}></Image>
+                        <Image src={data.page.bookPageFeilds.bookEigthSectionMainRightImage?.node?.link} className="md:p-0 p-0"  alt='' layout="responsive" width={16} height={9}></Image>
 
                         
                         <p className="font-normal  text-center md:text-left text-[14px] pt-3 text-black pb-3">
