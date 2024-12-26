@@ -275,7 +275,7 @@ export default async function Home() {
   console.log(data);
   return (
     <main className="mt-[-96px]">
- <Head>
+      <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>My Home Page</title>
       </Head>
@@ -422,12 +422,14 @@ export default async function Home() {
         </div>
       </div></div>
 
-      <div className="container max-w-[1480px] mx-auto">  <div className="container w-[100%] mx-auto pt-[30px]  md:pt-[150px] md:pb-[100px]">
+      <div className=" relative container  mx-auto max-w-[1580px]">
+          <div className="absolute inset-0 bg-[#e6e6e6] bg-opacity-50 backdrop-blur-md z-1"></div>
+            <div className="relative container w-[100%] max-w-[1480px] mx-auto pt-[30px] z-9 md:pt-[150px] md:pb-[100px]">
+    
         <h1 className=" px-5 md:px-0 text-[25px] md:max-w-[1062px] md:mx-auto  md:text-[48px] pb-5 mt-10 md:mt-0 md:pb-15 text-black font-bold leading-[30.09px] md:leading-[46.09px] text-center">
          
-{data.page.homefourtsection.mainheadingfourth}
-
-        </h1>
+            {data.page.homefourtsection.mainheadingfourth}
+  </h1>
         <div className="pl-[23px] md:pl-[14px] flex items-center p-[23px] ">
           <div className=" md:w-6/12 md:flex md:gap-3 md:items-center md:justify-center">
             <div className=" md:w-6/12 p-2" >

@@ -42,7 +42,7 @@ const Header = () => {
        if(scroll == 0){
         setStickyMenu(false);
       }
-      console.log(scroll);
+      // console.log(scroll);
       scrolled = scroll; // Update the previous scroll position
     };
 

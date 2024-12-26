@@ -3,7 +3,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["localhost", "digitractive.com"], // Trusted domains for images
+    domains: ["localhost", "digitractive.com" , 'raw.githubusercontent.com'], // Trusted domains for images
     remotePatterns: [
       {
         protocol: "https",
