@@ -1,7 +1,7 @@
 import Link from "next/link";
 const TermsOfUse = () => {
     return (
-      <section className="course-overview max-w-[1000px] mx-auto">
+      <section className="course-overview md:px-0 px-10 max-w-[1000px] mx-auto">
          
            <div className="container ">
            <h1 className="font-extrabold py-10 text-5xl text-[#000000] leading-tight">Terms of Use</h1>
