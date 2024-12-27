@@ -48,34 +48,34 @@ const SecondSection = () => {
          <form className="mt-8">
                   <div className="flex gap-10">
                       <div className="md:w-6/12">
-                      <input type="text" placeholder="First Name" className="bg-transprant w-full border-b py-3 border-[#CDCDCD]" />
+                      <input type="text" placeholder="First Name" id="detail_first_name" className="bg-transprant w-full border-b py-3 border-[#CDCDCD]" />
                       </div>
                       <div className="md:w-6/12">
-                      <input type="text" placeholder="Last Name" className="bg-transprant w-full border-b py-3 border-[#CDCDCD]" />
+                      <input type="text" placeholder="Last Name" id="detail_last_name" className="bg-transprant w-full border-b py-3 border-[#CDCDCD]" />
                       </div>
                   </div>
                   <div className="flex gap-10 mt-5">
                       <div className="md:w-6/12">
-                      <input type="text" placeholder="Email" className="bg-transprant w-full border-b py-3 border-[#CDCDCD]" />
+                      <input type="text" placeholder="Email" id="detail_email" className="bg-transprant w-full border-b py-3 border-[#CDCDCD]" />
                       </div>
                       <div className="md:w-6/12">
-                      <input type="text" placeholder="Phone" className="bg-transprant w-full border-b py-3 border-[#CDCDCD]" />
+                      <input type="text" placeholder="Phone" id="detail_phone" className="bg-transprant w-full border-b py-3 border-[#CDCDCD]" />
                       </div>
                   </div>
                   <div className="flex gap-10 mt-5">
                       <div className="md:w-full">
-                      <input type="text" placeholder="Street Address" className="bg-transprant w-full border-b py-3 border-[#CDCDCD]" />
+                      <input type="text" placeholder="Street Address" id="detail_line1" className="bg-transprant w-full border-b py-3 border-[#CDCDCD]" />
                       </div>                      
                   </div>
                   <div className="flex gap-10 mt-5">
                       <div className="md:w-4/12">
-                      <input type="text" placeholder="City" className="bg-transprant w-full border-b py-3 border-[#CDCDCD]" />
+                      <input type="text" placeholder="City" id="detail_city" className="bg-transprant w-full border-b py-3 border-[#CDCDCD]" />
                       </div>  
                       <div className="md:w-4/12">
-                      <input type="text" placeholder="Street Address" className="bg-transprant w-full border-b py-3 border-[#CDCDCD]" />
+                      <input type="text" id="detail_line2" placeholder="Street Address" className="bg-transprant w-full border-b py-3 border-[#CDCDCD]" />
                       </div>  
                       <div className="md:w-4/12">
-                      <input type="text" placeholder="Zip" className="bg-transprant w-full border-b py-3 border-[#CDCDCD]" />
+                      <input type="text" id="detail_zipcode" placeholder="Zip" className="bg-transprant w-full border-b py-3 border-[#CDCDCD]" />
                       </div>                      
                   </div>
               </form>
