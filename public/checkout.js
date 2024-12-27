@@ -2,7 +2,7 @@
 const stripe = Stripe("pk_test_51JIVaHSIfk35L8nB78p7tybIiB1kYKqPzPA8OcEveJb1eJhWOQjgD7O86yiZzh3HYsnnTgBHZTfzLVdpCQgz5AEb00G2yRVdEz");
 
 const amount_pay =  document.querySelector("#stripe-amount").value;
-console.log('amount :'+amount_pay);
+// console.log('amount :'+amount_pay);
 // The items the customer wants to buy
 const items = [{ id: "xl-tshirt", amount: amount_pay }];
 
@@ -16,7 +16,7 @@ document
 
 // Fetches a payment intent and captures the client secret
 async function initialize() {
-  const { clientSecret } = await fetch("http://localhost/stripephp/create.php", {
+  const { clientSecret } = await fetch("https://digitractive.com/cityprojectglobal/stripephp/create.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ items }),
