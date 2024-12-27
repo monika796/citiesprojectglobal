@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import Script from 'next/script'; 
+
 
 import Image from "next/image";
 const SecondSection = () => {
@@ -9,7 +11,18 @@ const SecondSection = () => {
 
   return (
     <>
-    
+    {/* Include the Stripe script using next/script */}
+    <Script
+        src="https://js.stripe.com/v3/"
+        strategy="beforeInteractive" // Ensures that the script is loaded before the component renders.
+      />
+      
+      {/* If you have a separate JS file (checkout.js), include it like this */}
+      <Script
+        src="/checkout.js"
+        strategy="afterInteractive" // Ensures the script is loaded after the page content is loaded.
+        defer
+      />
    <section>
       <div className="flex flex-wrap md:flex-nowrap  gap-3 justify-between">
          <div className="md:w-8/12">
@@ -122,6 +135,11 @@ const SecondSection = () => {
     >
       <option value="1-license">1 License ($24.99)</option>
     </select>
+    <input
+      type="hidden"
+      id="stripe-amount"
+      value={24.99}
+      />
   </div>
   <div className="mb-4">
     <label
@@ -183,7 +201,15 @@ const SecondSection = () => {
   </div>
   <Link href="https://cityprojectglobal.vercel.app/" className=" flex w-fit  items-center gap-2.5 inline-block md:mt-4 bg-[#A1CF5F] font-bold text-black  text-[13px] md:text-sm py-1 md:py-3 px-6 rounded-lg transition duration-300">Submit & Pay $24.99<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></Link>
 </div>
-
+<form id="payment-form">
+      <div id="payment-element">
+      </div>
+      <button id="submit">
+        <div className="spinner hidden" id="spinner"></div>
+        <span id="button-text" className="flex w-fit items-center gap-2.5 inline-block md:mt-4 bg-[#A1CF5F] font-bold text-black  text-[13px] md:text-sm py-1 md:py-3 px-6 rounded-lg transition duration-300">Submit & Pay</span>
+      </button>
+      <div id="payment-message" className="hidden"></div>
+    </form>
       </div>
 </div>
 </section>
