@@ -19,6 +19,7 @@ import { gql } from '@apollo/client';
 import client from 'apollo-client';
 import parse from "html-react-parser";
 import MainComponent from '@/components/LightboxPdf'
+import LastFiveSection from '@/components/lastfiveimages';
 
 const POSTS_QUERY = gql 
 `query MyQuery2 {
@@ -918,41 +919,7 @@ const page = async () => {
                   </svg>
                 </Link>
         </section>
-        <section>
-<div className="flex justify-center mx-auto w-fit mb-3 gap-3  mt-20">
-  <div className=" ">
-    <img
-      className=""
-      src={data.page.leadershipPageFeilds.vantageFormThirdSection.vantageFormThirdSectionImage1?.node?.link}
-    />
-  </div>
-  <div className=" ">
-    <img
-      className=""
-      src={data.page.leadershipPageFeilds.vantageFormThirdSection.vantageFormThirdSectionImage2?.node?.link}
-    />
-  </div>
-  <div className=" ">
-  <img
-      className=""
-      src={data.page.leadershipPageFeilds.vantageFormThirdSection.vantageFormThirdSectionImage3?.node?.link}
-    />
-  </div>
-  <div className="] ">
-  <img
-      className=""
-      src={data.page.leadershipPageFeilds.vantageFormThirdSection.vantageFormThirdSectionImage4?.node?.link}
-    />
-  </div>
-  <div className="  ">
-  <img
-      className=""
-      src={data.page.leadershipPageFeilds.vantageFormThirdSection.vantageFormThirdSectionImage5?.node?.link}
-    />
-  </div>
-</div>
-
-</section>
+    <LastFiveSection />
 
 <Newsletter />
           {/* Gurpreet end */}

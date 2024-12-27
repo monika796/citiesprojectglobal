@@ -169,7 +169,7 @@ const Contact = async (): Promise<JSX.Element> => {
                      </div>
                          
                             <div className="md:w-3/12 grid justify-center relative items-center  p-10">
-                            <img src={fields.thirdSectionRightImage?.node?.link || '/default-image.png'} className="md:absolute top-0 right-0" alt='' />
+                            <Image width={1000} height={1000} src={fields.thirdSectionRightImage?.node?.link || '/default-image.png'} className="md:absolute top-0 right-0" alt='' />
                             </div>
                     </div>
                 </section>
