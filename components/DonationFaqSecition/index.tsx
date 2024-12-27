@@ -50,8 +50,13 @@ const DonationFaq = () => {
     <section className="container mx-auto md:py-18 py-10 max-w-[1480px]">
       <div className="flex flex-wrap md:flex-nowrap gap-10">
         <div className="md:w-1/2 w-full p-[20px] md:p-[48px] rounded-[30px] border border-[#dcdcdc] md:m-[0] m-0 ">
-          <h1 className="text-[32px] md:text-[76px] text-[#000000] font-normal text-center leading-[51px]">
-            $<span className="!text-[#cccccc]"> {data.page.donatePageFeilds.donateSecondSectionLeftHeading}</span>
+        <h1 className="text-[32px] md:text-[76px] text-[#000000] font-normal text-center leading-[51px]">
+            $<span className="!text-[#cccccc]"><input
+  type="tel"
+  className="text-[#000000] w-[200px] border p-2 w-full rounded-md focus:outline-none focus:border-none"
+  placeholder="0.00"
+  pattern="[0-9]*"  // Allows only numbers
+/> {data.page.donatePageFeilds.donateSecondSectionLeftHeading}</span>
           </h1>
           <h4 className="text-[20px] w-full md:w-[50%] font-bold leading-[24.2px] text-center m-auto py-5">
             {data.page.donatePageFeilds.donateSecondSectionLeftDescription}
