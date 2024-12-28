@@ -55,8 +55,8 @@ const FifthSection = ({ data, Video_gif }) => {
             src={data.page.homefifthsection.authorimage?.node?.link}
             className="md:h-[150px] mx-unset mt-10 md:mt-0 md:mx-0 h-[83px]"
             alt="image"
-            width={800}
-            height={500}
+            width={232}
+            height={220}
           />
           <h5 className="text-[30px] text-white md:text-left text-left font-bold pb-2 md:pb-5">
             {data.page.homefifthsection.authortitle}

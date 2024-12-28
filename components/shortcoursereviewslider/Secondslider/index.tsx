@@ -72,7 +72,7 @@ const ReviewSecondSlider =  () => {
 
  return (
     <>
-      <section className="max-w-[1520px] mx-auto  flex items-center justify-center">
+      <section className="max-w-[1520px] mx-auto  ">
         <div className="w-full h-auto">
         <Swiper
                 modules={[ Pagination, Keyboard, Mousewheel, Autoplay]}
@@ -87,7 +87,7 @@ const ReviewSecondSlider =  () => {
                 mousewheel={{ forceToAxis: true }}
                 loop={true}
                 cssMode
-                slidesPerView={4}  // Show 4 slides per view by default
+                // slidesPerView={4}  // Show 4 slides per view by default
                 spaceBetween={10}  // Add space between slides
                 breakpoints={{
                     1024: {
@@ -105,11 +105,11 @@ const ReviewSecondSlider =  () => {
             {posts.map((testimonial, index) => (
               <SwiperSlide
                 key={index}
-                className="flex justify-center items-center text-lg bg-white"
+                className=" text-lg bg-white"
               >
                  <div
                         key={index}
-                        className="p-10 bg-[#F5F5F5] text-black rounded-lg"
+                        className="p-10  min-h-[250px] bg-[#F5F5F5] text-black rounded-lg"
                      >
                         <div className="flex mb-4">
                            <div className="mr-4">

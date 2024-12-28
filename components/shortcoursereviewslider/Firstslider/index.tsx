@@ -88,7 +88,7 @@ const ReviewFirstSlider =  () => {
                 mousewheel={{ forceToAxis: true }}
                 loop={true}
                 cssMode
-                slidesPerView={4}  // Show 4 slides per view by default
+                // slidesPerView={4}  // Show 4 slides per view by default
                 spaceBetween={30}  // Add space between slides
                 breakpoints={{
                     1024: {
@@ -110,7 +110,7 @@ const ReviewFirstSlider =  () => {
               >
                  <div
                            key={index}
-                           className="p-10 bg-[#F5F5F5] text-black rounded-lg"
+                           className="p-10 min-h-[250px] bg-[#F5F5F5] text-black rounded-lg"
                          >
                            <div className="flex mb-4">
                              <div className="mr-4">

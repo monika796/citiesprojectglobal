@@ -179,12 +179,12 @@ return (
       </div>
    </section>
    <section className="flex flex-wrap md:flex-nowrap py-20 container mx-auto max-w-[1480px]">
-      <div className="md:w-1/3 w-full p-8 pt-12">
+      <div className="md:w-1/3 w-full p-0 md:p-8 mb-10 md:mb-0 pt-12">
          <h4 className="text-[20px] w-[50%]  font-bold text-black">
             {shortcourse.shortCoursesSecondSection.shortCoursesSecondSectionFirstColumnText}
          </h4>
       </div>
-      <div className="md:w-2/3 w-full p-8 gap-10 grid">
+      <div className="md:w-2/3 w-full p-0 md:p-8 gap-10 grid">
          <h2 className="m-0 text-[22px] md:text-[40px] text-black font-bold md:leading-[60px] leading-[30px]">
          {shortcourse.shortCoursesSecondSection.shortCoursesSecondSectionSecondColumnHeading}
          </h2>
@@ -217,7 +217,7 @@ return (
             </div>
          </div>
          <div className=" py-20">
-            <div className="flex flex-wrap md:flex-nowrap">
+            <div className="">
             {/* {shortcourse.shortCoursesThirdSection.shortCoursesThirdSectionMainSecondRowCards.map((course,index) => (
                      <div key={index} className="m-4 rounded bg-white">
                         <Image
@@ -296,15 +296,15 @@ return (
       <p className="text-center text-black text-[15px]">{shortcourse.shortCoursesFifthSection.shortCoursesFifthSectionSubText}</p>
    </section>
    {/*////////////////////////////  */}
-   <section className="mt-30">
+   <section className="mt-30 mx-8 md:mx-0">
       <h2 className="md:w-[30%] w-full mx-auto text-center text-black md:text-[48px] text-[25px] font-bold leading-[30px] md:leading-[58px] mb-5">
          
       {shortcourse.shortCoursesSixthSection.shortCoursesSixthSectionMainHeading}</h2>
       <h2 className="md:w-[35%] w-full mx-auto text-center text-black text-[16px] pb-10  leading-[30px]">
       {shortcourse.shortCoursesSixthSection.shortCoursesSixthSectionMainDescription}
       </h2>
-      <div className="my-5 bg-white flex items-center justify-center ">
-         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 ">
+      <div className="my-5 bg-white  ">
+         <div className=" ">
             {/* Testimonial 4 */}
             <ReviewFirstSlider />
             {/* {shortcourse.shortCoursesSixthSection.shortCoursesSixthSectionFirstReviewRow.map(
@@ -338,8 +338,8 @@ return (
          </div>
       </div>
       {/* second row */}
-      <div className="my-5 bg-white flex items-center justify-center ">
-         <div className="111 grid gap-6 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 ">
+      <div className="my-5 bg-white ">
+         <div className="111 ">
             {/* Testimonial 4 */}
             {/* {shortcourse.shortCoursesSixthSection.shortCoursesSixthSectionSecondReviewRow.map(
                      (testimonial, index) => (

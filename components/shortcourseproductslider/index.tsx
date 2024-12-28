@@ -76,7 +76,7 @@ const SwiperSectionshortcourses =  () => {
  
  return (
     <>
-      <section className="max-w-[1280px] mx-auto  flex items-center justify-center">
+      <section className="max-w-[1280px] mx-auto">
         <div className="w-full h-auto">
         <Swiper
                 modules={[Navigation, Pagination, Keyboard, Mousewheel, Autoplay]}
@@ -92,11 +92,14 @@ const SwiperSectionshortcourses =  () => {
                 mousewheel={{ forceToAxis: true }}
                 loop={true}
                 cssMode
-                slidesPerView={4}  // Show 4 slides per view by default
+                // slidesPerView={1}  // Show 4 slides per view by default
                 spaceBetween={30}  // Add space between slides
                 breakpoints={{
-                    1024: {
+                  1400: {
                     slidesPerView: 4, // 4 slides on large screens
+                    },
+                    1024: {
+                    slidesPerView: 3, // 4 slides on large screens
                     },
                     768: {
                     slidesPerView: 2, // 2 slides on tablets
@@ -110,7 +113,7 @@ const SwiperSectionshortcourses =  () => {
             {posts.map((course, index) => (
               <SwiperSlide
                 key={index}
-                className="flex justify-center items-center text-lg bg-white"
+                className=" text-lg bg-white"
               >
                  <div key={index} className="m-4 rounded bg-white">
                         <Image
@@ -121,8 +124,8 @@ const SwiperSectionshortcourses =  () => {
                            height={1000}
                            width={1000}
                         />
-                        <div className="p-5 grid gap-3">
-                           <p className="text-[20px] text-black font-medium leading-[24px]">
+                        <div className="md:p-5 p-3 grid gap-3">
+                           <p className="md:text-[20px] text-[16px] text-black font-medium leading-[24px]">
                            {course.shortCoursesThirdSectionMainSecondRowCardTitle}
                            </p>
                            <Image
