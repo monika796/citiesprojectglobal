@@ -188,7 +188,7 @@ console.log(data);
                                       {data.page.aboutuspage.secondsectionimagwithtextText}   </h4>
                                       <p className="text-[16px] text-left md:text-left  pt-[19px] md:w-[75%] text-black  font-bold leading-[23px] text-left pb-3 md:pb-0">
                                       {data.page.aboutuspage.secondsectionimagwithtextSubtext}  </p>
-                                      <div  className="md:mt-8 flex   mx-unset md:mx-0 items-center gap-2.5 w-[fit-content] inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">
+                                      <div  className=" max-w-fit md:mt-8 flex   mx-unset md:mx-0 items-center gap-2.5 w-[fit-content] inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">
                                       <MainComponent  extraclass=''
                                         buttonText= {data.page.aboutuspage.secondsectionimagwithtextButtontext}   // Pass dynamic text as prop
                                         pdfUrl="/SampleChapter.pdf#scrollbar=0"  // Pass the dynamic PDF URL

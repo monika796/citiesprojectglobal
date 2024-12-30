@@ -53,7 +53,7 @@ const FifthSection = ({ data, Video_gif }) => {
           </p>
           <Image
             src={data.page.homefifthsection.authorimage?.node?.link}
-            className="md:h-auto md:w-[30%] mx-unset mt-10 md:mt-0 md:mx-0 h-[83px]"
+            className="h-auto w-[30%] mx-unset mt-10 md:mt-0 md:mx-0 "
             alt="image"
             width={232}
             height={220}
@@ -139,7 +139,7 @@ const FifthSection = ({ data, Video_gif }) => {
               </button>
             </Link>
             {/* <Link href={data.page.homefifthsection.buttonlinksecond}> */}
-              <div onClick={openModal} className="md:w-[100%] max-w-max  mx-auto mt-[21px] md:mx-0 md:mt-4 mr-2 flex items-center gap-3 text-black bg-white font-bold p-2 rounded-[5px]">
+              <div onClick={openModal} className="max-w-fit md:w-[100%] max-w-max  mx-auto mt-[21px] md:mx-0 md:mt-4 mr-2 flex items-center gap-3 text-black bg-white font-bold p-2 rounded-[5px]">
                 <MainComponent  extraclass=''
                 buttonText={data.page.homefifthsection.textbuttonsecond}  // Pass dynamic text as prop
                 pdfUrl="/SampleChapter.pdf"  // Pass the dynamic PDF URL
