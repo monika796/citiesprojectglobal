@@ -47,33 +47,36 @@ const fetchPostById = async (id: string) => {
   return data.post;
 };
 
-const SingleBlogPage = () => {
+const SingleBlogPage = async () => {
   const searchParams = useSearchParams();
   const id = searchParams.get("id"); // Retrieve the 'id' query param
+ 
+  if (!id) {
+return
+  } const post = await fetchPostById(id);
+  // const [post, setPost] = useState<Post | null>(null);
+  // const [loading, setLoading] = useState<boolean>(true);
+  // const [error, setError] = useState<string | null>(null);
 
-  const [post, setPost] = useState<Post | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  // useEffect(() => {
+  //   if (id) {
+  //     const fetchData = async () => {
+  //       try {
+  //         const fetchedPost = await fetchPostById(id);
+  //         setPost(fetchedPost);
+  //       } catch (err) {
+  //         setError((err as Error).message);
+  //       } finally {
+  //         setLoading(false);
+  //       }
+  //     };
+  //     fetchData();
+  //   }
+  // }, [id]);
 
-  useEffect(() => {
-    if (id) {
-      const fetchData = async () => {
-        try {
-          const fetchedPost = await fetchPostById(id);
-          setPost(fetchedPost);
-        } catch (err) {
-          setError((err as Error).message);
-        } finally {
-          setLoading(false);
-        }
-      };
-      fetchData();
-    }
-  }, [id]);
-
-  // Display loading or error state while fetching
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  // // Display loading or error state while fetching
+  // if (loading) return <div>Loading...</div>;
+  // if (error) return <div>Error: {error}</div>;
 
   return (
     <section className="container mx-auto max-w-[1480px]">
@@ -155,12 +158,12 @@ const SingleBlogPage = () => {
 };
 
 // Wrapping the component with Suspense
-const PageWrapper = () => {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <SingleBlogPage />
-    </Suspense>
-  );
-};
+// const PageWrapper = () => {
+//   return (
+//     <Suspense fallback={<div>Loading...</div>}>
+//       <SingleBlogPage />
+//     </Suspense>
+//   );
+// };
 
-export default PageWrapper;
+export default SingleBlogPage;
