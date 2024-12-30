@@ -92,7 +92,6 @@ async function handleSubmit(e) {
     setLoading(false);
   }
 }
-
 // ------- UI helpers -------
 
 function showMessage(messageText) {
