@@ -423,7 +423,7 @@ export default async function Home() {
       </div></div>
 
       <div className=" relative container  mx-auto max-w-[1580px]">
-          <div className="absolute inset-0 bg-[#e6e6e6] bg-opacity-50 backdrop-blur-md z-1"></div>
+          <div className="absolute inset-0 bg-opacity-50 backdrop-blur-md z-1"></div>
             <div className="relative container w-[100%] max-w-[1480px] mx-auto pt-[30px] z-9 md:pt-[150px] md:pb-[100px]">
     
         <h1 className=" px-5 md:px-0 text-[25px] md:max-w-[1062px] md:mx-auto  md:text-[48px] pb-5 mt-10 md:mt-0 md:pb-15 text-black font-bold leading-[30.09px] md:leading-[46.09px] text-center">
