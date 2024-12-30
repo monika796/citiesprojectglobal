@@ -131,7 +131,7 @@ export default async function Book() {
                                     <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
                                     </button></Link>
                                     <br className="hidden md:block" />
-                                    <div  className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
+                                    <div  className="mx-auto max-w-max mt-[21px] max-w-max md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
                                     
                             <MainComponent  extraclass=''
                                   buttonText={data.page.bookPageFeilds.bookThirdSectionRightButtonTwo}  // Pass dynamic text as prop
@@ -197,7 +197,7 @@ export default async function Book() {
                                     <path d="M1 13 13 1M4 1h9v9"></path></g></svg>
                                     </button></Link>
                                     <br className="hidden md:block" />
-                                    <div className="mx-auto mt-[21px] md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
+                                    <div className="mx-auto mt-[21px] max-w-max md:mx-0 md:mt-0 border-[1px] border-solid border-black  flex items-center  gap-3 text-black bg-white font-bold p-2 rounded-[5px]" >
                                     
                                     <MainComponent  extraclass=''
                                   buttonText={data.page.bookPageFeilds.bookSeventhSectionButtonTwoText}  // Pass dynamic text as prop
