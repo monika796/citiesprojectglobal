@@ -230,9 +230,9 @@ pre {
   .container {
     max-width: 992px  !important;
 }
-  .social-media  {
+  /* .social-media  {
    display: none !important;
-}
+} */
 }
 @media (min-width: 767px) and (max-width: 1024px) {
   .container {

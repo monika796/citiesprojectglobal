@@ -81,7 +81,7 @@ const VideoPlayer = () => {
           loop
           onClick={(e) => handleClick(e.currentTarget, setIsPlaying)} // Pass the clicked video element and setIsPlaying
         >
-          <source src="videos.mp4" type="video/mp4" />
+          <source src="videoplayback.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
