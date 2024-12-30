@@ -66,7 +66,7 @@ const SwiperSectionLeaderhsip =  () => {
  
  return (
     <>
-      <section className="max-w-[1480px] mx-auto">
+      <section className="md:max-w-[1480px] mx-auto">
         <div className="w-full h-auto">
         <Swiper
                 modules={[Navigation, Pagination, Keyboard, Mousewheel, Autoplay]}
@@ -124,7 +124,9 @@ const SwiperSectionLeaderhsip =  () => {
       {/* Custom CSS for pagination */}
       <style>
         {`
-        
+        .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+    display: none;
+}
           .swiper-pagination {
             bottom: -20px; 
           }

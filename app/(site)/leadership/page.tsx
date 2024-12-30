@@ -525,7 +525,7 @@ const page = async () => {
           <div className="flex items-center justify-between">
             <h2 className='text-[16px] font-bold text-black'>Watch Our Community Share Their Experience</h2> <hr className='border w-[70%]' />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-15 ">
+          <div className="md:grid grid-cols-1 md:grid-cols-3 gap-10 mt-15 ">
             
            <SwiperSectionLeaderhsip />
           </div>
