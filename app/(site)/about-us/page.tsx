@@ -237,7 +237,7 @@ console.log(data);
                <div className="container mx-auto max-w-[1480px]">
                   <section className=" md:pt-10 py-[32px]">
                                     <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-                                    <div className="grid grid-cols-2  pt-[29px] md:grid-cols-7 md:justify-center">
+                                    <div className="grid grid-cols-2  pt-[29px] md:grid-cols-8 md:justify-center">
                           {data.page.aboutussections.iconsections.map((dataposts, index) => (
                               <div 
                                 key={index} // Add a unique key for each child
