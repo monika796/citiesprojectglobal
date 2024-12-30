@@ -53,7 +53,7 @@ const FifthSection = ({ data, Video_gif }) => {
           </p>
           <Image
             src={data.page.homefifthsection.authorimage?.node?.link}
-            className="md:h-auto md:w-[35%] mx-unset mt-10 md:mt-0 md:mx-0 h-[83px]"
+            className="md:h-auto md:w-[30%] mx-unset mt-10 md:mt-0 md:mx-0 h-[83px]"
             alt="image"
             width={232}
             height={220}

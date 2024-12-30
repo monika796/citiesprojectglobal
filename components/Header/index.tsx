@@ -232,7 +232,7 @@ const Header = () => {
 
         
         </div>
-        <div className="social-media hidden md:hidden lg:flex flex md:gap-[10px] md:order-2 w-full max-w-[350px] space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <div className="social-media hidden md:flex  md:gap-[10px] md:order-2 w-full max-w-[350px] space-x-3 md:space-x-0 rtl:space-x-reverse">
             <div className="px-4  md:flex md:items-center md:justify-between">
               <div className="md:flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse  hidden ">
               <Link 
