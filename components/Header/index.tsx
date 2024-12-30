@@ -102,19 +102,19 @@ const Header = () => {
   }, []);
   return (
     <header
-      className={`sticky  left-0 top-0 z-999 md:pt-0 w-full ${stickyMenu
+      className={`sticky  left-0 top-0 z-99999 md:pt-0 w-full ${stickyMenu
           ? "bg-gray-900 !text-white !py-4 shadow transition duration-100 dark:bg-black"
           : ""
         } ${isHomePage ? "my-0" : "mt-0"} ${scrollDirection=='hidden' ? "invisible" : "visible" }` }
     >
-      {/* <div className="relative mx-auto max-w-[89%]  border-t border-b border-white border-solid items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0"> */}
-      <div className={`relative mx-auto container max-w-[1480px]  border-t border-b  border-solid items-center justify-between px-4 md:px-0 xl:flex 2xl:px-0 
+      {/* <div className="relative mx-auto max-w-[89%]  border-t border-b border-white border-solid items-center justify-between px-4 md:px-8 md:flex 2md:px-0"> */}
+      <div className={`relative mx-auto container max-w-[1480px]  border-t border-b  border-solid items-center justify-between px-4 md:px-0 md:flex 2md:px-0 
 
       ${isHomePage && isDesktop  || stickyMenu && !isMobile ? "border-white" : "border-[#000000]"}
      
       `}
       >
-        <div className="flex w-full items-center justify-between xl:w-1/4">
+        <div className="flex w-full items-center justify-between md:w-1/4">
           <Link href="/" onClick={closeNavigation} >
             <Image
               // src="/1 1.png"
@@ -132,7 +132,7 @@ const Header = () => {
           {/* <!-- Hamburger Toggle BTN --> */}
           <button
             aria-label="hamburger Toggler"
-            className="block xl:hidden"
+            className="block md:hidden"
             onClick={() => setNavigationOpen(!navigationOpen)}
           >
             <span className="relative block h-5.5 w-5.5 cursor-pointer">
@@ -168,13 +168,13 @@ const Header = () => {
 
         {/* Nav Menu Start   */}
         <div
-          className={`${scrollDirection=='hidden' ? "" : "xl:visible" } invisible h-0 w-full  items-center justify-center  xl:flex xl:h-auto xl:w-full ${navigationOpen &&
-            "navbar !visible mt-4 h-auto max-h-[400px] rounded-md bg-white p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent"
+          className={`${scrollDirection=='hidden' ? "" : "md:visible" } invisible h-0 w-full  items-center justify-center  md:flex md:h-auto md:w-full ${navigationOpen &&
+            "navbar !visible mt-4 h-auto max-h-[400px] rounded-md bg-white p-7.5 shadow-solid-5 dark:bg-blacksection md:h-auto md:p-0 md:shadow-none md:dark:bg-transparent"
             } ${isDesktop ? "" : "absolute left-0 z-[999]"}`}
         >
           <nav>
           <ul
-              className={`flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10 
+              className={`flex flex-col gap-5 md:flex-row md:items-center md:gap-10 
                 ${isHomePage ? "md:text-white text-[#000000]" : "text-[#000000]"}
                 ${stickyMenu && !isHomePage && !isMobile ? "text-white" : ""}
               `}
