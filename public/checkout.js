@@ -44,27 +44,53 @@ async function initialize() {
 async function handleSubmit(e) {
   e.preventDefault();
   setLoading(true);
+  // Prepare form data to send to the backend
+  const formData = {
+    amount: document.querySelector("#stripe-amount").value,
+    first_name: document.querySelector("#detail_first_name").value,
+    last_name: document.querySelector("#detail_last_name").value,
+    email: document.querySelector("#detail_email").value,
+    phone: document.querySelector("#detail_phone").value,
+    address_line1: document.querySelector("#detail_line1").value,
+    city: document.querySelector("#detail_city").value,
+    address_line2: document.querySelector("#detail_line2").value,
+    zipcode: document.querySelector("#detail_zipcode").value,
+  };
+  try {
+    // Send form data to PHP backend for saving
+    const saveResponse = await fetch("https://digitractive.com/cityprojectglobal/stripephp/save_data.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
-  const { error } = await stripe.confirmPayment({
-    elements,
-    confirmParams: {
-      // Make sure to change this to your payment completion page
-      return_url: "https://citiesprojectglobal.vercel.app/complete-payment",
-    },
-  });
+    const saveResult = await saveResponse.json();
 
-  // This point will only be reached if there is an immediate error when
-  // confirming the payment. Otherwise, your customer will be redirected to
-  // your `return_url`. For some payment methods like iDEAL, your customer will
-  // be redirected to an intermediate site first to authorize the payment, then
-  // redirected to the `return_url`.
-  if (error.type === "card_error" || error.type === "validation_error") {
-    showMessage(error.message);
-  } else {
-    showMessage("An unexpected error occurred.");
+    if (!saveResponse.ok || saveResult.error) {
+      throw new Error(saveResult.message || "Failed to save data");
+    }
+   // console.log("Data saved successfully:", saveResult);
+   // Proceed with Stripe payment confirmation
+    const { error } = await stripe.confirmPayment({
+      elements,
+      confirmParams: {
+        return_url: "https://citiesprojectglobal.vercel.app/complete-payment",
+      },
+    });
+
+    if (error) {
+      if (error.type === "card_error" || error.type === "validation_error") {
+        showMessage(error.message);
+      } else {
+        showMessage("An unexpected error occurred.");
+      }
+    }
+  } catch (err) {
+    console.error("Error handling form submission:", err.message);
+    showMessage(err.message);
+  } finally {
+    setLoading(false);
   }
-
-  setLoading(false);
 }
 
 // ------- UI helpers -------
