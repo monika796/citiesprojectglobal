@@ -1,9 +1,9 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { gql, useQuery } from "@apollo/client";
-import { useState } from "react";
-import Image from "next/image";
+import { gql, useQuery } from '@apollo/client';
+import { useState } from 'react';
+import Image from 'next/image';
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
@@ -24,12 +24,13 @@ const POSTS_QUERY = gql`
   }
 `;
 
+
+
 const VideoPlayer = () => {
   const { loading, error, data } = useQuery(POSTS_QUERY);
   const [isPlaying, setIsPlaying] = useState(false); // Track video play state
   const [isPlayed, setPlayed] = useState(false);
-
-  const handleClick = (videoElement: HTMLVideoElement) => {
+  const handleClick = (videoElement: HTMLVideoElement, setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>) => {
     if (videoElement) {
       if (videoElement.paused) {
         videoElement.play(); // Play the video if it is paused
@@ -42,21 +43,18 @@ const VideoPlayer = () => {
     }
   };
 
-  const handleSectionClick = () => {
-    const videoElement = document.querySelector("video");
-    if (videoElement) {
-      handleClick(videoElement); // Trigger handleClick with the video element
-    }
-  };
-
   if (loading) return null;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <section
-      className="md:py-[32px]"
-      onClick={handleSectionClick} // Play video on section click
-    >
+    <section className="md:py-[32px]" 
+    onClick={(e) => {
+      // Ensure handleClick is triggered on section click as well
+      const videoElement = document.querySelector("video");
+      if (videoElement) {
+        handleClick(videoElement, setIsPlaying); // Only trigger handleClick if video element is clicked
+      }
+    }}>
       <h1 className="md:text-[40px] text-[25px] font-bold text-center text-black md:w-[52%] md:p-5 mx-auto leading-[49px]">
         {data.page.aboutussections.videosectionheading}
       </h1>
@@ -69,21 +67,27 @@ const VideoPlayer = () => {
             width={1000}
             height={563}
             className="w-full rounded-lg relative"
+            onClick={(e) => {
+              // Ensure handleClick is triggered on section click as well
+              const videoElement = document.querySelector("video");
+              if (videoElement) {
+                handleClick(videoElement, setIsPlaying); // Only trigger handleClick if video element is clicked
+              }
+            }} // Pass the clicked video element and setIsPlaying
           />
         )}
 
+
         <video
-          className={`w-full rounded-lg ${isPlayed ? "" : "hidden"}`}
+          className={`w-full rounded-lg ${isPlayed ? '' : 'hidden'}`}
           loop
-          onClick={(e) => {
-            e.stopPropagation(); // Prevent triggering section click
-            handleClick(e.currentTarget); // Play or pause video
-          }}
+          onClick={(e) => handleClick(e.currentTarget, setIsPlaying)} // Pass the clicked video element and setIsPlaying
         >
           <source src="videos.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
+        {/* Conditionally render images */}
         <div className="md:absolute bottom-0 p-5 text-center md:text-left">
           <h2 className="md:text-[64px] text-[30px] font-bold text-black md:text-white md:w-[32%] leading-[65px]">
             {data.page.aboutussections.videosectiontitle}
@@ -93,23 +97,11 @@ const VideoPlayer = () => {
           </p>
         </div>
 
-        <div className="absolute md:bottom-5 bottom-[57%] right-0 md:right-[5%] md:p-5">
+        <div className=" absolute md:bottom-5 bottom-[57%] right-0  md:right-[5%] md:p-5" >
           {isPlaying ? (
-            <Image
-              width={800}
-              height={500}
-              src="/117.png"
-              className="md:w-[80%] w-[60%]"
-              alt="Playing"
-            />
+            <Image width={800} height={500} src="/117.png" className="md:w-[80%] w-[60%]" alt="Playing" /> // Image when video is playing
           ) : (
-            <Image
-              width={800}
-              height={500}
-              src="/73.png"
-              className="md:w-[80%] w-[60%]"
-              alt="Paused"
-            />
+            <Image  width={800} height={500} src="/73.png" className="md:w-[80%] w-[60%]" alt="Paused" /> // Default image
           )}
         </div>
       </div>

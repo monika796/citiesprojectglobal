@@ -35,13 +35,13 @@ const FifthSection = ({ data, Video_gif }) => {
  
     
 
-    <div className="container my-10 mx-auto max-w-[1481px]">
+    <div className="container mx-auto max-w-[1481px]">
       <div
-        className="flex flex-col md:flex-row w-[100%] pb-[0px] mx-auto items-center rounded-[5px]"
+        className="flex flex-col md:flex-row w-[100%] pb-[10px] mx-auto items-center rounded-[5px]"
         style={{ backgroundColor: "rgb(3, 4, 2)" }}
       >
         {/* Left Content */}
-        <div className="md:w-5/12 w-full p-[40px] md:p-[26px] mt-10 md:mt-0">
+        <div className="md:w-5/12 w-full p-[40px] md:p-[40px] mt-10 md:mt-0">
           <span className="text-[18px] bg-[#fff] text-black font-bold mx-auto md:mx-0 text-center w-[45%] rounded-[20px] px-4 py-1 font-bold">
             {data.page.homefifthsection.fifthfirstsubtitle}
           </span>
@@ -67,9 +67,9 @@ const FifthSection = ({ data, Video_gif }) => {
         </div>
 
         {/* Right Content */}
-        <div className="md:w-8/12 md:py-[0px] relative">
+        <div className="md:w-8/12 md:py-[30px] relative">
           {/* Black Box for Video */}
-          <div className="bg-[rgb(3, 4, 2)]  rounded-lg">
+          <div className="bg-[rgb(3, 4, 2)] md:pr-5 rounded-lg">
             {isPlaying ? (
               <button
                 className="absolute inset-0 flex items-center justify-center text-white text-3xl rounded-full"
@@ -105,7 +105,7 @@ const FifthSection = ({ data, Video_gif }) => {
                 alt="Video Thumbnail"
                 width={1000}
                 height={563}
-                className="w-full p-10 cursor-pointer"
+                className="w-full cursor-pointer"
                 onClick={handleVideoClick}
               />
             )}
@@ -113,14 +113,15 @@ const FifthSection = ({ data, Video_gif }) => {
               <video
                 ref={videoRef}
                 className="w-full"
-                src="videoplayback.mp4"
+                src="videos.mp4"
                 onClick={handleVideoClick}
                 autoPlay
               ></video>
             )}
           </div>
+
           {/* Buttons */}
-          <div className="md:float-right  md:mr-3 mt-5 z-999 absolute bottom-3 right-0">
+          <div className="md:float-right md:mt-[-50px] md:mr-3 mt-5 z-999 relative">
             <Link href={data.page.homefifthsection.buttonlinkone}>
               <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">
                 {data.page.homefifthsection.fifthbuttonone}
@@ -139,7 +140,7 @@ const FifthSection = ({ data, Video_gif }) => {
               </button>
             </Link>
             {/* <Link href={data.page.homefifthsection.buttonlinksecond}> */}
-              <div onClick={openModal} className="md:w-[100%] max-w-max  mx-auto mt-[21px] md:mx-0 md:mt-4 mr-2 flex items-center gap-3 text-black bg-white font-bold p-2 rounded-[5px]">
+              <div onClick={openModal} className="md:w-[100%] w-[65%] mx-auto mt-[21px] md:mx-0 md:mt-4 flex items-center gap-3 text-black bg-white font-bold p-2 rounded-[5px]">
                 <MainComponent  extraclass=''
                 buttonText={data.page.homefifthsection.textbuttonsecond}  // Pass dynamic text as prop
                 pdfUrl="/SampleChapter.pdf"  // Pass the dynamic PDF URL

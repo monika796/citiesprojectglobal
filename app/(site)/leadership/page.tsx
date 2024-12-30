@@ -20,7 +20,7 @@ import client from 'apollo-client';
 import parse from "html-react-parser";
 import MainComponent from '@/components/LightboxPdf'
 import LastFiveSection from '@/components/lastfiveimages';
-import SwiperSectionLeaderhsip from '@/components/leadershipcommunityslider';
+
 const POSTS_QUERY = gql 
 `query MyQuery2 {
   page(id: "cG9zdDo2MDg=") {
@@ -526,8 +526,33 @@ const page = async () => {
             <h2 className='text-[16px] font-bold text-black'>Watch Our Community Share Their Experience</h2> <hr className='border w-[70%]' />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-15 ">
-            
-           <SwiperSectionLeaderhsip />
+            <div className="grid grid-cols-1 md:grid-cols-2">
+                <Image src={Slider} width={265} height={386} alt=''></Image>
+                <div className="bg-[#D9F8DC] grid items-center pl-4">
+                  <div>
+                  <h2 className='text-[16px] font-bold text-black'>Hugh Brandt</h2>
+                  <p className='text-[16px] font-medium text-black'>Global City Consultant</p>
+                  </div>
+                </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2">
+                <Image src={Slider} width={265} height={386} alt=''></Image>
+                <div className="bg-[#D9F8DC] grid items-center pl-4">
+                  <div>
+                  <h2 className='text-[16px] font-bold text-black'>Hugh Brandt</h2>
+                  <p className='text-[16px] font-medium text-black'>Global City Consultant</p>
+                  </div>
+                </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2">
+                <Image src={Slider} width={265} height={386} alt=''></Image>
+                <div className="bg-[#D9F8DC] grid items-center pl-4">
+                  <div>
+                  <h2 className='text-[16px] font-bold text-black'>Hugh Brandt</h2>
+                  <p className='text-[16px] font-medium text-black'>Global City Consultant</p>
+                  </div>
+                </div>
+            </div>
           </div>
         </section>
         <section>
