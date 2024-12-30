@@ -1,31 +1,23 @@
 'use client';
 import React, { useState, useEffect, useRef } from "react";
-import { Document, Page, pdfjs } from 'react-pdf';
-import 'react-pdf/dist/esm/Page/TextLayer.css';  // Import the styles for the TextLayer
 
-
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.mjs`;
-import '@react-pdf-viewer/core/lib/styles/index.css'; 
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 const MainComponent = ({ buttonText, pdfUrl, extraclass }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [numPages, setNumPages] = useState<number | null>(null);
-  const [pageNumber, setPageNumber] = useState(1);
-  const modalRef = useRef<HTMLDivElement | null>(null);  
+  const modalRef = useRef<HTMLDivElement | null>(null);  // Reference to the modal element
 
-  
+  // Function to open the modal
   const openModal = () => {
     setIsModalOpen(true);
   };
 
-  
+  // Function to close the modal
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
-  
-  const handleClickOutside = (event: MouseEvent) => {
-    if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+  // Close modal if clicked outside of the modal
+  const handleClickOutside = (event) => {
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
       closeModal();
     }
   };
@@ -38,68 +30,40 @@ const MainComponent = ({ buttonText, pdfUrl, extraclass }) => {
       document.removeEventListener("click", handleClickOutside);
     }
 
+    // Cleanup listener on unmount
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [isModalOpen]);
 
-  // Callback when document is loaded successfully
-  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
-    setNumPages(numPages); // Set the total number of pages
-  };
-
   return (
     <div className="relative">
-      {/* Button to open the modal */}
+      {/* Button to trigger the modal */}
       <button onClick={openModal} className={extraclass}>
-        {buttonText}
+        {buttonText} {/* Render dynamic button text */}
       </button>
 
-      {/* Modal for PDF */}
+      {/* Modal */}
       {isModalOpen && (
-        <div className="fixed z-50 inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center">
-          <div ref={modalRef} className="bg-white rounded-lg w-full max-w-max relative">
+        <div className="fixed z-99999 h inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center">
+          <div ref={modalRef} className="bg-white rounded-lg w-full max-w-[80%] relative">
             {/* Close Button */}
             <button
               onClick={closeModal}
-              aria-label="Close modal"
-              className="absolute top-2 right-2 px-4 py-2 text-white bg-red-600 rounded-full hover:bg-red-700"
+              className="absolute z-9999999999 top-2 right-2 px-4 py-2 text-white bg-red-600 rounded-full hover:bg-red-700"
             >
               X
             </button>
 
-            {/* PDF Embed with react-pdf */}
+            {/* PDF Embed */}
             <div className="w-full">
-              <Document
-                file={pdfUrl} // The PDF URL passed as a prop
-                onLoadSuccess={onDocumentLoadSuccess} // Callback when document is loaded successfully
-              >
-                {/* Render PDF Pages */}
-                <Page pageNumber={pageNumber} />
-              </Document>
-
-              {/* Pagination Controls */}
-              {numPages && (
-                <div className="flex justify-between items-center mt-4">
-                  <button
-                    onClick={() => setPageNumber(pageNumber - 1)}
-                    disabled={pageNumber <= 1}
-                    className="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50"
-                  >
-                    Previous
-                  </button>
-                  <span>
-                    Page {pageNumber} of {numPages}
-                  </span>
-                  <button
-                    onClick={() => setPageNumber(pageNumber + 1)}
-                    disabled={pageNumber >= numPages}
-                    className="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50"
-                  >
-                    Next
-                  </button>
-                </div>
-              )}
+              <iframe
+                src={pdfUrl} // Use the dynamic PDF URL passed as a prop
+                width="100%"
+                height="600px"
+                title="PDF Viewer"
+                className="border-0 rounded-lg"
+              ></iframe>
             </div>
           </div>
         </div>
