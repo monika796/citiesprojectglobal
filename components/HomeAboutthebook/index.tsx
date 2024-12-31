@@ -120,7 +120,7 @@ const FifthSection = ({ data, Video_gif }) => {
             )}
           </div>
           {/* Buttons */}
-          <div className="md:float-right  md:mr-3 mt-5 z-999 absolute bottom-3 right-0">
+          {!isPlaying &&(   <div className="md:float-right  md:mr-3 mt-5 z-999 absolute bottom-3 right-0">
             <Link href={data.page.homefifthsection.buttonlinkone}  target="_blank">
               <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">
                 {data.page.homefifthsection.fifthbuttonone}
@@ -138,11 +138,10 @@ const FifthSection = ({ data, Video_gif }) => {
                 </svg>
               </button>
             </Link>
-            {/* <Link href={data.page.homefifthsection.buttonlinksecond}> */}
               <div onClick={openModal} className="max-w-fit md:w-[100%] max-w-max  mx-auto mt-[21px] md:mx-0 md:mt-4 mr-2 flex items-center gap-3 text-black bg-white font-bold p-2 rounded-[5px]">
                 <MainComponent  extraclass=''
-                buttonText={data.page.homefifthsection.textbuttonsecond}  // Pass dynamic text as prop
-                pdfUrl="/SampleChapter.pdf"  // Pass the dynamic PDF URL
+                buttonText={data.page.homefifthsection.textbuttonsecond}  
+                pdfUrl="/SampleChapter.pdf" 
               />
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                   <g
@@ -158,8 +157,9 @@ const FifthSection = ({ data, Video_gif }) => {
                 </svg>
               </div>
              
-            {/* </Link> */}
+          
           </div>
+           )}
         </div>
       </div>
     </div>
