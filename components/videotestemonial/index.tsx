@@ -65,7 +65,7 @@ const VideoCarousel = () => {
           <p className="py-3 text-[16px] text-gray-900 text-center md:text-left ">
             {data.page.homevideobanner.videosubtitle}
           </p>
-          <Link href='https://www.instagram.com/citiesprojectglobal/' >
+          <Link href='https://www.instagram.com/citiesprojectglobal/' target="_blank" >
             <p className="flex gap-2 text-[16px] underline text-center md:text-left md:justify-start justify-center text-black font-extrabold">
               {data.page.homevideobanner.linktext} 
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 56.7 56.7" fill="#000000">

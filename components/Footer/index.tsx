@@ -97,7 +97,7 @@ const Footer = () => {
       />
                 </li>
                 <li className="mb-4">
-                    <Link href="https://www.amazon.com/Intersection-Introduction-Design-Integrated-Living/dp/166575057X/ref=sr_1_1?crid=1QMBZ133ERX0U&dib=eyJ2IjoiMSJ9.WwghbEqcneXNsLO0OzP5f5_NQgq_zyPN9oyDmb3pKbCKvKi0SyfjefTG7vrrsm3SLLVyzyxqPXc8_UmfPYRT-CubxoHi1yDKNFj0_3V_FJOPhozNAoPG9O_mml6qOneJSQ4rOVfut5fUS-cRoJrsM5K5j-86xUEPCXbyh9YMyAiDfZZHU08vEpKeryJI6gZaI57KM9vRRSrGF4AQ-QYCtvLoatN4jOxVVJAA9oQHtCA.2eOJgAdWz1BJxbLYG4sbEQYD1mcgV9CvuG27G5JAl-A&dib_tag=se&keywords=the+intersection+faith%2C+work%2C+and+life&qid=1723663542&sprefix=The+intersection%3A+Faith%2C+Work%2Caps%2C166&sr=8-1" className="hover:underline">Buy Book</Link>
+                    <Link href="https://www.amazon.com/Intersection-Introduction-Design-Integrated-Living/dp/166575057X/ref=sr_1_1?crid=1QMBZ133ERX0U&dib=eyJ2IjoiMSJ9.WwghbEqcneXNsLO0OzP5f5_NQgq_zyPN9oyDmb3pKbCKvKi0SyfjefTG7vrrsm3SLLVyzyxqPXc8_UmfPYRT-CubxoHi1yDKNFj0_3V_FJOPhozNAoPG9O_mml6qOneJSQ4rOVfut5fUS-cRoJrsM5K5j-86xUEPCXbyh9YMyAiDfZZHU08vEpKeryJI6gZaI57KM9vRRSrGF4AQ-QYCtvLoatN4jOxVVJAA9oQHtCA.2eOJgAdWz1BJxbLYG4sbEQYD1mcgV9CvuG27G5JAl-A&dib_tag=se&keywords=the+intersection+faith%2C+work%2C+and+life&qid=1723663542&sprefix=The+intersection%3A+Faith%2C+Work%2Caps%2C166&sr=8-1" className="hover:underline" target='_blank'>Buy Book</Link>
                 </li>
             </ul></div>
             <div className="items-end  hidden md:flex">

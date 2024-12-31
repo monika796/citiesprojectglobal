@@ -121,7 +121,7 @@ const FifthSection = ({ data, Video_gif }) => {
           </div>
           {/* Buttons */}
           <div className="md:float-right  md:mr-3 mt-5 z-999 absolute bottom-3 right-0">
-            <Link href={data.page.homefifthsection.buttonlinkone}>
+            <Link href={data.page.homefifthsection.buttonlinkone}  target="_blank">
               <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">
                 {data.page.homefifthsection.fifthbuttonone}
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
