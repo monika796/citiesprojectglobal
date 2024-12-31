@@ -3,6 +3,8 @@ import client from "apollo-client";
 import Link from "next/link";
 import Image from "next/image";
 import BlogCustomSlider from "@/components/BlogPostSlider";
+
+// Define interfaces for post and featured image
 interface FeaturedImage {
   node: {
     link: string;
@@ -32,7 +34,7 @@ const POST_QUERY = gql`
   }
 `;
 
-// Fetch post by slug
+// Fetch post by slug function
 const fetchPostById = async (slug: string) => {
   const { data } = await client.query({
     query: POST_QUERY,
@@ -41,9 +43,12 @@ const fetchPostById = async (slug: string) => {
   return data.post;
 };
 
+// Server Component: Fetch data based on slug from the params
 const SingleBlogPage = async ({ params }: { params: { slug: string } }) => {
-  // Fetch the post using the slug
-  const post = await fetchPostById(params.slug);
+  const { slug } = params;
+
+  // Fetch post data based on the slug
+  const post = await fetchPostById(slug);
 
   if (!post) {
     return <p>Post not found</p>;
@@ -125,6 +130,5 @@ const SingleBlogPage = async ({ params }: { params: { slug: string } }) => {
     </section>
   );
 };
-
 
 export default SingleBlogPage;
