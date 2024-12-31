@@ -19,6 +19,7 @@ query {
       }
       title
       id
+      slug
     }
   }
     page(id: "cG9zdDoxNg=="){
@@ -29,43 +30,7 @@ query {
 }
   
 `;
-// const sliderData = [
-//   {
-//     id: "1",
-//     imgSrc: "/46.png",
-//     date: "5 Sep 2024",
-//     title: "Receiving and Reflecting God’s Inherent Love for Us",
-//     linkText: "Learn More",
-//   },
-//   {
-//     id: "2",
-//     imgSrc: "/46.png",
-//     date: "5 Sep 2024",
-//     title: "Healing the Trauma of Homelessness Through Affordable Housing",
-//     linkText: "Learn More",
-//   },
-//   {
-//     id: "3",
-//     imgSrc: "/47.png",
-//     date: "5 Sep 2024",
-//     title: "In the Midst of War, Love Comes Through Action",
-//     linkText: "Learn More",
-//   },
-//   {
-//     id: "5",
-//     imgSrc: "/46.png",
-//     date: "5 Sep 2024",
-//     title: "Healing the Trauma of Homelessness Through Affordable Housing",
-//     linkText: "Learn More",
-//   },
-//   {
-//     id: "4",
-//     imgSrc: "/47.png",
-//     date: "5 Sep 2024",
-//     title: "In the Midst of War, Love Comes Through Action",
-//     linkText: "Learn More",
-//   },
-// ];
+
 
 const BlogCustomSlider = () => {
 
@@ -76,6 +41,7 @@ const BlogCustomSlider = () => {
 
   const sliderData = data.posts?.nodes.map((dataposts, index) => ({
     id: index + 1,
+    slug : dataposts.slug,
     post_id : dataposts.id,
     imgSrc: dataposts.featuredImage?.node?.link,
     date: "5 Sep 20241",
@@ -146,7 +112,7 @@ const BlogCustomSlider = () => {
                       {slide.title}
                     </h2>
                     <Link
-                      href={ `/blog/blog-details?id=${slide.post_id}`}
+                      href={ `/blog/blog-details/${slide.slug}`}
                       className="flex gap-2 items-center text-black font-extrabold text-center justify-center"
                     >
                       {slide.linkText}
@@ -225,7 +191,7 @@ const BlogCustomSlider = () => {
                       {slide.title}
                     </h2>
                     <Link
-                      href={ ` /blog/blog-details?id=${slide.post_id}`}
+                      href={ ` /blog/blog-details/${slide.slug}`}
                       className="flex gap-2 items-center text-black font-extrabold text-center justify-center"
                     >
                       {slide.linkText}
