@@ -43,11 +43,16 @@ const fetchPostById = async (slug: string) => {
   return data.post;
 };
 
+// Define the type for the params prop
+interface Params {
+  slug: string;
+}
+
 // Server Component: Fetch data based on slug from the params
-const SingleBlogPage = async ({ params }: { params: { slug: string } }) => {
+const SingleBlogPage = async ({ params }: { params: Params }) => {
   const { slug } = params;
 
-  // Fetch post data based on the slug
+  // Fetch the post data from the GraphQL API based on the slug
   const post = await fetchPostById(slug);
 
   if (!post) {
