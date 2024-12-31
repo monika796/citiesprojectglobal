@@ -54,9 +54,9 @@ const VideoPlayer = () => {
         handleClick(videoElement, setIsPlaying); // Only trigger handleClick if video element is clicked
       }
     }}>
-      <h1 className="md:text-[40px] mb-10 text-[25px] font-bold text-center text-black md:w-[60%] md:p-5 mx-auto leading-[30px] md:leading-[49px]">
+     {!isPlaying  && ( <h1 className="md:text-[40px] mb-10 text-[25px] font-bold text-center text-black md:w-[60%] md:p-5 mx-auto leading-[30px] md:leading-[49px]">
         {data.page.bookPageFeilds.bookSixthSectionVideoMainHeading}
-      </h1>
+      </h1> )}
       <div className="relative mx-auto table md:w-[80%]">
 
          {!isPlayed && (
@@ -86,7 +86,7 @@ const VideoPlayer = () => {
         </video>
 
         {/* Conditionally render images */}
-        <div className="md:absolute bottom-0 p-5 text-center md:text-left">
+        {!isPlaying  && (  <div className="md:absolute bottom-0 p-5 text-center md:text-left">
         <h2 className="md:text-[64px]  text-[30px] font-bold text-black md:text-white md:w-[40%] leading-[70px] mb-5">
           {data.page.bookPageFeilds.bookSixthSectionVideoHeading}
           </h2>
@@ -94,8 +94,9 @@ const VideoPlayer = () => {
           {data.page.bookPageFeilds.bookSixthSectionVideoDescription}
           </p>
         </div>
-        <div className=" absolute w-[95px] top-0 right-0 md:w-auto  md:top-5 md:right-[3%] p-5">
-          <Image alt="" width={700} height={700} src="/91.png" className="w-[80%]" /></div>
+      )}
+      {!isPlaying  && (  <div className=" absolute w-[95px] top-0 right-0 md:w-auto  md:top-5 md:right-[3%] p-5">
+          <Image alt="" width={700} height={700} src="/91.png" className="w-[80%]" /></div>  )}
         <div className=" absolute md:bottom-5 bottom-[57%] right-0  md:right-[5%] md:p-5" >
           {isPlaying ? (
             <Image  width={700} height={700}  src="/117.png" className="md:w-[80%] w-[60%]" alt="Playing" /> // Image when video is playing

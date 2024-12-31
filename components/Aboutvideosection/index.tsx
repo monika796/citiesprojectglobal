@@ -56,10 +56,11 @@ const VideoPlayer = () => {
     <section
       className="md:py-[32px]"
       onClick={handleSectionClick} // Play video on section click
-    >
+    >{!isPlaying  && (
       <h1 className="md:text-[40px] text-[25px] font-bold text-center text-black md:w-[52%] md:p-5 mx-auto leading-[49px]">
         {data.page.aboutussections.videosectionheading}
       </h1>
+        )}
       <div className="relative mx-auto table md:w-[80%]">
         {/* Use Image component for the video poster */}
         {!isPlayed && (
@@ -83,7 +84,7 @@ const VideoPlayer = () => {
           <source src="videos.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-
+        {!isPlaying  && (
         <div className="md:absolute bottom-0 p-5 text-center md:text-left">
           <h2 className="md:text-[64px] text-[30px] font-bold text-black md:text-white md:w-[32%] leading-[65px]">
             {data.page.aboutussections.videosectiontitle}
@@ -92,7 +93,7 @@ const VideoPlayer = () => {
             {data.page.aboutussections.videosectiondescription}
           </p>
         </div>
-
+        )}
         <div className="absolute md:bottom-5 bottom-[57%] right-0 md:right-[5%] md:p-5">
           {isPlaying ? (
             <Image
