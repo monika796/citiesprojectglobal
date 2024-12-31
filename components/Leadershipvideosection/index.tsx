@@ -94,15 +94,16 @@ const VideoPlayer = () => {
         </video>
 
         {/* Conditionally render images */}
-        <div className="md:absolute bottom-0 p-10 text-center md:text-left">
+        {!isPlaying  && ( <div className="md:absolute bottom-0 p-10 text-center md:text-left">
         <h2 className="md:text-[64px]  text-[30px] font-bold text-black md:text-white md:w-[40%] leading-[70px] mb-5">
         {data.page.leadershipPageFeilds.leadershipVideoSection.leadershipVideoSectionHeading}
           </h2>
           <p className="font-normal text-[16px] mt-4 text-black md:text-white md:w-[72%]">
           {data.page.leadershipPageFeilds.leadershipVideoSection.leadershipVideoSectionDescripiton} </p>
         </div>
-        <div className=" absolute w-[95px] top-0 right-0 md:w-auto  md:top-5 md:right-[3%] p-5">
-          <Image alt="" width={700} height={700} src={data.page.leadershipPageFeilds.leadershipVideoSection.leadershipVideoSectionTopImage?.node?.link} className="w-[80%]" /></div>
+          )}
+         {!isPlaying  && (   <div className=" absolute w-[95px] top-0 right-0 md:w-auto  md:top-5 md:right-[3%] p-5">
+       <Image alt="" width={700} height={700} src={data.page.leadershipPageFeilds.leadershipVideoSection.leadershipVideoSectionTopImage?.node?.link} className="w-[80%]" /></div>    )}
         <div className=" absolute md:bottom-5 bottom-[57%] right-0  md:right-[5%] md:p-5" >
           {isPlaying ? (
             <Image  width={700} height={700}  src="/117.png" className="md:w-[80%] w-[60%]" alt="Playing" /> // Image when video is playing
@@ -110,6 +111,7 @@ const VideoPlayer = () => {
             <Image  width={700} height={700}  src="/73.png" className="md:w-[80%] w-[60%]" alt="Paused" /> // Default image
           )}
         </div>
+        
       </div>
     </section>
   );
