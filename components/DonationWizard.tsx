@@ -47,7 +47,7 @@ export default function DonationWizard() {
     <div className="w-full max-w-lg mx-auto bg-white shadow-md rounded-lg overflow-hidden">
       <div className="bg-[#1295d8] text-white p-6 text-center">
         <img 
-          src="/star-blue-digital.png" 
+          src="/star-blue-digital.avif" 
           alt="Star of David"
           width={80}
           height={80}
