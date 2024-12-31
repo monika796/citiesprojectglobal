@@ -177,7 +177,7 @@ return (
                         title={post.title}
                         description={post.content}
                         linkText="Read More"
-                        linkHref={post.slug}
+                        linkHref={post.id}
                      />
                   ) : index === 2 || index === 3 ? (
                      <BlogCard
@@ -187,7 +187,7 @@ return (
                         title={post.title}
                         description={post.content}
                         linkText="Read More"
-                        linkHref={post.slug}
+                        linkHref={post.id}
                      />
                   ) : null; // For indices not 0, 1, 2, or 3, render nothing or another component
                   })}
