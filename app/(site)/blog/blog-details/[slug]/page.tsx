@@ -40,9 +40,9 @@ const fetchPostById = async (slug: string) => {
   });
   return data.post;
 };
-
+type Params = Promise<{ slug: string }>
 // Server-side component to fetch data
-const SingleBlogPage = async ({ params }: { params: { slug: string } }) => {
+const SingleBlogPage = async ({ params }: { params:Params }) => {
   // Await params before using
   const { slug } = await params;
 
