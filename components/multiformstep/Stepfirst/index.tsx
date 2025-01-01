@@ -1,18 +1,6 @@
 import React from 'react';
-import  { useState } from 'react';
+
 const UserNameEmail = ({ data, handleChange ,errors }) => {
-    const [email, setEmail] = useState(data.input_5 || '');
-
-    const validateEmail = (email) => {
-        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        return emailRegex.test(email);
-    };
-
-    const handleEmailChange = (e) => {
-        const value = e.target.value;
-        setEmail(value);
-        handleChange(e); // Call the parent's handleChange to update the form state
-    };
     return (
         <div className=" mx-auto">
             <form className="bg-white rounded pt-6 pb-8 mb-4">

@@ -8,7 +8,7 @@ import axios from "axios";
 
 const MainForm = () => {
   const [data, setData] = useState({
-    input_5: "",
+    input_5: "", // Email
     input_6: "",
     input_13: "",
     input_14: "",
@@ -40,6 +40,7 @@ const MainForm = () => {
       ...data,
       [name]: value,
     });
+    
   };
 
   const validateForm = () => {
@@ -47,11 +48,15 @@ const MainForm = () => {
     const currentStepFields = getCurrentStepFields();
 
     currentStepFields.forEach((field) => {
-      if (!data[field.name] || (Array.isArray(data[field.name]) && data[field.name].length === 0)) {
+      const value = data[field.name];
+      if (!value || (Array.isArray(value) && value.length === 0)) {
         newErrors[field.name] = `${field.label} is required.`;
+      } else if (field.name === "input_5" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+        // Email format validation
+        newErrors[field.name] = "Please enter a valid email address.";
       }
     });
-
+    
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -154,9 +159,8 @@ const MainForm = () => {
   return (
     <div className="container py-10 grid gap-8 md:max-w-[900px] mx-auto">
       <Image src="/www.png" height={1000} width={1000} alt="" className="mx-auto" />
-      <div className="">
-        <h2 className="text-[40px] text-[#000000] font-bold">Leadership Circle</h2>
-        <br className="hidden md:block" />
+      <div>
+        <h2 className="text-[40px] text-[#000000] font-bold">Leadership Circle</h2><br />
         <p className="text-[20px] text-[#000000]">
           Thank you for your interest in participating in the Leadership Circle. Fill out this initial application and we will be in contact soon.
         </p>
@@ -168,7 +172,7 @@ const MainForm = () => {
           <p className="text-black text-[16px]">We appreciate your interest and will keep you updated.</p>
         </div>
       ) : (
-        <div className="">
+        <div>
           <div>{formElements[activeTab]}</div>
           <div className="flex flex-wrap gap-x-2">
             <button
@@ -197,6 +201,9 @@ const MainForm = () => {
                 Submit
               </button>
             )}
+
+
+            <p>{ message }</p>
           </div>
         </div>
       )}
