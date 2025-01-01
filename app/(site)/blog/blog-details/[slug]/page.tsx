@@ -6,6 +6,7 @@ import Head from "next/head";
 import { notFound } from "next/navigation";
 import BlogCustomSlider from "@/components/BlogPostSlider";
 
+// Define interfaces for types
 interface FeaturedImage {
   node: {
     link: string;
@@ -19,6 +20,7 @@ interface Post {
   featuredImage: FeaturedImage;
 }
 
+// GraphQL query
 const POST_QUERY = gql`
   query ($slug: ID!) {
     post(id: $slug, idType: SLUG) {
@@ -34,19 +36,21 @@ const POST_QUERY = gql`
   }
 `;
 
-async function fetchPostById(slug: string) {
+// Fetch post by ID
+async function fetchPostById(slug: string): Promise<Post | null> {
   try {
     const { data } = await client.query({
       query: POST_QUERY,
       variables: { slug },
     });
-    return data.post;
+    return data.post || null;
   } catch (error) {
     console.error("Error fetching post:", error);
     return null;
   }
 }
 
+// Single Blog Page Component
 const SingleBlogPage = async ({ params }: { params: { slug: string } }) => {
   const post = await fetchPostById(params.slug);
 
