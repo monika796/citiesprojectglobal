@@ -654,12 +654,13 @@ const page = async () => {
            <div className="mx-auto">
       <div className=" mx-auto bg-[#F5F5F5] relative   max-w-[986px] w-full">
         {/* Left Content */}
-        <div className="lg:w-[100%] text-left  flex flex-col gap-3 justify-center items-start lg:items-start p-0 md:p-15 relative md:h-[510px]" style={{
-    backgroundImage: "url('/bg.png')",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-  }}>
+        <div className="lg:w-[100%] text-left  flex flex-col gap-3 justify-center items-start lg:items-start p-0 md:p-15 relative md:h-[510px]" >
+      <Image
+                          src={'/bg.png'} // Fallback image
+                          layout="fill"
+                          objectFit="cover"
+                          alt={'Default title'} // Provide a fallback title
+                        />
           <div className="flex items-center pt-5 md:pt-0 pl-5 md:pl-0">
             {/* Icon or Circle */}
             <div className="w-[52px] h-[52px] bg-[#A1CF5F] rounded-full"></div>

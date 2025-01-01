@@ -183,7 +183,15 @@ const BlogCustomSlider = () => {
                       alt={slide.title} width={800} height={800}
                      / > */}
                     <div  className="relative w-full   bg-cover bg-center rounded h-[300px] "
-          style={{ backgroundImage: `url('${slide.imgSrc}')` }}></div>
+          >
+
+              <Image
+                                  src={slide.imgSrc || '/default-image.jpg'} // Fallback image
+                                  layout="fill"
+                                  objectFit="cover"
+                                  alt={ 'Default title'} // Provide a fallback title
+                                />
+          </div>
                     <p className="absolute top-11  left-10 text-white bg-black px-2 py-0 rounded-full text-sm">
                       {slide.date}
                     </p>

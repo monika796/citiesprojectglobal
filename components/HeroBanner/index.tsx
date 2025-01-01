@@ -30,9 +30,7 @@ const NewBannerSlider: React.FC<BannerProps> = ({ banners }) => {
         <SwiperSlide key={index}>
           <div
             className="relative w-full bg-cover bg-center newstory-slider h-[510px] md:h-[850px]"
-            style={{
-              backgroundImage: `url(${banner.homeBannerBackgroundImage?.node?.link})`,
-            }}
+            //
           >
             <div className="container relative max-w-[1480px] mx-auto h-[510px] md:h-[780px]">
               <div className="relative w-full md:absolute md:top-[61%] top-0 md:pt-0 pt-[36rem] left-0 transform -translate-y-1/2 text-white">
