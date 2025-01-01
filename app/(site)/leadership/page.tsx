@@ -780,7 +780,7 @@ const page = async () => {
                 {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnDescription1} </p>
                 <p  className="text-white leading-relaxed mb-4 max-w-[573px]">
                 {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnDescription2}
-                <Link href='/blog/blog-details?id=cG9zdDo4MjI='><span className="text-[#A1CF5F] underline cursor-pointer">
+                <Link href='/blog/blog-details/alumni-story-serving-the-underbanked-to-end-the-cycle-of-poverty'><span className="text-[#A1CF5F] underline cursor-pointer">
                 {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnDescriptionGreenColor}
                   </span> </Link> and more.
                 </p>

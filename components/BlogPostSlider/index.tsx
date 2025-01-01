@@ -112,7 +112,7 @@ const BlogCustomSlider = () => {
                       {slide.title}
                     </h2>
                     <Link
-                      href={ `/blog/blog-details/?id=${slide.post_id}`}
+                      href={ `/blog/blog-details/${slide.slug}`}
                       className="flex gap-2 items-center text-black font-extrabold text-center justify-center"
                     >
                       {slide.linkText}
@@ -199,7 +199,7 @@ const BlogCustomSlider = () => {
                       {slide.title}
                     </h2>
                     <Link
-                      href={ ` /blog/blog-details/?id=${slide.post_id}`}
+                      href={ ` /blog/blog-details/${slide.slug}`}
                       className="flex gap-2 items-center text-black font-extrabold text-center justify-center"
                     >
                       {slide.linkText}

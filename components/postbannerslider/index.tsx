@@ -104,7 +104,7 @@ const SwiperSection = () => {
                       </p>
                     </div>
                     <p className="text-[16px] h-[84px] font-bold text-black leader-[19.36px] pl-1">{post.title || "Untitled"}</p>
-                    <Link href={`/blog/blog-details/?id=${post.id}`}><p className="text-[13px] underline uppercase text-black">Read more</p></Link>
+                    <Link href={`/blog/blog-details/${post.slug}`}><p className="text-[13px] underline uppercase text-black">Read more</p></Link>
                   </div>
                 </div>
               </SwiperSlide>
