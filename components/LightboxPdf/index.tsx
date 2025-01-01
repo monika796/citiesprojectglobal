@@ -4,7 +4,7 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/TextLayer.css';  // Import the styles for the TextLayer
 
 
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.mjs`;
+pdfjs.GlobalWorkerOptions.workerSrc = `/pdf.worker.min.mjs`;
 import '@react-pdf-viewer/core/lib/styles/index.css'; 
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 const MainComponent = ({ buttonText, pdfUrl, extraclass }) => {
