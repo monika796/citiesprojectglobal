@@ -85,12 +85,17 @@ const SwiperSection = () => {
                 className="flex justify-center items-center text-lg bg-white"
               >
                 <div className="flex">
-                  <div className="w-1/3   bg-cover bg-center"
-                   style={{ backgroundImage: `url('${post.featuredImage?.node?.link}')` }}>
-
+                  <div className="w-1/3  relative  bg-cover bg-center"
+                   // style={{ backgroundImage: `url('${post.featuredImage?.node?.link}')` }}>
+                    >
                   {/* <Image src=
                       alt={post.title} width={1000} height={1000} /> */}
-                    
+                   <Image
+                      src={post.featuredImage?.node?.link || '/default-image.jpg'} // Fallback image
+                      layout="fill"
+                      objectFit="cover"
+                      alt={post.title || 'Default title'} // Provide a fallback title
+                    />
                   </div>
                   <div className="w-2/3 grid p-2">
                     <div>

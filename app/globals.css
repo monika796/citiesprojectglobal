@@ -110,7 +110,7 @@
   @apply absolute bottom-0 right-0 h-20 w-20 bg-[url(/images/blog/quote-shape-2.svg)] bg-contain bg-right-bottom bg-no-repeat;
 }
 
-.blog-details blockquote::before {
+/* .blog-details blockquote::before {
   content: "";
   @apply absolute left-0 top-0 h-[106px] w-[140px] bg-[url(/images/blog/quote-shape-1.svg)] bg-contain bg-left-top bg-no-repeat dark:bg-[url(/images/blog/quote-shape-1.svg)];
 }
@@ -124,7 +124,7 @@ pre {
 
 .active-tab {
   @apply bg-stroke text-black dark:bg-blackho dark:text-white;
-}
+} */
 
 @media screen and (max-width: 767px) {
   .sticky {
