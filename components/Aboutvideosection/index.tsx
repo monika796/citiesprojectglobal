@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { gql, useQuery } from "@apollo/client";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import Image from "next/image";
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
@@ -28,6 +28,31 @@ const VideoPlayer = () => {
   const { loading, error, data } = useQuery(POSTS_QUERY);
   const [isPlaying, setIsPlaying] = useState(false); // Track video play state
   const [isPlayed, setPlayed] = useState(false);
+
+  const [isMobile, setIsMobile] = useState(false);
+  
+    // Function to update the state based on the window width
+    const updateMobileView = () => {
+      if (window.innerWidth <= 768) {
+        setIsMobile(true);  // Mobile view
+      } else {
+        setIsMobile(false); // Desktop view
+      }
+    };
+  
+    // Update the view on component mount and on window resize
+    useEffect(() => {
+      updateMobileView(); // Check on initial render
+  
+      // Set up a resize event listener
+      window.addEventListener("resize", updateMobileView);
+  
+      // Cleanup the event listener on component unmount
+      return () => {
+        window.removeEventListener("resize", updateMobileView);
+      };
+    }, []);
+
 
   const handleClick = (videoElement: HTMLVideoElement) => {
     if (videoElement) {
@@ -56,11 +81,11 @@ const VideoPlayer = () => {
     <section
       className="md:py-[32px]"
       onClick={handleSectionClick} // Play video on section click
-    >{!isPlaying  && (
+    >
       <h1 className="md:text-[40px] text-[25px] font-bold text-center text-black md:w-[52%] md:p-5 mx-auto leading-[49px]">
         {data.page.aboutussections.videosectionheading}
       </h1>
-        )}
+      
       <div className="relative mx-auto table md:w-[80%]">
         {/* Use Image component for the video poster */}
         {!isPlayed && (
@@ -84,7 +109,17 @@ const VideoPlayer = () => {
           <source src="videos.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        {!isPlaying  && (
+        {!isPlaying  && !isMobile  &&(
+        <div className="md:absolute bottom-0 p-5 text-center md:text-left">
+          <h2 className="md:text-[64px] text-[30px] font-bold text-black md:text-white md:w-[32%] leading-[65px]">
+            {data.page.aboutussections.videosectiontitle}
+          </h2>
+          <p className="font-normal text-[16px] mt-4 text-black md:text-white md:w-[72%]">
+            {data.page.aboutussections.videosectiondescription}
+          </p>
+        </div>
+        )}
+        {isMobile  && (
         <div className="md:absolute bottom-0 p-5 text-center md:text-left">
           <h2 className="md:text-[64px] text-[30px] font-bold text-black md:text-white md:w-[32%] leading-[65px]">
             {data.page.aboutussections.videosectiontitle}

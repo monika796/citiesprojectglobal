@@ -113,7 +113,15 @@ const page = async () => {
         </div>
       </div>
 
-      <section className='p-10 flex flex-wrap md:flex-nowrap justify-between items-end mt-10'    style={{ backgroundImage: "url('/bg-e.png')" }}>
+      <section className='p-10 flex flex-wrap relative md:flex-nowrap justify-between items-end mt-10'   
+       >
+            <Image
+                                          src={vantage.vintageSecondSection.vintageSecondSectionBackgroundImage?.node?.link || '/default-image.jpg'} // Fallback image
+                                          layout="fill"
+                                          objectFit="cover"
+                                          className='z-0'
+                                          alt={ 'Default title'} // Provide a fallback title
+                                        />
         <p className='bg-white p-2 text-black font-bold text-[14px] flex gap-3  items-center'>
         {vantage.vintageSecondSection.vintageSecondSectionLeftText} 
                    <Image src={starts} width="95" height="15" alt='' className=''></Image>

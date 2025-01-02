@@ -56,6 +56,7 @@ const POSTS_QUERY_sec=gql `query MyQuery2 {
       content(format: RENDERED)
       contentTypeName
       id
+      slug
     }
   }
 }`;
@@ -176,7 +177,7 @@ return (
                         title={post.title}
                         description={post.content}
                         linkText="Read More"
-                        linkHref={post.id}
+                        linkHref={post.slug}
                      />
                   ) : index === 2 || index === 3 ? (
                      <BlogCard
@@ -186,7 +187,7 @@ return (
                         title={post.title}
                         description={post.content}
                         linkText="Read More"
-                        linkHref={post.id}
+                        linkHref={post.slug}
                      />
                   ) : null; // For indices not 0, 1, 2, or 3, render nothing or another component
                   })}

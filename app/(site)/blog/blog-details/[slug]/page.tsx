@@ -1,15 +1,8 @@
-"use client";
-
-import { Suspense, useState, useEffect } from "react";
-import RelatedPost from "@/components/Blog/RelatedPost";
-import SharePost from "@/components/Blog/SharePost";
-import Link from "next/link";
-import Image from "next/image";
 import { gql } from "@apollo/client";
 import client from "apollo-client";
-import { useSearchParams } from "next/navigation";
+import Image from "next/image";
 import BlogCustomSlider from "@/components/BlogPostSlider";
-
+import Link from "next/link";
 // Define types for the post data
 interface FeaturedImage {
   node: {
@@ -24,56 +17,42 @@ interface Post {
   featuredImage: FeaturedImage;
 }
 
-const fetchPostById = async (id: string) => {
-  const POST_QUERY = gql`
-    query ($id: ID!) {
-      post(id: $id) {
-        content
-        date
-        title
-        featuredImage {
-          node {
-            link
-          }
+// Define the GraphQL query
+const POST_QUERY = gql`
+  query ($slug: ID!) {
+    post(id: $slug, idType: SLUG) {
+      content
+      date
+      title
+      featuredImage {
+        node {
+          link
         }
       }
     }
-  `;
+  }
+`;
 
+const fetchPostById = async (slug: string) => {
   const { data } = await client.query({
     query: POST_QUERY,
-    variables: { id },
+    variables: { slug },
   });
   return data.post;
 };
 
-const SingleBlogPage = () => {
+type Params = Promise<{ slug: string }>
 
-  const searchParams = useSearchParams();
-  const id = searchParams.get("id"); // Retrieve the 'id' query param
- 
-  const [post, setPost] = useState<Post | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+const SingleBlogPage = async ({ params }: { params:Params }) => {
+  // Await params before using
+  const { slug } = await params;
 
-    const fetchData = async () => {
-      try {
-        if (id) {
-          const fetchedPost = await fetchPostById(id);
-          setPost(fetchedPost);
-        }
-      } catch (err) {
-        setError((err as Error).message);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // Fetch post data server-side
+  const post = await fetchPostById(slug);
 
-    if (id) {
-      fetchData();
-    }
-
-
+  if (!post) {
+    return <p>Post not found</p>;
+  }
 
   return (
     <section className="container mx-auto max-w-[1480px]">
@@ -154,13 +133,4 @@ const SingleBlogPage = () => {
   );
 };
 
-// Wrapping the component with Suspense
-const PageWrapper = () => {
-  return (
-    <Suspense >
-      <SingleBlogPage />
-    </Suspense>
-  );
-};
-
-export default PageWrapper;
+export default SingleBlogPage;

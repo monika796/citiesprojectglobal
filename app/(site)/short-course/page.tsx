@@ -159,7 +159,15 @@ return (
                </Link>
             </div>
          </div>
-         <div className="flex justify-center flex-wrap md:flex-nowrap items-center w-full md:w-2/3 bg-cover bg-center  "  style={{ backgroundImage: `url('${shortcourse.shortCoursesFirstSection.shortCoursesMainBackgroundImage?.node?.link}')` }}>
+         <div className="flex justify-center relative flex-wrap md:flex-nowrap items-center w-full md:w-2/3 bg-cover bg-center  " 
+        //  style={{ backgroundImage: `url('${shortcourse.shortCoursesFirstSection.shortCoursesMainBackgroundImage?.node?.link}')` }}>
+            >
+                 <Image
+                                  src={shortcourse.shortCoursesFirstSection.shortCoursesMainBackgroundImage?.node?.link || '/default-image.jpg'} // Fallback image
+                                  layout="fill"
+                                  objectFit="cover"
+                                  alt={ 'Default title'} // Provide a fallback title
+                                />
          <div className="relative w-full md:w-7/12">
             <Image src={shortcourse.shortCoursesFirstSection.shortCoursesFirstSectionSecondColumnMainImage?.node?.link} className=" w-[80%]" height={1000} width={1000} alt=""  />
             <Image src={shortcourse.shortCoursesFirstSection.shortCoursesFirstSectionSecondColumnBottomImage?.node?.link} height={1000} width={1000} alt="" className="relative md:absolute w-[40%] bottom-[100px] right-[-100px]"/>

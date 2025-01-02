@@ -19,6 +19,7 @@ query {
       }
       title
       id
+      slug
     }
   }
     page(id: "cG9zdDoxNg=="){
@@ -76,6 +77,7 @@ const CustomSlider = () => {
 
   const sliderData = data.posts?.nodes.map((dataposts, index) => ({
     id: index + 1,
+    slug:dataposts.slug,
     post_id : dataposts.id,
     imgSrc: dataposts.featuredImage?.node?.link,
     date: "5 Sep 20241",
@@ -146,7 +148,7 @@ const CustomSlider = () => {
                       {slide.title}
                     </h2>
                     <Link
-                      href={ `/blog/blog-details?id=${slide.post_id}`}
+                      href={ `/blog/blog-details/${slide.slug}`}
                       className="flex gap-2 items-center text-black font-extrabold text-center justify-center"
                     >
                       {slide.linkText}
@@ -217,7 +219,16 @@ const CustomSlider = () => {
                       alt={slide.title} width={800} height={800}
                      / > */}
                     <div  className="relative w-full   bg-cover bg-center rounded h-[300px] "
-          style={{ backgroundImage: `url('${slide.imgSrc}')` }}></div>
+       //   style={{ backgroundImage: `url('${slide.imgSrc}')` }}
+          >
+
+            <Image
+                                  src={slide.imgSrc || '/default-image.jpg'} // Fallback image
+                                  layout="fill"
+                                  objectFit="cover"
+                                  alt={ 'Default title'} // Provide a fallback title
+                                />
+          </div>
                     <p className="absolute top-11  left-10 text-white bg-black px-2 py-0 rounded-full text-sm">
                       {slide.date}
                     </p>
@@ -225,7 +236,7 @@ const CustomSlider = () => {
                       {slide.title}
                     </h2>
                     <Link
-                      href={ ` /blog/blog-details?id=${slide.post_id}`}
+                      href={ ` /blog/blog-details/${slide.slug}`}
                       className="flex gap-2 items-center text-black font-extrabold text-center justify-center"
                     >
                       {slide.linkText}

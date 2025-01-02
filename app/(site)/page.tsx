@@ -284,8 +284,14 @@ export default async function Home() {
      
         <section className="w-full">
         <div className="container-fluid mx-auto">
-          <div className="relative w-full   bg-cover bg-center  h-[510px] md:h-[850px]"
-          style={{ backgroundImage: `url('${data.page.bannerHome.banner?.node?.link}')` }}>
+          <div className="relative w-full   bg-cover bg-center  h-[470px] md:h-[850px]"
+         // style={{ backgroundImage: `url('${data.page.bannerHome.banner?.node?.link}')` }}>
+        >   <Image
+ 
+    src={data.page.bannerHome.banner?.node?.link}
+    layout="fill"
+    alt="Programming meme"
+/>
             <div className="container relative max-w-[1480px] mx-auto relative   h-[510px] md:h-[780px]">
 
 
@@ -321,10 +327,18 @@ export default async function Home() {
 
 
       <section
-  className="w-full bg-cover bg-center"
-  style={{ backgroundImage: `url('${data.page.bannerHomesecond.bannersecondbackground?.node?.link}')` }}
+  className="w-full relative bg-cover bg-center"
+ // style={{ backgroundImage: `url('${data.page.bannerHomesecond.bannersecondbackground?.node?.link}')` }}
 >
+ 
         <div className="container mx-auto container max-w-[1480px]">
+        <Image
+                        src={data.page.bannerHomesecond.bannersecondbackground?.node?.link || '/default-image.jpg'} // Fallback image
+                        layout="fill"
+                        objectFit="cover"
+                        className="z-0"
+                        alt='Default title'// Provide a fallback title
+                      />
           <div className="flex md:p-[105px] md:pb-[280px] flex-col md:flex-row h-full">
             <div className=" w-full md:w-1/2 p-4 md:p-2 flex flex-col justify-center">
               <h2 className="font-bold text-gray-800 text-3xl md:text-[56px] leading-tight mb-4">

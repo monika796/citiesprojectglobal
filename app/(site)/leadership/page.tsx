@@ -654,34 +654,36 @@ const page = async () => {
            <div className="mx-auto">
       <div className=" mx-auto bg-[#F5F5F5] relative   max-w-[986px] w-full">
         {/* Left Content */}
-        <div className="lg:w-[100%] text-left  flex flex-col gap-3 justify-center items-start lg:items-start p-0 md:p-15 relative md:h-[510px]" style={{
-    backgroundImage: "url('/bg.png')",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-  }}>
-          <div className="flex items-center pt-5 md:pt-0 pl-5 md:pl-0">
+        <div className="lg:w-[100%] text-left  flex flex-col gap-3 justify-center items-start lg:items-start p-0 md:p-15 relative md:h-[510px]" >
+                  <Image
+                          src={'/bg.png'} 
+                          layout="fill"
+                         
+                          objectFit="cover"
+                          alt={'Default title'} 
+                        />
+          <div className="flex items-center  pt-5 md:pt-0 pl-5 md:pl-0">
             {/* Icon or Circle */}
-            <div className="w-[52px] h-[52px] bg-[#A1CF5F] rounded-full"></div>
+            <div className="w-[52px] h-[52px] z-9 bg-[#A1CF5F] rounded-full"></div>
             <div className="ml-[-20px] w-[52px] h-[52px] bg-white rounded-full"></div>
           </div>
-          <h3 className="pl-5 md:pl-0 text-[16px] font-bold text-bold text-black uppercase mt-5">
+          <h3 className="pl-5 md:pl-0 z-999 text-[16px] font-bold text-bold text-black uppercase mt-5">
           {data.page.leadershipPageFeilds.leadershipSeventhSectionFields.leadershipSeventhSectionSubheading}
           </h3>
-          <h1 className="text-[32px] pl-5 md:pl-0 font-bold text-black mt-0">
+          <h1 className="text-[32px] z-999  pl-5 md:pl-0 font-bold text-black mt-0">
           {data.page.leadershipPageFeilds.leadershipSeventhSectionFields.leadershipSeventhSectionMainHeading}
           </h1>
-          <p className="text-black pl-5 md:pl-0 text-[16px] max-w-[400px]">
+          <p className="text-black z-999  pl-5 md:pl-0 text-[16px] max-w-[400px]">
           {data.page.leadershipPageFeilds.leadershipSeventhSectionFields.leadershipSeventhSectionDescription}
           </p>
           {/* Button */}
-          <a
+          <Link
             href={data.page.leadershipPageFeilds.leadershipSeventhSectionFields.leadershipSeventhSectionButtonLink}
-            className="inline-flex items-center  mt-20 justify-center w-[132px] h-[40px] text-sm font-bold text-black bg-[#A1CF5F] hover:bg-green-600 rounded-md transition duration-200"
+            className="inline-flex z-999  items-center  mt-20 justify-center w-[132px] h-[40px] text-sm font-bold text-black bg-[#A1CF5F] hover:bg-green-600 rounded-md transition duration-200"
           >
             {data.page.leadershipPageFeilds.leadershipSeventhSectionFields.leadershipSeventhSectionButtonText}
             <span className="ml-2 text-lg">↗</span>
-          </a>
+          </Link>
           <Image src={data.page.leadershipPageFeilds.leadershipSeventhSectionFields.leadershipSeventhSectionMainImage?.node?.link}  width={603} height={510} alt='' className='md:absolute relative right-0 top-0 m-0 p-0'></Image>
         </div>
 
@@ -779,7 +781,7 @@ const page = async () => {
                 {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnDescription1} </p>
                 <p  className="text-white leading-relaxed mb-4 max-w-[573px]">
                 {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnDescription2}
-                <Link href='/blog/blog-details?id=cG9zdDo4MjI='><span className="text-[#A1CF5F] underline cursor-pointer">
+                <Link href='/blog/blog-details/alumni-story-serving-the-underbanked-to-end-the-cycle-of-poverty'><span className="text-[#A1CF5F] underline cursor-pointer">
                 {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnDescriptionGreenColor}
                   </span> </Link> and more.
                 </p>
@@ -856,7 +858,7 @@ const page = async () => {
                 <div className='w-full md:w-1/2'>
                 <div className="text-[#000000] leading-relaxed mb-4"
                  
-                >{parse(data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionFirstRowSecondColumnDescription || '')}
+                > {parse(data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionFirstRowSecondColumnDescription || '')}
                   </div>
                 {/* <p className="text-[#000000] leading-relaxed">
                 {data.page.leadershipPageFeilds.leadershipTwelfthSection.leadershipTwelfthSectionMainHeading}  </p> */}
