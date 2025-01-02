@@ -77,14 +77,15 @@ const [isMobile, setIsMobile] = useState(false);
   
   return (
     <section className="md:py-[32px]" 
-    onClick={(e) => {
-      // Ensure handleClick is triggered on section click as well
-      const videoElement = document.querySelector("video");
+    // onClick={(e) => {
+    //   // Ensure handleClick is triggered on section click as well
+    //   const videoElement = document.querySelector("video");
      
-      if (videoElement) { console.log("videoElement");
-        handleClick(videoElement, setIsPlaying); // Only trigger handleClick if video element is clicked
-      }
-    }}>
+    //   if (videoElement) { console.log("videoElement");
+    //     handleClick(videoElement, setIsPlaying); // Only trigger handleClick if video element is clicked
+    //   }
+    // }}
+    >
       <h1 className="md:text-[40px] text-[25px] font-bold text-center text-black md:w-[60%] md:p-5 mx-auto leading-[49px]">
       {data.page.leadershipPageFeilds.leadershipVideoSection.leadershipVideoSectionMainHeading}
       </h1>

@@ -59,7 +59,7 @@ const VideoPlayer = () => {
 
 
   const handleClick = (videoElement: HTMLVideoElement, setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>) => {
-    if (videoElement) {
+    if (videoElement) { console.log(videoElement);
       if (videoElement.paused) {
         videoElement.play(); // Play the video if it is paused
         setIsPlaying(true); // Set state to true if the video is playing
@@ -74,13 +74,14 @@ const VideoPlayer = () => {
 
   return (
     <section className="md:py-[32px]" 
-    onClick={(e) => {
-      // Ensure handleClick is triggered on section click as well
-      const videoElement = document.querySelector("video");
-      if (videoElement) {
-        handleClick(videoElement, setIsPlaying); // Only trigger handleClick if video element is clicked
-      }
-    }}>
+    // onClick={() => {
+    //   // Ensure handleClick is triggered on section click as well
+    //   const videoElement = document.querySelector("video");
+    //   if (videoElement) {
+    //     handleClick(videoElement, setIsPlaying); // Only trigger handleClick if video element is clicked
+    //   }
+    // }}
+    >
      {!isPlaying  && !isMobile  && ( <h1 className="md:text-[40px] mb-10 text-[25px] font-bold text-center text-black md:w-[60%] md:p-5 mx-auto leading-[30px] md:leading-[49px]">
         {data.page.bookPageFeilds.bookSixthSectionVideoMainHeading}
       </h1> )}
@@ -98,8 +99,8 @@ const VideoPlayer = () => {
                     height={563}
                     className="w-full rounded-lg relative"
                     onClick={(e) => {
-                      // Ensure handleClick is triggered on section click as well
-                      const videoElement = document.querySelector("video");
+                    //  Ensure handleClick is triggered on section click as well
+                     const videoElement = document.querySelector("video");
                       if (videoElement) {
                         handleClick(videoElement, setIsPlaying); // Only trigger handleClick if video element is clicked
                       }
