@@ -111,32 +111,32 @@ export default async function Partner() {
           {/* desktop div start */}
           <div className="hidden md:block py-10 ">
             <div className="flex justify-center mx-auto w-fit mb-3 gap-3 md:w-10/12">
-              <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-              <Image  src={data.page.patnerssection.imagefirst?.node?.link} className="w-[80px]" alt='' width={800} height={500}  />
+              <div className="max-w-[500px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+              <Image  src={data.page.patnerssection.imagefirst?.node?.link} className="w-[150px]" alt='' width={800} height={500}  />
               </div>
-              <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33]  ">
-              <Image  src={data.page.patnerssection.image2?.node?.link}  className="w-[80px]" alt='' width={800} height={500} />
+              <div className="max-w-[500px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33]  ">
+              <Image  src={data.page.patnerssection.image2?.node?.link}  className="w-[150px]" alt='' width={800} height={500} />
               </div>
-              <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-              <Image  src={data.page.patnerssection.image3?.node?.link}  className="w-[80px]" alt='' width={800} height={500} />
+              <div className="max-w-[500px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+              <Image  src={data.page.patnerssection.image3?.node?.link}  className="w-[150px]" alt='' width={800} height={500} />
               </div>
-              <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-              <Image  src={data.page.patnerssection.image4?.node?.link} className="w-[80px]" alt='' width={800} height={500}/>
+              <div className="max-w-[500px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+              <Image  src={data.page.patnerssection.image4?.node?.link} className="w-[150px]" alt='' width={800} height={500}/>
               </div>
-              <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-              <Image src={data.page.patnerssection.image5?.node?.link}  className="w-[80px]" alt='' width={800} height={500} />
+              <div className="max-w-[500px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+              <Image src={data.page.patnerssection.image5?.node?.link}  className="w-[150px]" alt='' width={800} height={500} />
               </div>
             </div>
 
             <div className="flex justify-center items-center mx-auto w-fit mb-3 gap-3 md:w-8/12">
-            <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-                <Image src={data.page.patnerssection.image6?.node?.link}  className="w-[80px]" alt='' width={800} height={500} />
+            <div className="max-w-[500px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+                <Image src={data.page.patnerssection.image6?.node?.link}  className="w-[150px]" alt='' width={800} height={500} />
                 </div>
-                <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-                <Image  src={data.page.patnerssection.image7?.node?.link}  className="w-[80px]" alt='' width={800} height={500}  />
+                <div className="max-w-[500px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+                <Image  src={data.page.patnerssection.image7?.node?.link}  className="w-[150px]" alt='' width={800} height={500}  />
                 </div>
-                <div className="max-w-[257px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
-                <Image  src={data.page.patnerssection.image8?.node?.link}  className="w-[80px]" alt='' width={800} height={500}  />
+                <div className="max-w-[500px] w-full aspect-square p-[33px] border border-[#e3e2e2] flex justify-center items-center hover:border-[#A1CF5F33] ">
+                <Image  src={data.page.patnerssection.image8?.node?.link}  className="w-[150px]" alt='' width={800} height={500}  />
                 </div>
              
               <div className="relative bg-black text-white p-[27px] w-full aspect-square max-w-[257px] flex items-center justify-center hover:border-[#A1CF5F33]  ">
