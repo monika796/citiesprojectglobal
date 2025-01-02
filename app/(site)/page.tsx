@@ -296,7 +296,7 @@ export default async function Home() {
 
 
               <div className="relative w-full md:absolute md:top-[61%]  top-0  md:pt-0 pt-[36rem] left-0 transform -translate-y-1/2 text-white">
-                <span className="uppercase mb-1	inline-block text-[10px] md:text-[14px] bg-[#fff] text-black leading-none	 text-center w-[auto]  mb-[20px]  font-bold	py-1 px-2">{data.page.bannerHome.subtitleupper}</span><br />
+                {data.page.bannerHome.subtitleupper && <><span className="uppercase	inline-block text-[10px] md:text-[14px] bg-[#fff] text-black leading-none	 text-center w-[auto]  mb-[20px]  font-bold	py-1 px-2">{data.page.bannerHome.subtitleupper}</span><br /></>}
                 <strong className={`${anton.className} block uppercase md:text-[126px]  leading-[50px] text-[37px] font-light xl:leading-[130px]  md:leading-none`}>
                  {data.page.bannerHome.textBanner}<br className="hidden md:block" />
                  {data.page.bannerHome.textBanner2}< br className="hidden md:block" />
