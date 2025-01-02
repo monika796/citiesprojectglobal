@@ -129,7 +129,7 @@ const VideoPlayer = () => {
           </p>
         </div>
         )}
-        <div className="absolute md:bottom-5 bottom-[57%] right-0 md:right-[5%] md:p-5">
+        <div className="absolute md:bottom-5 bottom-[57%] top-[15%] md:top-unset right-[40%] md:right-[5%] md:p-5 ">
           {isPlaying ? (
             <Image
               width={800}

@@ -213,7 +213,7 @@ const page = async () => {
     <div className='container mx-auto'>
       <div className="main-heading py-10  mx-auto max-w-[1480px]">
         <div className="flex items-end justify-between md:flex-nowrap flex-wrap gap-5">
-          <h2 className="m-0 text-[32px] leading-[77.45px]  md:text-[64px] max-w-[844px]  text-black font-bold"> 
+          <h2 className="m-0 text-[22px] leading-[23.45px]  md:leading-[77.45px]  md:text-[64px] max-w-[844px]  text-black font-bold"> 
          {vantage.vintageMainHeading}  </h2>
           <div className='max-w-[386px]'>
             <Image src={vantage.vintageMainRightImage?.node?.link} width="250" height="105" alt='' className='mb-3'></Image>
@@ -222,7 +222,7 @@ const page = async () => {
         </div>
       </div>
 
-      <section className='mx-auto max-w-[1480px] p-10 flex flex-wrap relative md:flex-nowrap justify-between items-end mt-10'   
+      <section className='mx-auto max-w-[1480px] m:p-10 p-5 flex gap-3 flex-wrap relative md:flex-nowrap justify-between items-end mt-10'   
        >
             <Image
                                           src={vantage.vintageSecondSection.vintageSecondSectionBackgroundImage?.node?.link || '/default-image.jpg'} // Fallback image
@@ -252,13 +252,13 @@ const page = async () => {
 
      <section className=' mx-auto max-w-[1480px] mt-25'>
       <div className='max-w-[768px] mx-auto text-center'>
-           <h2 className='text-[48px] leading-[58.09px] font-bold text-black'>
+           <h2 className='text-[20px] md:text-[48px] leading-[22.09px] md:leading-[58.09px] font-bold text-black'>
             
             {vantage.vintageThirdSection.vintageThirdSectionMainHeading}</h2>
            <p className='text-[16px] mt-6'>
            {vantage.vintageThirdSection.vintageThirdSectionMainDescription}</p>
       </div>
-      <div className="flex justify-center items-center p-10 gap-6 mt-10">
+      <div className="flex flex-wrap md:flex-nowrap justify-center items-center md:p-10 p-3 gap-6 mt-10">
   <div className="relative transform ">
     <Image src={vantage.vintageThirdSection.vintageThirdSectionRowFirstImage?.node?.link} alt="Left Image" className="relative  rounded-lg " width={332} height={449} />
   </div>
@@ -278,15 +278,15 @@ const page = async () => {
 
      </section>
      <section className='mt-25'>
-     <div className="flex flex-col md:flex-row items-center justify-center gap-8 p-20 bg-gray-100">
+     <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:p-20 p-5 bg-gray-100">
 
   <div className="w-full md:w-[25%]">
-    <Image src={vantage.vintageFourthSection.vintageFourthSectionLeftImage?.node?.link} alt="Left Image" className="relative top-[-200px]" width={429} height={421}/>
+    <Image src={vantage.vintageFourthSection.vintageFourthSectionLeftImage?.node?.link} alt="Left Image" className="relative top-[0] md:top-[-200px]" width={429} height={421}/>
   </div>
 
 
   <div className="text-center md:text-center md:w-[50%]">
-    <h2 className="text-[48px] text-black font-bold mb-4 mt-10 leading-[58px] max-w-[491px] mx-auto">
+    <h2 className="text-[22px] md:text-[48px]  text-black font-bold mb-4 mt-10 leading-[28px]  md:leading-[58px] max-w-[491px] mx-auto">
     {vantage.vintageFourthSection.vintageFourthSectionHeading}</h2>
     <p className="text-black text-[16px] leading-[22px] mb-6 mt-10">
     {vantage.vintageFourthSection.vintageFourthSectionDescription}
@@ -307,12 +307,12 @@ const page = async () => {
      </section>
 
      <section className='mx-auto max-w-[1480px] mt-30'>
-          <h2 className='text-[48px] font-bold text-black leading-[58px] max-w-[969px]'>
+          <h2 className='text-[22px] md:text-[48px] font-bold text-black leading-[29px] md:leading-[58px] max-w-[969px]'>
           {vantage.vintageFifthSection.vintageFifthSectionMainHeading}</h2>
 
           <div className="grid md:grid-cols-2 grid-cols-1 mt-10">
               <div>
-                  <div className="flex justify-end mb-40">
+                  <div className="flex justify-end md:mb-40 mb-10">
                       <p className='max-w-[515px] text-[16px] text-black'>
                         {vantage.vintageFifthSection.vintageFifthSectionMainDescription}
 
@@ -347,18 +347,18 @@ const page = async () => {
    </section>
 
    <section className='mx-auto max-w-[1480px] py-15'>
-          <h2 className='m-0 text-[30px] leading-[54px]  md:w-[37%] md:text-[40px] text-black font-bold'>
+          <h2 className='m-0 text-[22px] md:text-[30px] leading-[24px] md:leading-[54px]  md:w-[37%] md:text-[40px] text-black font-bold'>
            {vantage.vintageSeventhSection.vintageSeventhSectionMainHeading}
             </h2>
 
-          <div className='flex py-10'>
-                <div className='w-1/3 relative' >
+          <div className='flex flex-wrap md:flex-nowrap py-10'>
+                <div className='md:w-1/3 w-full relative' >
                   <Image src={vantage.vintageSeventhSection.vintageSeventhSectionFirstColumnImage?.node?.link} alt='' layout='fill'  className='object-cover' />
                 </div>
-                  <div className='w-2/3   ' >
-                    <div className='flex '>
+                  <div className='md:w-2/3 w-full   ' >
+                    <div className='flex flex-wrap md:flex-nowrap'>
                       
-                    <div className='w-1/2 px-13  grid gap-20' >
+                    <div className='md:w-1/2 w-full md:px-13 px-0   grid gap-20' >
                     <h2 className='text-[#000000] text-[18px]'>
                        {vantage.vintageSeventhSection.vintageSeventhSectionSecondColumnDescription}
                        </h2>
@@ -378,12 +378,12 @@ const page = async () => {
                       </Link>
                         </div>
                     </div>
-                  <div className='w-1/2 relative'>
+                  <div className='md:w-1/2 w-full relative'>
                   <Image src={vantage.vintageSeventhSection.vintageSeventhSectionThirdColumnImage?.node?.link} alt=''  className='object-cover' layout='fill' />
                   </div>
 
                 </div>
-                  <div className=' p-13 '>
+                  <div className=' mt-5 md:mt-0  p-0 md:p-13 '>
                      <h2 className='text-left font-bold text-[20px] text-[#000000]'>Contents</h2>
                          
                          
@@ -442,15 +442,15 @@ const page = async () => {
                           </div>
                           </div> */}
 
-                    <div className='p-30'></div>
+                    <div className='md:p-30 p-0'></div>
                   </div>
                 </div>
           </div>
    </section>
 
-   <section className=' mx-auto  relative md:mt-[-280px] z-0 p-70 h-[1580px]'>
-    <Image src={vantage.vintageEightSection.vintageEightSectionBackgroundImage?.node?.link} className='object-cover object-left' style={{ transform: 'scaleX(-1)' }}  layout='fill' alt='' />
-    <div className='absolute z-999 p-20 bottom-20 grid gap-4 right-20 w-[50%]'>
+   <section className=' mx-auto  relative mt-0 md:mt-[-280px] z-0 p-70 md:h-[1580px] h-auto'>
+    <Image src={vantage.vintageEightSection.vintageEightSectionBackgroundImage?.node?.link} className='object-cover md:object-left object-left' style={{ transform: 'scaleX(-1)' }}  layout='fill' alt='' />
+    <div className='md:absolute relative z-999 md:p-20 p-5 bottom-0 md:bottom-20 grid gap-4 right-0  md:right-20 w-full md:w-[50%]'>
        <div className=''> <h2 className='text-3xl font-bold text-white'>
        {vantage.vintageEightSection.vintageEightSectionMainHeading} 
       </h2>
@@ -465,17 +465,17 @@ const page = async () => {
       </div>
     </div>
    </section>
-       <section className='mx-auto max-w-[1480px]'>
-              <div className='px-40'>
-                     <div className='flex p-10'>
+       <section className='mx-auto max-w-[1480px] mt-10 md:mt-0'>
+              <div className='md:px-40 px-0 '>
+                     <div className='flex p-0 md:p-10  flex-wrap md:flex-nowrap'>
                   
-                     <div className='w-2/5 relative'>
-                     <Image src={vantage.vintageNinthSection.vintageNinthSectionLeftSectionImage?.node?.link} alt='' className='absolute bottom-[10%] p-[10px] w-[500px] h-[480px] object-cover' width={1000} height={1000} />
+                     <div className='md:w-2/5 w-full relative'>
+                     <Image src={vantage.vintageNinthSection.vintageNinthSectionLeftSectionImage?.node?.link} alt='' className='md:absolute relative bottom-[0] md:bottom-[10%] p-0 md:p-[10px] w-[500px] h-[480px] object-cover' width={1000} height={1000} />
                       </div>
                     
-                    <div className='w-3/5 '>  
-                     <div className=' p-15  grid gap-3 bg-[#F8F8F8]'>
-                     <h2 className='text-[40px] leading-[50px] w-[80%] font-bold text-[#000000]'>
+                    <div className='md:w-3/5 w-full'>  
+                     <div className=' p-6 md:p-15  grid gap-3 bg-[#F8F8F8]'>
+                     <h2 className='text-[22px] md:text-[40px]  leading-[25px] md:leading-[50px] w-[80%] font-bold text-[#000000]'>
                      
                       {vantage.vintageNinthSection.vintageNinthSectionRightSectionMainHeading} 
                       </h2>
@@ -483,12 +483,12 @@ const page = async () => {
                       {parse(vantage.vintageNinthSection.vintageNinthSectionRightSectionDescription || '')}    </div>
                    
                     </div> 
-                    <div className='flex mt-2 gap-2'>
-                      <div className='w-1/3 rounded'>
+                    <div className='flex  flex-wrap md:flex-nowrap mt-2 gap-2'>
+                      <div className='md:w-1/3 w-full rounded'>
                       <Image src={vantage.vintageNinthSection.vintageNinthSectionRightSectionRowFirstImage?.node?.link} alt='' className='' width={1000} height={1000} />
                       </div>
-                      <div className=' w-2/3 rounded '>
-                        <div className='bg-[#D8FFA1] flex p-6  h-auto w-[70%] gap-[29px] flex h-auto'>
+                      <div className=' md:w-2/3 w-full rounded '>
+                        <div className='bg-[#D8FFA1] flex p-6  h-auto md:w-[70%] w-full gap-[29px] flex h-auto'>
                           <h2 className=' w-4/12 text-[40px] leading-[50px] w-[80%] font-bold text-[#000000]'>
                           {vantage.vintageNinthSection.vintageNinthSectionRightSectionRowSecondHeading}</h2>
                         <p className=' w-8/12 text-black text-[15px] font-bold'>
@@ -506,7 +506,7 @@ const page = async () => {
 
 
        <section className='py-15'>
-          <div className="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-4  border-[10px] border-[#000000]">
+          <div className="w-full md:w-[80%] mx-auto grid grid-cols-1 md:grid-cols-4  border-[10px] border-[#000000]">
             <div className='relative'>
               <Image layout='fill' src={vantage.vintageTenthSection.vintageTenthSectionFirstColumnImage?.node?.link}
                className="object-top object-cover object-right xl:h-[363px]" alt="Vantage Image 1" />

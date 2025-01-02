@@ -290,7 +290,7 @@ export default async function Home() {
  
     src={data.page.bannerHome.banner?.node?.link}
     layout="fill"
-    alt="Programming meme"
+    alt="Programming meme" className="object-cover"
 />
             <div className="container relative max-w-[1480px] mx-auto relative   h-[510px] md:h-[780px]">
 
@@ -382,7 +382,7 @@ export default async function Home() {
                                       alt="Background Image"
                                       layout="fill"  // This will make the image cover the div area
                                       objectFit="cover"  // Ensure the image is scaled to cover the div
-                                      className=""  // Optional: Add styles like border radius
+                                      className="object-cover"  // Optional: Add styles like border radius
                                     />
           </div>
           <div className='md:w-6/12 md:pl-[14px] py-4 gap-0  text-left md:text-left px-4 md:px-0'>

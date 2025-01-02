@@ -344,7 +344,7 @@ console.log(data);
                         </div>
                         ))}
                         
-                      </div><Image width={200} height={100} src='/81.png' alt="" className="md:absolute hidden md:block left-[-6%] top-[13%]" />
+                      </div><Image width={200} height={100} src='/81.png' alt="" className="md:absolute hidden md:block left-[-6%] top-[13%] " />
                     </div>
                     </div>
                     <div className="">
