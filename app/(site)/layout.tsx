@@ -15,8 +15,6 @@ import ToasterContext from "../context/ToastContext";
 import { ApolloProvider } from "@apollo/client";
 import client from "apollo-client";
 
-export const revalidate = 300 // revalidate at most every 5 minutes
-
 export default function RootLayout({
   children,
 }: {

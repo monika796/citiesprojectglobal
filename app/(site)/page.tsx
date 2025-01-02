@@ -22,6 +22,7 @@ import NewBannerSlider from "@/components/HeroBanner"; // Import client componen
 import VideoPopup from '@/components/SecondHomeVideoButton'
 import Head from 'next/head';
 
+export const revalidate = 300 // revalidate at most every 5 minutes
 
 // export const metadata: Metadata = {
 //   title: "Next.js Starter Template for SaaS Startups - Solid SaaS Boilerplate",
