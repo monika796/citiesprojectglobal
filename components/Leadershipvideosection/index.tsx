@@ -80,7 +80,8 @@ const [isMobile, setIsMobile] = useState(false);
     onClick={(e) => {
       // Ensure handleClick is triggered on section click as well
       const videoElement = document.querySelector("video");
-      if (videoElement) {
+     
+      if (videoElement) { console.log("videoElement");
         handleClick(videoElement, setIsPlaying); // Only trigger handleClick if video element is clicked
       }
     }}>
