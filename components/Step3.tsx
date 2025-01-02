@@ -1,16 +1,67 @@
-import { useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form';
+import React, { useState, useEffect } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
+import CheckoutForm from "@/components/CheckoutForm";
+import CompletePage from "@/components/CompletePage";
 
 type Step3Props = {
   onSubmit: (data: any) => void
   onPrevious: () => void
   paymentMethod?: 'card' | 'check'
+   frequency?: 'one-time' | 'monthly'
   amount?: string | number
 }
 
-export default function Step3({ onSubmit, onPrevious, paymentMethod = 'card', amount }: Step3Props) {
+const stripePromise = loadStripe("pk_test_51JIVaHSIfk35L8nB78p7tybIiB1kYKqPzPA8OcEveJb1eJhWOQjgD7O86yiZzh3HYsnnTgBHZTfzLVdpCQgz5AEb00G2yRVdEz");
+
+export default function Step3({ onSubmit, onPrevious, paymentMethod = 'card', frequency = 'one-time', amount }: Step3Props) {
   const { register, handleSubmit, formState: { errors } } = useForm()
+  const [clientSecret, setClientSecret] = useState("");
+  const [confirmed, setConfirmed] = React.useState(false);
+
+  {frequency === 'one-time'  && (
+    useEffect(() => {
+      // Create PaymentIntent as soon as the page loads
+      fetch("http://localhost/stripephp/create.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ items: [{ id: "xl-tshirt", amount: 1000, frequency: "one-time" }] }),
+        })
+        .then((res) => res.json())
+        .then((data) => setClientSecret(data.clientSecret));
+    }, [])
+  )}
+
+  {frequency === 'monthly' && (
+    useEffect(() => {
+      // Create PaymentIntent as soon as the page loads
+      fetch("http://localhost/stripephp/create.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ items: [{ id: "xl-tshirt", amount: 1000, frequency: "monthly" }] }),
+        })
+        .then((res) => res.json())
+        .then((data) => setClientSecret(data.clientSecret));
+    }, [])
+  )}
+  
+  
+    const appearance = {
+      theme: "stripe" as "stripe", // Explicitly typing the value to satisfy TypeScript
+    };
+    const options = {
+      clientSecret,
+      appearance,
+    };
 
   return (
+    <div className="space-y-6">
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="space-y-4">
         <h3 className="text-lg font-medium">Your Information</h3>
@@ -127,18 +178,19 @@ export default function Step3({ onSubmit, onPrevious, paymentMethod = 'card', am
         <div className="space-y-4">
           <h3 className="text-lg font-medium">Card Information</h3>
           <div className="space-y-2">
-            <label htmlFor="cardInfo" className="block text-sm font-medium text-gray-700">Credit Card Information</label>
-            <input
-              id="cardInfo"
-              {...register('cardInfo', { required: 'Credit card information is required' })}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-            />
-            {errors.cardInfo && <p className="text-red-500 text-sm">{errors.cardInfo.message as string}</p>}
           </div>
         </div>
       )}
 
-      <div className="flex justify-between">
+      
+    </form>
+
+    {paymentMethod === 'card' && clientSecret && (
+        <Elements options={options} stripe={stripePromise}>
+          {confirmed ? <CompletePage /> : <CheckoutForm />}
+        </Elements>
+      )}
+        <div className="flex justify-between">
         <button
           type="button"
           onClick={onPrevious}
@@ -153,7 +205,7 @@ export default function Step3({ onSubmit, onPrevious, paymentMethod = 'card', am
           {`Donate $${amount || '0'}`}
         </button>
       </div>
-    </form>
+    </div>
   )
 }
 

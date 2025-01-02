@@ -1,6 +1,15 @@
-'use client'
+"use client"
+import React, { useState, useEffect } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
 
-import { useState } from 'react'
+import CheckoutForm from "@/components/CheckoutForm";
+import CompletePage from "@/components/CompletePage";
 import Step1 from './Step1'
 import Step2 from './Step2'
 import Step3 from './Step3'
@@ -24,7 +33,17 @@ type DonationData = {
   accountHolder?: string
 }
 
-export default function DonationWizard() {
+// Make sure to call loadStripe outside of a component’s render to avoid
+// recreating the Stripe object on every render.
+// This is a public sample test API key.
+// Don’t submit any personally identifiable information in requests made with this key.
+// Sign in to see your own test API key embedded in code samples.
+const stripePromise = loadStripe("pk_test_51JIVaHSIfk35L8nB78p7tybIiB1kYKqPzPA8OcEveJb1eJhWOQjgD7O86yiZzh3HYsnnTgBHZTfzLVdpCQgz5AEb00G2yRVdEz");
+
+export default function App() {
+  const [clientSecret, setClientSecret] = useState("");
+  const [confirmed, setConfirmed] = React.useState(false);
+
   const [step, setStep] = useState(1)
   const [donationData, setDonationData] = useState<Partial<DonationData>>({})
 
@@ -43,8 +62,32 @@ export default function DonationWizard() {
     // Here you would typically send the data to your backend
   }
 
+  useEffect(() => {
+    // Create PaymentIntent as soon as the page loads
+    fetch("http://localhost/stripephp/create.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items: [{ id: "xl-tshirt", amount: 1000 }] }),
+      })
+      .then((res) => res.json())
+      .then((data) => setClientSecret(data.clientSecret));
+  }, []);
+
+  const appearance = {
+    theme: "stripe" as "stripe", // Explicitly typing the value to satisfy TypeScript
+  };
+  const options = {
+    clientSecret,
+    appearance,
+  };
+
+  // Enable the skeleton loader UI for optimal loading.
+  const loader = 'auto';
+
   return (
-    <div className="w-full max-w-lg mx-auto bg-white shadow-md rounded-lg overflow-hidden">
+    <Router>
+      <div className="App">
+      <div className="w-full max-w-lg mx-auto bg-white shadow-md rounded-lg overflow-hidden">
       <div className="bg-[#1295d8] text-white p-6 text-center">
         <img 
           src="/star-blue-digital.avif" 
@@ -66,6 +109,7 @@ export default function DonationWizard() {
             onSubmit={handleSubmit} 
             onPrevious={handlePrevious}
             paymentMethod={donationData.paymentMethod}
+            frequency={donationData.frequency}
             amount={donationData.amount}
           />
         )}
@@ -74,6 +118,7 @@ export default function DonationWizard() {
         <div>Step {step} of 3</div>
       </div>
     </div>
-  )
+      </div>
+    </Router> 
+  );
 }
-
