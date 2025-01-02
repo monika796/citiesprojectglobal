@@ -1,18 +1,18 @@
 // This is your test publishable API key.
 const stripe = Stripe("pk_test_51JIVaHSIfk35L8nB78p7tybIiB1kYKqPzPA8OcEveJb1eJhWOQjgD7O86yiZzh3HYsnnTgBHZTfzLVdpCQgz5AEb00G2yRVdEz");
 
-const amount_pay =  document.querySelector("#stripe-amount").value;
-const detail_first_name =  document.querySelector("#detail_first_name").value;
-const detail_last_name =  document.querySelector("#detail_last_name").value;
-const detail_email =  document.querySelector("#detail_email").value;
-const detail_phone =  document.querySelector("#detail_phone").value;
-const detail_line1 =  document.querySelector("#detail_line1").value;
-const detail_city =  document.querySelector("#detail_city").value;
-const detail_line2 =  document.querySelector("#detail_line2").value;
-const detail_zipcode =  document.querySelector("#detail_zipcode").value;
+const amount_pay =  50;
+// const detail_first_name =  document.querySelector("#detail_first_name").value;
+// const detail_last_name =  document.querySelector("#detail_last_name").value;
+// const detail_email =  document.querySelector("#detail_email").value;
+// const detail_phone =  document.querySelector("#detail_phone").value;
+// const detail_line1 =  document.querySelector("#detail_line1").value;
+// const detail_city =  document.querySelector("#detail_city").value;
+// const detail_line2 =  document.querySelector("#detail_line2").value;
+// const detail_zipcode =  document.querySelector("#detail_zipcode").value;
 // console.log('amount :'+amount_pay);
 // The items the customer wants to buy
-const items = [{ id: "xl-tshirt", amount: amount_pay, detail_first_name: detail_first_name, detail_last_name: detail_last_name, detail_email: detail_email, detail_phone: detail_phone, detail_line1: detail_line1, detail_city: detail_city, detail_line2: detail_line2, detail_zipcode: detail_zipcode }];
+const items = [{ id: "xl-tshirt", amount: amount_pay }];
 
 
 let elements;
