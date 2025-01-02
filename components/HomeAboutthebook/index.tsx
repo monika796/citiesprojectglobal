@@ -97,7 +97,7 @@ const FifthSection = ({ data, Video_gif }) => {
           <div className="bg-[rgb(3, 4, 2)]  rounded-lg">
             {isPlaying ? (
               <button
-                className="absolute inset-0 flex items-center justify-center text-white text-3xl rounded-full"
+                className="absolute inset-0 md:bottom-0 bottom-[40%] flex items-center justify-center text-white text-3xl rounded-full"
               >
                 <svg
                   fill="#fff"
