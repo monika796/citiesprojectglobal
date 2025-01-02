@@ -81,16 +81,11 @@ const VideoPlayer = () => {
     <section
       className="md:py-[32px]"
       onClick={handleSectionClick} // Play video on section click
-    >{!isPlaying  && !isMobile  && (
+    >
       <h1 className="md:text-[40px] text-[25px] font-bold text-center text-black md:w-[52%] md:p-5 mx-auto leading-[49px]">
         {data.page.aboutussections.videosectionheading}
       </h1>
-        )}
-        { isMobile  && (
-      <h1 className="md:text-[40px] text-[25px] font-bold text-center text-black md:w-[52%] md:p-5 mx-auto leading-[49px]">
-        {data.page.aboutussections.videosectionheading}
-      </h1>
-        )}
+      
       <div className="relative mx-auto table md:w-[80%]">
         {/* Use Image component for the video poster */}
         {!isPlayed && (

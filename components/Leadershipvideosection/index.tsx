@@ -140,7 +140,7 @@ const [isMobile, setIsMobile] = useState(false);
       
        
        
-        <div className=" absolute md:bottom-5 bottom-[60%] md:bottom-[57%] right-0  md:right-[5%] md:p-5" >
+        <div className=" absolute md:bottom-5 bottom-[60%] md:bottom-[5%] right-0  md:right-[5%] md:p-5" >
           {isPlaying ? (
             <Image  width={700} height={700}  src="/117.png" className="md:w-[80%] w-[60%]" alt="Playing" /> // Image when video is playing
           ) : (
