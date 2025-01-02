@@ -20,45 +20,38 @@ type Step3Props = {
 
 const stripePromise = loadStripe("pk_test_51JIVaHSIfk35L8nB78p7tybIiB1kYKqPzPA8OcEveJb1eJhWOQjgD7O86yiZzh3HYsnnTgBHZTfzLVdpCQgz5AEb00G2yRVdEz");
 
-export default function Step3({ onSubmit, onPrevious, paymentMethod = 'card', frequency = 'one-time', amount }: Step3Props) {
-  const { register, handleSubmit, formState: { errors } } = useForm()
-  const [clientSecret, setClientSecret] = useState("");
-  const [confirmed, setConfirmed] = React.useState(false);
+export default function Step3({
+  onSubmit,
+  onPrevious,
+  paymentMethod = 'card',
+  frequency = 'one-time',
+  amount,
+}: Step3Props) {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const [clientSecret, setClientSecret] = useState<string | null>(null);
+  const [confirmed, setConfirmed] = useState(false);
 
-  {frequency === 'one-time'  && (
-    useEffect(() => {
-      // Create PaymentIntent as soon as the page loads
-      fetch("http://localhost/stripephp/create.php", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ items: [{ id: "xl-tshirt", amount: 1000, frequency: "one-time" }] }),
-        })
-        .then((res) => res.json())
-        .then((data) => setClientSecret(data.clientSecret));
-    }, [])
-  )}
+  useEffect(() => {
+    if (typeof window !== "undefined" && frequency) {
+      const body = {
+        items: [{ id: "xl-tshirt", amount: 1000, frequency }],
+      };
 
-  {frequency === 'monthly' && (
-    useEffect(() => {
-      // Create PaymentIntent as soon as the page loads
       fetch("http://localhost/stripephp/create.php", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ items: [{ id: "xl-tshirt", amount: 1000, frequency: "monthly" }] }),
-        })
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      })
         .then((res) => res.json())
-        .then((data) => setClientSecret(data.clientSecret));
-    }, [])
-  )}
-  
-  
-    const appearance = {
-      theme: "stripe" as "stripe", // Explicitly typing the value to satisfy TypeScript
-    };
-    const options = {
-      clientSecret,
-      appearance,
-    };
+        .then((data) => setClientSecret(data.clientSecret))
+        .catch((error) => console.error("Error fetching client secret:", error));
+    }
+  }, [frequency]);
+
+  const appearance = {
+    theme: "stripe" as "stripe", 
+  };
+  const options = clientSecret ? { clientSecret, appearance } : undefined;
 
   return (
     <div className="space-y-6">
