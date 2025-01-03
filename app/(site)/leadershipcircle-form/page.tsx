@@ -5,7 +5,7 @@ import DobGender from "@/components/multiformstep/Stepsecond";
 import Address from "@/components/multiformstep/Stepthird";
 import Image from "next/image";
 import axios from "axios";
-export const revalidate = 60 // revalidate at most every 5 minutes
+
 const MainForm = () => {
   const [data, setData] = useState({
     input_5: "", // Email
