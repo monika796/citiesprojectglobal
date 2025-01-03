@@ -91,7 +91,7 @@ const SwiperSection = () => {
                   {/* <Image src=
                       alt={post.title} width={1000} height={1000} /> */}
                    <Image
-                      src={post.featuredImage?.node?.link || '/default-image.jpg'} // Fallback image
+                      src={post.featuredImage?.node?.link || '/No_Image.jpg'} // Fallback image
                       layout="fill"
                       objectFit="cover"
                       alt={post.title || 'Default title'} // Provide a fallback title

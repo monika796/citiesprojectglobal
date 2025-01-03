@@ -119,7 +119,7 @@ const SingleBlogPage = async ({ params }: { params:Params }) => {
           width={1400}
           height={1000}
           className="mx-auto"
-          src={post?.featuredImage?.node?.link || "/"} // Fallback if the image is missing
+          src={post?.featuredImage?.node?.link  || '/No_Image.jpg'} // Fallback if the image is missing
         />
       </div>
       <div className="blog-content max-w-[684px] mx-auto py-15">
