@@ -7,6 +7,12 @@ import { gql } from '@apollo/client';
 import client from 'apollo-client';
 import SecondSection from "@/components/VantageForm";
 
+
+
+
+export const revalidate = 60 // revalidate at most every 5 minutes
+
+
 const POSTS_QUERY= gql `query MyQuery2 {
   page(id: "cG9zdDo1Njk=") {
     vantageForm {

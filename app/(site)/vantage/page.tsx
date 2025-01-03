@@ -12,6 +12,8 @@ import Newsletter from '@/components/Newsletter';
 import parse from "html-react-parser";
 
 
+export const revalidate = 60 // revalidate at most every 5 minutes
+
 const anton = Anton({ weight: '400', subsets: ["latin"] });
 const POSTS_QUERY = gql `
 query MyQuery2 {

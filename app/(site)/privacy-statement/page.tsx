@@ -1,4 +1,5 @@
 import Link from "next/link";
+export const revalidate = 60 // revalidate at most every 5 minutes
 const PrivacyStatement = () => {
     return (
       <section className="course-overview max-w-[1000px] md:px-0 px-10 mx-auto">

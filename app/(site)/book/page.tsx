@@ -7,7 +7,7 @@ import client from 'apollo-client';
 import Image from "next/image";
 import Link from "next/link";
 import MainComponent from '@/components/LightboxPdf'
-
+export const revalidate = 60 // revalidate at most every 5 minutes
 const anton = Anton({ weight: '400', subsets: ["latin"] }); 
 const POSTS_QUERY= gql `query MyQuery2 {
   page(id: "cG9zdDo0MzM=") {
