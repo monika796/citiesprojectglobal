@@ -91,8 +91,8 @@ export default function Newsletter() {
 
   return (
     <div className="container mx-auto max-w-[1480px]" id="newsletter">
-      <div className="md:flex w-[100%] mx-auto bg-[#000000] p-5">
-        <div className="md:w-6/12 md:p-30">
+      <div className="md:flex lg:flex-row md:flex-col w-[100%] mx-auto bg-[#000000] p-5">
+        <div className="md:w-full lg:w-6/12 md:p-30">
           <h3
             className={`${anton.className} uppercase text-center md:text-left md:text-[55px] text-[41px] text-white font-light leading-[60px]`}
           >
@@ -102,7 +102,7 @@ export default function Newsletter() {
             {data.page.newsletter.mainsubheading}
           </p>
         </div>
-        <div className="md:w-6/12 md:p-15 p-5 md:border-l md:border-[#dbdbdb78]">
+        <div className="md:w-full lg:w-6/12 md:p-15 p-5 md:border-l md:border-[#dbdbdb78]">
           <p className="text-white pb-[20px] text-center md:text-left font-extrabold text-[24px]">
             {data.page.newsletter.leftheading}
             <br />

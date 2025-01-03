@@ -8,7 +8,7 @@ const BlogCard = ({ image, index, date, title, description, linkText, linkHref }
       {index === 0 || index === 1 ? (
         <>
           <div key={index} className="border rounded-lg shadow-sm p-0 h-[483px]">
-            <Image src={image} alt='' className="w-full h-64 lg:h-full object-cover" width={10000} height={10000}   />
+            <Image src={image || '/No_Image.jpg'} alt='' className="w-full h-64 lg:h-full object-cover" width={10000} height={10000}   />
           </div>
           <div className="border rounded-lg shadow-sm p-6 flex flex-col justify-between h-[483px]">
             <p className="text-sm text-gray-500">{date}</p>
@@ -66,7 +66,7 @@ const BlogCard = ({ image, index, date, title, description, linkText, linkHref }
           </div>
           <div className="border rounded-lg shadow-sm p-0 h-[483px]">
             <Image
-              src={image} // Replace with your image path
+              src={image  || '/No_Image.jpg'} // Replace with your image path
               alt={title || "Blog Image"} // Fallback for alt attribute
               className="w-full h-64 lg:h-full object-cover" width={10000} height={10000}
             />

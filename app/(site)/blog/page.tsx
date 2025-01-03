@@ -85,7 +85,7 @@ return (
    <section className="container mx-auto max-w-[1480px] bg-[#F8F8F8] border rounded-lg mt-10">
       <div className="flex flex-col lg:flex-row    overflow-hidden">
          <div className="flex-shrink-0">
-            <Image src={data.page.blogPageFeilds.blogSecondSection.blogPageLeft?.node?.link} // Replace with your image path
+            <Image src={data.page.blogPageFeilds.blogSecondSection.blogPageLeft?.node?.link || '/No_Image.jpg'} // Replace with your image path
                alt="Group of people"
                className="w-full h-64 lg:h-full " layout="responsive" width={800} height={700} />
            
@@ -112,7 +112,7 @@ return (
             </div>
             <div className="flex justify-end items-center">
                <div className="flex items-end space-x-2">
-                  <Image  src={data.page.blogPageFeilds.blogSecondSection.blogPageRightImage?.node?.link} // Replace with your small image path
+                  <Image  src={data.page.blogPageFeilds.blogSecondSection.blogPageRightImage?.node?.link  || '/No_Image.jpg'} // Replace with your small image path
                      alt="Nature"
                      className=" object-cover rounded" layout="responsive" width={16} height={9} />
                  

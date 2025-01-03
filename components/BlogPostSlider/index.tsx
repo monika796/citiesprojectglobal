@@ -101,7 +101,7 @@ const BlogCustomSlider = () => {
                 <SwiperSlide key={slide.id} className="swiper-slide-custom">
                   <div className="relative grid place-items-center p-9 rounded-lg shadow-solid-9">
                     <Image  width={1000} height={1000}
-                      src={slide.imgSrc}
+                      src={slide.imgSrc || '/No_Image.jpg'}
                       className="object-contain w-full rounded-lg"
                       alt={slide.title}
                     />
@@ -186,7 +186,7 @@ const BlogCustomSlider = () => {
           >
 
               <Image
-                                  src={slide.imgSrc || '/default-image.jpg'} // Fallback image
+                                  src={slide.imgSrc || '/No_Image.jpg'} // Fallback image
                                   layout="fill"
                                   objectFit="cover"
                                   alt={ 'Default title'} // Provide a fallback title

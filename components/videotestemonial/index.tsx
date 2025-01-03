@@ -57,8 +57,8 @@ const VideoCarousel = () => {
 
   return (
     <div className="container max-w-[1481px] mx-auto">
-      <section className="md:flex w-[100%] mx-auto">
-        <div className="md:w-4/12 md:p-[65px] p-5 md:pl-0">
+      <section className="md:flex lg:flex-row md:flex-col  w-[100%] mx-auto">
+        <div className="md:w-full lg:w-4/12 md:p-[65px] p-5 md:pl-0">
           <h2 className="font-inter text-[25px] md:text-[48px] text-black font-bold leading-[35px] md:leading-[58.09px] text-center md:text-left underline-from-font decoration-skip-ink-none">
             {data.page.homevideobanner.maintitle}
           </h2>
@@ -79,7 +79,7 @@ const VideoCarousel = () => {
           </Link>
         </div>
 
-        <div className="md:w-8/12 p-5">
+        <div className="md:w-full lg:w-8/12 p-5">
           <motion.div
             variants={{
               hidden: {
