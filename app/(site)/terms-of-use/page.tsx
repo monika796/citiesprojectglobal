@@ -1,4 +1,8 @@
 import Link from "next/link";
+
+export const revalidate = 60 // revalidate at most every 5 minutes
+
+
 const TermsOfUse = () => {
     return (
       <section className="course-overview md:px-0 px-10 max-w-[1000px] mx-auto">

@@ -8,6 +8,9 @@ import client from 'apollo-client';
 import SwiperSectionshortcourses from '@/components/shortcourseproductslider';
 import ReviewFirstSlider from '@/components/shortcoursereviewslider/Firstslider';
 import ReviewSecondSlider from '@/components/shortcoursereviewslider/Secondslider';
+export const revalidate = 60 // revalidate at most every 5 minutes
+
+
 
 const POSTS_QUERY = gql `
 query MyQuery2 {

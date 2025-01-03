@@ -6,6 +6,8 @@ import client from 'apollo-client';
 import BlogCard from "@/components/Blogdata";
 import Image from "next/image";
 import Link from "next/link";
+export const revalidate = 60 // revalidate at most every 5 minutes
+
 export const metadata: Metadata = {
 title: "Blog Page - Solid SaaS Boilerplate",
 description: "This is Blog page for Solid Pro",

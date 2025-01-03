@@ -92,12 +92,12 @@ const FifthSection = ({ data, Video_gif }) => {
         </div>
 
         {/* Right Content */}
-        <div className="md:w-8/12 md:py-[0px] relative">
+        <div className="md:w-8/12 md:py-[0px] relative video">
           {/* Black Box for Video */}
           <div className="bg-[rgb(3, 4, 2)]  rounded-lg">
             {isPlaying ? (
               <button
-                className="absolute inset-0 md:bottom-0 bottom-[40%] flex items-center justify-center text-white text-3xl rounded-full"
+                className="absolute invisible hover:visible inset-0 md:bottom-0 bottom-[40%] flex items-center justify-center text-white text-3xl rounded-full"
               >
                 <svg
                   fill="#fff"
@@ -137,7 +137,7 @@ const FifthSection = ({ data, Video_gif }) => {
             {Played &&(
               <video
                 ref={videoRef}
-                className="w-full"
+                className="w-full "
                 src="videoplayback.mp4"
                 onClick={handleVideoClick}
                 autoPlay

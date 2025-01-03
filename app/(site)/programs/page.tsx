@@ -6,6 +6,11 @@ import Link from "next/link";
 import { gql } from '@apollo/client';
 import client from 'apollo-client';
 import Image from "next/image";
+
+
+export const revalidate = 60 // revalidate at most every 5 minutes
+
+
 const POSTS_QUERY = gql `
   query {
   page(id: "cG9zdDozMjY=") {

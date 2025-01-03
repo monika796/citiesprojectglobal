@@ -12,7 +12,7 @@ import Link from "next/link";
 import MainComponent from '@/components/LightboxPdf'
 // Define the Anton font
 const anton = Anton({ weight: '400', subsets: ["latin"] });
-
+export const revalidate = 60 // revalidate at most every 5 minutes
 // GraphQL Query
 const POSTS_QUERY = gql`
 query MyQuery2 {

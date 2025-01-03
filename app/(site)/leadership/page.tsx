@@ -21,6 +21,10 @@ import parse from "html-react-parser";
 import MainComponent from '@/components/LightboxPdf'
 import LastFiveSection from '@/components/lastfiveimages';
 import SwiperSectionLeaderhsip from '@/components/leadershipcommunityslider';
+
+export const revalidate = 60 // revalidate at most every 5 minutes
+
+
 const POSTS_QUERY = gql 
 `query MyQuery2 {
   page(id: "cG9zdDo2MDg=") {
