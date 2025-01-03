@@ -101,14 +101,14 @@ console.log(partner_immm);
         <div className="mx-auto  px-4 md:px-8 2xl:px-0">
           <h5 className="md:text-[64px] text-[30px] text-black text-center md:pb-[30px] font-bold pb-2">{data.page.patnerssection.mainheading}</h5>
           <h5 className="text-[15px] text-black text-center">{data.page.patnerssection.firstsubtitlepatner}</h5>
-          <div className="  grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 md:w-[63%] mx-auto pt-[29px]">
+          <div className="  grid grid-cols-2 items-center sm:flex sm:flex-wrap justify-center gap-2 md:w-[100%] lg:w-[78%] mx-auto pt-[29px]">
           {partner_immm.map((partner_images, index) => (
-           <Image src={partner_images.addPartnersImages?.node?.link || '/No_Image.jpg'} alt='' width={800} height={500} className="w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain mx-auto" /> 
+           <Image src={partner_images.addPartnersImages?.node?.link || '/No_Image.jpg'} alt='' width={150} height={150} className=" w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain " /> 
 
         ))}
    
               
-            <div className=" relative bg-black text-white p-[27px] w-[150px] h-[150px] flex items-center justify-center mx-auto">
+            <div className=" relative bg-black text-white p-[27px] w-[150px] h-[150px] flex items-center justify-center md:mx-0 lg:mx-0">
               <div className="text-left absolute bottom-[15px] w-[89%]">
                 <h5 className="text-[12px] font-bold pb-2">{data.page.patnerssection.textninthbox}</h5>
                 <Link href={data.page.patnerssection.linknithbox}><h3 className="text-[10px] font-bold">{data.page.patnerssection.linktextninthbox}</h3></Link>
