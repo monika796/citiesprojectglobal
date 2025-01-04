@@ -5,7 +5,6 @@ import BlogCustomSlider from "@/components/BlogPostSlider";
 import Link from "next/link";
 // Define types for the post data
 
-export const revalidate = 60 // revalidate at most every 5 minutes
 interface FeaturedImage {
   node: {
     link: string;

@@ -10,8 +10,6 @@ import client from "apollo-client";
 import { useSearchParams } from "next/navigation";
 import BlogCustomSlider from "@/components/BlogPostSlider";
 
-export const revalidate = 60 // revalidate at most every 5 minutes
-// Define types for the post data
 interface FeaturedImage {
   node: {
     link: string;

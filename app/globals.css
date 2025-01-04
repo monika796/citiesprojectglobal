@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 /* third-party libraries CSS */
-
+.video_hover:hover .hover_elementss {
+  visibility: visible;
+}
+.hover_elementss {
+  visibility: hidden;
+}
 .testimonial-01 .swiper-pagination-bullet {
   @apply h-2.5 w-2.5 bg-stroke opacity-100;
 }
