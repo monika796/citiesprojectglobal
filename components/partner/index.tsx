@@ -101,9 +101,9 @@ console.log(partner_immm);
         <div className="mx-auto  px-4 md:px-8 2xl:px-0">
           <h5 className="md:text-[64px] text-[30px] text-black text-center md:pb-[30px] font-bold pb-2">{data.page.patnerssection.mainheading}</h5>
           <h5 className="text-[15px] text-black text-center">{data.page.patnerssection.firstsubtitlepatner}</h5>
-          <div className="  grid grid-cols-2 items-center sm:flex sm:flex-wrap justify-center gap-2 md:w-[100%] lg:w-[78%] mx-auto pt-[29px]">
+          <div className="  grid grid-cols-2 items-center sm:flex sm:flex-wrap justify-center gap-2 md:w-[100%] lg:w-[100%] mx-auto pt-[29px]">
           {partner_immm.map((partner_images, index) => (
-           <Image src={partner_images.addPartnersImages?.node?.link || '/No_Image.jpg'} alt='' width={150} height={150} className=" w-[150px] h-[150px] p-[33px] border border-[#e3e2e2] object-contain " /> 
+           <Image src={partner_images.addPartnersImages?.node?.link || '/No_Image.jpg'} alt='' width={150} height={150} className=" p-[33px] border border-[#e3e2e2] object-contain " /> 
 
         ))}
    
