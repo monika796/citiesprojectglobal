@@ -90,7 +90,7 @@ const CustomSlider = () => {
 
 
     <div className="container mx-auto block md:hidden max-w-[1481px]">
-    <h2 className="font-inter md:text-[48px] text-[30px] text font-bold leading-[58.09px] p-8 text-black text-left text-center decoration-skip-ink-none"> {data.page.homefourtsection.postsliderheading} </h2>
+    <h2 className="font-inter md:text-[48px] text-[30px] text font-bold leading-[58.09px]  p-8 text-black text-left text-center decoration-skip-ink-none"> {data.page.homefourtsection.postsliderheading} </h2>
       <section className="w-[100%] mx-auto">
         <motion.div
           variants={{

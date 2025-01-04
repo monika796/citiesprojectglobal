@@ -40,7 +40,7 @@ const Testimonial = () => {
   }));  
   return (
     <>
-      <section className="max-w-[1480px] mx-auto bg-[#F5F5F5] h-[600px] flex items-center justify-center mb-20 hover:cursor-[url('https://example.com/cursor.png'),_auto]">
+      <section className="max-w-[1480px] mx-auto bg-[#F5F5F5] h-[655px] flex items-center justify-center mb-20 hover:cursor-[url('https://example.com/cursor.png'),_auto]">
         <motion.div
           variants={{
             hidden: {
@@ -56,7 +56,7 @@ const Testimonial = () => {
           whileInView="visible"
           transition={{ duration: 1, delay: 0.1 }}
           viewport={{ once: true }}
-          className="animate_top mx-auto mt-15 max-w-c-1235 w-full px-4 md:px-8 xl:mt-20 xl:px-0"
+          className="animate_top mx-auto mt-15 max-w-c-1235 w-full px-4 md:px-10 xl:mt-30 xl:px-0"
         >
           {/* Slider main container */}
           <div className="swiper testimonial-01 mb-20 pb-22.5">

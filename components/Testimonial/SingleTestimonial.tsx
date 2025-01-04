@@ -15,7 +15,7 @@ const SingleTestimonial = ({ review }: { review: Testimonial }) => {
 </svg></div>
 
          <blockquote className="mt-10">
-             <p className="text-[20] md:text-[32px]   font-lighter leading-[30.09px] md:leading-[40.09px] text-gray-900 dark:text-white text-center p-[10px]">{ content }</p>
+             <p className="text-[20] md:text-[32px]   font-light leading-[30.09px] md:leading-[40.09px] text-gray-900 dark:text-white text-center p-[10px]">{ content }</p>
          </blockquote>
          <figcaption className="flex items-center justify-center mt-6 space-x-3 ">
              <div className=" items-center text-center">

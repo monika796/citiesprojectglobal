@@ -66,27 +66,27 @@ const FifthSection = ({ data, Video_gif }) => {
         style={{ backgroundColor: "rgb(3, 4, 2)" }}
       >
         {/* Left Content */}
-        <div className="md:w-full lg:w-5/12 w-full p-[40px] md:p-[26px] mt-10 md:mt-0">
+        <div className="md:w-full lg:w-5/12 w-full p-[40px] md:p-[50px] mt-10 md:mt-0">
           <span className="text-[18px] bg-[#fff] text-black font-bold mx-auto md:mx-0 text-center w-[45%] rounded-[20px] px-4 py-1 font-bold">
             {data.page.homefifthsection.fifthfirstsubtitle}
           </span>
-          <h5 className="md:text-[45px] text-[26px] text-[#A1CF5F] md:text-left text-left pb-[15px] font-bold pt-[20px] md:leading-10">
+          <h5 className="md:text-[45px] text-[26px] text-[#A1CF5F] md:text-left text-left pb-[10px] font-bold pt-[20px] md:leading-10">
             {data.page.homefifthsection.mainheadingfifth}
           </h5>
-          <p className="md:text-[45px] md:w-[87%] text-[22px] md:text-left text-left text-white md:leading-normal font-bold">
+          <p className="md:text-[45px] md:w-[87%] text-[22px] md:text-left text-left text-white md:leading-[58.09px] font-bold">
             {data.page.homefifthsection.fifthheadingsimple}
           </p>
           <Image
             src={data.page.homefifthsection.authorimage?.node?.link}
-            className="h-auto w-[30%] mx-unset mt-10 md:mt-0 md:mx-0 "
+            className=" mb-12 mx-unset mt-10 md:mt-0 md:mx-0 "
             alt="image"
             width={232}
             height={220}
           />
-          <h5 className="text-[30px] text-white md:text-left text-left font-bold pb-2 md:pb-5">
+          <h5 className="text-[30px] text-white md:text-left text-left font-bold pb-2 md:pb-3">
             {data.page.homefifthsection.authortitle}
           </h5>
-          <h5 className="text-[12px] text-white md:text-left text-left font-bold">
+          <h5 className="text-[16px] text-white md:text-left text-left font-normal">
             {data.page.homefifthsection.authordesignation}
           </h5>
         </div>
@@ -130,7 +130,7 @@ const FifthSection = ({ data, Video_gif }) => {
                 alt="Video Thumbnail"
                 width={1000}
                 height={563}
-                className="w-full p-10 cursor-pointer"
+                className="w-full p-10 md:pl-0 cursor-pointer"
                 onClick={handleVideoClick}
               />
             )}

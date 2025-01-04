@@ -94,11 +94,11 @@ export default function Newsletter() {
       <div className="md:flex lg:flex-row md:flex-col w-[100%] mx-auto bg-[#000000] p-5">
         <div className="md:w-full lg:w-6/12 md:p-30">
           <h3
-            className={`${anton.className} uppercase text-center md:text-left md:text-[55px] text-[41px] text-white font-light leading-[60px]`}
+            className={`${anton.className} lg:max-w-[444px] uppercase text-center md:text-left md:text-[55px] text-[41px] text-white font-light leading-[60px]`}
           >
             {data.page.newsletter.mainheading}
           </h3>
-          <p className="text-white md:pt-[25px] md:text-[22px] text-center md:text-left">
+          <p className="lg:max-w-[370px] text-white md:pt-[25px] md:text-[22px] text-center md:text-left">
             {data.page.newsletter.mainsubheading}
           </p>
         </div>

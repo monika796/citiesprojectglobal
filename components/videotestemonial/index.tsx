@@ -58,11 +58,11 @@ const VideoCarousel = () => {
   return (
     <div className="container max-w-[1481px] mx-auto">
       <section className="md:flex lg:flex-row md:flex-col  w-[100%] mx-auto">
-        <div className="md:w-full lg:w-4/12 md:p-[65px] p-5 md:pl-0">
-          <h2 className="font-inter text-[25px] md:text-[48px] text-black font-bold leading-[35px] md:leading-[58.09px] text-center md:text-left underline-from-font decoration-skip-ink-none">
+        <div className="md:w-full lg:w-4/12 md:p-[20px] p-5 md:pl-0">
+          <h2 className="font-inter text-[25px] md:text-[48px] text-black lg:max-w-[387px] font-bold leading-[35px] md:leading-[58.09px] text-center md:text-left underline-from-font decoration-skip-ink-none">
             {data.page.homevideobanner.maintitle}
           </h2>
-          <p className="py-3 text-[16px] text-gray-900 text-center md:text-left ">
+          <p className="pt-4 pb-8 text-[16px] text-gray-900 lg:max-w-[304px] text-center md:text-left ">
             {data.page.homevideobanner.videosubtitle}
           </p>
           <Link href='https://www.instagram.com/citiesprojectglobal/' target="_blank" >
