@@ -80,18 +80,20 @@ const BlogPage = async () => {
 return (
 <>
 <main className="md:w-[90%] mx-auto"> 
-   <h1 className="md:py-[42px] md:w-[45%] mt-4 py-[30px] md:text-[64px] text-[25px] leading-[38px]  font-bold  md:leading-[77px] text-center text-black  p-5 mx-auto md:leading-[77px] ">
+   <h1 className="md:py-[42px] md:max-w-[700px] mt-4 py-[30px] md:text-[64px] text-[25px] leading-[38px]  font-bold  md:leading-[77px] text-center text-black   mx-auto md:leading-[77px] ">
      {data.page.blogPageFeilds.blogPageMainHeading} 
    </h1>
    <section className="container mx-auto max-w-[1480px] bg-[#F8F8F8] border rounded-lg mt-10">
       <div className="flex flex-col lg:flex-row    overflow-hidden">
-         <div className="flex-shrink-0">
-            <Image src={data.page.blogPageFeilds.blogSecondSection.blogPageLeft?.node?.link || '/No_Image.jpg'} // Replace with your image path
+         <div className="lg:w-[40%] bg-cover bg-center" style={{
+    backgroundImage: `url(${data.page.blogPageFeilds.blogSecondSection.blogPageLeft?.node?.link || '/No_Image.jpg'})`,
+  }}>
+            {/* <Image src={data.page.blogPageFeilds.blogSecondSection.blogPageLeft?.node?.link || '/No_Image.jpg'} // Replace with your image path
                alt="Group of people"
-               className="w-full h-64 lg:h-full " layout="responsive" width={800} height={700} />
-           
+               className="w-full h-[100vh] object-cover " layout="responsive" width={800} height={700} />
+            */}
          </div>
-         <div className="p-12 flex flex-col justify-between lg:w-2/3">
+         <div className="p-12 flex flex-col justify-between lg:w-[60%]">
             <div className="mb-4 max-w-[543px]">
                <span className="inline-block bg-black text-white text-xs px-3 py-1  rounded-full uppercase font-bold tracking-wider mb-4 uppercase">
                {data.page.blogPageFeilds.blogSecondSection.blogPageRightUpperSubtitle} 
@@ -115,7 +117,7 @@ return (
                <div className="flex items-end space-x-2">
                   <Image  src={data.page.blogPageFeilds.blogSecondSection.blogPageRightImage?.node?.link  || '/No_Image.jpg'} // Replace with your small image path
                      alt="Nature"
-                     className=" object-cover rounded" layout="responsive" width={16} height={9} />
+                     className=" rounded"  width={154} height={188} />
                  
                   <div className="w-[175px] h-[241px] bg-white border rounded-lg flex flex-col justify-end p-5">
                      <p className="text-[64px] font-semibold text-gray-700 mb-5">{data.page.blogPageFeilds.blogSecondSection.blogPageRightDate} </p>
@@ -142,11 +144,11 @@ return (
                </svg>
                {/* Caption */}
                <div className="ml-4">
-                  <h3 className="text-[16px] font-semibold text-black  leading-[23px]">
+                  <h3 className="text-[16px] font-bold text-black  leading-[23px]">
                   {data.page.blogPageFeilds.blogRightThirdSectionHeading} 
                   </h3>
                   <hr className="my-4 border" />
-                  <p className="text-[16px] text-gray-600">
+                  <p className="text-[16px] max-w-[301px] text-black">
                   {data.page.blogPageFeilds.blogRightThirdSectionDescription} 
                   </p>
                </div>

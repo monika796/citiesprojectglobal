@@ -7,14 +7,14 @@ const BlogCard = ({ image, index, date, title, description, linkText, linkHref }
     <>
       {index === 0 || index === 1 ? (
         <>
-          <div key={index} className="border rounded-lg shadow-sm p-0 h-[483px]">
+          <div key={index} className="border rounded-lg overflow-hidden shadow-sm p-0 h-[483px]">
             <Image src={image || '/No_Image.jpg'} alt='' className="w-full h-64 lg:h-full object-cover" width={10000} height={10000}   />
           </div>
           <div className="border rounded-lg shadow-sm p-6 flex flex-col justify-between h-[483px]">
             <p className="text-sm text-gray-500">{date}</p>
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 mt-2 truncate">{title}</h3>
-              <div className="text-gray-700 mt-2 line-clamp-5">{parse(description || '')}</div>
+              <h3 className="text-[24px] font-normal mb-5 text-gray-900 mt-2 truncate">{title}</h3>
+              <div className="text-gray-700 text-[14px] mb-9 leading-[16.94px] mt-2 line-clamp-5">{parse(description || '')}</div>
               <Link
                 href={`blog/blog-details/${linkHref} `}
                 className="flex items-center gap-2.5 w-fit mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300"
@@ -42,8 +42,8 @@ const BlogCard = ({ image, index, date, title, description, linkText, linkHref }
           <div className="border rounded-lg shadow-sm p-6 flex flex-col justify-between h-[483px]">
             <p className="text-sm text-gray-500">{date}</p>
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 mt-2 ">{title}</h3>
-              <div className="text-gray-700 mt-2 line-clamp-5 ">{parse(description || '')}</div>
+              <h3 className="text-[24px] font-normal mb-5 text-gray-900 mt-2 ">{title}</h3>
+              <div className="text-gray-700 text-[14px] mb-9 leading-[16.94px] mt-2 line-clamp-5 ">{parse(description || '')}</div>
               <Link
                 href={`blog/blog-details/${linkHref} `}
                 className="flex items-center gap-2.5 w-fit mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300"
@@ -64,7 +64,7 @@ const BlogCard = ({ image, index, date, title, description, linkText, linkHref }
               </Link>
             </div>
           </div>
-          <div className="border rounded-lg shadow-sm p-0 h-[483px]">
+          <div className="border rounded-lg  overflow-hidden shadow-sm p-0 h-[483px]">
             <Image
               src={image  || '/No_Image.jpg'} // Replace with your image path
               alt={title || "Blog Image"} // Fallback for alt attribute
