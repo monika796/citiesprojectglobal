@@ -67,9 +67,10 @@ const SwiperSection = () => {
           <Swiper
             modules={[Navigation, Pagination, Keyboard, Mousewheel, Autoplay]}
             autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
+              delay: 8000,
+              disableOnInteraction: true,
             }}
+            draggable={true}
             pagination={{
               clickable: true,
             }}
@@ -97,15 +98,18 @@ const SwiperSection = () => {
                       alt={post.title || 'Default title'} // Provide a fallback title
                     />
                   </div>
+                    <Link href={`/blog/blog-details/${post.slug}`}>
                   <div className="w-2/3 grid p-2">
                     <div>
-                      <p className="w-[150px] text-[11px] bg-[#000000] uppercase h-auto text-white font-bold text-center rounded-[20px] ">
-                        Latest Stories
+                      <p className="inline px-2 py-1 text-[11px] bg-[#000000] uppercase h-auto text-white font-bold text-center rounded-[20px] ">
+                        News
                       </p>
                     </div>
-                    <p className="text-[16px] h-[84px] font-bold text-black leader-[17.36px] pl-1">{post.title || "Untitled"}</p>
-                    <Link href={`/blog/blog-details/${post.slug}`}><p className="text-[13px] underline uppercase text-black">Read more</p></Link>
+                    <p className="text-[16px] h-[84px] font-bold text-black pl-1 leading-normal">{post.title.replace(/<[^>]*>/g, "") || "Untitled"}</p>
+                    <p className="text-[13px] underline uppercase text-black">Read more</p>
+                    
                   </div>
+                    </Link>
                 </div>
               </SwiperSlide>
             ))}

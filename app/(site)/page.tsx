@@ -332,7 +332,7 @@ export default async function Home() {
  // style={{ backgroundImage: `url('${data.page.bannerHomesecond.bannersecondbackground?.node?.link}')` }}
 >
  
-        <div className="container mx-auto container max-w-[1480px]">
+        <div className="container mx-auto max-w-[1480px]">
         <Image
                         src={data.page.bannerHomesecond.bannersecondbackground?.node?.link || '/default-image.jpg'} // Fallback image
                         layout="fill"
@@ -345,8 +345,7 @@ export default async function Home() {
               <h2 className="font-bold text-gray-800 text-3xl md:text-[56px] leading-tight mb-4">
               {data.page.bannerHomesecond.heading_second_section}  
               </h2>
-              <p className="max-w-[376px] md:text-[15px] text-black	 leading-tight mb-6 mt-4">
-              {data.page.bannerHomesecond.subtitleText} </p>
+              <p className="max-w-[400px] md:text-[15px] text-black	leading-loose mb-6 mt-4" dangerouslySetInnerHTML={{ __html: data.page.bannerHomesecond.subtitleText }} />
               <div className="flex flex-col md:flex-row md:mx-0 ">
              
                 <VideoPopup videoUrl={data.page.bannerHomesecond.buttonLinkSecondSection} buttonText={data.page.bannerHomesecond.buttonText} />

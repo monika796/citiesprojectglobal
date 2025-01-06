@@ -93,7 +93,6 @@ export default async function Partner() {
   
   const { patnerssection, homesixthsection } = data.page;
   const partner_immm =data.page.patnerssection.partnerImages.partnerImages;
-console.log(partner_immm);
 
   return (
     <div className="container mx-auto max-w-[1280px]" > 
@@ -103,20 +102,17 @@ console.log(partner_immm);
           <h5 className="text-[15px] text-black text-center">{data.page.patnerssection.firstsubtitlepatner}</h5>
           <div className="  grid md:grid-cols-5 grid-cols-2  items-center sm:flex sm:flex-wrap justify-center gap-5 md:w-[100%] lg:w-[100%] mx-auto pt-[29px]">
           {partner_immm.map((partner_images, index) => (
-          <div className=" p-[33px] border border-[#e3e2e2] h-[250px] grid items-center grayscale hover:grayscale-0"> <Image src={partner_images.addPartnersImages?.node?.link || '/No_Image.jpg'} alt='' width={150} height={150} className="  object-contain " /> 
+          <div className="p-5 border border-[#e3e2e2] h-[160px] grid items-center grayscale hover:grayscale-0 transition-all duration-300 ease-in-out hover:border-[#a1cf5f] hover:shadow-md">
+            <Image src={partner_images.addPartnersImages?.node?.link || '/No_Image.jpg'} alt='' width={120} height={120} className="object-contain " /> 
             </div>
         ))}
-   
-              
-            <div className=" relative bg-black text-white p-[20px] md:w-[223.29px] h-[250px] flex items-end justify-center md:mx-0 lg:mx-0">
-              <div className="text-left  w-[89%]">
-                <h5 className="text-[20px] w-[122px] font-bold pb-2">{data.page.patnerssection.textninthbox}</h5>
-                <Link href={data.page.patnerssection.linknithbox}><h3 className="text-[16px] font-normal underline">{data.page.patnerssection.linktextninthbox}</h3></Link>
-              </div>
-            </div>
-
           </div>
 
+          <div className="relative text-black pt-10">
+              <div className="text-center">
+                <h5 className="text-[20px] font-bold pb-2">{data.page.patnerssection.textninthbox} - <Link href={data.page.patnerssection.linknithbox} className="underline">{data.page.patnerssection.linktextninthbox}</Link></h5>
+              </div>
+            </div>
         </div>
       </section>
       </div>

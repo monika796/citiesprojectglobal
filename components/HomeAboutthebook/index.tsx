@@ -86,9 +86,7 @@ const FifthSection = ({ data, Video_gif }) => {
           <h5 className="text-[30px] text-white md:text-left text-left font-bold pb-2 md:pb-3">
             {data.page.homefifthsection.authortitle}
           </h5>
-          <h5 className="text-[16px] text-white md:text-left text-left font-normal">
-            {data.page.homefifthsection.authordesignation}
-          </h5>
+          <h5 className="text-[16px] text-white md:text-left text-left font-normal" dangerouslySetInnerHTML={{ __html: data.page.homefifthsection.authordesignation }} />
         </div>
 
         {/* Right Content */}
