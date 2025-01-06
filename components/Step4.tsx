@@ -83,7 +83,7 @@ export default function Step3({
         },
       };
 
-      fetch("http://localhost/stripephp/create.php", {
+      fetch("https://digitractive.com/cityprojectglobal/stripephp/create.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
