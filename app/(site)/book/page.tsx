@@ -148,23 +148,23 @@ export default async function Book() {
 
 
                   <div className="container mx-auto  md:py-15">
-                  <div className="md:flex">
+                  <div className="md:flex md:flex-wrap lg:flex-nowrap">
                     
-                        <div className="md:w-2/5 bg-[#000000] p-20 grid justify-center items-center">
+                        <div className="lg:w-2/5 md:w-[50%]  bg-[#000000] p-20 grid justify-center items-center md:h-[250px]">
                         <h2 className="font-bold text-white  md:w-[85%] text-center md:text-left md:text-[24px] text-[24px] leading-tight mb-4"> {data.page.bookPageFeilds.bookFourthSectionFirstColumnText}</h2>
                         </div>
-                        <div className="md:w-1/5 md:m-0 m-5 md:mx-5 mx-0 md:p-[46px] grid justify-center items-center border border-black md:h-[250px]">
-                        <Image src={data.page.bookPageFeilds.bookFourthSectionSecondColumnImage?.node?.link}  alt='' layout="responsive" width={16} height={9}></Image>
+                        <div className="lg:w-1/5 md:w-[50%] md:m-0 m-5 md:mx-0 mx-0 md:p-[0] grid justify-center items-center border border-[#DFDFDF] md:h-[250px]">
+                        <Image src={data.page.bookPageFeilds.bookFourthSectionSecondColumnImage?.node?.link}  alt='' layout="" width={150} height={200}></Image>
 
                       
                         </div>
-                        <div className="md:w-1/5  md:m-0 m-5 md:mx-5 mx-0 md:p-[46px] grid justify-center items-center border border-black md:h-[250px]">
-                        <Image src={data.page.bookPageFeilds.bookFourthSectionThirdColumnImage?.node?.link} alt='' layout="responsive" width={16} height={9}></Image>
+                        <div className="lg:w-1/5 md:w-[50%]  md:m-0 m-5 md:mx-0 mx-0 md:p-[0] grid justify-center items-center border border-[#DFDFDF] md:h-[250px]">
+                        <Image src={data.page.bookPageFeilds.bookFourthSectionThirdColumnImage?.node?.link} alt='' layout="" width={150} height={200}></Image>
 
                         
                         </div>
-                        <div className="md:w-1/5  md:m-0 m-5 md:mx-5 mx-0 md:p-[46px] grid justify-center items-center border border-black md:h-[250px]">
-                        <Image src={data.page.bookPageFeilds.bookFourthSectionFourthColumnImage?.node?.link} alt='' layout="responsive" width={16} height={9}></Image>
+                        <div className="lg:w-1/5  md:w-[50%]  md:m-0 m-5 md:mx-0 mx-0 md:p-[0] grid justify-center items-center border border-[#DFDFDF] md:h-[250px]">
+                        <Image src={data.page.bookPageFeilds.bookFourthSectionFourthColumnImage?.node?.link} alt='' layout="" width={150} height={200}></Image>
 
                        
                         </div>
