@@ -103,8 +103,8 @@ console.log(partner_immm);
           <h5 className="text-[15px] text-black text-center">{data.page.patnerssection.firstsubtitlepatner}</h5>
           <div className="  grid grid-cols-2 items-center sm:flex sm:flex-wrap justify-center gap-2 md:w-[100%] lg:w-[100%] mx-auto pt-[29px]">
           {partner_immm.map((partner_images, index) => (
-           <Image src={partner_images.addPartnersImages?.node?.link || '/No_Image.jpg'} alt='' width={150} height={150} className=" p-[33px] border border-[#e3e2e2] object-contain " /> 
-
+          <div className=""> <Image src={partner_images.addPartnersImages?.node?.link || '/No_Image.jpg'} alt='' width={150} height={150} className=" p-[33px] border border-[#e3e2e2] object-contain " /> 
+            </div>
         ))}
    
               
