@@ -89,7 +89,7 @@ const VideoPlayer = () => {
         {data.page.bookPageFeilds.bookSixthSectionVideoMainHeading}
       </h1> )}
       
-      <div className="relative mx-auto table md:w-[80%]">
+      <div className="relative mx-auto table md:w-[80%] video_hover">
 
          {!isPlayed && (
                   <Image
@@ -145,7 +145,7 @@ const VideoPlayer = () => {
 
         <div className=" absolute md:bottom-5 bottom-[57%] right-0  md:right-[5%] md:p-5" >
           {isPlaying ? (
-            <Image  width={700} height={700}  src="/117.png" className="md:w-[80%] w-[60%]" alt="Playing" /> // Image when video is playing
+            <Image  width={700} height={700}  src="/117.png" className="md:w-[80%] w-[60%] hover_elementss" alt="Playing" /> // Image when video is playing
           ) : (
             <Image  width={700} height={700}  src="/73.png" className="md:w-[80%] w-[60%]" alt="Paused" /> // Default image
           )}
