@@ -89,7 +89,7 @@ const [isMobile, setIsMobile] = useState(false);
       <h1 className="md:text-[40px] text-[25px] font-bold text-center text-black md:w-[60%] md:p-5 mx-auto leading-[49px]">
       {data.page.leadershipPageFeilds.leadershipVideoSection.leadershipVideoSectionMainHeading}
       </h1>
-      <div className="relative mx-auto table md:w-[80%]">
+      <div className="relative mx-auto table md:w-[80%] video_hover">
         {!isPlayed && (
                           <Image
                             src={data.page.leadershipPageFeilds.leadershipVideoSection.leadershipVideoSectionBackgroundImage?.node?.link}
@@ -144,7 +144,7 @@ const [isMobile, setIsMobile] = useState(false);
        
         <div className=" absolute md:bottom-5 bottom-[60%] md:bottom-[5%] right-0  md:right-[5%] md:p-5" >
           {isPlaying ? (
-            <Image  width={700} height={700}  src="/117.png" className="md:w-[80%] w-[60%]" alt="Playing" /> // Image when video is playing
+            <Image  width={700} height={700}  src="/117.png" className="md:w-[80%] w-[60%] hover_elementss" alt="Playing" /> // Image when video is playing
           ) : (
             <Image  width={700} height={700}  src="/73.png" className="md:w-[80%] w-[60%]" alt="Paused" /> // Default image
           )}
