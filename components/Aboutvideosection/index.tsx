@@ -86,7 +86,7 @@ const VideoPlayer = () => {
         {data.page.aboutussections.videosectionheading}
       </h1>
       
-      <div className="relative mx-auto table md:w-[80%]">
+      <div className="relative mx-auto table md:w-[80%] video_hover">
         {/* Use Image component for the video poster */}
         {!isPlayed && (
           <Image
@@ -135,7 +135,7 @@ const VideoPlayer = () => {
               width={800}
               height={500}
               src="/117.png"
-              className="md:w-[80%] w-[60%]"
+              className="md:w-[80%] w-[60%] hover_elementss"
               alt="Playing"
             />
           ) : (
