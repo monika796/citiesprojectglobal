@@ -1,204 +1,392 @@
-import { useForm } from 'react-hook-form';
-import React, { useState, useEffect } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from 'react-router-dom';
-import CheckoutForm from "@/components/CheckoutForm";
-import CompletePage from "@/components/CompletePage";
+import { useForm, Controller } from 'react-hook-form';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
 
 type Step3Props = {
-  onSubmit: (data: any) => void
-  onPrevious: () => void
-  paymentMethod?: 'card' | 'check'
-   frequency?: 'one-time' | 'monthly'
-  amount?: string | number
-}
+  onNext: (data: any) => void;
+  onPrevious: () => void;
+};
 
-const stripePromise = loadStripe("pk_test_51JIVaHSIfk35L8nB78p7tybIiB1kYKqPzPA8OcEveJb1eJhWOQjgD7O86yiZzh3HYsnnTgBHZTfzLVdpCQgz5AEb00G2yRVdEz");
+export default function Step3({ onNext, onPrevious }: Step3Props) {
+  const { handleSubmit, control, formState: { errors } } = useForm({
+    defaultValues: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      postalCode: '',
+      street: '',
+      city: '',
+      state: '',
+      country: '',
+    },
+  });
 
-export default function Step3({
-  onSubmit,
-  onPrevious,
-  paymentMethod = 'card',
-  frequency = 'one-time',
-  amount,
-}: Step3Props) {
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const [clientSecret, setClientSecret] = useState<string | null>(null);
-  const [confirmed, setConfirmed] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== "undefined" && frequency) {
-      const body = {
-        items: [{ id: "xl-tshirt", amount: 1000, frequency }],
-      };
-
-      fetch("http://localhost/stripephp/create.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      })
-        .then((res) => res.json())
-        .then((data) => setClientSecret(data.clientSecret))
-        .catch((error) => console.error("Error fetching client secret:", error));
-    }
-  }, [frequency]);
-
-  const appearance = {
-    theme: "stripe" as "stripe", 
+  const onSubmit = (data: any) => {
+    onNext(data);
   };
-  const options = clientSecret ? { clientSecret, appearance } : undefined;
+
+  const countries = [
+    { code: 'AF', name: 'Afghanistan' },
+  { code: 'AL', name: 'Albania' },
+  { code: 'DZ', name: 'Algeria' },
+  { code: 'AS', name: 'American Samoa' },
+  { code: 'AD', name: 'Andorra' },
+  { code: 'AO', name: 'Angola' },
+  { code: 'AI', name: 'Anguilla' },
+  { code: 'AQ', name: 'Antarctica' },
+  { code: 'AG', name: 'Antigua and Barbuda' },
+  { code: 'AR', name: 'Argentina' },
+  { code: 'AM', name: 'Armenia' },
+  { code: 'AW', name: 'Aruba' },
+  { code: 'AU', name: 'Australia' },
+  { code: 'AT', name: 'Austria' },
+  { code: 'AZ', name: 'Azerbaijan' },
+  { code: 'BS', name: 'Bahamas' },
+  { code: 'BH', name: 'Bahrain' },
+  { code: 'BD', name: 'Bangladesh' },
+  { code: 'BB', name: 'Barbados' },
+  { code: 'BY', name: 'Belarus' },
+  { code: 'BE', name: 'Belgium' },
+  { code: 'BZ', name: 'Belize' },
+  { code: 'BJ', name: 'Benin' },
+  { code: 'BM', name: 'Bermuda' },
+  { code: 'BT', name: 'Bhutan' },
+  { code: 'BO', name: 'Bolivia' },
+  { code: 'BA', name: 'Bosnia and Herzegovina' },
+  { code: 'BW', name: 'Botswana' },
+  { code: 'BR', name: 'Brazil' },
+  { code: 'IO', name: 'British Indian Ocean Territory' },
+  { code: 'BN', name: 'Brunei Darussalam' },
+  { code: 'BG', name: 'Bulgaria' },
+  { code: 'BF', name: 'Burkina Faso' },
+  { code: 'BI', name: 'Burundi' },
+  { code: 'KH', name: 'Cambodia' },
+  { code: 'CM', name: 'Cameroon' },
+  { code: 'CA', name: 'Canada' },
+  { code: 'CV', name: 'Cape Verde' },
+  { code: 'KY', name: 'Cayman Islands' },
+  { code: 'CF', name: 'Central African Republic' },
+  { code: 'TD', name: 'Chad' },
+  { code: 'CL', name: 'Chile' },
+  { code: 'CN', name: 'China' },
+  { code: 'CO', name: 'Colombia' },
+  { code: 'KM', name: 'Comoros' },
+  { code: 'CG', name: 'Congo' },
+  { code: 'CD', name: 'Congo, the Democratic Republic of the' },
+  { code: 'CR', name: 'Costa Rica' },
+  { code: 'CI', name: 'Cote D\'Ivoire' },
+  { code: 'HR', name: 'Croatia' },
+  { code: 'CU', name: 'Cuba' },
+  { code: 'CY', name: 'Cyprus' },
+  { code: 'CZ', name: 'Czech Republic' },
+  { code: 'DK', name: 'Denmark' },
+  { code: 'DJ', name: 'Djibouti' },
+  { code: 'DM', name: 'Dominica' },
+  { code: 'DO', name: 'Dominican Republic' },
+  { code: 'EC', name: 'Ecuador' },
+  { code: 'EG', name: 'Egypt' },
+  { code: 'SV', name: 'El Salvador' },
+  { code: 'GQ', name: 'Equatorial Guinea' },
+  { code: 'ER', name: 'Eritrea' },
+  { code: 'EE', name: 'Estonia' },
+  { code: 'ET', name: 'Ethiopia' },
+  { code: 'FJ', name: 'Fiji' },
+  { code: 'FI', name: 'Finland' },
+  { code: 'FR', name: 'France' },
+  { code: 'GA', name: 'Gabon' },
+  { code: 'GM', name: 'Gambia' },
+  { code: 'GE', name: 'Georgia' },
+  { code: 'DE', name: 'Germany' },
+  { code: 'GH', name: 'Ghana' },
+  { code: 'GR', name: 'Greece' },
+  { code: 'GL', name: 'Greenland' },
+  { code: 'GD', name: 'Grenada' },
+  { code: 'GU', name: 'Guam' },
+  { code: 'GT', name: 'Guatemala' },
+  { code: 'GN', name: 'Guinea' },
+  { code: 'GW', name: 'Guinea-Bissau' },
+  { code: 'GY', name: 'Guyana' },
+  { code: 'HT', name: 'Haiti' },
+  { code: 'HN', name: 'Honduras' },
+  { code: 'HU', name: 'Hungary' },
+  { code: 'IS', name: 'Iceland' },
+  { code: 'IN', name: 'India' },
+  { code: 'ID', name: 'Indonesia' },
+  { code: 'IR', name: 'Iran, Islamic Republic Of' },
+  { code: 'IQ', name: 'Iraq' },
+  { code: 'IE', name: 'Ireland' },
+  { code: 'IL', name: 'Israel' },
+  { code: 'IT', name: 'Italy' },
+  { code: 'JM', name: 'Jamaica' },
+  { code: 'JP', name: 'Japan' },
+  { code: 'JO', name: 'Jordan' },
+  { code: 'KZ', name: 'Kazakhstan' },
+  { code: 'KE', name: 'Kenya' },
+  { code: 'KI', name: 'Kiribati' },
+  { code: 'KR', name: 'Korea, Republic of' },
+  { code: 'KW', name: 'Kuwait' },
+  { code: 'KG', name: 'Kyrgyzstan' },
+  { code: 'LA', name: 'Lao People\'s Democratic Republic' },
+  { code: 'LV', name: 'Latvia' },
+  { code: 'LB', name: 'Lebanon' },
+  { code: 'LS', name: 'Lesotho' },
+  { code: 'LR', name: 'Liberia' },
+  { code: 'LY', name: 'Libya' },
+  { code: 'LI', name: 'Liechtenstein' },
+  { code: 'LT', name: 'Lithuania' },
+  { code: 'LU', name: 'Luxembourg' },
+  { code: 'MG', name: 'Madagascar' },
+  { code: 'MW', name: 'Malawi' },
+  { code: 'MY', name: 'Malaysia' },
+  { code: 'MV', name: 'Maldives' },
+  { code: 'ML', name: 'Mali' },
+  { code: 'MT', name: 'Malta' },
+  { code: 'MH', name: 'Marshall Islands' },
+  { code: 'MR', name: 'Mauritania' },
+  { code: 'MU', name: 'Mauritius' },
+  { code: 'MX', name: 'Mexico' },
+  { code: 'FM', name: 'Micronesia, Federated States of' },
+  { code: 'MD', name: 'Moldova, Republic of' },
+  { code: 'MC', name: 'Monaco' },
+  { code: 'MN', name: 'Mongolia' },
+  { code: 'ME', name: 'Montenegro' },
+  { code: 'MA', name: 'Morocco' },
+  { code: 'MZ', name: 'Mozambique' },
+  { code: 'MM', name: 'Myanmar' },
+  { code: 'NA', name: 'Namibia' },
+  { code: 'NR', name: 'Nauru' },
+  { code: 'NP', name: 'Nepal' },
+  { code: 'NL', name: 'Netherlands' },
+  { code: 'NZ', name: 'New Zealand' },
+  { code: 'NI', name: 'Nicaragua' },
+  { code: 'NE', name: 'Niger' },
+  { code: 'NG', name: 'Nigeria' },
+  { code: 'NO', name: 'Norway' },
+  { code: 'OM', name: 'Oman' },
+  { code: 'PK', name: 'Pakistan' },
+  { code: 'PW', name: 'Palau' },
+  { code: 'PS', name: 'Palestine' },
+  { code: 'PA', name: 'Panama' },
+  { code: 'PG', name: 'Papua New Guinea' },
+  { code: 'PY', name: 'Paraguay' },
+  { code: 'PE', name: 'Peru' },
+  { code: 'PH', name: 'Philippines' },
+  { code: 'PL', name: 'Poland' },
+  { code: 'PT', name: 'Portugal' },
+  { code: 'QA', name: 'Qatar' },
+  { code: 'RO', name: 'Romania' },
+  { code: 'RU', name: 'Russian Federation' },
+  { code: 'RW', name: 'Rwanda' },
+  { code: 'KN', name: 'Saint Kitts and Nevis' },
+  { code: 'LC', name: 'Saint Lucia' },
+  { code: 'VC', name: 'Saint Vincent and the Grenadines' },
+  { code: 'WS', name: 'Samoa' },
+  { code: 'SM', name: 'San Marino' },
+  { code: 'SA', name: 'Saudi Arabia' },
+  { code: 'SN', name: 'Senegal' },
+  { code: 'RS', name: 'Serbia' },
+  { code: 'SC', name: 'Seychelles' },
+  { code: 'SL', name: 'Sierra Leone' },
+  { code: 'SG', name: 'Singapore' },
+  { code: 'SK', name: 'Slovakia' },
+  { code: 'SI', name: 'Slovenia' },
+  { code: 'SB', name: 'Solomon Islands' },
+  { code: 'SO', name: 'Somalia' },
+  { code: 'ZA', name: 'South Africa' },
+  { code: 'SS', name: 'South Sudan' },
+  { code: 'ES', name: 'Spain' },
+  { code: 'LK', name: 'Sri Lanka' },
+  { code: 'SD', name: 'Sudan' },
+  { code: 'SR', name: 'Suriname' },
+  { code: 'SZ', name: 'Swaziland' },
+  { code: 'SE', name: 'Sweden' },
+  { code: 'CH', name: 'Switzerland' },
+  { code: 'SY', name: 'Syrian Arab Republic' },
+  { code: 'TW', name: 'Taiwan' },
+  { code: 'TJ', name: 'Tajikistan' },
+  { code: 'TZ', name: 'Tanzania, United Republic of' },
+  { code: 'TH', name: 'Thailand' },
+  { code: 'TL', name: 'Timor-Leste' },
+  { code: 'TG', name: 'Togo' },
+  { code: 'TO', name: 'Tonga' },
+  { code: 'TT', name: 'Trinidad and Tobago' },
+  { code: 'TN', name: 'Tunisia' },
+  { code: 'TR', name: 'Turkey' },
+  { code: 'TM', name: 'Turkmenistan' },
+  { code: 'TV', name: 'Tuvalu' },
+  { code: 'UG', name: 'Uganda' },
+ { code: 'UA', name: 'Ukraine' },
+{ code: 'AE', name: 'United Arab Emirates' },
+{ code: 'GB', name: 'United Kingdom' },
+{ code: 'US', name: 'United States' },
+{ code: 'UY', name: 'Uruguay' },
+{ code: 'UZ', name: 'Uzbekistan' },
+{ code: 'VU', name: 'Vanuatu' },
+{ code: 'VE', name: 'Venezuela' },
+{ code: 'VN', name: 'Vietnam' },
+{ code: 'WF', name: 'Wallis and Futuna' },
+{ code: 'EH', name: 'Western Sahara' },
+{ code: 'YE', name: 'Yemen' },
+{ code: 'ZM', name: 'Zambia' },
+{ code: 'ZW', name: 'Zimbabwe' }
+];
+ 
 
   return (
-    <div className="space-y-6">
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="space-y-4">
-        <h3 className="text-lg font-medium">Your Information</h3>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">First Name</label>
-            <input
-              id="firstName"
-              {...register('firstName', { required: 'First name is required' })}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-            />
-            {errors.firstName && <p className="text-red-500 text-sm">{errors.firstName.message as string}</p>}
-          </div>
-          <div className="space-y-2">
-            <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">Last Name</label>
-            <input
-              id="lastName"
-              {...register('lastName', { required: 'Last name is required' })}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-            />
-            {errors.lastName && <p className="text-red-500 text-sm">{errors.lastName.message as string}</p>}
-          </div>
+        <h3 className="text-lg font-medium text-center">Your Information</h3>
+      </div>
+
+      <div className="flex space-x-4">
+        <div className="space-y-4 w-1/2">
+          <Label htmlFor="firstName" className="block text-sm font-medium text-gray-700">First Name</Label>
+          <Controller
+            name="firstName"
+            control={control}
+            rules={{ required: 'First Name is required' }}
+            render={({ field }) => (
+              <>
+                <Input {...field} id="firstName" placeholder="Enter your first name" className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+                {errors.firstName && <span className="text-red-500 text-sm">{errors.firstName.message}</span>}
+              </>
+            )}
+          />
         </div>
 
-        <div className="space-y-2">
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-          <input
-            id="email"
-            type="email"
-            {...register('email', { 
-              required: 'Email is required',
+        <div className="space-y-4 w-1/2">
+          <Label htmlFor="lastName" className="block text-sm font-medium text-gray-700">Last Name</Label>
+          <Controller
+            name="lastName"
+            control={control}
+            rules={{ required: 'Last Name is required' }}
+            render={({ field }) => (
+              <>
+                <Input {...field} id="lastName" placeholder="Enter your last name" className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+                {errors.lastName && <span className="text-red-500 text-sm">{errors.lastName.message}</span>}
+              </>
+            )}
+          />
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        <Label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</Label>
+        <Controller
+          name="email"
+          control={control}
+          rules={{
+            required: 'Email is required',
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+              message: 'Invalid email address',
+            },
+          }}
+          render={({ field }) => (
+            <>
+              <Input {...field} id="email" placeholder="Enter your email" className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+              {errors.email && <span className="text-red-500 text-sm">{errors.email.message}</span>}
+            </>
+          )}
+        />
+      </div>
+
+      <div className="space-y-4">
+        <Label htmlFor="street" className="block text-sm font-medium text-gray-700">Street</Label>
+        <Controller
+          name="street"
+          control={control}
+          rules={{ required: 'Street is required' }}
+          render={({ field }) => (
+            <>
+              <Input {...field} id="street" placeholder="Enter your street address" className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+              {errors.street && <span className="text-red-500 text-sm">{errors.street.message}</span>}
+            </>
+          )}
+        />
+      </div>
+
+      <div className="flex space-x-4">
+        <div className="space-y-4 w-1/2">
+          <Label htmlFor="city" className="block text-sm font-medium text-gray-700">City</Label>
+          <Controller
+            name="city"
+            control={control}
+            rules={{ required: 'City is required' }}
+            render={({ field }) => (
+              <>
+                <Input {...field} id="city" placeholder="Enter your city" className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+                {errors.city && <span className="text-red-500 text-sm">{errors.city.message}</span>}
+              </>
+            )}
+          />
+        </div>
+        <div className="space-y-4 w-1/2">
+          <Label htmlFor="postalCode" className="block text-sm font-medium text-gray-700">Postal Code</Label>
+          <Controller
+            name="postalCode"
+            control={control}
+            rules={{
+              required: 'Postal code is required',
               pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: 'Invalid email address'
-              }
-            })}
-            className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                value: /^[0-9]{5}(?:-[0-9]{4})?$/,
+                message: 'Invalid postal code',
+              },
+            }}
+            render={({ field }) => (
+              <>
+                <Input {...field} id="postalCode" placeholder="Enter your postal code" className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+                {errors.postalCode && <span className="text-red-500 text-sm">{errors.postalCode.message}</span>}
+              </>
+            )}
           />
-          {errors.email && <p className="text-red-500 text-sm">{errors.email.message as string}</p>}
-        </div>
-
-        <div className="space-y-2">
-          <label htmlFor="postalCode" className="block text-sm font-medium text-gray-700">Postal Code</label>
-          <input
-            id="postalCode"
-            {...register('postalCode', { required: 'Postal code is required' })}
-            className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-          />
-          {errors.postalCode && <p className="text-red-500 text-sm">{errors.postalCode.message as string}</p>}
-        </div>
+        </div>        
       </div>
 
-      {paymentMethod === 'check' ? (
-        <div className="space-y-4">
-          <h3 className="text-lg font-medium">Bank Information</h3>
-          <div className="space-y-2">
-            <label htmlFor="bankName" className="block text-sm font-medium text-gray-700">Bank Name</label>
-            <input
-              id="bankName"
-              {...register('bankName', { required: 'Bank name is required' })}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-            />
-            {errors.bankName && <p className="text-red-500 text-sm">{errors.bankName.message as string}</p>}
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="accountNumber" className="block text-sm font-medium text-gray-700">Bank Account Number</label>
-            <input
-              id="accountNumber"
-              type="password"
-              {...register('accountNumber', { required: 'Account number is required' })}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-            />
-            {errors.accountNumber && <p className="text-red-500 text-sm">{errors.accountNumber.message as string}</p>}
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="routingNumber" className="block text-sm font-medium text-gray-700">Bank Routing Number</label>
-            <input
-              id="routingNumber"
-              {...register('routingNumber', { required: 'Routing number is required' })}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-            />
-            {errors.routingNumber && <p className="text-red-500 text-sm">{errors.routingNumber.message as string}</p>}
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="accountType" className="block text-sm font-medium text-gray-700">Account Type</label>
-            <select
-              id="accountType"
-              {...register('accountType', { required: 'Account type is required' })}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-            >
-              <option value="checking">Checking</option>
-              <option value="savings">Savings</option>
-            </select>
-            {errors.accountType && <p className="text-red-500 text-sm">{errors.accountType.message as string}</p>}
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="accountHolder" className="block text-sm font-medium text-gray-700">Account Holder</label>
-            <select
-              id="accountHolder"
-              {...register('accountHolder', { required: 'Account holder type is required' })}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-            >
-              <option value="personal">Personal</option>
-              <option value="business">Business</option>
-            </select>
-            {errors.accountHolder && <p className="text-red-500 text-sm">{errors.accountHolder.message as string}</p>}
-          </div>
+      <div className="space-y-4">
+          <Label htmlFor="state" className="block text-sm font-medium text-gray-700">State</Label>
+          <Controller
+            name="state"
+            control={control}
+            rules={{ required: 'State is required' }}
+            render={({ field }) => (
+              <>
+                <Input {...field} id="state" placeholder="Enter your state" className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+                {errors.state && <span className="text-red-500 text-sm">{errors.state.message}</span>}
+              </>
+            )}
+          />
         </div>
-      ) : (
-        <div className="space-y-4">
-          <h3 className="text-lg font-medium">Card Information</h3>
-          <div className="space-y-2">
-          </div>
-        </div>
-      )}
 
-      
-    </form>
+      <div className="space-y-4">
+        <Label htmlFor="country" className="block text-sm font-medium text-gray-700">Country</Label>
+        <Controller
+          name="country"
+          control={control}
+          rules={{ required: 'Country is required' }}
+          render={({ field }) => (
+            <>
+              <select {...field} id="country" className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                <option value="">Select your country</option>
+                {countries.map((country) => (
+                  <option key={country.code} value={country.code}>
+                    {country.name}
+                  </option>
+                ))}
+              </select>
+              {errors.country && <span className="text-red-500 text-sm">{errors.country.message}</span>}
+            </>
+          )}
+        />
+      </div>
 
-    {paymentMethod === 'card' && clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-          {confirmed ? <CompletePage /> : <CheckoutForm />}
-        </Elements>
-      )}
-        <div className="flex justify-between">
-        <button
-          type="button"
-          onClick={onPrevious}
-          className="bg-gray-200 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-        >
+      <div className="flex justify-between">
+        <Button type="button" onClick={onPrevious} variant="outline">
           Previous
-        </button>
-        <button
-          type="submit"
-          className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-        >
-          {`Donate $${amount || '0'}`}
-        </button>
+        </Button>
+        <Button type="submit">Next</Button>
       </div>
-    </div>
-  )
+    </form>
+  );
 }
-
