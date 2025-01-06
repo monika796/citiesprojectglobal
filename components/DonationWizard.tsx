@@ -7,10 +7,13 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
+import Step4 from "./Step4";
+
 
 type DonationData = {
   frequency: "one-time" | "monthly";
   amount: number;
+  customAmount: number;
   designation: string;
   coverFee: boolean;
   newsletter: boolean;
@@ -19,6 +22,10 @@ type DonationData = {
   lastName: string;
   email: string;
   postalCode: string;
+  street: string;
+  city: string;
+  state: string;
+  country: string;
   cardInfo?: string;
   bankName?: string;
   accountNumber?: string;
@@ -27,26 +34,11 @@ type DonationData = {
   accountHolder?: string;
 };
 
-// Load Stripe outside the render to avoid recreating the instance
-const stripePromise = loadStripe("pk_test_51JIVaHSIfk35L8nB78p7tybIiB1kYKqPzPA8OcEveJb1eJhWOQjgD7O86yiZzh3HYsnnTgBHZTfzLVdpCQgz5AEb00G2yRVdEz");
 
 export default function App() {
   const [clientSecret, setClientSecret] = useState("");
   const [step, setStep] = useState(1);
   const [donationData, setDonationData] = useState<Partial<DonationData>>({});
-
-  // Fetch the clientSecret for Stripe payment
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      fetch("http://localhost/stripephp/create.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ items: [{ id: "xl-tshirt", amount: 1000 }] }),
-      })
-        .then((res) => res.json())
-        .then((data) => setClientSecret(data.clientSecret));
-    }
-  }, []);
 
   const handleNext = (data: Partial<DonationData>) => {
     setDonationData({ ...donationData, ...data });
@@ -82,18 +74,31 @@ export default function App() {
           <div className="p-6">
             {step === 1 && <Step1 onNext={handleNext} />}
             {step === 2 && <Step2 onNext={handleNext} onPrevious={handlePrevious} />}
-            {step === 3 && (
-              <Step3
+            {step === 3 && <Step3 onNext={handleNext} onPrevious={handlePrevious} />}
+            {step === 4 && (
+              <Step4
                 onSubmit={handleSubmit}
                 onPrevious={handlePrevious}
                 paymentMethod={donationData.paymentMethod}
                 frequency={donationData.frequency}
                 amount={donationData.amount}
+                designation= {donationData.designation}
+                coverFee= {donationData.coverFee}
+                newsletter= {donationData.newsletter}
+                firstName= {donationData.firstName}
+                lastName= {donationData.lastName}
+                email= {donationData.email}
+                postalCode={donationData.postalCode}
+                street={donationData.street}
+                city={donationData.city}
+                state={donationData.state}
+                country={donationData.country}
+                customAmount= {donationData.customAmount}
               />
             )}
           </div>
           <div className="bg-gray-100 px-6 py-4 flex justify-between items-center">
-            <div>Step {step} of 3</div>
+            <div>Step {step} of 4</div>
           </div>
         </div>
       </div>
