@@ -36,7 +36,7 @@ const menuData: Menu[] = [
         id: 34,
         title: "VantagePoint™",
         newTab: false,
-        path: "/vantage/form",
+        path: "/vantage",
       }
     ],
   },

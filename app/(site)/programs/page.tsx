@@ -66,7 +66,7 @@ export default async function Programs() {
                   <section className="md:py-[42px] relative container  max-w-[1480px] mx-auto">
                   <Image  width={1500} height={1000}  src="/85.png" className=" mx-auto p-2 md:p-0" alt="" />
                   <div className="md:flex pt-5 ">
-                    <div className="md:w-2/5 relative md:p-10 p-3">
+                    <div className="md:w-2/5 relative md:p-10 md:pb-0 p-3">
                     {/* <div className="md:absolute bottom-[5%]">  */}
                     <ProgramTestimonial />        
                         {/* </div> */}
