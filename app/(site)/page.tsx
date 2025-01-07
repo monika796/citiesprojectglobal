@@ -356,7 +356,7 @@ export default async function Home() {
               className="w-full md:w-1/2  bg-cover bg-center " >
               <div className="inner_Sec_div relative">
                 <div className='md:flex flex-col '>
-                  <div className="flex gap-3 bg-white items-end md:w-4/12 w-full md:max-w-[237px] mx-auto h-[250px] bottom-0 relative  px-4 py-4 h-auto md:absolute md:absolute border border-solid border-black rounded ">
+                  <div className="flex gap-3 bg-white items-end md:w-4/12 w-full md:max-w-[237px] mx-auto md:h-[250px] bottom-0 relative  px-4 py-4 h-auto md:absolute md:absolute border border-solid border-black rounded ">
                            <div> <p className="font-bold text-black  mb-3 text-[20px] w-[157px]" > {data.page.bannerHomesecond.rightsmallsectiontext}</p>
                                   <Link href={data.page.bannerHomesecond.rightsmallsectionlink} ><p className="text-black text-[15px] underline" > {data.page.bannerHomesecond.rightsmallsectionlinktext}</p></Link></div>  
                                    <svg className="absolute top-[15px] right-[15px]" width="17" height="17" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -561,7 +561,7 @@ export default async function Home() {
       <VideoCarousel />
 
       <Newsletter />
-     
+       
 
     </main>
   );
