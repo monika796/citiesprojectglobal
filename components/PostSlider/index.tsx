@@ -144,9 +144,7 @@ const CustomSlider = () => {
                     <p className="absolute top-11  left-10 text-white bg-black px-2 py-0 rounded-full text-sm">
                       {slide.date}
                     </p>
-                    <h2 className="text-center px-3 py-3 text-black font-semibold text-base">
-                      {slide.title}
-                    </h2>
+                    <h2 className="text-center px-3 py-3 text-black font-semibold text-base" dangerouslySetInnerHTML={{ __html: slide.title }} />
                     <Link
                       href={ `/blog/blog-details/${slide.slug}`}
                       className="flex gap-2 items-center text-black font-extrabold text-center justify-center"
@@ -218,10 +216,10 @@ const CustomSlider = () => {
                       className="object-contain w-full rounded-lg"
                       alt={slide.title} width={800} height={800}
                      / > */}
+  <Link href={ ` /blog/blog-details/${slide.slug}`}>
                     <div  className="relative w-full   bg-cover bg-center rounded h-[300px] "
        //   style={{ backgroundImage: `url('${slide.imgSrc}')` }}
           >
-
             <Image
                                   src={slide.imgSrc || '/No_Image.jpg'} // Fallback image
                                   layout="fill"
@@ -233,9 +231,9 @@ const CustomSlider = () => {
                       {slide.date}
                     </p>
                     <h2 className="text-center px-3 py-3 text-black font-semibold text-base">
-                      {slide.title}
+                      {slide.title.replace(/<[^>]*>?/gm, '')}
                     </h2>
-                    <Link
+                    {/* <Link
                       href={ ` /blog/blog-details/${slide.slug}`}
                       className="flex gap-2 items-center text-black font-extrabold text-center justify-center"
                     >
@@ -245,12 +243,17 @@ const CustomSlider = () => {
                           <path d="M1 13L13 1M4 1h9v9"></path>
                         </g>
                       </svg>
+                    </Link> */}
                     </Link>
                   </div>
+                  
                 </SwiperSlide>
               ))}
+              
             </Swiper>
+            
           </div>
+          
         </motion.div>
       </section>
       </div> 

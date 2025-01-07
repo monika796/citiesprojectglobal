@@ -57,8 +57,6 @@ const FifthSection = ({ data, Video_gif }) => {
   };
 
   return (
- 
-    
 
     <div className="container my-10 mx-auto max-w-[1481px]">
       <div
@@ -78,7 +76,7 @@ const FifthSection = ({ data, Video_gif }) => {
           </p>
           <Image
             src={data.page.homefifthsection.authorimage?.node?.link}
-            className=" mb-12 mx-unset mt-10 md:mt-0 md:mx-0 "
+            className=" mb-10 mx-unset mt-10 md:mt-0 md:mx-0 "
             alt="image"
             width={232}
             height={220}
