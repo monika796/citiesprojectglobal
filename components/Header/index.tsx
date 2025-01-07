@@ -101,15 +101,15 @@ const Header = () => {
   }, []);
   return (
     <header
-      className={`sticky left-0 top-0 py-4 z-99999 w-full backdrop-blur-lg bg-white/60 ${
+      className={`sticky left-0 top-0 z-99999 w-full backdrop-blur-lg  ${
         stickyMenu ? " !text-white shadow transition duration-100" : ""
-      } ${isHomePage ? "my-0" : "mt-0"} ${
+      } ${isHomePage ? "bg-black/30 my-0" : "mt-0 bg-white/60"} ${
         scrollDirection == "hidden" ? "invisible" : "visible"
       }`}
     >
       {/* <div className="relative mx-auto max-w-[89%]  border-t border-b border-white border-solid items-center justify-between px-4 md:px-8 md:flex 2md:px-0"> */}
       <div
-        className={`relative mx-auto container max-w-[1480px]  border-t border-b  border-solid items-center justify-stretch px-4 md:px-0 md:flex sm:py-2
+        className={`relative mx-auto container max-w-[1480px] border-solid items-center justify-stretch px-4 md:px-0 md:flex sm:py-2
 
       ${
         (isHomePage && isDesktop) || (stickyMenu && !isMobile)
