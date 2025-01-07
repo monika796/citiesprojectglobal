@@ -42,7 +42,7 @@ const Testimonial = () => {
   }));  
   return (
     <>
-      <section className="max-w-[1480px] mx-auto bg-[#F5F5F5] min-h-[655px] flex items-center justify-center mb-20">
+      <section className="testimonial max-w-[1480px] mx-auto bg-[#F5F5F5] min-h-[655px] flex items-center justify-center mb-20">
         <motion.div
           variants={{
             hidden: {

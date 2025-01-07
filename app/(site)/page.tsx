@@ -55,7 +55,7 @@ export default async function Home() {
      
         <section className="w-full">
         <div className="container-fluid mx-auto">
-          <div className="relative w-full   bg-cover bg-center  h-[470px] md:h-[850px]"
+          <div className="hero-section relative w-full   bg-cover bg-center  h-[470px] md:h-[850px]"
          // style={{ backgroundImage: `url('${data.page.bannerHome.banner?.node?.link}')` }}>
         >   <Image
  

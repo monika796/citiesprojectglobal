@@ -293,6 +293,6 @@ pre {
 .aboutus_video_player .react-player__preview {
   height: 600px  !important;
 }
-.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+.testimonial .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
   text-align: center;
 }
