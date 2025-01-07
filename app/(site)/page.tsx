@@ -21,7 +21,7 @@ import FifthSection from '@/components/HomeAboutthebook'
 import NewBannerSlider from "@/components/HeroBanner"; // Import client component
 import VideoPopup from '@/components/SecondHomeVideoButton'
 import Head from 'next/head';
-
+import {  HOME_PAGE_QUERY } from "@/queries/queries";
 export const revalidate = 60 // revalidate at most every 5 minutes
 
 // export const metadata: Metadata = {
@@ -29,235 +29,11 @@ export const revalidate = 60 // revalidate at most every 5 minutes
 //   description: "This is Home for Solid Pro",
 //   // other metadata
 // };
-const POSTS_QUERY = gql `
-query    {
- page(id: "cG9zdDoxNg==") {
- homeExtraBanner {
-        homeBannerSecond {
-          homeBannerBackgroundImage {
-            node {
-              link
-            }
-          }
-          homeBannerButtonLink
-          homeBannerButtonText
-          homeBannerDescription
-          homeBannerHeadings
-          homeBannerLatestPostImages {
-            node {
-              link
-            }
-          }
-          homeBannerSubtitle
-        }
-      }
-
-   title
-   link
-   bannerHome {
-     banner {
-       node {
-         link
-       }
-     }
-     textBanner
-     textBanner2
-     textBanner3
-     subtitleupper
-     buttonText
-     buttonLinkBannerHome
-     subtitle_bottom
-   }
-
-    bannerHomesecond{
-    rightsmallsectionlink
-    rightsmallsectiontext
-    rightsmallsectionlinktext
-    heading_second_section
-    buttonLinkSecondSection
-    buttonText
-    subtitleText
-    firstRightImage{
-       node {
-         link
-       }
-     }
-    secondRightImage{
-       node {
-         link
-       }
-     }
-       bannersecondbackground{
-       node {
-         link
-       }
-     }
-    }
-
-    sectionHomethird{
-    firstcolumnimage{
-       node {
-         link
-       }
-     }
-       buttonLink1ThirdSection
-       buttonLink2ThirdSection
-       buttonLink3ThirdSection
-       firstcolumnheading 
-       subtitletextfirst
-       buttontxtfirst
-       secondcolumnimage{
-       node {
-         link
-       }
-     }
-       secondcolumnheading
-       subtitletextsecond
-       buttontxtsecond
-
-       thirdcolumnimage{
-       node {
-         link
-       }
-     }
-       thirdcolumnheading
-       subtitletextthird
-       buttontxtthird
-     }
-
-     homefourtsection{
-      mainheadingfourth
-      firstimage{
-       node {
-         link
-       }
-     }
-      firstsubtitle1
-      firstheading
-      firstparagraph
-
-      secondimage{
-       node {
-         link
-       }
-     }
-      secondheading
-      secondsubtitle
-      secondparagraph
-
-      thirdimage{
-       node {
-         link
-       }
-     }
-      thirdsubtitle
-      thirdheading
-      thirdparagraph
-      }
-
-      homefifthsection{
-      mainheadingfifth
-      fifthheadingsimple
-      buttonlinkone
-      buttonlinksecond
-      fifthfirstimage{
-       node {
-         link
-       }
-     }
-      fifthfirstsubtitle
-      fifthbuttonone
-      textbuttonsecond
-      authorimage{
-       node {
-         link
-       }
-     }
-      authortitle
-      authordesignation
-      }
-      patnerssection{
-      linknithbox
-      mainheading
-      firstsubtitlepatner
-      imagefirst{
-       node {
-         link
-       }
-     }
-      image5{
-       node {
-         link
-       }
-     }
-      image2{
-       node {
-         link
-       }
-     }
-      image3{
-       node {
-         link
-       }
-     }
-      image4{
-       node {
-         link
-       }
-     }
-      image6{
-       node {
-         link
-       }
-     }
-      image7{
-       node {
-         link
-       }
-     }
-      image8{
-       node {
-         link
-       }
-     }
-
-      textninthbox
-      linktextninthbox
-      }
-      homesixthsection{
-        heading
-        paragraph
-        author  
-        designations
-        rightimage{
-        node {
-          link
-        }
-        }
-    } 
-   }    
-}
-`;
-
-
-const POSTS_QUERY_SEC = gql `
-query {
-  posts {
-    nodes {
-      featuredImage {
-        node {
-          link
-        }
-      }
-      title
-    }
-  }
-}
-`;
 
 async function fetchData() {
   const { data } = await client.query({
-    query: POSTS_QUERY,
+    query: HOME_PAGE_QUERY,
+    fetchPolicy: 'cache-first',
   });
   return data;
 }
@@ -270,10 +46,7 @@ const sliderSettings = {
   slidesToScroll: 1,
 };
 export default async function Home() {
-
-
   const data = await fetchData();
-  console.log(data);
   return (
     <main className="mt-[-96px]">
       <Head>
