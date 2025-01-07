@@ -157,13 +157,13 @@ console.log(data);
         <main className="md:w-[100%] mx-auto"> 
                     <h1 className="md:max-w-[1178px] md:py-[42px] mt-4 py-[30px] md:text-[58px] text-[25px] leading-[38px]  font-bold  md:leading-[77px] text-center text-black  p-5 mx-auto md:leading-[77px] ">
                     {data.page.aboutuspage.mainheadingabout}</h1>
-                  <section className="mx-auto md:py-[42px]">
+                  <section className="mx-auto md:py-[42px] container mx-auto max-w-[1480px]">
                   <Image
                         src={data.page.aboutuspage.secondimage?.node?.link || ''}
                         alt="Second Image"  // Makes the image responsive
                         width={1300}  // Define the original aspect ratio width
                         height={600}  // Define the original aspect ratio height
-                        className="mx-auto"  // Apply the same class for centering
+                        className="mx-auto w-full"  // Apply the same class for centering
                       />
                   </section >
 

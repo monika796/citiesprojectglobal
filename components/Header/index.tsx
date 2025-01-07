@@ -103,7 +103,7 @@ const Header = () => {
   return (
     <header
       className={`sticky  left-0 top-0 z-99999 md:pt-0 w-full ${stickyMenu
-          ? "bg-gray-900 !text-white !py-4 shadow transition duration-100 dark:bg-black"
+          ? "bg-[#111827a3] backdrop-blur-lg	 !text-white !py-4 shadow transition duration-100 dark:bg-[#111827a3]"
           : ""
         } ${isHomePage ? "my-0" : "mt-0"} ${scrollDirection=='hidden' ? "invisible" : "visible" }` }
     >
