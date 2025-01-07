@@ -58,7 +58,7 @@ const FifthSection = ({ data, Video_gif }) => {
 
   return (
 
-    <div className="container my-10 mx-auto max-w-[1481px]">
+    <div className="fifithsectioncss container my-10 mx-auto max-w-[1481px]">
       <div
         className="flex flex-col md:flex-col lg:flex-row w-[100%] pb-[0px] mx-auto items-stretch rounded-[5px]"
         style={{ backgroundColor: "rgb(3, 4, 2)" }}

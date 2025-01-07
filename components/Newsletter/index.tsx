@@ -102,7 +102,7 @@ export default function Newsletter() {
             {data.page.newsletter.mainsubheading}
           </p>
         </div>
-        <div className="md:w-full lg:w-6/12 md:p-15 p-5 md:border-l md:border-[#dbdbdb78]">
+        <div className="md:w-full lg:w-6/12 md:p-15 p-5 xl:border-l xl:border-[#dbdbdb78]">
           <p className="text-white pb-[20px] text-center md:text-left font-extrabold text-[24px]">
             {data.page.newsletter.leftheading}
             <br />

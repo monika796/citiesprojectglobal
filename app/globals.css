@@ -244,7 +244,29 @@ pre {
   .container {
     max-width: 97%  !important;
 }
- 
+ .header_inner_div div{
+    justify-content: end !important;
+ }
+ .social-media .social_cst_error{
+  display: none;
+ }
+ .fifithsectioncss p ,.fifithsectioncss h2 ,.fifithsectioncss .md\:w-full.lg\:w-5\/12.w-full.p-\[40px\].md\:p-\[50px\].mt-10.md\:mt-0  ,.fifithsectioncss span  ,.fifithsectioncss h5 {
+  
+  text-align: center;
+  width: 100%;
+
+ }
+ .videoteestimonialhome h2 ,.videoteestimonialhome p ,.videoteestimonialhome a p{
+  text-align: center;
+  width: 100%;
+ justify-content: center;
+ }
+.fifithsectioncss img{
+  margin:auto;
+ }
+ #newsletter h3 ,#newsletter p {
+  text-align: center;
+ }
 }
 @media (min-width: 1200px) and (max-width: 1300px) {
   .container {

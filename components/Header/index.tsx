@@ -108,7 +108,7 @@ const Header = () => {
         } ${isHomePage ? "my-0" : "mt-0"} ${scrollDirection=='hidden' ? "invisible" : "visible" }` }
     >
       {/* <div className="relative mx-auto max-w-[89%]  border-t border-b border-white border-solid items-center justify-between px-4 md:px-8 md:flex 2md:px-0"> */}
-      <div className={`relative mx-auto container max-w-[1480px]  border-t border-b  border-solid items-center justify-between px-4 md:px-0 md:flex 2md:px-0 
+      <div className={`header_inner_div relative mx-auto container max-w-[1480px]  border-t border-b  border-solid items-center justify-between px-4 md:px-0 md:flex 2md:px-0 
 
       ${isHomePage && isDesktop  || stickyMenu && !isMobile ? "border-white" : "border-[#000000]"}
      
@@ -233,7 +233,7 @@ const Header = () => {
         
         </div>
         <div className="social-media hidden md:flex  md:gap-[10px] md:order-2 w-full max-w-[350px] space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <div className="px-4  md:flex md:items-center md:justify-between">
+            <div className="social_cst_error px-4  md:flex md:items-center md:justify-between ">
               <div className="md:flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse  hidden ">
               <Link  target="_blank"
   href="https://www.facebook.com/CitiesProjectGlobal/" 
