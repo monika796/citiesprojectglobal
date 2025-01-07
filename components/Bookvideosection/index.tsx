@@ -74,13 +74,13 @@ const VideoPlayer = () => {
 
   return (
     <section className="md:py-[32px]" 
-    // onClick={() => {
-    //   // Ensure handleClick is triggered on section click as well
-    //   const videoElement = document.querySelector("video");
-    //   if (videoElement) {
-    //     handleClick(videoElement, setIsPlaying); // Only trigger handleClick if video element is clicked
-    //   }
-    // }}
+    onClick={() => {
+      // Ensure handleClick is triggered on section click as well
+      const videoElement = document.querySelector("video");
+      if (videoElement) {
+        handleClick(videoElement, setIsPlaying); // Only trigger handleClick if video element is clicked
+      }
+    }}
     >
      {!isPlaying  && !isMobile  && ( <h1 className="md:text-[40px] mb-10 text-[25px] font-bold text-center text-black md:w-[60%] md:p-5 mx-auto leading-[30px] md:leading-[49px]">
         {data.page.bookPageFeilds.bookSixthSectionVideoMainHeading}
@@ -111,7 +111,7 @@ const VideoPlayer = () => {
           className={`w-full rounded-lg ${isPlayed ? '' : 'hidden'}`}
          
           loop
-          onClick={(e) => handleClick(e.currentTarget, setIsPlaying)} // Pass the clicked video element and setIsPlaying
+        //  onClick={(e) => handleClick(e.currentTarget, setIsPlaying)} // Pass the clicked video element and setIsPlaying
         >
           <source src="videoplayback.mp4" type="video/mp4" />
           Your browser does not support the video tag.
