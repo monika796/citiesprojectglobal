@@ -20,7 +20,7 @@ import Link from "next/link";
 import FifthSection from '@/components/HomeAboutthebook'
 import NewBannerSlider from "@/components/HeroBanner"; // Import client component
 import VideoPopup from '@/components/SecondHomeVideoButton'
-import Head from 'next/head';
+import Head from './head'
 import {  HOME_PAGE_QUERY } from "@/queries/queries";
 export const revalidate = 60 // revalidate at most every 5 minutes
 
@@ -49,10 +49,7 @@ export default async function Home() {
   const data = await fetchData();
   return (
     <main className="mt-[-96px]">
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>My Home Page</title>
-      </Head>
+      <Head data={data} />
       {/* body start */}
         {/* <NewBannerSlider banners={data.page.homeExtraBanner.homeBannerSecond} /> */}
      

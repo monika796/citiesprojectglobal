@@ -7,142 +7,19 @@ import { gql } from "@apollo/client";
 import client from "apollo-client";
 import VideoPlayer from "@/components/Aboutvideosection";
 import Link from "next/link";
-
+import Head from '../head'
 import MainComponent from "@/components/LightboxPdf";
+import { ABOUT_US_PAGE_QUERY } from "@/queries/queries";
 
 export const revalidate = 60; // revalidate at most every 5 minutes
 
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 
-const POSTS_QUERY = gql`
-  query {
-    page(id: "cG9zdDoyNjY=") {
-      aboutuspage {
-        mainheadingabout
-        secondimage {
-          node {
-            link
-          }
-        }
-        secondsectionheading_1
-        secondsectionheading_2
 
-        secondsectionrightimage {
-          node {
-            link
-          }
-        }
-        secondsectionimagwithtext_image {
-          node {
-            link
-          }
-        }
-        secondsectionimagwithtextText
-        secondsectionimagwithtextSubtext
-        secondsectionimagwithtextButtontext
-        secondsectionimagwithtextButtonlink
-        thirdsectionimage {
-          node {
-            link
-          }
-        }
-        forthsectionlefttext
-        fourthsectionleftbutton
-        fourthsectionleftbuttonlink
-        fourthsectionrightheading
-        fourthsectionrightdescrition1
-        fourthsectionrightdescrition2
-        fourthsectionrightdescrition3
-        fourthsectionrightdescrition4
-      }
-
-      aboutussections {
-        iconsections {
-          logoIcons {
-            node {
-              link
-            }
-          }
-          icontitle
-        }
-        videosectionheading
-        videosectionbackground {
-          node {
-            link
-          }
-        }
-        videosectiontitle
-        videosectiondescription
-        imagewithtextImage1 {
-          node {
-            link
-          }
-        }
-        imagewithtextImage1 {
-          node {
-            link
-          }
-        }
-        imagewithtext1Description1
-        imagewithtext1description2
-        imagewithtext1description3
-        imagewithtext1description4
-        imagewithtext1description5
-        imagewithtext1Heading
-        imagewithtextImage2 {
-          node {
-            link
-          }
-        }
-        imagewithtext2Description1
-        imagewithtext2Description2
-        imagewithtext2Description3
-        imagewithtext2Description4
-        imagewithtext2Description5
-        imagewithtext2Heading
-        reviewsectiontitle1
-        reviewsectiondescription1
-        tenthsectionleftheading
-        tenthsectionrightimage {
-          node {
-            link
-          }
-        }
-        tenthsectionleftsubheading
-        tenthsectionleftbuttontext
-        tenthsectionleftbuttonlink
-        eleventhsectionheading
-        eleventhsectionsubheading
-        eleventhsectiondescrition
-        eleventhsection2descrition
-        eleventhsection2heading
-        twelthsectionleftimage {
-          node {
-            link
-          }
-        }
-        twelthsectionrightimage {
-          node {
-            link
-          }
-        }
-        twelthsectionrightdescription
-        twelthsectionrightdescription2
-        tenthsectionrightcolumns {
-          columnsimage {
-            node {
-              link
-            }
-          }
-          columnstext
-        }
-      }
-    }
-  }
-`;
 async function fetchData() {
   const { data } = await client.query({
-    query: POSTS_QUERY,
+    query: ABOUT_US_PAGE_QUERY,
+    fetchPolicy: 'cache-first',
   });
   return data;
 }
@@ -153,6 +30,7 @@ export default async function NewPage() {
   console.log(data);
   return (
     <main className="md:w-[100%] mx-auto container">
+      <Head data={data} />
       <h1
         className="md:max-w-[1178px] md:py-[42px] mt-4 py-[30px] md:text-[58px] text-[25px] leading-[38px] font-bold text-center text-black  p-5 mx-auto md:leading-[77px] "
         dangerouslySetInnerHTML={{

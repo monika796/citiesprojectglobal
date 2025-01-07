@@ -1,10 +1,13 @@
-export default function Head() {
+export default function Head( {data} ) {
+  const { seo } = data.page.seoMetaFields;
+  const { pageTitle, metaDescription, metaKeywords } = seo;
   return (
     <>
-      <title> Solid | Next.js Template for Startup and SaaS</title>
+      <title>{pageTitle || 'Cities Project Global'}</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <meta name="description" content="Built with Next.js and TypeScript" />
-      <link rel="icon" href="/public/favicon.png" />
+      <meta name="description" content={metaDescription} />
+      <meta name="keywords" content={metaKeywords} />
+      <link rel="icon" href="/favicon.png" />
     </>
   );
 }

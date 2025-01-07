@@ -205,3 +205,135 @@ export const HOME_PAGE_QUERY = gql`
   }
   ${SEO_FRAGMENT}
 `;
+
+
+export const ABOUT_US_PAGE_QUERY = gql`
+  query {
+    page(id: "cG9zdDoyNjY=") {
+      seoMetaFields {
+      ...SeoMetaFields
+    }
+      aboutuspage {
+        mainheadingabout
+        secondimage {
+          node {
+            link
+          }
+        }
+        secondsectionheading_1
+        secondsectionheading_2
+
+        secondsectionrightimage {
+          node {
+            link
+          }
+        }
+        secondsectionimagwithtext_image {
+          node {
+            link
+          }
+        }
+        secondsectionimagwithtextText
+        secondsectionimagwithtextSubtext
+        secondsectionimagwithtextButtontext
+        secondsectionimagwithtextButtonlink
+        thirdsectionimage {
+          node {
+            link
+          }
+        }
+        forthsectionlefttext
+        fourthsectionleftbutton
+        fourthsectionleftbuttonlink
+        fourthsectionrightheading
+        fourthsectionrightdescrition1
+        fourthsectionrightdescrition2
+        fourthsectionrightdescrition3
+        fourthsectionrightdescrition4
+      }
+
+      aboutussections {
+        iconsections {
+          logoIcons {
+            node {
+              link
+            }
+          }
+          icontitle
+        }
+        videosectionheading
+        videosectionbackground {
+          node {
+            link
+          }
+        }
+        videosectiontitle
+        videosectiondescription
+        imagewithtextImage1 {
+          node {
+            link
+          }
+        }
+        imagewithtextImage1 {
+          node {
+            link
+          }
+        }
+        imagewithtext1Description1
+        imagewithtext1description2
+        imagewithtext1description3
+        imagewithtext1description4
+        imagewithtext1description5
+        imagewithtext1Heading
+        imagewithtextImage2 {
+          node {
+            link
+          }
+        }
+        imagewithtext2Description1
+        imagewithtext2Description2
+        imagewithtext2Description3
+        imagewithtext2Description4
+        imagewithtext2Description5
+        imagewithtext2Heading
+        reviewsectiontitle1
+        reviewsectiondescription1
+        tenthsectionleftheading
+        tenthsectionrightimage {
+          node {
+            link
+          }
+        }
+        tenthsectionleftsubheading
+        tenthsectionleftbuttontext
+        tenthsectionleftbuttonlink
+        eleventhsectionheading
+        eleventhsectionsubheading
+        eleventhsectiondescrition
+        eleventhsection2descrition
+        eleventhsection2heading
+        twelthsectionleftimage {
+          node {
+            link
+          }
+        }
+        twelthsectionrightimage {
+          node {
+            link
+          }
+        }
+        twelthsectionrightdescription
+        twelthsectionrightdescription2
+        tenthsectionrightcolumns {
+          columnsimage {
+            node {
+              link
+            }
+          }
+          columnstext
+        }
+      }
+    }
+  }
+  ${SEO_FRAGMENT}
+`;
