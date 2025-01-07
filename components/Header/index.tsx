@@ -80,7 +80,7 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollTop, document.documentElement.scrollTop]);
+  }, [lastScrollTop]);
 
   const closeNavigation = () => {
     setNavigationOpen(false);
