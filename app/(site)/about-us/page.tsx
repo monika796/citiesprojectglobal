@@ -167,8 +167,9 @@ console.log(data);
                       />
                   </section >
 
-              <div className="container mx-auto max-w-[1480px]">  <section className="md:flex md:gap-20 md:py-[32px] ">
-                                <div className="md:w-2/3 ">
+              <div className="container mx-auto max-w-[1480px]"> 
+                 <section className="md:flex lg:flex-nowrap md:flex-wrap md:gap-20 md:py-[32px] ">
+                                <div className="lg:w-2/3 md:w-full ">
                                 <h3 className="md:text-[28px] text-center md:text-left text-[18px] text-black leading-[35px] md:leading-[49px] p-[18px]">
                                 {data.page.aboutuspage.secondsectionheading_1}
                         <div className="inline-flex  space-x-1 ">
@@ -199,7 +200,7 @@ console.log(data);
                                     </div>
                                   </div>
                                 </div>
-                                <div className="md:w-1/3 w-full grid justify-unset  md:justify-end p-5 md:p-10">
+                                <div className="lg:w-1/3 lg:block md:hidden w-full grid justify-unset  md:justify-end p-5 md:p-10">
                                 <Image  alt=''  width={800} height={500}  src={data.page.aboutuspage.secondsectionrightimage?.node?.link} className="w-full md:w-auto" />
                                   </div>
              </section>
@@ -333,7 +334,7 @@ console.log(data);
                     <div className="md:flex">
                       
                               <div className="md:w-[40%]  grid justify-center items-center">
-                        <h1 className="text-black text-[25px] md:text-[48px] md:w-[90%] md:text-left text-center  leading-[40px] md:leading-[58px] font-bold">{ data.page.aboutussections.tenthsectionleftheading }</h1>
+                        <h1 className="text-black text-[25px] md:text-[30px] lg:text-[48px] md:w-[90%] md:text-left text-center  leading-[40px] md:leading-[38px] lg:leading-[58px] font-bold">{ data.page.aboutussections.tenthsectionleftheading }</h1>
                     
                     </div>
                     <div className="md:w-[60%] md:pl-10 md:pr-10 md:pt-0 pt-20 relative">
@@ -357,16 +358,16 @@ console.log(data);
           </section></div>
 
           <div className="container mx-auto max-w-[1480px]"><section className="mx-auto grid gap-[37px] md:p-0 p-8 md:pt-[100px] md:pb-[50px] ">
-                <h1 className={`text-black md:text-[43px] text-[28px] leading-[40px] md:leading-[58px] mx-auto text-center md:text-left md:w-[40%] font-bold`}>  { data.page.aboutussections.eleventhsectionheading }</h1>
-                <h4 className={` text-[16px] font-normal  mx-auto  md:w-[40%] text-[#000000]  text-center md:text-left`}> { data.page.aboutussections.eleventhsectiondescrition }</h4>
-                <h4 className="text-black text-[20px]  text-center md:text-left mx-auto  md:w-[40%] font-bold">
+                <h1 className={`text-black md:text-[43px] text-[28px] leading-[40px] md:leading-[58px] mx-auto text-center md:text-left md:w-full lg:w-[40%] font-bold`}>  { data.page.aboutussections.eleventhsectionheading }</h1>
+                <h4 className={` text-[16px] font-normal  mx-auto  md:w-full lg:w-[40%] text-[#000000]  text-center md:text-left`}> { data.page.aboutussections.eleventhsectiondescrition }</h4>
+                <h4 className="text-black text-[20px]  text-center md:text-left mx-auto  md:w-full lg:w-[40%] font-bold">
                 { data.page.aboutussections.eleventhsection2heading }
-                </h4 ><h4 className={` text-[16px] font-normal  text-center md:text-left  mx-auto  md:w-[40%] text-[#000000] `}>
+                </h4 ><h4 className={` text-[16px] font-normal  text-center md:text-left  mx-auto  md:w-full lg:w-[40%] text-[#000000] `}>
                 { data.page.aboutussections.eleventhsection2descrition }</h4>
            </section>
            </div>
            <div className="container mx-auto md:mt-10 max-w-[1480px]">
-          <section className="md:flex w-[80%] mx-auto pb-[30px] md:pb-[170px]">
+          <section className="md:flex w-[100%] lg:w-[80%] gap-3 mx-auto pb-[30px] md:pb-[170px]">
             <div className="md:w-1/2 ">
             <Image width={430} height={300} src={data.page.aboutussections.twelthsectionleftimage?.node?.link}  alt="" />
             </div>

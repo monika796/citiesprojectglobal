@@ -62,17 +62,17 @@ export default async function Programs() {
   console.log(data);
     return (
         <main className="md:w-[100%] mx-auto"> 
-                    <h1 className="md:w-[50%] md:py-[42px] pt-4 py-[30px] md:text-[64px] text-[25px] font-bold text-center text-black md:max-w-[1178px] p-5 mx-auto md:leading-[77px] ">{data.page.programpagefeild.firstSectionMainHeading}</h1>
-                  <section className="md:py-[42px] relative container  max-w-[1480px] mx-auto">
+                    <h1 className="md:w-[100%] lg:w-[1178px] md:py-[42px] pt-4 py-[30px] md:text-[30px] lg:text-[64px] text-[25px] font-bold text-center text-black md:max-w-[1178px] p-5 mx-auto md:leading-[77px] ">{data.page.programpagefeild.firstSectionMainHeading}</h1>
+                  <section className="md:py-[42px] md:pt-0 relative container  max-w-[1480px] mx-auto">
                   <Image  width={1500} height={1000}  src="/85.png" className=" mx-auto p-2 md:p-0" alt="" />
-                  <div className="md:flex pt-5 ">
-                    <div className="md:w-2/5 relative md:p-10 md:pb-0 p-3">
+                  <div className="lg:flex pt-5 ">
+                    <div className="lg:w-2/5 relative md:p-10 md:pb-0 p-3">
                     {/* <div className="md:absolute bottom-[5%]">  */}
                     <ProgramTestimonial />        
                         {/* </div> */}
                         </div>
-                    <div className="md:w-3/5 p-10">
-                       <h2 className=" text-[#000000] md:text-[32px] text-[20px]  font-normal md:leading-[47px] text-center md:text-left">
+                    <div className="lg:w-3/5 p-10">
+                       <h2 className=" text-[#000000] lg:text-[32px] text-[20px]  font-normal lg:leading-[47px] text-center md:text-left">
                         {data.page.programpagefeild.secondSectionRightAuthorName} </h2>
                         <h4 className="pt-[25px] pb-10 text-[#000000] text-[16px] font-bold leading-[23px] md:w-[50%] text-center md:text-left">{data.page.programpagefeild.secondSectionRightSubHeading}</h4>
                         <Link href={data.page.programpagefeild.secondSectionRightButtonLink} className=" mx-auto md:mx-0 flex  items-center gap-2.5 w-[fit-content] inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300">{data.page.programpagefeild.secondSectionRightButtonText} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow"><g fill="none" fillRule="evenodd" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M1 13 13 1M4 1h9v9"></path></g></svg></Link>
@@ -80,7 +80,7 @@ export default async function Programs() {
                           </div> 
                       
                   </div>
-                  <div className="md:absolute hidden md:block top-[45%] left-5  pt-50 p-2 bg-[#A1CF5F]">
+                  <div className="lg:absolute hidden lg:block lg:top-[30%] left-5  pt-50 p-2 bg-[#A1CF5F]">
                     <Image  width={70} height={70}  className="mx-auto" src='/84.png' alt="" />
                     <h2 className=" text-center  text-white">Testimonials</h2>
                   </div>

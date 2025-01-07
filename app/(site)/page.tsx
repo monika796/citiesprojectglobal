@@ -340,7 +340,7 @@ export default async function Home() {
                         className="z-0"
                         alt='Default title'// Provide a fallback title
                       />
-          <div className="flex  md:p-[0px] md:pb-[280px] md:pt-[25px] lg:p-[105px] lg:pb-[280px]  flex-col md:flex-row h-full">
+          <div className="flex  md:p-[0px] md:pb-[280px] md:pt-[25px] lg:p-[20px] lg:pb-[280px] 2xl:p-[105px] 2xl:pb-[280px]  flex-col md:flex-row h-full">
             <div className=" w-full md:w-1/2 p-4 md:p-2 flex flex-col justify-center">
               <h2 className="font-bold text-gray-800 text-3xl md:text-[56px] leading-tight mb-4">
               {data.page.bannerHomesecond.heading_second_section}  

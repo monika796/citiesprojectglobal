@@ -303,8 +303,8 @@ const page = async () => {
         </section>
         <section>
           <div className=" font-sans bg-white">
-            <div className="flex md:flex-nowrap justify-between gap-5 flex-wrap gap-12 mt-5">
-              <div className="relative  md:max-w-[30%] w-full ">
+            <div className="flex lg:flex-nowrap justify-between gap-5 flex-wrap gap-12 mt-5">
+              <div className="relative  lg:max-w-[30%] w-full ">
                 <Image
                   src={data.page.leadershipPageFeilds.leadershipFirstSectionFeilds.leadershipFirstSectionFirstColumnImage?.node?.link}
                   alt="Group Discussion"
@@ -314,7 +314,7 @@ const page = async () => {
                 />
               </div>
 
-              <div className="text-left  md:max-w-[40%] md:pl-[100px]">
+              <div className="text-left  lg:max-w-[40%] lg:pl-[20px] 2xl:pl-[100px]">
                 <h1 className=" text-[24px] md:text-[32px] font-light leading-tight text-gray-900 mb-6">
                 {data.page.leadershipPageFeilds.leadershipFirstSectionFeilds.leadershipFirstSectionSecondColumnHeading} 
                 </h1>
@@ -326,7 +326,7 @@ const page = async () => {
                 
                 </p>
               </div>
-              <div className=" md:px-12 px-0 pb-0 flex justify-end items-end w-full  md:max-w-[20%]">
+              <div className=" lg:px-12 px-0 pb-0 flex justify-end items-end w-full  lg:max-w-[20%]">
                 <Image
                   src={data.page.leadershipPageFeilds.leadershipFirstSectionFeilds.leadershipFirstSectionThirdColumnImage?.node?.link}
                   alt="Woman in church"
@@ -343,7 +343,7 @@ const page = async () => {
         </section>
 
         <section className='my-20'>
-          <div className="font-sans bg-white grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-3 md:py-20 py-0">
+          <div className="font-sans bg-white grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-0 md:gap-3 md:py-20 py-0">
             {/* Left Section */}
             <div className="bg-[#121212] w-full text-white flex flex-col items-center justify-center px-5 py-10 md:px-15 md:py-25 md:h-[751px]">
               <h1 className="text-3xl font-bold mb-6 text-center">
@@ -371,7 +371,7 @@ const page = async () => {
             </div>
 
             {/* Right Section */}
-            <div className="relative col-span-2 h-[751px]">
+            <div className="relative col-span-1 lg:col-span-2 h-[751px]">
               {/* Background Image */}
               <Image
                 src={data.page.leadershipPageFeilds.leadershipSecondSectionFields.leadershipSecondSectionSecondColumnBackgroundImage?.node?.link}
@@ -452,9 +452,9 @@ const page = async () => {
         <section>
           <div className="max-w-[1155px] mx-auto bg-white py-16 ">
             {/* Card Container */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Card 1 */}
-              <div className="bg-[#F5F5F5] p-6 max-w-[355px]">
+              <div className="bg-[#F5F5F5] p-6 lg:max-w-[355px]">
                 {/* Icon and Image */}
                 <div className="flex mb-4">
                   <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
@@ -476,7 +476,7 @@ const page = async () => {
               </div>
 
               {/* Card 2 */}
-              <div className="bg-[#F5F5F5] p-6 max-w-[355px] ">
+              <div className="bg-[#F5F5F5] p-6 lg:max-w-[355px] ">
                 {/* Icon and Image */}
                 <div className="flex mb-4">
                   <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center ">
@@ -500,7 +500,7 @@ const page = async () => {
               </div>
 
               {/* Card 3 */}
-              <div className="bg-[#F5F5F5] p-6 max-w-[355px]">
+              <div className="bg-[#F5F5F5] p-6 lg:max-w-[355px]">
                 {/* Icon and Image */}
                 <div className="flex mb-4">
                   <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center ">
@@ -529,9 +529,9 @@ const page = async () => {
           <div className="flex items-center justify-between">
             <h2 className='text-[16px] font-bold text-black'>Watch Our Community Share Their Experience</h2> <hr className='border w-[70%]' />
           </div>
-          <div className="md:grid grid-cols-1 md:grid-cols-3 gap-10 mt-15 ">
+          <div className="md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-15 ">
             
-           <SwiperSectionLeaderhsip />
+           {/* <SwiperSectionLeaderhsip /> */}
           </div>
         </section>
         <section>
@@ -540,7 +540,7 @@ const page = async () => {
           </h1>
         </section>
         <section>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
             <div>
               <Image
                 src={data.page.leadershipPageFeilds.leadershipFourthSectionFields.leadershipFourthSectionFirstColumnImage?.node?.link}
@@ -567,8 +567,8 @@ const page = async () => {
         </section>
 
         <section className='my-20 md:my-40'>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-8">
-            <div className='max-w-[479px]'>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-0 md:gap-8">
+            <div className='lg:max-w-[479px] w-full'>
               <h2 className=' text-[25px] md:text-[48px] md:leading-[58.09px] leading-[30px] font-bold text-black'>{data.page.leadershipPageFeilds.leadershipFifthSectionFields.leadershipFifthSectionFirstColumnHeading}</h2>
               <p className='text-[16px] leading-[22px] max-w-[382px] mb-13 mt-5'>{data.page.leadershipPageFeilds.leadershipFifthSectionFields.leadershipFifthSectionFirstColumnDescription}</p>
               <Image
@@ -619,7 +619,7 @@ const page = async () => {
               </div>
             </div>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-6'>
+        <div className='grid grid-cols-1 md:grid-cols-1  lg:grid-cols-2 gap-8 mt-6'>
 
             <div className='flex justify-between items-center gap-0 md:gap-5 md:flex-nowrap flex-wrap '>
               <div className='md:w-[50%] w-full'>
@@ -630,7 +630,7 @@ const page = async () => {
                     <p className='text-black'>{data.page.leadershipPageFeilds.leadershipSixthSectionFields.leadershipSixthSectionSecondRowSecondColumnDescription}</p>
               </div>
             </div>
-            <div >              
+            <div className='hidden lg:block' >              
               <Image src={data.page.leadershipPageFeilds.leadershipSixthSectionFields.leadershipSixthSectionSecondRowThirdColumnImages?.node?.link} alt="" width={714} height={385} ></Image>            
             </div>
         </div>
@@ -638,9 +638,9 @@ const page = async () => {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-6'>
 
           <div className='flex flex-wrap md:flex-nowrap justify-between items-center '>
-            <div className='md:w-[50%] '>
+            <div className='md:w-[50%] hidden lg:block '>
             </div>
-            <div className='md:w-[50%] w-full'>
+            <div className='lg:w-[50%] w-full'>
               <Image src={data.page.leadershipPageFeilds.leadershipSixthSectionFields.leadershipSixthSectionThirdRowFirstColumnImages?.node?.link} alt="" width={319} height={375} className='w-full'></Image>
                  
             </div>
