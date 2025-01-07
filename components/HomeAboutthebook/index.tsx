@@ -88,7 +88,7 @@ const FifthSection = ({ data, Video_gif }) => {
         </div>
 
         {/* Right Content */}
-        <div className="md:w-full lg:w-8/12 md:py-[0px] relative video_hover flex space-around justify-around">
+        <div className="md:w-full lg:w-8/12 md:py-[0px] relative video_hover md:flex space-around justify-around">
           {/* Black Box for Video */}
           <div className="bg-[rgb(3, 4, 2)]  rounded-lg h-full w-full flex">
             {isPlaying ? (
