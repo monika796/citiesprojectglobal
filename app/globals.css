@@ -296,3 +296,7 @@ pre {
 .testimonial .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
   text-align: center;
 }
+
+h2.wp-block-heading{
+  @apply my-4 text-lg font-bold leading-tight
+}

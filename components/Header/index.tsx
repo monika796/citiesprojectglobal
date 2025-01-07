@@ -198,7 +198,7 @@ const Header = () => {
               {menuData.map((menuItem, key) => (
                 <li
                   key={key}
-                  className={`border-b-4 border-[transparent] hover:border-solid hover:border-[#A1CF5F] hover:border-b-4 ${menuItem.submenu ? "group relative " : ""} ${
+                  className={`border-b-4 border-b-transparent hover:border-solid hover:border-[#A1CF5F] hover:border-b-4 ${menuItem.submenu ? "group relative " : ""} ${
                     pathUrl === menuItem.path
                       ? "!border-b-4 !border-solid !border-[#A1CF5F]"
                       : ""
@@ -215,7 +215,7 @@ const Header = () => {
                           {menuItem.title}
                           <span>
                             <svg
-                              className="h-3 w-3 cursor-pointer fill: white fill-white"
+                              className={isHomePage ? "h-3 w-3 cursor-pointer fill-white" : "h-3 w-3 cursor-pointer fill-waterloo"}
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 512 512"
                             >
@@ -231,7 +231,7 @@ const Header = () => {
                         }`}
                       >
                         {menuItem.submenu.map((item, key) => (
-                          <li key={key} className="text-[#000000] hover:text-primary">
+                          <li key={key} className="text-[#000000] ">
                             <Link
                               href={item.path || "#"}
                               onClick={closeNavigation}

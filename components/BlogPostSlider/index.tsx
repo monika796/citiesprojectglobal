@@ -192,7 +192,7 @@ const BlogCustomSlider = () => {
                                   alt={ 'Default title'} // Provide a fallback title
                                 />
           </div>
-                    <p className="absolute top-11  left-10 text-white bg-black px-2 py-0 rounded-full text-sm">
+                    <p className="absolute top-4  left-4 text-white bg-black px-2 py-0 rounded-full text-sm">
                       {slide.date}
                     </p>
                     <h2 className="text-center px-3 py-3 text-black font-semibold text-base">
