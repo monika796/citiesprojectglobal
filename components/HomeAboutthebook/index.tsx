@@ -62,7 +62,7 @@ const FifthSection = ({ data, Video_gif }) => {
 
     <div className="container my-10 mx-auto max-w-[1481px]">
       <div
-        className="flex flex-col md:flex-col lg:flex-row w-[100%] pb-[0px] mx-auto items-center rounded-[5px]"
+        className="flex flex-col md:flex-col lg:flex-row w-[100%] pb-[0px] mx-auto items-stretch rounded-[5px]"
         style={{ backgroundColor: "rgb(3, 4, 2)" }}
       >
         {/* Left Content */}
@@ -90,9 +90,9 @@ const FifthSection = ({ data, Video_gif }) => {
         </div>
 
         {/* Right Content */}
-        <div className="md:w-full lg:w-8/12 md:py-[0px] relative video_hover">
+        <div className="md:w-full lg:w-8/12 md:py-[0px] relative video_hover flex space-around justify-around">
           {/* Black Box for Video */}
-          <div className="bg-[rgb(3, 4, 2)]  rounded-lg">
+          <div className="bg-[rgb(3, 4, 2)]  rounded-lg h-full w-full flex">
             {isPlaying ? (
               <button
                 className="absolute inset-0 hover_elementss md:bottom-0 bottom-[40%] flex items-center justify-center text-white text-3xl rounded-full"
@@ -128,7 +128,7 @@ const FifthSection = ({ data, Video_gif }) => {
                 alt="Video Thumbnail"
                 width={1000}
                 height={563}
-                className="w-full p-10 md:pl-0 cursor-pointer"
+                className="w-full md:pl-0 cursor-pointer h-full object-contain opacity-40"
                 onClick={handleVideoClick}
               />
             )}
@@ -143,7 +143,7 @@ const FifthSection = ({ data, Video_gif }) => {
             )}
           </div>
           {/* Buttons */}
-          {!isPlaying && !isMobile && (   <div className="md:float-right  md:mr-3 mt-5 z-999 md:absolute bottom-3 right-0">
+          {!isPlaying && !isMobile && (   <div className="md:float-right  md:mr-3 mt-5 z-999 md:absolute bottom-0 right-5">
             <Link href={data.page.homefifthsection.buttonlinkone}  target="_blank">
               <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">
                 {data.page.homefifthsection.fifthbuttonone}
