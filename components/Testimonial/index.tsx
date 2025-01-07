@@ -2,10 +2,12 @@
 import SectionHeader from "../Common/SectionHeader";
 
 // Import Autoplay and Pagination from Swiper
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { motion } from "framer-motion";
@@ -40,7 +42,7 @@ const Testimonial = () => {
   }));  
   return (
     <>
-      <section className="max-w-[1480px] mx-auto bg-[#F5F5F5] h-[655px] flex items-center justify-center mb-20 hover:cursor-[url('https://example.com/cursor.png'),_auto]">
+      <section className="max-w-[1480px] mx-auto bg-[#F5F5F5] min-h-[655px] flex items-center justify-center mb-20">
         <motion.div
           variants={{
             hidden: {
@@ -61,16 +63,18 @@ const Testimonial = () => {
           {/* Slider main container */}
           <div className="swiper testimonial-01 mb-20 pb-22.5">
             <Swiper
+              autoHeight={true}
               spaceBetween={50}
               slidesPerView={1}
               autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
+                delay: 8000,
+                disableOnInteraction: true,
               }}
               pagination={{
                 clickable: true,
               }}
-              modules={[Autoplay]}
+              // effect={'fade'}
+              modules={[Autoplay, Pagination]}
               breakpoints={{
                 0: {
                   slidesPerView: 1,
