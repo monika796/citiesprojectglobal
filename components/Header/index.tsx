@@ -209,7 +209,8 @@ const Header = () => {
                       <Link href={menuItem.path || "#"}>
                         {" "}
                         <button
-                          onClick={() => setDropdownToggler(!dropdownToggler)}
+                          onMouseOver={() => setDropdownToggler(!dropdownToggler)}
+                          // onMouseLeave={() => setDropdownToggler(false)}
                           className="flex cursor-pointer items-center justify-between gap-3 hover:text-primary"
                         >
                           {menuItem.title}
@@ -226,7 +227,7 @@ const Header = () => {
                       </Link>
 
                       <ul
-                        className={`dropdown ${
+                        className={`dropdown absolute ${
                           dropdownToggler ? "flex z-99999" : ""
                         }`}
                       >

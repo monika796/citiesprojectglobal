@@ -1,11 +1,11 @@
-"use client";
+'use client'
 
-import dynamic from "next/dynamic";
-import { gql, useQuery } from "@apollo/client";
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import dynamic from 'next/dynamic'
+import { gql, useQuery } from '@apollo/client'
+import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
-const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
+const ReactPlayer = dynamic(() => import('react-player'), { ssr: false })
 
 const POSTS_QUERY = gql`
   query MyQuery2 {
@@ -22,74 +22,75 @@ const POSTS_QUERY = gql`
       }
     }
   }
-`;
+`
 
 const VideoPlayer = () => {
-  const { loading, error, data } = useQuery(POSTS_QUERY);
-  const [isPlaying, setIsPlaying] = useState(false); // Track video play state
-  const [isPlayed, setPlayed] = useState(false);
+  const { loading, error, data } = useQuery(POSTS_QUERY)
+  const [isPlaying, setIsPlaying] = useState(false) // Track video play state
+  const [isPlayed, setPlayed] = useState(false)
 
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false)
 
   // Function to update the state based on the window width
   const updateMobileView = () => {
     if (window.innerWidth <= 768) {
-      setIsMobile(true); // Mobile view
+      setIsMobile(true) // Mobile view
     } else {
-      setIsMobile(false); // Desktop view
+      setIsMobile(false) // Desktop view
     }
-  };
+  }
 
   // Update the view on component mount and on window resize
   useEffect(() => {
-    updateMobileView(); // Check on initial render
+    updateMobileView() // Check on initial render
 
     // Set up a resize event listener
-    window.addEventListener("resize", updateMobileView);
+    window.addEventListener('resize', updateMobileView)
 
     // Cleanup the event listener on component unmount
     return () => {
-      window.removeEventListener("resize", updateMobileView);
-    };
-  }, []);
+      window.removeEventListener('resize', updateMobileView)
+    }
+  }, [])
 
   const handleClick = (videoElement: HTMLVideoElement) => {
     if (videoElement) {
       if (videoElement.paused) {
-        videoElement.play(); // Play the video if it is paused
-        setIsPlaying(true); // Set state to true if the video is playing
+        videoElement.play() // Play the video if it is paused
+        setIsPlaying(true) // Set state to true if the video is playing
       } else {
-        videoElement.pause(); // Pause the video if it is playing
-        setIsPlaying(false); // Set state to false if the video is paused
+        videoElement.pause() // Pause the video if it is playing
+        setIsPlaying(false) // Set state to false if the video is paused
       }
-      setPlayed(true);
+      setPlayed(true)
     }
-  };
+  }
 
   const handleSectionClick = () => {
-    const videoElement = document.querySelector("video");
+    const videoElement = document.querySelector('video')
     if (videoElement) {
-      handleClick(videoElement); // Trigger handleClick with the video element
+      handleClick(videoElement) // Trigger handleClick with the video element
     }
-  };
+  }
 
-  if (loading) return null;
-  if (error) return <p>Error: {error.message}</p>;
+  if (loading) return null
+  if (error) return <p>Error: {error.message}</p>
 
   return (
     <section
-      className="md:py-[32px]"
+      className="md:py-[32px] container mx-auto px-4"
       onClick={handleSectionClick} // Play video on section click
     >
-      <h1 className="md:text-[40px] text-[25px] font-bold text-center text-black md:w-[52%] md:p-5 mx-auto leading-[49px]">
+      {/* <h1 className="md:text-[40px] text-[25px] font-bold text-center text-black md:w-[52%] md:p-5 mx-auto leading-[49px]">
         {data.page.aboutussections.videosectionheading}
-      </h1>
+      </h1> */}
 
-      <div className="relative mx-auto table md:w-[80%] before:content-[''] before:block before:w-full before:h-[200px] before:absolute before:bottom-0 before:bg-gradient-to-t before:from-[#000000b2] before:to-transparent before:rounded-b-lg before:z-1">
+      <div className="relative mx-auto table md:w-full before:content-[''] before:block before:w-full before:h-[200px] before:absolute before:bottom-0 before:bg-gradient-to-t before:from-[#000000b2] before:to-transparent before:rounded-b-lg before:z-1">
         {/* Use Image component for the video poster */}
         {!isPlayed && (
           <Image
             src={data.page.aboutussections.videosectionbackground?.node?.link}
+            // src={data?.page?.aboutuspage?.secondimage?.node?.link}
             alt="Video Poster"
             width={1000}
             height={563}
@@ -99,15 +100,15 @@ const VideoPlayer = () => {
 
         <video
           className={`before:content-['>'] before:absolute before:inset-0 before:bg-black before:opacity-50 w-full rounded-lg ${
-            isPlayed ? "" : "hidden"
+            isPlayed ? '' : 'hidden'
           }`}
           loop
           onClick={(e) => {
-            e.stopPropagation(); // Prevent triggering section click
-            handleClick(e.currentTarget); // Play or pause video
+            e.stopPropagation() // Prevent triggering section click
+            handleClick(e.currentTarget) // Play or pause video
           }}
         >
-          <source src="videos.mp4" type="video/mp4" />
+          <source src="about-video-hd.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="md:absolute bottom-0 p-5 text-center md:text-left w-full z-9">
@@ -121,31 +122,19 @@ const VideoPlayer = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
 const PlayButton = ({ isPlaying }: { isPlaying: boolean }) => {
   return (
     <div className="absolute md:bottom-5 bottom-0 md:top-unset right-0 md:p-5 md:pb-0 ">
       {isPlaying ? (
-        <Image
-          width={800}
-          height={500}
-          src="/117.png"
-          className="md:w-[80%] w-[60%]"
-          alt="Playing"
-        />
+        <Image width={800} height={500} src="/117.png" className="md:w-[80%] w-[60%]" alt="Playing" />
       ) : (
-        <Image
-          width={800}
-          height={500}
-          src="/73.png"
-          className="md:w-[80%] w-[60%]"
-          alt="Paused"
-        />
+        <Image width={800} height={500} src="/73.png" className="md:w-[80%] w-[60%]" alt="Paused" />
       )}
     </div>
-  );
-};
+  )
+}
 
-export default VideoPlayer;
+export default VideoPlayer
