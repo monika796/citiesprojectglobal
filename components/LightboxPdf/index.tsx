@@ -1,40 +1,41 @@
-'use client';
-import React, { useState, useEffect, useRef } from "react";
+'use client'
+import React, { useState, useEffect, useRef } from 'react'
 
 const MainComponent = ({ buttonText, pdfUrl, extraclass }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const modalRef = useRef<HTMLDivElement | null>(null);  // Reference to the modal element
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const modalRef = useRef<HTMLDivElement | null>(null) // Reference to the modal element
 
   // Function to open the modal
   const openModal = () => {
-    setIsModalOpen(true);
-  };
+    setIsModalOpen(true)
+  }
 
   // Function to close the modal
   const closeModal = () => {
-    setIsModalOpen(false);
-  };
+    setIsModalOpen(false)
+  }
 
   // Close modal if clicked outside of the modal
   const handleClickOutside = (event) => {
+    return
     if (modalRef.current && !modalRef.current.contains(event.target)) {
-      closeModal();
+      closeModal()
     }
-  };
+  }
 
   // Listen for click events to close modal when clicked outside
   useEffect(() => {
     if (isModalOpen) {
-      document.addEventListener("click", handleClickOutside);
+      document.addEventListener('click', handleClickOutside)
     } else {
-      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener('click', handleClickOutside)
     }
 
     // Cleanup listener on unmount
     return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, [isModalOpen]);
+      document.removeEventListener('click', handleClickOutside)
+    }
+  }, [isModalOpen])
 
   return (
     <div className="relative">
@@ -50,7 +51,7 @@ const MainComponent = ({ buttonText, pdfUrl, extraclass }) => {
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute z-9999999999 top-2 right-2 px-4 py-2 text-white bg-red-600 rounded-full hover:bg-red-700"
+              className="absolute z-9999999999 -top-5 -right-5 px-4 py-2 text-white bg-red-600 rounded-full hover:bg-red-700"
             >
               X
             </button>
@@ -58,18 +59,18 @@ const MainComponent = ({ buttonText, pdfUrl, extraclass }) => {
             {/* PDF Embed */}
             <div className="w-full">
               <iframe
-                src={pdfUrl} // Use the dynamic PDF URL passed as a prop
+                src={'/api/proxy'} // Use the dynamic PDF URL passed as a prop
                 width="100%"
-                height="600px"
+                height="100%"
                 title="PDF Viewer"
-                className="border-0 rounded-lg"
+                className="border-0 rounded-lg aspect-video min-h-[80vh]"
               ></iframe>
             </div>
           </div>
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default MainComponent;
+export default MainComponent

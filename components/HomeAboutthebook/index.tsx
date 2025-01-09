@@ -1,67 +1,64 @@
-"use client";
-import { useState, useRef ,useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
+'use client'
+import { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 import MainComponent from '@/components/LightboxPdf'
 
 const FifthSection = ({ data, Video_gif }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [Played, setPlayed] = useState(false);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [Played, setPlayed] = useState(false)
+  const videoRef = useRef<HTMLVideoElement | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false)
 
   // Function to update the state based on the window width
   const updateMobileView = () => {
     if (window.innerWidth <= 768) {
-      setIsMobile(true);  // Mobile view
+      setIsMobile(true) // Mobile view
     } else {
-      setIsMobile(false); // Desktop view
+      setIsMobile(false) // Desktop view
     }
-  };
+  }
 
   // Update the view on component mount and on window resize
   useEffect(() => {
-    updateMobileView(); // Check on initial render
+    updateMobileView() // Check on initial render
 
     // Set up a resize event listener
-    window.addEventListener("resize", updateMobileView);
+    window.addEventListener('resize', updateMobileView)
 
     // Cleanup the event listener on component unmount
     return () => {
-      window.removeEventListener("resize", updateMobileView);
-    };
-  }, []);
+      window.removeEventListener('resize', updateMobileView)
+    }
+  }, [])
 
-    // Open the modal
-    const openModal = () => setIsModalOpen(true);
-  
-    // Close the modal
-    const closeModal = () => setIsModalOpen(false);
+  // Open the modal
+  const openModal = () => setIsModalOpen(true)
+
+  // Close the modal
+  const closeModal = () => setIsModalOpen(false)
   // const handleButtonClick = () => {
- //   setPlayed(!Played); // Toggle the state between true and false
- // };
+  //   setPlayed(!Played); // Toggle the state between true and false
+  // };
   const handleVideoClick = () => {
     if (videoRef.current) {
       if (isPlaying) {
-        videoRef.current.pause();
+        videoRef.current.pause()
       } else {
-        videoRef.current.play();
+        videoRef.current.play()
       }
-    
     }
-    setIsPlaying(!isPlaying);
-    setPlayed(true);
-  };
+    setIsPlaying(!isPlaying)
+    setPlayed(true)
+  }
 
   return (
-
     <div className="fifithsectioncss container my-10 mx-auto max-w-[1481px]">
       <div
         className="flex flex-col md:flex-col lg:flex-row w-[100%] pb-[0px] mx-auto items-stretch rounded-[5px]"
-        style={{ backgroundColor: "rgb(3, 4, 2)" }}
+        style={{ backgroundColor: 'rgb(3, 4, 2)' }}
       >
         {/* Left Content */}
         <div className="md:w-full lg:w-5/12 w-full p-[40px] md:p-[50px] mt-10 md:mt-0">
@@ -84,7 +81,10 @@ const FifthSection = ({ data, Video_gif }) => {
           <h5 className="text-[30px] text-white md:text-left text-left font-bold pb-2 md:pb-3">
             {data.page.homefifthsection.authortitle}
           </h5>
-          <h5 className="text-[16px] text-white md:text-left text-left font-normal" dangerouslySetInnerHTML={{ __html: data.page.homefifthsection.authordesignation }} />
+          <h5
+            className="text-[16px] text-white md:text-left text-left font-normal"
+            dangerouslySetInnerHTML={{ __html: data.page.homefifthsection.authordesignation }}
+          />
         </div>
 
         {/* Right Content */}
@@ -92,9 +92,7 @@ const FifthSection = ({ data, Video_gif }) => {
           {/* Black Box for Video */}
           <div className="bg-[rgb(3, 4, 2)]  rounded-lg h-full w-full flex">
             {isPlaying ? (
-              <button
-                className="absolute inset-0 hover_elementss md:bottom-0 bottom-[40%] flex items-center justify-center text-white text-3xl rounded-full"
-              >
+              <button className="absolute inset-0 hover_elementss md:bottom-0 bottom-[40%] flex items-center justify-center text-white text-3xl rounded-full">
                 <svg
                   fill="#fff"
                   height="50px"
@@ -130,40 +128,46 @@ const FifthSection = ({ data, Video_gif }) => {
                 onClick={handleVideoClick}
               />
             )}
-            {Played &&(
+            {Played && (
               <video
                 ref={videoRef}
                 className="w-full "
-                src="videoplayback.mp4"
+                src="book-intro.mp4"
                 onClick={handleVideoClick}
                 autoPlay
               ></video>
             )}
           </div>
           {/* Buttons */}
-          {!isPlaying && !isMobile && (   <div className="md:float-right  md:mr-3 mt-5 z-999 md:absolute bottom-0 right-5">
-            <Link href={data.page.homefifthsection.buttonlinkone}  target="_blank">
-              <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">
-                {data.page.homefifthsection.fifthbuttonone}
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
-                  <g
-                    fill="none"
-                    fillRule="evenodd"
-                    stroke="#000"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                  >
-                    <path d="M1 13 13 1M4 1h9v9"></path>
-                  </g>
-                </svg>
-              </button>
-            </Link>
-              <div onClick={openModal} className="max-w-fit sm:mt-0 md:w-[100%] max-w-max mb-5  !mx-auto !mt-[21px] md:mx-0 md:mt-4 mr-2 flex items-center gap-3 text-black bg-white font-bold p-2 rounded-[5px]">
-                <MainComponent  extraclass=''
-                buttonText={data.page.homefifthsection.textbuttonsecond}  
-                pdfUrl="/SampleChapter.pdf" 
-              />
+          {!isPlaying && !isMobile && (
+            <div className="md:float-right  md:mr-3 mt-5 z-999 md:absolute bottom-0 right-5">
+              <Link href={data.page.homefifthsection.buttonlinkone} target="_blank">
+                <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">
+                  {data.page.homefifthsection.fifthbuttonone}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+                    <g
+                      fill="none"
+                      fillRule="evenodd"
+                      stroke="#000"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                    >
+                      <path d="M1 13 13 1M4 1h9v9"></path>
+                    </g>
+                  </svg>
+                </button>
+              </Link>
+
+              <div
+                onClick={openModal}
+                className="max-w-fit sm:mt-0 md:w-[100%] max-w-max mb-5  !mx-auto !mt-[21px] md:mx-0 md:mt-4 mr-2 flex items-center gap-3 text-black bg-white font-bold p-2 rounded-[5px]"
+              >
+                <MainComponent
+                  extraclass=""
+                  buttonText={data.page.homefifthsection.textbuttonsecond}
+                  pdfUrl="/SampleChapter.pdf"
+                />
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                   <g
                     fill="none"
@@ -177,34 +181,37 @@ const FifthSection = ({ data, Video_gif }) => {
                   </g>
                 </svg>
               </div>
-             
-          
-          </div>
-           )}
+            </div>
+          )}
 
-        {isMobile  && (   <div className="md:float-right  md:mr-3 mt-5 z-999 md:absolute bottom-3 right-0">
-            <Link href={data.page.homefifthsection.buttonlinkone}  target="_blank">
-              <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">
-                {data.page.homefifthsection.fifthbuttonone}
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
-                  <g
-                    fill="none"
-                    fillRule="evenodd"
-                    stroke="#000"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                  >
-                    <path d="M1 13 13 1M4 1h9v9"></path>
-                  </g>
-                </svg>
-              </button>
-            </Link>
-              <div onClick={openModal} className="max-w-fit sm:mt-0 md:w-[100%] max-w-max mb-5  !mx-auto !mt-[21px] md:mx-0 md:mt-4 mr-2 flex items-center gap-3 text-black bg-white font-bold p-2 rounded-[5px]">
-                <MainComponent  extraclass=''
-                buttonText={data.page.homefifthsection.textbuttonsecond}  
-                pdfUrl="/SampleChapter.pdf" 
-              />
+          {isMobile && (
+            <div className="md:float-right  md:mr-3 mt-5 z-999 md:absolute bottom-3 right-0">
+              <Link href={data.page.homefifthsection.buttonlinkone} target="_blank">
+                <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">
+                  {data.page.homefifthsection.fifthbuttonone}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+                    <g
+                      fill="none"
+                      fillRule="evenodd"
+                      stroke="#000"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                    >
+                      <path d="M1 13 13 1M4 1h9v9"></path>
+                    </g>
+                  </svg>
+                </button>
+              </Link>
+              <div
+                onClick={openModal}
+                className="max-w-fit sm:mt-0 md:w-[100%] max-w-max mb-5  !mx-auto !mt-[21px] md:mx-0 md:mt-4 mr-2 flex items-center gap-3 text-black bg-white font-bold p-2 rounded-[5px]"
+              >
+                <MainComponent
+                  extraclass=""
+                  buttonText={data.page.homefifthsection.textbuttonsecond}
+                  pdfUrl="/SampleChapter.pdf"
+                />
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
                   <g
                     fill="none"
@@ -218,16 +225,12 @@ const FifthSection = ({ data, Video_gif }) => {
                   </g>
                 </svg>
               </div>
-             
-          
-          </div>
-           )}
-
+            </div>
+          )}
         </div>
       </div>
     </div>
+  )
+}
 
-  );
-};
-
-export default FifthSection;
+export default FifthSection

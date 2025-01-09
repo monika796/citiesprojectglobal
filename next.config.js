@@ -3,15 +3,8 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["localhost", "digitractive.com" , 'raw.githubusercontent.com'], // Trusted domains for images
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "cdn.sanity.io", // Allow images from Sanity CDN
-        port: "", // Optional, leave empty for default port
-      },
-    ],
+    domains: ['localhost', 'backend.citiesprojectglobal.com'], // Trusted domains for images
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

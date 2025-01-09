@@ -1,12 +1,12 @@
-import { gql } from "@apollo/client";
-import { SEO_FRAGMENT } from "./fragments";
+import { gql } from '@apollo/client'
+import { SEO_FRAGMENT } from './fragments'
 
 export const HOME_PAGE_QUERY = gql`
   query {
     page(id: "cG9zdDoxNg==") {
       seoMetaFields {
-      ...SeoMetaFields
-    }
+        ...SeoMetaFields
+      }
       homeExtraBanner {
         homeBannerSecond {
           homeBannerBackgroundImage {
@@ -204,15 +204,14 @@ export const HOME_PAGE_QUERY = gql`
     }
   }
   ${SEO_FRAGMENT}
-`;
-
+`
 
 export const ABOUT_US_PAGE_QUERY = gql`
   query {
     page(id: "cG9zdDoyNjY=") {
       seoMetaFields {
-      ...SeoMetaFields
-    }
+        ...SeoMetaFields
+      }
       aboutuspage {
         mainheadingabout
         secondimage {
@@ -336,4 +335,94 @@ export const ABOUT_US_PAGE_QUERY = gql`
     }
   }
   ${SEO_FRAGMENT}
-`;
+`
+
+export const BOOK_PAGE_QUERY = gql`
+  query Book {
+    page(id: "cG9zdDo0MzM=") {
+      bookPageFeilds {
+        bookFifthReviewSectionDescription
+        bookFifthReviewSectionHeading
+        bookFirstSectionMainHeading
+        bookFourthSectionFirstColumnText
+        bookSeventhSectionButtonOneLink
+        bookSeventhSectionButtonTwoLink
+        bookSeventhSectionButtonOneText
+        bookSeventhSectionButtonTwoText
+        bookSeventhSectionDescription1
+        bookSeventhSectionDescription2
+        bookSeventhSectionDescription3
+        bookSeventhSectionDescription4
+        bookSeventhSectionMainHeading
+        bookSixthSectionVideoDescription
+        bookSixthSectionVideoHeading
+        bookSixthSectionVideoLink
+        bookSixthSectionVideoMainHeading
+        bookThirdSectionRightButtonOne
+        bookThirdSectionRightButtonTwo
+        bookThirdSectionRightButtonTwoLink
+        bookThirdSectionRightDescription
+        bookThirdSectionRightHeading
+        bookThirdSectionRightButtonOneLink {
+          url
+        }
+        bookThirdSectionLeftImage {
+          node {
+            link
+          }
+        }
+
+        bookSecondSectionImage {
+          node {
+            link
+          }
+        }
+        bookFourthSectionThirdColumnImage {
+          node {
+            link
+          }
+        }
+        bookFourthSectionSecondColumnImage {
+          node {
+            link
+          }
+        }
+        bookFourthSectionFourthColumnImage {
+          node {
+            link
+          }
+        }
+        bookNinthSectionMainLeftHeading
+        bookNinthSectionMainRightDescription
+        bookNinthSectionRightFirstColumnText
+        bookNinthSectionRightSecondColumnButtonLink
+        bookNinthSectionRightSecondColumnText
+        bookNinthSectionRightImage {
+          node {
+            link
+          }
+        }
+        bookNinthSectionLeftImage {
+          node {
+            link
+          }
+        }
+        bookEigthSectionMainHeading
+        bookEigthSectionMainLeftDescription
+        bookEigthSectionMainRightDescription1
+        bookEigthSectionMainRightDescription2
+        bookNinthSectionRightSecondColumnButtonText
+        bookEigthSectionMainLeftImage {
+          node {
+            link
+          }
+        }
+        bookEigthSectionMainRightImage {
+          node {
+            link
+          }
+        }
+      }
+    }
+  }
+`
