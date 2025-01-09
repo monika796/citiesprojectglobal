@@ -18,9 +18,9 @@ const MainComponent = ({ buttonText, pdfUrl, extraclass }) => {
   // Close modal if clicked outside of the modal
   const handleClickOutside = (event) => {
     return
-    if (modalRef.current && !modalRef.current.contains(event.target)) {
-      closeModal()
-    }
+    // if (modalRef.current && !modalRef.current.contains(event.target)) {
+    //   closeModal()
+    // }
   }
 
   // Listen for click events to close modal when clicked outside
