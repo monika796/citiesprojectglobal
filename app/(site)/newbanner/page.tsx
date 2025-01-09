@@ -1,7 +1,7 @@
-import React from "react";
-import { gql } from "@apollo/client";
-import client from "@/apollo-client";
-import NewBannerSlider from "@/components/HeroBanner"; // Import client component
+import React from 'react'
+import { gql } from '@apollo/client'
+import client from '@/apollo-client'
+import NewBannerSlider from '@/components/HeroBanner' // Import client component
 
 const POSTS_QUERY = gql`
   query MyQuery2 {
@@ -27,15 +27,15 @@ const POSTS_QUERY = gql`
       }
     }
   }
-`;
+`
 
 export default async function NewBanner() {
-  let banners = [];
+  let banners = []
   try {
-    const { data } = await client.query({ query: POSTS_QUERY });
-    banners = data.page.homeExtraBanner.homeBannerSecond;
+    const { data } = (await client.query({ query: POSTS_QUERY })) || {}
+    banners = data?.page?.homeExtraBanner?.homeBannerSecond
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error('Error fetching data:', error)
   }
 
   return (
@@ -47,5 +47,5 @@ export default async function NewBanner() {
         </div>
       </section>
     </main>
-  );
+  )
 }
