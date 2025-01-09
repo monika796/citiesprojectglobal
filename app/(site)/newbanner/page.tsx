@@ -30,7 +30,7 @@ const POSTS_QUERY = gql`
 `
 
 export default async function NewBanner() {
-  return <div>NewBanner</div>
+  return <div></div>
   // let banners = []
   // try {
   //   const { data } = (await client.query({ query: POSTS_QUERY })) || {}
