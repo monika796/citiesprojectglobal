@@ -144,10 +144,9 @@ const VideoPlayer = () => {
           height="100%"
           src="https://www.youtube-nocookie.com/embed/Qb3GYZvcgbw?si=NaOIdv1wTXtIV1IW&amp;controls=0&amp;rel=0"
           title="YouTube video player"
-          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
           className="w-full rounded-lg aspect-video"
         ></iframe>
 
