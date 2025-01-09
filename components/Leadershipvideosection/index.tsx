@@ -70,7 +70,7 @@ const VideoPlayer = () => {
     }
     setPlayed(true)
   }
-  if (loading) return null
+  if (loading) return <div>Loading...</div>
   if (error) return <p>Error: {error.message}</p>
 
   return (
