@@ -30,23 +30,22 @@ const POSTS_QUERY = gql`
 `
 
 export default async function NewBanner() {
-  return <div></div>
-  // let banners = []
-  // try {
-  //   const { data } = (await client.query({ query: POSTS_QUERY })) || {}
-  //   banners = data?.page?.homeExtraBanner?.homeBannerSecond
-  // } catch (error) {
-  //   console.error('Error fetching data:', error)
-  // }
+  let banners = []
+  try {
+    const { data } = (await client.query({ query: POSTS_QUERY })) || {}
+    banners = data?.page?.homeExtraBanner?.homeBannerSecond
+  } catch (error) {
+    console.error('Error fetching data:', error)
+  }
 
-  // return (
-  //   <main className="mx-auto">
-  //     <section className="w-full">
-  //       <div className="container-fluid mx-auto">
-  //         {/* Pass data to Client Component */}
-  //         <NewBannerSlider banners={banners} />
-  //       </div>
-  //     </section>
-  //   </main>
-  // )
+  return (
+    <main className="mx-auto">
+      <section className="w-full">
+        <div className="container-fluid mx-auto">
+          {/* Pass data to Client Component */}
+          <NewBannerSlider banners={banners} />
+        </div>
+      </section>
+    </main>
+  )
 }

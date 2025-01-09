@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import MainComponent from '@/components/LightboxPdf'
 
-const FifthSection = ({ data, Video_gif }) => {
+const FifthSection = ({ data, Video_gif, videoUrl = null }) => {
   const [isPlaying, setIsPlaying] = useState(false)
   const [Played, setPlayed] = useState(false)
   const videoRef = useRef<HTMLVideoElement | null>(null)
@@ -132,7 +132,7 @@ const FifthSection = ({ data, Video_gif }) => {
               <video
                 ref={videoRef}
                 className="w-full "
-                src="book-intro.mp4"
+                src={videoUrl || 'book-intro.mp4'}
                 onClick={handleVideoClick}
                 autoPlay
               ></video>

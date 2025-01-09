@@ -25,7 +25,7 @@ const POSTS_QUERY = gql`
   }
 `
 
-const VideoPlayer = () => {
+const VideoPlayer = ({ videoUrl = null, videoPoster = null }) => {
   const { loading, error, data } = useQuery(POSTS_QUERY)
   const [isPlaying, setIsPlaying] = useState(false) // Track video play state
   const [isPlayed, setPlayed] = useState(false)
@@ -138,7 +138,7 @@ const VideoPlayer = () => {
           // autoPlay
           //  onClick={(e) => handleClick(e.currentTarget, setIsPlaying)} // Pass the clicked video element and setIsPlaying
         >
-          <source src="book-intro.mp4" type="video/mp4" />
+          <source src={videoUrl || 'book-intro.mp4'} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
