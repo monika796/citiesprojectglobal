@@ -21,271 +21,12 @@ import parse from 'html-react-parser'
 import MainComponent from '@/components/LightboxPdf'
 import LastFiveSection from '@/components/lastfiveimages'
 import SwiperSectionLeaderhsip from '@/components/leadershipcommunityslider'
-
+import { LEADERSHIP_PAGE_QUERY } from '@/queries/queries'
 export const revalidate = 60 // revalidate at most every 5 minutes
-
-const POSTS_QUERY = gql`
-  query MyQuery2 {
-    page(id: "cG9zdDo2MDg=") {
-      leadershipPageFeilds {
-        leadershipEightSectionFields {
-          leadershipEightSectionFirstRowFirstColumnDescription
-          leadershipEightSectionFirstRowFirstColumnHeading
-          leadershipEightSectionFirstRowSecondColumnImage {
-            node {
-              link
-            }
-          }
-          leadershipEightSectionFirstRowThirdDescription
-          leadershipEightSectionFirstRowThirdHeading
-          leadershipEightSectionMainDescription
-          leadershipEightSectionMainHeading
-          leadershipEightSectionSecondRowFirstImage {
-            node {
-              link
-            }
-          }
-          leadershipEightSectionSecondRowSecondDescription
-          leadershipEightSectionSecondRowSecondHeading
-          leadershipEightSectionSecondRowThirdImage {
-            node {
-              link
-            }
-          }
-        }
-        leadershipEleventhSection {
-          leadershipEleventhSectionFirstSection {
-            leadershipEleventhFirstText
-            leadershipEleventhFirstImage {
-              node {
-                link
-              }
-            }
-          }
-          leadershipEleventhSectionMainHeading
-          leadershipEleventhSectionSecondButtonLink
-          leadershipEleventhSectionSecondButtonText
-          leadershipEleventhSectionSecondDescription
-          leadershipEleventhSectionSecondImage {
-            node {
-              link
-            }
-          }
-        }
-        leadershipFifthSectionFields {
-          leadershipFifthSectionFirstColumnDescription
-          leadershipFifthSectionFirstColumnHeading
-          leadershipFifthSectionFirstColumnImages {
-            node {
-              link
-            }
-          }
-          leadershipFifthSectionSecondColumnDescription1
-          leadershipFifthSectionSecondColumnDescription2
-          leadershipFifthSectionSecondColumnDescription3
-          leadershipFifthSectionSecondColumnDescriptionHeading1
-          leadershipFifthSectionSecondColumnDescriptionHeading2
-          leadershipFifthSectionSecondColumnDescriptionHeading3
-          leadershipFifthSectionSecondColumnMainHeading
-          leadershipFifthSectionThirdColumnImage {
-            node {
-              link
-            }
-          }
-        }
-        leadershipFirstSectionFeilds {
-          leadershipFirstSectionSecondColumnDescription1
-          leadershipFirstSectionSecondColumnDescription2
-          leadershipFirstSectionSecondColumnHeading
-          leadershipFirstSectionFirstColumnImage {
-            node {
-              link
-            }
-          }
-          leadershipFirstSectionThirdColumnImage {
-            node {
-              link
-            }
-          }
-        }
-        leadershipFourthSectionFields {
-          leadershipFourthSectionFirstColumnImage {
-            node {
-              link
-            }
-          }
-          leadershipFourthSectionMainHeading
-          leadershipFourthSectionSecondColumnDescription1
-          leadershipFourthSectionSecondColumnDescription2
-          leadershipFourthSectionThirdColumnDescription1
-          leadershipFourthSectionThirdColumnDescription2
-        }
-        leadershipMainHeading
-        leadershipNinthSection {
-          leadershipNinthSectionFirstColumnImage {
-            node {
-              link
-            }
-          }
-          leadershipNinthSectionMainHeading
-          leadershipNinthSectionSecondColumnText
-          leadershipNinthSectionThirdColumnImage {
-            node {
-              link
-            }
-          }
-        }
-        leadershipSecondSectionFields {
-          leadershipSecondSectionFirstColumnButtonLink
-          leadershipSecondSectionFirstColumnButtonText
-          leadershipSecondSectionFirstColumnDescription
-          leadershipSecondSectionFirstColumnHeading
-          leadershipSecondSectionSecondColumnBackgroundImage {
-            node {
-              link
-            }
-          }
-          leadershipSecondSectionSecondColumnBox {
-            leadershipSecondSectionSecondColumnBoxButtonLink
-            leadershipSecondSectionSecondColumnBoxButtonText
-            leadershipSecondSectionSecondColumnBoxDescription
-            leadershipSecondSectionSecondColumnBoxHeading
-          }
-        }
-        leadershipSeventhSectionFields {
-          leadershipSeventhSectionButtonLink
-          leadershipSeventhSectionButtonText
-          leadershipSeventhSectionDescription
-          leadershipSeventhSectionMainHeading
-          leadershipSeventhSectionMainImage {
-            node {
-              link
-            }
-          }
-          leadershipSeventhSectionSubheading
-        }
-        leadershipSixthSectionFields {
-          leadershipSixthSectionFirstRowFirstColumnImage {
-            node {
-              link
-            }
-          }
-          leadershipSixthSectionFirstRowSecondColumnDescription
-          leadershipSixthSectionFirstRowSecondColumnHeading
-          leadershipSixthSectionMainDescription
-          leadershipSixthSectionMainHeading
-          leadershipSixthSectionSecondRowSecondColumnDescription
-          leadershipSixthSectionSecondRowFirstColumnImage {
-            node {
-              link
-            }
-          }
-          leadershipSixthSectionSecondRowSecondColumnHeading
-          leadershipSixthSectionSecondRowThirdColumnImages {
-            node {
-              link
-            }
-          }
-          leadershipSixthSectionThirdRowFirstColumnImages {
-            node {
-              link
-            }
-          }
-          leadershipSixthSectionThirdRowSecondsColumnDescription
-          leadershipSixthSectionThirdRowSecondsColumnHeading
-        }
-        leadershipTenthSection {
-          leadershipTenthSectionFirstColumnText
-          leadershipTenthSectionSecondColumnDescription1
-          leadershipTenthSectionSecondColumnDescription2
-          leadershipTenthSectionSecondColumnDescription3
-          leadershipTenthSectionSecondColumnDescriptionGreenColor
-          leadershipTenthSectionSecondColumnHeading
-        }
-        leadershipThirdSectionFields {
-          leadershipThirdSectionBox {
-            leadershipThirdSectionBoxDescription
-            leadershipThirdSectionBoxHeading
-            leadershipThirdSectionBoxImages {
-              node {
-                link
-              }
-            }
-          }
-          leadershipThirdSectionMainHeading
-        }
-        leadershipThirteenSection {
-          leadershipThirteenSectionButtonLink
-          leadershipThirteenSectionButtonText
-          leadershipThirteenSectionHeading
-        }
-        leadershipTwelfthSection {
-          leadershipTwelfthSectionFirstRowFirstColumn
-          leadershipTwelfthSectionFirstRowSecondColumnDescription
-          leadershipTwelfthSectionMainHeading
-          leadershipTwelfthSectionSecondRowFirstColumnDescription
-          leadershipTwelfthSectionSecondRowFirstColumnHeading
-          leadershipTwelfthSectionSecondRowSecondColumnImage1 {
-            node {
-              link
-            }
-          }
-          leadershipTwelfthSectionSecondRowSecondColumnImage2 {
-            node {
-              link
-            }
-          }
-        }
-        leadershipVideoSection {
-          leadershipVideoSectionMainHeading
-          leadershipVideoSectionBackgroundImage {
-            node {
-              link
-            }
-          }
-          leadershipVideoSectionDescripiton
-          leadershipVideoSectionHeading
-          leadershipVideoSectionTopImage {
-            node {
-              link
-            }
-          }
-        }
-        vantageFormThirdSection {
-          vantageFormThirdSectionImage1 {
-            node {
-              link
-            }
-          }
-          vantageFormThirdSectionImage2 {
-            node {
-              link
-            }
-          }
-          vantageFormThirdSectionImage3 {
-            node {
-              link
-            }
-          }
-          vantageFormThirdSectionImage4 {
-            node {
-              link
-            }
-          }
-          vantageFormThirdSectionImage5 {
-            node {
-              link
-            }
-          }
-        }
-      }
-    }
-  }
-`
 
 async function fetchData() {
   const { data } = await client.query({
-    query: POSTS_QUERY,
+    query: LEADERSHIP_PAGE_QUERY,
   })
   return data
 }
@@ -316,7 +57,7 @@ const page = async () => {
               />
             </div>
 
-            <div className="text-left  lg:max-w-[40%] lg:pl-[20px] 2xl:pl-[100px]">
+            <div className="text-left  lg:max-w-[40%] lg:pl-[20px] 2xl:pl-[70px]">
               <h1 className=" text-[24px] md:text-[32px] font-light leading-tight text-gray-900 mb-6">
                 {data.page.leadershipPageFeilds.leadershipFirstSectionFeilds.leadershipFirstSectionSecondColumnHeading}
               </h1>
@@ -333,15 +74,15 @@ const page = async () => {
                 }
               </p>
             </div>
-            <div className=" lg:px-12 px-0 pb-0 flex justify-end items-end w-full  lg:max-w-[20%]">
+            <div className=" lg:px-12 px-0 pb-0 flex justify-end items-end w-full  lg:max-w-[30%]">
               <Image
                 src={
                   data.page.leadershipPageFeilds.leadershipFirstSectionFeilds.leadershipFirstSectionThirdColumnImage
                     ?.node?.link
                 }
-                alt="Woman in church"
-                width={240}
-                height={149}
+                alt="Woman in business"
+                width={500}
+                height={300}
                 className="rounded-md w-full"
               />
             </div>
@@ -581,7 +322,7 @@ const page = async () => {
           <hr className="border w-[70%]" />
         </div>
         <div className="md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-15 ">
-          {/* <SwiperSectionLeaderhsip /> */}
+          <SwiperSectionLeaderhsip />
         </div>
       </section>
       <section>

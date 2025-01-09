@@ -426,3 +426,262 @@ export const BOOK_PAGE_QUERY = gql`
     }
   }
 `
+
+export const LEADERSHIP_PAGE_QUERY = gql`
+  query MyQuery2 {
+    page(id: "cG9zdDo2MDg=") {
+      leadershipPageFeilds {
+        leadershipEightSectionFields {
+          leadershipEightSectionFirstRowFirstColumnDescription
+          leadershipEightSectionFirstRowFirstColumnHeading
+          leadershipEightSectionFirstRowSecondColumnImage {
+            node {
+              link
+            }
+          }
+          leadershipEightSectionFirstRowThirdDescription
+          leadershipEightSectionFirstRowThirdHeading
+          leadershipEightSectionMainDescription
+          leadershipEightSectionMainHeading
+          leadershipEightSectionSecondRowFirstImage {
+            node {
+              link
+            }
+          }
+          leadershipEightSectionSecondRowSecondDescription
+          leadershipEightSectionSecondRowSecondHeading
+          leadershipEightSectionSecondRowThirdImage {
+            node {
+              link
+            }
+          }
+        }
+        leadershipEleventhSection {
+          leadershipEleventhSectionFirstSection {
+            leadershipEleventhFirstText
+            leadershipEleventhFirstImage {
+              node {
+                link
+              }
+            }
+          }
+          leadershipEleventhSectionMainHeading
+          leadershipEleventhSectionSecondButtonLink
+          leadershipEleventhSectionSecondButtonText
+          leadershipEleventhSectionSecondDescription
+          leadershipEleventhSectionSecondImage {
+            node {
+              link
+            }
+          }
+        }
+        leadershipFifthSectionFields {
+          leadershipFifthSectionFirstColumnDescription
+          leadershipFifthSectionFirstColumnHeading
+          leadershipFifthSectionFirstColumnImages {
+            node {
+              link
+            }
+          }
+          leadershipFifthSectionSecondColumnDescription1
+          leadershipFifthSectionSecondColumnDescription2
+          leadershipFifthSectionSecondColumnDescription3
+          leadershipFifthSectionSecondColumnDescriptionHeading1
+          leadershipFifthSectionSecondColumnDescriptionHeading2
+          leadershipFifthSectionSecondColumnDescriptionHeading3
+          leadershipFifthSectionSecondColumnMainHeading
+          leadershipFifthSectionThirdColumnImage {
+            node {
+              link
+            }
+          }
+        }
+        leadershipFirstSectionFeilds {
+          leadershipFirstSectionSecondColumnDescription1
+          leadershipFirstSectionSecondColumnDescription2
+          leadershipFirstSectionSecondColumnHeading
+          leadershipFirstSectionFirstColumnImage {
+            node {
+              link
+            }
+          }
+          leadershipFirstSectionThirdColumnImage {
+            node {
+              link
+            }
+          }
+        }
+        leadershipFourthSectionFields {
+          leadershipFourthSectionFirstColumnImage {
+            node {
+              link
+            }
+          }
+          leadershipFourthSectionMainHeading
+          leadershipFourthSectionSecondColumnDescription1
+          leadershipFourthSectionSecondColumnDescription2
+          leadershipFourthSectionThirdColumnDescription1
+          leadershipFourthSectionThirdColumnDescription2
+        }
+        leadershipMainHeading
+        leadershipNinthSection {
+          leadershipNinthSectionFirstColumnImage {
+            node {
+              link
+            }
+          }
+          leadershipNinthSectionMainHeading
+          leadershipNinthSectionSecondColumnText
+          leadershipNinthSectionThirdColumnImage {
+            node {
+              link
+            }
+          }
+        }
+        leadershipSecondSectionFields {
+          leadershipSecondSectionFirstColumnButtonLink
+          leadershipSecondSectionFirstColumnButtonText
+          leadershipSecondSectionFirstColumnDescription
+          leadershipSecondSectionFirstColumnHeading
+          leadershipSecondSectionSecondColumnBackgroundImage {
+            node {
+              link
+            }
+          }
+          leadershipSecondSectionSecondColumnBox {
+            leadershipSecondSectionSecondColumnBoxButtonLink
+            leadershipSecondSectionSecondColumnBoxButtonText
+            leadershipSecondSectionSecondColumnBoxDescription
+            leadershipSecondSectionSecondColumnBoxHeading
+          }
+        }
+        leadershipSeventhSectionFields {
+          leadershipSeventhSectionButtonLink
+          leadershipSeventhSectionButtonText
+          leadershipSeventhSectionDescription
+          leadershipSeventhSectionMainHeading
+          leadershipSeventhSectionMainImage {
+            node {
+              link
+            }
+          }
+          leadershipSeventhSectionSubheading
+        }
+        leadershipSixthSectionFields {
+          leadershipSixthSectionFirstRowFirstColumnImage {
+            node {
+              link
+            }
+          }
+          leadershipSixthSectionFirstRowSecondColumnDescription
+          leadershipSixthSectionFirstRowSecondColumnHeading
+          leadershipSixthSectionMainDescription
+          leadershipSixthSectionMainHeading
+          leadershipSixthSectionSecondRowSecondColumnDescription
+          leadershipSixthSectionSecondRowFirstColumnImage {
+            node {
+              link
+            }
+          }
+          leadershipSixthSectionSecondRowSecondColumnHeading
+          leadershipSixthSectionSecondRowThirdColumnImages {
+            node {
+              link
+            }
+          }
+          leadershipSixthSectionThirdRowFirstColumnImages {
+            node {
+              link
+            }
+          }
+          leadershipSixthSectionThirdRowSecondsColumnDescription
+          leadershipSixthSectionThirdRowSecondsColumnHeading
+        }
+        leadershipTenthSection {
+          leadershipTenthSectionFirstColumnText
+          leadershipTenthSectionSecondColumnDescription1
+          leadershipTenthSectionSecondColumnDescription2
+          leadershipTenthSectionSecondColumnDescription3
+          leadershipTenthSectionSecondColumnDescriptionGreenColor
+          leadershipTenthSectionSecondColumnHeading
+        }
+        leadershipThirdSectionFields {
+          leadershipThirdSectionBox {
+            leadershipThirdSectionBoxDescription
+            leadershipThirdSectionBoxHeading
+            leadershipThirdSectionBoxImages {
+              node {
+                link
+              }
+            }
+          }
+          leadershipThirdSectionMainHeading
+        }
+        leadershipThirteenSection {
+          leadershipThirteenSectionButtonLink
+          leadershipThirteenSectionButtonText
+          leadershipThirteenSectionHeading
+        }
+        leadershipTwelfthSection {
+          leadershipTwelfthSectionFirstRowFirstColumn
+          leadershipTwelfthSectionFirstRowSecondColumnDescription
+          leadershipTwelfthSectionMainHeading
+          leadershipTwelfthSectionSecondRowFirstColumnDescription
+          leadershipTwelfthSectionSecondRowFirstColumnHeading
+          leadershipTwelfthSectionSecondRowSecondColumnImage1 {
+            node {
+              link
+            }
+          }
+          leadershipTwelfthSectionSecondRowSecondColumnImage2 {
+            node {
+              link
+            }
+          }
+        }
+        leadershipVideoSection {
+          leadershipVideoSectionMainHeading
+          leadershipVideoSectionBackgroundImage {
+            node {
+              link
+            }
+          }
+          leadershipVideoSectionDescripiton
+          leadershipVideoSectionHeading
+          leadershipVideoSectionTopImage {
+            node {
+              link
+            }
+          }
+        }
+        vantageFormThirdSection {
+          vantageFormThirdSectionImage1 {
+            node {
+              link
+            }
+          }
+          vantageFormThirdSectionImage2 {
+            node {
+              link
+            }
+          }
+          vantageFormThirdSectionImage3 {
+            node {
+              link
+            }
+          }
+          vantageFormThirdSectionImage4 {
+            node {
+              link
+            }
+          }
+          vantageFormThirdSectionImage5 {
+            node {
+              link
+            }
+          }
+        }
+      }
+    }
+  }
+`
