@@ -85,17 +85,25 @@ const VideoPlayer = () => {
         {data.page.aboutussections.videosectionheading}
       </h1> */}
 
-      <div className="relative mx-auto table md:w-full before:content-[''] before:block before:w-full before:h-[200px] before:absolute before:bottom-0 before:bg-gradient-to-t before:from-[#000000b2] before:to-transparent before:rounded-b-lg before:z-1">
+      <div className="relative mx-auto table md:w-full md:before:content-[''] md:before:block md:before:w-full md:before:h-[200px] md:before:absolute md:before:bottom-0 md:before:bg-gradient-to-t md:before:from-[#000000b2] md:before:to-transparent md:before:rounded-b-lg md:before:z-1">
         {/* Use Image component for the video poster */}
         {!isPlayed && (
-          <Image
-            src={data.page.aboutussections.videosectionbackground?.node?.link}
-            // src={data?.page?.aboutuspage?.secondimage?.node?.link}
-            alt="Video Poster"
-            width={1000}
-            height={563}
-            className="w-full rounded-lg relative"
-          />
+          <div className="relative">
+            <Image
+              src={data.page.aboutussections.videosectionbackground?.node?.link}
+              alt="Video Poster"
+              width={1000}
+              height={563}
+              className="w-full rounded-lg"
+            />
+            <div className="absolute inset-0 flex items-center justify-center md:hidden">
+              <div className="w-16 h-16 bg-black bg-opacity-50 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
         )}
 
         <video

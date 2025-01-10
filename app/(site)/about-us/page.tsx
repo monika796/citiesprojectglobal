@@ -76,21 +76,12 @@ export default async function NewPage() {
           </div>
         </section>
         <section>
-          <div className="md:flex gap-15 md:mb-20">
-            <div className="md:w-1/3">
-              <Image
-                alt=""
-                width={800}
-                height={500}
-                objectFit="cover"
-                src={data.page.aboutuspage.secondsectionimagwithtext_image?.node?.link}
-              />
-            </div>
-            <div className=" md:w-3/5">
+          <div className="md:flex gap-15 md:mb-20 ">
+            <div className="md:w-3/5 order-2 md:order-1">
               <h4 className="md:text-[28px] text-center md:text-left text-[18px] text-black leading-[35px] md:leading-[49px]">
                 {data.page.aboutuspage.secondsectionimagwithtextText}{' '}
               </h4>
-              <div className=" max-w-fit hidden md:mt-8  mx-unset md:mx-0 items-center gap-2.5 w-[fit-content] mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg">
+              <div className="max-w-fit hidden md:mt-8 mx-unset md:mx-0 items-center gap-2.5 w-[fit-content] mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg">
                 <MainComponent
                   extraclass=""
                   buttonText={data.page.aboutuspage.secondsectionimagwithtextButtontext} // Pass dynamic text as prop
@@ -109,6 +100,15 @@ export default async function NewPage() {
                   </g>
                 </svg>
               </div>
+            </div>
+            <div className="md:w-1/3 order-1 md:order-2 mb-10">
+              <Image
+                alt=""
+                width={800}
+                height={500}
+                objectFit="cover"
+                src={data.page.aboutuspage.secondsectionimagwithtext_image?.node?.link}
+              />
             </div>
           </div>
         </section>

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import MainComponent from '@/components/LightboxPdf'
 
-export default function HomeAboutTheBook({ data, Video_gif, videoUrl = null }) {
+const HomeAboutTheBook = ({ data, Video_gif, videoUrl = null }) => {
   const [isPlaying, setIsPlaying] = useState(false)
   const [Played, setPlayed] = useState(false)
   const videoRef = useRef<HTMLVideoElement | null>(null)
@@ -276,3 +276,5 @@ export default function HomeAboutTheBook({ data, Video_gif, videoUrl = null }) {
     </div>
   )
 }
+
+export default HomeAboutTheBook
