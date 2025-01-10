@@ -14,25 +14,10 @@ import { motion } from 'framer-motion'
 import SingleTestimonial from './SingleTestimonial'
 // import { testimonialData } from "./testimonialData";
 import { gql, useQuery } from '@apollo/client'
-const POSTS_QUERY = gql`
-  query {
-    page(id: "cG9zdDoxOTI=") {
-      testimonialSlider {
-        slides {
-          message
-          authorname
-          authordescription
-        }
-      }
-    }
-  }
-`
 
-const Testimonial = () => {
-  const { loading, error, data } = useQuery(POSTS_QUERY)
+const Testimonial = ({ testimonials: data }) => {
+  // const { loading, error, data } = useQuery(POSTS_QUERY)
 
-  if (loading) return
-  if (error) return <p>Error: {error.message}</p>
   const testimonialData = data.page.testimonialSlider.slides.map((slide, index) => ({
     id: index + 1,
     name: slide.authorname,

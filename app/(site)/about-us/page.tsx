@@ -26,7 +26,7 @@ async function fetchData() {
 export default async function NewPage() {
   const data = await fetchData()
   return (
-    <main className="md:w-[100%] mx-auto container">
+    <main className="md:w-[100%] mx-auto lg:container md:container-fluid">
       <Head data={data} />
       <h1
         className="md:max-w-[1178px] md:py-[42px] mt-4 py-[30px] md:text-[58px] text-[25px] leading-[38px] font-bold text-center text-black  p-5 mx-auto md:leading-[77px] "
@@ -75,8 +75,8 @@ export default async function NewPage() {
         </section>
         <section>
           <div className="md:flex gap-15 md:mb-20 ">
-            <div className="md:w-3/5 order-2 md:order-1">
-              <h4 className="md:text-[28px] text-center md:text-left text-[18px] text-black leading-[35px] md:leading-[49px]">
+            <div className="md:w-3/5 order-1 md:order-2">
+              <h4 className="md:text-[16px] text-center md:text-left text-[18px] text-black leading-[35px] md:leading-relaxed">
                 {data.page.aboutuspage.secondsectionimagwithtextText}{' '}
               </h4>
               <div className="max-w-fit hidden md:mt-8 mx-unset md:mx-0 items-center gap-2.5 w-[fit-content] mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg">
@@ -99,7 +99,7 @@ export default async function NewPage() {
                 </svg>
               </div>
             </div>
-            <div className="md:w-1/3 order-1 md:order-2 mb-10">
+            <div className="md:w-1/3 order-2 md:order-1 mb-10">
               <Image
                 alt=""
                 width={800}
@@ -190,7 +190,7 @@ export default async function NewPage() {
       <div className="container mx-auto max-w-[1480px]">
         <section className="">
           <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-            <div className="grid grid-cols-2  pt-[29px] md:grid-cols-8 md:justify-center">
+            <div className="grid grid-cols-2  pt-[29px] md:grid-cols-4 lg:grid-cols-8 md:justify-center">
               {data.page.aboutussections.iconsections.map((dataposts, index) => (
                 <div
                   key={index} // Add a unique key for each child
@@ -301,7 +301,7 @@ export default async function NewPage() {
         <section className="bg-[#F5F5F5] p-[34px]  md:pt-[0px]">
           <div className="md:flex">
             <div className="md:w-[40%]  grid justify-center items-center">
-              <h1 className="text-black text-[25px] md:text-[48px] md:w-[90%] md:text-left text-center  leading-[40px] md:leading-[58px] font-bold">
+              <h1 className="text-black text-[25px] md:text-4xl md:w-[90%] md:text-left text-center  leading-relaxed md:leading-tight font-bold">
                 {data.page.aboutussections.tenthsectionleftheading}
               </h1>
             </div>
@@ -366,25 +366,25 @@ export default async function NewPage() {
       <div className="container mx-auto max-w-[1480px]">
         <section className="mx-auto grid gap-[37px] md:p-0 p-8 md:pt-[100px] md:pb-[50px] ">
           <h1
-            className={`text-black md:text-[43px] text-[28px] leading-[40px] md:leading-[58px] mx-auto text-center md:text-left md:w-[40%] font-bold`}
+            className={`text-black md:text-[43px] text-[28px] leading-[40px] md:leading-[58px] mx-auto text-center md:text-left md:w-2/3 font-bold`}
           >
             {' '}
             {data.page.aboutussections.eleventhsectionheading}
           </h1>
-          <h4 className={` text-[16px] font-normal  mx-auto  md:w-[40%] text-[#000000]  text-center md:text-left`}>
+          <h4 className={` text-[16px] font-normal  mx-auto  md:w-2/3 text-[#000000]  text-center md:text-left`}>
             {' '}
             {data.page.aboutussections.eleventhsectiondescrition}
           </h4>
-          <h4 className="text-black text-[20px]  text-center md:text-left mx-auto  md:w-[40%] font-bold">
+          <h4 className="text-black text-[20px]  text-center md:text-left mx-auto  md:w-2/3 font-bold">
             {data.page.aboutussections.eleventhsection2heading}
           </h4>
-          <h4 className={` text-[16px] font-normal  text-center md:text-left  mx-auto  md:w-[40%] text-[#000000] `}>
+          <h4 className={` text-[16px] font-normal  text-center md:text-left  mx-auto  md:w-2/3 text-[#000000] `}>
             {data.page.aboutussections.eleventhsection2descrition}
           </h4>
         </section>
       </div>
       <div className="container mx-auto md:mt-10 max-w-[1480px]">
-        <section className="md:flex w-[80%] mx-auto pb-[30px] md:pb-[170px]">
+        <section className="md:flex w-[80%] mx-auto pb-[30px] md:pb-[170px] gap-5">
           <div className="md:w-1/2 ">
             <Image width={430} height={300} src={data.page.aboutussections.twelthsectionleftimage?.node?.link} alt="" />
           </div>

@@ -685,3 +685,64 @@ export const LEADERSHIP_PAGE_QUERY = gql`
     }
   }
 `
+
+export const STORIES_QUERY = gql`
+  query {
+    posts(where: { orderby: { field: DATE, order: DESC }, categoryName: "stories-of-transformation" }) {
+      nodes {
+        featuredImage {
+          node {
+            link
+          }
+        }
+        title
+        id
+        slug
+        date
+      }
+    }
+    page(id: "cG9zdDoxNg==") {
+      homefourtsection {
+        postsliderheading
+      }
+    }
+  }
+`
+
+export const TESTIMONIAL_QUERY = gql`
+  query {
+    page(id: "cG9zdDoxOTI=") {
+      testimonialSlider {
+        slides {
+          message
+          authorname
+          authordescription
+        }
+      }
+    }
+  }
+`
+
+export const HOME_VIDEO_QUERY = gql`
+  {
+    page(id: "cG9zdDoxNg==") {
+      homevideobanner {
+        maintitle
+        videosubtitle
+        linktext
+        videoslider {
+          videothumbnail {
+            node {
+              mediaItemUrl
+            }
+          }
+          videoFileLink {
+            node {
+              mediaItemUrl
+            }
+          }
+        }
+      }
+    }
+  }
+`

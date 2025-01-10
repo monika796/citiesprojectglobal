@@ -13,32 +13,8 @@ import { gql, useQuery } from '@apollo/client'
 import Link from 'next/link'
 import Image from 'next/image' // Import Image component
 
-const POSTS_QUERY = gql`
-  {
-    page(id: "cG9zdDoxNg==") {
-      homevideobanner {
-        maintitle
-        videosubtitle
-        linktext
-        videoslider {
-          videothumbnail {
-            node {
-              mediaItemUrl
-            }
-          }
-          videoFileLink {
-            node {
-              mediaItemUrl
-            }
-          }
-        }
-      }
-    }
-  }
-`
-
-export default function VideoCarousel() {
-  const { loading, error, data } = useQuery(POSTS_QUERY)
+export default function VideoCarousel({ videos: data }) {
+  // const { loading, error, data } = useQuery(POSTS_QUERY)
   const [playingVideos, setPlayingVideos] = useState<{ [key: number]: boolean }>({}) // State to track playing state for each video
   const [isPlaying, setIsPlaying] = useState(true) // Start autoplay by default
 
@@ -61,8 +37,8 @@ export default function VideoCarousel() {
     }
   }
 
-  if (loading) return <div className="container max-w-[1481px] mx-auto">Loading videos...</div>
-  if (error) return <p>Error: {error.message}</p>
+  // if (loading) return <div className="container max-w-[1481px] mx-auto">Loading videos...</div>
+  // if (error) return <p>Error: {error.message}</p>
 
   // useEffect(() => {
   //   const videos = document.querySelectorAll('video')

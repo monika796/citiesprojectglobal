@@ -7,36 +7,8 @@ import { Autoplay, Pagination } from 'swiper/modules'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { gql, useQuery } from '@apollo/client'
-const POSTS_QUERY = gql`
-  query {
-    posts(where: { orderby: { field: DATE, order: DESC }, categoryName: "stories-of-transformation" }) {
-      nodes {
-        featuredImage {
-          node {
-            link
-          }
-        }
-        title
-        id
-        slug
-        date
-      }
-    }
-    page(id: "cG9zdDoxNg==") {
-      homefourtsection {
-        postsliderheading
-      }
-    }
-  }
-`
 
-const CustomSlider = () => {
-  const { loading, error, data } = useQuery(POSTS_QUERY)
-
-  if (loading) return <div className="container max-w-[1481px] mx-auto">Loading stories...</div>
-  if (error) return <p>Error: {error.message}</p>
-
+const StoriesSliderHome = ({ stories: data }) => {
   const sliderData = data.posts?.nodes.map((dataposts, index) => ({
     id: index + 1,
     slug: dataposts.slug,
@@ -264,4 +236,4 @@ const CustomSlider = () => {
   )
 }
 
-export default CustomSlider
+export default StoriesSliderHome

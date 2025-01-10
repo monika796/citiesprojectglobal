@@ -3,9 +3,10 @@ import Slider from 'react-slick'
 import Testimonial from '@/components/Testimonial'
 import VideoCarousel from '@/components/videotestemonial'
 import Newsletter from '@/components/Newsletter'
-import PostSlider from '@/components/PostSlider'
+// import PostSlider from '@/components/PostSlider'
+import StoriesSliderHome from '@/components/PostSlider'
 import { Suspense, useContext } from 'react'
-import { gql, useQuery } from '@apollo/client'
+import { DocumentNode, gql, useQuery } from '@apollo/client'
 import { Anton } from 'next/font/google'
 import client from 'apollo-client'
 import Partner from '@/components/partner'
@@ -20,7 +21,7 @@ import HomeAboutTheBook from '@/components/HomeAboutthebook'
 import NewBannerSlider from '@/components/HeroBanner' // Import client component
 import VideoPopup from '@/components/SecondHomeVideoButton'
 import Head from './head'
-import { HOME_PAGE_QUERY } from '@/queries/queries'
+import { HOME_PAGE_QUERY, STORIES_QUERY, TESTIMONIAL_QUERY, HOME_VIDEO_QUERY } from '@/queries/queries'
 
 export const revalidate = 60 // revalidate at most every 5 minutes
 
@@ -50,9 +51,9 @@ const ThreeStatement = ({ subtitle, heading, paragraph, image, imageAlignment })
     </div>
   )
 }
-async function fetchData() {
+async function fetchData(query: DocumentNode = HOME_PAGE_QUERY) {
   const { data } = await client.query({
-    query: HOME_PAGE_QUERY,
+    query,
     fetchPolicy: 'cache-first',
   })
   return data
@@ -67,6 +68,9 @@ const sliderSettings = {
 }
 export default async function Home() {
   const data = await fetchData()
+  const stories = await fetchData(STORIES_QUERY)
+  const testimonials = await fetchData(TESTIMONIAL_QUERY)
+  const videos = await fetchData(HOME_VIDEO_QUERY)
   return (
     <main className="mt-[-96px]">
       <Head data={data} />
@@ -447,17 +451,11 @@ export default async function Home() {
         </section>
       </div>
 
-      <Suspense fallback={<div>Loading stories...</div>}>
-        <PostSlider />
-      </Suspense>
+      <StoriesSliderHome stories={stories} />
 
-      <Suspense fallback={<div>Loading testimonials...</div>}>
-        <Testimonial />
-      </Suspense>
+      <Testimonial testimonials={testimonials} />
 
-      <Suspense fallback={<div>Loading videos...</div>}>
-        <VideoCarousel />
-      </Suspense>
+      <VideoCarousel videos={videos} />
 
       <Newsletter />
     </main>
