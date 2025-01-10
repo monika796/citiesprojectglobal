@@ -135,7 +135,10 @@ const SingleBlogPage = async ({ params }: { params: Params }) => {
         />
       </div>
       <div className="blog-content max-w-[684px] mx-auto py-15">
-        <div className="text-gray-700 mt-2 leading-normal" dangerouslySetInnerHTML={{ __html: post?.content || '' }} />
+        <div
+          className="text-gray-700 mt-2 leading-normal [&_p]:mb-4"
+          dangerouslySetInnerHTML={{ __html: post?.content || '' }}
+        />
       </div>
       <BlogCustomSlider />
     </section>

@@ -5,27 +5,8 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { motion } from 'framer-motion'
-import { gql, useQuery } from '@apollo/client'
-import Link from 'next/link'
-const POSTS_QUERY = gql`
-  query MyQuery2 {
-    page(id: "cG9zdDozMjY=") {
-      programpagefeild {
-        secondSectionProgramTestemonials {
-          programTestimonialAuthor
-          programTestimonialAuthorDescription
-          programTestimonialDescription
-        }
-      }
-    }
-  }
-`
 
-const ProgramTestimonial = () => {
-  const { loading, error, data } = useQuery(POSTS_QUERY)
-
-  if (loading) return
-  if (error) return <p>Error: {error.message}</p>
+const ProgramTestimonial = ({ data }: { data: any }) => {
   const testimonialData = data.page.programpagefeild.secondSectionProgramTestemonials.map((slide, index) => ({
     id: index + 1,
     name: slide.programTestimonialAuthor,
@@ -61,8 +42,8 @@ const ProgramTestimonial = () => {
             spaceBetween={50}
             slidesPerView={1}
             autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
+              delay: 8000,
+              disableOnInteraction: true,
             }}
             pagination={{
               clickable: true,
@@ -79,13 +60,13 @@ const ProgramTestimonial = () => {
             {testimonialData.map((review) => (
               <SwiperSlide key={review?.id}>
                 {/* <div className="md:w-3/5 p-10"> */}
-                <p className="text-[16px] text-[#000000] italic font-normal leading-[24px] text-center md:text-left">
+                <p className="text-[18px] text-[#000000] italic font-normal leading-normal text-center md:text-left">
                   {review.content}{' '}
                 </p>
-                <h2 className="pt-[20px] text-[#000000] text-[20px] font-bold leading-[30.62px] text-center md:text-left">
+                <h2 className="pt-[20px] text-[#000000] text-[16px] font-bold text-center md:text-left">
                   {review.name}
                 </h2>
-                <p className=" pt-[10px] md:w-[57%] text-[#000000] text-[20px] font-normal leading-[30.62px] text-center md:text-left">
+                <p className="md:w-[57%] text-[#000000] text-[14px] font-normal text-center md:text-left">
                   {review.designation}
                 </p>
 

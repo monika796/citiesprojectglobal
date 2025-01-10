@@ -59,7 +59,7 @@ const MainComponent = ({ buttonText, pdfUrl, extraclass }) => {
             {/* PDF Embed */}
             <div className="w-full">
               <iframe
-                src={'/api/proxy'} // Use the dynamic PDF URL passed as a prop
+                src={pdfUrl || 'https://backend.citiesprojectglobal.com/book-sample-pdf-view/'} // Use the dynamic PDF URL passed as a prop
                 width="100%"
                 height="100%"
                 title="PDF Viewer"

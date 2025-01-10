@@ -90,7 +90,7 @@ const StoriesSliderHome = ({ stories: data }) => {
                         dangerouslySetInnerHTML={{ __html: slide.title }}
                       />
                       <Link
-                        href={`/blog/blog-details/${slide.slug}`}
+                        href={`/articles/${slide.slug}`}
                         className="flex gap-2 items-center text-black font-extrabold text-center justify-center"
                       >
                         {slide.linkText}
@@ -172,7 +172,7 @@ const StoriesSliderHome = ({ stories: data }) => {
                       className="object-contain w-full rounded-lg"
                       alt={slide.title} width={800} height={800}
                      / > */}
-                      <Link href={` /blog/blog-details/${slide.slug}`}>
+                      <Link href={` /articles/${slide.slug}`}>
                         <div
                           className="relative w-full   bg-cover bg-center rounded h-[300px] "
                           //   style={{ backgroundImage: `url('${slide.imgSrc}')` }}
@@ -191,7 +191,7 @@ const StoriesSliderHome = ({ stories: data }) => {
                           {slide.title.replace(/<[^>]*>?/gm, '')}
                         </h2>
                         {/* <Link
-                      href={ ` /blog/blog-details/${slide.slug}`}
+                      href={ ` /articles/${slide.slug}`}
                       className="flex gap-2 items-center text-black font-extrabold text-center justify-center"
                     >
                       {slide.linkText}

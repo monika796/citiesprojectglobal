@@ -1,17 +1,17 @@
-import { Menu } from "@/types/menu";
+import { Menu } from '@/types/menu'
 
 const menuData: Menu[] = [
   {
     id: 1,
-    title: "Home",
+    title: 'Home',
     newTab: false,
-    path: "/",
+    path: '/',
   },
   {
     id: 2,
-    title: "About",
+    title: 'About',
     newTab: false,
-    path: "/about-us",
+    path: '/about-us',
   },
 
   // {
@@ -22,36 +22,48 @@ const menuData: Menu[] = [
   // },
   {
     id: 3,
-    title: "Programs",
+    title: 'Programs',
     newTab: false,
-    path: "/programs",
+    path: '/programs',
     submenu: [
       {
         id: 34,
-        title: "Leadership Circle",
+        title: 'Leadership Circle',
         newTab: false,
-        path: "/leadership",
+        path: '/leadership-circle',
       },
       {
         id: 34,
-        title: "VantagePoint™",
+        title: 'VantagePoint™',
         newTab: false,
-        path: "/vantage",
-      }
+        path: '/vantage',
+      },
     ],
   },
   {
     id: 2.1,
-    title: "Blogs",
+    title: 'Articles',
     newTab: false,
-    path: "/blog",
+    path: '/articles',
   },
   {
     id: 4,
-    title: "Contact",
+    title: 'Contact',
     newTab: false,
-    path: "/contact",
+    path: '/contact',
   },
-];
+  {
+    id: 5,
+    title: 'Book',
+    newTab: false,
+    path: '/book',
+  },
+  {
+    id: 6,
+    title: 'Donate',
+    newTab: false,
+    path: '/donation',
+  },
+]
 
-export default menuData;
+export default menuData

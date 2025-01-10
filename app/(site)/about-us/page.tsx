@@ -53,7 +53,7 @@ export default async function NewPage() {
         {' '}
         <section className="md:flex md:gap-20 md:py-18">
           <div className="md:w-2/3 ">
-            <h3 className="md:text-[28px] text-center md:text-left text-[18px] text-black leading-[35px] md:leading-[49px]">
+            <h3 className="md:text-[28px] text-center md:text-left text-[18px] text-black leading-[35px] md:leading-[49px] mb-10">
               {data.page.aboutuspage.secondsectionheading_1}
               <div className="inline-flex  space-x-1 ">
                 <Image alt="" width={30} height={30} src="/53.png" className="w-[30px] h-[30px]" />
@@ -63,7 +63,7 @@ export default async function NewPage() {
               {data.page.aboutuspage.secondsectionheading_2}{' '}
             </h3>
           </div>
-          <div className="md:w-1/3 w-full grid justify-unset md:justify-end">
+          <div className="md:w-1/3 w-full grid justify-unset md:justify-end mb-10">
             <Image
               alt=""
               width={800}
@@ -74,7 +74,7 @@ export default async function NewPage() {
           </div>
         </section>
         <section>
-          <div className="md:flex gap-15 md:mb-20 ">
+          <div className="md:flex gap-15 md:mb-20">
             <div className="md:w-3/5 order-1 md:order-2">
               <h4 className="md:text-[16px] text-center md:text-left text-[18px] text-black leading-[35px] md:leading-relaxed">
                 {data.page.aboutuspage.secondsectionimagwithtextText}{' '}
@@ -99,7 +99,7 @@ export default async function NewPage() {
                 </svg>
               </div>
             </div>
-            <div className="md:w-1/3 order-2 md:order-1 mb-10">
+            <div className="md:w-1/3 order-2 md:order-1 mb-10 mt-10">
               <Image
                 alt=""
                 width={800}
@@ -112,8 +112,8 @@ export default async function NewPage() {
         </section>
       </div>
 
-      <div className="w-full h-[500px] overflow-hidden fixed relative bg-black">
-        <section className="md:py-[42px] md:p-0">
+      <div className="w-full h-[500px] overflow-hidden bg-black">
+        <section className="md:py-[42px] md:p-0 relative">
           {/* <Image
             alt=""
             width={2000}
@@ -123,14 +123,38 @@ export default async function NewPage() {
           /> */}
 
           <div
-            className="absolute inset-0 bg-fixed bg-cover bg-center flex items-center justify-center"
+            className=" flex flex-col items-center justify-center w-full h-full absolute top-0 left-0 bg-black"
             style={{
               backgroundImage: `url(${data.page.aboutuspage.thirdsectionimage?.node?.link})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              height: '500px',
             }}
           >
-            <h3 className="container mx-auto md:w-[70%] md:text-[50px] font-extrabold text-white text-center md:leading-[58.09px]">
+            <h3 className="container z-10 mx-auto text-3xl md:w-[70%] md:text-[50px] font-extrabold text-white text-center md:leading-[58.09px]">
               {data.page.aboutuspage.secondsectionimagwithtextSubtext}
             </h3>
+            <Link
+              href={data.page.aboutuspage.fourthsectionleftbuttonlink}
+              className="z-10 mx-auto md:mx-0 flex  items-center gap-2.5 w-[fit-content] text-center inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300"
+            >
+              {' '}
+              {data.page.aboutuspage.fourthsectionleftbutton}{' '}
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+                <g
+                  fill="none"
+                  fillRule="evenodd"
+                  stroke="#000"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                >
+                  <path d="M1 13 13 1M4 1h9v9"></path>
+                </g>
+              </svg>
+            </Link>
+            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           </div>
         </section>
       </div>
@@ -142,25 +166,6 @@ export default async function NewPage() {
               <h3 className="  md:w-[57%] text-black font-extrabold md:text-[21px]  text-left md:text-left">
                 {data.page.aboutuspage.forthsectionlefttext}
               </h3>
-              <Link
-                href={data.page.aboutuspage.fourthsectionleftbuttonlink}
-                className=" mx-auto md:mx-0 flex  items-center gap-2.5 w-[fit-content] text-center inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300"
-              >
-                {' '}
-                {data.page.aboutuspage.fourthsectionleftbutton}{' '}
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
-                  <g
-                    fill="none"
-                    fillRule="evenodd"
-                    stroke="#000"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                  >
-                    <path d="M1 13 13 1M4 1h9v9"></path>
-                  </g>
-                </svg>
-              </Link>
             </div>
           </div>
           <div className="md:w-2/3 md:p-10 p-3 pb-0">
@@ -175,12 +180,12 @@ export default async function NewPage() {
               {data.page.aboutuspage.fourthsectionrightdescrition1}
             </h4>
 
-            <h4 className="text-[16px] text-black font-bold leading-[22px] pt-5  text-left md:text-left">
+            <h4 className="text-[16px] text-black leading-[22px] pt-5  text-left md:text-left">
               {' '}
               {data.page.aboutuspage.fourthsectionrightdescrition2}
             </h4>
 
-            <h4 className="text-[16px] text-black font-bold leading-[22px] pt-5  text-left md:text-left">
+            <h4 className="text-[16px] text-black leading-[22px] pt-5  text-left md:text-left">
               {' '}
               {data.page.aboutuspage.fourthsectionrightdescrition3}
             </h4>

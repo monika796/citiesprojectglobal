@@ -1,6 +1,8 @@
 export async function GET(request) {
+  const { searchParams } = new URL(request.url)
+  const url = searchParams.get('url') || 'https://backend.citiesprojectglobal.com/book-sample-pdf-view/'
   try {
-    const response = await fetch('https://backend.citiesprojectglobal.com/book-sample-pdf-view/?', {
+    const response = await fetch(url, {
       headers: {
         'Content-Type': 'text/html', // Expect HTML content
       },

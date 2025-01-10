@@ -96,7 +96,7 @@ const SwiperSection = () => {
                       alt={post.title || 'Default title'} // Provide a fallback title
                     />
                   </div>
-                  <Link href={`/blog/blog-details/${post.slug}`}>
+                  <Link href={`/articles/${post.slug}`}>
                     <div className="w-2/3 grid p-2">
                       <div>
                         <p className="inline px-2 py-1 text-[11px] bg-[#000000] uppercase h-auto text-white font-bold text-center rounded-[20px] ">

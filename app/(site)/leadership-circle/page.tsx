@@ -774,7 +774,7 @@ const page = async () => {
             </p>
             <p className="text-white leading-relaxed mb-4">
               {data.page.leadershipPageFeilds.leadershipTenthSection.leadershipTenthSectionSecondColumnDescription2}
-              <Link href="/blog/blog-details/alumni-story-serving-the-underbanked-to-end-the-cycle-of-poverty">
+              <Link href="/articles/alumni-story-serving-the-underbanked-to-end-the-cycle-of-poverty">
                 <span className="text-[#A1CF5F] underline cursor-pointer">
                   {
                     data.page.leadershipPageFeilds.leadershipTenthSection

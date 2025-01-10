@@ -9,9 +9,8 @@ import Link from 'next/link'
 import MainComponent from '@/components/LightboxPdf'
 import { BOOK_PAGE_QUERY } from '@/queries/queries'
 import { useReveal } from '@/lib/hooks'
-
+import Head from '../head'
 export const revalidate = 60 // revalidate at most every 5 minutes
-const anton = Anton({ weight: '400', subsets: ['latin'] })
 
 async function fetchData() {
   const { data } = await client.query({
@@ -24,6 +23,7 @@ export default async function Book() {
   const data = await fetchData()
   return (
     <main className="container mx-auto max-w-[1480px]">
+      <Head data={data} />
       <h1 className="md:text-[60px] text-[25px] font-bold text-center text-black md:max-w-[1178px] mx-auto md:leading-[77.45px] mt-15">
         {data.page.bookPageFeilds.bookFirstSectionMainHeading}
       </h1>
@@ -103,7 +103,7 @@ export default async function Book() {
       </div>
 
       <iframe
-        src={'/api/proxy'} // Use the dynamic PDF URL passed as a prop
+        src={`/api/proxy`} // Use the dynamic PDF URL passed as a prop
         width="100%"
         height="100%"
         title="PDF Viewer"

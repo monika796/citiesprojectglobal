@@ -5,76 +5,23 @@ import client from 'apollo-client'
 import BlogCard from '@/components/Blogdata'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ARTICLES_QUERY, ARTICLES_PAGE_QUERY } from '@/queries/queries'
+import Head from '../head'
+import { getSlugsFromUrl } from '@/lib/tools'
 
-export const metadata: Metadata = {
-  title: 'Blog Page - Solid SaaS Boilerplate',
-  description: 'This is Blog page for Solid Pro',
-  // other metadata
-}
-const POSTS_QUERY = gql`
-  query MyQuery2 {
-    page(id: "cG9zdDo1MzQ=") {
-      blogPageFeilds {
-        blogLeftThirdSectionHeading
-        blogPageMainHeading
-        blogRightThirdSectionDescription
-        blogRightThirdSectionHeading
-        blogSecondSection {
-          blogPageLeft {
-            node {
-              link
-            }
-          }
-          blogPageRightButtonText
-          blogPageRightDate
-          blogPageRightDescription
-          blogPageRightHeading
-          blogPageRightMonthAndYear
-          blogPageRightUpperSubtitle
-          blogPageRightImage {
-            node {
-              link
-            }
-          }
-          blogPageRightButtonLink {
-            url
-          }
-        }
-      }
-    }
-  }
-`
-const POSTS_QUERY_sec = gql`
-  query MyQuery2 {
-    posts(last: 1000) {
-      nodes {
-        date
-        featuredImage {
-          node {
-            link
-          }
-        }
-        title
-        # content(format: RENDERED)
-        # contentTypeName
-        id
-        slug
-      }
-    }
-  }
-`
 async function fetchData() {
   const { data } = await client.query({
-    query: POSTS_QUERY,
+    query: ARTICLES_PAGE_QUERY,
   })
   return data
 }
 async function fetchDataSecond() {
   const { data } = await client.query({
-    query: POSTS_QUERY_sec,
+    query: ARTICLES_QUERY,
   })
   return data
 }
+
 const BlogPage = async () => {
   const postData = await fetchDataSecond()
   const data = await fetchData()
@@ -82,25 +29,21 @@ const BlogPage = async () => {
   return (
     <>
       <main className="md:w-[90%] mx-auto">
-        <h1 className="md:py-[42px] md:max-w-[700px] mt-4 py-[30px] md:text-[64px] text-[25px] leading-[38px]  font-bold  md:leading-[77px] text-center text-black   mx-auto md:leading-[77px] ">
+        <Head data={data} />
+        <h1 className="md:py-[42px] md:max-w-[700px] mt-4 py-[30px] md:text-[64px] text-[45px] font-bold leading-normal text-center text-black mx-20 md:mx-auto">
           {data.page.blogPageFeilds.blogPageMainHeading}
         </h1>
         <section className="container mx-auto max-w-[1480px] bg-[#F8F8F8] border rounded-lg mt-10">
           <div className="flex flex-col lg:flex-row    overflow-hidden">
-            <div
-              className="lg:w-[40%] bg-cover bg-center"
-              style={{
-                backgroundImage: `url(${
-                  data.page.blogPageFeilds.blogSecondSection.blogPageLeft?.node?.link || '/No_Image.jpg'
-                })`,
-              }}
-            >
-              {/* <Image src={data.page.blogPageFeilds.blogSecondSection.blogPageLeft?.node?.link || '/No_Image.jpg'} // Replace with your image path
-               alt="Group of people"
-               className="w-full h-[100vh] object-cover " layout="responsive" width={800} height={700} />
-            */}
-            </div>
-            <div className="p-12 flex flex-col justify-between lg:w-[60%]">
+            <Image
+              src={data.page.blogPageFeilds.blogSecondSection.blogPageLeft?.node?.link || '/No_Image.jpg'} // Replace with your image path
+              alt="Group of people"
+              className="w-full h-[100vh] object-cover "
+              layout="responsive"
+              width={800}
+              height={700}
+            />
+            <div className="p-12 flex flex-col justify-end lg:w-[60%] relative">
               <div className="mb-4 max-w-[543px]">
                 <span className="inline-block bg-black text-white text-xs px-3 py-1  rounded-full uppercase font-bold tracking-wider mb-4 uppercase">
                   {data.page.blogPageFeilds.blogSecondSection.blogPageRightUpperSubtitle}
@@ -112,7 +55,7 @@ const BlogPage = async () => {
                   {data.page.blogPageFeilds.blogSecondSection.blogPageRightDescription}
                 </p>
                 <Link
-                  href={data.page.blogPageFeilds.blogSecondSection.blogPageRightButtonLink.url}
+                  href={getSlugsFromUrl(data.page.blogPageFeilds.blogSecondSection.blogPageRightButtonLink.url)}
                   className=" flex  mx-unset md:mx-0 items-center gap-2.5 w-[fit-content] inline-block mt-4 bg-[#A1CF5F] font-bold text-black text-sm py-3 px-6 rounded-lg transition duration-300"
                 >
                   {data.page.blogPageFeilds.blogSecondSection.blogPageRightButtonText}
@@ -130,8 +73,8 @@ const BlogPage = async () => {
                   </svg>
                 </Link>
               </div>
-              <div className="flex justify-end items-center">
-                <div className="flex items-end space-x-2">
+              <div className="flex justify-end items-center absolute bottom-0 right-0">
+                <div className="flex items-end space-x-2 hidden">
                   <Image
                     src={data.page.blogPageFeilds.blogSecondSection.blogPageRightImage?.node?.link || '/No_Image.jpg'} // Replace with your small image path
                     alt="Nature"
@@ -153,7 +96,7 @@ const BlogPage = async () => {
             </div>
           </div>
         </section>
-        <section className="mt-40 mb-30">
+        <section className="mt-10 mb-5">
           <div className=" container mx-auto max-w-[1480px]">
             <div className="flex flex-col lg:flex-row items-center justify-between">
               <div className="text-left">
@@ -162,7 +105,7 @@ const BlogPage = async () => {
                 </h2>
               </div>
               {/* Right Section: Play Button and Caption */}
-              <div className="flex items-center mt-6 lg:mt-0 lg:ml-6">
+              <div className="flex items-center mt-6 lg:mt-0 lg:ml-6 hidden">
                 {/* Play Button */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -191,10 +134,9 @@ const BlogPage = async () => {
 
         {/* //////////////// */}
         <div className="container mx-auto  max-w-[1480px] py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-8 gap-4">
             {postData.posts.nodes.map((post, index) => {
               var dat_time = post.date
-
               const dates = new Date(dat_time)
               var formatDate = dates.toLocaleDateString('en-US', {
                 year: 'numeric',
@@ -204,11 +146,12 @@ const BlogPage = async () => {
 
               return (
                 <BlogCard
+                  key={index}
                   index={index}
                   image={post.featuredImage?.node?.link}
                   date={formatDate}
                   title={post.title}
-                  content={post.content}
+                  // content={post.content}
                   linkText="Read More"
                   linkHref={post.slug}
                 />

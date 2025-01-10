@@ -7,57 +7,25 @@ import { gql } from '@apollo/client'
 import client from 'apollo-client'
 import Image from 'next/image'
 import ProgramTestimonial from '@/components/programtestemonial'
-
+import { PROGRAM_PAGE_QUERY, TESTIMONIAL_QUERY, PROGRAM_TESTIMONIAL_QUERY } from '@/queries/queries'
+import Head from '../head'
 export const revalidate = 60 // revalidate at most every 5 minutes
 
-const POSTS_QUERY = gql`
-  query {
-    page(id: "cG9zdDozMjY=") {
-      programpagefeild {
-        authorDesignation
-        fieldGroupName
-        firstSectionMainHeading
-        secondSectionImage {
-          node {
-            link
-          }
-        }
-        secondSectionLeftAuthorName
-        secondSectionLeftColumn
-        secondSectionRightAuthorName
-        secondSectionRightButtonText
-        secondSectionRightButtonLink
-        secondSectionRightSubHeading
-        thirdSectionLeftText
-        thirdSectionMainHeading
-        third_section_right_columns {
-          button_text_program
-          button_link_program
-          columnheadingProgram
-          columnsubtitleProgram
-          columnimages_program {
-            node {
-              link
-            }
-          }
-        }
-      }
-    }
-  }
-`
-async function fetchData() {
+async function fetchData(query = PROGRAM_PAGE_QUERY, fetchPolicy: any = 'cache-first') {
   const { data } = await client.query({
-    query: POSTS_QUERY,
+    query,
+    fetchPolicy: fetchPolicy,
   })
   return data
 }
-const anton = Anton({ weight: '400', subsets: ['latin'] })
 
 export default async function Programs() {
   const data = await fetchData()
-
+  const testimonials = await fetchData(TESTIMONIAL_QUERY)
+  const programTestimonials = await fetchData(PROGRAM_TESTIMONIAL_QUERY)
   return (
     <main className="md:w-[100%] mx-auto">
+      <Head data={data} />
       <h1 className="md:w-[100%] lg:w-[1178px] md:py-[42px] pt-4 py-[30px] md:text-[30px] lg:text-[64px] text-[25px] font-bold text-center text-black md:max-w-[1178px] p-5 mx-auto md:leading-[77px] ">
         {data.page.programpagefeild.firstSectionMainHeading}
       </h1>
@@ -66,7 +34,7 @@ export default async function Programs() {
         <div className="lg:flex pt-5 ">
           <div className="lg:w-2/5 relative md:p-10 md:pb-0 p-3">
             {/* <div className="md:absolute bottom-[5%]">  */}
-            <ProgramTestimonial />
+            <ProgramTestimonial data={programTestimonials} />
             {/* </div> */}
           </div>
           <div className="lg:w-3/5 p-10">
@@ -166,7 +134,7 @@ export default async function Programs() {
         </div>
       </section>
 
-      <Testimonial />
+      <Testimonial testimonials={testimonials} className="bg-white" />
       <Newsletter />
     </main>
   )

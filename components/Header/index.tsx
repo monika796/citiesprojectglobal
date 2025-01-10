@@ -97,6 +97,9 @@ const Header = () => {
     window.addEventListener('resize', updateMedia)
     return () => window.removeEventListener('resize', updateMedia)
   }, [])
+
+  const displayedMenuData = !isMobile ? menuData.slice(0, -2) : menuData
+
   return (
     <header
       className={`sticky left-0 top-0 z-99999 w-full backdrop-blur-lg  ${
@@ -183,7 +186,7 @@ const Header = () => {
                 ${stickyMenu && !isHomePage && !isMobile ? 'text-white' : ''}
               `}
             >
-              {menuData.map((menuItem, key) => (
+              {displayedMenuData.map((menuItem, key) => (
                 <li
                   key={key}
                   className={`border-b-4 border-b-transparent hover:border-solid hover:border-[#A1CF5F] hover:border-b-4 ${
@@ -195,28 +198,32 @@ const Header = () => {
                       <Link href={menuItem.path || '#'}>
                         {' '}
                         <button
-                          onMouseOver={() => setDropdownToggler(!dropdownToggler)}
                           // onMouseLeave={() => setDropdownToggler(false)}
-                          className="flex cursor-pointer items-center justify-between gap-3 hover:text-primary"
+                          className="flex cursor-pointer gap-3 md:hover:text-primary border-b-2"
                         >
                           {menuItem.title}
-                          <span>
-                            <svg
-                              className={
-                                isHomePage
-                                  ? 'h-3 w-3 cursor-pointer fill-white'
-                                  : 'h-3 w-3 cursor-pointer fill-waterloo'
-                              }
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                            >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </span>
                         </button>
                       </Link>
 
-                      <ul className={`dropdown absolute ${dropdownToggler ? 'flex z-99999' : ''}`}>
+                      <span
+                        className="absolute z-10 right-0 md:-right-9 top-0 w-10 h-8  flex items-center justify-center"
+                        onMouseOver={() => setDropdownToggler(!dropdownToggler)}
+                        onMouseDown={() => setDropdownToggler(!dropdownToggler)}
+                      >
+                        <svg
+                          className={`fill-black absolute z-10 h-3 w-3 ${isHomePage ? '' : 'fill-black'}`}
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                        >
+                          <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                        </svg>
+                      </span>
+
+                      <ul
+                        className={`dropdown absolute top-6 w-11/12 left-2 shadow-xl ${
+                          dropdownToggler ? 'flex z-99999' : ''
+                        }`}
+                      >
                         {menuItem.submenu.map((item, key) => (
                           <li key={key} className="text-[#000000] ">
                             <Link href={item.path || '#'} onClick={closeNavigation}>

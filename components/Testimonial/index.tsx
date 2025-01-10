@@ -13,12 +13,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { motion } from 'framer-motion'
 import SingleTestimonial from './SingleTestimonial'
 // import { testimonialData } from "./testimonialData";
-import { gql, useQuery } from '@apollo/client'
+// import { gql, useQuery } from '@apollo/client'
 
-const Testimonial = ({ testimonials: data }) => {
+const Testimonial = ({ testimonials = [], className = 'bg-[#F5F5F5]' }: { testimonials: any; className: string }) => {
   // const { loading, error, data } = useQuery(POSTS_QUERY)
 
-  const testimonialData = data.page.testimonialSlider.slides.map((slide, index) => ({
+  const testimonialData = testimonials.page.testimonialSlider.slides.map((slide, index) => ({
     id: index + 1,
     name: slide.authorname,
     designation: slide.authordescription.replace(/[()]/g, ''), // Remove parentheses for clarity
@@ -27,7 +27,9 @@ const Testimonial = ({ testimonials: data }) => {
   }))
   return (
     <>
-      <section className="testimonial max-w-[1480px] mx-auto bg-[#F5F5F5] min-h-[655px] flex items-center justify-center mb-20">
+      <section
+        className={`testimonial max-w-[1480px] mx-auto ${className} min-h-[655px] flex items-center justify-center mb-20`}
+      >
         <motion.div
           variants={{
             hidden: {

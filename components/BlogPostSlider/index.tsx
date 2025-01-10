@@ -110,7 +110,7 @@ const BlogCustomSlider = () => {
                       </p>
                       <h2 className="text-center px-3 py-3 text-black font-semibold text-base">{slide.title}</h2>
                       <Link
-                        href={`/blog/blog-details/${slide.slug}`}
+                        href={`/articles/${slide.slug}`}
                         className="flex gap-2 items-center text-black font-extrabold text-center justify-center"
                       >
                         {slide.linkText}
@@ -203,7 +203,7 @@ const BlogCustomSlider = () => {
                       </p>
                       <h2 className="text-center px-3 py-3 text-black font-semibold text-base">{slide.title}</h2>
                       <Link
-                        href={` /blog/blog-details/${slide.slug}`}
+                        href={` /articles/${slide.slug}`}
                         className="flex gap-2 items-center text-black font-extrabold text-center justify-center"
                       >
                         {slide.linkText}

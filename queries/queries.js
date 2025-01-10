@@ -340,6 +340,9 @@ export const ABOUT_US_PAGE_QUERY = gql`
 export const BOOK_PAGE_QUERY = gql`
   query Book {
     page(id: "cG9zdDo0MzM=") {
+      seoMetaFields {
+        ...SeoMetaFields
+      }
       bookPageFeilds {
         bookFifthReviewSectionDescription
         bookFifthReviewSectionHeading
@@ -425,11 +428,15 @@ export const BOOK_PAGE_QUERY = gql`
       }
     }
   }
+  ${SEO_FRAGMENT}
 `
 
 export const LEADERSHIP_PAGE_QUERY = gql`
-  query MyQuery2 {
+  query {
     page(id: "cG9zdDo2MDg=") {
+      seoMetaFields {
+        ...SeoMetaFields
+      }
       leadershipPageFeilds {
         leadershipEightSectionFields {
           leadershipEightSectionFirstRowFirstColumnDescription
@@ -684,6 +691,7 @@ export const LEADERSHIP_PAGE_QUERY = gql`
       }
     }
   }
+  ${SEO_FRAGMENT}
 `
 
 export const STORIES_QUERY = gql`
@@ -742,6 +750,118 @@ export const HOME_VIDEO_QUERY = gql`
             }
           }
         }
+      }
+    }
+  }
+`
+
+export const PROGRAM_PAGE_QUERY = gql`
+  query {
+    page(id: "cG9zdDozMjY=") {
+      seoMetaFields {
+        ...SeoMetaFields
+      }
+      programpagefeild {
+        authorDesignation
+        fieldGroupName
+        firstSectionMainHeading
+        secondSectionImage {
+          node {
+            link
+          }
+        }
+        secondSectionLeftAuthorName
+        secondSectionLeftColumn
+        secondSectionRightAuthorName
+        secondSectionRightButtonText
+        secondSectionRightButtonLink
+        secondSectionRightSubHeading
+        thirdSectionLeftText
+        thirdSectionMainHeading
+        third_section_right_columns {
+          button_text_program
+          button_link_program
+          columnheadingProgram
+          columnsubtitleProgram
+          columnimages_program {
+            node {
+              link
+            }
+          }
+        }
+      }
+    }
+  }
+  ${SEO_FRAGMENT}
+`
+
+export const PROGRAM_TESTIMONIAL_QUERY = gql`
+  query MyQuery2 {
+    page(id: "cG9zdDozMjY=") {
+      programpagefeild {
+        secondSectionProgramTestemonials {
+          programTestimonialAuthor
+          programTestimonialAuthorDescription
+          programTestimonialDescription
+        }
+      }
+    }
+  }
+`
+
+export const ARTICLES_PAGE_QUERY = gql`
+  query MyQuery2 {
+    page(id: "cG9zdDo1MzQ=") {
+      seoMetaFields {
+        ...SeoMetaFields
+      }
+      blogPageFeilds {
+        blogLeftThirdSectionHeading
+        blogPageMainHeading
+        blogRightThirdSectionDescription
+        blogRightThirdSectionHeading
+        blogSecondSection {
+          blogPageLeft {
+            node {
+              link
+            }
+          }
+          blogPageRightButtonText
+          blogPageRightDate
+          blogPageRightDescription
+          blogPageRightHeading
+          blogPageRightMonthAndYear
+          blogPageRightUpperSubtitle
+          blogPageRightImage {
+            node {
+              link
+            }
+          }
+          blogPageRightButtonLink {
+            url
+          }
+        }
+      }
+    }
+  }
+  ${SEO_FRAGMENT}
+`
+
+export const ARTICLES_QUERY = gql`
+  query Articles {
+    posts(last: 1000) {
+      nodes {
+        date
+        featuredImage {
+          node {
+            link
+          }
+        }
+        title
+        # content(format: RENDERED)
+        # contentTypeName
+        id
+        slug
       }
     }
   }
