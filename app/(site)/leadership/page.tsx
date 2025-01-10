@@ -33,7 +33,6 @@ async function fetchData() {
 
 const page = async () => {
   const data = await fetchData()
-  console.log(data)
   return (
     <div className="container mx-auto max-w-[1480px]">
       <section>

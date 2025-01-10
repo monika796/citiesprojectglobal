@@ -71,7 +71,6 @@ const SwiperSectionshortcourses = () => {
 
     fetchData()
   }, [])
-  console.log(posts)
 
   return (
     <>

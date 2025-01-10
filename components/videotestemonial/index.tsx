@@ -189,7 +189,6 @@ export default function VideoCarousel() {
                                   handlePlayPause(video.id, e.currentTarget.previousElementSibling as HTMLVideoElement)
                                   if (typeof window !== 'undefined') {
                                     const allVideos = document.querySelectorAll('video')
-                                    console.log(allVideos)
                                     allVideos.forEach((vid) => {
                                       if (vid !== e.currentTarget.previousElementSibling) {
                                         vid.pause()

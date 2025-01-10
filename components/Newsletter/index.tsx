@@ -1,10 +1,10 @@
-"use client";
-import { Anton } from "next/font/google";
-import { gql, useQuery } from "@apollo/client";
-import { useState } from "react";
-import axios from 'axios';
+'use client'
+import { Anton } from 'next/font/google'
+import { gql, useQuery } from '@apollo/client'
+import { useState } from 'react'
+import axios from 'axios'
 
-const anton = Anton({ weight: "400", subsets: ["latin"] });
+const anton = Anton({ weight: '400', subsets: ['latin'] })
 
 const POSTS_QUERY = gql`
   query {
@@ -17,28 +17,28 @@ const POSTS_QUERY = gql`
       }
     }
   }
-`;
+`
 
 export default function Newsletter() {
-  const { loading, error, data } = useQuery(POSTS_QUERY);
-  const [formData, setFormData] = useState({ input_2: "", input_3: "" });
-  const [message, setMessage] = useState<string | null>(null);
-  const [submitted, setSubmitted] = useState(false);
+  const { loading, error, data } = useQuery(POSTS_QUERY)
+  const [formData, setFormData] = useState({ input_2: '', input_3: '' })
+  const [message, setMessage] = useState<string | null>(null)
+  const [submitted, setSubmitted] = useState(false)
 
   // Handler to manage form input changes
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
 
   // Handler for form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
+    e.preventDefault() // Prevent the default form submission behavior
 
     // Basic validation to ensure fields are not empty
     if (!formData.input_2 || !formData.input_3) {
-      setMessage('Name and email are required.');
-      return;
+      setMessage('Name and email are required.')
+      return
     }
 
     try {
@@ -48,29 +48,30 @@ export default function Newsletter() {
         {
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Basic ${btoa('ck_3b900686e6b6f05a64b49ff09163b1ae35017710:cs_a366847ab722d30837123aac4605cc07c1eeaac1')}`, // Basic Auth with API Key and Secret
+            Authorization: `Basic ${btoa(
+              'ck_3b900686e6b6f05a64b49ff09163b1ae35017710:cs_a366847ab722d30837123aac4605cc07c1eeaac1',
+            )}`, // Basic Auth with API Key and Secret
           },
-        }
-      );
+        },
+      )
 
-      const responseData = response.data;
+      const responseData = response.data
 
       if (!responseData.is_valid) {
         // If the form submission is not valid, show the validation messages
-        const validationMessages = Object.values(responseData.validation_messages).join(', ');
-        setMessage(validationMessages || 'There was an error submitting the form.');
+        const validationMessages = Object.values(responseData.validation_messages).join(', ')
+        setMessage(validationMessages || 'There was an error submitting the form.')
       } else {
         // If the submission is valid, show a success message
-        setMessage('Form submitted successfully!');
+        setMessage('Form submitted successfully!')
       }
 
-      setSubmitted(true); // Set the form as submitted
-      console.log(response);
+      setSubmitted(true) // Set the form as submitted
     } catch (error) {
-      setMessage('There was an error submitting the form.');
-      console.error(error);
+      setMessage('There was an error submitting the form.')
+      console.error(error)
     }
-  };
+  }
 
   // Conditional rendering of loading or error states
   if (loading) {
@@ -78,7 +79,7 @@ export default function Newsletter() {
       <div className="container mx-auto max-w-[1280px]">
         <p className="text-center text-white">Loading...</p>
       </div>
-    );
+    )
   }
 
   if (error) {
@@ -86,7 +87,7 @@ export default function Newsletter() {
       <div className="container mx-auto max-w-[1280px]">
         <p className="text-center text-white">Error: {error.message}</p>
       </div>
-    );
+    )
   }
 
   return (
@@ -136,8 +137,7 @@ export default function Newsletter() {
                 Please Confirm *
               </label>
               <p className="text-[15px] p-2 font-normal text-left decoration-slice">
-                <input type="checkbox" className="me-3" required /> I want to
-                subscribe to all CPG emails
+                <input type="checkbox" className="me-3" required /> I want to subscribe to all CPG emails
               </p>
               <button
                 type="submit"
@@ -148,16 +148,12 @@ export default function Newsletter() {
             </form>
           ) : (
             <div className=" py-10">
-          <h3 className="font-bold text-[24px] text-white">
-            Thanks for subscribing!
-          </h3>
-          <p className="text-white text-[16px]">
-            We appreciate your interest and will keep you updated.
-          </p>
-        </div>
+              <h3 className="font-bold text-[24px] text-white">Thanks for subscribing!</h3>
+              <p className="text-white text-[16px]">We appreciate your interest and will keep you updated.</p>
+            </div>
           )}
         </div>
       </div>
     </div>
-  );
+  )
 }

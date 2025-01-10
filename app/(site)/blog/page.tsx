@@ -79,8 +79,6 @@ const BlogPage = async () => {
   const postData = await fetchDataSecond()
   const data = await fetchData()
 
-  console.log(postData)
-
   return (
     <>
       <main className="md:w-[90%] mx-auto">
@@ -204,7 +202,6 @@ const BlogPage = async () => {
                 day: 'numeric',
               })
 
-              console.log()
               return (
                 <BlogCard
                   index={index}

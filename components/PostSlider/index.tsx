@@ -82,7 +82,7 @@ const CustomSlider = () => {
     title: dataposts.title,
     linkText: 'Learn More',
   }))
-  console.log(sliderData)
+
   return (
     <main>
       <div className="container mx-auto block md:hidden max-w-[1481px]">

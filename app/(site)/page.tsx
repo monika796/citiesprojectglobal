@@ -21,6 +21,7 @@ import NewBannerSlider from '@/components/HeroBanner' // Import client component
 import VideoPopup from '@/components/SecondHomeVideoButton'
 import Head from './head'
 import { HOME_PAGE_QUERY } from '@/queries/queries'
+
 export const revalidate = 60 // revalidate at most every 5 minutes
 
 // export const metadata: Metadata = {

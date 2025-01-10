@@ -34,7 +34,6 @@ const ProgramTestimonial = () => {
     content: slide.programTestimonialDescription.trim(),
   }))
 
-  console.log(testimonialData)
   return (
     <>
       {/* <section className="md:absolute bottom-[-1%] "> */}

@@ -25,8 +25,6 @@ async function fetchData() {
 
 export default async function NewPage() {
   const data = await fetchData()
-
-  console.log(data)
   return (
     <main className="md:w-[100%] mx-auto container">
       <Head data={data} />

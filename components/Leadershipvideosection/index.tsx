@@ -81,7 +81,6 @@ const VideoPlayer = () => {
         const videoElement = document.querySelector('video')
 
         if (videoElement) {
-          console.log('videoElement')
           handleClick(videoElement, setIsPlaying) // Only trigger handleClick if video element is clicked
         }
       }}

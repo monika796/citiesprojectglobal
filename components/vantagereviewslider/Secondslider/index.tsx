@@ -68,14 +68,14 @@ const ReviewSecondSlider = () => {
         const { data } = await client.query({
           query: POSTS_QUERY,
         })
-        console.log(data)
+
         // Limit posts to the first 4
         setPosts(data?.page?.vintagePageFeild?.vintageReviewSlider?.vintageReviewSliderSecondReviewRow || [])
       } catch (error) {
         console.error('Error fetching data:', error)
       }
     }
-    console.log()
+
     fetchData()
   }, [])
 

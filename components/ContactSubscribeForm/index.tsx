@@ -1,31 +1,31 @@
-'use client';
-import client from '@/apollo-client';
-import { useState } from 'react';
-import axios from 'axios';
+'use client'
+import client from '@/apollo-client'
+import { useState } from 'react'
+import axios from 'axios'
 
 const SubscriptionForm = () => {
   // State to handle form submission
-  const [submitted, setSubmitted] = useState(false);
-  const [message, setMessage] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState(false)
+  const [message, setMessage] = useState<string | null>(null)
 
   // State to store form data
   const [formData, setFormData] = useState({
     input_2: '',
     input_3: '',
     subscribe: false, // Checkbox state
-  });
+  })
 
   // Handle form field changes
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = event.target;
+    const { name, value, type, checked } = event.target
     setFormData((prevData) => ({
       ...prevData,
       [name]: type === 'checkbox' ? checked : value,
-    }));
-  };
+    }))
+  }
 
   const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
+    event.preventDefault()
 
     // Here, you could call an API or send the form data as needed.
     // For now, we'll simulate the form submission.
@@ -36,40 +36,37 @@ const SubscriptionForm = () => {
         {
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Basic ${btoa('ck_3b900686e6b6f05a64b49ff09163b1ae35017710:cs_a366847ab722d30837123aac4605cc07c1eeaac1')}`, // Basic Auth with API Key and Secret
+            Authorization: `Basic ${btoa(
+              'ck_3b900686e6b6f05a64b49ff09163b1ae35017710:cs_a366847ab722d30837123aac4605cc07c1eeaac1',
+            )}`, // Basic Auth with API Key and Secret
           },
-        }
-      );
+        },
+      )
 
-      const responseData = response.data;
+      const responseData = response.data
 
       if (!responseData.is_valid) {
         // If the form submission is not valid, show the validation messages
-        const validationMessages = Object.values(responseData.validation_messages).join(', ');
-        setMessage(validationMessages || 'There was an error submitting the form.');
+        const validationMessages = Object.values(responseData.validation_messages).join(', ')
+        setMessage(validationMessages || 'There was an error submitting the form.')
       } else {
         // If the submission is valid, show a success message
-        setMessage('Form submitted successfully!');
+        setMessage('Form submitted successfully!')
       }
 
-      setSubmitted(true); // Set the form as submitted
-      console.log(response);
+      setSubmitted(true) // Set the form as submitted
     } catch (error) {
-      setMessage('There was an error submitting the form.');
-      console.error(error);
+      setMessage('There was an error submitting the form.')
+      console.error(error)
     }
-  };
+  }
 
   return (
     <div className="">
       {submitted ? (
         <div className="text-center py-10">
-          <h3 className="font-bold text-[24px] text-black">
-            Thanks for subscribing!
-          </h3>
-          <p className="text-black text-[16px]">
-            We appreciate your interest and will keep you updated.
-          </p>
+          <h3 className="font-bold text-[24px] text-black">Thanks for subscribing!</h3>
+          <p className="text-black text-[16px]">We appreciate your interest and will keep you updated.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="grid gap-[1px]">
@@ -96,13 +93,8 @@ const SubscriptionForm = () => {
             Please Confirm*
           </label>
           <p className="text-[15px] p-2 font-normal text-left decoration-slice">
-            <input
-              type="checkbox"
-              name="subscribe"
-              checked={formData.subscribe}
-              onChange={handleChange}
-            />
-            I want to subscribe to all CPG emails
+            <input type="checkbox" name="subscribe" checked={formData.subscribe} onChange={handleChange} />I want to
+            subscribe to all CPG emails
           </p>
           <button
             type="submit"
@@ -113,7 +105,7 @@ const SubscriptionForm = () => {
         </form>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default SubscriptionForm;
+export default SubscriptionForm

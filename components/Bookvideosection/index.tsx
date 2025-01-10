@@ -71,7 +71,6 @@ const VideoPlayer = ({ videoUrl = null, videoPoster = null }) => {
 
   const handleClick = (videoElement: HTMLVideoElement, setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>) => {
     if (videoElement) {
-      console.log(videoElement)
       if (videoElement.paused) {
         videoElement.play() // Play the video if it is paused
         setIsPlaying(true) // Set state to true if the video is playing
