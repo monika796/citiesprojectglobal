@@ -206,7 +206,7 @@ const Header = () => {
                       </Link>
 
                       <span
-                        className="absolute z-10 right-0 md:-right-9 top-0 w-10 h-8  flex items-center justify-center"
+                        className="absolute z-10 right-0 md:-right-9 top-0 w-10 h-8 z flex items-center justify-center"
                         onMouseOver={() => setDropdownToggler(!dropdownToggler)}
                         onMouseDown={() => setDropdownToggler(!dropdownToggler)}
                       >

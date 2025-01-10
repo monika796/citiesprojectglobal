@@ -453,7 +453,7 @@ export default async function Home() {
 
       <StoriesSliderHome stories={stories} />
 
-      <Testimonial testimonials={testimonials} />
+      <Testimonial testimonials={testimonials} className="" />
 
       <VideoCarousel videos={videos} />
 
