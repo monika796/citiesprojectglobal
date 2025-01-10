@@ -4,7 +4,7 @@ import Testimonial from '@/components/Testimonial'
 import VideoCarousel from '@/components/videotestemonial'
 import Newsletter from '@/components/Newsletter'
 import PostSlider from '@/components/PostSlider'
-import { useContext } from 'react'
+import { Suspense, useContext } from 'react'
 import { gql, useQuery } from '@apollo/client'
 import { Anton } from 'next/font/google'
 import client from 'apollo-client'
@@ -254,7 +254,7 @@ export default async function Home() {
                 {data.page.sectionHomethird.subtitletextsecond}
               </h5>
               <hr className="w-[38px] md:mx-0 mt-3" />
-              <div className="flex flex-row  md:gap-[10px] gap-[28px] items-center justify-between md:items-start lg:items-end mt-10 md:mt-22">
+              <div className="flex flex-row  md:gap-[10px] gap-[28px] items-center justify-between md:items-start lg:items-end mt-10 md:mt-22  md:flex-wrap-reverse">
                 <Link href={data.page.sectionHomethird.buttonLink2ThirdSection}>
                   {' '}
                   <button className="w-[150px] flex items-center gap-2.5 justify-center   px-1 md:px-3 float-left bg-[#A1CF5F] mt-[10px] h-[40px] rounded-[5px] font-bold text-black text-[14px]">
@@ -282,7 +282,7 @@ export default async function Home() {
               </h3>
               <h5 className="text-[16px] text-black font-bold  mt-2">{data.page.sectionHomethird.subtitletextthird}</h5>
               <hr className="w-[38px] md:mx-0 mt-3 border-black" />
-              <div className="flex flex-row  md:gap-[10px] gap-[28px] items-center  justify-between md:items-start lg:items-end  mt-10 md:mt-22">
+              <div className="flex flex-row  md:gap-[10px] gap-[28px] items-center  justify-between md:items-start lg:items-end  mt-10 md:mt-22 md:flex-wrap-reverse">
                 <Link href={data.page.sectionHomethird.buttonLink3ThirdSection}>
                   {' '}
                   <button className="w-[150px] flex items-center gap-2.5 justify-center  px-1  md:px-3 float-left bg-[#FFFFFF] mt-[10px] h-[40px] rounded-[5px] font-bold text-black text-[14px]">
@@ -311,9 +311,10 @@ export default async function Home() {
       <div className=" relative container  mx-auto max-w-[1580px]">
         <div className="absolute inset-0 bg-opacity-50 backdrop-blur-md z-1"></div>
         <div className="relative container w-[100%] max-w-[1480px] mx-auto pt-[30px] z-9 md:pt-[150px] md:pb-[100px]">
-          <h1 className=" px-5 md:px-0 text-[25px] md:max-w-[1062px] md:mx-auto  md:text-[48px] pb-5 mt-10 md:mt-0 md:pb-15 text-black font-bold leading-[30.09px] md:leading-[46.09px] text-center">
-            {data.page.homefourtsection.mainheadingfourth}
-          </h1>
+          <h1
+            className=" px-5 md:px-0 text-[25px] md:max-w-[1062px] md:mx-auto  md:text-[48px] pb-5 mt-10 md:mt-0 md:pb-15 text-black font-bold leading-[30.09px] md:leading-[46.09px] text-center"
+            dangerouslySetInnerHTML={{ __html: data.page.homefourtsection.mainheadingfourth }}
+          />
 
           <div className="md:pl-20 flex">
             <ThreeStatement
@@ -446,9 +447,17 @@ export default async function Home() {
         </section>
       </div>
 
-      <PostSlider />
-      <Testimonial />
-      <VideoCarousel />
+      <Suspense fallback={<div>Loading stories...</div>}>
+        <PostSlider />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading testimonials...</div>}>
+        <Testimonial />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading videos...</div>}>
+        <VideoCarousel />
+      </Suspense>
 
       <Newsletter />
     </main>

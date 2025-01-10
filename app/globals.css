@@ -307,3 +307,12 @@ pre {
 h2.wp-block-heading {
   @apply my-4 text-lg font-bold leading-tight;
 }
+.gallery {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4;
+}
+.gallery-item {
+  @apply overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out;
+}
+.gallery-icon img {
+  @apply w-full h-auto scale-125;
+}

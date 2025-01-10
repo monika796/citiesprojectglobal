@@ -1,45 +1,45 @@
-"use client";
-import SectionHeader from "../Common/SectionHeader";
+'use client'
+import SectionHeader from '../Common/SectionHeader'
 
 // Import Autoplay and Pagination from Swiper
-import { Autoplay, Pagination, EffectFade } from "swiper/modules";
-import "swiper/css";
-import 'swiper/css/effect-fade';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, EffectFade } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/autoplay'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { motion } from "framer-motion";
-import SingleTestimonial from "./SingleTestimonial";
+import { motion } from 'framer-motion'
+import SingleTestimonial from './SingleTestimonial'
 // import { testimonialData } from "./testimonialData";
-import { gql, useQuery } from '@apollo/client';
-const POSTS_QUERY = gql `
-query {
-  page(id: "cG9zdDoxOTI=") {
-    testimonialSlider {
-      slides {
-        message
-        authorname
-        authordescription
+import { gql, useQuery } from '@apollo/client'
+const POSTS_QUERY = gql`
+  query {
+    page(id: "cG9zdDoxOTI=") {
+      testimonialSlider {
+        slides {
+          message
+          authorname
+          authordescription
+        }
       }
     }
   }
-}
-`;
+`
 
 const Testimonial = () => {
-  const {loading, error, data } = useQuery(POSTS_QUERY);
+  const { loading, error, data } = useQuery(POSTS_QUERY)
 
-  if (loading) return ;
-  if (error) return <p>Error: {error.message}</p>;
+  if (loading) return
+  if (error) return <p>Error: {error.message}</p>
   const testimonialData = data.page.testimonialSlider.slides.map((slide, index) => ({
     id: index + 1,
     name: slide.authorname,
-    designation: slide.authordescription.replace(/[()]/g, ""), // Remove parentheses for clarity
+    designation: slide.authordescription.replace(/[()]/g, ''), // Remove parentheses for clarity
     image: `image${index + 1}`, // Placeholder for images
     content: slide.message.trim(),
-  }));  
+  }))
   return (
     <>
       <section className="testimonial max-w-[1480px] mx-auto bg-[#F5F5F5] min-h-[655px] flex items-center justify-center mb-20">
@@ -73,7 +73,8 @@ const Testimonial = () => {
               pagination={{
                 clickable: true,
               }}
-              // effect={'fade'}
+              loop={true}
+              effect={'fade'}
               modules={[Autoplay, Pagination]}
               breakpoints={{
                 0: {
@@ -85,7 +86,6 @@ const Testimonial = () => {
               }}
             >
               {testimonialData.map((review) => (
-               
                 <SwiperSlide key={review?.id}>
                   <SingleTestimonial review={review} />
                 </SwiperSlide>
@@ -94,8 +94,21 @@ const Testimonial = () => {
           </div>
         </motion.div>
       </section>
+      <style jsx>
+        {`
+          .swiper-slide-active {
+            opacity: 1 !important;
+          }
+          .swiper-slide-next {
+            opacity: 0.5 !important;
+          }
+          .swiper-slide-prev {
+            opacity: 0.5 !important;
+          }
+        `}
+      </style>
     </>
-  );
-};
+  )
+}
 
-export default Testimonial;
+export default Testimonial

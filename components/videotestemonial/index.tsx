@@ -5,7 +5,7 @@ import React, { useState, useRef, useEffect, Suspense } from 'react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper/modules'
 import ReactPlayer from 'react-player'
 import { motion } from 'framer-motion'
@@ -40,8 +40,28 @@ const POSTS_QUERY = gql`
 export default function VideoCarousel() {
   const { loading, error, data } = useQuery(POSTS_QUERY)
   const [playingVideos, setPlayingVideos] = useState<{ [key: number]: boolean }>({}) // State to track playing state for each video
+  const [isPlaying, setIsPlaying] = useState(true) // Start autoplay by default
 
-  if (loading) return <div className="container max-w-[1481px] mx-auto">loading</div>
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const swiperRef = useRef<SwiperRef>(null) // Fix the type error by using 'typeof Swiper'
+  const [hasStarted, setHasStarted] = useState(false) // Track if the video has started
+  const handleToggle = () => {
+    if (!swiperRef.current) return
+
+    if (isPlaying) {
+      swiperRef.current.swiper.autoplay.stop()
+    } else {
+      swiperRef.current.swiper.autoplay.start()
+    }
+    setIsPlaying(!isPlaying) // Toggle button state
+  }
+  const handleLoadedMetadata = () => {
+    if (videoRef.current instanceof HTMLVideoElement && !hasStarted) {
+      videoRef.current.currentTime = 5 // Start at 5 seconds only when it loads
+    }
+  }
+
+  if (loading) return <div className="container max-w-[1481px] mx-auto">Loading videos...</div>
   if (error) return <p>Error: {error.message}</p>
 
   // useEffect(() => {
@@ -131,24 +151,28 @@ export default function VideoCarousel() {
               whileInView="visible"
               transition={{ duration: 1, delay: 0.1 }}
               viewport={{ once: true }}
-              className="animate_top mx-auto"
+              className="animate_top mx-auto relative"
             >
               {/* Video Carousel */}
               <div className="swiper video-carousel mb-20 pb-22.5">
                 <Swiper
+                  ref={swiperRef}
                   modules={[Autoplay, Pagination]}
                   spaceBetween={50}
                   slidesPerView={3}
                   draggable={true}
                   pagination={{
-                    el: '#containerForBullets',
+                    el: '#containerForBullets-video-home',
                     clickable: true,
                     renderBullet: (index, className) =>
                       `<span class="${className} rounded-full bg-[#a0cf5f] opacity-50 transition-transform duration-300 transform hover:scale-125"></span>`,
                   }}
                   autoplay={{
-                    delay: 9000,
+                    delay: 8000,
                     disableOnInteraction: true,
+                  }}
+                  onSwiper={(swiper) => {
+                    swiper.pagination.init()
                   }}
                   breakpoints={{
                     0: {
@@ -175,7 +199,15 @@ export default function VideoCarousel() {
                           />
                         )} */}
 
-                            <video className="w-full rounded-lg">
+                            <video
+                              className="w-full rounded-lg"
+                              // onLoadedMetadata={handleLoadedMetadata} // Set start time on load
+                              onLoadedMetadata={(e) => {
+                                const videoElement = e.target as HTMLVideoElement
+                                videoElement.currentTime = 5 // Start the video at 5 seconds
+                              }}
+                              ref={videoRef}
+                            >
                               <source src={video?.videoUrl} type="video/mp4" />
                               Your browser does not support the video tag.
                             </video>
@@ -257,29 +289,65 @@ export default function VideoCarousel() {
                       </SwiperSlide>
                     ))}
                 </Swiper>
-                <div id="containerForBullets" className="flex justify-center space-x-2 mt-4"></div>
+                <div id="containerForBullets-video-home" className="flex justify-center space-x-2 mt-4"></div>
               </div>
+              <button
+                onClick={handleToggle}
+                className="absolute bottom-0 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700 transition-all z-10"
+                aria-label={isPlaying ? 'Pause' : 'Play'}
+              >
+                {isPlaying ? (
+                  // Pause Icon
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M10 4H6v16h4V4zm8 0h-4v16h4V4z"
+                    />
+                  </svg>
+                ) : (
+                  // Play Icon
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3l14 9-14 9V3z" />
+                  </svg>
+                )}
+              </button>
             </motion.div>
           </div>
         </section>
       </div>
       <style>
         {`
-        .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
-    display: none;
-}
-          .swiper-pagination {
-            bottom: -20px; 
+          #containerForBullets-video-home .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+            display: none;
+          }
+          #containerForBullets-video-home.swiper-pagination {
+            bottom: -20px;
           }
 
-          .swiper-pagination-bullet {
-            background: #a0cf5f; 
+          #containerForBullets-video-home .swiper-pagination-bullet {
+            background: #a0cf5f;
             opacity: 0.5;
+            width: 10px !important;
           }
 
-          .swiper-pagination-bullet-active {
+          #containerForBullets-video-home .swiper-pagination-bullet-active {
             background: #8fb34f;
             opacity: 1;
+            width: 10px !important;
           }
         `}
       </style>

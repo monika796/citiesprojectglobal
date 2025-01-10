@@ -10,7 +10,7 @@ import Image from 'next/image'
 import { gql, useQuery } from '@apollo/client'
 const POSTS_QUERY = gql`
   query {
-    posts {
+    posts(where: { orderby: { field: DATE, order: DESC }, categoryName: "stories-of-transformation" }) {
       nodes {
         featuredImage {
           node {
@@ -20,6 +20,7 @@ const POSTS_QUERY = gql`
         title
         id
         slug
+        date
       }
     }
     page(id: "cG9zdDoxNg==") {
@@ -29,48 +30,11 @@ const POSTS_QUERY = gql`
     }
   }
 `
-// const sliderData = [
-//   {
-//     id: "1",
-//     imgSrc: "/46.png",
-//     date: "5 Sep 2024",
-//     title: "Receiving and Reflecting God’s Inherent Love for Us",
-//     linkText: "Learn More",
-//   },
-//   {
-//     id: "2",
-//     imgSrc: "/46.png",
-//     date: "5 Sep 2024",
-//     title: "Healing the Trauma of Homelessness Through Affordable Housing",
-//     linkText: "Learn More",
-//   },
-//   {
-//     id: "3",
-//     imgSrc: "/47.png",
-//     date: "5 Sep 2024",
-//     title: "In the Midst of War, Love Comes Through Action",
-//     linkText: "Learn More",
-//   },
-//   {
-//     id: "5",
-//     imgSrc: "/46.png",
-//     date: "5 Sep 2024",
-//     title: "Healing the Trauma of Homelessness Through Affordable Housing",
-//     linkText: "Learn More",
-//   },
-//   {
-//     id: "4",
-//     imgSrc: "/47.png",
-//     date: "5 Sep 2024",
-//     title: "In the Midst of War, Love Comes Through Action",
-//     linkText: "Learn More",
-//   },
-// ];
 
 const CustomSlider = () => {
   const { loading, error, data } = useQuery(POSTS_QUERY)
 
-  if (loading) return
+  if (loading) return <div className="container max-w-[1481px] mx-auto">Loading stories...</div>
   if (error) return <p>Error: {error.message}</p>
 
   const sliderData = data.posts?.nodes.map((dataposts, index) => ({
@@ -78,13 +42,17 @@ const CustomSlider = () => {
     slug: dataposts.slug,
     post_id: dataposts.id,
     imgSrc: dataposts.featuredImage?.node?.link,
-    date: '5 Sep 20241',
+    date: new Date(dataposts.date).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }),
     title: dataposts.title,
     linkText: 'Learn More',
   }))
 
   return (
-    <main>
+    <section>
       <div className="container mx-auto block md:hidden max-w-[1481px]">
         <h2 className="font-inter md:text-[48px] text-[30px] text font-bold leading-[58.09px]  p-8 text-black text-left text-center decoration-skip-ink-none">
           {' '}
@@ -116,10 +84,10 @@ const CustomSlider = () => {
                 centeredSlides={true}
                 spaceBetween={30}
                 slidesPerView={3}
-                // autoplay={{
-                //   delay: 2500,
-                //   disableOnInteraction: false,
-                // }}
+                autoplay={{
+                  delay: 6000,
+                  disableOnInteraction: false,
+                }}
                 pagination={{
                   clickable: true,
                 }}
@@ -176,7 +144,7 @@ const CustomSlider = () => {
         </section>
       </div>
 
-      <div className="container mx-auto max-w-[1481px] md:block hidden mt-[100px] story-slider">
+      <div className="stories-transformation container mx-auto max-w-[1481px] md:block hidden mt-[100px] story-slider">
         <h2 className="font-inter md:text-[48px] text-[30px] text font-bold leading-[58.09px] p-8 text-black text-left text-center decoration-skip-ink-none">
           {data.page.homefourtsection.postsliderheading}
         </h2>
@@ -206,12 +174,15 @@ const CustomSlider = () => {
                 centeredSlides={true}
                 spaceBetween={30}
                 slidesPerView={3}
-                // autoplay={{
-                //   delay: 3000,
-                //   disableOnInteraction: false,
-                // }}
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+                }}
                 pagination={{
+                  el: '#containerForBullets-stories',
                   clickable: true,
+                  renderBullet: (index, className) =>
+                    `<span class="${className} rounded-full bg-[#a0cf5f] opacity-50 transition-transform duration-300 transform hover:scale-125"></span>`,
                 }}
                 breakpoints={{
                   0: {
@@ -241,7 +212,7 @@ const CustomSlider = () => {
                             alt={'Default title'} // Provide a fallback title
                           />
                         </div>
-                        <p className="absolute top-11  left-10 text-white bg-black px-2 py-0 rounded-full text-sm">
+                        <p className="absolute top-3  left-3,m text-white bg-black px-2 py-0 rounded-full text-sm">
                           {slide.date}
                         </p>
                         <h2 className="text-center px-3 py-3 text-black font-semibold text-base">
@@ -263,19 +234,20 @@ const CustomSlider = () => {
                   </SwiperSlide>
                 ))}
               </Swiper>
+              <div id="containerForBullets-stories" className="flex justify-center space-x-2 mt-4"></div>
             </div>
           </motion.div>
         </section>
       </div>
-      <style jsx>{`
-        .swiper-slide-custom {
+      <style>{`
+        .stories-transformation .swiper-slide-custom {
           transition: transform 0.3s ease;
         }
-        .swiper-slide-active {
-          transform: scale(1.1); /* Make the center slide 10% larger */
+        .stories-transformation .swiper-slide-active {
+          transform: scale(1); /* Make the center slide 10% larger */
         }
-        .swiper-slide:not(.swiper-slide-active) {
-          transform: scale(0.9); /* Make other slides slightly smaller */
+        .stories-transformation .swiper-slide:not(.swiper-slide-active) {
+          transform: scale(0.8); /* Make other slides slightly smaller */
         }
         span.swiper-pagination-bullet.swiper-pagination-bullet-active {
           width: 49px;
@@ -288,7 +260,7 @@ const CustomSlider = () => {
           border-radius: 0;
         }
       `}</style>
-    </main>
+    </section>
   )
 }
 
