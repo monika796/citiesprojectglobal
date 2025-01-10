@@ -41,7 +41,7 @@ export default function VideoCarousel() {
   const { loading, error, data } = useQuery(POSTS_QUERY)
   const [playingVideos, setPlayingVideos] = useState<{ [key: number]: boolean }>({}) // State to track playing state for each video
 
-  if (loading) return <div>loading</div>
+  if (loading) return <div className="container max-w-[1481px] mx-auto">loading</div>
   if (error) return <p>Error: {error.message}</p>
 
   // useEffect(() => {
@@ -139,6 +139,7 @@ export default function VideoCarousel() {
                   modules={[Autoplay, Pagination]}
                   spaceBetween={50}
                   slidesPerView={3}
+                  draggable={true}
                   pagination={{
                     el: '#containerForBullets',
                     clickable: true,
@@ -263,6 +264,26 @@ export default function VideoCarousel() {
           </div>
         </section>
       </div>
+      <style>
+        {`
+        .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+    display: none;
+}
+          .swiper-pagination {
+            bottom: -20px; 
+          }
+
+          .swiper-pagination-bullet {
+            background: #a0cf5f; 
+            opacity: 0.5;
+          }
+
+          .swiper-pagination-bullet-active {
+            background: #8fb34f;
+            opacity: 1;
+          }
+        `}
+      </style>
     </Suspense>
   )
 }
