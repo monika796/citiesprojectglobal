@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import MainComponent from '@/components/LightboxPdf'
 
-const FifthSection = ({ data, Video_gif, videoUrl = null }) => {
+export default function HomeAboutTheBook({ data, Video_gif, videoUrl = null }) {
   const [isPlaying, setIsPlaying] = useState(false)
   const [Played, setPlayed] = useState(false)
   const videoRef = useRef<HTMLVideoElement | null>(null)
@@ -61,7 +61,7 @@ const FifthSection = ({ data, Video_gif, videoUrl = null }) => {
         style={{ backgroundColor: 'rgb(3, 4, 2)' }}
       >
         {/* Left Content */}
-        <div className="md:w-full lg:w-5/12 w-full p-[40px] md:p-[50px] mt-10 md:mt-0">
+        <div className="md:w-full lg:w-5/12 w-full p-[40px] pb-0 md:p-[50px] mt-10 md:mt-0">
           <span className="text-[18px] bg-[#fff] text-black font-bold mx-auto md:mx-0 text-center w-[45%] rounded-[20px] px-4 py-1 font-bold">
             {data.page.homefifthsection.fifthfirstsubtitle}
           </span>
@@ -73,18 +73,42 @@ const FifthSection = ({ data, Video_gif, videoUrl = null }) => {
           </p>
           <Image
             src={data.page.homefifthsection.authorimage?.node?.link}
-            className=" mb-10 mx-unset mt-10 md:mt-0 md:mx-0 "
+            className="md:inline block mx-auto"
             alt="image"
             width={232}
             height={220}
           />
-          <h5 className="text-[30px] text-white md:text-left text-left font-bold pb-2 md:pb-3">
-            {data.page.homefifthsection.authortitle}
-          </h5>
-          <h5
+          <div className="hidden md:block">
+            <Link href="/book" target="_blank">
+              <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold py-3 px-5 rounded-md hover:bg-[#A1CF5F] hover:text-black transition-all duration-300 scale-100 hover:scale-105">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+                  <g
+                    fill="none"
+                    fillRule="evenodd"
+                    stroke="#000"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                  >
+                    <path d="M1 13 13 1M4 1h9v9"></path>
+                  </g>
+                </svg>
+              </button>
+            </Link>
+          </div>
+          <div className="flex flex-col md:flex-row gap-10 hidden">
+            <h5 className="text-[30px] text-white md:text-left text-left font-bold pb-2 md:pb-3">
+              Bob Varney <div className="text-[16px] font-normal">CEO & President</div>
+            </h5>
+            <h5 className="text-[30px] text-white md:text-left text-left font-bold pb-2 md:pb-3">
+              Hugh Brandt <div className="text-[16px] font-normal">Global City Consultant</div>
+            </h5>
+          </div>
+          {/* <h5
             className="text-[16px] text-white md:text-left text-left font-normal"
             dangerouslySetInnerHTML={{ __html: data.page.homefifthsection.authordesignation }}
-          />
+          /> */}
         </div>
 
         {/* Right Content */}
@@ -139,7 +163,7 @@ const FifthSection = ({ data, Video_gif, videoUrl = null }) => {
             )}
           </div>
           {/* Buttons */}
-          {!isPlaying && !isMobile && (
+          {!isPlaying && !isMobile && false && (
             <div className="md:float-right  md:mr-3 mt-5 z-999 md:absolute bottom-0 right-5">
               <Link href={data.page.homefifthsection.buttonlinkone} target="_blank">
                 <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">
@@ -184,7 +208,7 @@ const FifthSection = ({ data, Video_gif, videoUrl = null }) => {
             </div>
           )}
 
-          {isMobile && (
+          {isMobile && false && (
             <div className="md:float-right  md:mr-3 mt-5 z-999 md:absolute bottom-3 right-0">
               <Link href={data.page.homefifthsection.buttonlinkone} target="_blank">
                 <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold p-2 rounded-[5px]">
@@ -227,10 +251,28 @@ const FifthSection = ({ data, Video_gif, videoUrl = null }) => {
               </div>
             </div>
           )}
+
+          <div className="md:hidden block mt-20 mb-10">
+            <Link href="/book" target="_blank">
+              <button className="mx-auto mt-[21px] md:mx-0 md:mt-0 flex items-center gap-3 text-black bg-[#A1CF5F] font-bold py-3 px-5 rounded-md hover:bg-[#A1CF5F] hover:text-black transition-all duration-300 scale-100 hover:scale-105">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
+                  <g
+                    fill="none"
+                    fillRule="evenodd"
+                    stroke="#000"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                  >
+                    <path d="M1 13 13 1M4 1h9v9"></path>
+                  </g>
+                </svg>
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
   )
 }
-
-export default FifthSection

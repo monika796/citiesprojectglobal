@@ -210,19 +210,20 @@ pre {
   background: #fff;
 }
 .swiper-slider .swiper-pagination-bullet-active {
-  background: #a1cf5f;
-}
-
-.newstory-slider .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-  background: #fff !important;
-  width: 50px !important;
-  border-radius: 0px !important;
-}
-.newstory-slider .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
   background: #a1cf5f !important;
 }
+
+/* .newstory-slider .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  background: #fff !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 100px !important;
+} */
+/* .newstory-slider .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  background: #a0cf5f !important;
+} */
 .video-gif {
   position: absolute;
   top: 28%;
