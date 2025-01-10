@@ -16,7 +16,7 @@ import Video_gif from '/public/video.gif'
 import Demo from '/public/84.png'
 import Image from 'next/image'
 import Link from 'next/link'
-import HomeAboutTheBook from '@/components/HomeAboutTheBook'
+import HomeAboutTheBook from '@/components/HomeAboutthebook'
 import NewBannerSlider from '@/components/HeroBanner' // Import client component
 import VideoPopup from '@/components/SecondHomeVideoButton'
 import Head from './head'
