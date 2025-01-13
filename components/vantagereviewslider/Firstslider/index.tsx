@@ -91,6 +91,10 @@ const ReviewFirstSlider = () => {
             }}
             pagination={{
               clickable: false,
+              el: '#vantage-review-slider-pagination-container',
+              renderBullet: function (index, className) {
+                return '<span class="' + className + '"></span>'
+              },
             }}
             keyboard={{ enabled: true }}
             mousewheel={{ forceToAxis: true }}
@@ -109,11 +113,15 @@ const ReviewFirstSlider = () => {
                 slidesPerView: 1, // 1 slide on mobile screens
               },
             }}
-            className="w-full h-auto"
+            className="w-full h-auto vantage-review-slider "
           >
             {posts.map((testimonial, index) => (
-              <SwiperSlide key={index} className="flex justify-center items-center text-lg bg-white">
-                <div key={index} className="p-10 min-h-[250px] bg-[#F5F5F5] text-black rounded-lg">
+              <SwiperSlide
+                key={index}
+                className="flex justify-center items-center text-lg bg-white
+              "
+              >
+                <div key={index}>
                   <div className="flex mb-4">
                     <div className="mr-4">
                       <Image
@@ -137,6 +145,10 @@ const ReviewFirstSlider = () => {
                 </div>
               </SwiperSlide>
             ))}
+            <div
+              id="vantage-review-slider-pagination-container"
+              className="flex justify-center items-center pt-10"
+            ></div>
           </Swiper>
         </div>
       </section>
@@ -144,7 +156,7 @@ const ReviewFirstSlider = () => {
       {/* Custom CSS for pagination */}
       <style>
         {`
-        
+
           .swiper-pagination {
             bottom: -20px; 
           }

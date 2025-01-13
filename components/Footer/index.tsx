@@ -105,7 +105,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/vantage" className="underline text-black ">
+                  <Link href="/vantage-point" className="underline text-black ">
                     VantagePoint™
                   </Link>
                 </li>

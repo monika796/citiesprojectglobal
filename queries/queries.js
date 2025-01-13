@@ -866,3 +866,191 @@ export const ARTICLES_QUERY = gql`
     }
   }
 `
+
+export const VANTAGEPOINT_QUERY = gql`
+  query MyQuery2 {
+    page(id: "cG9zdDo5MzE=") {
+      seoMetaFields {
+        ...SeoMetaFields
+      }
+      vantageForm {
+        fieldGroupName
+        vantageFormMainHeading
+        vantageFormSecondSectionSecondColumnDescription
+        vantageFormSecondSectionSecondColumnHeading
+        vantageFormSecondSectionSecondColumnPrice
+      }
+      vintagePageFeild {
+        vintageEightSection {
+          vintageEightSectionBackgroundImage {
+            node {
+              link
+            }
+          }
+          vintageEightSectionDescription
+          vintageEightSectionMainHeading
+          vintageEightSectionMainHeading2
+        }
+        vintageFifthSection {
+          vintageFifthSectionLeftImage {
+            node {
+              link
+            }
+          }
+          vintageFifthSectionMainDescription
+          vintageFifthSectionMainHeading
+          vintageFifthSectionRightImage {
+            node {
+              link
+            }
+          }
+        }
+        vintageFourthSection {
+          vintageFourthSectionButtonLink
+          vintageFourthSectionButtonText
+          vintageFourthSectionDescription
+          vintageFourthSectionHeading
+          vintageFourthSectionLeftImage {
+            node {
+              link
+            }
+          }
+          vintageFourthSectionRightImage {
+            node {
+              link
+            }
+          }
+        }
+        vintageMainDescriptionRight
+        vintageMainHeading
+        vintageMainRightImage {
+          node {
+            link
+          }
+        }
+        vintageNinthSection {
+          vintageNinthSectionLeftSectionImage {
+            node {
+              link
+            }
+          }
+          vintageNinthSectionRightSectionDescription
+          vintageNinthSectionRightSectionMainHeading
+          vintageNinthSectionRightSectionRowFirstImage {
+            node {
+              link
+            }
+          }
+          vintageNinthSectionRightSectionRowSecondDescription
+          vintageNinthSectionRightSectionRowSecondHeading
+        }
+        vintageReviewSlider {
+          vintageReviewSliderFirstReviewRow {
+            vintageReviewSliderFirstUserImage {
+              node {
+                link
+              }
+            }
+            vintageReviewSliderReviewFirstReview
+            vintageReviewSliderReviewFirstUserName
+            vintageReviewSliderReviewFirstUserStatus
+          }
+          vintageReviewSliderMainDescription
+          vintageReviewSliderMainHeading
+          vintageReviewSliderSecondReviewRow {
+            vintageReviewSliderReviewSecondReview
+            vintageReviewSliderReviewSecondUserImage {
+              node {
+                link
+              }
+            }
+            vintageReviewSliderReviewSecondUserName
+            vintageReviewSliderReviewSecondUserStatus
+          }
+        }
+        vintageSecondSection {
+          vintageSecondSectionBackgroundImage {
+            node {
+              link
+            }
+          }
+          vintageSecondSectionLeftText
+          vintageSecondSectionRightCardButtonLink
+          vintageSecondSectionRightCardButtonText
+          vintageSecondSectionRightCardDescription
+          vintageSecondSectionRightCardHeading
+          vintageSecondSectionRightCardHeading2
+          vintageSecondSectionRightCardPrice
+        }
+        vintageSeventhSection {
+          vintageSeventhSectionFirstColumnImage {
+            node {
+              link
+            }
+          }
+          vintageSeventhSectionLastRowContent {
+            vintageSeventhSectionLastRowMainHeading
+            vintageSeventhSectionLastRowContentGroups {
+              vintageSeventhSectionLastRowContentFirstColumnDescription
+              vintageSeventhSectionLastRowContentFirstColumnHeading
+              vintageSeventhSectionLastRowContentSecondColumnSession1
+              vintageSeventhSectionLastRowContentSecondColumnSession2
+              vintageSeventhSectionLastRowContentSecondColumnSession3
+            }
+          }
+          vintageSeventhSectionMainHeading
+          vintageSeventhSectionSecondColumnBlackBoxButtonLink
+          vintageSeventhSectionSecondColumnBlackBoxButtonText
+          vintageSeventhSectionSecondColumnBlackBoxDescription
+          vintageSeventhSectionSecondColumnBlackBoxHeading
+          vintageSeventhSectionSecondColumnDescription
+          vintageSeventhSectionThirdColumnImage {
+            node {
+              link
+            }
+          }
+        }
+        vintageTenthSection {
+          vintageTenthSectionFirstColumnImage {
+            node {
+              link
+            }
+          }
+          vintageTenthSectionFourthColumnImage {
+            node {
+              link
+            }
+          }
+          vintageTenthSectionSecondColumnMainDescription
+          vintageTenthSectionSecondColumnMainHeading
+          vintageTenthSectionSecondColumnMainPrice
+          vintageTenthSectionThirdColumnButtonLink
+          vintageTenthSectionThirdColumnButtonText
+          vintageTenthSectionThirdColumnText
+        }
+        vintageThirdSection {
+          vintageThirdSectionMainDescription
+          vintageThirdSectionMainHeading
+          vintageThirdSectionRowFirstImage {
+            node {
+              link
+            }
+          }
+          vintageThirdSectionRowSecondDescription
+          vintageThirdSectionRowSecondHeading
+          vintageThirdSectionRowSecondImage {
+            node {
+              link
+            }
+          }
+          vintageThirdSectionRowThirdImage {
+            node {
+              link
+            }
+          }
+        }
+      }
+    }
+  }
+  ${SEO_FRAGMENT}
+`
