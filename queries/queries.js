@@ -4,6 +4,7 @@ import { SEO_FRAGMENT } from './fragments'
 export const HOME_PAGE_QUERY = gql`
   query {
     page(id: "cG9zdDoxNg==") {
+      id
       seoMetaFields {
         ...SeoMetaFields
       }
@@ -209,6 +210,7 @@ export const HOME_PAGE_QUERY = gql`
 export const ABOUT_US_PAGE_QUERY = gql`
   query {
     page(id: "cG9zdDoyNjY=") {
+      id
       seoMetaFields {
         ...SeoMetaFields
       }
@@ -340,6 +342,7 @@ export const ABOUT_US_PAGE_QUERY = gql`
 export const BOOK_PAGE_QUERY = gql`
   query Book {
     page(id: "cG9zdDo0MzM=") {
+      id
       seoMetaFields {
         ...SeoMetaFields
       }
@@ -434,6 +437,7 @@ export const BOOK_PAGE_QUERY = gql`
 export const LEADERSHIP_PAGE_QUERY = gql`
   query {
     page(id: "cG9zdDo2MDg=") {
+      id
       seoMetaFields {
         ...SeoMetaFields
       }
@@ -758,6 +762,7 @@ export const HOME_VIDEO_QUERY = gql`
 export const PROGRAM_PAGE_QUERY = gql`
   query {
     page(id: "cG9zdDozMjY=") {
+      id
       seoMetaFields {
         ...SeoMetaFields
       }
@@ -812,6 +817,7 @@ export const PROGRAM_TESTIMONIAL_QUERY = gql`
 export const ARTICLES_PAGE_QUERY = gql`
   query MyQuery2 {
     page(id: "cG9zdDo1MzQ=") {
+      id
       seoMetaFields {
         ...SeoMetaFields
       }
@@ -870,6 +876,7 @@ export const ARTICLES_QUERY = gql`
 export const VANTAGEPOINT_QUERY = gql`
   query MyQuery2 {
     page(id: "cG9zdDo5MzE=") {
+      id
       seoMetaFields {
         ...SeoMetaFields
       }
@@ -1053,4 +1060,22 @@ export const VANTAGEPOINT_QUERY = gql`
     }
   }
   ${SEO_FRAGMENT}
+`
+
+export const HOME_HERO_NEWS_QUERY = gql`
+  query {
+    posts(where: { tag: "featured" }) {
+      nodes {
+        featuredImage {
+          node {
+            link
+          }
+        }
+        title
+        id
+        databaseId
+        slug
+      }
+    }
+  }
 `

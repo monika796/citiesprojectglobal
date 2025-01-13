@@ -1,5 +1,4 @@
 'use client'
-import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Keyboard, Mousewheel, Autoplay } from 'swiper/modules'
 import Image from 'next/image'
@@ -9,56 +8,9 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
-import { gql } from '@apollo/client'
-import client from 'apollo-client'
-
-const POSTS_QUERY = gql`
-  query {
-    posts {
-      nodes {
-        featuredImage {
-          node {
-            link
-          }
-        }
-        title
-        id
-        slug
-      }
-    }
-  }
-`
-
-interface Post {
-  featuredImage?: {
-    node?: {
-      link: string
-    }
-  }
-  title: string
-  id: string
-  slug: string
-}
-
-const SwiperSection = () => {
-  const [posts, setPosts] = useState<Post[]>([])
-
-  // Fetch data with Apollo client
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const { data } = await client.query({
-          query: POSTS_QUERY,
-        })
-        // Limit posts to the first 4
-        setPosts(data?.posts?.nodes?.slice(0, 4) || [])
-      } catch (error) {
-        console.error('Error fetching data:', error)
-      }
-    }
-
-    fetchData()
-  }, [])
+const SwiperSection = ({ data }: { data: any }) => {
+  console.log('posts', data)
+  const posts = data?.posts?.nodes?.slice(0, 4) || []
 
   return (
     <>
@@ -96,8 +48,8 @@ const SwiperSection = () => {
                       alt={post.title || 'Default title'} // Provide a fallback title
                     />
                   </div>
-                  <Link href={`/articles/${post.slug}`}>
-                    <div className="w-2/3 grid p-2">
+                  <Link href={`/articles/${post.slug}`} className="w-2/3">
+                    <div className="grid p-2">
                       <div>
                         <p className="inline px-2 py-1 text-[11px] bg-[#000000] uppercase h-auto text-white font-bold text-center rounded-[20px] ">
                           News
