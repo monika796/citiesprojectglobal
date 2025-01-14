@@ -155,7 +155,7 @@ const Contact = async (): Promise<JSX.Element> => {
               <Image
                 width={1000}
                 height={1000}
-                className="md:absolute bottom-0"
+                className="md:absolute top-30"
                 alt=""
                 src={fields.thirdSectionLeftImage?.node?.link || '/default-image.png'}
               />
@@ -167,6 +167,7 @@ const Contact = async (): Promise<JSX.Element> => {
               <h2 className="font-bold text-black  mx-auto text-center    md:text-[38px] text-[25px] leading-tight mb-4">
                 {fields.thirdSectionCenterHeading}
               </h2>
+              <Image width={1000} height={1000} src={'/25.png'} className="" alt="" />
               <p className="text-[#000000]  md:w-[80%] md:text-[18px] mx-auto text-center ">
                 {fields.thirdSectionCenterSubHeading}
               </p>
@@ -194,7 +195,7 @@ const Contact = async (): Promise<JSX.Element> => {
                   <MainComponent
                     extraclass=""
                     buttonText={fields.thirdSectionCenterSecondButton} // Pass dynamic text as prop
-                    pdfUrl="/SampleChapter.pdf#scrollbar=0"
+                    pdfUrl="api/proxy/"
                     // Pass the dynamic PDF URL
                   />
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" id="arrow">
@@ -218,7 +219,7 @@ const Contact = async (): Promise<JSX.Element> => {
                 width={1000}
                 height={1000}
                 src={fields.thirdSectionRightImage?.node?.link || '/default-image.png'}
-                className="md:absolute top-0 right-0"
+                className="md:absolute top-30 right-0"
                 alt=""
               />
             </div>
