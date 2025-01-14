@@ -50,9 +50,9 @@ const page = async () => {
                     ?.node?.link
                 }
                 alt="Group Discussion"
-                width={337}
-                height={247}
-                className=" object-cover w-full"
+                width={1000}
+                height={1000}
+                className=" object-cover w-full rounded-md"
               />
             </div>
 
@@ -80,8 +80,8 @@ const page = async () => {
                     ?.node?.link
                 }
                 alt="Woman in business"
-                width={500}
-                height={300}
+                width={1000}
+                height={1000}
                 className="rounded-md w-full"
               />
             </div>
@@ -214,21 +214,18 @@ const page = async () => {
           {/* Card Container */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="bg-[#F5F5F5] p-6 lg:max-w-[355px]">
+            <div className="bg-[#F5F5F5] p-6 lg:max-w-[355px] rounded-md">
               {/* Icon and Image */}
               <div className="flex mb-4">
-                <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
-                </div>
                 <Image
                   src={
                     data.page.leadershipPageFeilds.leadershipThirdSectionFields.leadershipThirdSectionBox[0]
                       .leadershipThirdSectionBoxImages?.node?.link
                   }
                   alt="Discussion Image"
-                  width={120}
-                  height={80}
-                  className="rounded-md ml-auto"
+                  width={1000}
+                  height={1000}
+                  className="rounded-md ml-auto video-image h-50 object-cover"
                 />
               </div>
               {/* Content */}
@@ -248,21 +245,18 @@ const page = async () => {
             </div>
 
             {/* Card 2 */}
-            <div className="bg-[#F5F5F5] p-6 lg:max-w-[355px] ">
+            <div className="bg-[#F5F5F5] p-6 lg:max-w-[355px] rounded-md">
               {/* Icon and Image */}
               <div className="flex mb-4">
-                <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center ">
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
-                </div>
                 <Image
                   src={
                     data.page.leadershipPageFeilds.leadershipThirdSectionFields.leadershipThirdSectionBox[1]
                       .leadershipThirdSectionBoxImages?.node?.link
                   }
                   alt="Collaboration Image"
-                  width={120}
-                  height={80}
-                  className="rounded-md ml-auto"
+                  width={1000}
+                  height={1000}
+                  className="rounded-md ml-auto video-image h-50 object-cover"
                 />
               </div>
               {/* Content */}
@@ -281,21 +275,18 @@ const page = async () => {
             </div>
 
             {/* Card 3 */}
-            <div className="bg-[#F5F5F5] p-6 lg:max-w-[355px]">
+            <div className="bg-[#F5F5F5] p-6 lg:max-w-[355px] rounded-md">
               {/* Icon and Image */}
               <div className="flex mb-4">
-                <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center ">
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
-                </div>
                 <Image
                   src={
                     data.page.leadershipPageFeilds.leadershipThirdSectionFields.leadershipThirdSectionBox[2]
                       .leadershipThirdSectionBoxImages?.node?.link
                   }
                   alt="Transformation Tools"
-                  width={120}
-                  height={80}
-                  className="rounded-md ml-auto"
+                  width={1000}
+                  height={1000}
+                  className="rounded-md ml-auto video-image h-50 object-cover"
                 />
               </div>
               {/* Content */}
