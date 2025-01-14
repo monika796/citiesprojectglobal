@@ -1,17 +1,15 @@
-
-
-import { Anton } from "next/font/google";
-import { gql } from "@apollo/client";
-import React from "react";
-import Image from 'next/image';
-const anton = Anton({ weight: "400", subsets: ["latin"] });
-import client from 'apollo-client';
-import Link from "next/link";
+import { Anton } from 'next/font/google'
+import { gql } from '@apollo/client'
+import React from 'react'
+import Image from 'next/image'
+const anton = Anton({ weight: '400', subsets: ['latin'] })
+import client from 'apollo-client'
+import Link from 'next/link'
 const POSTS_QUERY = gql`
   query {
     page(id: "cG9zdDoxNg==") {
       patnerssection {
-      linknithbox
+        linknithbox
         mainheading
         firstsubtitlepatner
         imagefirst {
@@ -54,15 +52,15 @@ const POSTS_QUERY = gql`
             link
           }
         }
-         partnerImages {
         partnerImages {
-          addPartnersImages {
-            node {
-              link
+          partnerImages {
+            addPartnersImages {
+              node {
+                link
+              }
             }
           }
         }
-      }
         textninthbox
         linktextninthbox
       }
@@ -76,45 +74,59 @@ const POSTS_QUERY = gql`
             link
           }
         }
-          
       }
-        
     }
   }
-`;
+`
 async function fetchData() {
   const { data } = await client.query({
     query: POSTS_QUERY,
-  });
-  return data;
+  })
+  return data
 }
 export default async function Partner() {
-  const data = await fetchData();
-  
-  const { patnerssection, homesixthsection } = data.page;
-  const partner_immm =data.page.patnerssection.partnerImages.partnerImages;
+  const data = await fetchData()
+
+  const { patnerssection, homesixthsection } = data.page
+  const partner_immm = data.page.patnerssection.partnerImages.partnerImages
 
   return (
-    <div className="container mx-auto max-w-[1280px]" > 
-         <section className="md:pt-[150px] pt-[50px] border border-x-0 border-y-stroke py-11 dark:border-y-strokedark dark:bg-black">
+    <div className="container mx-auto max-w-[1280px]">
+      <section className="md:pt-[150px] pt-[50px] border border-x-0 border-y-stroke py-11 dark:border-y-strokedark dark:bg-black">
         <div className="mx-auto  px-4 md:px-8 2xl:px-0">
-          <h5 className="md:text-[64px] text-[30px] text-black text-center md:pb-[30px] font-bold pb-2">{data.page.patnerssection.mainheading}</h5>
-          <h5 className="text-[15px] text-black text-center">{data.page.patnerssection.firstsubtitlepatner}</h5>
+          <h5 className="md:text-[64px] text-[30px] text-black text-center md:pb-[30px] font-bold pb-2">
+            {data.page.patnerssection.mainheading}
+          </h5>
+          <h5
+            className="text-[15px] text-black text-center"
+            dangerouslySetInnerHTML={{ __html: data.page.patnerssection.firstsubtitlepatner }}
+          />
           <div className="  grid md:grid-cols-5 grid-cols-2  items-center sm:flex sm:flex-wrap justify-center gap-5 md:w-[100%] lg:w-[100%] mx-auto pt-[29px]">
-          {partner_immm.map((partner_images, index) => (
-          <div className="p-5 border border-[#e3e2e2] h-[160px] grid items-center grayscale hover:grayscale-0 transition-all duration-300 ease-in-out hover:border-[#a1cf5f] hover:shadow-md">
-            <Image src={partner_images.addPartnersImages?.node?.link || '/No_Image.jpg'} alt='' width={120} height={120} className="object-contain " /> 
-            </div>
-        ))}
+            {partner_immm.map((partner_images, index) => (
+              <div className="p-5 border border-[#e3e2e2] h-[160px] grid items-center grayscale hover:grayscale-0 transition-all duration-300 ease-in-out hover:border-[#a1cf5f] hover:shadow-md">
+                <Image
+                  src={partner_images.addPartnersImages?.node?.link || '/No_Image.jpg'}
+                  alt=""
+                  width={120}
+                  height={120}
+                  className="object-contain "
+                />
+              </div>
+            ))}
           </div>
 
           <div className="relative text-black pt-10">
-              <div className="text-center">
-                <h5 className="text-[20px] font-bold pb-2">{data.page.patnerssection.textninthbox} - <Link href={data.page.patnerssection.linknithbox} className="underline">{data.page.patnerssection.linktextninthbox}</Link></h5>
-              </div>
+            <div className="text-center">
+              <h5 className="text-[20px] font-bold pb-2">
+                {data.page.patnerssection.textninthbox} -{' '}
+                <Link href={data.page.patnerssection.linknithbox} className="underline">
+                  {data.page.patnerssection.linktextninthbox}
+                </Link>
+              </h5>
             </div>
+          </div>
         </div>
       </section>
-      </div>
-  );
+    </div>
+  )
 }

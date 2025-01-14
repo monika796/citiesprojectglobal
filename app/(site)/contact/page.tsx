@@ -116,7 +116,7 @@ const Contact = async (): Promise<JSX.Element> => {
         </section>
 
         {/* Form Section */}
-        <div className="md:flex mx-auto bg-[#F7F7F7] md:mt-[-4%] pt-20 md:pt-40">
+        <div className="md:flex mx-auto bg-[#F7F7F7] md:mt-[-4%] pt-20 md:pt-0">
           <div className="md:w-8/12">
             <div className="md:flex items-center">
               <div className="md:w-1/2 table mx-auto md:block md:mx-0">
