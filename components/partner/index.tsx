@@ -103,7 +103,7 @@ export default async function Partner() {
           />
           <div className="  grid md:grid-cols-5 grid-cols-2  items-center sm:flex sm:flex-wrap justify-center gap-5 md:w-[100%] lg:w-[100%] mx-auto pt-[29px]">
             {partner_immm.map((partner_images, index) => (
-              <div className="p-5 border border-[#e3e2e2] h-[160px] grid items-center grayscale hover:grayscale-0 transition-all duration-300 ease-in-out hover:border-[#a1cf5f] hover:shadow-md">
+              <div key={index} className="p-5 border border-[#e3e2e2] h-[160px] grid items-center grayscale hover:grayscale-0 transition-all duration-300 ease-in-out hover:border-[#a1cf5f] hover:shadow-md">
                 <Image
                   src={partner_images.addPartnersImages?.node?.link || '/No_Image.jpg'}
                   alt=""
