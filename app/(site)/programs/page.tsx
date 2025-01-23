@@ -23,6 +23,7 @@ export default async function Programs() {
   const data = await fetchData()
   const testimonials = await fetchData(TESTIMONIAL_QUERY)
   const programTestimonials = await fetchData(PROGRAM_TESTIMONIAL_QUERY)
+  console.log(data.page.programpagefeild)
   return (
     <main className="md:w-[100%] mx-auto">
       <Head data={data} />
@@ -31,7 +32,13 @@ export default async function Programs() {
         dangerouslySetInnerHTML={{ __html: data.page.programpagefeild.firstSectionMainHeading }}
       />
       <section className="md:py-[42px] md:pt-0 relative container  max-w-[1480px] mx-auto">
-        <Image width={1500} height={1000} src="/85.png" className=" mx-auto p-2 md:p-0" alt="" />
+        <Image
+          width={1500}
+          height={1000}
+          src={data.page.programpagefeild.secondSectionImage.node.link}
+          className="mx-auto p-2 md:p-0 aspect-video object-cover max-h-[600px] rounded-md"
+          alt=""
+        />
         <div className="lg:flex pt-5 ">
           <div className="lg:w-2/5 relative md:p-10 md:pb-0 p-3">
             {/* <div className="md:absolute bottom-[5%]">  */}
