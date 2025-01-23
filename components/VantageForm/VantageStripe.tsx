@@ -89,7 +89,7 @@ export default function VantageStripeForm({
           </Elements>
         ) : (
           <div className='flex justify-center pt-20 pb-20'>
-            <Circles height="80" width="80" color="#4fa94d" ariaLabel="loading" /></div>
+            <Circles height="80" width="80" color="#a1cf5f" ariaLabel="loading" /></div>
         )}
     </div>
   );
