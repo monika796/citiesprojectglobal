@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { gql } from '@apollo/client'
 import client from 'apollo-client'
 import SecondSection from '@/components/VantageForm'
+import { fetchData } from '@/lib/fetchData'
 
 export const revalidate = 60 // revalidate at most every 5 minutes
 
@@ -62,15 +63,10 @@ const POSTS_QUERY = gql`
     }
   }
 `
-async function fetchData() {
-  const { data } = await client.query({
-    query: POSTS_QUERY,
-  })
-  return data
-}
+
 const anton = Anton({ weight: '400', subsets: ['latin'] })
 const Form = async () => {
-  const data = await fetchData()
+  const data = await fetchData(POSTS_QUERY)
 
   return (
     <div className="container mx-auto max-w-[1480px]">

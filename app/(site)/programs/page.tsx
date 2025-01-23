@@ -9,21 +9,13 @@ import Image from 'next/image'
 import ProgramTestimonial from '@/components/programtestemonial'
 import { PROGRAM_PAGE_QUERY, TESTIMONIAL_QUERY, PROGRAM_TESTIMONIAL_QUERY } from '@/queries/queries'
 import Head from '../head'
+import { fetchData } from '@/lib/fetchData'
 export const revalidate = 60 // revalidate at most every 5 minutes
 
-async function fetchData(query = PROGRAM_PAGE_QUERY, fetchPolicy: any = 'cache-first') {
-  const { data } = await client.query({
-    query,
-    fetchPolicy: fetchPolicy,
-  })
-  return data
-}
-
 export default async function Programs() {
-  const data = await fetchData()
+  const data = await fetchData(PROGRAM_PAGE_QUERY)
   const testimonials = await fetchData(TESTIMONIAL_QUERY)
   const programTestimonials = await fetchData(PROGRAM_TESTIMONIAL_QUERY)
-  console.log(data.page.programpagefeild)
   return (
     <main className="md:w-[100%] mx-auto">
       <Head data={data} />
