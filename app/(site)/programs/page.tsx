@@ -26,9 +26,10 @@ export default async function Programs() {
   return (
     <main className="md:w-[100%] mx-auto">
       <Head data={data} />
-      <h1 className="md:w-[100%] lg:w-[1178px] md:py-[42px] pt-4 py-[30px] md:text-[30px] lg:text-[64px] text-[25px] font-bold text-center text-black md:max-w-[1178px] p-5 mx-auto md:leading-[77px] ">
-        {data.page.programpagefeild.firstSectionMainHeading}
-      </h1>
+      <h1
+        className="md:w-[100%] lg:w-[1178px] md:py-[42px] pt-4 py-[30px] md:text-[30px] lg:text-[64px] text-[25px] font-bold text-center text-black md:max-w-[1178px] p-5 mx-auto md:leading-[77px] "
+        dangerouslySetInnerHTML={{ __html: data.page.programpagefeild.firstSectionMainHeading }}
+      />
       <section className="md:py-[42px] md:pt-0 relative container  max-w-[1480px] mx-auto">
         <Image width={1500} height={1000} src="/85.png" className=" mx-auto p-2 md:p-0" alt="" />
         <div className="lg:flex pt-5 ">
