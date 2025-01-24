@@ -20,7 +20,7 @@ type FormData = {
   agreeToTerms: boolean;
 };
 
-const SecondSection = ({ pdfData }) => {
+const SecondSection = () => {
   const [isPanelOneOpen, setIsPanelOneOpen] = useState(true);
   const [isPanelTwoOpen, setIsPanelTwoOpen] = useState(false);
   const [formData, setFormData] = useState<Partial<FormData>>({});
@@ -38,24 +38,6 @@ const SecondSection = ({ pdfData }) => {
     setFormData(data)
     setSuccessMessage(null)
     myRef.current?.scrollIntoView()
-  };
-
-  const handleDownload = async (url: string) => {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error("Failed to fetch the PDF file.");
-      }
-      const blob = await response.blob();
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      const filename = url.split("/").pop() || "file.pdf";
-      link.download = filename;
-      link.click();
-      URL.revokeObjectURL(link.href);
-    } catch (error) {
-      console.error("Error downloading the PDF:", error);
-    }
   };
 
   useEffect(() => {
@@ -80,29 +62,21 @@ const SecondSection = ({ pdfData }) => {
     <>
       <section>
         <div className="flex flex-wrap md:flex-nowrap gap-3 justify-between">
-          {/* {/ Form Section /} */}
+          {/* Form Section */}
           <div className="md:w-8/12">
             <div className="w-full mt-10" >
-            <div ref={divRef}  tabIndex={0} >              
+              <div   ref={divRef}  tabIndex={0} >
+
+              
             {successMessage && (
-              <div className="bg-green-100 text-green-700 p-4 rounded mb-6">
+              <div     className="bg-green-100 text-green-700 p-4 rounded mb-6">
                 {successMessage}
-                {pdfData &&
-                  pdfData.map((pdfItem, index) => (
-                  <div key={index}>
-                  <button
-                    onClick={() => handleDownload(pdfItem.uploadPdf.node.link)}
-                    className="text-blue-500 underline"
-                  >
-                    Download PDF
-                  </button>
               </div>
-                   ))}
-               </div>
+
             )}
             </div>
               <form className="mt-8" onSubmit={handleSubmit(onSubmit)}>
-                {/* {/ Panel 1 /} */}
+                {/* Panel 1 */}
                 <div className="mb-6">
                   <div
                     onClick={() => setIsPanelOneOpen(!isPanelOneOpen)}
@@ -262,7 +236,7 @@ const SecondSection = ({ pdfData }) => {
                   </div>
                 </div>
 
-                {/* {/ Panel 2 /} */}
+                {/* Panel 2 */}
                 <div>
                   <div
                     onClick={() => setIsPanelTwoOpen(!isPanelTwoOpen)}
@@ -315,7 +289,7 @@ const SecondSection = ({ pdfData }) => {
             </div>
           </div>
 
-          {/* {/ Payment Info Section /} */}
+          {/* Payment Info Section */}
           <div className="md:w-4/12">
             <div className="bg-[#F7F7F7] rounded-lg p-6 max-w-md mx-auto mt-10">
               <h2 className="text-[20px] text-black font-medium mb-2">Payment Info</h2>
