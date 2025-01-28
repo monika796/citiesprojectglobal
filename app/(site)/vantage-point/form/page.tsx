@@ -13,6 +13,14 @@ const POSTS_QUERY = gql`
   query MyQuery2 {
     page(id: "cG9zdDo1Njk=") {
       vantageForm {
+        coursePdf {
+          uploadPdf {
+            node {
+              link
+              mediaItemUrl
+            }
+          }
+        }
         vantageFormMainHeading
         vantageFormSecondSectionSecondColumnDescription
         vantageFormSecondSectionSecondColumnHeading
@@ -121,7 +129,9 @@ const Form = async () => {
           />
         </div>
       </section>
-      <SecondSection />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+  </div>
+      <SecondSection pdfData={data.page.vantageForm.coursePdf} />
       <section>
         <div className="flex justify-center mx-auto w-fit mb-3 gap-3  mt-20">
           <div className=" ">
