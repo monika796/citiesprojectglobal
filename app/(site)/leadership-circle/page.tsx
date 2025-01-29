@@ -23,6 +23,8 @@ import LastFiveSection from '@/components/lastfiveimages'
 import SwiperSectionLeaderhsip from '@/components/leadershipcommunityslider'
 import { LEADERSHIP_PAGE_QUERY } from '@/queries/queries'
 import { fetchData } from '@/lib/fetchData'
+import Head from '../head'
+
 
 export const revalidate = 60 // revalidate at most every 5 minutes
 
@@ -30,6 +32,7 @@ const page = async () => {
   const data = await fetchData(LEADERSHIP_PAGE_QUERY)
   return (
     <div className="container mx-auto max-w-[1480px]">
+      <Head data={data} />
       <section>
         <h1 className="md:py-[42px] mt-4 py-[30px] max-w-[1178px] md:text-[64px] text-[25px] leading-[38px]  font-bold text-center text-black  p-5 mx-auto md:leading-[77px] ">
           {data.page.leadershipPageFeilds.leadershipMainHeading}

@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { gql } from "@apollo/client";
 import client from "apollo-client";
+import parse from 'html-react-parser'
 
 const POSTS_QUERY = gql`
   query MyQuery2 {
@@ -17,7 +18,7 @@ const POSTS_QUERY = gql`
           watchOurCommunitySlider {
             watchOurCommunitySliderAuthor
             watchOurCommunitySliderDesignation
-            watchOurCommunitySliderVideo
+            watchOurCommunityVideoLink
             watchOurCommunitySliderImage {
               node {
                 link
@@ -33,7 +34,7 @@ const POSTS_QUERY = gql`
 interface WatchOurCommunitySlider {
   watchOurCommunitySliderAuthor: string;
   watchOurCommunitySliderDesignation: string;
-  watchOurCommunitySliderVideo: string;
+  watchOurCommunityVideoLink: string;
   watchOurCommunitySliderImage?: {
     node?: {
       link: string;
@@ -100,14 +101,14 @@ const SwiperSectionLeadership = () => {
                     <img
                       src={course.watchOurCommunitySliderImage?.node?.link || "default.png"}
                       className="h-[300px] w-[500px] object-cover rounded-md cursor-pointer"
-                      onClick={() => openModal(course.watchOurCommunitySliderVideo || "default.mp4")}
+                      onClick={() => openModal(course.watchOurCommunityVideoLink   || "default.mp4")}
                       alt="Video Thumbnail"
                     />
                     {/* Play Icon */}
                     <img
                       src="/73.png"
                       className="absolute top-2 right-2 h-10 w-10 cursor-pointer"
-                      onClick={() => openModal(course.watchOurCommunitySliderVideo || "default.mp4")}
+                      onClick={() => openModal(course.watchOurCommunityVideoLink || "default.mp4")}
                       alt="Play"
                     />
                   </div>
@@ -126,20 +127,19 @@ const SwiperSectionLeadership = () => {
 
       {/* Lightbox Video Modal */}
       <Modal 
-        isOpen={isOpen} 
-        onRequestClose={closeModal} 
-        className="modal" 
-        overlayClassName="overlay"
-        appElement={typeof document !== "undefined" ? document.getElementById("__next")! : undefined} // FIXED
-      >
-        <div className="relative">
-          <button onClick={closeModal} className="z-99999 absolute top-2 right-2 text-white text-xl">✖</button>
-          <video controls autoPlay className="w-full h-auto">
-            <source src={videoUrl} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </Modal>
+          isOpen={isOpen} 
+          onRequestClose={closeModal} 
+          className="modal" 
+          overlayClassName="overlay"
+          appElement={typeof document !== "undefined" ? document.getElementById("__next")! : undefined}
+        >
+          <div className="relative">
+            <button onClick={closeModal} className="z-99999 absolute top-2 right-2 text-white text-xl">✖</button>
+
+            {parse(videoUrl || '')}
+          </div>
+        </Modal>
+
 
       <style>
         {`

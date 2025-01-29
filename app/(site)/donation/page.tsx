@@ -10,67 +10,18 @@ import Link from 'next/link'
 import donation from '/public/109.png'
 import DonationWizard from '@/components/DonationForm'
 import { fetchData } from '@/lib/fetchData'
-
+import Head from '../head'
+import { DONATION_PAGE_QUERY } from '@/queries/queries'
 export const revalidate = 60 // revalidate at most every 5 minutes
 const anton = Anton({ weight: '400', subsets: ['latin'] })
-const POSTS_QUERY = gql`
-  query MyQuery2 {
-    page(id: "cG9zdDo1MTQ=") {
-      donatePageFeilds {
-        donateFifthSectionDescription
-        donateFifthSectionHeading
-        donateFifthSectionLink
-        donateFirstSectionMainDescription
-        donateFirstSectionMainHeading
-        donateSecondSectionLeftButtonLink
-        donateSecondSectionLeftButtonText
-        donateSecondSectionLeftDescription
-        donateSecondSectionLeftHeading
-        donateThirdSectionDescription
-        donateThirdSectionHeading
-        donate_fourth_section_scrolltext
-        donateThirdSectionSubheading
-        donateFifthSectionButtonText
-        donateThirdSectionImage {
-          node {
-            link
-          }
-        }
-        donateSecondSectionRightImage {
-          node {
-            link
-          }
-        }
-        donateSecondSectionLeftFaqs {
-          donateFaqDescription
-          donateFaqTitle
-          fieldGroupName
-        }
-        donateFourthSectionThirdImage {
-          node {
-            link
-          }
-        }
-        donateFourthSectionSecondImage {
-          node {
-            link
-          }
-        }
-        donateFourthSection {
-          node {
-            link
-          }
-        }
-      }
-    }
-  }
-`
+
 
 export default async function Book() {
   // const data = await fetchData(POSTS_QUERY)
-  const data = await fetchData(POSTS_QUERY)
+  const data = await fetchData(DONATION_PAGE_QUERY)
   return (
     <main className="md:w-[90%] pt-10  mx-auto max-w-[1480px]">
+      <Head data={data} />
       <h1 className="md:py-[15px] pt-10 py-[10px] md:text-[40px] text-[25px] font-bold text-center text-black md:w-[52%]     mx-auto md:leading-[49px] ">
         {' '}
         {data.page.donatePageFeilds.donateFirstSectionMainHeading}
