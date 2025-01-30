@@ -11,27 +11,6 @@ import client from 'apollo-client'
 import parse from 'html-react-parser'
 import ReactPlayer from 'react-player'
 
-const POSTS_QUERY = gql`
-  query MyQuery2 {
-    page(id: "cG9zdDo2MDg=") {
-      leadershipPageFeilds {
-        leadershipWatchOurCommunitySection {
-          watchOurCommunitySlider {
-            watchOurCommunitySliderAuthor
-            watchOurCommunitySliderDesignation
-            watchOurCommunityVideoLink
-            watchOurCommunitySliderImage {
-              node {
-                link
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
-
 interface WatchOurCommunitySlider {
   watchOurCommunitySliderAuthor: string
   watchOurCommunitySliderDesignation: string
@@ -43,29 +22,31 @@ interface WatchOurCommunitySlider {
   }
 }
 
-const SwiperSectionLeadership = () => {
-  const [posts, setPosts] = useState<WatchOurCommunitySlider[]>([])
+const SwiperSectionLeadership = ({ data }: { data: any }) => {
+  // const [posts, setPosts] = useState<WatchOurCommunitySlider[]>([])
   const [isOpen, setIsOpen] = useState(false)
   const [videoUrl, setVideoUrl] = useState('')
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const { data } = await client.query({
-          query: POSTS_QUERY,
-        })
-        console.log('Fetched Data:', data)
-        setPosts(data?.page?.leadershipPageFeilds?.leadershipWatchOurCommunitySection?.watchOurCommunitySlider || [])
-      } catch (error) {
-        console.error('Error fetching data:', error)
-      }
-    }
-    fetchData()
-  }, [])
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       const { data } = await client.query({
+  //         query: LEADERSHIP_CIRCLE_TESTIMONIALS,
+  //       })
+  //       console.log('Fetched Data:', data)
+  //       setPosts(data?.page?.leadershipPageFeilds?.leadershipWatchOurCommunitySection?.watchOurCommunitySlider || [])
+  //     } catch (error) {
+  //       console.error('Error fetching data:', error)
+  //     }
+  //   }
+  //   fetchData()
+  // }, [])
+
+  const posts = data?.page?.leadershipPageFeilds?.leadershipWatchOurCommunitySection?.watchOurCommunitySlider || []
 
   const openModal = (videoUrl: string) => {
     setVideoUrl(videoUrl)
-    console.log('Video URL:', videoUrl)
+    // console.log('Video URL:', videoUrl)
     setIsOpen(true)
   }
 
@@ -129,6 +110,7 @@ const SwiperSectionLeadership = () => {
       {/* Lightbox Video Modal */}
       <Modal
         isOpen={isOpen}
+        ariaHideApp={false}
         onRequestClose={closeModal}
         className="modal"
         overlayClassName="overlay"
