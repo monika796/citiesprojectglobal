@@ -163,10 +163,7 @@ const page = async () => {
                     data.page.leadershipPageFeilds.leadershipSecondSectionFields
                       .leadershipSecondSectionSecondColumnBox[0].leadershipSecondSectionSecondColumnBoxButtonText
                   } // Pass dynamic text as prop
-                  pdfUrl={
-                    data.page.leadershipPageFeilds.leadershipSecondSectionFields
-                      .leadershipSecondSectionSecondColumnBox[0].leadershipSecondSectionSecondColumnBoxButtonLink
-                  } // Pass the dynamic PDF URL
+                  pdfUrl='Global LC 2025.pdf' // Pass the dynamic PDF URL
                 />
               </div>
 
@@ -198,10 +195,7 @@ const page = async () => {
                     data.page.leadershipPageFeilds.leadershipSecondSectionFields
                       .leadershipSecondSectionSecondColumnBox[1].leadershipSecondSectionSecondColumnBoxButtonText
                   } // Pass dynamic text as prop
-                  pdfUrl={
-                    data.page.leadershipPageFeilds.leadershipSecondSectionFields
-                      .leadershipSecondSectionSecondColumnBox[1].leadershipSecondSectionSecondColumnBoxButtonLink
-                  } // Pass the dynamic PDF URL
+                  pdfUrl='Global LC 2025-in-person.pdf' // Pass the dynamic PDF URL
                 />
               </div>
             </div>
