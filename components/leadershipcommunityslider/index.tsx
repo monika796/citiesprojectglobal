@@ -10,7 +10,7 @@ import { gql } from "@apollo/client";
 import client from "apollo-client";
 import parse from 'html-react-parser'
 import ReactPlayer from 'react-player'
-
+ 
 const POSTS_QUERY = gql`
   query MyQuery2 {
     page(id: "cG9zdDo2MDg=") {
