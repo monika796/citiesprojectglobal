@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import Modal from 'react-modal' // Import modal library
@@ -78,18 +79,22 @@ const SwiperSectionLeadership = ({ data }: { data: any }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 relative">
                   <div className="relative">
                     {/* Video Thumbnail */}
-                    <img
+                    <Image
                       src={course.watchOurCommunitySliderImage?.node?.link || 'default.png'}
                       className="h-[300px] w-[500px] object-cover rounded-md cursor-pointer"
                       onClick={() => openModal(course.watchOurCommunityVideoLink || 'default.mp4')}
                       alt="Video Thumbnail"
+                      width={500}
+                      height={300}
                     />
                     {/* Play Icon */}
-                    <img
+                    <Image
                       src="/73.png"
                       className="absolute top-2 right-2 h-10 w-10 cursor-pointer"
                       onClick={() => openModal(course.watchOurCommunityVideoLink || 'default.mp4')}
                       alt="Play"
+                      width={500}
+                      height={300}
                     />
                   </div>
                   <div
@@ -121,7 +126,7 @@ const SwiperSectionLeadership = ({ data }: { data: any }) => {
             ✖
           </button>
 
-          <ReactPlayer url={videoUrl} playing controls style={{ margin: 'auto' }} />
+          <ReactPlayer url={videoUrl} playing controls style={{ margin: 'auto' }} height={800} width={'100%'} />
         </div>
       </Modal>
 
@@ -137,7 +142,7 @@ const SwiperSectionLeadership = ({ data }: { data: any }) => {
             z-index: 1000;
             border-radius: 10px;
             width: 80%;
-            max-width: 800px;
+            
           }
           .overlay {
             position: fixed;
