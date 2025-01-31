@@ -1,8 +1,7 @@
-import { getClient } from '@/lib/server'
 import Image from 'next/image'
 import BlogCustomSlider from '@/components/BlogPostSlider'
 import Link from 'next/link'
-import HeadPost from '../../headPost'
+import Head from '@/app/(site)/head'
 import { fetchData } from '@/lib/fetchData'
 import { ALL_ARTICLES_QUERY, POST_QUERY } from '@/queries/queries'
 interface FeaturedImage {
@@ -37,7 +36,7 @@ const SingleBlogPage = async ({ params }: { params: Params }) => {
 
   return (
     <section className="container mx-auto max-w-[1480px]">
-      <HeadPost data={post} />
+      <Head data={post} />
       <div className="mx-auto px-4 py-10 md:py-20 flex flex-col md:flex-row justify-between items-center border-b">
         {/* Left Section */}
         <div className="md:w-3/4 flex gap-3 md:gap-10 flex-col md:flex-row align-start">
