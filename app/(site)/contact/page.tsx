@@ -49,7 +49,7 @@ const Contact = async (): Promise<JSX.Element> => {
   const response = await client.query<{ page: Page }>({
     query: CONTACT_PAGE_POSTS_QUERY,
   })
-  console.log(response);
+
   const fields = response.data.page.contactpagefeilds
   return (
     <main className="md:w-[80%] mx-auto">

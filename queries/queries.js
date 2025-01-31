@@ -860,7 +860,7 @@ export const ARTICLES_PAGE_QUERY = gql`
 
 export const ARTICLES_QUERY = gql`
   query Articles {
-    featuredPosts: posts(where: {  tag: "featured", status: PUBLISH }, last: 1000) {
+    featuredPosts: posts(where: { tag: "featured", status: PUBLISH }, last: 1000) {
       nodes {
         date
         featuredImage {
@@ -894,6 +894,16 @@ export const ARTICLES_QUERY = gql`
             name
           }
         }
+      }
+    }
+  }
+`
+
+export const ALL_ARTICLES_QUERY = gql`
+  query AllArticles {
+    posts(where: { status: PUBLISH }, last: 100) {
+      nodes {
+        slug
       }
     }
   }

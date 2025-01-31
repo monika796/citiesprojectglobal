@@ -13,12 +13,9 @@ import { fetchData } from '@/lib/fetchData'
 const BlogPage = async () => {
   const postData = await fetchData(ARTICLES_QUERY)
   const data = await fetchData(ARTICLES_PAGE_QUERY)
-  const allPosts = [
-    ...(postData?.featuredPosts?.nodes || []),
-    ...(postData?.otherPosts?.nodes || [])
-  ];
-  
-  const uniquePosts = Array.from(new Map(allPosts.map(post => [post.id, post])).values());
+  const allPosts = [...(postData?.featuredPosts?.nodes || []), ...(postData?.otherPosts?.nodes || [])]
+
+  const uniquePosts = Array.from(new Map(allPosts.map((post) => [post.id, post])).values())
 
   return (
     <>
@@ -28,15 +25,17 @@ const BlogPage = async () => {
           {data.page.blogPageFeilds.blogPageMainHeading}
         </h1>
         <section className="container mx-auto max-w-[1480px] bg-[#F8F8F8] border rounded-lg mt-10">
-          <div className="flex flex-col lg:flex-row    overflow-hidden">
-            <Image
-              src={data.page.blogPageFeilds.blogSecondSection.blogPageLeft?.node?.link || '/No_Image.jpg'} // Replace with your image path
-              alt="Group of people"
-              className="w-full h-[100vh] object-cover "
-              layout="responsive"
-              width={800}
-              height={700}
-            />
+          <div className="flex flex-col lg:flex-row">
+            <div className="lg:w-4/5 w-full">
+              <Image
+                src={data.page.blogPageFeilds.blogSecondSection.blogPageLeft?.node?.link || '/No_Image.jpg'} // Replace with your image path
+                alt="Group of people"
+                className="object-cover "
+                layout="responsive"
+                width={800}
+                height={700}
+              />
+            </div>
             <div className="p-12 flex flex-col justify-end lg:w-[60%] relative">
               <div className="mb-4 max-w-[543px]">
                 <span className="inline-block bg-black text-white text-xs px-3 py-1  rounded-full uppercase font-bold tracking-wider mb-4 uppercase">
@@ -129,55 +128,55 @@ const BlogPage = async () => {
         {/* //////////////// */}
         <div className="container mx-auto  max-w-[1480px] py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-8 gap-4">
-          {uniquePosts.length > 0 ? (
-            uniquePosts.map((post, index) => {
-              var dat_time = post.date
-              const dates = new Date(dat_time)
-              var formatDate = dates.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
+            {uniquePosts.length > 0 ? (
+              uniquePosts.map((post, index) => {
+                var dat_time = post.date
+                const dates = new Date(dat_time)
+                var formatDate = dates.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric',
+                })
+
+                // Check if post is "Featured"
+                const isFeatured = post.tags?.nodes?.some((tag) => tag.name.toLowerCase() === 'featured')
+
+                return (
+                  <BlogCard
+                    key={index}
+                    index={index}
+                    image={post.featuredImage?.node?.link}
+                    date={formatDate}
+                    title={post.title}
+                    // content={post.content}
+                    linkText="Read More"
+                    linkHref={post.slug}
+                    featured={isFeatured}
+                  />
+                )
+                //   return index === 0 || index === 1 ? (
+                //     <BlogCard
+                //       index={index}
+                //       image={post.featuredImage?.node?.link}
+                //       date={formatDate}
+                //       title={post.title}
+                //       description={post.content}
+                //       linkText="Read More"
+                //       linkHref={post.slug}
+                //     />
+                //   ) : index === 2 || index === 3 ? (
+                //     <BlogCard
+                //       index={index}
+                //       image={post.featuredImage?.node?.link}
+                //       date={formatDate}
+                //       title={post.title}
+                //       description={post.content}
+                //       linkText="Read More"
+                //       linkHref={post.slug}
+                //     />
+                //   ) : null // For indices not 0, 1, 2, or 3, render nothing or another component
               })
-
-              // Check if post is "Featured"
-              const isFeatured = post.tags?.nodes?.some(tag => tag.name.toLowerCase() === "featured");
-
-              return (                
-                <BlogCard
-                  key={index}
-                  index={index}
-                  image={post.featuredImage?.node?.link}
-                  date={formatDate}
-                  title={post.title}
-                  // content={post.content}
-                  linkText="Read More"
-                  linkHref={post.slug}
-                  featured={isFeatured}
-                />
-                
-              )
-              //   return index === 0 || index === 1 ? (
-              //     <BlogCard
-              //       index={index}
-              //       image={post.featuredImage?.node?.link}
-              //       date={formatDate}
-              //       title={post.title}
-              //       description={post.content}
-              //       linkText="Read More"
-              //       linkHref={post.slug}
-              //     />
-              //   ) : index === 2 || index === 3 ? (
-              //     <BlogCard
-              //       index={index}
-              //       image={post.featuredImage?.node?.link}
-              //       date={formatDate}
-              //       title={post.title}
-              //       description={post.content}
-              //       linkText="Read More"
-              //       linkHref={post.slug}
-              //     />
-              //   ) : null // For indices not 0, 1, 2, or 3, render nothing or another component
-            }) ) : (
+            ) : (
               <p className="text-center col-span-full">No posts found.</p>
             )}
           </div>
