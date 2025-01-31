@@ -4,6 +4,7 @@ import { SEO_FRAGMENT } from './fragments'
 export const HOME_PAGE_QUERY = gql`
   query {
     page(id: "cG9zdDoxNg==") {
+      databaseId
       id
       seoMetaFields {
         ...SeoMetaFields
@@ -719,6 +720,7 @@ export const STORIES_QUERY = gql`
       }
     }
     page(id: "cG9zdDoxNg==") {
+      databaseId
       homefourtsection {
         postsliderheading
       }
@@ -743,6 +745,7 @@ export const TESTIMONIAL_QUERY = gql`
 export const HOME_VIDEO_QUERY = gql`
   {
     page(id: "cG9zdDoxNg==") {
+      databaseId
       homevideobanner {
         maintitle
         videosubtitle
@@ -1353,6 +1356,34 @@ export const LEADERSHIP_CIRCLE_TESTIMONIALS = gql`
               }
             }
           }
+        }
+      }
+    }
+  }
+`
+
+export const POST_QUERY = gql`
+  query ($slug: ID!) {
+    post(id: $slug, idType: SLUG) {
+      databaseId
+      content
+      date
+      title
+      tags {
+        nodes {
+          name
+        }
+      }
+      featuredImage {
+        node {
+          link
+        }
+      }
+      seoMetaFields {
+        seo {
+          metaDescription
+          metaKeywords
+          pageTitle
         }
       }
     }

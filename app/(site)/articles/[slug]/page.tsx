@@ -1,14 +1,10 @@
-import { gql } from '@apollo/client'
-import client from 'apollo-client'
+import { getClient } from '@/lib/server'
 import Image from 'next/image'
 import BlogCustomSlider from '@/components/BlogPostSlider'
 import Link from 'next/link'
-import Head from '../../head'
 import HeadPost from '../../headPost'
 import { fetchData } from '@/lib/fetchData'
-import { ALL_ARTICLES_QUERY } from '@/queries/queries'
-// Define types for the post data
-
+import { ALL_ARTICLES_QUERY, POST_QUERY } from '@/queries/queries'
 interface FeaturedImage {
   node: {
     link: string
@@ -22,44 +18,6 @@ interface Post {
   featuredImage: FeaturedImage
 }
 
-// Define the GraphQL query
-const POST_QUERY = gql`
-  query ($slug: ID!) {
-    post(id: $slug, idType: SLUG) {
-      content
-      date
-      title
-      tags {
-        nodes {
-          name
-        }
-      }
-      featuredImage {
-        node {
-          link
-        }
-      }
-      seoMetaFields {
-        seo {
-          metaDescription
-          metaKeywords
-          pageTitle
-        }
-      }
-    }
-  }
-`
-
-export const revalidate = 60
-
-const fetchPostById = async (slug: string) => {
-  const { data } = await client.query({
-    query: POST_QUERY,
-    variables: { slug },
-  })
-  return data
-}
-
 type Params = Promise<{ slug: string }>
 
 const SingleBlogPage = async ({ params }: { params: Params }) => {
@@ -67,7 +25,7 @@ const SingleBlogPage = async ({ params }: { params: Params }) => {
   const { slug } = await params
 
   // Fetch post data server-side
-  const data = await fetchPostById(slug)
+  const data = await fetchData(POST_QUERY, { slug })
 
   const post = data.post
   if (!post) {
@@ -173,6 +131,6 @@ const SingleBlogPage = async ({ params }: { params: Params }) => {
 export default SingleBlogPage
 
 export async function generateStaticParams() {
-  const data = await fetchData(ALL_ARTICLES_QUERY)
-  return data.posts.nodes.map((post) => ({ slug: post.slug }))
+  const postData = await fetchData(ALL_ARTICLES_QUERY)
+  return postData.posts.nodes.map((post) => ({ slug: post.slug }))
 }

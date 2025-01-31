@@ -26,8 +26,15 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
     ),
     cache: new InMemoryCache({
       typePolicies: {
+        page: {
+          keyFields: ['databaseId'], // Ensure Apollo identifies different Page objects
+        },
+        posts: {
+          keyFields: ['databaseId'], // Ensure Apollo identifies different Page objects
+        },
         Query: {
           fields: {
+            page: { merge: true },
             posts: { merge: true },
           },
         },
