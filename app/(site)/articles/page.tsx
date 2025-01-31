@@ -18,7 +18,6 @@ const BlogPage = async () => {
     ...(postData?.otherPosts?.nodes || [])
   ];
   
-  // Remove duplicates based on `id`
   const uniquePosts = Array.from(new Map(allPosts.map(post => [post.id, post])).values());
 
   return (
