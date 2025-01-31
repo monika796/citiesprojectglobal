@@ -863,7 +863,7 @@ export const ARTICLES_PAGE_QUERY = gql`
 
 export const ARTICLES_QUERY = gql`
   query Articles {
-    featuredPosts: posts(where: { tag: "featured", status: PUBLISH }, last: 1000) {
+    featuredPosts: posts(where: { tag: "featured", status: PUBLISH }, last: 1) {
       nodes {
         date
         featuredImage {
@@ -881,7 +881,10 @@ export const ARTICLES_QUERY = gql`
         }
       }
     }
-    otherPosts: posts(where: { tagNotIn: ["featured"], status: PUBLISH }, last: 1000) {
+    otherPosts: posts(
+      where: { tagNotIn: ["featured"], status: PUBLISH, orderby: { field: DATE, order: DESC } }
+      last: 1000
+    ) {
       nodes {
         date
         featuredImage {
