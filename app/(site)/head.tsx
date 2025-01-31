@@ -7,7 +7,7 @@ export default function Head({ data }) {
   const defaultTitle = 'Cities Project Global'
   return (
     <>
-      <title>{pageTitle + ' - ' + defaultTitle || defaultTitle}</title>
+      <title>{pageTitle ? pageTitle + ' - ' + defaultTitle : defaultTitle}</title>
       {/* <GoogleAnalytics strategy="lazyOnload" /> */}
       <meta name="description" content={metaDescription} />
       <meta name="keywords" content={metaKeywords} />
