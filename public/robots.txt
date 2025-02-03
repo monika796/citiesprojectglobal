@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:         # No restrictions, meaning everything is allowed to be crawled
+Sitemap: https://www.citiesprojectglobal.com/api/sitemap
