@@ -31,8 +31,8 @@ const BlogPage = async () => {
                   <Image
                     src={uniquePosts[0]?.featuredImage?.node?.link || '/No_Image.jpg'}
                     alt="Group of people"
-                    className="w-full h-[100vh] object-cover"
-                    layout="responsive"
+                    className="w-full object-cover"
+                    // layout="responsive"
                     width={800}
                     height={700}
                   />
