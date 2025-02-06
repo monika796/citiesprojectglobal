@@ -27,7 +27,7 @@ const SwiperSection = ({ data }: { data: any }) => {
             }}
             keyboard={{ enabled: true }}
             mousewheel={{ forceToAxis: true }}
-            loop={true}
+            
             cssMode
             className="w-full h-auto"
           >
