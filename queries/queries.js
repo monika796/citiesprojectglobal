@@ -1103,7 +1103,7 @@ export const VANTAGEPOINT_QUERY = gql`
   }
   ${SEO_FRAGMENT}
 `
-
+ 
 export const HOME_HERO_NEWS_QUERY = gql`
   query {
     posts(where: { tag: "featured" }) {
@@ -1181,7 +1181,7 @@ export const SHORT_COURSE_PAGE_QUERY = gql`
               link
             }
           }
-        }
+        } 
         shortCoursesSecondSection {
           shortCoursesSecondSectionFirstColumnText
           shortCoursesSecondSectionSecondColumnHeading
